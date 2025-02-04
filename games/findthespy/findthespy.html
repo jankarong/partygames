@@ -17,11 +17,11 @@
     <meta property="og:description"
         content="An exciting party game of deception and deduction. Gather 4-12 players and try to find the spy!">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.com/games/findthespy">
-    <meta property="og:image" content="https://yourdomain.com/games/findthespy/image/FindthespyLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/games/findthespy">
+    <meta property="og:image" content="https://www.bestpartygames.net/games/findthespy/image/FindthespyLogo.png">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://yourdomain.com/games/findthespy">
+    <link rel="canonical" href="https://www.bestpartygames.net/games/findthespy">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../../image/partyGameLogo.png">
@@ -72,6 +72,14 @@
                     </div>
                 </div>
             </header>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item"><a href="/">Home</a></li>
+                    <li class="breadcrumb__item"><a href="/games">Games</a></li>
+                    <li class="breadcrumb__item active" aria-current="page">Find the Spy</li>
+                </ol>
+            </nav>
 
             <div class="setup-cards">
                 <section class="setup-card">
@@ -215,6 +223,21 @@
                     </ol>
                 </div>
             </section>
+
+            <section class="game-faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>How many players are needed for Find the Spy?</h3>
+                        <p>The game requires 4-12 players for optimal gameplay experience.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How long does a typical game last?</h3>
+                        <p>A typical game lasts 5-10 minutes, perfect for quick party rounds.</p>
+                    </div>
+                    <!-- 添加更多FAQ项目 -->
+                </div>
+            </section>
         </main>
     </div>
 
@@ -252,7 +275,7 @@
         "isPartOf": {
             "@type": "WebSite",
             "name": "Party Games Collection",
-            "url": "https://partygames.com"
+            "url": "https://www.bestpartygames.net"
         },
         "about": {
             "@type": "Game",
@@ -268,6 +291,51 @@
                 "suggestedMinAge": "12"
             }
         }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.bestpartygames.net/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Games",
+            "item": "https://www.bestpartygames.net/games/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Find the Spy",
+            "item": "https://www.bestpartygames.net/games/findthespy/findthespy"
+        }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "How many players are needed for Find the Spy?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The game requires 4-12 players for optimal gameplay experience."
+            }
+        },{
+            "@type": "Question",
+            "name": "How long does a typical game last?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A typical game lasts 5-10 minutes, perfect for quick party rounds."
+            }
+        }]
     }
     </script>
 </body>
