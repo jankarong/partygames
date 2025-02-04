@@ -1,8 +1,0 @@
-.feedback-content {
-    max-width: 800px;
-    /* 调整宽度以适应 Tally 表单 */
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-/* 移除原来的表单相关样式 */

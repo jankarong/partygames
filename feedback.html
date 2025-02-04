@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Share Your Thoughts | Party Games Collection</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Share your feedback and help us improve your gaming experience. Your opinion matters in making our party games better for everyone.">
+    <meta name="keywords" content="party games feedback, game suggestions, user feedback, game improvement">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Share Your Feedback - Party Games Collection">
+    <meta property="og:description" content="Help us improve your gaming experience by sharing your valuable feedback.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://partygames.com/feedback">
+    <meta property="og:image" content="https://partygames.com/image/partyGameLogo.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://partygames.com/feedback">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/utils/logo.css">
+    <link rel="stylesheet" href="styles/feedback.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container site-header__container">
+            <a href="/" class="site-header__logo">
+                <img src="image/partyGameLogo.png" alt="Party Games Logo" class="site-header__logo-image">
+            </a>
+            <nav class="site-header__nav">
+                <a href="index.html" class="site-header__nav-link">Games</a>
+                <a href="feedback.html" class="site-header__nav-link">Feedback</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <header class="page-header">
+            <h1 class="page-header__title">Feedback</h1>
+            <p class="page-header__subtitle">Help us improve your gaming experience</p>
+        </header>
+
+        <main class="feedback-content">
+            <iframe
+                data-tally-src="https://tally.so/embed/nrJv5p?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0"
+                title="Feedback form">
+            </iframe>
+            <script>
+                var d = document,
+                    w = "https://tally.so/widgets/embed.js",
+                    v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) };
+                if ("undefined" != typeof Tally) v();
+                else if (d.querySelector('script[src="' + w + '"]') == null) {
+                    var s = d.createElement("script");
+                    s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s);
+                }
+            </script>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__container">
+                <div class="site-footer__section">
+                    <h3 class="site-footer__title">About Us</h3>
+                    <p>Party Games Collection is your go-to platform for fun and interactive party games to enjoy with
+                        friends and family.</p>
+                </div>
+
+                <div class="site-footer__section">
+                    <h3 class="site-footer__title">Quick Links</h3>
+                    <a href="index.html" class="site-footer__link">Games</a>
+                    <a href="feedback.html" class="site-footer__link">Feedback</a>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>&copy; 2024 Party Games Collection. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
