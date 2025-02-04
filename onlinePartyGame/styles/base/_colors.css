@@ -1,0 +1,42 @@
+:root {
+    /* 品牌色 Brand */
+    --color-primary: #7C5DFA;
+    /* 明亮的紫色 - 主色调，传达趣味性和创造力 */
+
+    --color-secondary: #00C2A8;
+    /* 清新的青绿色 - 次要色，提供平衡和活力 */
+
+    --color-accent: #FFB800;
+    /* 温暖的金黄色 - 强调色，增添趣味和能量 */
+
+    /* 功能色 Functional */
+    --color-success: #2DD4BF;
+    /* 柔和的绿松石色 */
+
+    --color-warning: #FCD34D;
+    /* 柔和的黄色 */
+
+    --color-error: #FB7185;
+    /* 柔和的红色 */
+
+    --color-info: #60A5FA;
+    /* 柔和的蓝色 */
+
+    /* 中性色 Neutral */
+    --color-gray-50: #F8FAFC;
+    /* 更柔和的灰度梯度 */
+    --color-gray-100: #F1F5F9;
+    --color-gray-200: #E2E8F0;
+    --color-gray-300: #CBD5E1;
+    --color-gray-400: #94A3B8;
+    --color-gray-500: #64748B;
+    --color-gray-600: #475569;
+    --color-gray-700: #334155;
+    --color-gray-800: #1E293B;
+    --color-gray-900: #0F172A;
+
+    /* 基础色 Base */
+    --color-background: var(--color-gray-50);
+    --color-text: var(--color-gray-900);
+    --color-white: #FFFFFF;
+}
