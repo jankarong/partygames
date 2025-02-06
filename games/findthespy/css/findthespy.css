@@ -566,3 +566,99 @@
         font-size: var(--font-size-lg);
     }
 }
+
+/* FAQ Styles */
+.game-faq {
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.game-faq h2 {
+    font-family: var(--font-display);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-6);
+    text-align: center;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.faq-item {
+    padding: var(--space-4);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast) var(--easing-base);
+    cursor: pointer;
+}
+
+.faq-item:hover {
+    background-color: var(--color-gray-100);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item h3 {
+    font-family: var(--font-display);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.faq-item h3::before {
+    content: "Q:";
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+.faq-item p {
+    color: var(--color-gray-600);
+    line-height: var(--line-height-relaxed);
+    padding-left: var(--space-6);
+    position: relative;
+}
+
+.faq-item p::before {
+    content: "A:";
+    position: absolute;
+    left: 0;
+    color: var(--color-gray-400);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Responsive adjustments for FAQ */
+@media (max-width: var(--breakpoint-mobile)) {
+    .game-faq {
+        padding: var(--space-4);
+        margin-top: var(--space-6);
+    }
+
+    .game-faq h2 {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--space-4);
+    }
+
+    .faq-item {
+        padding: var(--space-3);
+    }
+
+    .faq-item h3 {
+        font-size: var(--font-size-base);
+    }
+
+    .faq-item p {
+        font-size: var(--font-size-sm);
+        padding-left: var(--space-4);
+    }
+}
