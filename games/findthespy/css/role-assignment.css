@@ -56,13 +56,13 @@
 /* 角色信息样式 */
 .role-info {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-6);
 }
 
 .role-info h3 {
     font-size: var(--font-size-xl);
+    color: var(--color-gray-700);
     margin-bottom: var(--space-4);
-    color: var(--color-gray-900);
 }
 
 .role-text {
@@ -72,10 +72,12 @@
     color: var(--color-gray-900);
 }
 
+/* 调整词语文本的样式 */
 .word-text {
-    font-size: var(--font-size-xl);
-    color: var(--color-gray-600);
-    margin-bottom: var(--space-6);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin: var(--space-6) 0;
 }
 
 /* 按钮样式 */
@@ -129,6 +131,7 @@
     color: var(--color-white);
 }
 
+/* 调整提示文本的样式 */
 .tap-hint {
     font-size: var(--font-size-lg);
     color: var(--color-gray-600);

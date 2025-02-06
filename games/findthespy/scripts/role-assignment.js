@@ -54,9 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.id !== 'gotIt') {
             roleCard.classList.add('is-flipped');
             const playerRole = gameData.roles[currentPlayer - 1];
-            roleText.textContent = playerRole;
 
-            // 根据角色显示不同的词
+            // 根据角色显示词语，但不显示角色身份
             if (playerRole === 'Spy') {
                 wordText.textContent = gameData.words.spy;
             } else if (playerRole === 'Blank') {
