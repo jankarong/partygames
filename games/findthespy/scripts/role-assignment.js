@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startTimerButton = document.getElementById('startTimer');
     const minutesDisplay = document.getElementById('minutes');
     const secondsDisplay = document.getElementById('seconds');
+    const restartGameButton = document.getElementById('restartGame');
 
     // 从 sessionStorage 获取游戏设置
     const gameSettings = JSON.parse(sessionStorage.getItem('gameSettings'));
@@ -102,25 +103,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 计时器功能
+    // Timer related elements
     let timerInterval;
 
-    startTimerButton.addEventListener('click', () => {
+    // Start timer function
+    function startTimer(duration) {
+        timeLeft = duration * 60; // Convert minutes to seconds
         startTimerButton.style.display = 'none';
+        restartGameButton.style.display = 'block';
 
-        if (hasTimeLimit) {
-            timerInterval = setInterval(() => {
+        timerInterval = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+
+            minutesDisplay.textContent = minutes.toString().padStart(2, '0');
+            secondsDisplay.textContent = seconds.toString().padStart(2, '0');
+
+            if (timeLeft <= 0) {
+                endGame();
+            } else {
                 timeLeft--;
-                updateTimerDisplay();
-                if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    alert('Time\'s up!');
-                }
-            }, 1000);
+            }
+        }, 1000);
+    }
+
+    // End game function
+    function endGame() {
+        clearInterval(timerInterval);
+        alert("Time's up! Game Over!");
+        startTimerButton.style.display = 'none';
+        document.querySelector('.game-instructions').innerHTML = '<h2>Game Over!</h2><p>Time to vote for who you think is the spy!</p>';
+        restartGameButton.style.display = 'block';
+    }
+
+    // Event listeners
+    startTimerButton.addEventListener('click', () => {
+        if (hasTimeLimit) {
+            startTimer(gameSettings.timeLimit);
+        } else {
+            startTimerButton.style.display = 'none';
+            document.querySelector('.timer__display').style.display = 'none';
+            restartGameButton.style.display = 'block';
+            document.querySelector('.game-instructions').innerHTML = '<h2>Game Started!</h2><p>Discuss and vote for who you think is the spy when ready!</p>';
         }
     });
 
-    // 添加返回按钮处理
+    restartGameButton.addEventListener('click', () => {
+        window.location.href = 'findthespy.html';
+    });
+
+    // Back button functionality
     const backButton = document.getElementById('backButton');
     backButton.addEventListener('click', () => {
         // 如果计时器在运行，清除它

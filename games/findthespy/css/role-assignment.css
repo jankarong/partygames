@@ -110,9 +110,9 @@
 /* 计时器样式 */
 .timer {
     text-align: center;
-    margin-top: var(--space-6);
-    opacity: 0;
-    transition: opacity var(--transition-base) var(--easing-base);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .timer.show {
@@ -187,4 +187,10 @@
 .button__icon {
     font-size: 1.2em;
     line-height: 1;
+}
+
+#restartGame {
+    display: block;
+    margin: 20px auto;
+    min-width: 200px;
 }
