@@ -44,36 +44,41 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../games/games.css">
     <link rel="stylesheet" href="../findthespy/css/findthespy.css">
 </head>
+<!-- 网站导航栏 -->
+<header class="site-header">
+    <div class="container site-header__container">
+        <a href="/" class="site-header__logo">
+            <img src="../../image/partyGameLogo.png" alt="Party Games Logo" class="site-header__logo-image">
+        </a>
+        <nav class="site-header__nav">
+            <a href="../../index.html" class="site-header__nav-link">Games</a>
+            <a href="../../feedback.html" class="site-header__nav-link">Feedback</a>
+        </nav>
+    </div>
+</header>
 
 <body>
-    <!-- 网站导航栏 -->
-    <header class="site-header">
-        <div class="container site-header__container">
-            <a href="/" class="site-header__logo">
-                <img src="../../image/partyGameLogo.png" alt="Party Games Logo" class="site-header__logo-image">
-            </a>
-            <nav class="site-header__nav">
-                <a href="../../index.html" class="site-header__nav-link">Games</a>
-                <a href="../../feedback.html" class="site-header__nav-link">Feedback</a>
-            </nav>
-        </div>
-    </header>
+
 
     <div class="container">
         <main class="game-container">
             <header class="game-header">
-                <h1 class="game-header__title">Browser Social Deduction Games - Find the Spy</h1>
-                <p class="game-header__description">Undercover game of deception and deduction where players describe
-                    words without getting caught</p>
+                <div class="game-header__main-title">
+                    <img src="image/FindthespyLogo.png" alt="Find the Spy Logo" class="game-header__logo">
+                    <h1>Browser Social Deduction Games</h1>
+                </div>
+                <div class="game-header__subtitle">
+                    <h2>Find the Spy</h2>
+                </div>
             </header>
 
             <div class="setup-cards">
                 <section class="setup-card">
                     <div class="setup-card__header">
                         <h2>Player Setup</h2>
-
                     </div>
                     <div class="setup-card__content">
                         <div class="role-settings">
@@ -84,10 +89,12 @@
                                     <label>Total Players</label>
                                 </div>
                                 <div class="role-counter">
-                                    <button class="role-counter__button" data-action="decrease">-</button>
+                                    <button class="button button--secondary button--small role-counter__button"
+                                        data-action="decrease">-</button>
                                     <input type="number" id="playerCount" class="role-counter__input" value="4" min="4"
                                         max="12" readonly>
-                                    <button class="role-counter__button" data-action="increase">+</button>
+                                    <button class="button button--secondary button--small role-counter__button"
+                                        data-action="increase">+</button>
                                 </div>
                             </div>
 
@@ -98,10 +105,12 @@
                                     <label>Spies</label>
                                 </div>
                                 <div class="role-counter">
-                                    <button class="role-counter__button" data-action="decrease">-</button>
+                                    <button class="button button--secondary button--small role-counter__button"
+                                        data-action="decrease">-</button>
                                     <input type="number" id="spyCount" class="role-counter__input" value="1" min="1"
                                         max="3" readonly>
-                                    <button class="role-counter__button" data-action="increase">+</button>
+                                    <button class="button button--secondary button--small role-counter__button"
+                                        data-action="increase">+</button>
                                 </div>
                             </div>
 
@@ -112,10 +121,12 @@
                                     <label>Blanks</label>
                                 </div>
                                 <div class="role-counter">
-                                    <button class="role-counter__button" data-action="decrease">-</button>
+                                    <button class="button button--secondary button--small role-counter__button"
+                                        data-action="decrease">-</button>
                                     <input type="number" id="blankCount" class="role-counter__input" value="0" min="0"
                                         readonly>
-                                    <button class="role-counter__button" data-action="increase">+</button>
+                                    <button class="button button--secondary button--small role-counter__button"
+                                        data-action="increase">+</button>
                                 </div>
                             </div>
                         </div>
@@ -187,17 +198,25 @@
                 </section>
             </div>
 
-            <div class="game-actions">
+            <div class="game-actions button-group button-group--center">
                 <button id="startGame" class="button button--primary button--large">
                     <span class="button__icon">🎮</span>
                     Start Game
+                </button>
+                <button id="restartGame" class="button button--outline button--large" style="display: none;">
+                    <span class="button__icon">🔄</span>
+                    Play Again
                 </button>
             </div>
 
             <section class="game-rules">
                 <div class="game-rules__header">
-                    <h2>How to Play This Word Spy Game</h2>
-                    <span class="game-rules__icon">📖</span>
+                    <div class="game-rules__title">
+                        <h2>How to Play This Word Spy Game</h2>
+                        <span class="game-rules__icon">📖</span>
+                    </div>
+                    <h3 class="game-rules__subtitle">Undercover game of deception and deduction where players describe
+                        words without getting caught</h3>
                 </div>
                 <div class="game-rules__content">
                     <ol class="game-rules__list">
@@ -213,7 +232,10 @@
             </section>
 
             <section class="game-faq">
-                <h2>Frequently Asked Questions</h2>
+                <div class="game-faq__title">
+                    <span class="game-faq__icon">❓</span>
+                    <h2>Frequently Asked Questions</h2>
+                </div>
                 <div class="faq-list">
                     <div class="faq-item">
                         <h3>How many players are needed for Find the Spy?</h3>

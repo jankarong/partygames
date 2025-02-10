@@ -1,0 +1,243 @@
+/* Common Game Styles */
+.game-container {
+    padding: var(--space-6) 0;
+    max-width: var(--container-width-md);
+    margin: 0 auto;
+}
+
+/* Game Header - Common styles for all games */
+.game-header {
+    text-align: center;
+    margin: 0 auto var(--space-7);
+    padding: var(--space-6) 0;
+    position: relative;
+    max-width: 800px;
+}
+
+.game-header__main-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.game-header__logo {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+}
+
+.game-header__subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* 居中按钮组样式 */
+.button-group--center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-6) auto;
+    width: 100%;
+    gap: var(--space-4);
+}
+
+/* 当按钮组垂直排列时的样式 */
+.button-group--center.button-group--vertical {
+    flex-direction: column;
+    max-width: 300px;
+    /* 可以根据需要调整 */
+}
+
+/* Game Rules - Common styles for all games */
+.game-rules {
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.game-rules__title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.game-rules__title h2 {
+    font-family: var(--font-display);
+    font-size: var(--font-size-2xl);
+    color: var(--color-gray-900);
+    margin: 0;
+}
+
+.game-rules__icon {
+    font-size: 1.75rem;
+    color: var(--color-gray-700);
+    order: -1;
+}
+
+.game-rules__subtitle {
+    color: var(--color-gray-700);
+    font-size: var(--font-size-lg);
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0 0 2rem 0;
+}
+
+.game-rules__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-rules__list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+}
+
+.game-rules__list li::before {
+    content: "•";
+    position: absolute;
+    left: 0.75rem;
+    color: var(--color-gray-400);
+}
+
+.game-rules__description {
+    color: var(--color-gray-600);
+    font-size: var(--font-size-lg);
+    line-height: 1.5;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+}
+
+/* Game FAQ - Common styles for all games */
+.game-faq {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+}
+
+.game-faq__title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.game-faq__icon {
+    font-size: 1.75rem;
+    color: var(--color-gray-700);
+}
+
+.game-faq__title h2 {
+    font-family: var(--font-display);
+    font-size: var(--font-size-2xl);
+    color: var(--color-gray-900);
+    margin: 0;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.faq-item {
+    padding: var(--space-4);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast) var(--easing-base);
+    cursor: pointer;
+}
+
+.faq-item:hover {
+    background-color: var(--color-gray-100);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item h3 {
+    font-family: var(--font-display);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.faq-item h3::before {
+    content: "Q:";
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+.faq-item p {
+    color: var(--color-gray-600);
+    line-height: var(--line-height-relaxed);
+    padding-left: var(--space-6);
+    position: relative;
+}
+
+.faq-item p::before {
+    content: "A:";
+    position: absolute;
+    left: 0;
+    color: var(--color-gray-400);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Responsive Styles */
+@media (max-width: var(--breakpoint-desktop)) {
+    .game-container {
+        max-width: var(--container-width-lg);
+    }
+}
+
+@media (max-width: var(--breakpoint-tablet)) {
+    .game-container {
+        padding: var(--space-4);
+    }
+
+    .game-header {
+        padding: var(--space-6) 0;
+    }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+    .game-container {
+        padding: var(--space-3);
+    }
+
+    .button-group--center {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .game-rules {
+        padding: var(--space-4);
+    }
+
+    .game-rules h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .game-faq {
+        padding: var(--space-4);
+        margin-top: var(--space-6);
+    }
+
+    .game-faq h2 {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--space-4);
+    }
+}

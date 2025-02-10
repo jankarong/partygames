@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Style Demo</title>
+    <link rel="stylesheet" href="../base/_variables.css">
+    <link rel="stylesheet" href="../base/_colors.css">
+    <link rel="stylesheet" href="./_buttons.css">
+    <style>
+        body {
+            padding: 2rem;
+            font-family: var(--font-body);
+        }
+
+        .demo-section {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Button Style Demo</h1>
+
+    <div class="demo-section">
+        <h2>Basic Buttons</h2>
+        <button class="button button--primary">Primary Button</button>
+        <button class="button button--outline">Outline Button</button>
+    </div>
+
+    <div class="demo-section">
+        <h2>Button Sizes</h2>
+        <button class="button button--primary button--small">Small Button</button>
+        <button class="button button--primary">Default Button</button>
+        <button class="button button--primary button--large">Large Button</button>
+    </div>
+
+    <div class="demo-section">
+        <h2>Disabled State</h2>
+        <button class="button button--primary" disabled>Disabled Primary</button>
+        <button class="button button--outline" disabled>Disabled Outline</button>
+    </div>
+
+    <div class="demo-section">
+        <h2>Buttons with Icons</h2>
+        <button class="button button--primary">
+            <span class="button__icon">👉</span>
+            Primary with Icon
+        </button>
+        <button class="button button--outline">
+            <span class="button__icon">⭐</span>
+            Outline with Icon
+        </button>
+    </div>
+
+    <div class="demo-section">
+        <h2>Button Groups</h2>
+        <div class="button-group">
+            <button class="button button--primary">Button 1</button>
+            <button class="button button--outline">Button 2</button>
+        </div>
+        
+        <h3 style="margin-top: 1rem;">Vertical Button Group</h3>
+        <div class="button-group button-group--vertical">
+            <button class="button button--primary">Button 1</button>
+            <button class="button button--outline">Button 2</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -2,6 +2,8 @@
     /* 品牌色 Brand */
     --color-primary: #7C5DFA;
     /* 明亮的紫色 - 主色调，传达趣味性和创造力 */
+    --color-primary-dark: #6344D0;
+    /* 深紫色 - 主色调的深色变体，用于悬停状态和强调 */
 
     --color-secondary: #00C2A8;
     /* 清新的青绿色 - 次要色，提供平衡和活力 */

@@ -1,4 +1,4 @@
-/* 按钮相关样式 */
+/* 按钮基础样式 */
 .button {
     font-family: var(--font-body);
     font-size: var(--font-size-sm);
@@ -6,14 +6,97 @@
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: transform 0.2s var(--easing-base);
+    transition: all 0.2s var(--easing-base);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-2);
 }
 
 .button:hover {
     transform: translateY(-2px);
 }
 
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 按钮变体 */
 .button--primary {
     background-color: var(--color-primary);
     color: var(--color-white);
+}
+
+.button--primary:hover {
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button--outline {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.button--outline:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 按钮尺寸 */
+.button--small {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--font-size-xs);
+}
+
+.button--large {
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--font-size-xl);
+}
+
+/* 按钮图标 */
+.button__icon {
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* 按钮组 */
+.button-group {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.button-group--vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.button-group--center {
+    align-items: center;
+    justify-content: center;
+}
+
+/* 响应式调整 */
+@media (max-width: var(--breakpoint-tablet)) {
+    .button--large {
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+    .button {
+        font-size: var(--font-size-xs);
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .button--large {
+        font-size: var(--font-size-base);
+    }
 }

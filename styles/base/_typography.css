@@ -1,14 +1,11 @@
-/* 字体、颜色等基础排版样式 */
+/* 基础排版样式 */
 :root {
     /* 字体家族 Font Families */
-    --font-heading: 'Outfit', sans-serif;
-    /* 现代、圆润、友好的标题字体 */
+    --font-heading: 'Fredoka', sans-serif;
+    /* 活泼、有趣的展示字体，用于标题 */
 
     --font-body: 'DM Sans', system-ui, sans-serif;
     /* 清晰、现代的正文字体 */
-
-    --font-display: 'Fredoka', sans-serif;
-    /* 活泼、有趣的展示字体，用于特殊标题或强调 */
 
     /* 字重 Font Weights */
     --font-weight-normal: 400;
@@ -17,10 +14,6 @@
     --font-weight-bold: 700;
 
     /* 字号 Font Sizes */
-    --font-size-xs: 0.75rem;
-    /* 12px */
-    --font-size-sm: 0.875rem;
-    /* 14px */
     --font-size-base: 1rem;
     /* 16px */
     --font-size-lg: 1.125rem;
@@ -41,4 +34,101 @@
     --line-height-normal: 1.5;
     --line-height-relaxed: 1.625;
     --line-height-loose: 2;
+}
+
+/* 基础排版样式 */
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+}
+
+/* 标题样式 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: var(--font-size-4xl);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+}
+
+h6 {
+    font-size: var(--font-size-base);
+}
+
+/* 列表样式 */
+ul,
+ol {
+    padding-left: 1.5em;
+    margin: 1em 0;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* 响应式排版 */
+@media screen and (max-width: 768px) {
+    :root {
+        --font-size-4xl: 2rem;
+        /* 32px */
+        --font-size-3xl: 1.75rem;
+        /* 28px */
+        --font-size-2xl: 1.375rem;
+        /* 22px */
+        --font-size-xl: 1.125rem;
+        /* 18px */
+        --font-size-lg: 1rem;
+        /* 16px */
+        --font-size-base: 0.9375rem;
+        /* 15px */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --font-size-4xl: 1.75rem;
+        /* 28px */
+        --font-size-3xl: 1.5rem;
+        /* 24px */
+        --font-size-2xl: 1.25rem;
+        /* 20px */
+        --font-size-xl: 1rem;
+        /* 16px */
+        --font-size-lg: 0.9375rem;
+        /* 15px */
+        --font-size-base: 0.875rem;
+        /* 14px */
+    }
+
+    body {
+        line-height: var(--line-height-snug);
+    }
 }

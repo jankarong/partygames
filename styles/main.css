@@ -21,29 +21,3 @@
     margin: 0 auto;
     padding: 0 var(--container-padding);
 }
-
-/* 移除或注释掉这些重复的网格布局样式，因为我们已经在 _cards.css 中定义了 */
-/* .game-grid {
-    display: grid;
-    gap: var(--space-6);
-    padding: var(--space-6) 0;
-    grid-template-columns: 1fr;
-}
-
-@media (min-width: var(--breakpoint-mobile)) {
-    .game-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: var(--breakpoint-tablet)) {
-    .game-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: var(--breakpoint-desktop)) {
-    .game-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-} */

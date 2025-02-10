@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const minutesDisplay = document.getElementById('minutes');
     const secondsDisplay = document.getElementById('seconds');
     const restartGameButton = document.getElementById('restartGame');
+    const tapHint = document.getElementById('tapHint');
 
     // 从 sessionStorage 获取游戏设置
     const gameSettings = JSON.parse(sessionStorage.getItem('gameSettings'));
@@ -52,7 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 点击卡片显示角色
     roleCard.addEventListener('click', (e) => {
-        if (e.target.id !== 'gotIt') {
+        // 如果点击的是Got it按钮，不要处理卡片翻转
+        if (e.target.closest('#gotIt')) {
+            return;
+        }
+        // 确保卡片当前是正面朝上（未翻转）
+        if (!roleCard.classList.contains('is-flipped')) {
             roleCard.classList.add('is-flipped');
             const playerRole = gameData.roles[currentPlayer - 1];
 
@@ -67,21 +73,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Got it 按钮处理
+    gotItButton.addEventListener('click', (e) => {
+        e.stopPropagation(); // 阻止事件冒泡
+        if (currentPlayer < totalPlayers) {
+            currentPlayer++;
+            currentPlayerSpan.textContent = currentPlayer;
+            roleCard.classList.remove('is-flipped');
+            wordText.textContent = '';
+        } else {
+            showGameInstructions();
+        }
+    });
+
     // 修改计时器显示
     function showGameInstructions() {
         roleCard.style.display = 'none';
-        gameTimer.style.display = 'block';
-
+        gameTimer.classList.add('is-visible');
         if (!hasTimeLimit) {
-            document.querySelector('.timer__display').style.display = 'none';
-            startTimerButton.textContent = 'Start Game';
-        } else {
-            updateTimerDisplay();
+            gameTimer.classList.add('no-time-limit');
         }
-
-        setTimeout(() => {
-            gameTimer.classList.add('show');
-        }, 100);
     }
 
     // 更新计时器显示
@@ -91,17 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
         minutesDisplay.textContent = minutes.toString().padStart(2, '0');
         secondsDisplay.textContent = seconds.toString().padStart(2, '0');
     }
-
-    // Got it 按钮处理
-    gotItButton.addEventListener('click', () => {
-        if (currentPlayer < totalPlayers) {
-            currentPlayer++;
-            currentPlayerSpan.textContent = currentPlayer;
-            roleCard.classList.remove('is-flipped');
-        } else {
-            showGameInstructions();
-        }
-    });
 
     // Timer related elements
     let timerInterval;
@@ -131,9 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function endGame() {
         clearInterval(timerInterval);
         alert("Time's up! Game Over!");
-        startTimerButton.style.display = 'none';
         document.querySelector('.game-instructions').innerHTML = '<h2>Game Over!</h2><p>Time to vote for who you think is the spy!</p>';
-        restartGameButton.style.display = 'block';
+        gameTimer.classList.add('game-started');
+        restartGameButton.classList.remove('is-hidden');
     }
 
     // Event listeners
@@ -141,10 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (hasTimeLimit) {
             startTimer(gameSettings.timeLimit);
         } else {
-            startTimerButton.style.display = 'none';
-            document.querySelector('.timer__display').style.display = 'none';
-            restartGameButton.style.display = 'block';
             document.querySelector('.game-instructions').innerHTML = '<h2>Game Started!</h2><p>Discuss and vote for who you think is the spy when ready!</p>';
+            gameTimer.classList.add('game-started');
+            restartGameButton.classList.remove('is-hidden');
         }
     });
 

@@ -1,12 +1,17 @@
+.game-container {
+    padding: var(--space-6) 0;
+    margin: 0 auto;
+}
+
 .game-screen {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: var(--space-6);
     background-color: var(--color-gray-100);
-    padding-top: var(--space-12);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
 }
 
 /* 角色卡片容器 */
@@ -29,6 +34,10 @@
 
 .role-card.is-flipped .role-card__inner {
     transform: rotateY(180deg);
+}
+
+.role-card.is-flipped .tap-hint {
+    display: none;
 }
 
 /* 卡片正面和背面的共同样式 */
@@ -80,31 +89,25 @@
     margin: var(--space-6) 0;
 }
 
-/* 按钮样式 */
-.button {
-    padding: var(--space-3) var(--space-5);
-    border: none;
-    border-radius: var(--radius-md);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-medium);
-    cursor: pointer;
-    transition: all var(--transition-base) var(--easing-base);
-    margin: var(--space-2);
+/* 游戏状态相关样式 */
+.timer {
+    display: none;
 }
 
-.button--primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+.timer.is-visible {
+    display: block;
 }
 
-.button--secondary {
-    background-color: var(--color-gray-200);
-    color: var(--color-gray-900);
+#restartGame {
+    display: none;
 }
 
-.button:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+.game-started #startTimer {
+    display: none;
+}
+
+.game-started #restartGame {
+    display: block;
 }
 
 /* 计时器样式 */
@@ -126,9 +129,8 @@
     margin-bottom: var(--space-4);
 }
 
-.button--accent {
-    background-color: var(--color-accent);
-    color: var(--color-white);
+.no-time-limit .timer__display {
+    display: none;
 }
 
 /* 调整提示文本的样式 */
@@ -136,6 +138,7 @@
     font-size: var(--font-size-lg);
     color: var(--color-gray-600);
     margin-top: var(--space-4);
+    transition: opacity 0.3s ease;
 }
 
 .game-instructions {
@@ -165,32 +168,13 @@
     z-index: 10;
 }
 
-.button--text {
-    background: none;
-    border: none;
-    color: var(--color-gray-700);
-    font-size: var(--font-size-base);
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-md);
-    transition: all var(--transition-base) var(--easing-base);
-}
-
-.button--text:hover {
-    background-color: var(--color-gray-200);
-    transform: translateY(0);
-    box-shadow: none;
-}
-
-.button__icon {
-    font-size: 1.2em;
-    line-height: 1;
-}
-
 #restartGame {
     display: block;
     margin: 20px auto;
     min-width: 200px;
+}
+
+/* 通用状态类 */
+.is-hidden {
+    display: none !important;
 }
