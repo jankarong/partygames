@@ -1,6 +1,10 @@
 /* Common Game Styles */
 .game-container {
-    padding: var(--space-6) 0;
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: clamp(var(--space-4), 5vw, var(--space-8));
+
+    width: 100%;
     max-width: var(--container-width-md);
     margin: 0 auto;
 }
@@ -196,6 +200,104 @@
     font-weight: var(--font-weight-bold);
 }
 
+/* Setup Cards */
+.setup-cards {
+    display: grid;
+    gap: var(--space-6);
+    margin: var(--space-6) 0;
+}
+
+.setup-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.setup-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.setup-card--full {
+    grid-column: 1 / -1;
+}
+
+.setup-card__header {
+    background-color: var(--color-primary-50);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-primary-100);
+}
+
+.setup-card__header h2 {
+    color: var(--color-primary-700);
+    font-size: var(--font-size-xl);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.setup-card__content {
+    padding: var(--space-4);
+    background-color: var(--color-white);
+}
+
+/* Rules Section */
+.rules-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rules-section li {
+    position: relative;
+    padding: var(--space-3) var(--space-3) var(--space-3) var(--space-8);
+    color: var(--color-gray-700);
+    line-height: 1.6;
+}
+
+.rules-section li::before {
+    content: "→";
+    position: absolute;
+    left: var(--space-4);
+    color: var(--color-primary-500);
+    font-weight: bold;
+}
+
+/* FAQ Section */
+.faq-section {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.faq-section .faq-item {
+    background-color: var(--color-gray-50);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease-in-out;
+}
+
+.faq-section .faq-item:hover {
+    background-color: var(--color-gray-100);
+}
+
+.faq-section .faq-item h3 {
+    color: var(--color-primary-700);
+    font-size: var(--font-size-lg);
+    margin: 0 0 var(--space-2) 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.faq-section .faq-item p {
+    color: var(--color-gray-600);
+    margin: 0;
+    line-height: 1.6;
+}
+
 /* Responsive Styles */
 @media (max-width: var(--breakpoint-desktop)) {
     .game-container {
@@ -239,5 +341,23 @@
     .game-faq h2 {
         font-size: var(--font-size-xl);
         margin-bottom: var(--space-4);
+    }
+}
+
+@media (max-width: 768px) {
+    .setup-cards {
+        gap: var(--space-4);
+    }
+    
+    .setup-card__header {
+        padding: var(--space-3);
+    }
+    
+    .setup-card__content {
+        padding: var(--space-3);
+    }
+    
+    .faq-section .faq-item {
+        padding: var(--space-3);
     }
 }

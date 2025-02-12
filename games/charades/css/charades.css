@@ -1,48 +1,8 @@
 /* Game Container */
 .game-container {
-    background-color: var(--color-white);
-    border-radius: var(--radius-lg);
-    padding: clamp(var(--space-4), 5vw, var(--space-8));
     box-shadow: var(--shadow-lg);
-    width: 100%;
-    max-width: var(--container-width-md);
-    margin: 0 auto;
 }
 
-/* Game Header */
-.game-header {
-    text-align: center;
-    margin: 0 auto var(--space-8);
-    padding: var(--space-6) 0;
-    max-width: 800px;
-}
-
-.game-header__main-title {
-    margin-bottom: var(--space-4);
-}
-
-.game-header__logo {
-    max-width: 120px;
-    height: auto;
-    margin-bottom: var(--space-4);
-    transition: transform 0.3s ease;
-}
-
-.game-header__logo:hover {
-    transform: scale(1.05);
-}
-
-.game-header__main-title h1 {
-    color: var(--color-primary);
-    font-size: var(--font-size-2xl);
-    font-weight: var(--font-weight-bold);
-}
-
-.game-header__subtitle h2 {
-    color: var(--color-gray-600);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-medium);
-}
 
 /* Setup Cards */
 .setup-cards {
@@ -146,6 +106,7 @@
 
 #start-game {
     margin-top: var(--space-4);
+    width: fit-content;
 }
 
 .option {
@@ -263,10 +224,6 @@
     display: none !important;
 }
 
-.game-header {
-    text-align: center;
-    margin-bottom: var(--space-7);
-}
 
 .screen {
     margin-bottom: var(--space-7);
@@ -362,53 +319,6 @@
 
 .word-summary {
     margin: var(--space-5) 0;
-}
-
-.setup-cards {
-    margin-top: var(--space-7);
-}
-
-.setup-card {
-    background-color: var(--color-white);
-    border-radius: var(--radius-base);
-    box-shadow: var(--shadow-base);
-    margin-bottom: var(--space-5);
-}
-
-.setup-card__header {
-    padding: var(--space-4) var(--space-5);
-    border-bottom: 1px solid var(--color-gray-200);
-}
-
-.setup-card__content {
-    padding: var(--space-5);
-}
-
-.rules-section {
-    margin-bottom: var(--space-5);
-}
-
-.rules-section:last-child {
-    margin-bottom: 0;
-}
-
-.rules-section h3 {
-    margin-bottom: var(--space-3);
-}
-
-.rules-section ol,
-.rules-section ul {
-    padding-left: var(--space-5);
-}
-
-.rules-section li {
-    margin-bottom: var(--space-2);
-}
-
-@media screen and (max-width: 480px) {
-    .game-controls {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 768px) {

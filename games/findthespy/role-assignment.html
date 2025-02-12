@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="../../styles/main.css">
     <link rel="stylesheet" href="../../styles/components/_buttons.css">
+    <link rel="stylesheet" href="../../styles/components/_navigation.css">
     <link rel="stylesheet" href="../../games/games.css">
     <link rel="stylesheet" href="../findthespy/css/role-assignment.css">
 
@@ -58,11 +59,14 @@
 <body>
     <header class="site-header">
         <div class="container site-header__container">
-            <a href="/" class="site-header__logo">
-                <img src="../../image/partyGameLogo.png" alt="Party Games Collection - Social Party Games Platform"
-                    class="site-header__logo-image">
+            <a href="../../index.html" class="site-header__logo">
+                <img src="../../image/partyGameLogo.png" alt="Party Games Logo" class="site-header__logo-image">
             </a>
-            <nav class="site-header__nav">
+            <button class="mobile-nav-toggle" aria-controls="site-nav" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+            <nav class="site-header__nav" id="site-nav">
                 <a href="../../index.html" class="site-header__nav-link">Games</a>
                 <a href="../../feedback.html" class="site-header__nav-link">Feedback</a>
             </nav>
@@ -141,6 +145,7 @@
     </footer>
 
     <script src="scripts/role-assignment.js"></script>
+    <script src="../../js/nav.js"></script>
 </body>
 
 </html>

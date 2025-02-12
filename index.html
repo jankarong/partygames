@@ -63,9 +63,12 @@
         <div class="container site-header__container">
             <a href="/" class="site-header__logo">
                 <img src="image/partyGameLogo.png" alt="Party Games Logo" class="site-header__logo-image">
-
             </a>
-            <nav class="site-header__nav">
+            <button class="mobile-nav-toggle" aria-controls="site-nav" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+            <nav class="site-header__nav" id="site-nav">
                 <a href="index.html" class="site-header__nav-link">Games</a>
                 <a href="feedback.html" class="site-header__nav-link">Feedback</a>
             </nav>
@@ -92,6 +95,22 @@
                     <div class="game-card__footer">
                         <span class="game-card__players">4-12 players</span>
                         <a href="/games/findthespy/findthespy.html" class="button button--primary">Start Game</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="game-card">
+                <div class="game-card__image">
+                    <img src="./games/numberguess/numberguessLogo.png"
+                        alt="Guess This Number - Fun Party Drinking Game" width="300"
+                        height="200">
+                </div>
+                <div class="game-card__content">
+                    <h2>Guess This Number</h2>
+                    <p class="game-card__description">A fun drinking game for couples and groups</p>
+                    <div class="game-card__footer">
+                        <span class="game-card__players">2+ players</span>
+                        <a href="/games/numberguess/numberguess.html" class="button button--primary">Start Game</a>
                     </div>
                 </div>
             </article>
@@ -183,6 +202,9 @@
     <!-- 添加社交媒体链接 -->
     <link rel="me" href="https://twitter.com/bestpartygames">
     <link rel="me" href="https://facebook.com/bestpartygames">
+
+    <!-- 导航栏控制脚本 -->
+    <script src="js/nav.js"></script>
 </body>
 
 </html>

@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/utils/logo.css">
     <link rel="stylesheet" href="styles/feedback.css">
+    <link rel="stylesheet" href="styles/components/_navigation.css">
 
     <!-- Clarity tracking code -->
     <script type="text/javascript">
@@ -52,7 +53,11 @@
             <a href="/" class="site-header__logo">
                 <img src="image/partyGameLogo.png" alt="Party Games Logo" class="site-header__logo-image">
             </a>
-            <nav class="site-header__nav">
+            <button class="mobile-nav-toggle" aria-controls="site-nav" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+            <nav class="site-header__nav" id="site-nav">
                 <a href="index.html" class="site-header__nav-link">Games</a>
                 <a href="feedback.html" class="site-header__nav-link">Feedback</a>
             </nav>
@@ -105,6 +110,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- 导航栏控制脚本 -->
+    <script src="js/nav.js"></script>
 </body>
 
 </html>
