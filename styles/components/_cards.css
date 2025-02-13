@@ -77,16 +77,27 @@
 /* 调整网格布局 */
 .game-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: var(--space-6);
     padding: var(--space-6) 0;
-    max-width: 800px;
     margin: 0 auto;
 }
 
-/* 移除或修改之前的响应式布局 */
-@media (max-width: 768px) {
+/* 响应式布局 */
+@media (min-width: 576px) {
     .game-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .game-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
