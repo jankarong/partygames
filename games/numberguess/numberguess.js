@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const guessInput = document.getElementById('guessInput');
     const submitGuess = document.getElementById('submitGuess');
-    const newGameBtn = document.getElementById('newGame');
     const message = document.getElementById('message');
     const history = document.getElementById('history');
 
@@ -35,8 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleGuess() {
-        if (isGameOver) return;
-
         const guess = parseInt(guessInput.value);
         if (isNaN(guess) || guess < 1 || guess > 100) {
             message.textContent = 'Please enter a valid number between 1 and 100!';
@@ -50,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (guess === targetNumber) {
             message.textContent = `Congratulations! You found the number ${targetNumber} in ${guesses.length} tries!`;
             message.className = 'message correct';
-            isGameOver = true;
+            // 等待1.5秒后自动开始新游戏
+            setTimeout(initGame, 1500);
         } else if (guess < targetNumber) {
             message.textContent = 'Too low, try again!';
             message.className = 'message hint';
@@ -67,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     guessInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') handleGuess();
     });
-    newGameBtn.addEventListener('click', initGame);
 
     // Initialize the game
     initGame();
