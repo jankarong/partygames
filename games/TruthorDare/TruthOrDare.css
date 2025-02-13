@@ -315,6 +315,60 @@ h1::after {
     box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
+/* 移动端响应式设计 */
+@media screen and (max-width: 768px) {
+    .game-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .choice-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .choice-btn {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .question-text {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    .rules-section {
+        font-size: 0.9rem;
+    }
+
+    .rules-section ol {
+        padding-left: 1.5rem;
+    }
+
+    .rules-section li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* 特小屏幕设备优化 */
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .choice-btn {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
 @media (max-width: 576px) {
     .game-container {
         margin: 1rem;
