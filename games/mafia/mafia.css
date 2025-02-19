@@ -1,0 +1,931 @@
+:root {
+    --primary-red: #ff6b8b;
+    --primary-purple: #6b4c9a;
+    --dark-bg: #1a1a2e;
+    --card-bg: #242444;
+    --border-color: #4a4a8a;
+    --text-color: #f0f0f5;
+    --text-muted: #b8b8d0;
+    --heading-font: 'Cinzel', serif;
+    --body-font: 'Crimson Pro', serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(107, 76, 154, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 107, 139, 0.1) 0%, transparent 50%);
+    color: var(--text-color);
+    min-height: 100vh;
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+.game-setup,
+.game-area,
+.rules-section {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(107, 76, 154, 0.2);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-setup:hover,
+.game-area:hover,
+.rules-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(107, 76, 154, 0.3);
+}
+
+.game-setup::before,
+.game-area::before,
+.rules-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-red), var(--primary-purple));
+    opacity: 0.8;
+}
+
+.setup-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-red);
+    font-family: var(--heading-font);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 15px rgba(255, 107, 139, 0.3);
+    }
+
+    50% {
+        text-shadow: 0 0 25px rgba(107, 76, 154, 0.5);
+    }
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+.total-players {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.role-selection {
+    background: rgba(26, 26, 46, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(8px);
+}
+
+.role-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.role-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.role-input label {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+.role-input input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: rgba(36, 36, 68, 0.8);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+}
+
+.role-input input:focus {
+    background-color: rgba(36, 36, 68, 0.95);
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 10px rgba(107, 76, 154, 0.2);
+}
+
+.role-summary {
+    background: rgba(26, 26, 46, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.role-warning {
+    color: var(--primary-red);
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+button {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    border: none;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(107, 76, 154, 0.4);
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.card-body {
+    position: relative;
+}
+
+.list-group-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+}
+
+.list-group-item.eliminated {
+    background: rgba(255, 71, 87, 0.2);
+    border-color: var(--primary-red);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.badge {
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.game-logo {
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 0 auto 20px;
+}
+
+/* Custom Bootstrap Overrides */
+.form-control {
+    background-color: var(--dark-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+}
+
+.form-control:focus {
+    background-color: var(--dark-bg);
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 2px rgba(107, 76, 154, 0.2);
+    color: var(--text-color);
+}
+
+.form-label {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-danger,
+.btn-primary,
+.btn-warning {
+    background: linear-gradient(135deg, #ff6b8b, #ff4757);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 139, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-danger:hover,
+.btn-primary:hover,
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 139, 0.4);
+    background: linear-gradient(135deg, #ff4757, #ff6b8b);
+    color: white;
+}
+
+.btn-danger:active,
+.btn-primary:active,
+.btn-warning:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(255, 107, 139, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    border: none;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+.instruction {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+#cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.role-card {
+    perspective: 1000px;
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.role-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+    color: white;
+}
+
+.card-back {
+    background: var(--card-bg);
+    transform: rotateY(180deg);
+    border: 2px solid var(--primary-purple);
+}
+
+.card-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--heading-font);
+}
+
+.role-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: var(--heading-font);
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-description {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.4;
+    font-family: var(--body-font);
+}
+
+/* Role-specific card styles */
+.role-mafia .role-name {
+    color: var(--primary-red);
+    background: linear-gradient(135deg, #ff6b8b, #ff4757);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-doctor .role-name {
+    background: linear-gradient(135deg, #2196f3, #03a9f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-detective .role-name {
+    background: linear-gradient(135deg, #ffc107, #ff9800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-villager .role-name {
+    background: linear-gradient(135deg, #4caf50, #8bc34a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.player-status {
+    margin-top: 20px;
+}
+
+.player-card {
+    background: var(--card-bg);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.player-card.dead {
+    opacity: 0.5;
+    background: var(--dark-bg);
+}
+
+.game-phase {
+    border-left: 4px solid var(--primary-red);
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+#phaseDescription {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.rules {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.rules ul,
+.rules ol {
+    padding-left: 20px;
+}
+
+.rules li {
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.h5,
+h5 {
+    color: #ffffff !important;
+    font-size: 1.2rem;
+    background: linear-gradient(90deg, var(--card-bg), rgba(255, 59, 74, 0.2), var(--card-bg));
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.role-selection h3 {
+    color: #ffffff !important;
+    background: linear-gradient(90deg, var(--card-bg), rgba(255, 59, 74, 0.2), var(--card-bg));
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+#returnToSetup {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    right: auto;
+    padding: 8px 16px;
+    z-index: 1000;
+    color: #ffffff;
+}
+
+#returnToSetup:hover {
+    color: #f8f9fa;
+}
+
+#returnToSetup i {
+    margin-right: 8px;
+}
+
+/* Role Instructions */
+.role-instructions {
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    margin-top: 1.5rem;
+}
+
+.role-instructions .card-body {
+    padding: 1.5rem;
+}
+
+.role-instruction {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.role-instruction h3 {
+    color: var(--primary-red);
+    margin-bottom: 0.75rem;
+    font-family: var(--heading-font);
+}
+
+.role-instruction ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.role-instruction li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.role-instruction li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Role-specific colors */
+#mafiaInstructions {
+    border-left: 4px solid #ff6b8b;
+}
+
+#villagerInstructions {
+    border-left: 4px solid #4caf50;
+}
+
+#doctorInstructions {
+    border-left: 4px solid #2196f3;
+}
+
+#detectiveInstructions {
+    border-left: 4px solid #ffc107;
+}
+
+/* Night Actions */
+.night-actions {
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.night-actions .card-body {
+    padding: 2rem;
+}
+
+.night-phase h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+#narrator-text {
+    font-size: 1.2rem;
+    color: var(--primary-red);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--heading-font);
+}
+
+.role-action {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.role-action p {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.player-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.player-option {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.player-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 76, 154, 0.4);
+    border-color: var(--primary-purple);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.player-option.selected {
+    background: var(--primary-purple);
+    border-color: var(--primary-red);
+    color: white;
+    box-shadow: 0 0 15px rgba(107, 76, 154, 0.6);
+}
+
+/* Role-specific action styles */
+#mafia-action .player-option.selected {
+    background: #ff4757;
+    border-color: #ff6b8b;
+}
+
+#doctor-action .player-option.selected {
+    background: #2196f3;
+    border-color: #03a9f4;
+}
+
+#detective-action .player-option.selected {
+    background: #ffc107;
+    border-color: #ff9800;
+}
+
+#next-role {
+    width: 100%;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.dead {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.choice-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.choice-buttons .btn {
+    min-width: 150px;
+}
+
+.result-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.result-text.mafia {
+    background: rgba(255, 71, 87, 0.2);
+    border: 2px solid #ff4757;
+}
+
+.result-text.villager {
+    background: rgba(76, 209, 55, 0.2);
+    border: 2px solid #4cd137;
+}
+
+.discussion-phase {
+    text-align: center;
+    padding: 2rem;
+}
+
+.night-summary {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.discussion-prompt {
+    color: white;
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+#end-discussion {
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+    min-width: 200px;
+}
+
+/* Hide player list but keep the title */
+#playerStatus {
+    display: none !important;
+}
+
+/* Player status grid layout */
+.player-status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.player-status-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.player-status-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-red));
+    opacity: 0.8;
+    border-radius: 15px 15px 0 0;
+}
+
+.player-status-card.dead {
+    opacity: 0.6;
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.player-name {
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.player-status {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Voting phase styles */
+.voting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.vote-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.vote-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(107, 76, 154, 0.3);
+}
+
+.vote-card.selected {
+    border: 2px solid var(--primary-red);
+    background: rgba(255, 107, 139, 0.1);
+}
+
+.vote-card.dead {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.voting-prompt {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Custom Alert Styles */
+.custom-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 46, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.alert-content {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    padding: 2.5rem;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    animation: alertAppear 0.3s ease-out;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.alert-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-red), var(--primary-purple));
+    opacity: 0.8;
+    border-radius: 15px 15px 0 0;
+}
+
+.alert-message {
+    color: var(--text-color);
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, var(--text-color), #b8b8d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.alert-confirm {
+    min-width: 120px;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    border: none;
+    color: var(--text-color);
+    font-family: var(--heading-font);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(107, 76, 154, 0.3);
+}
+
+.alert-confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(107, 76, 154, 0.4);
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+}
+
+@keyframes alertAppear {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .role-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .role-input input {
+        width: 100%;
+    }
+
+    #cardGrid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .role-card {
+        height: 160px;
+    }
+}
