@@ -623,13 +623,13 @@ class MafiaGame {
         document.querySelector('.player-status').style.display = 'none';
         document.querySelector('.role-cards').style.display = 'block';
         document.querySelector('.game-controls').style.display = 'none';
-        
+
         // 恢复上一局的角色设置
         document.getElementById('playerCount').value = playerCount;
         document.getElementById('mafiaCount').value = mafiaCount;
         document.getElementById('doctorCount').value = doctorCount;
         document.getElementById('detectiveCount').value = detectiveCount;
-        
+
         this.updateRoleCounts();
     }
 

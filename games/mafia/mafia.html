@@ -4,16 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mafia Game</title>
+    <meta name="description"
+        content="Play the classic Mafia board game online. A thrilling social deduction game where players work together to find the Mafia among innocent villagers. Perfect for 6-15 players!">
+    <meta name="keywords" content="mafia game, board game, social deduction, party game, online mafia, werewolf game">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="Mafia Board Game - Online Social Deduction Game">
+    <meta property="og:description"
+        content="Play the classic Mafia board game online. A thrilling social deduction game where players work together to find the Mafia among innocent villagers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="mafialogo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mafia Board Game - Online Social Deduction Game">
+    <meta name="twitter:description" content="Play the classic Mafia board game online. Perfect for 6-15 players!">
+    <meta name="twitter:image" content="mafialogo.png">
+    <title>Mafia Board Game - Online Social Deduction Game | Party Games</title>
+    <link rel="canonical" href="https://partygames.com/games/mafia/mafia.html">
     <link
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Cinzel:wght@500;700&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="mafia.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/gameheader.css">
 </head>
 
 <body>
+    <a href="../../index.html" class="home-icon"><i class="fas fa-home"></i></a>
     <div class="container py-4">
         <img src="mafialogo.png" alt="Mafia Board Game Logo" class="game-logo">
         <h1 class="text-center mb-4">Mafia Board Games</h1>
@@ -187,47 +203,81 @@
         </div>
 
         <div class="rules-section card shadow-sm mt-4">
-            <div class="card-body">
-                <h2 class="card-title">Game Rules</h2>
-                <div class="rules">
-                    <h3 class="h5 mt-3">Roles:</h3>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Villagers:</strong> Must find and eliminate the Mafia</li>
-                        <li class="list-group-item"><strong>Mafia:</strong> Must eliminate the villagers without being
-                            caught</li>
-                        <li class="list-group-item"><strong>Doctor:</strong> Can save one person each night</li>
-                        <li class="list-group-item"><strong>Detective:</strong> Can investigate one person's identity
-                            each night</li>
-                    </ul>
+            <div class="card-body text-white">
+                <h2 class="card-title text-white">Game Rules</h2>
 
-                    <h3 class="h5 mt-3">Recommended Role Distribution:</h3>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">6-7 players: 1-2 Mafia, 1 Doctor, 1 Detective</li>
-                        <li class="list-group-item">8-10 players: 2 Mafia, 1 Doctor, 1 Detective</li>
-                        <li class="list-group-item">11-15 players: 2-3 Mafia, 1 Doctor, 1 Detective</li>
-                    </ul>
+                <h3>Overview</h3>
+                <p>Mafia is a social deduction game where players are secretly divided into two teams: the Mafia and the
+                    Villagers. The game alternates between night and day phases until one team wins.</p>
 
-                    <h3 class="h5 mt-3">How to Play:</h3>
-                    <ol class="list-group list-group-numbered">
-                        <li class="list-group-item">Each player takes turns to click their card to see their role</li>
-                        <li class="list-group-item">Keep your role secret!</li>
-                        <li class="list-group-item">The game alternates between Day and Night phases</li>
-                        <li class="list-group-item">
-                            During the Night:
-                            <ul class="list-unstyled mt-2 ms-3">
-                                <li>• Mafia chooses a victim</li>
-                                <li>• Doctor chooses someone to save</li>
-                                <li>• Detective investigates a player</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">During the Day:
-                            <ul class="list-unstyled mt-2 ms-3">
-                                <li>• Players discuss who might be Mafia</li>
-                                <li>• Vote to eliminate one suspected Mafia member</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </div>
+                <h3>Mafia Game Rules</h3>
+                <ul>
+                    <li><strong>Total Players:</strong> 6-15 players</li>
+                    <li><strong>Mafia:</strong> Evil players who know each other's identity (1-3 players)</li>
+                    <li><strong>Villagers:</strong> Regular townspeople trying to identify the Mafia</li>
+                    <li><strong>Doctor:</strong> A special villager who can save one person from elimination AND poison
+                        one person during the game (0-1 player)</li>
+                    <li><strong>Detective:</strong> A special villager who can investigate one player's identity each
+                        night (0-1 player)</li>
+                </ul>
+
+                <h3>Game Flow</h3>
+                <ol>
+                    <li><strong>Setup Phase:</strong>
+                        <ul>
+                            <li>Each player receives a secret role card</li>
+                            <li>Players must keep their roles secret unless eliminated</li>
+                        </ul>
+                    </li>
+                    <li><strong>Night Phase:</strong>
+                        <ul>
+                            <li>All players "sleep" (close their eyes)</li>
+                            <li>Mafia members wake up and choose one player to eliminate</li>
+                            <li>Doctor wakes up and can choose to save or poison a player</li>
+                            <li>Detective wakes up and can investigate one player's identity</li>
+                        </ul>
+                    </li>
+                    <li><strong>Day Phase:</strong>
+                        <ul>
+                            <li>All players "wake up"</li>
+                            <li>Night actions results are revealed</li>
+                            <li>Players discuss and debate who might be the Mafia</li>
+                            <li>Players vote to eliminate one suspected Mafia member</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>Special Abilities</h3>
+                <ul>
+                    <li><strong>Doctor's Powers:</strong>
+                        <ul>
+                            <li>Can save one player (including themselves) once per game</li>
+                            <li>Can poison one player once per game</li>
+                            <li>Must choose whether to save, poison, or skip each night</li>
+                        </ul>
+                    </li>
+                    <li><strong>Detective's Power:</strong>
+                        <ul>
+                            <li>Can investigate one player each night</li>
+                            <li>Learns whether the investigated player is Mafia or not</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Winning Conditions</h3>
+                <ul>
+                    <li><strong>Villagers Win:</strong> When all Mafia members are eliminated</li>
+                    <li><strong>Mafia Wins:</strong> When the number of Mafia equals or exceeds the number of Villagers
+                    </li>
+                </ul>
+
+                <h3>Tips</h3>
+                <ul>
+                    <li>Pay attention to player behavior during discussions</li>
+                    <li>Special roles (Doctor and Detective) should be careful about revealing their identity</li>
+                    <li>Use voting strategically - sometimes not voting might be the best strategy</li>
+                    <li>Mafia members should try to blend in with villagers during discussions</li>
+                </ul>
             </div>
         </div>
         </img>
