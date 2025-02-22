@@ -4,9 +4,10 @@
     border-radius: var(--radius-lg);
     padding: clamp(var(--space-4), 5vw, var(--space-8));
 
-    width: 100%;
-    max-width: var(--container-width-md);
+    width: 60%;
+    max-width: 800px;
     margin: 0 auto;
+    margin-left: 20%;
 }
 
 /* Game Header - Common styles for all games */
