@@ -956,6 +956,72 @@ h5 {
     }
 }
 
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .game-logo {
+        max-width: 80%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .setup-section {
+        padding: 15px;
+    }
+
+    .role-inputs {
+        flex-direction: column;
+    }
+
+    .role-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .game-controls button {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .card {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .role-cards .card {
+        min-height: auto;
+    }
+
+    .custom-alert .alert-content {
+        width: 90%;
+        max-width: none;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 600px) {
     .role-inputs {
         grid-template-columns: 1fr;
