@@ -4,211 +4,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Play Charades online - A fun party game where players act out words and phrases while others guess. Features multiple categories including animals, actions, objects, and movies.">
-    <meta name="keywords"
-        content="charades game, online charades, party games, word guessing game, multiplayer games, family games">
-    <meta name="author" content="Party Games Collection">
-    <meta property="og:title" content="Online Charades Game - Fun Party Game for Friends and Family">
-    <meta property="og:description"
-        content="Play Charades online with friends and family. Choose from multiple categories, set custom timer, and track your score in this fun party game!">
-    <meta property="og:type" content="game">
-    <meta property="og:url" content="https://partygames.com/games/charades">
-    <meta property="og:image" content="../../images/charades-preview.jpg">
-    <title>Online Charades Game - Fun Party Games for Friends and Family | Party Games</title>
+    <title>Charades - Fun Party Game</title>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="./charades.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/gameheader.css">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link rel="stylesheet" href="../../games/games.css">
-    <link rel="stylesheet" href="css/charades.css">
-    <link rel="canonical" href="https://partygames.com/games/charades">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-
 <body>
-
-
-    <header class="site-header">
-        <div class="container site-header__container">
-            <a href="../../index.html" class="site-header__logo">
-                <img src="../../image/partyGameLogo.png" alt="Party Games Logo" class="site-header__logo-image">
-
-            </a>
-            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="site-header__nav">
-                <a href="../../index.html" class="site-header__nav-link">Games</a>
-                <a href="../../feedback.html" class="site-header__nav-link">Feedback</a>
-            </nav>
-        </div>
-    </header>
-    <main class="container">
-        <article class="game-container">
-            <header class="game-header">
-                <div class="game-header__main-title">
-                    <img src="image/CharadesLogo.png" alt="Charades Game Logo" class="game-header__logo">
-                    <h1>Play On Words Generator</h1>
+    <a href="../../index.html" class="home-icon"><i class="fas fa-home"></i></a>
+    <main class="container-fluid py-4">
+        <div class="row">
+            <!-- Left Ad Space -->
+            <div class="col-md-2 d-none d-md-block">
+                <div class="ad-space">
                 </div>
-                <div class="game-header__subtitle">
-                    <h2>Online Charades Game</h2>
-                </div>
-            </header>
-
-            <section id="setup-screen" class="screen">
-                <h2 class="visually-hidden">Game Setup</h2>
-                <div class="setup-options">
-                    <div class="option">
-                        <div class="option-header">
-                            <span class="option-icon">⏱️</span>
-                            <label for="round-time">Round Time (seconds):</label>
-                        </div>
-                        <input type="number" id="round-time" value="60" min="30" max="180" class="input"
-                            aria-label="Set round duration in seconds">
-                    </div>
-                    <div class="option">
-                        <div class="option-header">
-                            <span class="option-icon">🎲</span>
-                            <label for="word-category">Category:</label>
-                        </div>
-                        <select id="word-category" class="input" aria-label="Select word category">
-                            <option value="all">All Categories</option>
-                            <option value="animals">Animals</option>
-                            <option value="actions">Actions</option>
-                            <option value="objects">Objects</option>
-                            <option value="movies">Movies</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button id="start-game" class="button button--primary button--large" aria-label="Start the game">
-                    <span class="button__icon">🎮</span>
-                    <span>Start Game</span>
-                </button>
-            </section>
-
-            <section id="game-screen" class="screen hidden" aria-live="polite">
-                <h2 class="visually-hidden">Game Play</h2>
-                <div id="timer" class="timer" aria-label="Time remaining">60</div>
-                <div id="current-word" class="word" aria-label="Current word to act out"></div>
-                <div class="game-controls">
-                    <button id="correct" class="button button--primary" aria-label="Mark answer as correct">
-                        <span class="button__icon">✅</span>
-                        <span>Correct!</span>
-                    </button>
-                    <button id="skip" class="button button--primary" aria-label="Skip current word">
-                        <span class="button__icon">⏭️</span>
-                        <span>Skip</span>
-                    </button>
-                </div>
-                <div id="score" class="score">Score: 0</div>
-            </section>
-
-            <section id="result-screen" class="screen hidden" aria-live="polite">
-                <h2 class="visually-hidden">Game Results</h2>
-                <div id="final-score" class="final-score">Final Score: 0</div>
-                <div id="word-summary" class="word-summary"></div>
-                <button id="play-again" class="button button--primary" aria-label="Play another round">
-                    <span class="button__icon">🔄</span>
-                    <span>Play Again</span>
-                </button>
-            </section>
-
-            <div class="setup-cards">
-                <!-- Game Rules -->
-                <section class="setup-card setup-card--full">
-                    <div class="setup-card__header">
-                        <h2>📋 Game Rules</h2>
-                    </div>
-                    <div class="setup-card__content">
-                        <div class="rules-section">
-                            <h3>🎯 How to Play</h3>
-                            <ol>
-                                <li>Select your preferred round time (30-180 seconds) and word category.</li>
-                                <li>One player acts out the given word without speaking or making sounds.</li>
-                                <li>Other players try to guess the word within the time limit.</li>
-                                <li>Click "Correct" if the word is guessed correctly, or "Skip" to move to the next
-                                    word.</li>
-                                <li>Try our movie name generator in the movies category for extra fun!</li>
-                            </ol>
-                        </div>
-                        <div class="rules-section">
-                            <h3>⚠️ Basic Rules</h3>
-                            <ul>
-                                <li>No speaking or making sounds while acting</li>
-                                <li>No spelling out the word with gestures</li>
-                                <li>No pointing at objects in the room</li>
-                                <li>Actions and gestures only</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- FAQ Section -->
-                <section class="setup-card setup-card--full">
-                    <div class="setup-card__header">
-                        <h2>❓ Frequently Asked Questions</h2>
-                    </div>
-                    <div class="setup-card__content">
-                        <div class="faq-section">
-                            <div class="faq-item">
-                                <h3>👥 How many players do I need?</h3>
-                                <p>Charades can be played with 2 or more players. The ideal group size is 4-8 players.
-                                </p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>🎲 Can I customize the word categories?</h3>
-                                <p>Yes! You can choose from Animals, Actions, Objects, Movies, or play with all
-                                    categories combined.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>⏱️ How long is each round?</h3>
-                                <p>You can set the round time between 30 and 180 seconds. The default is 60 seconds per
-                                    round.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>🎯 How is scoring calculated?</h3>
-                                <p>You get 1 point for each correctly guessed word. Skipped words don't affect your
-                                    score.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
-        </article>
+
+            <!-- Game Content -->
+            <div class="col-12 col-md-8">
+                <!-- Game Header -->
+                <div class="text-center mb-5" id="game-header">
+                    <div class="mb-4">
+                        <img src="./CharadesLogo.png" alt="Charades Game Logo" class="game-logo">
+                    </div>
+                    <h1 class="display-4 mb-3">Charades</h1>
+                    <p class="lead">Let's play together! 🎮</p>
+                </div>
+
+                <!-- Setup Screen -->
+                <div id="setup-screen" class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <h2 class="text-center mb-4">Game Setup</h2>
+                                <div class="mb-4">
+                                    <label for="round-time" class="form-label">
+                                        <span class="emoji-icon">⏱️</span>Round Time (seconds)
+                                    </label>
+                                    <input type="number" id="round-time" class="form-control" value="60" min="30"
+                                        max="180">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="word-category" class="form-label">
+                                        <span class="emoji-icon">🎲</span>Category
+                                    </label>
+                                    <select id="word-category" class="form-select">
+                                        <option value="all">All Categories</option>
+                                        <option value="animals">Animals 🐘</option>
+                                        <option value="actions">Actions 🏃‍♂️</option>
+                                        <option value="objects">Objects 📱</option>
+                                        <option value="movies">Movies 🎬</option>
+                                    </select>
+                                </div>
+                                <button id="start-game" class="btn btn-primary w-100 btn-lg">
+                                    <span class="emoji-icon">🎮</span>Start Game
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Screen -->
+                <div id="game-screen" class="hidden">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="card">
+                                <div class="card-body p-4 text-center">
+                                    <div class="timer mb-4" id="timer">60</div>
+                                    <div class="word-display" id="current-word"></div>
+                                    <div class="d-flex justify-content-center gap-4">
+                                        <button id="correct" class="btn btn-success btn-lg">
+                                            <span class="emoji-icon">✅</span>Correct
+                                        </button>
+                                        <button id="skip" class="btn btn-warning btn-lg">
+                                            <span class="emoji-icon">⏭️</span>Skip
+                                        </button>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h3 id="score" class="h4">Score: 0</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Screen -->
+                <div id="result-screen" class="hidden">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="card">
+                                <div class="card-body p-4 text-center">
+                                    <h2 class="display-6 mb-4">🎉 Game Over!</h2>
+                                    <div id="final-score" class="h3 mb-4">Final Score: 0</div>
+                                    <div id="word-summary" class="mb-4"></div>
+                                    <button id="play-again" class="btn btn-primary btn-lg">
+                                        <span class="emoji-icon">🔄</span>Play Again
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rules and FAQ -->
+                <div class="row justify-content-center mt-5" id="info-section">
+                    <div class="col-md-8 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h2 class="h5 mb-0">📋 Game Rules</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <h3 class="h6">🎯 How to Play</h3>
+                                    <ol class="mb-4">
+                                        <li>Select your game settings</li>
+                                        <li>Act out the word (no speaking!)</li>
+                                        <li>Let others guess</li>
+                                        <li>Mark as correct or skip</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <h3 class="h6">⚠️ Remember</h3>
+                                    <ul>
+                                        <li>🤫 No speaking</li>
+                                        <li>✍️ No spelling</li>
+                                        <li>👆 No pointing at things</li>
+                                        <li>🎭 Actions only</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h2 class="h5 mb-0">❓ Quick Help</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <h3 class="h6">👥 Players Needed</h3>
+                                    <p>2+ players (best with 4-8 players)</p>
+                                </div>
+                                <div class="mb-3">
+                                    <h3 class="h6">🎲 Game Options</h3>
+                                    <p>Choose from different fun categories!</p>
+                                </div>
+                                <div class="mb-3">
+                                    <h3 class="h6">⏱️ Game Length</h3>
+                                    <p>30-180 seconds per round</p>
+                                </div>
+                                <div>
+                                    <h3 class="h6">🎯 Scoring</h3>
+                                    <p>1 point per correct guess</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Ad Space -->
+            <div class="col-md-2 d-none d-md-block">
+                <div class="ad-space">
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="site-footer__container">
-                <div class="site-footer__section">
-                    <h3 class="site-footer__title">About Us</h3>
-                    <p>Party Games Collection is your go-to platform for fun and interactive party games to enjoy with
-                        friends and family.</p>
-                </div>
-
-                <div class="site-footer__section">
-                    <h3 class="site-footer__title">Quick Links</h3>
-                    <a href="../../index.html" class="site-footer__link">Games</a>
-                    <a href="../../feedback.html" class="site-footer__link">Feedback</a>
-                </div>
-            </div>
-
-            <div class="site-footer__bottom">
-                <p>&copy; 2024 Party Games Collection. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../../js/nav.js"></script>
-    <script src="js/charades.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Game Logic -->
+    <script src="./charades.js"></script>
 </body>
 
 </html>
