@@ -18,88 +18,87 @@
     <meta property="og:url" content="https://www.bestpartygames.net/feedback">
     <meta property="og:image" content="https://www.bestpartygames.net/image/partyGameLogo.png">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.bestpartygames.net/feedback">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/utils/logo.css">
-    <link rel="stylesheet" href="styles/feedback.css">
-    <link rel="stylesheet" href="styles/components/_navigation.css">
-
-    <!-- Clarity tracking code -->
-    <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "q4t8s17fvw");
-    </script>
+    <!-- Custom CSS -->
+    <link href="./style/main.css" rel="stylesheet">
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container site-header__container">
-            <a href="/" class="site-header__logo">
-                <img src="image/partyGameLogo.png" alt="Party Games Logo" class="site-header__logo-image">
-            </a>
-            <button class="mobile-nav-toggle" aria-controls="site-nav" aria-expanded="false">
-                <span class="sr-only">Menu</span>
-                <span class="hamburger"></span>
-            </button>
-            <nav class="site-header__nav" id="site-nav">
-                <a href="index.html" class="site-header__nav-link">Games</a>
-                <a href="feedback.html" class="site-header__nav-link">Feedback</a>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container">
-
-
-        <main class="feedback-content">
-            <iframe
-                data-tally-src="https://tally.so/embed/wvdJZl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0"
-                title="Customer Feedback"></iframe>
-            <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
-        </main>
-    </div>
-
-    <footer class="site-footer">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <div class="site-footer__container">
-                <div class="site-footer__section">
-                    <h3 class="site-footer__title">About Us</h3>
-                    <p>Party Games Collection is your go-to platform for fun and interactive party games to enjoy with
-                        friends and family.</p>
-                </div>
+            <a class="navbar-brand" href="/">
+                <img src="image/partyGameLogo.png" alt="Party Games Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Games</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-                <div class="site-footer__section">
-                    <h3 class="site-footer__title">Quick Links</h3>
-                    <a href="index.html" class="site-footer__link">Games</a>
-                    <a href="feedback.html" class="site-footer__link">Feedback</a>
+
+
+    <!-- Feedback Form Section -->
+    <section class="feedback-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <iframe
+                        data-tally-src="https://tally.so/embed/wvdJZl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                        loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0"
+                        title="Customer Feedback"></iframe>
+                    <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="site-footer__bottom">
-                <p>&copy; 2024 Party Games Collection. All rights reserved.</p>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">About Us</h2>
+                    <p>Party Games Collection is your premier online destination for free, interactive party games. We
+                        offer a diverse collection of engaging social games including Find the Spy, Never Have I Ever,
+                        and more - perfect for virtual gatherings, parties, and team building events. Join thousands of
+                        players worldwide for unforgettable gaming experiences!</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">Quick Links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Games</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Feedback</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">The List</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">&copy; 2025 Party Games. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- 导航栏控制脚本 -->
-    <script src="js/nav.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
