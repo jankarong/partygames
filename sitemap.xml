@@ -52,4 +52,11 @@
             <image:caption>Classic social deduction party game for 7+ players</image:caption>
         </image:image>
     </url>
+
+    <url>
+        <loc>https://www.bestpartygames.net/TheList</loc>
+        <lastmod>2025-02-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 </urlset> 
