@@ -443,3 +443,90 @@ h1 {
         padding: 15px;
     }
 }
+
+/* SEO Content Styles */
+.game-info {
+    margin-top: 2rem;
+    text-align: left;
+    padding: 0 clamp(10px, 4vw, 30px);
+    color: #333;
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.game-info h2 {
+    font-family: 'Playfair Display', serif;
+    color: #d81b60;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.game-info h3 {
+    font-family: 'Playfair Display', serif;
+    color: #d81b60;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin: 1.5rem 0 0.75rem;
+}
+
+.game-info p,
+.game-info li {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+
+.instructions,
+.benefits-list,
+.ideas-list {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.instructions li,
+.benefits-list li,
+.ideas-list li {
+    margin-bottom: 0.5rem;
+}
+
+.faq-container {
+    margin: 1rem 0 1.5rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(216, 27, 96, 0.2);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item h4 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.privacy-note,
+.romantic-ideas {
+    background-color: rgba(252, 228, 236, 0.4);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+}
+
+.privacy-note h3,
+.romantic-ideas h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .game-info {
+        padding: 0 15px;
+    }
+}
