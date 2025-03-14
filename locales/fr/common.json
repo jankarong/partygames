@@ -1,0 +1,15 @@
+{
+    "nav": {
+        "games": "Jeux",
+        "feedback": "Commentaires",
+        "theList": "La Liste"
+    },
+    "hero": {
+        "title": "Jeux de Société",
+        "subtitle": "Découvrez des jeux amusants et passionnants à jouer avec vos amis et votre famille. Jeux de société en ligne gratuits pour tous!"
+    },
+    "games": {
+        "players": "{{count}}+ joueurs",
+        "playNow": "Jouer Maintenant"
+    }
+}

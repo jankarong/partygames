@@ -1,0 +1,15 @@
+{
+    "nav": {
+        "games": "Spiele",
+        "feedback": "Feedback",
+        "theList": "Die Liste"
+    },
+    "hero": {
+        "title": "Partyspiele",
+        "subtitle": "Entdecke lustige und aufregende Spiele, die du mit deinen Freunden und deiner Familie spielen kannst. Kostenlose Online-Partyspiele für alle!"
+    },
+    "games": {
+        "players": "{{count}}+ Spieler",
+        "playNow": "Jetzt Spielen"
+    }
+}

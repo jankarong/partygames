@@ -1,0 +1,126 @@
+{
+    "nav": {
+        "games": "게임",
+        "feedback": "피드백",
+        "theList": "목록"
+    },
+    "hero": {
+        "title": "파티 게임",
+        "subtitle": "친구 및 가족과 함께 즐길 수 있는 재미있고 흥미진진한 게임을 발견하세요. 모두를 위한 무료 온라인 파티 게임!"
+    },
+    "games": {
+        "players": "{{count}}+ 플레이어",
+        "playNow": "지금 플레이",
+        "magic8ball": {
+            "title": "매직 8볼",
+            "description": "흔들어서 질문에 답하는 나만의 매직 8볼을 만들어보세요."
+        },
+        "truthOrDare": {
+            "title": "진실 혹은 도전",
+            "description": "진실과 도전의 클래식 파티 게임!"
+        },
+        "neverHaveIEver": {
+            "title": "나는 한 번도",
+            "description": "모두가 이야기하게 만드는 재미있고 폭로적인 파티 게임!"
+        },
+        "whoIsMostLikely": {
+            "title": "누가 가장 가능성이 높을까",
+            "description": "예상치 못한 일을 할 가능성이 가장 높은 사람을 찾아보세요!"
+        },
+        "wouldYouRather": {
+            "title": "차라리",
+            "description": "두 가지 흥미로운 시나리오 중에서 어려운 선택을 하세요!"
+        },
+        "mafia": {
+            "title": "마피아",
+            "description": "플레이어들이 그들 중에서 마피아 멤버를 찾아야 하는 흥미진진한 사회적 추리 게임!"
+        },
+        "undercover": {
+            "title": "언더커버",
+            "description": "속임수와 추리의 파티 게임"
+        },
+        "guessNumber": {
+            "title": "이 숫자를 맞춰보세요",
+            "description": "커플과 그룹을 위한 재미있는 음주 게임"
+        },
+        "charades": {
+            "title": "제스처 게임",
+            "description": "이 클래식 파티 게임에서 단어와 문구를 연기해보세요!"
+        },
+        "hedbanz": {
+            "title": "헤드밴즈",
+            "description": "이 재미있는 추측 게임에서 당신이 무엇인지 맞춰보세요!"
+        },
+        "sexDice": {
+            "title": "섹스 주사위",
+            "description": "재미있고 자극적인 모험을 위해 주사위를 굴려보세요!"
+        },
+        "comingSoon": {
+            "title": "출시 예정",
+            "description": "새롭고 흥미로운 파티 게임이 곧 출시됩니다! 업데이트를 기대해주세요.",
+            "tbd": "미정",
+            "button": "출시 예정"
+        }
+    },
+    "footer": {
+        "aboutUs": {
+            "title": "회사 소개",
+            "content": "파티 게임 컬렉션은 무료 인터랙티브 파티 게임을 위한 최고의 온라인 목적지입니다. 스파이 찾기, 나는 한 번도 등을 포함한 다양한 사회적 게임 컬렉션을 제공하며, 가상 모임, 파티 및 팀 빌딩 이벤트에 완벽합니다. 잊을 수 없는 게임 경험을 위해 전 세계 수천 명의 플레이어와 함께하세요!"
+        },
+        "quickLinks": "빠른 링크",
+        "copyright": "© 2025 파티 게임. 모든 권리 보유."
+    },
+    "feedback": {
+        "pageTitle": "Feedback - Share Your Thoughts | Party Games Collection"
+    },
+    "theList": {
+        "pageTitle": "10 Fun Drinking Games Without Cards for Couples | Party Games Guide",
+        "mainTitle": "10 Fun Drinking Games Without Cards for Couples and Pairs 🎲",
+        "game1": {
+            "title": "🤔 1. Never Have I Ever (Perfect for Couples)",
+            "description": "Take turns saying something you've never done. If your partner has done it, they drink! A classic drinking game for couples that sparks fun conversations and reveals hidden stories."
+        },
+        "game2": {
+            "title": "🎯 2. Truth or Dare (Two-Player Edition)",
+            "description": "Choose \"truth\" (answer a personal question) or \"dare\" (complete a challenge). Refusing means taking a drink. One of the best two-player drinking games for couples who want to spice things up."
+        },
+        "game3": {
+            "title": "🔢 3. 21 (Quick and Simple)",
+            "description": "Count up from 1, saying 1 to 3 numbers per turn. The player who says \"21\" drinks. A fast-paced drinking game without cards that's perfect for pairs."
+        },
+        "game4": {
+            "title": "🧠 4. Word Association (Brainy Fun)",
+            "description": "One person says a word, and the other quickly responds with a related word. Hesitate or repeat, and you drink! A fun two-player drinking game that tests your creativity and reflexes."
+        },
+        "game5": {
+            "title": "📖 5. Story Time (For Creative Couples)",
+            "description": "Start a story with one sentence, and take turns adding to it. Can't think of a line? Take a drink! A hilarious couples drinking game that lets your imagination run wild."
+        },
+        "game6": {
+            "title": "🎵 6. Number Guessing (Simple and Fun)",
+            "description": "One person thinks of a number (e.g., 1-100). The other guesses, and wrong guesses mean drinking. An easy drinking game without cards for couples or pairs."
+        },
+        "game7": {
+            "title": "🎬 7. Finger Game (Fast-Paced Fun)",
+            "description": "Both players hold up 1-5 fingers. One calls a number, and if the total matches, they drink. A quick two-player drinking game that's perfect for keeping the energy high."
+        },
+        "game8": {
+            "title": "🎲 8. Rapid Fire Questions (Test Your Knowledge)",
+            "description": "One person fires quick questions at the other. Hesitation or wrong answers mean drinking. A fun drinking game for couples that's both competitive and entertaining."
+        },
+        "game9": {
+            "title": "❓ 9. Copycat (Laugh-Out-Loud Fun)",
+            "description": "One person does an action or makes a face, and the other copies it and adds a new one. Fail, and you drink! A hilarious couples drinking game that's sure to bring out the laughs."
+        },
+        "game10": {
+            "title": "🎮 10. Video Game Challenge (For Gamer Couples)",
+            "description": "Play a competitive video game. Loser takes a drink after each round. A modern twist on drinking games that's perfect for gamer couples looking for some friendly competition."
+        },
+        "safetyTitle": "Drinking Game Safety Tips",
+        "safetyTip1": "🚫 <strong>Know Your Limits:</strong> Always drink responsibly and know when to stop.",
+        "safetyTip2": "🚗 <strong>No Driving:</strong> Never drive after playing drinking games. Plan for a safe ride home.",
+        "safetyTip3": "💧 <strong>Stay Hydrated:</strong> Alternate alcoholic drinks with water to stay hydrated.",
+        "safetyTip4": "🍽️ <strong>Eat Before Playing:</strong> Never drink on an empty stomach.",
+        "safetyTip5": "👫 <strong>Look Out For Each Other:</strong> Always play with people you trust who will help keep you safe."
+    }
+}

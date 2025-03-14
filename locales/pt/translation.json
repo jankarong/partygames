@@ -1,0 +1,126 @@
+{
+    "nav": {
+        "games": "Jogos",
+        "feedback": "Feedback",
+        "theList": "A Lista"
+    },
+    "hero": {
+        "title": "Jogos de Festa",
+        "subtitle": "Descubra jogos divertidos e emocionantes para jogar com seus amigos e família. Jogos de festa online gratuitos para todos!"
+    },
+    "games": {
+        "players": "{{count}}+ jogadores",
+        "playNow": "Jogar Agora",
+        "magic8ball": {
+            "title": "Bola Mágica 8",
+            "description": "Faça sua própria Bola Mágica 8 para responder perguntas com um chacoalhar."
+        },
+        "truthOrDare": {
+            "title": "Verdade ou Desafio",
+            "description": "O clássico jogo de festa de verdades e desafios!"
+        },
+        "neverHaveIEver": {
+            "title": "Eu Nunca",
+            "description": "Um jogo de festa divertido e revelador que faz todos conversarem!"
+        },
+        "whoIsMostLikely": {
+            "title": "Quem é Mais Provável",
+            "description": "Descubra quem é mais provável de fazer coisas inesperadas!"
+        },
+        "wouldYouRather": {
+            "title": "Você Prefere",
+            "description": "Faça escolhas difíceis entre dois cenários interessantes!"
+        },
+        "mafia": {
+            "title": "Máfia",
+            "description": "Um emocionante jogo de dedução social onde os jogadores devem encontrar os membros da máfia entre eles!"
+        },
+        "undercover": {
+            "title": "Disfarçado",
+            "description": "Um jogo de festa de engano e dedução"
+        },
+        "guessNumber": {
+            "title": "Adivinhe Este Número",
+            "description": "Um divertido jogo de bebida para casais e grupos"
+        },
+        "charades": {
+            "title": "Mímica",
+            "description": "Atue palavras e frases neste clássico jogo de festa!"
+        },
+        "hedbanz": {
+            "title": "Hedbanz",
+            "description": "Adivinhe o que você é neste hilário jogo de adivinhação!"
+        },
+        "sexDice": {
+            "title": "Dados Sensuais",
+            "description": "Jogue os dados para uma aventura divertida e picante!"
+        },
+        "comingSoon": {
+            "title": "Em Breve",
+            "description": "Novos jogos de festa emocionantes estão a caminho! Fique atento para atualizações.",
+            "tbd": "A ser determinado",
+            "button": "Em Breve"
+        }
+    },
+    "footer": {
+        "aboutUs": {
+            "title": "Sobre Nós",
+            "content": "A Coleção de Jogos de Festa é o seu principal destino online para jogos de festa interativos gratuitos. Oferecemos uma coleção diversificada de jogos sociais envolventes, incluindo Encontre o Espião, Eu Nunca e muito mais - perfeito para reuniões virtuais, festas e eventos de team building. Junte-se a milhares de jogadores em todo o mundo para experiências de jogo inesquecíveis!"
+        },
+        "quickLinks": "Links Rápidos",
+        "copyright": "© 2025 Jogos de Festa. Todos os direitos reservados."
+    },
+    "feedback": {
+        "pageTitle": "Feedback - Share Your Thoughts | Party Games Collection"
+    },
+    "theList": {
+        "pageTitle": "10 Fun Drinking Games Without Cards for Couples | Party Games Guide",
+        "mainTitle": "10 Fun Drinking Games Without Cards for Couples and Pairs 🎲",
+        "game1": {
+            "title": "🤔 1. Never Have I Ever (Perfect for Couples)",
+            "description": "Take turns saying something you've never done. If your partner has done it, they drink! A classic drinking game for couples that sparks fun conversations and reveals hidden stories."
+        },
+        "game2": {
+            "title": "🎯 2. Truth or Dare (Two-Player Edition)",
+            "description": "Choose \"truth\" (answer a personal question) or \"dare\" (complete a challenge). Refusing means taking a drink. One of the best two-player drinking games for couples who want to spice things up."
+        },
+        "game3": {
+            "title": "🔢 3. 21 (Quick and Simple)",
+            "description": "Count up from 1, saying 1 to 3 numbers per turn. The player who says \"21\" drinks. A fast-paced drinking game without cards that's perfect for pairs."
+        },
+        "game4": {
+            "title": "🧠 4. Word Association (Brainy Fun)",
+            "description": "One person says a word, and the other quickly responds with a related word. Hesitate or repeat, and you drink! A fun two-player drinking game that tests your creativity and reflexes."
+        },
+        "game5": {
+            "title": "📖 5. Story Time (For Creative Couples)",
+            "description": "Start a story with one sentence, and take turns adding to it. Can't think of a line? Take a drink! A hilarious couples drinking game that lets your imagination run wild."
+        },
+        "game6": {
+            "title": "🎵 6. Number Guessing (Simple and Fun)",
+            "description": "One person thinks of a number (e.g., 1-100). The other guesses, and wrong guesses mean drinking. An easy drinking game without cards for couples or pairs."
+        },
+        "game7": {
+            "title": "🎬 7. Finger Game (Fast-Paced Fun)",
+            "description": "Both players hold up 1-5 fingers. One calls a number, and if the total matches, they drink. A quick two-player drinking game that's perfect for keeping the energy high."
+        },
+        "game8": {
+            "title": "🎲 8. Rapid Fire Questions (Test Your Knowledge)",
+            "description": "One person fires quick questions at the other. Hesitation or wrong answers mean drinking. A fun drinking game for couples that's both competitive and entertaining."
+        },
+        "game9": {
+            "title": "❓ 9. Copycat (Laugh-Out-Loud Fun)",
+            "description": "One person does an action or makes a face, and the other copies it and adds a new one. Fail, and you drink! A hilarious couples drinking game that's sure to bring out the laughs."
+        },
+        "game10": {
+            "title": "🎮 10. Video Game Challenge (For Gamer Couples)",
+            "description": "Play a competitive video game. Loser takes a drink after each round. A modern twist on drinking games that's perfect for gamer couples looking for some friendly competition."
+        },
+        "safetyTitle": "Drinking Game Safety Tips",
+        "safetyTip1": "🚫 <strong>Know Your Limits:</strong> Always drink responsibly and know when to stop.",
+        "safetyTip2": "🚗 <strong>No Driving:</strong> Never drive after playing drinking games. Plan for a safe ride home.",
+        "safetyTip3": "💧 <strong>Stay Hydrated:</strong> Alternate alcoholic drinks with water to stay hydrated.",
+        "safetyTip4": "🍽️ <strong>Eat Before Playing:</strong> Never drink on an empty stomach.",
+        "safetyTip5": "👫 <strong>Look Out For Each Other:</strong> Always play with people you trust who will help keep you safe."
+    }
+}

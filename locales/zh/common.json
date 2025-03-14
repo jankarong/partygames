@@ -1,0 +1,73 @@
+{
+    "nav": {
+        "games": "游戏",
+        "feedback": "反馈",
+        "theList": "游戏列表"
+    },
+    "hero": {
+        "title": "派对游戏",
+        "subtitle": "发现有趣刺激的游戏，与朋友和家人一起玩。免费在线派对游戏，人人都能玩！"
+    },
+    "games": {
+        "playNow": "立即开玩",
+        "players": "{{count}}+ 人游戏",
+        "magic8ball": {
+            "title": "魔法8球",
+            "description": "摇一摇魔法8球，为你解答各种问题"
+        },
+        "truthOrDare": {
+            "title": "真心话大冒险",
+            "description": "经典的派对游戏，说真话或接受挑战！"
+        },
+        "neverHaveIEver": {
+            "title": "我从未",
+            "description": "有趣的派对游戏，让大家畅所欲言！"
+        },
+        "whoIsMostLikely": {
+            "title": "谁最可能",
+            "description": "看看谁最有可能做出意想不到的事情！"
+        },
+        "wouldYouRather": {
+            "title": "你愿意选择",
+            "description": "在两个有趣的场景中做出选择！"
+        },
+        "mafia": {
+            "title": "黑手党",
+            "description": "刺激的社交推理游戏，找出混在其中的黑手党成员！"
+        },
+        "undercover": {
+            "title": "卧底",
+            "description": "一个关于欺骗和推理的派对游戏"
+        },
+        "guessNumber": {
+            "title": "猜数字",
+            "description": "适合情侣和团体的有趣酒桌游戏"
+        },
+        "charades": {
+            "title": "猜词游戏",
+            "description": "在这个经典派对游戏中表演词语和短语！"
+        },
+        "hedbanz": {
+            "title": "头带问答",
+            "description": "在这个搞笑的猜谜游戏中猜出你是谁！"
+        },
+        "sexDice": {
+            "title": "情趣骰子",
+            "description": "掷骰子开启有趣刺激的冒险！"
+        },
+        "comingSoon": {
+            "title": "即将推出",
+            "description": "更多精彩派对游戏即将到来！敬请期待。",
+            "tbd": "待定",
+            "button": "即将推出"
+        }
+    },
+    "footer": {
+        "aboutUs": {
+            "title": "关于我们",
+            "content": "派对游戏集合是您的首选在线免费互动派对游戏平台。我们提供丰富多样的社交游戏，包括谁是卧底、我从未和更多精彩游戏 - 非常适合虚拟聚会、派对和团建活动。加入全球数千玩家，体验难忘的游戏时光！"
+        },
+        "quickLinks": "快速链接",
+        "copyright": "© 2025 派对游戏。保留所有权利。"
+    }
+}

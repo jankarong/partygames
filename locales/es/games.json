@@ -1,0 +1,52 @@
+{
+    "magic8ball": {
+        "title": "Bola Mágica 8",
+        "description": "Crea tu propia Bola Mágica 8 para responder preguntas con una sacudida."
+    },
+    "truthOrDare": {
+        "title": "Verdad o Reto",
+        "description": "¡El clásico juego de fiesta de verdades y retos!"
+    },
+    "neverHaveIEver": {
+        "title": "Yo Nunca",
+        "description": "¡Un juego de fiesta divertido y revelador que hace que todos hablen!"
+    },
+    "whoIsMostLikely": {
+        "title": "Quién es Más Probable",
+        "description": "¡Descubre quién es más probable que haga cosas inesperadas!"
+    },
+    "wouldYouRather": {
+        "title": "Preferirías",
+        "description": "¡Toma decisiones difíciles entre dos escenarios interesantes!"
+    },
+    "mafia": {
+        "title": "Mafia",
+        "description": "¡Un emocionante juego de deducción social donde los jugadores deben encontrar a los miembros de la mafia entre ellos!"
+    },
+    "undercover": {
+        "title": "Encubierto",
+        "description": "Un juego de fiesta de engaño y deducción"
+    },
+    "guessNumber": {
+        "title": "Adivina Este Número",
+        "description": "Un divertido juego de bebida para parejas y grupos"
+    },
+    "charades": {
+        "title": "Charadas",
+        "description": "¡Actúa palabras y frases en este clásico juego de fiesta!"
+    },
+    "hedbanz": {
+        "title": "Hedbanz",
+        "description": "¡Adivina qué eres en este hilarante juego de adivinanzas!"
+    },
+    "sexDice": {
+        "title": "Dados Sexuales",
+        "description": "¡Tira los dados para una aventura divertida y picante!"
+    },
+    "comingSoon": {
+        "title": "Próximamente",
+        "description": "¡Nuevos y emocionantes juegos de fiesta están en camino! Mantente atento para actualizaciones.",
+        "tbd": "Por determinar",
+        "button": "Próximamente"
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "magic8ball": {
+        "title": "Magic 8 Ball",
+        "description": "Make your own Magic 8 Ball to answer questions with a shake."
+    },
+    "truthOrDare": {
+        "title": "Truth or Dare",
+        "description": "The classic party game of truth and dares!"
+    },
+    "neverHaveIEver": {
+        "title": "Never Have I Ever",
+        "description": "A fun and revealing party game that gets everyone talking!"
+    },
+    "whoIsMostLikely": {
+        "title": "Who Is Most Likely",
+        "description": "Find out who's most likely to do unexpected things!"
+    },
+    "wouldYouRather": {
+        "title": "Would You Rather",
+        "description": "Make tough choices between two interesting scenarios!"
+    },
+    "mafia": {
+        "title": "Mafia",
+        "description": "A thrilling social deduction game where players must find the mafia members among them!"
+    },
+    "undercover": {
+        "title": "Undercover",
+        "description": "A party game of deception and deduction"
+    },
+    "guessNumber": {
+        "title": "Guess This Number",
+        "description": "A fun drinking game for couples and groups"
+    },
+    "charades": {
+        "title": "Charades",
+        "description": "Act out words and phrases in this classic party game!"
+    },
+    "hedbanz": {
+        "title": "Hedbanz",
+        "description": "Guess what you are in this hilarious guessing game!"
+    },
+    "sexDice": {
+        "title": "Sex Dice",
+        "description": "Roll the dice for a fun and spicy adventure!"
+    },
+    "comingSoon": {
+        "title": "Coming Soon",
+        "description": "New exciting party games are on the way! Stay tuned for updates.",
+        "tbd": "TBD",
+        "button": "Coming Soon"
+    }
+}

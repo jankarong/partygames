@@ -1,0 +1,52 @@
+{
+    "magic8ball": {
+        "title": "Magische 8-Ball",
+        "description": "Erstelle deinen eigenen Magischen 8-Ball, um Fragen mit einem Schütteln zu beantworten."
+    },
+    "truthOrDare": {
+        "title": "Wahrheit oder Pflicht",
+        "description": "Das klassische Partyspiel mit Wahrheiten und Herausforderungen!"
+    },
+    "neverHaveIEver": {
+        "title": "Ich habe noch nie",
+        "description": "Ein lustiges und enthüllendes Partyspiel, das alle zum Reden bringt!"
+    },
+    "whoIsMostLikely": {
+        "title": "Wer ist am ehesten",
+        "description": "Finde heraus, wer am ehesten unerwartete Dinge tun würde!"
+    },
+    "wouldYouRather": {
+        "title": "Würdest du lieber",
+        "description": "Triff schwierige Entscheidungen zwischen zwei interessanten Szenarien!"
+    },
+    "mafia": {
+        "title": "Mafia",
+        "description": "Ein spannendes soziales Deduktionsspiel, bei dem Spieler die Mafiamitglieder unter ihnen finden müssen!"
+    },
+    "undercover": {
+        "title": "Undercover",
+        "description": "Ein Partyspiel mit Täuschung und Deduktion"
+    },
+    "guessNumber": {
+        "title": "Rate diese Zahl",
+        "description": "Ein lustiges Trinkspiel für Paare und Gruppen"
+    },
+    "charades": {
+        "title": "Scharade",
+        "description": "Stelle Wörter und Sätze in diesem klassischen Partyspiel dar!"
+    },
+    "hedbanz": {
+        "title": "Hedbanz",
+        "description": "Rate, was du bist, in diesem urkomischen Ratespiel!"
+    },
+    "sexDice": {
+        "title": "Sex-Würfel",
+        "description": "Würfle für ein lustiges und pikantes Abenteuer!"
+    },
+    "comingSoon": {
+        "title": "Demnächst",
+        "description": "Neue aufregende Partyspiele sind auf dem Weg! Bleib dran für Updates.",
+        "tbd": "Wird noch festgelegt",
+        "button": "Demnächst"
+    }
+}

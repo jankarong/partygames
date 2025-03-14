@@ -1,0 +1,52 @@
+{
+    "magic8ball": {
+        "title": "Boule Magique 8",
+        "description": "Créez votre propre Boule Magique 8 pour répondre aux questions avec une secousse."
+    },
+    "truthOrDare": {
+        "title": "Action ou Vérité",
+        "description": "Le jeu de soirée classique d'actions et de vérités!"
+    },
+    "neverHaveIEver": {
+        "title": "Je n'ai Jamais",
+        "description": "Un jeu de soirée amusant et révélateur qui fait parler tout le monde!"
+    },
+    "whoIsMostLikely": {
+        "title": "Qui est le Plus Susceptible",
+        "description": "Découvrez qui est le plus susceptible de faire des choses inattendues!"
+    },
+    "wouldYouRather": {
+        "title": "Préférerais-tu",
+        "description": "Faites des choix difficiles entre deux scénarios intéressants!"
+    },
+    "mafia": {
+        "title": "Mafia",
+        "description": "Un jeu passionnant de déduction sociale où les joueurs doivent trouver les membres de la mafia parmi eux!"
+    },
+    "undercover": {
+        "title": "Agent Secret",
+        "description": "Un jeu de soirée de tromperie et de déduction"
+    },
+    "guessNumber": {
+        "title": "Devine ce Nombre",
+        "description": "Un jeu à boire amusant pour les couples et les groupes"
+    },
+    "charades": {
+        "title": "Charades",
+        "description": "Mimez des mots et des phrases dans ce jeu de soirée classique!"
+    },
+    "hedbanz": {
+        "title": "Hedbanz",
+        "description": "Devinez ce que vous êtes dans ce jeu de devinettes hilarant!"
+    },
+    "sexDice": {
+        "title": "Dés Coquins",
+        "description": "Lancez les dés pour une aventure amusante et épicée!"
+    },
+    "comingSoon": {
+        "title": "Bientôt Disponible",
+        "description": "De nouveaux jeux de soirée passionnants sont en route! Restez à l'écoute pour les mises à jour.",
+        "tbd": "À déterminer",
+        "button": "Bientôt Disponible"
+    }
+}

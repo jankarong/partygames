@@ -1,0 +1,15 @@
+{
+    "nav": {
+        "games": "Jogos",
+        "feedback": "Feedback",
+        "theList": "A Lista"
+    },
+    "hero": {
+        "title": "Jogos de Festa",
+        "subtitle": "Descubra jogos divertidos e emocionantes para jogar com seus amigos e família. Jogos de festa online gratuitos para todos!"
+    },
+    "games": {
+        "players": "{{count}}+ jogadores",
+        "playNow": "Jogar Agora"
+    }
+}
