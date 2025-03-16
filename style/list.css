@@ -122,6 +122,32 @@
     font-size: 0.9rem;
 }
 
+/* View All Button Styles */
+.view-all-btn {
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.view-all-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.view-all-btn i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.view-all-btn:hover i {
+    transform: translateX(5px);
+}
+
 @media (max-width: 768px) {
     .hero-title {
         padding: 2rem 1.5rem;
