@@ -4,385 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Party Games Collection - Fun Interactive Games for Friends & Family</title>
+    <title>Party Games Collection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
 
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="🎮 Play FREE party games online! Find the Spy - an exciting social deduction game for 4-12 players. Perfect for virtual gatherings, parties, and team building. No download required, play instantly in your browser!">
-    <meta name="keywords"
-        content="party games, social games, find the spy, group games, family games, interactive games">
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
 
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Party Games Collection - Fun Interactive Games">
-    <meta property="og:description"
-        content="Play exciting party games with friends and family. Perfect for gatherings and social events.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.bestpartygames.net/">
-    <meta property="og:image" content="https://www.bestpartygames.net/image/partyGameLogo.png">
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="./style/main.css" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="image/partyGameLogo.png">
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="image/partyGameLogo.png" alt="Party Games Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html" data-i18n="nav.games">Games</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./feedback.html" data-i18n="nav.feedback">Feedback</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./TheList.html" data-i18n="nav.theList">The List</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
-                            data-bs-toggle="dropdown">
-                            <i class="fas fa-globe"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="zh">中文</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="pt">Português</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="ko">한국어</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="it">Italiano</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-4" data-i18n="hero.title">Party Games</h1>
-            <p class="lead mb-0" data-i18n="hero.subtitle">Discover fun and exciting games to play with your friends and
-                family. Free online party
-                games for everyone!</p>
-        </div>
-    </section>
-
-    <!-- Games Section -->
-    <section class="games-section">
-        <div class="container">
-            <div class="row g-4">
-
-                <!-- Magic 8 ball-->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/magic8ball/magic8ball.svg" class="card-img-top" alt="Magic 8 Ball">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.magic8ball.title">Magic 8 Ball</h5>
-                            <p class="card-text" data-i18n="games.magic8ball.description">Make your own Magic 8 Ball to
-                                answer questions with a shake.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 1}'>1+ players</span></small>
-                                <a href="/games/magic8ball/magic8ball.html" class="btn btn-primary"
-                                    data-i18n="games.playNow">Play Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Truth or Dare -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/TruthorDare/TruthorDareLogo.png" class="card-img-top" alt="Truth or Dare">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.truthOrDare.title">Truth or Dare</h5>
-                            <p class="card-text" data-i18n="games.truthOrDare.description">The classic party game of
-                                truth and dares!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 2}'>2+ players</span></small>
-                                <a href="/games/TruthorDare/TruthOrDare.html" class="btn btn-primary"
-                                    data-i18n="games.playNow">Play Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Never Have I Ever -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/NeverHaveIEver/NeverHaveIEverLogo.png" class="card-img-top"
-                                alt="Never Have I Ever">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.neverHaveIEver.title">Never Have I Ever</h5>
-                            <p class="card-text" data-i18n="games.neverHaveIEver.description">A fun and revealing party
-                                game that gets everyone talking!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 3}'>3+ players</span></small>
-                                <a href="/games/NeverHaveIEver/NeverHaveIEver.html" class="btn btn-primary"
-                                    data-i18n="games.playNow">Play Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Who Is Most Likely -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/WhoIsMostLikely/MostLikelyToLogo.png" class="card-img-top"
-                                alt="Who Is Most Likely">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.whoIsMostLikely.title">Who Is Most Likely</h5>
-                            <p class="card-text" data-i18n="games.whoIsMostLikely.description">Find out who's most
-                                likely to do unexpected things!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 3}'>3+ players</span></small>
-                                <a href="./games/WhoIsMostLikely/WhoIsMostLikely.html" class="btn btn-primary"
-                                    data-i18n="games.playNow">Play Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Would You Rather -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/WouldYouRather/WouldYouRatherLogo.png" class="card-img-top"
-                                alt="Would You Rather">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.wouldYouRather.title">Would You Rather</h5>
-                            <p class="card-text" data-i18n="games.wouldYouRather.description">Make tough choices between
-                                two interesting scenarios!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 2}'>2+ players</span></small>
-                                <a href="/games/WouldYouRather/WouldYouRather.html" class="btn btn-primary"
-                                    data-i18n="games.playNow">Play Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mafia -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/mafia/mafialogo.png" class="card-img-top" alt="Mafia">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.mafia.title">Mafia</h5>
-                            <p class="card-text" data-i18n="games.mafia.description">A thrilling social deduction game
-                                where players must find the mafia members among them!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 6}'>6-12 players</span></small>
-                                <a href="/games/mafia/mafia.html" class="btn btn-primary" data-i18n="games.playNow">Play
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Undercover -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/undercover/undercover.png" class="card-img-top" alt="Undercover Game">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.undercover.title">Undercover</h5>
-                            <p class="card-text" data-i18n="games.undercover.description">A party game of deception and
-                                deduction</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 4}'>4-12 players</span></small>
-                                <a href="/games/undercover/undercover.html" class="btn btn-primary"
-                                    data-i18n="games.playNow">Play Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Guess This Number -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/numberguess/numberguessLogo.png" class="card-img-top"
-                                alt="Guess This Number">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.guessNumber.title">Guess This Number</h5>
-                            <p class="card-text" data-i18n="games.guessNumber.description">A fun drinking game for
-                                couples and groups</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 2}'>2+ players</span></small>
-                                <a href="/games/numberguess/numberguess.html" class="btn btn-primary"
-                                    data-i18n="games.playNow">Play Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Charades -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/charades/CharadesLogo.png" class="card-img-top" alt="Charades">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.charades.title">Charades</h5>
-                            <p class="card-text" data-i18n="games.charades.description">Act out words and phrases in
-                                this classic party game!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 4}'>4+ players</span></small>
-                                <a href="/games/charades/charades.html" class="btn btn-primary"
-                                    data-i18n="games.playNow">Play Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hedbanz -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/hedbanzgame/hedbanz.png" class="card-img-top" alt="Hedbanz">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.hedbanz.title">Hedbanz</h5>
-                            <p class="card-text" data-i18n="games.hedbanz.description">Guess what you are in this
-                                hilarious guessing game!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 2}'>2+ players</span></small>
-                                <a href="/games/hedbanzgame/hedbanzgame.html" class="btn btn-primary"
-                                    data-i18n="games.playNow">Play Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sex Dice -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper">
-                            <img src="./games/sexdice/sexdicelogo.png" class="card-img-top" alt="Sex Dice">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.sexDice.title">Sex Dice</h5>
-                            <p class="card-text" data-i18n="games.sexDice.description">Roll the dice for a fun and spicy
-                                adventure!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><span data-i18n="games.players"
-                                        data-i18n-options='{"count": 2}'>2+ players</span></small>
-                                <a href="/games/sexdice/sexdice.html" class="btn btn-primary"
-                                    data-i18n="games.playNow">Play Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Coming Soon -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card game-card shadow-sm">
-                        <div class="card-img-wrapper"
-                            style="background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; height: 200px;">
-                            <i class="fas fa-hourglass-half fa-5x text-secondary"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="games.comingSoon.title">Coming Soon</h5>
-                            <p class="card-text" data-i18n="games.comingSoon.description">New exciting party games are
-                                on the way! Stay tuned for updates.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted" data-i18n="games.comingSoon.tbd">TBD</small>
-                                <button class="btn btn-secondary" disabled data-i18n="games.comingSoon.button">Coming
-                                    Soon</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer mt-5 bg-dark text-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <h2 class="h4 mb-4" data-i18n="footer.aboutUs.title">About Us</h2>
-                    <p data-i18n="footer.aboutUs.content">Party Games Collection is your premier online destination for
-                        free, interactive party games. We
-                        offer a diverse collection of engaging social games including Find the Spy, Never Have I Ever,
-                        and more - perfect for virtual gatherings, parties, and team building events. Join thousands of
-                        players worldwide for unforgettable gaming experiences!</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <h2 class="h4 mb-4" data-i18n="footer.quickLinks">Quick Links</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-light text-decoration-none" data-i18n="nav.games">Games</a>
-                        </li>
-                        <li><a href="./feedback.html" class="text-light text-decoration-none"
-                                data-i18n="nav.feedback">Feedback</a></li>
-                        <li><a href="./TheList.html" class="text-light text-decoration-none" data-i18n="nav.theList">The
-                                List</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-12 text-center">
-                    <p class="text-light mb-0" data-i18n="footer.copyright">&copy; 2025 Party Games. All rights
-                        reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery (required for jquery-i18next) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- i18next -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.10/i18next.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/1.3.1/i18nextHttpBackend.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js"></script>
-    <script src="./js/i18n.js"></script>
+    <h1>🎉 Welcome to Party Games Collection</h1>
+    <p>Discover fun and exciting games to play with your friends and family. Free online party games for everyone!</p>
+    <p><a href="https://www.bestpartygames.net" class="button">👉 Visit our website</a></p>
 </body>
 
 </html>
