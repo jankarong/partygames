@@ -1,0 +1,644 @@
+/* Beer Number Game Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.game-container {
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    border: none;
+}
+
+/* Beer Mug Styles */
+.beer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    position: relative;
+}
+
+.beer-mug {
+    position: relative;
+    width: 150px;
+    height: 220px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.beer-mug:hover {
+    transform: scale(1.05);
+}
+
+.beer-handle {
+    position: absolute;
+    right: -30px;
+    top: 60px;
+    width: 30px;
+    height: 80px;
+    background-color: #1a2b47;
+    /* Dark navy blue */
+    border: none;
+    border-radius: 0 15px 15px 0;
+    z-index: 2;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.beer-glass {
+    position: relative;
+    width: 150px;
+    height: 220px;
+    background-color: rgba(255, 250, 240, 0.8);
+    /* Light cream color */
+    border: 3px solid #1a2b47;
+    /* Dark navy blue border */
+    border-radius: 10px 10px 20px 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.beer-foam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-color: #fff5e6;
+    /* Cream color for foam */
+    border-radius: 7px 7px 0 0;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.beer-foam::before,
+.beer-foam::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    width: 20px;
+    height: 10px;
+    background-color: #fff5e6;
+    border-radius: 50%;
+}
+
+.beer-foam::before {
+    left: 30px;
+}
+
+.beer-foam::after {
+    right: 30px;
+}
+
+.beer-liquid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 190px;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.beer-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #ff4d4d;
+    /* Bright red color like in the image */
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 10px 10px;
+    transition: height 0.5s ease-in-out;
+    border-radius: 0 0 17px 17px;
+    box-shadow: 0 -5px 15px rgba(255, 77, 77, 0.3);
+}
+
+/* Bubbles animation */
+.bubbling .beer-fill::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: bubble 2s infinite ease-in;
+    left: 20%;
+    bottom: 10px;
+}
+
+.bubbling .beer-fill::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: bubble 1.5s infinite ease-in;
+    animation-delay: 0.5s;
+    left: 60%;
+    bottom: 15px;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+/* Game Controls */
+.game-controls {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#guessInput {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border: 2px solid #1a2b47;
+    /* Dark navy blue */
+    border-radius: 10px;
+    background-color: #fff5e6;
+    /* Light cream color */
+    color: #1a2b47;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+#guessInput:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 77, 77, 0.25);
+    border-color: #ff4d4d;
+    /* Red color */
+}
+
+#submitGuess {
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    /* Red color */
+    border-color: #ff4d4d;
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Comic Sans MS', sans-serif;
+    transition: all 0.2s ease;
+}
+
+#submitGuess:hover {
+    background-color: #ff3333;
+    border-color: #ff3333;
+    transform: scale(1.05);
+}
+
+/* Message Styles */
+#message {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 15px;
+    font-family: 'Comic Sans MS', sans-serif;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+#message.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 5px solid #28a745;
+}
+
+#message.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-left: 5px solid #ffc107;
+}
+
+#message.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 5px solid #dc3545;
+}
+
+/* Guess History */
+.guess-history {
+    background-color: #fff5e6;
+    /* Light cream color */
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border: 2px dashed #1a2b47;
+    /* Dark navy blue */
+}
+
+.guess-history-title {
+    font-size: 1.1rem;
+    color: #1a2b47;
+    /* Dark navy blue */
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.history-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.history-item {
+    background-color: #1a2b47;
+    /* Dark navy blue */
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #fff;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.history-item:hover {
+    background-color: #ff4d4d;
+    /* Red color */
+    transform: translateY(-3px) rotate(3deg);
+}
+
+/* Rules List */
+.rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rules-list li {
+    position: relative;
+    padding: 10px 10px 10px 40px;
+    margin-bottom: 12px;
+    color: #1a2b47;
+    /* Dark navy blue */
+    line-height: 1.6;
+    background-color: #fff5e6;
+    /* Light cream color */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-family: 'Comic Sans MS', sans-serif;
+    transition: transform 0.2s ease;
+}
+
+.rules-list li:hover {
+    transform: translateX(5px);
+}
+
+.rules-list li i,
+.rules-list li::before {
+    position: absolute;
+    left: 10px;
+    color: #ff4d4d;
+    /* Red color */
+    font-size: 1.3rem;
+}
+
+/* FAQ Section Styling */
+.faq-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background-color: #fff5e6;
+    /* Light cream color */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item h3 {
+    color: #1a2b47;
+    /* Dark navy blue */
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.faq-item p {
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.card-header {
+    background-color: #1a2b47 !important;
+    /* Dark navy blue */
+    color: #fff !important;
+    font-family: 'Comic Sans MS', sans-serif;
+    padding: 15px 20px;
+    border: none;
+}
+
+.card-body {
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Add some cute animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.logo-container {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.game-logo {
+    width: 120px;
+    height: auto;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.game-logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.game-header h1 {
+    animation: float 3s ease-in-out infinite;
+    color: #1a2b47;
+    /* Dark navy blue */
+    font-family: 'Comic Sans MS', sans-serif;
+    margin-top: 10px;
+}
+
+.lead {
+    color: #ff4d4d;
+    /* Red color */
+    font-family: 'Comic Sans MS', sans-serif;
+    font-weight: bold;
+}
+
+/* Cute Bubbles */
+.cute-bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: -20px;
+    left: 0;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: float-bubble 6s infinite ease-in-out;
+}
+
+.bubble-1 {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.bubble-2 {
+    width: 15px;
+    height: 15px;
+    left: 40%;
+    animation-delay: 1.5s;
+}
+
+.bubble-3 {
+    width: 25px;
+    height: 25px;
+    left: 60%;
+    animation-delay: 3s;
+}
+
+.bubble-4 {
+    width: 18px;
+    height: 18px;
+    left: 80%;
+    animation-delay: 4.5s;
+}
+
+@keyframes float-bubble {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+/* Beer Face */
+.beer-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.beer-mug:hover .beer-face {
+    opacity: 1;
+}
+
+.beer-eyes {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.beer-eye {
+    width: 12px;
+    height: 12px;
+    background-color: #1a2b47;
+    border-radius: 50%;
+    position: relative;
+}
+
+.beer-eye::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+}
+
+.beer-mouth {
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    border-bottom: 3px solid #1a2b47;
+    border-radius: 0 0 15px 15px;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .beer-mug {
+        width: 120px;
+        height: 180px;
+    }
+
+    .beer-handle {
+        right: -25px;
+        top: 50px;
+        width: 25px;
+        height: 60px;
+    }
+
+    .beer-glass {
+        width: 120px;
+        height: 180px;
+    }
+
+    .beer-liquid {
+        height: 150px;
+    }
+
+    .beer-foam {
+        height: 25px;
+    }
+
+    .beer-container {
+        height: 250px;
+    }
+
+    .beer-eyes {
+        top: 70px;
+        gap: 25px;
+    }
+
+    .beer-mouth {
+        top: 90px;
+        width: 25px;
+    }
+
+    .game-logo {
+        width: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .beer-mug {
+        width: 100px;
+        height: 150px;
+    }
+
+    .beer-handle {
+        right: -20px;
+        top: 40px;
+        width: 20px;
+        height: 50px;
+    }
+
+    .beer-glass {
+        width: 100px;
+        height: 150px;
+    }
+
+    .beer-liquid {
+        height: 130px;
+    }
+
+    .beer-foam {
+        height: 20px;
+    }
+
+    .beer-container {
+        height: 200px;
+    }
+
+    .game-controls {
+        padding: 0 10px;
+    }
+
+    .beer-eyes {
+        top: 60px;
+        gap: 20px;
+    }
+
+    .beer-eye {
+        width: 10px;
+        height: 10px;
+    }
+
+    .beer-mouth {
+        top: 75px;
+        width: 20px;
+        height: 10px;
+    }
+
+    .game-logo {
+        width: 80px;
+    }
+
+    .game-header h1 {
+        font-size: 1.8rem;
+    }
+}

@@ -31,6 +31,10 @@
         "title": "Guess This Number",
         "description": "A fun drinking game for couples and groups"
     },
+    "beerNumber": {
+        "title": "Beer Number",
+        "description": "Fill your beer mug by guessing the right number!"
+    },
     "charades": {
         "title": "Charades",
         "description": "Act out words and phrases in this classic party game!"
