@@ -14,7 +14,7 @@ const gameData = {
             "If you were invisible for a day, what would you do?",
             "What's your favorite movie quote?",
             "What's the most boring thing you've ever done?",
-            
+
             // Emotional and Deep
             "Who did you have a crush on?",
             "What's your most memorable romantic experience?",
@@ -117,6 +117,7 @@ const gameData = {
 
 let currentChoice = null;
 let currentQuestion = null;
+let questionCount = 0;
 
 // Select truth or dare
 function selectChoice(choice) {
@@ -127,10 +128,10 @@ function selectChoice(choice) {
     const selectedType = document.getElementById('selectedType');
 
     currentChoice = choice;
-    
+
     // 隐藏选择按钮
     choiceButtons.style.display = 'none';
-    
+
     // 显示选择的类型
     selectedType.innerHTML = `Playing: <span class="${choice}-text">${choice.toUpperCase()}</span>`;
     selectedType.style.display = 'block';
@@ -151,7 +152,8 @@ function selectChoice(choice) {
 
 function nextQuestion() {
     const questionText = document.getElementById('questionText');
-    
+    questionCount++;
+
     // 直接显示当前选择类型的下一个问题
     if (currentChoice === 'truth') {
         currentQuestion = getRandomQuestion('truth');
@@ -159,6 +161,13 @@ function nextQuestion() {
     } else {
         currentQuestion = getRandomQuestion('dare');
         questionText.innerHTML = `<span style="color: var(--primary-red)">Dare:</span> ${currentQuestion}`;
+    }
+
+    // Show game recommendations after 5 questions
+    if (questionCount === 5 && window.GameNavigationAPI) {
+        setTimeout(() => {
+            window.GameNavigationAPI.showRecommendations();
+        }, 2000);
     }
 }
 
@@ -171,6 +180,7 @@ function resetGame() {
 
     // 重置所有状态
     currentChoice = null;
+    questionCount = 0;
     questionText.innerHTML = '👇 Pick Your Choice! 👇';
     nextButton.style.display = 'none';
     resetButton.style.display = 'none';
