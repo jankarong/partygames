@@ -79,6 +79,7 @@ class GameNavigation {
             quickBar.id = 'quickAccessBar';
             quickBar.innerHTML = `
                 <button id="quick-access-toggle"><i class="fas fa-layer-group"></i></button>
+                <a href="/index.html" class="quick-game-btn home-btn"><i class="fas fa-home"></i> Home</a>
                 <span id="try-text" style="color: rgba(255,255,255,0.7); font-size: 12px;">Try:</span>
                 ${popularGames.map(game => `
                     <a href="${game.url}" class="quick-game-btn">${game.name}</a>

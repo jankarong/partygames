@@ -247,6 +247,8 @@ h1 {
     animation: bounce 0.8s ease;
 }
 
+
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .magic-ball {
@@ -263,6 +265,7 @@ h1 {
     .answer {
         font-size: 14px;
     }
+
 }
 
 @media (min-width: 769px) {

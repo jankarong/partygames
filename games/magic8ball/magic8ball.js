@@ -46,18 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 </div>
                 <div class="modal-footer bg-light">
-                    <div class="w-100 d-flex justify-content-between align-items-center">
-                        <div>
-                            <button class="btn btn-outline-danger btn-sm" id="clearCustomAnswers">
-                                <i class="fas fa-trash"></i> Clear All
-                            </button>
-                            <span class="badge bg-primary ms-2" id="customAnswerCount">0 answers</span>
+                    <div class="w-100">
+                        <!-- Counter Row -->
+                        <div class="d-flex justify-content-center mb-3">
+                            <span class="badge bg-primary fs-6 px-3 py-2" id="customAnswerCount">0 answers</span>
                         </div>
-                        <div>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary" id="saveCustomAnswers">
-                                <i class="fas fa-check"></i> Apply Changes
-                            </button>
+                        
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-outline-danger" id="clearCustomAnswers">Clear All</button>
+                            <button type="button" class="btn btn-success" id="saveCustomAnswers">Confirm</button>
                         </div>
                     </div>
                 </div>
@@ -71,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Show modal when customize button is clicked
     customizeButton.addEventListener('click', () => modal.show());
+
 
     // Answers for different versions
     const answers = {
@@ -236,6 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('customAnswerCount').textContent =
                 `${customAnswers.length} answer${customAnswers.length !== 1 ? 's' : ''}`;
         });
+
     }
 
     // Update custom answers list
@@ -399,6 +398,96 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 1;
         }
         
+        /* Modal Footer Button Styles */
+        #customAnswersModal .modal-footer {
+            border-top: 2px solid #80deea;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 248, 255, 0.9) 100%);
+            padding: 1.5rem;
+        }
+        
+        #customAnswersModal .btn {
+            border-radius: 25px;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+        }
+        
+        #customAnswersModal .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+        }
+        
+        #customAnswersModal .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+        }
+        
+        #customAnswersModal .btn-outline-danger {
+            border: 2px solid #dc3545;
+            color: #dc3545;
+            background: white;
+        }
+        
+        #customAnswersModal .btn-outline-danger:hover {
+            background: #dc3545;
+            color: white;
+            border-color: #dc3545;
+        }
+        
+        
+        #customAnswersModal .btn-success {
+            background: #198754;
+            border: 2px solid #198754;
+            color: white;
+        }
+        
+        #customAnswersModal .btn-success:hover {
+            background: #157347;
+            border-color: #157347;
+        }
+        
+        #customAnswersModal .badge {
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(87, 88, 187, 0.3);
+        }
+        
+        /* Button group styling */
+        #customAnswersModal .btn-group .btn {
+            border-radius: 0;
+        }
+        
+        #customAnswersModal .btn-group .btn:first-child {
+            border-radius: 25px 0 0 25px;
+        }
+        
+        #customAnswersModal .btn-group .btn:last-child {
+            border-radius: 0 25px 25px 0;
+        }
+        
+        /* Responsive button layout */
+        @media (max-width: 576px) {
+            #customAnswersModal .modal-footer .d-flex {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            #customAnswersModal .btn-group {
+                width: 100%;
+                margin: 0 !important;
+            }
+            
+            #customAnswersModal .btn-group .btn {
+                flex: 1;
+            }
+            
+            #clearCustomAnswers {
+                width: 100%;
+            }
+        }
+        
         /* 改进历史记录中答案的样式 */
         .answer-badge {
             background-color: #5758BB;
@@ -532,7 +621,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize with the number 8
     answerElement.textContent = '8';
 
-    // 添加保存按钮的事件监听器
+    // 添加保存按钮的事件监听器 (Modal中的按钮)
     document.getElementById('saveCustomAnswers').addEventListener('click', () => {
         if (customAnswers.length > 0) {
             versionSelect.value = 'custom';
@@ -558,4 +647,5 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Please add at least one custom answer before applying changes.');
         }
     });
+
 });

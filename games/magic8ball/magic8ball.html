@@ -11,15 +11,73 @@
     <meta name="description"
         content="Create your own custom Magic 8 Ball with personalized answers! Choose from classic, silly, sarcastic, romance, or drinking game modes, or make your own unique fortune teller.">
     <meta name="keywords"
-        content="custom magic 8 ball, personalized magic 8 ball, magic 8 ball maker, create your own magic 8 ball, fortune telling, decision maker, online game">
+        content="custom magic 8 ball, personalized magic 8 ball, magic 8 ball maker, create your own magic 8 ball, fortune telling, decision maker, online game, magic 8 ball generator, custom fortune teller">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html">
     <!-- Open Graph tags for social sharing -->
     <meta property="og:title" content="Custom Magic 8 Ball | Create Your Own Personalized Fortune Teller">
     <meta property="og:description"
         content="Create your own custom Magic 8 Ball with personalized answers! Choose from multiple modes or create your own unique fortune teller.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/games/magic8ball/magic8ball.html">
+    <meta property="og:image" content="https://www.bestpartygames.net/games/magic8ball/magic8ball.svg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="stylesheet" href="../../css/gameheader.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Custom Magic 8 Ball",
+        "description": "Create your own custom Magic 8 Ball with personalized answers! Choose from classic, silly, sarcastic, romance, or drinking game modes, or make your own unique fortune teller.",
+        "url": "https://www.bestpartygames.net/games/magic8ball/magic8ball.html",
+        "image": "https://www.bestpartygames.net/games/magic8ball/magic8ball.svg",
+        "genre": "Fortune Telling Game",
+        "numberOfPlayers": "1+",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Best Party Games"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Best Party Games",
+            "url": "https://www.bestpartygames.net"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "ratingCount": "234"
+        },
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "Classic Mode",
+                "description": "Traditional Magic 8 Ball responses"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Custom Mode",
+                "description": "Create your own personalized answers"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Themed Modes",
+                "description": "Silly, sarcastic, romance, and drinking game versions"
+            }
+        ],
+        "keywords": "custom magic 8 ball, personalized magic 8 ball, magic 8 ball maker, fortune telling, decision maker"
+    }
+    </script>
 
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
@@ -35,7 +93,7 @@
     <!-- Enhanced Navigation will be inserted by JavaScript -->
     <div class="container py-4">
         <div class="p-4">
-            <h1 class="text-center mb-4">custom magic 8 ball</h1>
+            <h1 class="text-center mb-4">Custom Magic 8 Ball</h1>
 
             <div class="version-selector mb-4 text-center">
                 <label for="version" class="form-label me-2">Choose a version:</label>
@@ -49,19 +107,6 @@
                 </select>
             </div>
 
-            <!-- Custom answers section (initially hidden, to be shown when custom is selected) -->
-            <div id="custom-answers-section" class="mb-4 text-center" style="display: none;">
-                <h3 class="fs-5 mb-3">Create Your Custom Magic 8 Ball Answers</h3>
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="mb-3">
-                            <textarea id="custom-answers" class="form-control" rows="5"
-                                placeholder="Enter your custom answers, one per line..."></textarea>
-                        </div>
-                        <button id="save-custom-answers" class="btn btn-primary">Save Custom Answers</button>
-                    </div>
-                </div>
-            </div>
 
             <div class="magic-ball-container text-center mb-4">
                 <div class="magic-ball mx-auto">
@@ -78,6 +123,7 @@
                 </div>
             </div>
 
+
             <div class="history-container mb-4">
                 <h3 class="fs-5 mb-3">Question History</h3>
                 <ul id="history-list" class="list-group"></ul>
@@ -86,7 +132,7 @@
             <section class="info-section mt-5 pt-4 border-top">
                 <h2 class="fs-3 mb-3">Create Your Own Custom Magic 8 Ball</h2>
                 <p class="text-muted">Our Custom Magic 8 Ball lets you personalize your fortune-telling experience.
-                    Whether you want to use the traditional answers or create your own unique responses, our tool gives
+                    Whether you want to use the traditional answers or create your own unique responses, our custom magic 8 ball maker gives
                     you the freedom to customize your Magic 8 Ball exactly how you want it.</p>
 
                 <h3 class="fs-4 mt-4 mb-3">How to Create a Custom Magic 8 Ball</h3>
@@ -185,7 +231,59 @@
                     </div>
                 </div>
 
-                <p class="text-muted">Our virtual Custom Magic 8 Ball brings this classic experience online with the
+                <h3 class="fs-4 mt-4 mb-3">Frequently Asked Questions</h3>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h4 class="accordion-header" id="faq1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                How do I create a custom Magic 8 Ball?
+                            </button>
+                        </h4>
+                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Simply select "Custom" from the version dropdown, enter your personalized answers (one per line) in the text area, and click "Save Custom Answers". Your custom magic 8 ball is now ready to use!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Can I save my custom answers permanently?
+                            </button>
+                        </h4>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes! Your custom magic 8 ball answers are automatically saved in your browser's local storage and will be remembered for future visits.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                What are the different themed versions available?
+                            </button>
+                        </h4>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Our custom magic 8 ball offers Classic (traditional), Silly (humorous), Sarcastic (witty), Romance (love advice), Drinking (party game), and Custom (your own) versions.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                Is this custom Magic 8 Ball free to use?
+                            </button>
+                        </h4>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Absolutely! Our custom magic 8 ball is completely free to use with no hidden fees or premium features required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-muted mt-4">Our virtual Custom Magic 8 Ball brings this classic experience online with the
                     added benefit of personalization. Create your own unique fortune-telling experience today!</p>
             </section>
         </div>

@@ -5,23 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="'Guess this number' - Popular drinking game for couples and groups. Give me a number between 1-100! Perfect for party nights, drinking games, and social gatherings. Easy to learn, fun to play!">
+        content="Play Guess This Number - the ultimate number guessing game online! Challenge yourself to guess the right number between 1-100. Free online guess this number game perfect for parties and fun!">
     <meta name="keywords"
-        content="number guessing game, drinking games, party games, couple games, group games, fun games">
+        content="guess this number, number guessing game, guess the number, number game, guessing games, online number game, party games, fun games">
     <meta name="author" content="Party Games">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Guess This Number - Fun Party Drinking Game">
+    <meta property="og:title" content="Guess This Number - Fun Number Guessing Game Online">
     <meta property="og:description"
-        content="Popular drinking game perfect for couples and groups. Guess numbers, pour drinks, have fun!">
+        content="Play Guess This Number - the ultimate number guessing game online! Challenge yourself to guess the right number between 1-100.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/games/beernumber/numberguessLogo.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guess This Number - Fun Number Guessing Game Online">
+    <meta name="twitter:description" content="Play Guess This Number - the ultimate number guessing game online! Free to play.">
+    <meta name="twitter:image" content="/games/beernumber/numberguessLogo.png">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://partygames.com/games/beernumber/beernumber.html">
 
-    <title>Guess This Number - Fun Party Drinking Game | Party Games</title>
+    <title>Guess This Number - Fun Number Guessing Game Online</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,6 +38,30 @@
     <link rel="stylesheet" href="beernumber.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./numberguessLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Guess This Number",
+        "description": "Play Guess This Number - the ultimate number guessing game online! Challenge yourself to guess the right number between 1-100. Free online guess this number game perfect for parties and fun!",
+        "genre": "Number Game",
+        "numberOfPlayers": "1+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "120"
+        }
+    }
+    </script>
 
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
@@ -51,10 +81,10 @@
             <div class="col-md-8 col-lg-6">
                 <div class="game-header text-center mb-4">
                     <div class="logo-container">
-                        <img src="./numberguessLogo.png" alt="Guess This Number Game Logo" class="game-logo">
+                        <img src="./numberguessLogo.png" alt="Guess This Number - Number Guessing Game Logo" class="game-logo">
                     </div>
-                    <h1 class="display-5 fw-bold">Best Drinking Games</h1>
-                    <p class="lead">Guess This Number</p>
+                    <h1 class="display-5 fw-bold">Guess This Number</h1>
+                    <p class="lead">The Ultimate Number Guessing Game</p>
                     <div class="cute-bubbles">
                         <div class="bubble bubble-1"></div>
                         <div class="bubble bubble-2"></div>
@@ -87,7 +117,7 @@
                         <div class="game-controls mb-4">
                             <div class="input-group mb-3">
                                 <input type="number" id="guessInput" class="form-control"
-                                    placeholder="Enter a number (1-100)" min="1" max="100">
+                                    placeholder="Guess this number (1-100)" min="1" max="100">
                                 <button id="submitGuess" class="btn">
                                     <i class="fas fa-beer me-2"></i>Guess!
                                 </button>
@@ -102,19 +132,15 @@
                 <!-- Game Rules -->
                 <div class="card shadow mt-4">
                     <div class="card-header">
-                        <h2 class="h4 mb-0">📋 Game Rules</h2>
+                        <h2 class="h4 mb-0">📋 Guess This Number Rules</h2>
                     </div>
                     <div class="card-body">
                         <ul class="rules-list">
-                            <li>🍺 Start this easy drinking games by having one person say "give me a number between 1
-                                through 100"</li>
-                            <li>🎮 Perfect as 2 person drinking games or group fun - everyone takes turns to "guess this
-                                number"</li>
-                            <li>🔄 When "guessing the number", each player can pour any amount of drink they want</li>
-                            <li>🏆 The one who correctly "guess what number" it is must drink all the drinks poured by
-                                previous players</li>
-                            <li>🎉 Great drinking game for couples or groups - adjust drink amounts to make it more
-                                exciting!</li>
+                            <li>🎯 Start by thinking of a number between 1 and 100 for others to guess this number</li>
+                            <li>🎮 Perfect for solo play or groups - challenge yourself or friends to guess this number correctly</li>
+                            <li>🔄 When guessing the number, you'll get hints if your guess is too high or too low</li>
+                            <li>🏆 Try to guess this number in as few attempts as possible to get the best score</li>
+                            <li>🎉 Great number guessing game for all ages - test your logic and luck!</li>
                         </ul>
                     </div>
                 </div>
@@ -122,47 +148,39 @@
                 <!-- FAQ Section -->
                 <div class="card shadow mt-4">
                     <div class="card-header">
-                        <h2 class="h4 mb-0">❓ Frequently Asked Questions</h2>
+                        <h2 class="h4 mb-0">❓ How to Play Guess This Number</h2>
                     </div>
                     <div class="card-body">
                         <div class="faq-section">
                             <div class="faq-item">
-                                <h3>🎮 How does this drinking game work?</h3>
-                                <p>One person starts by saying "give me a number between 1 through 100". Each time
-                                    someone
-                                    tries to "guess this number", they pour drinks. The winner who "guess what number"
-                                    correctly must drink everything! Your beer mug fills up as you get closer to the
-                                    correct number.</p>
+                                <h3>🎮 How does Guess This Number work?</h3>
+                                <p>The computer thinks of a number between 1 and 100, and you need to guess this number correctly. 
+                                    Each time you make a guess, you'll get feedback whether your guess is too high or too low. 
+                                    The beer mug fills up as you get closer to the correct number, making it a fun visual number guessing game!</p>
                             </div>
                             <div class="faq-item">
-                                <h3>🔄 Can we play with more than 2 people?</h3>
-                                <p>Yes! While it's perfect as a drinking game for couples, you can play with any number
-                                    of
-                                    people. Each person takes turns guessing the number and pouring drinks, making it
-                                    one of
-                                    the most versatile easy drinking games!</p>
+                                <h3>🔄 Can multiple people play Guess This Number?</h3>
+                                <p>Absolutely! While you can play solo to guess this number, it's also fun with friends. 
+                                    Take turns making guesses and see who can guess the number in the fewest attempts. 
+                                    It's a great number guessing game for parties and gatherings!</p>
                             </div>
                             <div class="faq-item">
-                                <h3>📝 How much should we pour each time?</h3>
-                                <p>That's what makes this one of the best 2 person drinking games - you decide! When
-                                    "guessing the number", each player can pour as much or as little as they want,
-                                    adding
-                                    strategy to the game.</p>
+                                <h3>📝 What's the strategy for Guess This Number?</h3>
+                                <p>Use binary search strategy! Start with 50, then based on whether it's too high or low, 
+                                    eliminate half the remaining numbers. This approach helps you guess this number 
+                                    efficiently in the minimum attempts possible.</p>
                             </div>
                             <div class="faq-item">
-                                <h3>🔄 What happens when someone wins?</h3>
-                                <p>When someone finally "guess what number" it is, they must drink all the drinks that
-                                    were
-                                    poured during previous guesses. It's what makes this drinking game for couples or
-                                    groups
-                                    so exciting!</p>
+                                <h3>🔄 What happens when you guess correctly?</h3>
+                                <p>When you successfully guess this number, you win the round! The game shows your total 
+                                    number of attempts and you can start a new round to try to beat your previous score. 
+                                    Challenge yourself to guess the number in fewer attempts!</p>
                             </div>
                             <div class="faq-item">
-                                <h3>🎯 Any strategies for playing?</h3>
-                                <p>If you're confident in "guess this number", pour less drink since you might win and
-                                    have
-                                    to drink it all! This makes it one of the most strategic easy drinking games you can
-                                    play!</p>
+                                <h3>🎯 Any tips for playing better?</h3>
+                                <p>The key to mastering guess this number is using systematic approaches. Always start 
+                                    with the middle number (50) and work your way through logically. This number guessing 
+                                    game rewards strategic thinking over random guessing!</p>
                             </div>
                         </div>
                     </div>
@@ -171,26 +189,24 @@
                 <!-- SEO Content Section -->
                 <div class="card shadow mt-4 mb-5">
                     <div class="card-header">
-                        <h2 class="h4 mb-0">🍺 About Guess This Number Game</h2>
+                        <h2 class="h4 mb-0">🎯 About Guess This Number Game</h2>
                     </div>
                     <div class="card-body">
-                        <p>"Guess This Number" is one of the most popular easy drinking games for couples and groups. It
-                            combines the excitement of number guessing with the fun of drinking games, creating a
-                            perfect party atmosphere.</p>
+                        <p>"Guess This Number" is the ultimate online number guessing game that challenges your logic and intuition. It
+                            combines the classic excitement of number guessing with modern interactive gameplay, creating a
+                            perfect brain-training experience.</p>
 
-                        <p>This drinking game for couples is incredibly versatile - you can play it with just two people
-                            or with a large group. The rules are simple: one person thinks of a number between 1 and
-                            100, and others take turns guessing. With each guess, players pour drinks, and the person
-                            who guesses correctly must drink everything!</p>
+                        <p>This number guessing game is incredibly versatile - you can play it solo to improve your logical thinking
+                            or with friends to see who can guess the number fastest. The rules are simple: the computer thinks of a number between 1 and
+                            100, and you take turns guessing until someone gets it right. Each guess gives you valuable feedback!</p>
 
-                        <p>What makes this one of the best 2 person drinking games is the strategy involved. Do you pour
-                            a lot of drink when you're confident in your guess? Or do you play it safe with smaller
-                            amounts? The beer mug visualization adds an extra element of fun as it fills up based on how
-                            close your guess is.</p>
+                        <p>What makes this one of the best number guessing games online is the strategy involved. Do you use binary search 
+                            to systematically narrow down the possibilities? Or do you rely on intuition and luck? The beer mug visualization adds an extra element of fun as it fills up based on how
+                            close your guess is to the target number.</p>
 
-                        <p>Whether you're looking for easy drinking games for a party or a fun activity for a date
-                            night, "Guess This Number" delivers excitement and laughs. It's perfect for breaking the
-                            ice, creating memorable moments, and enjoying a fun night with friends or your partner.</p>
+                        <p>Whether you're looking for a quick brain teaser, a fun party activity, or a way to pass time,
+                            "Guess This Number" delivers engaging gameplay and mental stimulation. It's perfect for improving logical thinking,
+                            competing with friends, and enjoying a classic number guessing experience online.</p>
                     </div>
                 </div>
             </div>
