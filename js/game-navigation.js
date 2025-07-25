@@ -31,6 +31,7 @@ class GameNavigation {
     init() {
         this.createFloatingNav();
         this.createQuickAccessBar();
+        this.makeLogosClickable();
         this.bindEvents();
         this.startPulseReminder();
     }
@@ -87,6 +88,32 @@ class GameNavigation {
             `;
             document.body.appendChild(quickBar);
         }
+    }
+
+    makeLogosClickable() {
+        // Find game logos and make them clickable
+        const logos = document.querySelectorAll('.game-logo, .logo-container img, img[alt*="Logo"], img[src*="logo"], img[src*="Logo"]');
+        
+        logos.forEach(logo => {
+            if (!logo.closest('a')) { // Only if not already wrapped in a link
+                logo.style.cursor = 'pointer';
+                logo.addEventListener('click', () => {
+                    window.location.href = '/index.html';
+                });
+                
+                // Add hover effect
+                logo.addEventListener('mouseenter', () => {
+                    logo.style.opacity = '0.8';
+                    logo.style.transform = 'scale(1.05)';
+                    logo.style.transition = 'all 0.2s ease';
+                });
+                
+                logo.addEventListener('mouseleave', () => {
+                    logo.style.opacity = '1';
+                    logo.style.transform = 'scale(1)';
+                });
+            }
+        });
     }
 
     bindEvents() {
