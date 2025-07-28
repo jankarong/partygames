@@ -4,119 +4,233 @@ let gameState = {
     civilianWord: '',
     undercoverWord: '',
     eliminatedPlayers: new Set(),
-    wordPairs: [
-        // Food & Drink
-        ['Pancake', 'Crepe'],
-        ['Burger', 'Sloppy Joe'],
-        ['Soda', 'Juice'],
-        ['Taco', 'Burrito'],
-        ['Candy Bar', 'Granola Bar'],
-        ['Hot Sauce', 'Ketchup'],
-        ['Muffin', 'Cupcake'],
-        ['Nachos', 'Quesadilla'],
-        ['Milk', 'Cream'],
-        ['Toast', 'Crouton'],
-        ['Bacon', 'Ham'],
-        ['Jelly', 'Jam'],
-        ['Pretzel', 'Cracker'],
-        ['Espresso', 'Latte'],
-        ['S\'more', 'Brownie'],
-        ['Chili', 'Salsa'],
-        ['Pickle', 'Olive'],
-        ['Dumpling', 'Wonton'],
-        ['Ramen', 'Pho'],
-        ['Bagel', 'Donut'],
-
-        // Animals
-        ['Puppy', 'Bunny'],
-        ['Crow', 'Raven'],
-        ['Goldfish', 'Guppy'],
-        ['Coyote', 'Hyena'],
-        ['Peacock', 'Turkey'],
-        ['Otter', 'Beaver'],
-        ['Skunk', 'Porcupine'],
-        ['Camel', 'Llama'],
-        ['Parakeet', 'Canary'],
-        ['Crab', 'Lobster'],
-        ['Hedgehog', 'Mole'],
-        ['Goat', 'Sheep'],
-        ['Ferret', 'Weasel'],
-        ['Pigeon', 'Seagull'],
-        ['Koala', 'Sloth'],
-        ['Cheetah', 'Leopard'],
-        ['Butterfly', 'Moth'],
-        ['Gorilla', 'Chimp'],
-        ['Salamander', 'Newt'],
-        ['Bison', 'Buffalo'],
-
-        // Objects
-        ['Sock', 'Slipper'],
-        ['Mitten', 'Glove'],
-        ['Couch', 'Recliner'],
-        ['Fridge', 'Freezer'],
-        ['Comb', 'Brush'],
-        ['Umbrella', 'Hoodie'],
-        ['Laptop', 'Monitor'],
-        ['Purse', 'Fanny Pack'],
-        ['Broom', 'Mop'],
-        ['Flashlight', 'Lantern'],
-        ['Headphones', 'Earbuds'],
-        ['Tent', 'Hammock'],
-        ['Marker', 'Crayon'],
-        ['Rug', 'Mat'],
-        ['Fan', 'Heater'],
-        ['Chalk', 'Charcoal'],
-        ['Suitcase', 'Duffel'],
-        ['Scarf', 'Bandana'],
-        ['Kite', 'Balloon'],
-        ['Stapler', 'Tape'],
-
-        // Jobs & Roles
-        ['Clown', 'Magician'],
-        ['Mailman', 'Courier'],
-        ['Librarian', 'Bookseller'],
-        ['Plumber', 'Electrician'],
-        ['DJ', 'Drummer'],
-        ['Vet', 'Zookeeper'],
-        ['Waiter', 'Host'],
-        ['Photographer', 'Model'],
-        ['Referee', 'Coach'],
-        ['Pirate', 'Sailor'],
-        ['Lifeguard', 'Swimmer'],
-        ['Blogger', 'Vlogger'],
-        ['Carpenter', 'Painter'],
-        ['Cowboy', 'Rancher'],
-        ['Spy', 'Hacker'],
-
-        // Entertainment
-        ['Meme', 'GIF'],
-        ['Prank', 'Stunt'],
-        ['Sitcom', 'Sketch'],
-        ['Board Game', 'Video Game'],
-        ['TikTok', 'Reel'],
-        ['Podcast', 'Audiobook'],
-        ['Circus', 'Carnival'],
-        ['Trivia', 'Quiz'],
-        ['Concert', 'Karaoke'],
-        ['Zombie', 'Vampire'],
-        ['Flash Mob', 'Parade'],
-        ['Puppet', 'Marionette'],
-        ['Bingo', 'Lottery'],
-        ['Cosplay', 'Costume'],
-        ['Firework', 'Sparkler'],
-
-        // Nature & Weather
-        ['Puddle', 'Mud'],
-        ['Creek', 'Ditch'],
-        ['Tornado', 'Dust Devil'],
-        ['Cactus', 'Succulent'],
-        ['Rainbow', 'Sunset'],
-        ['Wave', 'Ripple'],
-        ['Icicle', 'Frost'],
-        ['Volcano', 'Geyser'],
-        ['Pebble', 'Boulder'],
-        ['Thunder', 'Echo']
-    ]
+    selectedCategories: ['Food & Drink', 'Animals', 'Objects', 'Jobs & Roles', 'Entertainment', 'Nature & Weather'],
+    wordsByCategory: {
+        'Food & Drink': [
+            ['Pizza', 'Burger'],
+            ['Coffee', 'Tea'],
+            ['Soda', 'Juice'],
+            ['Apple', 'Orange'],
+            ['Candy Bar', 'Granola Bar'],
+            ['Hot Sauce', 'Ketchup'],
+            ['Muffin', 'Cupcake'],
+            ['Bread', 'Toast'],
+            ['Milk', 'Cream'],
+            ['Ice Cream', 'Cake'],
+            ['Bacon', 'Ham'],
+            ['Soup', 'Salad'],
+            ['Cookie', 'Brownie'],
+            ['Espresso', 'Latte'],
+            ['Sandwich', 'Wrap'],
+            ['Pasta', 'Rice'],
+            ['Cheese', 'Butter'],
+            ['Ramen', 'Pho'],
+            ['Water', 'Soda'],
+            ['Chicken', 'Fish'],
+            ['Banana', 'Grape'],
+            ['Yogurt', 'Pudding'],
+            ['Donut', 'Bagel'],
+            ['Honey', 'Sugar'],
+            ['Steak', 'Pork'],
+            ['Wine', 'Beer'],
+            ['Cereal', 'Oatmeal'],
+            ['Noodles', 'Spaghetti'],
+            ['Egg', 'Omelet'],
+            ['Pickle', 'Olive']
+        ],
+        'Animals': [
+            ['Cat', 'Dog'],
+            ['Lion', 'Tiger'],  
+            ['Puppy', 'Bunny'],
+            ['Bird', 'Fish'],
+            ['Cow', 'Horse'],
+            ['Goldfish', 'Guppy'],
+            ['Peacock', 'Turkey'],
+            ['Otter', 'Beaver'],
+            ['Mouse', 'Rat'],
+            ['Duck', 'Goose'],
+            ['Bear', 'Wolf'],
+            ['Crab', 'Lobster'],
+            ['Snake', 'Lizard'],
+            ['Goat', 'Sheep'],
+            ['Eagle', 'Hawk'],
+            ['Frog', 'Toad'],
+            ['Monkey', 'Ape'],
+            ['Deer', 'Elk'],
+            ['Butterfly', 'Moth'],
+            ['Bee', 'Wasp'],
+            ['Pig', 'Boar'],
+            ['Chicken', 'Rooster'],
+            ['Elephant', 'Rhino'],
+            ['Zebra', 'Donkey'],
+            ['Whale', 'Dolphin'],
+            ['Shark', 'Ray'],
+            ['Turtle', 'Tortoise'],
+            ['Owl', 'Crow'],
+            ['Fox', 'Raccoon'],
+            ['Squirrel', 'Chipmunk']
+        ],
+        'Objects': [
+            ['Phone', 'Tablet'],
+            ['Chair', 'Sofa'],
+            ['Book', 'Magazine'],
+            ['Pen', 'Pencil'],
+            ['Car', 'Bus'],
+            ['Watch', 'Clock'],
+            ['Bag', 'Backpack'],
+            ['Cup', 'Glass'],
+            ['Key', 'Lock'],
+            ['Shoes', 'Boots'],
+            ['Hat', 'Cap'],
+            ['Camera', 'Phone'],
+            ['Lamp', 'Candle'],
+            ['Mirror', 'Window'],
+            ['Plate', 'Bowl'],
+            ['Spoon', 'Fork'],
+            ['Towel', 'Cloth'],
+            ['Pillow', 'Blanket'],
+            ['Remote', 'Controller'],
+            ['Wallet', 'Purse'],
+            ['Bicycle', 'Motorcycle'],
+            ['Computer', 'Laptop'],
+            ['TV', 'Monitor'],
+            ['Fridge', 'Freezer'],
+            ['Microwave', 'Oven'],
+            ['Brush', 'Comb'],
+            ['Knife', 'Scissors'],
+            ['Umbrella', 'Raincoat'],
+            ['Bottle', 'Can'],
+            ['Box', 'Bag']
+        ],
+        'Jobs & Roles': [
+            ['Teacher', 'Student'],
+            ['Doctor', 'Nurse'],
+            ['Chef', 'Waiter'],
+            ['Police', 'Guard'],
+            ['Driver', 'Pilot'],
+            ['Singer', 'Dancer'],
+            ['Writer', 'Editor'],
+            ['Farmer', 'Gardener'],
+            ['Artist', 'Designer'],
+            ['Judge', 'Lawyer'],
+            ['Banker', 'Cashier'],
+            ['Actor', 'Director'],
+            ['Mechanic', 'Engineer'],
+            ['Manager', 'Boss'],
+            ['Clerk', 'Secretary'],
+            ['Soldier', 'Captain'],
+            ['Dentist', 'Therapist'],
+            ['Barber', 'Stylist'],
+            ['Mailman', 'Delivery'],
+            ['Cleaner', 'Janitor'],
+            ['Librarian', 'Bookkeeper'],
+            ['Photographer', 'Model'],
+            ['Salesman', 'Customer'],
+            ['Builder', 'Architect'],
+            ['Scientist', 'Researcher'],
+            ['Musician', 'Composer'],
+            ['Journalist', 'Reporter'],
+            ['Accountant', 'Auditor'],
+            ['Translator', 'Interpreter'],
+            ['Coach', 'Trainer']
+        ],
+        'Entertainment': [
+            ['Movie', 'TV Show'],
+            ['Music', 'Song'],
+            ['Game', 'Sport'],
+            ['Party', 'Dance'],
+            ['Book', 'Story'],
+            ['Theater', 'Cinema'],
+            ['Concert', 'Show'],
+            ['Comedy', 'Drama'],
+            ['Magic', 'Trick'],
+            ['Cartoon', 'Anime'],
+            ['Festival', 'Carnival'],
+            ['Quiz', 'Contest'],
+            ['Hobby', 'Activity'],
+            ['Joke', 'Prank'],
+            ['Performance', 'Act'],
+            ['Radio', 'Podcast'],
+            ['Karaoke', 'Singing'],
+            ['Chess', 'Checkers'],
+            ['Puzzle', 'Riddle'],
+            ['Racing', 'Running'],
+            ['Swimming', 'Diving'],
+            ['Bowling', 'Golf'],
+            ['Tennis', 'Badminton'],
+            ['Basketball', 'Football'],
+            ['Baseball', 'Soccer'],
+            ['Painting', 'Drawing'],
+            ['Cooking', 'Baking'],
+            ['Reading', 'Writing'],
+            ['Shopping', 'Browsing'],
+            ['Traveling', 'Hiking']
+        ],
+        'Nature & Weather': [
+            ['Sun', 'Moon'],
+            ['Rain', 'Snow'],
+            ['Tree', 'Flower'],
+            ['Mountain', 'Hill'],
+            ['Ocean', 'Lake'],
+            ['Wind', 'Breeze'],
+            ['Cloud', 'Sky'],
+            ['River', 'Stream'],
+            ['Beach', 'Desert'],
+            ['Forest', 'Garden'],
+            ['Rock', 'Stone'],
+            ['Fire', 'Ice'],
+            ['Star', 'Planet'],
+            ['Valley', 'Canyon'],
+            ['Island', 'Coast'],
+            ['Thunder', 'Lightning'],
+            ['Fog', 'Mist'],
+            ['Sunset', 'Sunrise'],
+            ['Spring', 'Summer'],
+            ['Winter', 'Autumn'],
+            ['Grass', 'Moss'],
+            ['Leaf', 'Branch'],
+            ['Pond', 'Pool'],
+            ['Field', 'Meadow'],
+            ['Cave', 'Tunnel'],
+            ['Cliff', 'Ridge'],
+            ['Volcano', 'Earthquake'],
+            ['Tide', 'Wave'],
+            ['Sand', 'Dirt'],
+            ['Rainbow', 'Aurora']
+        ],
+        'Funny': [
+            ['Banana', 'Cucumber'],
+            ['Bath', 'Shower'],
+            ['Belly', 'Butt'],
+            ['Cake', 'Poop'],
+            ['Candy', 'Medicine'],
+            ['Condom', 'Balloon'],
+            ['Fart', 'Burp'],
+            ['Finger', 'Toe'],
+            ['Hair', 'Fur'],
+            ['Kiss', 'Slap'],
+            ['Lipstick', 'Crayon'],
+            ['Massage', 'Tickle'],
+            ['Milk', 'Sweat'],
+            ['Mustache', 'Eyebrow'],
+            ['Nipple', 'Bellybutton'],
+            ['Nose', 'Butt'],
+            ['Pajamas', 'Underwear'],
+            ['Panties', 'Shorts'],
+            ['Pillow', 'Boob'],
+            ['Soap', 'Shampoo'],
+            ['Socks', 'Gloves'],
+            ['Sweater', 'Bra'],
+            ['Toilet Paper', 'Napkin'],
+            ['Toothbrush', 'Hairbrush'],
+            ['Toothpaste', 'Cream'],
+            ['Underwear', 'Bikini'],
+            ['Lick', 'Suck'],
+            ['Tickle', 'Poke'],
+            ['Squirt', 'Spray'],
+            ['Squeeze', 'Pinch']
+        ]
+    }
 };
 
 function startGame() {
@@ -146,7 +260,29 @@ function startGame() {
         gameState.civilianWord = civilianWord;
         gameState.undercoverWord = undercoverWord;
     } else {
-        const wordPair = gameState.wordPairs[Math.floor(Math.random() * gameState.wordPairs.length)];
+        // Get selected category from dropdown
+        const selectedCategory = document.getElementById('categorySelect').value;
+
+        let availableWordPairs = [];
+
+        if (selectedCategory === 'all') {
+            // Combine all categories
+            Object.values(gameState.wordsByCategory).forEach(categoryPairs => {
+                availableWordPairs = availableWordPairs.concat(categoryPairs);
+            });
+        } else {
+            // Use specific category
+            if (gameState.wordsByCategory[selectedCategory]) {
+                availableWordPairs = gameState.wordsByCategory[selectedCategory];
+            }
+        }
+
+        if (availableWordPairs.length === 0) {
+            alert('No word pairs available for the selected category!');
+            return;
+        }
+
+        const wordPair = availableWordPairs[Math.floor(Math.random() * availableWordPairs.length)];
         gameState.civilianWord = wordPair[0];
         gameState.undercoverWord = wordPair[1];
     }
@@ -284,7 +420,7 @@ function eliminatePlayer() {
     if (remainingPlayers === 2) {
         // Hide eliminate button when game is over
         document.querySelector('button[onclick="eliminatePlayer()"]').style.display = 'none';
-        
+
         if (remainingUndercover === 0) {
             alert('Civilians win! All undercover players have been eliminated!');
         } else if (remainingUndercover === 2) {
@@ -296,23 +432,25 @@ function eliminatePlayer() {
 }
 
 function resetGame() {
-    const originalWordPairs = gameState.wordPairs;
+    const originalWordsByCategory = gameState.wordsByCategory;
     gameState = {
         players: [],
         currentPlayer: 0,
         civilianWord: '',
         undercoverWord: '',
         eliminatedPlayers: new Set(),
-        wordPairs: originalWordPairs
+        selectedCategories: ['Food & Drink', 'Animals', 'Objects', 'Jobs & Roles', 'Entertainment', 'Nature & Weather', 'Funny'],
+        wordsByCategory: originalWordsByCategory
     };
 
     // Show eliminate button again when game resets
     document.querySelector('button[onclick="eliminatePlayer()"]').style.display = 'inline-block';
-    
+
     document.getElementById('game-section').classList.add('hidden');
     document.getElementById('word-section').classList.add('hidden');
     document.getElementById('setup-section').classList.remove('hidden');
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const useCustomWordsCheckbox = document.getElementById('useCustomWords');
