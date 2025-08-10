@@ -6,6 +6,28 @@
     --darker-bg: #141414;
 }
 
+/* Override navbar background for this page only */
+.navbar {
+    background: #212529 !important;
+}
+
+.navbar-collapse {
+    background: #212529 !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #495057 !important;
+}
+
+.navbar-toggler {
+    background: #495057 !important;
+}
+
+.navbar-toggler:hover {
+    background: #6c757d !important;
+}
+
 .hidden {
     display: none;
 }
