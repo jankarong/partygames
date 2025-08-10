@@ -245,9 +245,24 @@ body {
     padding: 4rem 0;
 }
 
+.feedback-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-light);
+    line-height: 1.4;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* 响应式调整 */
 @media (max-width: 768px) {
     .game-card img {
         height: 150px;
+    }
+    
+    .feedback-subtitle {
+        font-size: 1.25rem;
+        padding: 0 1rem;
     }
 }
