@@ -15,46 +15,28 @@
         </image:image>
     </url>
 
-    <url>
-        <loc>https://www.bestpartygames.net/games/findthespy/findthespy</loc>
-        <lastmod>2025-02-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://www.bestpartygames.net/games/findthespy/image/FindthespyLogo.png</image:loc>
-            <image:title>Find the Spy</image:title>
-            <image:caption>Social deduction party game for 4-12 players</image:caption>
-        </image:image>
-    </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/games/findthespy/role-assignment</loc>
-        <lastmod>2025-02-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://www.bestpartygames.net/feedback</loc>
+        <loc>https://www.bestpartygames.net/feedback.html</loc>
         <lastmod>2025-02-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/games/mafia/mafia</loc>
+        <loc>https://www.bestpartygames.net/games/mafia/mafia.html</loc>
         <lastmod>2025-02-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
-            <image:loc>https://www.bestpartygames.net/games/mafia/image/MafiaLogo.png</image:loc>
+            <image:loc>https://www.bestpartygames.net/games/mafia/mafialogo.png</image:loc>
             <image:title>Mafia Board Games</image:title>
             <image:caption>Play thrilling mafia board games - classic social deduction party games for 6-15 players</image:caption>
         </image:image>
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/TheList</loc>
+        <loc>https://www.bestpartygames.net/TheList.html</loc>
         <lastmod>2025-02-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -133,12 +115,12 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/games/numberguess/numberguess.html</loc>
+        <loc>https://www.bestpartygames.net/games/beernumber/beernumber.html</loc>
         <lastmod>2025-02-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://www.bestpartygames.net/games/numberguess/numberguessLogo.png</image:loc>
+            <image:loc>https://www.bestpartygames.net/games/beernumber/numberguessLogo.png</image:loc>
             <image:title>Guess This Number</image:title>
             <image:caption>Play the ultimate number guessing game online! Challenge yourself to guess this number between 1-100!</image:caption>
         </image:image>
