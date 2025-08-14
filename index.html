@@ -35,6 +35,36 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="image/partyGameLogo.png">
 
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Best Party Games",
+        "url": "https://www.bestpartygames.net/",
+        "description": "Discover the best party games online! Play FREE interactive games perfect for friends, family gatherings, and virtual parties. No download required.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Best Party Games",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.bestpartygames.net/image/partyGameLogo.png"
+            }
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Party Games Collection",
+            "description": "Collection of free online party games for friends and family",
+            "numberOfItems": 10
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.bestpartygames.net/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
@@ -78,8 +108,8 @@
     <!-- Hero Section -->
     <section class="hero-section text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Best Party Games Online</h1>
-            <p class="lead mb-0">Discover the best party games collection! Play 15+ FREE interactive games perfect for
+            <h1 class="display-4 fw-bold mb-4">Best Party Games</h1>
+            <p class="lead mb-0">Discover the best party games collection! Play FREE interactive games perfect for
                 friends, family gatherings, and virtual parties. No download required - start playing instantly!</p>
         </div>
     </section>

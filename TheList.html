@@ -21,6 +21,41 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="image/partyGameLogo.png">
 
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Party Games List - Browse All Games",
+        "url": "https://www.bestpartygames.net/TheList.html",
+        "description": "Browse our complete collection of party games. Find the perfect game for your next gathering, party, or family event.",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Complete Party Games Collection",
+            "description": "Full list of available party games organized by category",
+            "numberOfItems": 10,
+            "itemListOrder": "Unordered"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.bestpartygames.net/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Games List",
+                    "item": "https://www.bestpartygames.net/TheList.html"
+                }
+            ]
+        }
+    }
+    </script>
+
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
