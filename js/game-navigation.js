@@ -63,6 +63,15 @@ class GameNavigation {
                     <a href="/TheList.html">
                         <i class="fas fa-list"></i> The List
                     </a>
+                    <div class="language-dropdown">
+                        <button class="language-toggle">
+                            <i class="fas fa-globe"></i> 🇺🇸 English
+                        </button>
+                        <div class="language-menu">
+                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
+                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
@@ -146,6 +155,32 @@ class GameNavigation {
             }
         });
 
+        // Language dropdown functionality
+        const languageToggle = document.querySelector('.language-toggle');
+        const languageMenu = document.querySelector('.language-menu');
+        
+        if (languageToggle && languageMenu) {
+            languageToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                languageMenu.classList.toggle('show');
+            });
+
+            // Close language menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.language-dropdown')) {
+                    languageMenu.classList.remove('show');
+                }
+            });
+
+            // Handle language switching
+            document.querySelectorAll('.language-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.switchLanguage(link.dataset.lang);
+                });
+            });
+        }
+
         // Track navigation clicks for analytics
         document.querySelectorAll('.game-link, .quick-game-btn').forEach(link => {
             link.addEventListener('click', () => {
@@ -167,6 +202,29 @@ class GameNavigation {
                 }, { once: true });
             }
         }, 30000);
+    }
+
+    switchLanguage(lang) {
+        const currentPath = window.location.pathname;
+        let newPath;
+        
+        if (lang === 'zh') {
+            // Switch to Chinese version
+            if (currentPath.startsWith('/zh/')) {
+                // Already on Chinese version
+                return;
+            }
+            newPath = '/zh' + currentPath;
+        } else {
+            // Switch to English version
+            if (!currentPath.startsWith('/zh/')) {
+                // Already on English version
+                return;
+            }
+            newPath = currentPath.replace('/zh', '');
+        }
+        
+        window.location.href = newPath;
     }
 
     trackNavigation(gameName) {

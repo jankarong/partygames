@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="在线玩终极真心话大冒险聚会游戏！免费、有趣、家庭友好的真心话大冒险生成器，为所有年龄段提供无尽的问题和挑战。">
+    <meta name="keywords"
+        content="真心话大冒险, 聚会游戏, 在线游戏, 真心话大冒险生成器, 聚会游戏生成器, 有趣游戏">
+    <meta name="author" content="聚会游戏">
+    <meta property="og:title" content="真心话大冒险 - 免费在线聚会游戏生成器">
+    <meta property="og:description"
+        content="在线玩终极真心话大冒险聚会游戏！免费、有趣、家庭友好的真心话大冒险生成器，提供无尽的问题和挑战。">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Language alternatives -->
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html">
+    <link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html">
+    
+    <link rel="canonical" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html">
+    <title>真心话大冒险 - 免费在线聚会游戏生成器</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../../games/TruthorDare/TruthOrDare.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../games/TruthorDare/TruthorDareLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "真心话大冒险生成器",
+        "description": "在线玩终极真心话大冒险聚会游戏！免费、有趣、家庭友好的真心话大冒险生成器，为所有年龄段提供无尽的问题和挑战。",
+        "url": "https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html",
+        "image": "https://www.bestpartygames.net/games/TruthorDare/TruthorDareLogo.png",
+        "genre": "聚会游戏",
+        "numberOfPlayers": "2+",
+        "gamePlatform": "网页浏览器",
+        "operatingSystem": "任何",
+        "applicationCategory": "游戏",
+        "inLanguage": "zh-CN",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "聚会游戏"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "最佳聚会游戏",
+            "url": "https://www.bestpartygames.net/zh/"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "ratingCount": "150"
+        },
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "真心话问题",
+                "description": "诚实的问题来揭示玩家的有趣事实"
+            },
+            {
+                "@type": "Thing", 
+                "name": "大冒险挑战",
+                "description": "供玩家完成的有趣安全挑战"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
+         crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="../../../games/TruthorDare/TruthorDareLogo.png" alt="真心话大冒险标志" title="真心话大冒险聚会游戏生成器" class="game-logo">
+            </div>
+            <h1 class="text-center mb-4">真心话大冒险生成器</h1>
+
+            <div class="game-section text-center">
+                <div id="selectedType" class="selected-type mb-3" style="display: none;"></div>
+
+                <div class="question-card mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p id="questionText" class="question-text mb-0">👇 选择你的选项！ 👇</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choice-buttons">
+                    <button class="btn btn-info btn-lg choice-btn truth-btn" onclick="selectChoice('truth')">
+                        <span class="choice-icon">🤔</span>
+                        <span class="choice-text">真心话</span>
+                    </button>
+                    <button class="btn btn-danger btn-lg choice-btn dare-btn" onclick="selectChoice('dare')">
+                        <span class="choice-icon">🎯</span>
+                        <span class="choice-text">大冒险</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="controls mt-4 text-center">
+                <button class="btn btn-success" onclick="nextQuestion()" id="nextButton" style="display: none;">下一题</button>
+                <button class="btn btn-secondary mt-3" onclick="resetGame()" id="resetButton"
+                    style="display: none;">重新选择</button>
+            </div>
+
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">🎮 游戏规则</h3>
+                        <ol class="text-start">
+                            <li>👋 欢迎来到我们的在线真心话大冒险游戏！玩家轮流点击"真心话"或"大冒险"</li>
+                            <li>🤔 如果你选择"真心话"，你必须诚实回答问题</li>
+                            <li>🎯 如果你选择"大冒险"，你必须完成给定的挑战</li>
+                            <li>⚠️ 看到问题/挑战后不能更改选择</li>
+                            <li>💫 如果你拒绝完成真心话或大冒险，你必须接受小组决定的惩罚</li>
+                            <li>🤝 保持所有真心话和大冒险的适当性和尊重性</li>
+                            <li>🎉 我们的真心话大冒险生成器确保无尽乐趣 - 玩得开心，做个好玩家！</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-intro mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">🎲 关于在线真心话大冒险</h3>
+                        <p>欢迎来到终极在线真心话大冒险游戏生成器！我们的免费聚会游戏将经典的真心话大冒险体验带到数字时代，非常适合聚会、聚餐或与朋友的虚拟聚会。这个在线真心话大冒险生成器为各种规模的团体提供无尽的娱乐。</p>
+
+                        <h4 class="mt-4">✨ 为什么玩我们的真心话大冒险？</h4>
+                        <ul>
+                            <li>🔄 无尽的真心话和大冒险变化 - 永不无聊！</li>
+                            <li>👨‍👩‍👧‍👦 适合所有年龄的家庭友好内容</li>
+                            <li>🎪 非常适合聚会、过夜聚会或虚拟游戏之夜</li>
+                            <li>🌐 无需下载 - 在浏览器中立即游戏</li>
+                            <li>📱 移动友好设计，随时随地游戏</li>
+                        </ul>
+
+                        <h4 class="mt-4">💡 如何充分利用你的游戏</h4>
+                        <ul>
+                            <li>👥 聚集3人或更多玩家以获得最佳体验</li>
+                            <li>🎵 创造有趣舒适的氛围</li>
+                            <li>🔄 轮流在真心话和大冒险之间选择</li>
+                            <li>⏱️ 通过为回答设置时间限制来保持游戏进行</li>
+                            <li>🎯 在真心话和大冒险之间混合选择以增加变化</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">❓ 常见问题</h3>
+
+                        <div class="faq-item">
+                            <h5>👨‍👩‍👧‍👦 这个真心话大冒险游戏适合所有年龄吗？</h5>
+                            <p>是的！我们的真心话大冒险生成器设计为家庭友好，适合所有年龄的玩家。所有问题和挑战都经过仔细筛选，确保内容适当。</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>👥 真心话大冒险需要多少人？</h5>
+                            <p>虽然可以两人游戏，但3-10人游戏最有趣。这允许玩家之间有更多的回答变化和互动。</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🌐 我可以与远程朋友在线玩真心话大冒险吗？</h5>
+                            <p>当然可以！我们的在线真心话大冒险游戏非常适合虚拟游戏之夜。只需在视频通话期间共享屏幕，每个人都可以从世界任何地方参与。</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🔄 问题和挑战会重复吗？</h5>
+                            <p>不会！我们有大量的真心话和大冒险数据库，确保每次游戏都能获得新鲜、独特的内容。这保持游戏的刺激性和不可预测性！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/game-navigation-zh.js"></script>
+    <script src="TruthOrDare-zh.js"></script>
+</body>
+
+</html>

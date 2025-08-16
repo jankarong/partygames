@@ -2,63 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     
+    <!-- Home Pages -->
     <url>
         <loc>https://www.bestpartygames.net/</loc>
-        <lastmod>2025-02-18</lastmod>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/image/partyGameLogo.png</image:loc>
             <image:title>Party Games Collection</image:title>
         </image:image>
     </url>
 
-
     <url>
-        <loc>https://www.bestpartygames.net/feedback.html</loc>
-        <lastmod>2025-02-18</lastmod>
+        <loc>https://www.bestpartygames.net/zh/</loc>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/image/partyGameLogo.png</image:loc>
+            <image:title>聚会游戏合集</image:title>
+        </image:image>
     </url>
 
+    <!-- Support Pages -->
     <url>
-        <loc>https://www.bestpartygames.net/games/mafia/mafia.html</loc>
-        <lastmod>2025-02-18</lastmod>
+        <loc>https://www.bestpartygames.net/feedback.html</loc>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://www.bestpartygames.net/games/mafia/mafialogo.png</image:loc>
-            <image:title>Mafia Board Games</image:title>
-            <image:caption>Play thrilling mafia board games - classic social deduction party games for 6-15 players</image:caption>
-        </image:image>
+        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://www.bestpartygames.net/TheList.html</loc>
-        <lastmod>2025-02-27</lastmod>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
-    <url>
-        <loc>https://www.bestpartygames.net/games/magic8ball/magic8ball.html</loc>
-        <lastmod>2025-02-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <image:image>
-            <image:loc>https://www.bestpartygames.net/games/magic8ball/magic8ball.svg</image:loc>
-            <image:title>Magic 8 Ball</image:title>
-            <image:caption>Make your own Magic 8 Ball to answer questions with a shake</image:caption>
-        </image:image>
-    </url>
-
+    <!-- Truth or Dare -->
     <url>
         <loc>https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html</loc>
         <lastmod>2025-07-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/TruthorDare/TruthorDareLogo.png</image:loc>
             <image:title>Truth or Dare Generator</image:title>
@@ -67,10 +66,60 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html</loc>
-        <lastmod>2025-02-27</lastmod>
+        <loc>https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/TruthorDare/TruthorDareLogo.png</image:loc>
+            <image:title>真心话大冒险生成器</image:title>
+            <image:caption>免费在线真心话大冒险聚会游戏生成器，为所有年龄段提供无尽的问题和挑战</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Magic 8 Ball -->
+    <url>
+        <loc>https://www.bestpartygames.net/games/magic8ball/magic8ball.html</loc>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/magic8ball/magic8ball.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/magic8ball/magic8ball.svg</image:loc>
+            <image:title>Magic 8 Ball</image:title>
+            <image:caption>Make your own Magic 8 Ball to answer questions with a shake</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://www.bestpartygames.net/zh/games/magic8ball/magic8ball.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/magic8ball/magic8ball.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/magic8ball/magic8ball.svg</image:loc>
+            <image:title>神奇8号球</image:title>
+            <image:caption>制作你自己的神奇8号球来回答问题</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Never Have I Ever -->
+    <url>
+        <loc>https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEverLogo.png</image:loc>
             <image:title>Never Have I Ever Questions Spicy</image:title>
@@ -79,10 +128,29 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html</loc>
-        <lastmod>2025-02-27</lastmod>
+        <loc>https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver.html</loc>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEverLogo.png</image:loc>
+            <image:title>从未有过问题</image:title>
+            <image:caption>刺激和大胆的从未有过问题 - 终极成人聚会游戏与饮酒游戏规则!</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Who's Most Likely -->
+    <url>
+        <loc>https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/WhoIsMostLikely/MostLikelyToLogo.png</image:loc>
             <image:title>Who's More Likely To Questions</image:title>
@@ -91,10 +159,29 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html</loc>
-        <lastmod>2025-02-27</lastmod>
+        <loc>https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely.html</loc>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/WhoIsMostLikely/MostLikelyToLogo.png</image:loc>
+            <image:title>谁最可能问题</image:title>
+            <image:caption>玩有趣的谁最可能问题聚会游戏 - 完美适合朋友和家庭聚会!</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Would You Rather -->
+    <url>
+        <loc>https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/WouldYouRather/WouldYouRatherLogo.png</image:loc>
             <image:title>Would You Rather Questions Spicy</image:title>
@@ -103,10 +190,60 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/games/undercover/undercover.html</loc>
-        <lastmod>2025-02-27</lastmod>
+        <loc>https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather.html</loc>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/WouldYouRather/WouldYouRatherLogo.png</image:loc>
+            <image:title>你宁愿问题</image:title>
+            <image:caption>玩刺激的你宁愿问题 - 终极成人聚会游戏，激动人心的情景!</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Mafia -->
+    <url>
+        <loc>https://www.bestpartygames.net/games/mafia/mafia.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/mafia/mafia.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/mafia/mafialogo.png</image:loc>
+            <image:title>Mafia Board Games</image:title>
+            <image:caption>Play thrilling mafia board games - classic social deduction party games for 6-15 players</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://www.bestpartygames.net/zh/games/mafia/mafia.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/mafia/mafia.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/mafia/mafialogo.png</image:loc>
+            <image:title>狼人杀桌游</image:title>
+            <image:caption>玩激动人心的狼人杀桌游 - 经典社交推理聚会游戏，适合6-15名玩家</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Undercover -->
+    <url>
+        <loc>https://www.bestpartygames.net/games/undercover/undercover.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/undercover/undercover.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/undercover/undercover.png</image:loc>
             <image:title>Undercover</image:title>
@@ -115,22 +252,29 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/games/beernumber/beernumber.html</loc>
-        <lastmod>2025-02-27</lastmod>
+        <loc>https://www.bestpartygames.net/zh/games/undercover/undercover.html</loc>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/undercover/undercover.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
         <image:image>
-            <image:loc>https://www.bestpartygames.net/games/beernumber/numberguessLogo.png</image:loc>
-            <image:title>Guess This Number</image:title>
-            <image:caption>Play the ultimate number guessing game online! Challenge yourself to guess this number between 1-100!</image:caption>
+            <image:loc>https://www.bestpartygames.net/games/undercover/undercover.png</image:loc>
+            <image:title>谁是卧底</image:title>
+            <image:caption>欺骗和推理的聚会游戏</image:caption>
         </image:image>
     </url>
 
+    <!-- Charades -->
     <url>
         <loc>https://www.bestpartygames.net/games/charades/charades.html</loc>
-        <lastmod>2025-02-27</lastmod>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/charades/charades.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/charades/charades.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/charades/charades.html" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/charades/CharadesLogo.png</image:loc>
             <image:title>Charades Generator</image:title>
@@ -139,10 +283,29 @@
     </url>
 
     <url>
+        <loc>https://www.bestpartygames.net/zh/games/charades/charades.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/charades/charades.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/charades/charades.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/charades/charades.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/charades/CharadesLogo.png</image:loc>
+            <image:title>你划我猜生成器</image:title>
+            <image:caption>免费在线你划我猜生成器 - 为你的聚会游戏生成无限词语!</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Hedbanz -->
+    <url>
         <loc>https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html</loc>
-        <lastmod>2025-02-27</lastmod>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/hedbanzgame/hedbanz.png</image:loc>
             <image:title>Hedbanz Game</image:title>
@@ -151,14 +314,80 @@
     </url>
 
     <url>
+        <loc>https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/hedbanzgame/hedbanz.png</image:loc>
+            <image:title>猜猜我是谁游戏</image:title>
+            <image:caption>在线玩经典的猜猜我是谁游戏! 与朋友一起体验终极聚会猜测游戏!</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Sex Dice -->
+    <url>
         <loc>https://www.bestpartygames.net/games/sexdice/sexdice.html</loc>
-        <lastmod>2025-02-27</lastmod>
+        <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/sexdice/sexdicelogo.png</image:loc>
             <image:title>Sex Dice</image:title>
             <image:caption>Roll the dice for a fun and spicy adventure!</image:caption>
         </image:image>
     </url>
-</urlset> 
+
+    <url>
+        <loc>https://www.bestpartygames.net/zh/games/sexdice/sexdice.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/sexdice/sexdicelogo.png</image:loc>
+            <image:title>情侣骰子</image:title>
+            <image:caption>掷骰子享受有趣刺激的冒险!</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Beer Number -->
+    <url>
+        <loc>https://www.bestpartygames.net/games/beernumber/beernumber.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/beernumber/beernumber.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/beernumber/beernumber.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/beernumber/beernumber.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/beernumber/numberguessLogo.png</image:loc>
+            <image:title>Guess This Number</image:title>
+            <image:caption>Play the ultimate number guessing game online! Challenge yourself to guess this number between 1-100!</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://www.bestpartygames.net/zh/games/beernumber/beernumber.html</loc>
+        <lastmod>2025-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/beernumber/beernumber.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/beernumber/beernumber.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/beernumber/beernumber.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/beernumber/numberguessLogo.png</image:loc>
+            <image:title>猜数字游戏</image:title>
+            <image:caption>在线玩终极猜数字游戏! 挑战自己猜这个1-100之间的数字!</image:caption>
+        </image:image>
+    </url>
+
+</urlset>

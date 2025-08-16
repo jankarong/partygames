@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="玩你宁愿问题游戏 - 终极聚会游戏！发现刺激有趣的你宁愿问题合集。完美适合聚会和社交活动！">
+    <meta name="keywords"
+        content="你宁愿问题, 你宁愿游戏, 有趣问题, 聚会游戏">
+    <meta name="author" content="聚会游戏">
+    <meta property="og:title" content="你宁愿问题 - 聚会游戏">
+    <meta property="og:description"
+        content="玩你宁愿问题游戏 - 终极聚会游戏，包含刺激有趣的你宁愿问题。完美适合聚会和社交聚餐！">
+    <meta property="og:type" content="website">
+    
+    <!-- Language alternatives -->
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html">
+    <link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html">
+    
+    <link rel="canonical" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../games/WouldYouRather/WouldYouRatherLogo.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "你宁愿问题游戏",
+        "description": "玩你宁愿问题游戏 - 终极聚会游戏！发现刺激有趣的你宁愿问题合集。完美适合聚会和社交活动！",
+        "genre": "聚会游戏",
+        "numberOfPlayers": "2+",
+        "applicationCategory": "游戏",
+        "operatingSystem": "网页浏览器",
+        "inLanguage": "zh-CN",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "ratingCount": "210"
+        }
+    }
+    </script>
+    
+    <title>你宁愿问题 - 聚会游戏</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../../games/games.css">
+    <link rel="stylesheet" href="../../../games/WouldYouRather/style.css">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
+         crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-light">
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-4">
+                    <img src="../../../games/WouldYouRather/WouldYouRatherLogo.png" alt="你宁愿游戏标志" class="img-fluid"
+                        style="max-width: 200px;">
+                </div>
+                <h1 class="text-center mb-5 display-4">你宁愿问题游戏</h1>
+                <div class="row justify-content-center align-items-center g-2 mt-4">
+                    <div class="col-md-5 d-flex justify-content-center">
+                        <div class="card option w-100" id="optionA">
+                            <div class="card-body text-center p-4">
+                                <div class="percentage mb-3" id="percentageA"></div>
+                                <h4 id="optionAText">选项A</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <div class="vs-text">
+                            <span class="display-5 fw-bold text-primary">VS</span>
+                        </div>
+                    </div>
+                    <div class="col-md-5 d-flex justify-content-center">
+                        <div class="card option w-100" id="optionB">
+                            <div class="card-body text-center p-4">
+                                <div class="percentage mb-3" id="percentageB"></div>
+                                <h4 id="optionBText">选项B</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary btn-lg px-5" id="nextQuestion">
+                        <i class="fas fa-forward me-2"></i>下一题
+                    </button>
+                    <button class="btn btn-secondary btn-lg px-5 ms-3" id="resetButton">
+                        <i class="fas fa-redo me-2"></i>重置
+                    </button>
+                </div>
+
+                <!-- 游戏规则 -->
+                <div class="row mt-5">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="text-center mb-4">🎮 游戏规则</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5><i class="fas fa-play-circle text-primary me-2"></i>如何游戏</h5>
+                                        <ol>
+                                            <li>阅读两个选项</li>
+                                            <li>点击你的选择</li>
+                                            <li>查看统计百分比</li>
+                                            <li>点击"下一题"继续</li>
+                                        </ol>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5><i class="fas fa-users text-success me-2"></i>聚会模式</h5>
+                                        <ul>
+                                            <li>大家一起讨论选择</li>
+                                            <li>分享选择的理由</li>
+                                            <li>投票决定群体选择</li>
+                                            <li>享受有趣的讨论</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 游戏介绍 -->
+                <div class="row mt-4">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="text-center mb-4">🎯 关于你宁愿游戏</h3>
+                                <p class="lead text-center">
+                                    "你宁愿"是一个经典的选择游戏，通过有趣的二选一问题来了解彼此的价值观、喜好和想法。
+                                </p>
+                                
+                                <div class="row mt-4">
+                                    <div class="col-md-4 text-center">
+                                        <div class="feature-box p-3">
+                                            <i class="fas fa-question-circle fa-3x text-primary mb-3"></i>
+                                            <h5>50+精选问题</h5>
+                                            <p>涵盖生活各个方面的有趣选择</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <div class="feature-box p-3">
+                                            <i class="fas fa-chart-pie fa-3x text-success mb-3"></i>
+                                            <h5>实时统计</h5>
+                                            <p>查看选择分布的模拟百分比</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <div class="feature-box p-3">
+                                            <i class="fas fa-mobile-alt fa-3x text-info mb-3"></i>
+                                            <h5>随时随地</h5>
+                                            <p>手机、平板、电脑都能玩</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 问题类型 -->
+                <div class="row mt-4">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="text-center mb-4">🌟 问题类型</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5><i class="fas fa-utensils text-warning me-2"></i>生活类</h5>
+                                        <p>饮食、作息、生活习惯等日常选择</p>
+                                        
+                                        <h5><i class="fas fa-magic text-purple me-2"></i>超能力类</h5>
+                                        <p>如果拥有超能力，你会选择什么？</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5><i class="fas fa-heart text-danger me-2"></i>情感类</h5>
+                                        <p>关于爱情、友情、家庭的深度思考</p>
+                                        
+                                        <h5><i class="fas fa-laugh text-success me-2"></i>搞笑类</h5>
+                                        <p>轻松有趣的奇葩选择</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="row mt-4">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="text-center mb-4">❓ 常见问题</h3>
+                                
+                                <div class="accordion" id="faqAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                                这个游戏适合多少人玩？
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                            <div class="accordion-body">
+                                                可以一个人玩来思考自己的选择，也可以2人以上一起玩增进了解。建议3-8人效果最佳。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                                百分比数据是真实的吗？
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                            <div class="accordion-body">
+                                                百分比是模拟生成的，主要用于增加游戏的趣味性，让你看到可能的选择分布。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                                问题会重复吗？
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                            <div class="accordion-body">
+                                                问题会循环出现，但我们有50+个不同的问题，足够玩很久不重复。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/game-navigation-zh.js"></script>
+    <script src="script-zh.js"></script>
+</body>
+
+</html>

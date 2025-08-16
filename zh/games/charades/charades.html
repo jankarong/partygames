@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你划我猜 - 免费在线词汇生成器</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" 
+        content="免费你划我猜生成器 - 为聚会游戏生成无限词汇和短语！完美的你划我猜生成器，包含电影、动物、动作等分类。在线玩终极词汇生成器游戏！">
+    <meta name="keywords" 
+        content="你划我猜生成器,词汇生成器,你划我猜词汇,聚会游戏生成器,免费你划我猜生成器">
+    <meta name="author" content="Party Games">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://partygames.com/zh/games/charades/charades.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../games/charades/CharadesLogo.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="你划我猜 - 免费在线词汇生成器">
+    <meta property="og:description" 
+        content="使用我们的免费在线你划我猜生成器生成无限词汇！完美的聚会游戏，多种分类可选。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../../../games/charades/CharadesLogo.png">
+    <meta property="og:url" content="https://partygames.com/zh/games/charades/charades.html">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="你划我猜 - 免费在线词汇生成器">
+    <meta name="twitter:description" content="使用我们的免费在线你划我猜生成器生成无限词汇！完美的聚会游戏。">
+    <meta name="twitter:image" content="../../../games/charades/CharadesLogo.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../../games/charades/charades.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "你划我猜",
+        "description": "免费你划我猜生成器 - 为聚会游戏生成无限词汇和短语！完美的你划我猜生成器，包含电影、动物、动作等分类。",
+        "genre": "词汇生成器",
+        "numberOfPlayers": "4+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "150"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
+         crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <main class="container-fluid py-4">
+        <div class="row">
+            <!-- Left Ad Space -->
+            <div class="col-md-2 d-none d-md-block">
+                <div class="ad-space">
+                </div>
+            </div>
+
+            <!-- Game Content -->
+            <div class="col-12 col-md-8">
+                <!-- Game Header -->
+                <div class="text-center mb-5" id="game-header">
+                    <div class="mb-4">
+                        <img src="../../../games/charades/CharadesLogo.png" alt="你划我猜标志 - 免费词汇生成器" class="game-logo">
+                    </div>
+                    <h1 class="display-4 mb-3">你划我猜</h1>
+                    <p class="lead">为你的聚会游戏提供免费在线词汇生成器！🎮</p>
+                </div>
+
+                <!-- Setup Screen -->
+                <div id="setup-screen" class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <h2 class="text-center mb-4">你划我猜设置</h2>
+                                <div class="mb-4">
+                                    <label for="round-time" class="form-label">
+                                        <span class="emoji-icon">⏱️</span>回合时间（秒）
+                                    </label>
+                                    <input type="number" id="round-time" class="form-control" value="60" min="30"
+                                        max="180">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="word-category" class="form-label">
+                                        <span class="emoji-icon">🎲</span>词汇生成器分类
+                                    </label>
+                                    <select id="word-category" class="form-select">
+                                        <option value="all">所有分类</option>
+                                        <option value="animals">动物 🐘</option>
+                                        <option value="actions">动作 🏃‍♂️</option>
+                                        <option value="objects">物品 📱</option>
+                                        <option value="movies">电影 🎬</option>
+                                        <option value="foods">食物 🍕</option>
+                                        <option value="professions">职业 👩‍⚕️</option>
+                                        <option value="emotions">情感 😊</option>
+                                        <option value="places">地点 🏠</option>
+                                    </select>
+                                </div>
+                                <button id="start-game" class="btn btn-primary w-100 btn-lg">
+                                    <span class="emoji-icon">🎮</span>开始游戏
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Screen -->
+                <div id="game-screen" class="hidden">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="card">
+                                <div class="card-body p-4 text-center">
+                                    <div class="timer mb-4" id="timer">60</div>
+                                    <div class="word-display" id="current-word"></div>
+                                    <div class="d-flex justify-content-center gap-4">
+                                        <button id="correct" class="btn btn-success btn-lg">
+                                            <span class="emoji-icon">✅</span>答对了
+                                        </button>
+                                        <button id="skip" class="btn btn-warning btn-lg">
+                                            <span class="emoji-icon">⏭️</span>跳过
+                                        </button>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h3 id="score" class="h4">得分：0</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Screen -->
+                <div id="result-screen" class="hidden">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="card">
+                                <div class="card-body p-4 text-center">
+                                    <h2 class="display-6 mb-4">🎉 游戏结束！</h2>
+                                    <div id="final-score" class="h3 mb-4">最终得分：0</div>
+                                    <div id="word-summary" class="mb-4"></div>
+                                    <button id="play-again" class="btn btn-primary btn-lg">
+                                        <span class="emoji-icon">🔄</span>再玩一次
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rules and FAQ -->
+                <div class="row justify-content-center mt-5" id="info-section">
+                    <div class="col-md-8 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h2 class="h5 mb-0">📋 你划我猜规则</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <h3 class="h6">🎯 如何使用你划我猜</h3>
+                                    <ol class="mb-4">
+                                        <li>选择你的你划我猜设置</li>
+                                        <li>从我们的词汇生成器中生成词汇</li>
+                                        <li>表演生成的词汇（不能说话！）</li>
+                                        <li>让其他人猜你划我猜词汇</li>
+                                        <li>标记为正确或跳过以生成新词汇</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <h3 class="h6">⚠️ 记住</h3>
+                                    <ul>
+                                        <li>🤫 不能说话</li>
+                                        <li>✍️ 不能拼写</li>
+                                        <li>👆 不能指向物品</li>
+                                        <li>🎭 只能用动作</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h2 class="h5 mb-0">❓ 快速帮助</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <h3 class="h6">👥 所需玩家</h3>
+                                    <p>2+玩家（4-8人最佳）</p>
+                                </div>
+                                <div class="mb-3">
+                                    <h3 class="h6">🎲 词汇生成器选项</h3>
+                                    <p>我们的你划我猜生成器提供多种分类来生成完美的词汇！</p>
+                                </div>
+                                <div class="mb-3">
+                                    <h3 class="h6">⏱️ 游戏时长</h3>
+                                    <p>每轮30-180秒</p>
+                                </div>
+                                <div>
+                                    <h3 class="h6">🎯 计分</h3>
+                                    <p>每答对一个得1分</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Ad Space -->
+            <div class="col-md-2 d-none d-md-block">
+                <div class="ad-space">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Game Logic -->
+    <script src="charades-zh.js"></script>
+    <script src="../../js/game-navigation-zh.js"></script>
+</body>
+
+</html>

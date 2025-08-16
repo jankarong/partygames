@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="玩谁最可能问题游戏 - 终极聚会游戏！100+搞笑的谁最可能问题，适合朋友和家人。完美的聚会、聚餐和社交活动游戏。免费在线聚会游戏！">
+    <meta name="keywords"
+        content="谁最可能, 谁最可能问题, 聚会游戏, 团建游戏, 破冰游戏">
+    <meta name="author" content="聚会游戏中心">
+    <meta property="og:title" content="谁最可能问题 - #1朋友聚会游戏">
+    <meta property="og:description"
+        content="发现100+搞笑的谁最可能问题！完美的朋友和家人聚会游戏。用这些有趣的问题创造难忘的时刻！">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../../../games/WhoIsMostLikely/MostLikelyToLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="谁最可能问题 - 终极聚会游戏">
+    <meta name="twitter:description"
+        content="100+搞笑问题打造完美聚会游戏！与朋友和家人一起玩，享受无尽的乐趣和欢笑。">
+    <meta name="twitter:image" content="../../../games/WhoIsMostLikely/MostLikelyToLogo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Chinese">
+    
+    <!-- Language alternatives -->
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html">
+    <link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html">
+    
+    <link rel="canonical" href="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../games/WhoIsMostLikely/MostLikelyToLogo.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "谁最可能问题",
+        "description": "玩谁最可能问题游戏 - 终极聚会游戏！100+搞笑的谁最可能问题，适合朋友和家人。",
+        "genre": "聚会游戏",
+        "numberOfPlayers": "3+",
+        "applicationCategory": "游戏",
+        "operatingSystem": "网页浏览器",
+        "inLanguage": "zh-CN",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "180"
+        }
+    }
+    </script>
+    
+    <title>谁最可能问题 - 有趣的朋友聚会游戏</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../../games/WhoIsMostLikely/WhoIsMostLikely.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
+         crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="../../../games/WhoIsMostLikely/MostLikelyToLogo.png" alt="谁最可能游戏标志" title="谁最可能聚会游戏" class="game-logo">
+            </div>
+            <h1 class="text-center mb-4">谁最可能问题</h1>
+
+            <div class="game-section text-center">
+                <div class="question-card mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p id="questionText" class="question-text mb-0">点击"开始游戏"获取第一个问题！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-primary btn-lg" id="nextQuestionBtn">开始游戏</button>
+                    <button class="btn btn-secondary btn-lg ms-3" id="resetBtn">重置游戏</button>
+                </div>
+            </div>
+
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">🎮 游戏规则</h3>
+                        <ol class="text-start">
+                            <li>👥 需要3人或以上参与游戏</li>
+                            <li>🎯 点击"下一题"获取新问题</li>
+                            <li>🤔 大家讨论并指向最可能做这件事的人</li>
+                            <li>🏆 被指得最多的人"获胜"（可以设置小惩罚或奖励）</li>
+                            <li>😄 重点是欢笑和了解朋友，保持轻松愉快的氛围</li>
+                            <li>🎉 没有标准答案，享受过程最重要！</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-intro mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">🎲 关于谁最可能游戏</h3>
+                        <p>欢迎来到终极"谁最可能"问题合集！这个有趣的聚会游戏能让朋友们更好地了解彼此，通过搞笑的问题和意想不到的答案创造难忘的回忆。我们的问题库包含100多个精心设计的问题，涵盖日常生活的各个方面。</p>
+
+                        <h4 class="mt-4">✨ 为什么选择我们的谁最可能游戏？</h4>
+                        <ul>
+                            <li>🔄 100+多样化问题 - 永远不会感到无聊！</li>
+                            <li>👨‍👩‍👧‍👦 适合所有年龄的内容</li>
+                            <li>🎪 完美适合聚会、团建或家庭聚餐</li>
+                            <li>🌐 无需下载 - 在浏览器中立即游戏</li>
+                            <li>📱 移动设备友好设计</li>
+                        </ul>
+
+                        <h4 class="mt-4">💡 游戏小贴士</h4>
+                        <ul>
+                            <li>👥 确保有足够的人参与（建议3-8人）</li>
+                            <li>🎵 营造轻松有趣的氛围</li>
+                            <li>🤝 尊重每个人的感受和界限</li>
+                            <li>😂 记住重点是欢笑，不是竞争</li>
+                            <li>📸 不要忘记拍照记录美好时光</li>
+                        </ul>
+
+                        <h4 class="mt-4">🎉 适合的场合</h4>
+                        <ul>
+                            <li>🎂 生日聚会</li>
+                            <li>🏠 朋友聚会</li>
+                            <li>🏢 团建活动</li>
+                            <li>🍽️ 家庭聚餐</li>
+                            <li>🎓 同学聚会</li>
+                            <li>💑 情侣约会</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">❓ 常见问题</h3>
+
+                        <div class="faq-item">
+                            <h5>👥 需要多少人才能玩这个游戏？</h5>
+                            <p>建议至少3人参与，最佳人数是4-8人。人数太少会缺乏互动，人数太多可能会难以管理。</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🎯 游戏的目的是什么？</h5>
+                            <p>这个游戏主要是为了娱乐和增进朋友间的了解。通过有趣的问题，大家可以发现彼此不为人知的一面，增强友谊。</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🤔 如果大家意见不一致怎么办？</h5>
+                            <p>这很正常！可以让大家解释自己的选择，或者进行友好的讨论。记住，没有标准答案，重点是过程中的乐趣。</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🔄 问题会重复吗？</h5>
+                            <p>我们的系统会避免重复问题，直到所有问题都使用过一遍。然后会重新开始循环，确保游戏始终新鲜有趣。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/game-navigation-zh.js"></script>
+    <script src="WhoIsMostLikely-zh.js"></script>
+</body>
+
+</html>

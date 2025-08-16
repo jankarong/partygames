@@ -31,6 +31,11 @@
     <!-- Custom CSS -->
     <link href="./style/main.css" rel="stylesheet">
 
+    <!-- Language alternatives -->
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/">
+    <link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.bestpartygames.net/">
 
@@ -87,6 +92,7 @@
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="image/partyGameLogo.png" alt="Party Games Logo">
+                <span class="brand-text">Best Party Game</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -94,13 +100,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Games</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="./feedback.html">Feedback</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./TheList.html">The List</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            🇺🇸 English
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/">🇺🇸 English</a></li>
+                            <li><a class="dropdown-item" href="/zh/">🇨🇳 中文</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -125,7 +138,8 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/magic8ball/magic8ball.svg" class="card-img-top" alt="Magic 8 Ball" loading="lazy">
+                            <img src="./games/magic8ball/magic8ball.svg" class="card-img-top" alt="Magic 8 Ball"
+                                loading="lazy">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Magic 8 Ball</h5>
@@ -142,7 +156,8 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/TruthorDare/TruthorDareLogo.png" class="card-img-top" alt="Truth or Dare" loading="lazy">
+                            <img src="./games/TruthorDare/TruthorDareLogo.png" class="card-img-top" alt="Truth or Dare"
+                                loading="lazy">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Truth or Dare</h5>
@@ -235,7 +250,8 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/undercover/undercover.png" class="card-img-top" alt="Undercover Game" loading="lazy">
+                            <img src="./games/undercover/undercover.png" class="card-img-top" alt="Undercover Game"
+                                loading="lazy">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Undercover</h5>
@@ -253,7 +269,8 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/charades/CharadesLogo.png" class="card-img-top" alt="Charades" loading="lazy">
+                            <img src="./games/charades/CharadesLogo.png" class="card-img-top" alt="Charades"
+                                loading="lazy">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Charades Generator</h5>
@@ -271,7 +288,8 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/hedbanzgame/hedbanz.png" class="card-img-top" alt="Hedbanz" loading="lazy">
+                            <img src="./games/hedbanzgame/hedbanz.png" class="card-img-top" alt="Hedbanz"
+                                loading="lazy">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Hedbanz Game</h5>
@@ -289,7 +307,8 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/sexdice/sexdicelogo.png" class="card-img-top" alt="Sex Dice" loading="lazy">
+                            <img src="./games/sexdice/sexdicelogo.png" class="card-img-top" alt="Sex Dice"
+                                loading="lazy">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Sex Dice</h5>
