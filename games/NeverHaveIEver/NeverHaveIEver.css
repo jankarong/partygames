@@ -87,8 +87,9 @@ body {
     top: 20px;
 }
 
-.game-logo {
-    max-width: 200px;
+.container img.game-logo {
+    max-width: 120px !important;
+    width: 120px !important;
     height: auto;
     margin-bottom: 20px;
     display: block;
@@ -290,6 +291,11 @@ h1 {
         padding: 20px;
     }
 
+    .container img.game-logo {
+        max-width: 100px !important;
+        width: 100px !important;
+    }
+
     h1 {
         font-size: 2em;
     }
@@ -304,5 +310,18 @@ h1 {
 
     .button {
         width: 100%;
+    }
+}
+
+/* 强制覆盖logo大小 - 修复中文版logo过大问题 */
+body .container img.game-logo[src*="NeverHaveIEverLogo"] {
+    max-width: 120px !important;
+    width: 120px !important;
+}
+
+@media (max-width: 600px) {
+    body .container img.game-logo[src*="NeverHaveIEverLogo"] {
+        max-width: 100px !important;
+        width: 100px !important;
     }
 }

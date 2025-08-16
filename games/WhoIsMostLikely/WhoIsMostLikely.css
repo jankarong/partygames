@@ -106,6 +106,13 @@ h1 {
     margin-bottom: 2rem;
 }
 
+.game-logo {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 @media (max-width: 576px) {
     .game-container {
         margin: 1rem auto;
@@ -118,5 +125,9 @@ h1 {
 
     .rule-item h4 {
         font-size: 1.1rem;
+    }
+
+    .game-logo {
+        max-width: 150px;
     }
 }
