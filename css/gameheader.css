@@ -82,10 +82,13 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     padding: 15px;
     min-width: 280px;
+    max-height: 80vh;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .nav-menu.show {
@@ -108,6 +111,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 8px;
     margin-bottom: 15px;
+    max-height: 50vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .game-link {
@@ -263,6 +269,29 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
+/* Scrollbar styling for better visibility */
+.nav-menu::-webkit-scrollbar,
+.game-links::-webkit-scrollbar {
+    width: 6px;
+}
+
+.nav-menu::-webkit-scrollbar-track,
+.game-links::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.nav-menu::-webkit-scrollbar-thumb,
+.game-links::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.nav-menu::-webkit-scrollbar-thumb:hover,
+.game-links::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
     .floating-nav {
@@ -279,10 +308,13 @@
     .nav-menu {
         min-width: 260px;
         right: -10px;
+        max-height: 70vh;
+        max-width: 90vw;
     }
 
     .game-links {
         grid-template-columns: 1fr;
+        max-height: 40vh;
     }
 
     .quick-games-bar {
