@@ -158,6 +158,47 @@
     </div>
     <script src="hedbanzgame.js"></script>
     <script src="../../js/game-navigation.js"></script>
+    
+    <!-- Ko-fi Widget -->
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('jankaaa', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#fcbf47',
+        'floating-chat.donateButton.text-color': '#323842'
+      });
+    </script>
+
+    <!-- Ko-fi Widget Position CSS -->
+    <style>
+      /* Position Ko-fi widget in bottom right, avoiding navigation */
+      .floatingchat-container-wrap {
+        left: unset !important;
+        right: 16px !important;
+        bottom: 16px !important;
+        z-index: 1000 !important;
+      }
+      
+      /* Mobile specific positioning */
+      .floatingchat-container-wrap-mobi {
+        left: unset !important;
+        right: 16px !important;
+        bottom: 80px !important; /* Higher up on mobile to avoid nav */
+        z-index: 1000 !important;
+      }
+      
+      /* Ensure popup doesn't interfere with navigation */
+      .floating-chat-kofi-popup-iframe {
+        bottom: 60px !important;
+        right: 16px !important;
+      }
+      
+      .floating-chat-kofi-popup-iframe-mobi {
+        bottom: 120px !important;
+        right: 16px !important;
+      }
+    </style>
 </body>
 
 </html>

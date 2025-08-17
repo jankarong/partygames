@@ -4,7 +4,11 @@
       "Bash(cmd:*)",
       "Bash(find:*)",
       "Bash(ls:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(tail:*)",
+      "Bash(done)"
     ],
     "deny": []
   }
