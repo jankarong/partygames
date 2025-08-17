@@ -40,7 +40,7 @@ let gameState = {
         ],
         'Animals': [
             ['Cat', 'Dog'],
-            ['Lion', 'Tiger'],  
+            ['Lion', 'Tiger'],
             ['Puppy', 'Bunny'],
             ['Bird', 'Fish'],
             ['Cow', 'Horse'],
