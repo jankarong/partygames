@@ -142,7 +142,7 @@
 
     <!-- Ko-fi Widget Position CSS -->
     <style>
-      /* Position Ko-fi widget in bottom right, avoiding navigation */
+      /* Position Ko-fi widget in bottom right on desktop */
       .floatingchat-container-wrap {
         left: unset !important;
         right: 16px !important;
@@ -150,23 +150,25 @@
         z-index: 1000 !important;
       }
       
-      /* Mobile specific positioning */
+      /* Mobile specific positioning - bottom left to avoid navigation */
       .floatingchat-container-wrap-mobi {
-        left: unset !important;
-        right: 16px !important;
-        bottom: 80px !important; /* Higher up on mobile to avoid nav */
+        left: 16px !important;
+        right: unset !important;
+        bottom: 20px !important;
         z-index: 1000 !important;
       }
       
-      /* Ensure popup doesn't interfere with navigation */
+      /* Desktop popup positioning */
       .floating-chat-kofi-popup-iframe {
         bottom: 60px !important;
         right: 16px !important;
       }
       
+      /* Mobile popup positioning - left side */
       .floating-chat-kofi-popup-iframe-mobi {
-        bottom: 120px !important;
-        right: 16px !important;
+        bottom: 70px !important;
+        left: 16px !important;
+        right: unset !important;
       }
     </style>
 </body>

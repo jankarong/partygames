@@ -131,3 +131,19 @@ h1 {
         max-width: 150px;
     }
 }
+
+/* 手机端导航栏位置自定义 - 移到右下角避免与support me按钮冲突 */
+@media (max-width: 768px) {
+    .quick-games-bar {
+        bottom: 15px !important;
+        left: auto !important;
+        right: 15px !important;
+        transform: none !important;
+    }
+    
+    /* 确保在打开状态下也保持右侧位置 */
+    .quick-games-bar.open {
+        right: 15px !important;
+        left: auto !important;
+    }
+}
