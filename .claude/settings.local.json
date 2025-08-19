@@ -11,7 +11,8 @@
       "Bash(done)",
       "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\games\\KingsCup\\KingsCup.html\")",
       "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\zh\\games\\KingsCup\\KingsCup.html\")",
-      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\index.html\")"
+      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\index.html\")",
+      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\zh\\index.html\")"
     ],
     "deny": []
   }
