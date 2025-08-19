@@ -85,7 +85,8 @@ h1::after {
     box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-.choice-buttons {
+.choice-buttons,
+.difficulty-buttons {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -141,13 +142,45 @@ h1::after {
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.truth-btn:hover,
+.truth-btn:hover {
+    background-color: #3994ff;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
 .dare-btn:hover {
+    background-color: #e63e3e;
     box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 .truth-btn:active,
 .dare-btn:active {
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.soft-btn {
+    background-color: var(--primary-blue);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.spicy-btn {
+    background-color: var(--primary-red);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.soft-btn:hover {
+    background-color: #3994ff;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.spicy-btn:hover {
+    background-color: #e63e3e;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.soft-btn:active,
+.spicy-btn:active {
     box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -284,13 +317,30 @@ h1::after {
     box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
-.selected-type {
+.selected-type,
+.selected-difficulty {
     font-size: 1.2rem;
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     display: inline-block;
     background: rgba(0, 0, 0, 0.05);
+}
+
+#backButton {
+    border: 2px solid var(--black);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+#backButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+#backButton:active {
+    transform: translateY(0);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .truth-text {
@@ -335,7 +385,8 @@ h1::after {
         font-size: 1.5rem;
     }
 
-    .choice-buttons {
+    .choice-buttons,
+    .difficulty-buttons {
         flex-direction: column;
         gap: 1rem;
     }

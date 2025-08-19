@@ -116,16 +116,30 @@
 
             <div class="game-section text-center">
                 <div id="selectedType" class="selected-type mb-3" style="display: none;"></div>
+                <div id="selectedDifficulty" class="selected-difficulty mb-3" style="display: none;"></div>
 
                 <div class="question-card mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <p id="questionText" class="question-text mb-0">👇 选择你的选项！ 👇</p>
+                            <p id="questionText" class="question-text mb-0">👇 选择游戏难度！ 👇</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="choice-buttons">
+                <!-- Difficulty selection (shown first) -->
+                <div class="difficulty-buttons" id="difficultyButtons">
+                    <button class="btn btn-success btn-lg choice-btn soft-btn" onclick="selectDifficulty('soft')">
+                        <span class="choice-icon">😊</span>
+                        <span class="choice-text">温和模式</span>
+                    </button>
+                    <button class="btn btn-warning btn-lg choice-btn spicy-btn" onclick="selectDifficulty('spicy')">
+                        <span class="choice-icon">🌶️</span>
+                        <span class="choice-text">刺激模式</span>
+                    </button>
+                </div>
+
+                <!-- Truth or Dare selection (shown after difficulty is selected) -->
+                <div class="choice-buttons" id="choiceButtons" style="display: none;">
                     <button class="btn btn-info btn-lg choice-btn truth-btn" onclick="selectChoice('truth')">
                         <span class="choice-icon">🤔</span>
                         <span class="choice-text">真心话</span>
@@ -141,6 +155,8 @@
                 <button class="btn btn-success" onclick="nextQuestion()" id="nextButton" style="display: none;">下一题</button>
                 <button class="btn btn-secondary mt-3" onclick="resetGame()" id="resetButton"
                     style="display: none;">重新选择</button>
+                <button class="btn btn-outline-secondary mt-3" onclick="backToDifficulty()" id="backButton"
+                    style="display: none;">返回选择难度</button>
             </div>
 
             <div class="rules-section mt-4">
@@ -148,13 +164,16 @@
                     <div class="card-body">
                         <h3 class="text-center mb-3">🎮 游戏规则</h3>
                         <ol class="text-start">
-                            <li>👋 欢迎来到我们的在线真心话大冒险游戏！玩家轮流点击"真心话"或"大冒险"</li>
+                            <li>👋 欢迎来到我们的在线真心话大冒险游戏！首先选择游戏难度模式</li>
+                            <li>😊 <strong>温和模式</strong>：适合所有年龄段，内容家庭友好，轻松有趣</li>
+                            <li>🌶️ <strong>刺激模式</strong>：适合成年人，内容更有挑战性和深度</li>
+                            <li>🎮 选择难度后，玩家轮流点击"真心话"或"大冒险"</li>
                             <li>🤔 如果你选择"真心话"，你必须诚实回答问题</li>
                             <li>🎯 如果你选择"大冒险"，你必须完成给定的挑战</li>
                             <li>⚠️ 看到问题/挑战后不能更改选择</li>
                             <li>💫 如果你拒绝完成真心话或大冒险，你必须接受小组决定的惩罚</li>
                             <li>🤝 保持所有真心话和大冒险的适当性和尊重性</li>
-                            <li>🎉 我们的真心话大冒险生成器确保无尽乐趣 - 玩得开心，做个好玩家！</li>
+                            <li>🎉 我们的真心话大冒险生成器有496个问题和挑战，确保无尽乐趣！</li>
                         </ol>
                     </div>
                 </div>
@@ -168,8 +187,9 @@
 
                         <h4 class="mt-4">✨ 为什么玩我们的真心话大冒险？</h4>
                         <ul>
-                            <li>🔄 无尽的真心话和大冒险变化 - 永不无聊！</li>
-                            <li>👨‍👩‍👧‍👦 适合所有年龄的家庭友好内容</li>
+                            <li>🔄 496个精选问题和挑战 - 永不重复！</li>
+                            <li>😊 温和模式：适合所有年龄的家庭友好内容</li>
+                            <li>🌶️ 刺激模式：成年人专属的深度挑战内容</li>
                             <li>🎪 非常适合聚会、过夜聚会或虚拟游戏之夜</li>
                             <li>🌐 无需下载 - 在浏览器中立即游戏</li>
                             <li>📱 移动友好设计，随时随地游戏</li>
@@ -178,10 +198,11 @@
                         <h4 class="mt-4">💡 如何充分利用你的游戏</h4>
                         <ul>
                             <li>👥 聚集3人或更多玩家以获得最佳体验</li>
+                            <li>🎯 根据参与者年龄选择合适的难度模式</li>
                             <li>🎵 创造有趣舒适的氛围</li>
                             <li>🔄 轮流在真心话和大冒险之间选择</li>
                             <li>⏱️ 通过为回答设置时间限制来保持游戏进行</li>
-                            <li>🎯 在真心话和大冒险之间混合选择以增加变化</li>
+                            <li>🌶️ 成年人聚会可尝试刺激模式增加挑战性</li>
                         </ul>
                     </div>
                 </div>
@@ -193,8 +214,13 @@
                         <h3 class="text-center mb-3">❓ 常见问题</h3>
 
                         <div class="faq-item">
+                            <h5>😊🌶️ 温和模式和刺激模式有什么区别？</h5>
+                            <p><strong>温和模式</strong>：适合所有年龄段，包含235个家庭友好的问题和挑战，内容轻松有趣。<strong>刺激模式</strong>：专为成年人设计，包含261个更有深度和挑战性的问题，涉及更深层的个人话题。</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
                             <h5>👨‍👩‍👧‍👦 这个真心话大冒险游戏适合所有年龄吗？</h5>
-                            <p>是的！我们的真心话大冒险生成器设计为家庭友好，适合所有年龄的玩家。所有问题和挑战都经过仔细筛选，确保内容适当。</p>
+                            <p>温和模式适合所有年龄的玩家，内容完全家庭友好。刺激模式更适合成年人聚会，虽然内容更有挑战性，但仍然是安全和合法的。</p>
                         </div>
 
                         <div class="faq-item mt-3">
@@ -209,7 +235,7 @@
 
                         <div class="faq-item mt-3">
                             <h5>🔄 问题和挑战会重复吗？</h5>
-                            <p>不会！我们有大量的真心话和大冒险数据库，确保每次游戏都能获得新鲜、独特的内容。这保持游戏的刺激性和不可预测性！</p>
+                            <p>不会！我们的游戏包含496个精心设计的问题和挑战（温和模式235个，刺激模式261个），确保每次游戏都能获得新鲜、独特的内容，长时间游戏也不会感到无聊！</p>
                         </div>
                     </div>
                 </div>

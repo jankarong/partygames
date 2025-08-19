@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Play the ultimate Truth or Dare party game online! Free, fun, and family-friendly truth or dare generator with endless questions and dares for all ages.">
+        content="Truth or dare generator spicy & family modes! Free online party game with 496 questions and dares for all ages. Play instantly!">
     <meta name="keywords"
-        content="truth or dare, party games, online games, truth or dare generator, party game generator, fun games">
+        content="truth or dare, party games, online games, truth or dare generator, truth or dare generator spicy, party game generator, fun games">
     <meta name="author" content="Party Games">
     <meta property="og:title" content="Truth or Dare - Free Online Party Game Generator">
     <meta property="og:description"
-        content="Play the ultimate Truth or Dare party game online! Free, fun, and family-friendly truth or dare generator with endless questions and dares.">
+        content="Truth or dare generator spicy & family modes! Free online party game with 496 questions and dares for all ages.">
     <meta property="og:type" content="website">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html">
@@ -109,16 +109,30 @@
 
             <div class="game-section text-center">
                 <div id="selectedType" class="selected-type mb-3" style="display: none;"></div>
+                <div id="selectedDifficulty" class="selected-difficulty mb-3" style="display: none;"></div>
 
                 <div class="question-card mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <p id="questionText" class="question-text mb-0">👇 Pick Your Choice! 👇</p>
+                            <p id="questionText" class="question-text mb-0">👇 Choose Game Mode! 👇</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="choice-buttons">
+                <!-- Difficulty selection (shown first) -->
+                <div class="difficulty-buttons" id="difficultyButtons">
+                    <button class="btn btn-success btn-lg choice-btn soft-btn" onclick="selectDifficulty('soft')">
+                        <span class="choice-icon">😊</span>
+                        <span class="choice-text">SOFT MODE</span>
+                    </button>
+                    <button class="btn btn-warning btn-lg choice-btn spicy-btn" onclick="selectDifficulty('spicy')">
+                        <span class="choice-icon">🌶️</span>
+                        <span class="choice-text">SPICY MODE</span>
+                    </button>
+                </div>
+
+                <!-- Truth or Dare selection (shown after difficulty is selected) -->
+                <div class="choice-buttons" id="choiceButtons" style="display: none;">
                     <button class="btn btn-info btn-lg choice-btn truth-btn" onclick="selectChoice('truth')">
                         <span class="choice-icon">🤔</span>
                         <span class="choice-text">TRUTH</span>
@@ -135,6 +149,8 @@
                     Question</button>
                 <button class="btn btn-secondary mt-3" onclick="resetGame()" id="resetButton"
                     style="display: none;">Change Choice</button>
+                <button class="btn btn-outline-secondary mt-3" onclick="backToDifficulty()" id="backButton"
+                    style="display: none;">Back to Mode Selection</button>
             </div>
 
             <div class="rules-section mt-4">
@@ -142,17 +158,16 @@
                     <div class="card-body">
                         <h3 class="text-center mb-3">🎮 Game Rules</h3>
                         <ol class="text-start">
-                            <li>👋 Welcome to our online Truth or Dare game! Players take turns clicking either "TRUTH"
-                                or
-                                "DARE"</li>
+                            <li>👋 Welcome to our online Truth or Dare game! First, choose your game mode</li>
+                            <li>😊 <strong>Soft Mode</strong>: Suitable for all ages, family-friendly content, light and fun</li>
+                            <li>🌶️ <strong>Spicy Mode</strong>: For adults, more challenging and in-depth content</li>
+                            <li>🎮 After choosing difficulty, players take turns clicking either "TRUTH" or "DARE"</li>
                             <li>🤔 If you choose "TRUTH", you must answer the question honestly</li>
                             <li>🎯 If you choose "DARE", you must perform the given challenge</li>
                             <li>⚠️ You cannot change your choice after seeing the question/dare</li>
-                            <li>💫 If you refuse to complete a truth or dare, you must face a penalty decided by the
-                                group
-                            </li>
+                            <li>💫 If you refuse to complete a truth or dare, you must face a penalty decided by the group</li>
                             <li>🤝 Keep all truths and dares appropriate and respectful</li>
-                            <li>🎉 Our Truth or Dare creator ensures endless fun - have fun and be a good sport!</li>
+                            <li>🎉 Our Truth or Dare generator has 496 questions and challenges, ensuring endless fun!</li>
                         </ol>
                     </div>
                 </div>
@@ -168,8 +183,9 @@
 
                         <h4 class="mt-4">✨ Why Play Our Truth or Dare?</h4>
                         <ul>
-                            <li>🔄 Endless variety of truths and dares - never get bored!</li>
-                            <li>👨‍👩‍👧‍👦 Family-friendly content suitable for all ages</li>
+                            <li>🔄 496 carefully crafted questions and challenges - never repeat!</li>
+                            <li>😊 Soft Mode: Family-friendly content suitable for all ages</li>
+                            <li>🌶️ Spicy Mode: Adult-exclusive challenging content for deeper experiences</li>
                             <li>🎪 Perfect for parties, sleepovers, or virtual game nights</li>
                             <li>🌐 No downloads required - play instantly in your browser</li>
                             <li>📱 Mobile-friendly design for gaming on the go</li>
@@ -178,10 +194,11 @@
                         <h4 class="mt-4">💡 How to Make the Most of Your Game</h4>
                         <ul>
                             <li>👥 Gather a group of 3 or more players for the best experience</li>
+                            <li>🎯 Choose the appropriate difficulty mode based on participants' ages</li>
                             <li>🎵 Create a fun and comfortable atmosphere</li>
                             <li>🔄 Take turns choosing between truth and dare</li>
                             <li>⏱️ Keep the game moving by setting time limits for responses</li>
-                            <li>🎯 Mix up your choices between truth and dare for variety</li>
+                            <li>🌶️ Adult groups can try Spicy Mode for more challenging experiences</li>
                         </ul>
                     </div>
                 </div>
@@ -193,10 +210,13 @@
                         <h3 class="text-center mb-3">❓ Frequently Asked Questions</h3>
 
                         <div class="faq-item">
+                            <h5>😊🌶️ What's the difference between Soft Mode and Spicy Mode?</h5>
+                            <p><strong>Soft Mode</strong>: Suitable for all ages, contains 235 family-friendly questions and challenges that are light and fun. <strong>Spicy Mode</strong>: Designed for adults, contains 261 more challenging and in-depth questions involving deeper personal topics.</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
                             <h5>👨‍👩‍👧‍👦 Is this Truth or Dare game appropriate for all ages?</h5>
-                            <p>Yes! Our Truth or Dare generator is designed to be family-friendly and suitable for
-                                players of all ages. All questions and dares are carefully curated to ensure appropriate
-                                content.</p>
+                            <p>Soft Mode is suitable for players of all ages with completely family-friendly content. Spicy Mode is more suitable for adult gatherings, though the content is more challenging, it's still safe and legal.</p>
                         </div>
 
                         <div class="faq-item mt-3">
@@ -214,8 +234,7 @@
 
                         <div class="faq-item mt-3">
                             <h5>🔄 Are the questions and dares repeated?</h5>
-                            <p>No! We have a large database of truths and dares that ensures you'll get fresh, unique
-                                content each time you play. This keeps the game exciting and unpredictable!</p>
+                            <p>No! Our game contains 496 carefully designed questions and challenges (235 in Soft Mode, 261 in Spicy Mode), ensuring you'll get fresh, unique content each time you play and won't get bored even during long gaming sessions!</p>
                         </div>
                     </div>
                 </div>
