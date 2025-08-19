@@ -16,7 +16,8 @@ class GameNavigation {
             { name: 'Charades', url: '/games/charades/charades.html', category: 'party' },
             { name: 'Hedbanz', url: '/games/hedbanzgame/hedbanzgame.html', category: 'party' },
             { name: 'Sex Dice', url: '/games/sexdice/sexdice.html', category: 'adult' },
-            { name: 'Beer Number', url: '/games/beernumber/beernumber.html', category: 'drinking' }
+            { name: 'Beer Number', url: '/games/beernumber/beernumber.html', category: 'drinking' },
+            { name: 'Kings Cup', url: '/games/KingsCup/KingsCup.html', category: 'drinking' }
         ];
 
         this.currentGame = this.getCurrentGame();

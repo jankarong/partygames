@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="在线玩国王杯喝酒游戏！经典聚会饮酒游戏，每张牌都有特定规则和挑战。完美适合成人聚会和社交聚会。">
+    <meta name="keywords"
+        content="国王杯喝酒游戏, 饮酒游戏, 聚会饮酒游戏, 国王杯规则, 火圈喝酒游戏, 死亡圈喝酒游戏">
+    <meta name="author" content="聚会游戏">
+    <meta property="og:title" content="国王杯喝酒游戏 - 经典聚会游戏在线版">
+    <meta property="og:description"
+        content="在线玩国王杯喝酒游戏！经典聚会饮酒游戏，每张牌都有特定规则和挑战。完美适合成人聚会和社交聚会。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup.html">
+    <title>国王杯喝酒游戏 - 经典聚会游戏在线版</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../../games/KingsCup/KingsCup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../games/KingsCup/kingscuplogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "国王杯喝酒游戏",
+        "description": "在线玩国王杯喝酒游戏！经典聚会饮酒游戏，每张牌都有特定规则和挑战。完美适合成人聚会和社交聚会。",
+        "url": "https://www.bestpartygames.net/zh/games/KingsCup/KingsCup.html",
+        "image": "https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png",
+        "genre": "喝酒游戏",
+        "numberOfPlayers": "3+",
+        "gamePlatform": "网页浏览器",
+        "operatingSystem": "任意",
+        "applicationCategory": "游戏",
+        "inLanguage": "zh-CN",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "聚会游戏"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "最佳聚会游戏",
+            "url": "https://www.bestpartygames.net"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "200"
+        },
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "扑克牌",
+                "description": "带有喝酒游戏规则的虚拟牌组"
+            },
+            {
+                "@type": "Thing", 
+                "name": "喝酒挑战",
+                "description": "经典聚会喝酒游戏活动和规则"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="../../../games/KingsCup/kingscuplogo.png" alt="国王杯喝酒游戏标志" title="国王杯喝酒游戏" class="game-logo">
+            </div>
+            <h1 class="text-center mb-4">国王杯喝酒游戏</h1>
+
+            <div class="game-section text-center">
+                <!-- Game Status -->
+                <div id="gameStatus" class="game-status mb-3">
+                    <div class="cards-left">剩余牌数: <span id="cardsLeft">52</span></div>
+                    <div class="kings-drawn">已抽国王: <span id="kingsDrawn">0</span>/4</div>
+                </div>
+
+                <!-- Single Card Display -->
+                <div class="single-card-area mb-4">
+                    <div class="playing-card" id="playingCard" onclick="drawCard()">
+                        <div class="card-front" id="cardFront">
+                            <div class="card-header">
+                                <div class="card-value" id="cardValue">?</div>
+                                <div class="card-suit" id="cardSuit">🃏</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="rule-name" id="ruleName">抽取牌张</div>
+                                <div class="rule-text" id="ruleText">点击抽取你的第一张牌！</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-value-small" id="cardValueSmall">?</div>
+                                <div class="card-suit-small" id="cardSuitSmall">🃏</div>
+                            </div>
+                        </div>
+                        <div class="card-back" id="cardBack" style="display: none;">
+                            <div class="deck-pattern">
+                                <span class="deck-icon">👑</span>
+                                <span class="deck-text">国王杯</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Controls -->
+                <div class="controls mb-4">
+                    <button class="btn btn-success" onclick="nextCard()" id="nextButton" style="display: none;">
+                        下一张
+                    </button>
+                    <button class="btn btn-warning" onclick="resetGame()" id="resetButton" style="display: none;">
+                        重新开始
+                    </button>
+                </div>
+
+                <!-- Kings Cup Display -->
+                <div class="kings-cup" id="kingsCup">
+                    <div class="cup-container">
+                        <div class="cup-icon">🏆</div>
+                        <div class="cup-text">国王杯</div>
+                        <div class="cup-contents" id="cupContents">空杯</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Rules Section -->
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">👑 牌张规则与动作</h3>
+                        <div class="rules-grid">
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">A<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card">A<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">瀑布</div>
+                                    <div class="rule-desc">所有人开始喝酒，不能停止直到前一人停止</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">A<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small">A<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">2<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">2<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">指定</div>
+                                    <div class="rule-desc">选择一个人喝酒</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">2<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">2<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">3<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">3<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">自己</div>
+                                    <div class="rule-desc">你要喝酒！</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">3<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">3<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">4<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">4<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">摸地</div>
+                                    <div class="rule-desc">摸地板，最慢的人喝酒</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">4<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">4<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">5<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">5<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">男生</div>
+                                    <div class="rule-desc">所有男生一起喝酒</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">5<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">5<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">6<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card">6<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">女生</div>
+                                    <div class="rule-desc">所有女生一起喝酒</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">6<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small">6<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">7<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">7<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">指天</div>
+                                    <div class="rule-desc">指向天花板，最慢的人喝酒</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">7<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">7<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">8<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">8<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">伙伴</div>
+                                    <div class="rule-desc">选择一个酒友</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">8<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">8<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">9<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">9<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">押韵</div>
+                                    <div class="rule-desc">轮流说押韵的词语</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">9<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">9<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">分类</div>
+                                    <div class="rule-desc">说出分类中的物品</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">J<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">J<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">制定规则</div>
+                                    <div class="rule-desc">创造一个新的游戏规则</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">J<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">J<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">Q<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">Q<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">问题</div>
+                                    <div class="rule-desc">只能问问题，不能回答</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">Q<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">Q<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">K<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">K<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">国王杯</div>
+                                    <div class="rule-desc">将酒倒入杯中，第4个国王喝完全部</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">K<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">K<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Play Section -->
+            <div class="game-intro mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">🎮 国王杯喝酒游戏怎么玩</h3>
+                        <p>国王杯喝酒游戏是一款经典的聚会饮酒游戏，非常适合成人团体！每张牌都有特殊的喝酒规则，创造有趣的互动。游戏目标是避免抽到第4张国王牌，因为这意味着要喝完整个国王杯！</p>
+
+                        <h4 class="mt-4">✨ 游戏设置</h4>
+                        <ul>
+                            <li>🃏 一副虚拟的52张牌</li>
+                            <li>👥 3人或更多玩家以获得最大乐趣</li>
+                            <li>🏆 中央的虚拟"国王杯"</li>
+                            <li>🥤 每个玩家都有自己的饮品</li>
+                            <li>🎪 一群准备好接受挑战的有趣伙伴！</li>
+                        </ul>
+
+                        <h4 class="mt-4">🎯 游戏规则</h4>
+                        <ol>
+                            <li>👤 玩家轮流点击"抽取牌张"</li>
+                            <li>🃏 按照抽到的牌张规则执行</li>
+                            <li>👑 如果抽到国王：将一些饮品倒入国王杯</li>
+                            <li>🍻 抽到第4张国王？你必须喝完整个国王杯！</li>
+                            <li>🎉 当第4个国王喝完杯子时游戏结束！</li>
+                        </ol>
+
+                        <h4 class="mt-4">🔥 重要规则提醒</h4>
+                        <ul>
+                            <li>🍻 <strong>伙伴 (8)：</strong> 选择一个酒友。当你喝酒时，他们也要喝！这个关系持续到其他人抽到8为止。</li>
+                            <li>❓ <strong>问题 (Q)：</strong> 你只能问问题。任何回答（而不是反问）的人都要喝酒。例：甲问"现在几点？" 乙回答"9:30" ❌ 乙喝酒！</li>
+                            <li>📜 <strong>制定规则 (J)：</strong> 制定任何所有人都必须遵守的规则（例如："不能骂人"、"只能用手肘指人"）。</li>
+                            <li>👑 <strong>国王杯 (K)：</strong> 将一些饮品倒入中央杯子。不幸抽到第4张国王的人要全部喝完！</li>
+                            <li>🌊 <strong>瀑布 (A)：</strong> 所有人连续喝酒。你不能停止，直到你前面的人停止！</li>
+                        </ul>
+
+                        <h4 class="mt-4">🌟 为什么玩我们的国王杯喝酒游戏？</h4>
+                        <ul>
+                            <li>🎨 流畅的喝酒游戏动画和设计</li>
+                            <li>📱 完美适配手机和桌面聚会游戏</li>
+                            <li>🎉 无需实体牌张 - 数字化喝酒游戏！</li>
+                            <li>🔄 洗牌后无限可重复游戏</li>
+                            <li>👥 非常适合成人聚会、聚会或虚拟聚会</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">❓ 常见问题解答</h3>
+
+                        <div class="faq-item">
+                            <h5>🍻 什么是国王杯喝酒游戏？</h5>
+                            <p>国王杯喝酒游戏是一款经典的聚会喝酒游戏，玩家抽牌并遵循喝酒规则。非常适合成人聚会和社交聚会！</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>👥 国王杯喝酒游戏需要多少人？</h5>
+                            <p>国王杯喝酒游戏最适合3-8人游玩，但你可以有更多人参与！玩家越多，就会有越多有趣的饮酒互动。</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🃏 当所有国王都被抽完时会发生什么？</h5>
+                            <p>当第4张国王被抽到时，那个玩家必须喝完整个国王杯（里面包含前3张国王的饮品）！这就结束了游戏 - 这是终极挑战！</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🔄 我可以自定义喝酒游戏规则吗？</h5>
+                            <p>虽然我们的国王杯喝酒游戏规则是固定的以保持一致性，但当你抽到J（制定规则）时，你可以在那个游戏局中为你的团体创建自定义喝酒规则！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/game-navigation-zh.js"></script>
+    <script src="KingsCup-zh.js"></script>
+    
+    <!-- Ko-fi Widget -->
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('jankaaa', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#fcbf47',
+        'floating-chat.donateButton.text-color': '#323842'
+      });
+    </script>
+
+    <!-- Ko-fi Widget Position CSS -->
+    <style>
+      /* Position Ko-fi widget in bottom right on desktop */
+      .floatingchat-container-wrap {
+        left: unset !important;
+        right: 16px !important;
+        bottom: 16px !important;
+        z-index: 1000 !important;
+      }
+      
+      /* Mobile specific positioning - bottom left to avoid navigation */
+      .floatingchat-container-wrap-mobi {
+        left: 16px !important;
+        right: unset !important;
+        bottom: 20px !important;
+        z-index: 1000 !important;
+      }
+      
+      /* Desktop popup positioning */
+      .floating-chat-kofi-popup-iframe {
+        bottom: 60px !important;
+        right: 16px !important;
+      }
+      
+      /* Mobile popup positioning - left side */
+      .floating-chat-kofi-popup-iframe-mobi {
+        bottom: 70px !important;
+        left: 16px !important;
+        right: unset !important;
+      }
+    </style>
+</body>
+
+</html>

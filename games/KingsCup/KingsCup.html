@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Play Kings Cup drinking game online! The classic party drinking game with card rules and challenges. Perfect for adult parties and social gatherings.">
+    <meta name="keywords"
+        content="kings cup drinking game, drinking games, party drinking games, kings cup rules, ring of fire drinking game, circle of death drinking game">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="Kings Cup Drinking Game - Classic Party Game Online">
+    <meta property="og:description"
+        content="Play Kings Cup drinking game online! The classic party drinking game with card rules and challenges. Perfect for adult parties and social gatherings.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html">
+    <title>Kings Cup Drinking Game - Classic Party Game Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/gameheader.css">
+    <link rel="stylesheet" href="KingsCup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./kingscuplogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Kings Cup Drinking Game",
+        "description": "Play Kings Cup drinking game online! The classic party drinking game with card rules and challenges. Perfect for adult parties and social gatherings.",
+        "url": "https://www.bestpartygames.net/games/KingsCup/KingsCup.html",
+        "image": "https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png",
+        "genre": "Drinking Game",
+        "numberOfPlayers": "3+",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Party Games"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Best Party Games",
+            "url": "https://www.bestpartygames.net"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "200"
+        },
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "Playing Cards",
+                "description": "Virtual deck of cards with drinking game rules"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Drinking Challenges",
+                "description": "Classic party drinking game activities and rules"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
+         crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="kingscuplogo.png" alt="Kings Cup Drinking Game Logo" title="Kings Cup Drinking Game" class="game-logo">
+            </div>
+            <h1 class="text-center mb-4">Kings Cup Drinking Game</h1>
+
+            <div class="game-section text-center">
+                <!-- Game Status -->
+                <div id="gameStatus" class="game-status mb-3">
+                    <div class="cards-left">Cards Left: <span id="cardsLeft">52</span></div>
+                    <div class="kings-drawn">Kings Drawn: <span id="kingsDrawn">0</span>/4</div>
+                </div>
+
+                <!-- Single Card Display -->
+                <div class="single-card-area mb-4">
+                    <div class="playing-card" id="playingCard" onclick="drawCard()">
+                        <div class="card-front" id="cardFront">
+                            <div class="card-header">
+                                <div class="card-value" id="cardValue">?</div>
+                                <div class="card-suit" id="cardSuit">🃏</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="rule-name" id="ruleName">Draw Card</div>
+                                <div class="rule-text" id="ruleText">Click to draw your first card!</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-value-small" id="cardValueSmall">?</div>
+                                <div class="card-suit-small" id="cardSuitSmall">🃏</div>
+                            </div>
+                        </div>
+                        <div class="card-back" id="cardBack" style="display: none;">
+                            <div class="deck-pattern">
+                                <span class="deck-icon">👑</span>
+                                <span class="deck-text">Kings Cup</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Controls -->
+                <div class="controls mb-4">
+                    <button class="btn btn-success" onclick="nextCard()" id="nextButton" style="display: none;">
+                        Next
+                    </button>
+                    <button class="btn btn-warning" onclick="resetGame()" id="resetButton" style="display: none;">
+                        New Game
+                    </button>
+                </div>
+
+                <!-- Kings Cup Display -->
+                <div class="kings-cup" id="kingsCup">
+                    <div class="cup-container">
+                        <div class="cup-icon">🏆</div>
+                        <div class="cup-text">Kings Cup</div>
+                        <div class="cup-contents" id="cupContents">Empty</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Rules Section -->
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">👑 Card Rules & Actions</h3>
+                        <div class="rules-grid">
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">A<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card">A<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Waterfall</div>
+                                    <div class="rule-desc">Everyone drinks, can't stop until person before you stops</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">A<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small">A<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">2<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">2<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">You</div>
+                                    <div class="rule-desc">Pick someone to drink</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">2<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">2<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">3<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">3<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Me</div>
+                                    <div class="rule-desc">You drink!</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">3<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">3<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">4<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">4<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Floor</div>
+                                    <div class="rule-desc">Touch the floor, last one drinks</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">4<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">4<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">5<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">5<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Guys</div>
+                                    <div class="rule-desc">All boys drink together</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">5<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">5<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">6<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card">6<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Girls</div>
+                                    <div class="rule-desc">All girls drink together</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">6<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small">6<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">7<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">7<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Heaven</div>
+                                    <div class="rule-desc">Point up, last one drinks</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">7<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">7<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">8<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">8<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Mate</div>
+                                    <div class="rule-desc">Pick a drinking buddy</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">8<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">8<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">9<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">9<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Rhyme</div>
+                                    <div class="rule-desc">Take turns rhyming words</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">9<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">9<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Categories</div>
+                                    <div class="rule-desc">Name items in a category</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">J<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">J<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Make Rule</div>
+                                    <div class="rule-desc">Create a new game rule</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">J<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">J<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">Q<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">Q<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Questions</div>
+                                    <div class="rule-desc">Only ask questions, no answers</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">Q<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">Q<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">K<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">K<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Kings Cup</div>
+                                    <div class="rule-desc">Pour drink in cup, 4th King drinks all</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">K<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">K<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Play Section -->
+            <div class="game-intro mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">🎮 How to Play Kings Cup Drinking Game</h3>
+                        <p>Kings Cup drinking game is a classic party drinking game perfect for adult groups! Each card has a special drinking rule that creates fun interactions. The goal is to avoid drawing the 4th King, which means drinking the entire Kings Cup!</p>
+
+                        <h4 class="mt-4">✨ Game Setup</h4>
+                        <ul>
+                            <li>🃏 One virtual deck of 52 cards</li>
+                            <li>👥 3 or more players for maximum fun</li>
+                            <li>🏆 A virtual "Kings Cup" in the center</li>
+                            <li>🥤 Each player has their own drink</li>
+                            <li>🎪 A fun group ready for challenges!</li>
+                        </ul>
+
+                        <h4 class="mt-4">🎯 How to Play</h4>
+                        <ol>
+                            <li>👤 Players take turns clicking "Draw Card"</li>
+                            <li>🃏 Follow the rule for the card you drew</li>
+                            <li>👑 If you draw a King: Pour some of your drink into the Kings Cup</li>
+                            <li>🍻 Draw the 4th King? You must drink the entire Kings Cup!</li>
+                            <li>🎉 Game ends when the 4th King drinks the cup!</li>
+                        </ol>
+
+                        <h4 class="mt-4">🔥 Important Rules to Remember</h4>
+                        <ul>
+                            <li>🍻 <strong>Mate (8):</strong> Choose a drinking buddy. When you drink, they drink too! This lasts until someone else draws an 8.</li>
+                            <li>❓ <strong>Questions (Q):</strong> You can only ask questions. Anyone who answers (instead of asking back) drinks. Example: A asks "What time is it?" B answers "9:30" ❌ B drinks!</li>
+                            <li>📜 <strong>Make Rule (J):</strong> Create any rule everyone must follow (e.g., "No swearing", "Point with elbows only").</li>
+                            <li>👑 <strong>Kings Cup (K):</strong> Pour some drink into center cup. The unlucky person who draws the 4th King drinks it all!</li>
+                            <li>🌊 <strong>Waterfall (A):</strong> Everyone drinks continuously. You can't stop until the person before you stops!</li>
+                        </ul>
+
+                        <h4 class="mt-4">🌟 Why Play Our Kings Cup Drinking Game?</h4>
+                        <ul>
+                            <li>🎨 Smooth drinking game animations and design</li>
+                            <li>📱 Perfect for mobile and desktop party play</li>
+                            <li>🎉 No physical cards needed - digital drinking game!</li>
+                            <li>🔄 Endless replayability with shuffled deck</li>
+                            <li>👥 Great for adult parties, gatherings, or virtual hangouts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">❓ Frequently Asked Questions</h3>
+
+                        <div class="faq-item">
+                            <h5>🍻 What is Kings Cup drinking game?</h5>
+                            <p>Kings Cup drinking game is a classic party drinking game where players draw cards and follow drinking rules. It's perfect for adult parties and social gatherings!</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>👥 How many players do you need for Kings Cup drinking game?</h5>
+                            <p>Kings Cup drinking game is best with 3-8 players, but you can play with more! The more players, the more fun and drinking interactions you'll have.</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🃏 What happens when all Kings are drawn?</h5>
+                            <p>When the 4th King is drawn, that player must drink the entire Kings Cup (which contains drinks from the previous 3 Kings)! This ends the game - it's the ultimate challenge!</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🔄 Can I customize the drinking game rules?</h5>
+                            <p>While our Kings Cup drinking game rules are set for consistency, when you draw a Jack (Make a Rule), you can create custom drinking rules for your group during that game session!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/game-navigation.js"></script>
+    <script src="KingsCup.js"></script>
+    
+    <!-- Ko-fi Widget -->
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('jankaaa', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#fcbf47',
+        'floating-chat.donateButton.text-color': '#323842'
+      });
+    </script>
+
+    <!-- Ko-fi Widget Position CSS -->
+    <style>
+      /* Position Ko-fi widget in bottom right on desktop */
+      .floatingchat-container-wrap {
+        left: unset !important;
+        right: 16px !important;
+        bottom: 16px !important;
+        z-index: 1000 !important;
+      }
+      
+      /* Mobile specific positioning - bottom left to avoid navigation */
+      .floatingchat-container-wrap-mobi {
+        left: 16px !important;
+        right: unset !important;
+        bottom: 20px !important;
+        z-index: 1000 !important;
+      }
+      
+      /* Desktop popup positioning */
+      .floating-chat-kofi-popup-iframe {
+        bottom: 60px !important;
+        right: 16px !important;
+      }
+      
+      /* Mobile popup positioning - left side */
+      .floating-chat-kofi-popup-iframe-mobi {
+        bottom: 70px !important;
+        left: 16px !important;
+        right: unset !important;
+      }
+    </style>
+</body>
+
+</html>

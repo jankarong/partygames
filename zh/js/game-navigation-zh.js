@@ -16,7 +16,8 @@ class GameNavigation {
             { name: '比划猜词', url: '/zh/games/charades/charades.html', category: 'party' },
             { name: '头脑风暴', url: '/zh/games/hedbanzgame/hedbanzgame.html', category: 'party' },
             { name: '情趣骰子', url: '/zh/games/sexdice/sexdice.html', category: 'adult' },
-            { name: '啤酒数字', url: '/zh/games/beernumber/beernumber.html', category: 'drinking' }
+            { name: '啤酒数字', url: '/zh/games/beernumber/beernumber.html', category: 'drinking' },
+            { name: '国王杯', url: '/zh/games/KingsCup/KingsCup.html', category: 'drinking' }
         ];
 
         this.currentGame = this.getCurrentGame();

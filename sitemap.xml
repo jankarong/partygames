@@ -390,4 +390,35 @@
         </image:image>
     </url>
 
+    <!-- Kings Cup -->
+    <url>
+        <loc>https://www.bestpartygames.net/games/KingsCup/KingsCup.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png</image:loc>
+            <image:title>Kings Cup Drinking Game</image:title>
+            <image:caption>Play the classic Kings Cup drinking game online! Perfect for adult parties with card rules and challenges.</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://www.bestpartygames.net/zh/games/KingsCup/KingsCup.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png</image:loc>
+            <image:title>国王杯喝酒游戏</image:title>
+            <image:caption>在线玩经典国王杯喝酒游戏！适合成人聚会，包含牌张规则和挑战。</image:caption>
+        </image:image>
+    </url>
+
 </urlset>
