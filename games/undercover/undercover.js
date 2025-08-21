@@ -330,17 +330,14 @@ function showWord() {
     const flipCard = document.querySelector('.flip-card');
     flipCard.classList.remove('flipped');
 
-    // Remove previous click event listener
-    flipCard.onclick = null;
+    // Remove previous event listeners
+    const newFlipCard = flipCard.cloneNode(true);
+    flipCard.parentNode.replaceChild(newFlipCard, flipCard);
 
-    // Add new click event listener
-    let hasBeenFlipped = false;
-    flipCard.onclick = function () {
-        if (!hasBeenFlipped) {
-            this.classList.add('flipped');
-            hasBeenFlipped = true;
-        }
-    };
+    // Add new click event listener for simple toggle
+    newFlipCard.addEventListener('click', function () {
+        this.classList.toggle('flipped');
+    });
 
     // Always show "Next Player" button
     document.querySelector('button[onclick="nextPlayer()"]').style.display = 'inline-block';
