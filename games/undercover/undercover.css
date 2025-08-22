@@ -36,7 +36,7 @@ body {
     background-image: url('./undercovebg.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
-    background-attachment: fixed !important;
+    background-attachment: scroll !important;
     background-repeat: no-repeat !important;
     color: var(--light-text);
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
