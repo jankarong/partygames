@@ -101,7 +101,7 @@
                         <div class="role-inputs row g-3">
                             <div class="role-input col-md-4">
                                 <label for="mafiaCount" class="form-label">Mafia:</label>
-                                <input type="number" id="mafiaCount" class="form-control" min="1" max="3" value="2">
+                                <input type="number" id="mafiaCount" class="form-control" min="1" value="2">
                             </div>
                             <div class="role-input col-md-4">
                                 <label for="doctorCount" class="form-label">Doctor:</label>
@@ -111,14 +111,66 @@
                                 <label for="detectiveCount" class="form-label">Detective:</label>
                                 <input type="number" id="detectiveCount" class="form-control" min="0" max="1" value="1">
                             </div>
+                            <div class="role-input col-md-4">
+                                <label for="villagerCount" class="form-label">Villagers:</label>
+                                <input type="number" id="villagerCount" class="form-control" min="1" value="4">
+                            </div>
                         </div>
+                        
+                        <!-- Custom roles area -->
+                        <div id="customRoleInputs" class="row g-3 mt-2"></div>
                         <div class="role-summary mt-3">
-                            <p class="mb-1">Villagers: <span id="villagerCount" class="badge bg-secondary">4</span></p>
                             <p class="role-warning text-danger" id="roleWarning"></p>
                         </div>
                     </div>
 
                     <button id="setupGame" class="btn btn-primary w-100 mt-3">Start Game</button>
+                    <button id="manageRoles" class="btn btn-secondary w-100 mt-2">Manage Custom Roles</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="role-management mt-4" style="display: none;">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Custom Role Management</h2>
+                    
+                    <!-- Create new role -->
+                    <div class="create-role-section mb-5">
+                        <h4 class="mb-3">Create New Role</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="roleName" class="form-label">Role Name</label>
+                                <input type="text" id="roleName" class="form-control" placeholder="e.g. Cupid">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="roleTeam" class="form-label">Team</label>
+                                <select id="roleTeam" class="form-select">
+                                    <option value="villager">Villager Team</option>
+                                    <option value="mafia">Mafia Team</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleDescription" class="form-label">Role Description</label>
+                                <textarea id="roleDescription" class="form-control" rows="3" placeholder="Describe this role's abilities and purpose..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleAbility" class="form-label">Night Ability</label>
+                                <textarea id="roleAbility" class="form-control" rows="2" placeholder="Describe this role's night phase actions... (optional)"></textarea>
+                            </div>
+                        </div>
+                        <button id="createRole" class="btn btn-primary mt-3">Create Role</button>
+                    </div>
+
+                    <!-- Existing roles list -->
+                    <div class="existing-roles-section mb-4">
+                        <h4 class="mb-3">Existing Roles</h4>
+                        <div id="rolesList" class="row g-3"></div>
+                    </div>
+
+                    <div class="text-center">
+                        <button id="backToSetup" class="btn btn-secondary">Back to Game Setup</button>
+                    </div>
                 </div>
             </div>
         </div>

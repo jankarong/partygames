@@ -12,7 +12,9 @@
       "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\games\\KingsCup\\KingsCup.html\")",
       "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\zh\\games\\KingsCup\\KingsCup.html\")",
       "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\index.html\")",
-      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\zh\\index.html\")"
+      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\zh\\index.html\")",
+      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\zh\\games\\mafia\\mafia.html\")",
+      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\games\\mafia\\mafia.html\")"
     ],
     "deny": []
   }

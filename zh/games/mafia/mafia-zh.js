@@ -17,6 +17,7 @@ class MafiaGame {
             hasUsedPoison: false
         };
         this.roles = ['mafia', 'villager', 'doctor', 'detective'];
+        this.customRoles = this.loadCustomRoles();
         this.roleDescriptions = {
             mafia: '秘密淘汰村民，不被发现',
             villager: '找出并淘汰狼人',
@@ -29,7 +30,9 @@ class MafiaGame {
             doctor: '医生',
             detective: '预言家'
         };
+        this.loadCustomRoleNames(); // 在roleNames创建后加载自定义角色名称
         this.setupEventListeners();
+        this.updateCustomRoleInputs();
         this.updateRoleCounts();
         this.setupCustomAlert();
     }
@@ -37,10 +40,12 @@ class MafiaGame {
     setupEventListeners() {
         document.getElementById('setupGame').addEventListener('click', () => this.initializeGame());
         document.getElementById('startGame').addEventListener('click', () => this.startGame());
-        document.getElementById('nextPhase').addEventListener('click', () => this.nextPhase());
+        document.getElementById('manageRoles').addEventListener('click', () => this.showRoleManagement());
+        document.getElementById('createRole').addEventListener('click', () => this.createCustomRole());
+        document.getElementById('backToSetup').addEventListener('click', () => this.backToSetup());
 
         // Add listeners for role count inputs
-        ['playerCount', 'mafiaCount', 'doctorCount', 'detectiveCount'].forEach(id => {
+        ['playerCount', 'mafiaCount', 'doctorCount', 'detectiveCount', 'villagerCount'].forEach(id => {
             document.getElementById(id).addEventListener('input', () => this.updateRoleCounts());
         });
     }
@@ -50,29 +55,31 @@ class MafiaGame {
         const mafiaCount = parseInt(document.getElementById('mafiaCount').value) || 0;
         const doctorCount = parseInt(document.getElementById('doctorCount').value) || 0;
         const detectiveCount = parseInt(document.getElementById('detectiveCount').value) || 0;
+        const villagerCount = parseInt(document.getElementById('villagerCount').value) || 0;
 
-        // Calculate villagers
-        const villagerCount = totalPlayers - (mafiaCount + doctorCount + detectiveCount);
-        document.getElementById('villagerCount').textContent = Math.max(0, villagerCount);
+        // 计算自定义角色数量
+        let customRoleCount = 0;
+        Object.values(this.customRoles).forEach(role => {
+            const countInput = document.getElementById(`${role.id}Count`);
+            if (countInput) {
+                customRoleCount += parseInt(countInput.value) || 0;
+            }
+        });
 
         // Validate role distribution
         const setupButton = document.getElementById('setupGame');
         const warning = document.getElementById('roleWarning');
 
-        if (totalPlayers < 6) {
-            warning.textContent = '至少需要6名玩家';
+        const roleTotal = mafiaCount + doctorCount + detectiveCount + villagerCount + customRoleCount;
+
+        if (totalPlayers < 3) {
+            warning.textContent = '至少需要3名玩家';
             setupButton.disabled = true;
             return;
         }
 
-        if (totalPlayers > 15) {
-            warning.textContent = '最多允许15名玩家';
-            setupButton.disabled = true;
-            return;
-        }
-
-        if (villagerCount < 1) {
-            warning.textContent = '至少需要1名村民';
+        if (roleTotal !== totalPlayers) {
+            warning.textContent = `角色总数（${roleTotal}）与总玩家数（${totalPlayers}）不匹配`;
             setupButton.disabled = true;
             return;
         }
@@ -83,8 +90,8 @@ class MafiaGame {
             return;
         }
 
-        if (mafiaCount >= villagerCount) {
-            warning.textContent = '狼人数量过多';
+        if (villagerCount < 1) {
+            warning.textContent = '至少需要1名村民';
             setupButton.disabled = true;
             return;
         }
@@ -99,17 +106,29 @@ class MafiaGame {
         const mafiaCount = parseInt(document.getElementById('mafiaCount').value);
         const doctorCount = parseInt(document.getElementById('doctorCount').value);
         const detectiveCount = parseInt(document.getElementById('detectiveCount').value);
+        const villagerCount = parseInt(document.getElementById('villagerCount').value);
 
         this.players = [];
 
         // Create roles array based on selected counts
         let roles = Array(mafiaCount).fill('mafia');
-        if (doctorCount > 0) roles.push('doctor');
-        if (detectiveCount > 0) roles.push('detective');
-
-        // Fill remaining slots with villagers
-        const villagerCount = playerCount - roles.length;
+        if (doctorCount > 0) roles = roles.concat(Array(doctorCount).fill('doctor'));
+        if (detectiveCount > 0) roles = roles.concat(Array(detectiveCount).fill('detective'));
         roles = roles.concat(Array(villagerCount).fill('villager'));
+
+        // 添加自定义角色
+        Object.values(this.customRoles).forEach(role => {
+            const countInput = document.getElementById(`${role.id}Count`);
+            if (countInput) {
+                const count = parseInt(countInput.value) || 0;
+                if (count > 0) {
+                    roles = roles.concat(Array(count).fill(role.id));
+                    // 确保角色名称和描述已加载
+                    this.roleNames[role.id] = role.name;
+                    this.roleDescriptions[role.id] = role.description;
+                }
+            }
+        });
 
         // Shuffle roles
         roles = this.shuffleArray(roles);
@@ -132,6 +151,7 @@ class MafiaGame {
 
     createCards() {
         const cardGrid = document.getElementById('cardGrid');
+        
         cardGrid.innerHTML = this.players.map(player => `
             <div class="col">
                 <div class="role-card" data-player-id="${player.id}">
@@ -140,8 +160,8 @@ class MafiaGame {
                             <div class="card-number">玩家 ${player.id}</div>
                         </div>
                         <div class="card-back role-${player.role}">
-                            <div class="role-name">${this.roleNames[player.role]}</div>
-                            <div class="role-description">${this.roleDescriptions[player.role]}</div>
+                            <div class="role-name">${this.roleNames[player.role] || player.role}</div>
+                            <div class="role-description">${this.roleDescriptions[player.role] || '未知角色'}</div>
                         </div>
                     </div>
                 </div>
@@ -214,6 +234,26 @@ class MafiaGame {
 
         // 隐藏所有行动区域
         document.querySelectorAll('.role-action').forEach(el => el.style.display = 'none');
+        
+        // 重置预言家调查结果显示
+        const investigationResult = document.getElementById('investigation-result');
+        if (investigationResult) {
+            investigationResult.style.display = 'none';
+        }
+
+        // 重置医生界面状态
+        const doctorChoice = document.getElementById('doctor-choice');
+        const doctorTargets = document.getElementById('doctor-targets');
+        const confirmDoctor = document.getElementById('confirm-doctor');
+        if (doctorChoice) {
+            doctorChoice.style.display = 'flex';
+        }
+        if (doctorTargets) {
+            doctorTargets.style.display = 'none';
+        }
+        if (confirmDoctor) {
+            confirmDoctor.style.display = 'none';
+        }
 
         if (nextIndex >= roleOrder.length) {
             // 夜晚阶段结束
@@ -254,6 +294,14 @@ class MafiaGame {
                     玩家 ${player.id}
                 </div>
             `).join('');
+
+        // 如果是预言家，确保调查结果是隐藏的，并重新启用所有选项
+        if (this.currentNightRole === 'detective') {
+            const investigationResult = document.getElementById('investigation-result');
+            if (investigationResult) {
+                investigationResult.style.display = 'none';
+            }
+        }
 
         // Add click handlers
         const options = targetDiv.getElementsByClassName('player-option');
@@ -328,6 +376,15 @@ class MafiaGame {
         }
         promptText += ' 或跳过行动。';
 
+        // 重置按钮状态
+        saveButton.disabled = false;
+        saveButton.style.opacity = '1';
+        saveButton.style.cursor = 'pointer';
+        poisonButton.disabled = false;
+        poisonButton.style.opacity = '1';
+        poisonButton.style.cursor = 'pointer';
+
+        // 根据能力使用情况禁用按钮
         if (this.doctorAbilities.hasUsedSave) {
             saveButton.disabled = true;
             saveButton.style.opacity = '0.5';
@@ -342,9 +399,10 @@ class MafiaGame {
 
         doctorPrompt.textContent = promptText;
 
-        // 显示选择按钮
+        // 重置界面状态
         doctorTargets.style.display = 'none';
         document.getElementById('doctor-choice').style.display = 'flex';
+        document.getElementById('confirm-doctor').style.display = 'none';
 
         // 救人按钮
         saveButton.onclick = () => {
@@ -608,10 +666,11 @@ class MafiaGame {
 
     resetGame() {
         // 保存当前的角色设置
-        const playerCount = document.getElementById('playerCount').value || '6';
-        const mafiaCount = document.getElementById('mafiaCount').value || '1';
+        const playerCount = document.getElementById('playerCount').value || '8';
+        const mafiaCount = document.getElementById('mafiaCount').value || '2';
         const doctorCount = document.getElementById('doctorCount').value || '1';
         const detectiveCount = document.getElementById('detectiveCount').value || '1';
+        const villagerCount = document.getElementById('villagerCount').value || '4';
 
         // 重置游戏状态
         this.players = [];
@@ -644,6 +703,7 @@ class MafiaGame {
         document.getElementById('mafiaCount').value = mafiaCount;
         document.getElementById('doctorCount').value = doctorCount;
         document.getElementById('detectiveCount').value = detectiveCount;
+        document.getElementById('villagerCount').value = villagerCount;
 
         this.updateRoleCounts();
     }
@@ -699,6 +759,152 @@ class MafiaGame {
             [array[i], array[j]] = [array[j], array[i]];
         }
         return array;
+    }
+
+    loadCustomRoles() {
+        const saved = localStorage.getItem('mafiaCustomRoles');
+        return saved ? JSON.parse(saved) : {};
+    }
+
+    saveCustomRoles() {
+        localStorage.setItem('mafiaCustomRoles', JSON.stringify(this.customRoles));
+    }
+
+    loadCustomRoleNames() {
+        // 将自定义角色的名称和描述加载到游戏对象中
+        if (this.customRoles && typeof this.customRoles === 'object') {
+            Object.values(this.customRoles).forEach(role => {
+                if (role && role.id && role.name) {
+                    this.roleNames[role.id] = role.name;
+                    this.roleDescriptions[role.id] = role.description || '';
+                }
+            });
+        }
+    }
+
+    showRoleManagement() {
+        // Hide setup, show role management
+        document.querySelector('.game-setup').style.display = 'none';
+        document.querySelector('.role-management').style.display = 'block';
+        
+        this.displayExistingRoles();
+    }
+
+    displayExistingRoles() {
+        const rolesList = document.getElementById('rolesList');
+        rolesList.innerHTML = '';
+
+        // Display built-in roles
+        const builtInRoles = [
+            { id: 'mafia', name: '狼人', team: 'mafia', description: '秘密淘汰村民，不被发现', builtin: true },
+            { id: 'villager', name: '村民', team: 'villager', description: '找出并淘汰狼人', builtin: true },
+            { id: 'doctor', name: '医生', team: 'villager', description: '游戏中可以救一人并毒杀一人', builtin: true },
+            { id: 'detective', name: '预言家', team: 'villager', description: '每晚查验一名玩家身份', builtin: true }
+        ];
+
+        [...builtInRoles, ...Object.values(this.customRoles)].forEach(role => {
+            const roleCard = document.createElement('div');
+            roleCard.className = 'col-md-6';
+            
+            const teamBadgeClass = role.team === 'mafia' ? 'bg-danger' : 'bg-success';
+            
+            roleCard.innerHTML = `
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title mb-0">${role.name}</h5>
+                            <span class="badge ${teamBadgeClass}">${role.team === 'mafia' ? '狼人阵营' : '村民阵营'}</span>
+                        </div>
+                        <p class="card-text text-muted mb-2">${role.description}</p>
+                        ${role.ability ? `<p class="card-text"><small class="text-info">夜晚能力: ${role.ability}</small></p>` : ''}
+                        ${!role.builtin ? `<button class="btn btn-sm btn-outline-danger" onclick="game.deleteCustomRole('${role.id}')">删除</button>` : ''}
+                    </div>
+                </div>
+            `;
+            rolesList.appendChild(roleCard);
+        });
+    }
+
+    createCustomRole() {
+        const name = document.getElementById('roleName').value.trim();
+        const team = document.getElementById('roleTeam').value;
+        const description = document.getElementById('roleDescription').value.trim();
+        const ability = document.getElementById('roleAbility').value.trim();
+
+        if (!name || !description) {
+            this.showAlert('请填写角色名称和描述！');
+            return;
+        }
+
+        const roleId = 'custom_' + Date.now();
+        
+        this.customRoles[roleId] = {
+            id: roleId,
+            name: name,
+            team: team,
+            description: description,
+            ability: ability,
+            builtin: false
+        };
+
+        // Update role descriptions for game use
+        this.roleDescriptions[roleId] = description;
+        this.roleNames[roleId] = name;
+
+        this.saveCustomRoles();
+        this.loadCustomRoleNames(); // 重新加载角色名称
+        this.displayExistingRoles();
+
+        // Clear form
+        document.getElementById('roleName').value = '';
+        document.getElementById('roleDescription').value = '';
+        document.getElementById('roleAbility').value = '';
+
+        this.showAlert('角色创建成功！');
+        
+        // 如果在游戏设置界面，更新输入框
+        if (document.querySelector('.game-setup').style.display !== 'none') {
+            this.updateCustomRoleInputs();
+        }
+    }
+
+    deleteCustomRole(roleId) {
+        if (confirm(`确定要删除角色 "${this.customRoles[roleId].name}" 吗？`)) {
+            delete this.customRoles[roleId];
+            delete this.roleDescriptions[roleId];
+            delete this.roleNames[roleId];
+            this.saveCustomRoles();
+            this.displayExistingRoles();
+            this.showAlert('角色删除成功！');
+            
+            // 更新游戏设置中的输入框
+            this.updateCustomRoleInputs();
+        }
+    }
+
+    backToSetup() {
+        document.querySelector('.role-management').style.display = 'none';
+        document.querySelector('.game-setup').style.display = 'block';
+        this.updateCustomRoleInputs(); // 返回时更新输入框
+    }
+
+    updateCustomRoleInputs() {
+        const customRoleInputs = document.getElementById('customRoleInputs');
+        customRoleInputs.innerHTML = '';
+
+        // 为每个自定义角色创建输入框
+        Object.values(this.customRoles).forEach(role => {
+            const roleDiv = document.createElement('div');
+            roleDiv.className = 'role-input col-md-4';
+            roleDiv.innerHTML = `
+                <label for="${role.id}Count" class="form-label">${role.name}：</label>
+                <input type="number" id="${role.id}Count" class="form-control" min="0" max="10" value="0">
+            `;
+            customRoleInputs.appendChild(roleDiv);
+
+            // 添加事件监听器
+            document.getElementById(`${role.id}Count`).addEventListener('input', () => this.updateRoleCounts());
+        });
     }
 }
 

@@ -1037,7 +1037,22 @@ h5 {
     }
 
     .role-card {
+        width: 120px;
         height: 160px;
+    }
+
+    .card-number {
+        font-size: 1.2rem;
+    }
+
+    .role-name {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .role-description {
+        font-size: 0.9rem;
+        line-height: 1.2;
     }
 }
 

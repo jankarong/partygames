@@ -17,13 +17,22 @@ class MafiaGame {
             hasUsedPoison: false
         };
         this.roles = ['mafia', 'villager', 'doctor', 'detective'];
+        this.customRoles = this.loadCustomRoles();
         this.roleDescriptions = {
             mafia: 'Eliminate the villagers without being caught',
             villager: 'Find and eliminate the Mafia',
             doctor: 'Save one person during the game AND poison one person during the game',
             detective: 'Investigate one player\'s identity each night'
         };
+        this.roleNames = {
+            mafia: 'Mafia',
+            villager: 'Villager',
+            doctor: 'Doctor',
+            detective: 'Detective'
+        };
+        this.loadCustomRoleNames();
         this.setupEventListeners();
+        this.updateCustomRoleInputs();
         this.updateRoleCounts();
         this.setupCustomAlert();
     }
@@ -31,10 +40,12 @@ class MafiaGame {
     setupEventListeners() {
         document.getElementById('setupGame').addEventListener('click', () => this.initializeGame());
         document.getElementById('startGame').addEventListener('click', () => this.startGame());
-        document.getElementById('nextPhase').addEventListener('click', () => this.nextPhase());
+        document.getElementById('manageRoles').addEventListener('click', () => this.showRoleManagement());
+        document.getElementById('createRole').addEventListener('click', () => this.createCustomRole());
+        document.getElementById('backToSetup').addEventListener('click', () => this.backToSetup());
 
         // Add listeners for role count inputs
-        ['playerCount', 'mafiaCount', 'doctorCount', 'detectiveCount'].forEach(id => {
+        ['playerCount', 'mafiaCount', 'doctorCount', 'detectiveCount', 'villagerCount'].forEach(id => {
             document.getElementById(id).addEventListener('input', () => this.updateRoleCounts());
         });
     }
@@ -44,23 +55,31 @@ class MafiaGame {
         const mafiaCount = parseInt(document.getElementById('mafiaCount').value) || 0;
         const doctorCount = parseInt(document.getElementById('doctorCount').value) || 0;
         const detectiveCount = parseInt(document.getElementById('detectiveCount').value) || 0;
+        const villagerCount = parseInt(document.getElementById('villagerCount').value) || 0;
 
-        // Calculate villagers
-        const villagerCount = totalPlayers - (mafiaCount + doctorCount + detectiveCount);
-        document.getElementById('villagerCount').textContent = Math.max(0, villagerCount);
+        // Calculate custom role count
+        let customRoleCount = 0;
+        Object.values(this.customRoles).forEach(role => {
+            const countInput = document.getElementById(`${role.id}Count`);
+            if (countInput) {
+                customRoleCount += parseInt(countInput.value) || 0;
+            }
+        });
 
         // Validate role distribution
         const setupButton = document.getElementById('setupGame');
         const warning = document.getElementById('roleWarning');
 
-        if (totalPlayers < 6) {
-            warning.textContent = 'Minimum 6 players required';
+        const roleTotal = mafiaCount + doctorCount + detectiveCount + villagerCount + customRoleCount;
+
+        if (totalPlayers < 3) {
+            warning.textContent = 'Minimum 3 players required';
             setupButton.disabled = true;
             return;
         }
 
-        if (totalPlayers > 15) {
-            warning.textContent = 'Maximum 15 players allowed';
+        if (roleTotal !== totalPlayers) {
+            warning.textContent = `Role total (${roleTotal}) doesn't match total players (${totalPlayers})`;
             setupButton.disabled = true;
             return;
         }
@@ -77,11 +96,6 @@ class MafiaGame {
             return;
         }
 
-        if (mafiaCount >= villagerCount) {
-            warning.textContent = 'Too many mafia members';
-            setupButton.disabled = true;
-            return;
-        }
 
         // All validations passed
         warning.textContent = '';
@@ -93,17 +107,29 @@ class MafiaGame {
         const mafiaCount = parseInt(document.getElementById('mafiaCount').value);
         const doctorCount = parseInt(document.getElementById('doctorCount').value);
         const detectiveCount = parseInt(document.getElementById('detectiveCount').value);
+        const villagerCount = parseInt(document.getElementById('villagerCount').value);
 
         this.players = [];
 
         // Create roles array based on selected counts
         let roles = Array(mafiaCount).fill('mafia');
-        if (doctorCount > 0) roles.push('doctor');
-        if (detectiveCount > 0) roles.push('detective');
-
-        // Fill remaining slots with villagers
-        const villagerCount = playerCount - roles.length;
+        if (doctorCount > 0) roles = roles.concat(Array(doctorCount).fill('doctor'));
+        if (detectiveCount > 0) roles = roles.concat(Array(detectiveCount).fill('detective'));
         roles = roles.concat(Array(villagerCount).fill('villager'));
+
+        // Add custom roles
+        Object.values(this.customRoles).forEach(role => {
+            const countInput = document.getElementById(`${role.id}Count`);
+            if (countInput) {
+                const count = parseInt(countInput.value) || 0;
+                if (count > 0) {
+                    roles = roles.concat(Array(count).fill(role.id));
+                    // Ensure role names and descriptions are loaded
+                    this.roleNames[role.id] = role.name;
+                    this.roleDescriptions[role.id] = role.description;
+                }
+            }
+        });
 
         // Shuffle roles
         roles = this.shuffleArray(roles);
@@ -208,6 +234,26 @@ class MafiaGame {
 
         // 隐藏所有行动区域
         document.querySelectorAll('.role-action').forEach(el => el.style.display = 'none');
+        
+        // Reset detective investigation result display
+        const investigationResult = document.getElementById('investigation-result');
+        if (investigationResult) {
+            investigationResult.style.display = 'none';
+        }
+
+        // Reset doctor interface state
+        const doctorChoice = document.getElementById('doctor-choice');
+        const doctorTargets = document.getElementById('doctor-targets');
+        const confirmDoctor = document.getElementById('confirm-doctor');
+        if (doctorChoice) {
+            doctorChoice.style.display = 'flex';
+        }
+        if (doctorTargets) {
+            doctorTargets.style.display = 'none';
+        }
+        if (confirmDoctor) {
+            confirmDoctor.style.display = 'none';
+        }
 
         if (nextIndex >= roleOrder.length) {
             // 夜晚阶段结束
@@ -311,6 +357,18 @@ class MafiaGame {
         const poisonButton = document.getElementById('poison-player');
         const skipButton = document.getElementById('skip-action');
         const doctorTargets = document.getElementById('doctor-targets');
+
+        // Reset button states
+        if (saveButton) {
+            saveButton.disabled = false;
+            saveButton.style.opacity = '1';
+            saveButton.style.cursor = 'pointer';
+        }
+        if (poisonButton) {
+            poisonButton.disabled = false;
+            poisonButton.style.opacity = '1';
+            poisonButton.style.cursor = 'pointer';
+        }
 
         let promptText = `Player ${mafiaTarget.id} was targeted by the Mafia.`;
         if (!this.doctorAbilities.hasUsedSave) {
@@ -592,11 +650,12 @@ class MafiaGame {
     }
 
     resetGame() {
-        // 保存当前的角色设置
-        const playerCount = document.getElementById('playerCount').value || '6';
-        const mafiaCount = document.getElementById('mafiaCount').value || '1';
+        // Save current role settings
+        const playerCount = document.getElementById('playerCount').value || '8';
+        const mafiaCount = document.getElementById('mafiaCount').value || '2';
         const doctorCount = document.getElementById('doctorCount').value || '1';
         const detectiveCount = document.getElementById('detectiveCount').value || '1';
+        const villagerCount = document.getElementById('villagerCount').value || '4';
 
         // 重置游戏状态
         this.players = [];
@@ -624,11 +683,12 @@ class MafiaGame {
         document.querySelector('.role-cards').style.display = 'block';
         document.querySelector('.game-controls').style.display = 'none';
 
-        // 恢复上一局的角色设置
+        // Restore previous role settings
         document.getElementById('playerCount').value = playerCount;
         document.getElementById('mafiaCount').value = mafiaCount;
         document.getElementById('doctorCount').value = doctorCount;
         document.getElementById('detectiveCount').value = detectiveCount;
+        document.getElementById('villagerCount').value = villagerCount;
 
         this.updateRoleCounts();
     }
@@ -684,6 +744,152 @@ class MafiaGame {
             [array[i], array[j]] = [array[j], array[i]];
         }
         return array;
+    }
+
+    loadCustomRoles() {
+        const saved = localStorage.getItem('mafiaCustomRoles');
+        return saved ? JSON.parse(saved) : {};
+    }
+
+    saveCustomRoles() {
+        localStorage.setItem('mafiaCustomRoles', JSON.stringify(this.customRoles));
+    }
+
+    loadCustomRoleNames() {
+        // Load custom role names and descriptions into the game object
+        if (this.customRoles && typeof this.customRoles === 'object') {
+            Object.values(this.customRoles).forEach(role => {
+                if (role && role.id && role.name) {
+                    this.roleNames[role.id] = role.name;
+                    this.roleDescriptions[role.id] = role.description || '';
+                }
+            });
+        }
+    }
+
+    showRoleManagement() {
+        // Hide setup, show role management
+        document.querySelector('.game-setup').style.display = 'none';
+        document.querySelector('.role-management').style.display = 'block';
+        
+        this.displayExistingRoles();
+    }
+
+    displayExistingRoles() {
+        const rolesList = document.getElementById('rolesList');
+        rolesList.innerHTML = '';
+
+        // Display built-in roles
+        const builtInRoles = [
+            { id: 'mafia', name: 'Mafia', team: 'mafia', description: 'Eliminate the villagers without being caught', builtin: true },
+            { id: 'villager', name: 'Villager', team: 'villager', description: 'Find and eliminate the Mafia', builtin: true },
+            { id: 'doctor', name: 'Doctor', team: 'villager', description: 'Save one person during the game AND poison one person during the game', builtin: true },
+            { id: 'detective', name: 'Detective', team: 'villager', description: 'Investigate one player\'s identity each night', builtin: true }
+        ];
+
+        [...builtInRoles, ...Object.values(this.customRoles)].forEach(role => {
+            const roleCard = document.createElement('div');
+            roleCard.className = 'col-md-6';
+            
+            const teamBadgeClass = role.team === 'mafia' ? 'bg-danger' : 'bg-success';
+            
+            roleCard.innerHTML = `
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title mb-0">${role.name}</h5>
+                            <span class="badge ${teamBadgeClass}">${role.team === 'mafia' ? 'Mafia Team' : 'Villager Team'}</span>
+                        </div>
+                        <p class="card-text text-muted mb-2">${role.description}</p>
+                        ${role.ability ? `<p class="card-text"><small class="text-info">Night Ability: ${role.ability}</small></p>` : ''}
+                        ${!role.builtin ? `<button class="btn btn-sm btn-outline-danger" onclick="game.deleteCustomRole('${role.id}')">Delete</button>` : ''}
+                    </div>
+                </div>
+            `;
+            rolesList.appendChild(roleCard);
+        });
+    }
+
+    createCustomRole() {
+        const name = document.getElementById('roleName').value.trim();
+        const team = document.getElementById('roleTeam').value;
+        const description = document.getElementById('roleDescription').value.trim();
+        const ability = document.getElementById('roleAbility').value.trim();
+
+        if (!name || !description) {
+            this.showAlert('Please fill in role name and description!');
+            return;
+        }
+
+        const roleId = 'custom_' + Date.now();
+        
+        this.customRoles[roleId] = {
+            id: roleId,
+            name: name,
+            team: team,
+            description: description,
+            ability: ability,
+            builtin: false
+        };
+
+        // Update role descriptions for game use
+        this.roleDescriptions[roleId] = description;
+        this.roleNames[roleId] = name;
+
+        this.saveCustomRoles();
+        this.loadCustomRoleNames();
+        this.displayExistingRoles();
+
+        // Clear form
+        document.getElementById('roleName').value = '';
+        document.getElementById('roleDescription').value = '';
+        document.getElementById('roleAbility').value = '';
+
+        this.showAlert('Role created successfully!');
+        
+        // Update input boxes if on game setup screen
+        if (document.querySelector('.game-setup').style.display !== 'none') {
+            this.updateCustomRoleInputs();
+        }
+    }
+
+    deleteCustomRole(roleId) {
+        if (confirm(`Are you sure you want to delete role "${this.customRoles[roleId].name}"?`)) {
+            delete this.customRoles[roleId];
+            delete this.roleDescriptions[roleId];
+            delete this.roleNames[roleId];
+            this.saveCustomRoles();
+            this.displayExistingRoles();
+            this.showAlert('Role deleted successfully!');
+            
+            // Update input boxes in game setup
+            this.updateCustomRoleInputs();
+        }
+    }
+
+    backToSetup() {
+        document.querySelector('.role-management').style.display = 'none';
+        document.querySelector('.game-setup').style.display = 'block';
+        this.updateCustomRoleInputs(); // Update input boxes when returning
+    }
+
+    updateCustomRoleInputs() {
+        const customRoleInputs = document.getElementById('customRoleInputs');
+        customRoleInputs.innerHTML = '';
+
+        // Create input boxes for each custom role
+        Object.values(this.customRoles).forEach(role => {
+            const roleDiv = document.createElement('div');
+            roleDiv.className = 'role-input col-md-4';
+            roleDiv.innerHTML = `
+                <label for="${role.id}Count" class="form-label">${role.name}:</label>
+                <input type="number" id="${role.id}Count" class="form-control" min="0" max="10" value="0">
+            `;
+            customRoleInputs.appendChild(roleDiv);
+
+            // Add event listeners
+            document.getElementById(`${role.id}Count`).addEventListener('input', () => this.updateRoleCounts());
+        });
     }
 }
 

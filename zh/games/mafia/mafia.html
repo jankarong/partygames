@@ -99,7 +99,7 @@
                         <div class="role-inputs row g-3">
                             <div class="role-input col-md-4">
                                 <label for="mafiaCount" class="form-label">狼人：</label>
-                                <input type="number" id="mafiaCount" class="form-control" min="1" max="3" value="2">
+                                <input type="number" id="mafiaCount" class="form-control" min="1" value="2">
                             </div>
                             <div class="role-input col-md-4">
                                 <label for="doctorCount" class="form-label">医生：</label>
@@ -109,14 +109,66 @@
                                 <label for="detectiveCount" class="form-label">预言家：</label>
                                 <input type="number" id="detectiveCount" class="form-control" min="0" max="1" value="1">
                             </div>
+                            <div class="role-input col-md-4">
+                                <label for="villagerCount" class="form-label">村民：</label>
+                                <input type="number" id="villagerCount" class="form-control" min="1" value="4">
+                            </div>
                         </div>
+                        
+                        <!-- 自定义角色区域 -->
+                        <div id="customRoleInputs" class="row g-3 mt-2"></div>
                         <div class="role-summary mt-3">
-                            <p class="mb-1">村民：<span id="villagerCount" class="badge bg-secondary">4</span></p>
                             <p class="role-warning text-danger" id="roleWarning"></p>
                         </div>
                     </div>
 
                     <button id="setupGame" class="btn btn-primary w-100 mt-3">开始游戏</button>
+                    <button id="manageRoles" class="btn btn-secondary w-100 mt-2">管理自定义角色</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="role-management mt-4" style="display: none;">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">自定义角色管理</h2>
+                    
+                    <!-- 创建新角色 -->
+                    <div class="create-role-section mb-5">
+                        <h4 class="mb-3">创建新角色</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="roleName" class="form-label">角色名称</label>
+                                <input type="text" id="roleName" class="form-control" placeholder="例如：丘比特">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="roleTeam" class="form-label">阵营</label>
+                                <select id="roleTeam" class="form-select">
+                                    <option value="villager">村民阵营</option>
+                                    <option value="mafia">狼人阵营</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleDescription" class="form-label">角色描述</label>
+                                <textarea id="roleDescription" class="form-control" rows="3" placeholder="描述这个角色的能力和作用..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleAbility" class="form-label">夜晚能力</label>
+                                <textarea id="roleAbility" class="form-control" rows="2" placeholder="描述这个角色在夜晚阶段的行动...（可选）"></textarea>
+                            </div>
+                        </div>
+                        <button id="createRole" class="btn btn-primary mt-3">创建角色</button>
+                    </div>
+
+                    <!-- 现有角色列表 -->
+                    <div class="existing-roles-section mb-4">
+                        <h4 class="mb-3">现有角色</h4>
+                        <div id="rolesList" class="row g-3"></div>
+                    </div>
+
+                    <div class="text-center">
+                        <button id="backToSetup" class="btn btn-secondary">返回游戏设置</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -330,7 +382,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../js/game-navigation-zh.js"></script>
-    <script src="mafia-zh.js"></script>
+    <script src="mafia-zh.js?v=12"></script>
     
     <!-- Ko-fi Widget -->
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
