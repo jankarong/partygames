@@ -64,6 +64,9 @@ class GameNavigation {
                     <a href="/zh/TheList.html">
                         <i class="fas fa-list"></i> 游戏列表
                     </a>
+                    <a href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer" style="color: #fcbf47 !important;">
+                        <i class="fas fa-heart"></i> 支持我
+                    </a>
                     <div class="language-dropdown">
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇨🇳 中文
@@ -91,6 +94,7 @@ class GameNavigation {
             quickBar.innerHTML = `
                 <button id="quick-access-toggle"><i class="fas fa-layer-group"></i></button>
                 <a href="/zh/index.html" class="quick-game-btn home-btn"><i class="fas fa-home"></i> 首页</a>
+                <a href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer" class="quick-game-btn support-btn" style="color: #fcbf47 !important;"><i class="fas fa-heart"></i> 支持</a>
                 <span id="try-text" style="color: rgba(255,255,255,0.7); font-size: 12px;">试试:</span>
                 ${popularGames.map(game => `
                     <a href="${game.url}" class="quick-game-btn">${game.name}</a>
