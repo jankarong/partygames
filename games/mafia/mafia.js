@@ -44,6 +44,7 @@ class MafiaGame {
         document.getElementById('createRole').addEventListener('click', () => this.createCustomRole());
         document.getElementById('backToSetup').addEventListener('click', () => this.backToSetup());
         document.getElementById('returnToSetup').addEventListener('click', () => this.returnToSetup());
+        document.getElementById('startNewGame').addEventListener('click', () => this.startCompleteNewGame());
 
 
 
@@ -888,6 +889,61 @@ class MafiaGame {
 
         // Hide game control buttons
         document.querySelector('.game-controls').style.display = 'none';
+    }
+
+    // Complete new game - reset all settings to default values
+    startCompleteNewGame() {
+        // Reset all game state
+        this.phase = 'setup';
+        this.players = [];
+        this.day = 0;
+        this.currentNightRole = null;
+        this.nightActions = {
+            mafia: null,
+            doctor: {
+                save: null,
+                poison: null
+            },
+            detective: null
+        };
+        this.doctorAbilities = {
+            hasUsedSave: false,
+            hasUsedPoison: false
+        };
+
+        // Reset all input fields to default values
+        document.getElementById('playerCount').value = 8;
+        document.getElementById('mafiaCount').value = 2;
+        document.getElementById('doctorCount').value = 1;
+        document.getElementById('detectiveCount').value = 1;
+        document.getElementById('villagerCount').value = 4;
+
+        // Reset custom role input fields
+        Object.values(this.customRoles).forEach(role => {
+            const countInput = document.getElementById(`${role.id}Count`);
+            if (countInput) {
+                countInput.value = 0;
+            }
+        });
+
+        // Reset UI display
+        document.querySelector('.game-area').style.display = 'none';
+        document.querySelector('.game-setup').style.display = 'block';
+        document.querySelector('.night-actions').style.display = 'none';
+        document.querySelector('.player-status').style.display = 'none';
+        document.querySelector('.role-cards').style.display = 'block';
+        document.querySelector('.game-controls').style.display = 'none';
+        document.querySelector('.role-management').style.display = 'none';
+
+        // Clear all game content
+        document.getElementById('cardGrid').innerHTML = '';
+        const statusGrid = document.getElementById('player-statuses');
+        if (statusGrid) statusGrid.innerHTML = '';
+        const votingGrid = document.getElementById('voting-grid');
+        if (votingGrid) votingGrid.innerHTML = '';
+
+        // Recalculate role distribution
+        this.updateRoleCounts();
     }
 
 

@@ -44,6 +44,7 @@ class MafiaGame {
         document.getElementById('createRole').addEventListener('click', () => this.createCustomRole());
         document.getElementById('backToSetup').addEventListener('click', () => this.backToSetup());
         document.getElementById('returnToSetup').addEventListener('click', () => this.returnToSetup());
+        document.getElementById('startNewGame').addEventListener('click', () => this.startCompleteNewGame());
 
 
 
@@ -913,6 +914,61 @@ class MafiaGame {
 
         // 隐藏游戏控制按钮
         document.querySelector('.game-controls').style.display = 'none';
+    }
+
+    // 完全重新开始游戏 - 重置所有设置到默认值
+    startCompleteNewGame() {
+        // 重置所有游戏状态
+        this.phase = 'setup';
+        this.players = [];
+        this.day = 0;
+        this.currentNightRole = null;
+        this.nightActions = {
+            mafia: null,
+            doctor: {
+                save: null,
+                poison: null
+            },
+            detective: null
+        };
+        this.doctorAbilities = {
+            hasUsedSave: false,
+            hasUsedPoison: false
+        };
+
+        // 重置所有输入框到默认值
+        document.getElementById('playerCount').value = 8;
+        document.getElementById('mafiaCount').value = 2;
+        document.getElementById('doctorCount').value = 1;
+        document.getElementById('detectiveCount').value = 1;
+        document.getElementById('villagerCount').value = 4;
+
+        // 重置自定义角色输入框
+        Object.values(this.customRoles).forEach(role => {
+            const countInput = document.getElementById(`${role.id}Count`);
+            if (countInput) {
+                countInput.value = 0;
+            }
+        });
+
+        // 重置UI显示
+        document.querySelector('.game-area').style.display = 'none';
+        document.querySelector('.game-setup').style.display = 'block';
+        document.querySelector('.night-actions').style.display = 'none';
+        document.querySelector('.player-status').style.display = 'none';
+        document.querySelector('.role-cards').style.display = 'block';
+        document.querySelector('.game-controls').style.display = 'none';
+        document.querySelector('.role-management').style.display = 'none';
+
+        // 清空所有游戏内容
+        document.getElementById('cardGrid').innerHTML = '';
+        const statusGrid = document.getElementById('player-statuses');
+        if (statusGrid) statusGrid.innerHTML = '';
+        const votingGrid = document.getElementById('voting-grid');
+        if (votingGrid) votingGrid.innerHTML = '';
+
+        // 重新计算角色分配
+        this.updateRoleCounts();
     }
 
 
