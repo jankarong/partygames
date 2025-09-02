@@ -45,15 +45,7 @@ class MafiaGame {
         document.getElementById('backToSetup').addEventListener('click', () => this.backToSetup());
         document.getElementById('returnToSetup').addEventListener('click', () => this.returnToSetup());
 
-        // Add restart game listeners for both specific ID and class
-        document.getElementById('restartGame').addEventListener('click', () => this.restartGame());
 
-        // Add event delegation for restart buttons with class
-        document.addEventListener('click', (e) => {
-            if (e.target.closest('.restart-btn')) {
-                this.restartGame();
-            }
-        });
 
         // Add listeners for role count inputs
         ['playerCount', 'mafiaCount', 'doctorCount', 'detectiveCount', 'villagerCount'].forEach(id => {
@@ -898,76 +890,7 @@ class MafiaGame {
         document.querySelector('.game-controls').style.display = 'none';
     }
 
-    restartGame() {
-        // Show confirmation dialog
-        if (confirm('Are you sure you want to restart the game? Current game progress will be lost.')) {
-            // Reset all game state
-            this.phase = 'setup';
-            this.players = [];
-            this.day = 0;
-            this.currentNightRole = null;
-            this.nightActions = {
-                mafia: null,
-                doctor: {
-                    save: null,
-                    poison: null
-                },
-                detective: null
-            };
-            this.doctorAbilities = {
-                hasUsedSave: false,
-                hasUsedPoison: false
-            };
 
-            // Hide all game interfaces
-            const elementsToHide = [
-                '.game-area',
-                '.night-actions',
-                '.voting-phase',
-                '#discussion-phase',
-                '.player-status',
-                '.role-instructions',
-                '.role-management'
-            ];
-
-            elementsToHide.forEach(selector => {
-                const element = document.querySelector(selector);
-                if (element) {
-                    element.style.display = 'none';
-                }
-            });
-
-            // Ensure game setup area is visible
-            const gameSetup = document.querySelector('.game-setup');
-            if (gameSetup) {
-                gameSetup.style.display = 'block';
-                gameSetup.style.visibility = 'visible';
-            }
-
-            // Clear all content
-            const elementsToClear = ['cardGrid', 'narrator-text', 'voting-grid', 'player-statuses'];
-            elementsToClear.forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.innerHTML = '';
-                }
-            });
-
-            // Scroll to top first, then to game setup
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            // Small delay then scroll to game setup to ensure element is visible
-            setTimeout(() => {
-                const gameSetupElement = document.querySelector('.game-setup');
-                if (gameSetupElement) {
-                    gameSetupElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }, 100);
-        }
-    }
 
     updateCustomRoleInputs() {
         const customRoleInputs = document.getElementById('customRoleInputs');

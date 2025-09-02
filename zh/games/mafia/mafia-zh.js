@@ -45,15 +45,7 @@ class MafiaGame {
         document.getElementById('backToSetup').addEventListener('click', () => this.backToSetup());
         document.getElementById('returnToSetup').addEventListener('click', () => this.returnToSetup());
 
-        // Add restart game listeners for both specific ID and class
-        document.getElementById('restartGame').addEventListener('click', () => this.restartGame());
 
-        // Add event delegation for restart buttons with class
-        document.addEventListener('click', (e) => {
-            if (e.target.closest('.restart-btn')) {
-                this.restartGame();
-            }
-        });
 
         // Add listeners for role count inputs
         ['playerCount', 'mafiaCount', 'doctorCount', 'detectiveCount', 'villagerCount'].forEach(id => {
@@ -923,76 +915,7 @@ class MafiaGame {
         document.querySelector('.game-controls').style.display = 'none';
     }
 
-    restartGame() {
-        // 显示确认对话框
-        if (confirm('确定要重新开始游戏吗？当前游戏进度将丢失。')) {
-            // 重置所有游戏状态
-            this.phase = 'setup';
-            this.players = [];
-            this.day = 0;
-            this.currentNightRole = null;
-            this.nightActions = {
-                mafia: null,
-                doctor: {
-                    save: null,
-                    poison: null
-                },
-                detective: null
-            };
-            this.doctorAbilities = {
-                hasUsedSave: false,
-                hasUsedPoison: false
-            };
 
-            // 隐藏所有游戏界面
-            const elementsToHide = [
-                '.game-area',
-                '.night-actions',
-                '.voting-phase',
-                '#discussion-phase',
-                '.player-status',
-                '.role-instructions',
-                '.role-management'
-            ];
-
-            elementsToHide.forEach(selector => {
-                const element = document.querySelector(selector);
-                if (element) {
-                    element.style.display = 'none';
-                }
-            });
-
-            // 确保游戏设置区域显示
-            const gameSetup = document.querySelector('.game-setup');
-            if (gameSetup) {
-                gameSetup.style.display = 'block';
-                gameSetup.style.visibility = 'visible';
-            }
-
-            // 清空所有内容
-            const elementsToClear = ['cardGrid', 'narrator-text', 'voting-grid', 'player-statuses'];
-            elementsToClear.forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.innerHTML = '';
-                }
-            });
-
-            // 滚动到页面顶部，然后到游戏设置
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            // 小延迟后再滚动到游戏设置，确保元素已显示
-            setTimeout(() => {
-                const gameSetupElement = document.querySelector('.game-setup');
-                if (gameSetupElement) {
-                    gameSetupElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }, 100);
-        }
-    }
 
     updateCustomRoleInputs() {
         const customRoleInputs = document.getElementById('customRoleInputs');
