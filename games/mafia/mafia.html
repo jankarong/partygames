@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Play Mafia Board Games online - the ultimate social deduction party games! Experience thrilling mafia games for 6-15 players. Free online game.">
-    <meta name="keywords" content="mafia board games, board games, social deduction games, party games, online mafia games">
+    <meta name="keywords"
+        content="mafia board games, board games, social deduction games, party games, online mafia games">
     <meta name="author" content="Party Games">
     <meta property="og:title" content="Mafia Board Games - Online Social Deduction Party Games">
     <meta property="og:description"
@@ -15,14 +16,15 @@
     <meta property="og:image" content="mafialogo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mafia Board Games - Online Social Deduction Party Games">
-    <meta name="twitter:description" content="Play Mafia Board Games online - thrilling social deduction party games perfect for 6-15 players!">
+    <meta name="twitter:description"
+        content="Play Mafia Board Games online - thrilling social deduction party games perfect for 6-15 players!">
     <meta name="twitter:image" content="mafialogo.png">
     <title>Mafia Board Games - Online Social Deduction</title>
     <link rel="canonical" href="https://www.bestpartygames.net/games/mafia/mafia.html">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./mafialogo.png">
-    
+
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -46,7 +48,7 @@
         }
     }
     </script>
-    
+
     <link
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Cinzel:wght@500;700&display=swap"
         rel="stylesheet">
@@ -59,25 +61,25 @@
 
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "q4t8s17fvw");
     </script>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
-         crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-BYYFLML78Z');
+        gtag('config', 'G-BYYFLML78Z');
     </script>
 </head>
 
@@ -116,7 +118,7 @@
                                 <input type="number" id="villagerCount" class="form-control" min="1" value="4">
                             </div>
                         </div>
-                        
+
                         <!-- Custom roles area -->
                         <div id="customRoleInputs" class="row g-3 mt-2"></div>
                         <div class="role-summary mt-3">
@@ -125,7 +127,7 @@
                     </div>
 
                     <button id="setupGame" class="btn btn-primary w-100 mt-3">Start Game</button>
-                    <button id="manageRoles" class="btn btn-secondary w-100 mt-2">Manage Custom Roles</button>
+                    <button id="manageRoles" class="btn btn-secondary w-100 mt-3">Manage Custom Roles</button>
                 </div>
             </div>
         </div>
@@ -134,7 +136,7 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h2 class="card-title text-center mb-4">Custom Role Management</h2>
-                    
+
                     <!-- Create new role -->
                     <div class="create-role-section mb-5">
                         <h4 class="mb-3">Create New Role</h4>
@@ -152,11 +154,13 @@
                             </div>
                             <div class="col-12">
                                 <label for="roleDescription" class="form-label">Role Description</label>
-                                <textarea id="roleDescription" class="form-control" rows="3" placeholder="Describe this role's abilities and purpose..."></textarea>
+                                <textarea id="roleDescription" class="form-control" rows="3"
+                                    placeholder="Describe this role's abilities and purpose..."></textarea>
                             </div>
                             <div class="col-12">
                                 <label for="roleAbility" class="form-label">Night Ability</label>
-                                <textarea id="roleAbility" class="form-control" rows="2" placeholder="Describe this role's night phase actions... (optional)"></textarea>
+                                <textarea id="roleAbility" class="form-control" rows="2"
+                                    placeholder="Describe this role's night phase actions... (optional)"></textarea>
                             </div>
                         </div>
                         <button id="createRole" class="btn btn-primary mt-3">Create Role</button>
@@ -176,10 +180,14 @@
         </div>
 
         <div class="game-area mt-4 position-relative" style="display: none;">
+            <button id="returnToSetup" class="btn btn-secondary"
+                style="position: absolute; left: 20px; top: 20px; z-index: 1000;">
+                <i class="fas fa-arrow-left me-2"></i>Back to Setup
+            </button>
             <div class="role-cards card shadow-sm mt-5">
                 <div class="card-body">
                     <h2 class="card-title text-center mb-4">Player Cards</h2>
-                    <div id="cardGrid" class="row g-4"></div>
+                    <div id="cardGrid"></div>
                 </div>
             </div>
 
@@ -230,7 +238,12 @@
 
             <div class="night-actions card shadow-sm mt-4" style="display: none;">
                 <div class="card-body">
-                    <h2 class="card-title">Night Phase</h2>
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="card-title mb-0">Night Phase</h2>
+                        <button id="restartGame" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-redo me-2"></i>Restart Game
+                        </button>
+                    </div>
                     <div id="narrator-text" class="mb-4"></div>
 
                     <div id="action-area">
@@ -268,7 +281,12 @@
             </div>
 
             <div id="discussion-phase" class="discussion-phase" style="display: none;">
-                <h3>Discussion Time</h3>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="mb-0">Discussion Time</h3>
+                    <button class="restart-btn btn btn-outline-secondary btn-sm">
+                        <i class="fas fa-redo me-2"></i>Restart Game
+                    </button>
+                </div>
                 <div class="night-summary mb-4">
                     <p id="night-result" class="mb-3"></p>
                     <div id="player-statuses" class="player-status-grid"></div>
@@ -279,7 +297,12 @@
 
             <div class="voting-phase card shadow-sm mt-4" style="display: none;">
                 <div class="card-body">
-                    <h2 class="card-title">Voting Phase</h2>
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="card-title mb-0">Voting Phase</h2>
+                        <button class="restart-btn btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-redo me-2"></i>Restart Game
+                        </button>
+                    </div>
                     <p class="voting-prompt">Vote for who you think is the Mafia:</p>
                     <div id="voting-grid" class="voting-grid mt-3"></div>
                     <button id="confirm-vote" class="btn btn-primary mt-4">Confirm Vote</button>
@@ -312,8 +335,10 @@
                 <h2 class="card-title text-white">Game Rules</h2>
 
                 <h3>Overview</h3>
-                <p>Mafia Board Games are thrilling social deduction party games where players are secretly divided into two teams: the Mafia and the
-                    Villagers. These exciting board games alternate between night and day phases until one team wins.</p>
+                <p>Mafia Board Games are thrilling social deduction party games where players are secretly divided into
+                    two teams: the Mafia and the
+                    Villagers. These exciting board games alternate between night and day phases until one team wins.
+                </p>
 
                 <h3>Mafia Board Games Rules</h3>
                 <ul>
@@ -380,7 +405,8 @@
                 <ul>
                     <li>Pay attention to player behavior during discussions in these strategic board games</li>
                     <li>Special roles (Doctor and Detective) should be careful about revealing their identity</li>
-                    <li>Use voting strategically in mafia board games - sometimes not voting might be the best strategy</li>
+                    <li>Use voting strategically in mafia board games - sometimes not voting might be the best strategy
+                    </li>
                     <li>Mafia members should try to blend in with villagers during discussions</li>
                     <li>These board games work best with consistent group play to develop strategies</li>
                 </ul>
@@ -391,7 +417,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../js/game-navigation.js"></script>
     <script src="mafia.js"></script>
-    
+
 </body>
 
 </html>

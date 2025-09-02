@@ -43,6 +43,17 @@ class MafiaGame {
         document.getElementById('manageRoles').addEventListener('click', () => this.showRoleManagement());
         document.getElementById('createRole').addEventListener('click', () => this.createCustomRole());
         document.getElementById('backToSetup').addEventListener('click', () => this.backToSetup());
+        document.getElementById('returnToSetup').addEventListener('click', () => this.returnToSetup());
+
+        // Add restart game listeners for both specific ID and class
+        document.getElementById('restartGame').addEventListener('click', () => this.restartGame());
+
+        // Add event delegation for restart buttons with class
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.restart-btn')) {
+                this.restartGame();
+            }
+        });
 
         // Add listeners for role count inputs
         ['playerCount', 'mafiaCount', 'doctorCount', 'detectiveCount', 'villagerCount'].forEach(id => {
@@ -153,16 +164,14 @@ class MafiaGame {
     createCards() {
         const cardGrid = document.getElementById('cardGrid');
         cardGrid.innerHTML = this.players.map(player => `
-            <div class="col">
-                <div class="role-card" data-player-id="${player.id}">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="card-number">Player ${player.id}</div>
-                        </div>
-                        <div class="card-back role-${player.role}">
-                            <div class="role-name">${player.role.toUpperCase()}</div>
-                            <div class="role-description">${this.roleDescriptions[player.role]}</div>
-                        </div>
+            <div class="role-card" data-player-id="${player.id}">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-number">Player ${player.id}</div>
+                    </div>
+                    <div class="card-back role-${player.role}">
+                        <div class="role-name">${player.role.toUpperCase()}</div>
+                        <div class="role-description">${this.roleDescriptions[player.role]}</div>
                     </div>
                 </div>
             </div>
@@ -180,7 +189,12 @@ class MafiaGame {
         const playerId = parseInt(card.dataset.playerId);
         const player = this.players.find(p => p.id === playerId);
 
-        if (!card.classList.contains('flipped')) {
+        // 切换卡片的翻转状态
+        if (card.classList.contains('flipped')) {
+            // 如果已经翻开，则合上
+            card.classList.remove('flipped');
+        } else {
+            // 如果未翻开，则翻开
             card.classList.add('flipped');
             player.revealed = true;
 
@@ -188,11 +202,6 @@ class MafiaGame {
             if (this.players.every(p => p.revealed)) {
                 document.querySelector('.game-controls').style.display = 'block';
             }
-
-            // 3秒后自动翻回
-            setTimeout(() => {
-                card.classList.remove('flipped');
-            }, 3000);
         }
     }
 
@@ -234,7 +243,7 @@ class MafiaGame {
 
         // 隐藏所有行动区域
         document.querySelectorAll('.role-action').forEach(el => el.style.display = 'none');
-        
+
         // Reset detective investigation result display
         const investigationResult = document.getElementById('investigation-result');
         if (investigationResult) {
@@ -771,7 +780,7 @@ class MafiaGame {
         // Hide setup, show role management
         document.querySelector('.game-setup').style.display = 'none';
         document.querySelector('.role-management').style.display = 'block';
-        
+
         this.displayExistingRoles();
     }
 
@@ -790,9 +799,9 @@ class MafiaGame {
         [...builtInRoles, ...Object.values(this.customRoles)].forEach(role => {
             const roleCard = document.createElement('div');
             roleCard.className = 'col-md-6';
-            
+
             const teamBadgeClass = role.team === 'mafia' ? 'bg-danger' : 'bg-success';
-            
+
             roleCard.innerHTML = `
                 <div class="card h-100">
                     <div class="card-body">
@@ -822,7 +831,7 @@ class MafiaGame {
         }
 
         const roleId = 'custom_' + Date.now();
-        
+
         this.customRoles[roleId] = {
             id: roleId,
             name: name,
@@ -846,7 +855,7 @@ class MafiaGame {
         document.getElementById('roleAbility').value = '';
 
         this.showAlert('Role created successfully!');
-        
+
         // Update input boxes if on game setup screen
         if (document.querySelector('.game-setup').style.display !== 'none') {
             this.updateCustomRoleInputs();
@@ -861,7 +870,7 @@ class MafiaGame {
             this.saveCustomRoles();
             this.displayExistingRoles();
             this.showAlert('Role deleted successfully!');
-            
+
             // Update input boxes in game setup
             this.updateCustomRoleInputs();
         }
@@ -871,6 +880,93 @@ class MafiaGame {
         document.querySelector('.role-management').style.display = 'none';
         document.querySelector('.game-setup').style.display = 'block';
         this.updateCustomRoleInputs(); // Update input boxes when returning
+    }
+
+    returnToSetup() {
+        // Hide game area, show game setup
+        document.querySelector('.game-area').style.display = 'none';
+        document.querySelector('.game-setup').style.display = 'block';
+
+        // Reset game state
+        this.phase = 'setup';
+        this.players = [];
+
+        // Clear card area
+        document.getElementById('cardGrid').innerHTML = '';
+
+        // Hide game control buttons
+        document.querySelector('.game-controls').style.display = 'none';
+    }
+
+    restartGame() {
+        // Show confirmation dialog
+        if (confirm('Are you sure you want to restart the game? Current game progress will be lost.')) {
+            // Reset all game state
+            this.phase = 'setup';
+            this.players = [];
+            this.day = 0;
+            this.currentNightRole = null;
+            this.nightActions = {
+                mafia: null,
+                doctor: {
+                    save: null,
+                    poison: null
+                },
+                detective: null
+            };
+            this.doctorAbilities = {
+                hasUsedSave: false,
+                hasUsedPoison: false
+            };
+
+            // Hide all game interfaces
+            const elementsToHide = [
+                '.game-area',
+                '.night-actions',
+                '.voting-phase',
+                '#discussion-phase',
+                '.player-status',
+                '.role-instructions',
+                '.role-management'
+            ];
+
+            elementsToHide.forEach(selector => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.style.display = 'none';
+                }
+            });
+
+            // Ensure game setup area is visible
+            const gameSetup = document.querySelector('.game-setup');
+            if (gameSetup) {
+                gameSetup.style.display = 'block';
+                gameSetup.style.visibility = 'visible';
+            }
+
+            // Clear all content
+            const elementsToClear = ['cardGrid', 'narrator-text', 'voting-grid', 'player-statuses'];
+            elementsToClear.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.innerHTML = '';
+                }
+            });
+
+            // Scroll to top first, then to game setup
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Small delay then scroll to game setup to ensure element is visible
+            setTimeout(() => {
+                const gameSetupElement = document.querySelector('.game-setup');
+                if (gameSetupElement) {
+                    gameSetupElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 100);
+        }
     }
 
     updateCustomRoleInputs() {

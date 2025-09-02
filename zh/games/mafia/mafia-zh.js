@@ -43,6 +43,17 @@ class MafiaGame {
         document.getElementById('manageRoles').addEventListener('click', () => this.showRoleManagement());
         document.getElementById('createRole').addEventListener('click', () => this.createCustomRole());
         document.getElementById('backToSetup').addEventListener('click', () => this.backToSetup());
+        document.getElementById('returnToSetup').addEventListener('click', () => this.returnToSetup());
+
+        // Add restart game listeners for both specific ID and class
+        document.getElementById('restartGame').addEventListener('click', () => this.restartGame());
+
+        // Add event delegation for restart buttons with class
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.restart-btn')) {
+                this.restartGame();
+            }
+        });
 
         // Add listeners for role count inputs
         ['playerCount', 'mafiaCount', 'doctorCount', 'detectiveCount', 'villagerCount'].forEach(id => {
@@ -151,18 +162,16 @@ class MafiaGame {
 
     createCards() {
         const cardGrid = document.getElementById('cardGrid');
-        
+
         cardGrid.innerHTML = this.players.map(player => `
-            <div class="col">
-                <div class="role-card" data-player-id="${player.id}">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="card-number">玩家 ${player.id}</div>
-                        </div>
-                        <div class="card-back role-${player.role}">
-                            <div class="role-name">${this.roleNames[player.role] || player.role}</div>
-                            <div class="role-description">${this.roleDescriptions[player.role] || '未知角色'}</div>
-                        </div>
+            <div class="role-card" data-player-id="${player.id}">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-number">玩家 ${player.id}</div>
+                    </div>
+                    <div class="card-back role-${player.role}">
+                        <div class="role-name">${this.roleNames[player.role] || player.role}</div>
+                        <div class="role-description">${this.roleDescriptions[player.role] || '未知角色'}</div>
                     </div>
                 </div>
             </div>
@@ -180,7 +189,12 @@ class MafiaGame {
         const playerId = parseInt(card.dataset.playerId);
         const player = this.players.find(p => p.id === playerId);
 
-        if (!card.classList.contains('flipped')) {
+        // 切换卡片的翻转状态
+        if (card.classList.contains('flipped')) {
+            // 如果已经翻开，则合上
+            card.classList.remove('flipped');
+        } else {
+            // 如果未翻开，则翻开
             card.classList.add('flipped');
             player.revealed = true;
 
@@ -188,11 +202,6 @@ class MafiaGame {
             if (this.players.every(p => p.revealed)) {
                 document.querySelector('.game-controls').style.display = 'block';
             }
-
-            // 3秒后自动翻回
-            setTimeout(() => {
-                card.classList.remove('flipped');
-            }, 3000);
         }
     }
 
@@ -234,7 +243,7 @@ class MafiaGame {
 
         // 隐藏所有行动区域
         document.querySelectorAll('.role-action').forEach(el => el.style.display = 'none');
-        
+
         // 重置预言家调查结果显示
         const investigationResult = document.getElementById('investigation-result');
         if (investigationResult) {
@@ -491,7 +500,7 @@ class MafiaGame {
         const nightResult = document.getElementById('night-result');
         const eliminatedPlayers = this.players.filter(p => !p.isAlive);
         const newDeaths = eliminatedPlayers.filter(p => !p.previouslyDead);
-        
+
         // 标记之前死亡的玩家
         eliminatedPlayers.forEach(p => p.previouslyDead = true);
 
@@ -513,6 +522,11 @@ class MafiaGame {
             </div>
         `).join('');
 
+        // 检查游戏是否结束（在夜晚行动后）
+        if (this.checkGameEnd()) {
+            return; // 游戏已结束，不需要继续讨论阶段
+        }
+
         // 设置结束讨论按钮
         document.getElementById('end-discussion').onclick = () => {
             this.endDiscussion();
@@ -528,6 +542,11 @@ class MafiaGame {
     }
 
     startVotingPhase() {
+        // 检查游戏是否结束（在投票前）
+        if (this.checkGameEnd()) {
+            return; // 游戏已结束，不需要投票
+        }
+
         // 显示投票界面
         document.querySelector('.voting-phase').style.display = 'block';
 
@@ -786,7 +805,7 @@ class MafiaGame {
         // Hide setup, show role management
         document.querySelector('.game-setup').style.display = 'none';
         document.querySelector('.role-management').style.display = 'block';
-        
+
         this.displayExistingRoles();
     }
 
@@ -805,9 +824,9 @@ class MafiaGame {
         [...builtInRoles, ...Object.values(this.customRoles)].forEach(role => {
             const roleCard = document.createElement('div');
             roleCard.className = 'col-md-6';
-            
+
             const teamBadgeClass = role.team === 'mafia' ? 'bg-danger' : 'bg-success';
-            
+
             roleCard.innerHTML = `
                 <div class="card h-100">
                     <div class="card-body">
@@ -837,7 +856,7 @@ class MafiaGame {
         }
 
         const roleId = 'custom_' + Date.now();
-        
+
         this.customRoles[roleId] = {
             id: roleId,
             name: name,
@@ -861,7 +880,7 @@ class MafiaGame {
         document.getElementById('roleAbility').value = '';
 
         this.showAlert('角色创建成功！');
-        
+
         // 如果在游戏设置界面，更新输入框
         if (document.querySelector('.game-setup').style.display !== 'none') {
             this.updateCustomRoleInputs();
@@ -876,7 +895,7 @@ class MafiaGame {
             this.saveCustomRoles();
             this.displayExistingRoles();
             this.showAlert('角色删除成功！');
-            
+
             // 更新游戏设置中的输入框
             this.updateCustomRoleInputs();
         }
@@ -886,6 +905,93 @@ class MafiaGame {
         document.querySelector('.role-management').style.display = 'none';
         document.querySelector('.game-setup').style.display = 'block';
         this.updateCustomRoleInputs(); // 返回时更新输入框
+    }
+
+    returnToSetup() {
+        // 隐藏游戏区域，显示游戏设置
+        document.querySelector('.game-area').style.display = 'none';
+        document.querySelector('.game-setup').style.display = 'block';
+
+        // 重置游戏状态
+        this.phase = 'setup';
+        this.players = [];
+
+        // 清空卡片区域
+        document.getElementById('cardGrid').innerHTML = '';
+
+        // 隐藏游戏控制按钮
+        document.querySelector('.game-controls').style.display = 'none';
+    }
+
+    restartGame() {
+        // 显示确认对话框
+        if (confirm('确定要重新开始游戏吗？当前游戏进度将丢失。')) {
+            // 重置所有游戏状态
+            this.phase = 'setup';
+            this.players = [];
+            this.day = 0;
+            this.currentNightRole = null;
+            this.nightActions = {
+                mafia: null,
+                doctor: {
+                    save: null,
+                    poison: null
+                },
+                detective: null
+            };
+            this.doctorAbilities = {
+                hasUsedSave: false,
+                hasUsedPoison: false
+            };
+
+            // 隐藏所有游戏界面
+            const elementsToHide = [
+                '.game-area',
+                '.night-actions',
+                '.voting-phase',
+                '#discussion-phase',
+                '.player-status',
+                '.role-instructions',
+                '.role-management'
+            ];
+
+            elementsToHide.forEach(selector => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.style.display = 'none';
+                }
+            });
+
+            // 确保游戏设置区域显示
+            const gameSetup = document.querySelector('.game-setup');
+            if (gameSetup) {
+                gameSetup.style.display = 'block';
+                gameSetup.style.visibility = 'visible';
+            }
+
+            // 清空所有内容
+            const elementsToClear = ['cardGrid', 'narrator-text', 'voting-grid', 'player-statuses'];
+            elementsToClear.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.innerHTML = '';
+                }
+            });
+
+            // 滚动到页面顶部，然后到游戏设置
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // 小延迟后再滚动到游戏设置，确保元素已显示
+            setTimeout(() => {
+                const gameSetupElement = document.querySelector('.game-setup');
+                if (gameSetupElement) {
+                    gameSetupElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 100);
+        }
     }
 
     updateCustomRoleInputs() {
