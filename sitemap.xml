@@ -421,4 +421,35 @@
         </image:image>
     </url>
 
+    <!-- Liar's Dice -->
+    <url>
+        <loc>https://www.bestpartygames.net/games/liarsdice/liarsdice.html</loc>
+        <lastmod>2025-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/liarsdice/liarsdice.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/liarsdice/liarsdice.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/liarsdice/liarsdice.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/liarsdice/liarsdice-logo.png</image:loc>
+            <image:title>Liar's Dice - Classic Bluffing Drinking Game</image:title>
+            <image:caption>Master the art of bluffing in this classic dice drinking game! Perfect for parties with complete rules and strategies.</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://www.bestpartygames.net/zh/games/liarsdice/liarsdice.html</loc>
+        <lastmod>2025-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/liarsdice/liarsdice.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/liarsdice/liarsdice.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/liarsdice/liarsdice.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/liarsdice/liarsdice-logo.png</image:loc>
+            <image:title>大话骰 - 经典虚张声势饮酒游戏</image:title>
+            <image:caption>掌握虚张声势的艺术，这是经典的骰子饮酒游戏！适合聚会，包含完整规则和策略。</image:caption>
+        </image:image>
+    </url>
+
 </urlset>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大话骰 - 经典虚张声势饮酒游戏</title>
+    <meta name="description"
+        content="学习大话骰游戏规则，这是终极虚张声势饮酒游戏！完整规则、策略和技巧，适合聚会的经典骰子游戏。">
+    <meta name="keywords"
+        content="大话骰, 虚张声势游戏, 骰子饮酒游戏, 聚会游戏, Liar's Dice">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="大话骰 - 经典虚张声势饮酒游戏">
+    <meta property="og:description"
+        content="学习大话骰游戏规则，这是终极虚张声势饮酒游戏！完整规则、策略和技巧，适合聚会的经典骰子游戏。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/zh/games/liarsdice/liarsdice.html">
+    <meta property="og:image" content="/games/liarsdice/liarsdice-logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bestpartygames.net/zh/games/liarsdice/liarsdice.html">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="/style/main.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/image/favicon.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/zh/">
+                <img src="/image/partyGameLogo.png" alt="聚会游戏标志">
+                <span class="brand-text">Best Party Games</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/zh/index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/zh/feedback.html">意见反馈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/zh/TheList.html">游戏分类</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer"
+                            style="color: #fcbf47 !important;">Support me</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            🇨🇳 中文
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/games/liarsdice/liarsdice.html">🇺🇸 English</a></li>
+                            <li><a class="dropdown-item" href="/zh/games/liarsdice/liarsdice.html">🇨🇳 中文</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Header -->
+                <div class="text-center mb-5">
+                    <div class="game-icon mb-3">🎲</div>
+                    <h1 class="display-4 mb-3">大话骰</h1>
+                    <p class="lead">掌握虚张声势的艺术，这是经典的骰子饮酒游戏！</p>
+                    <p class="text-muted">读完规则就能上手，简单易学，趣味无穷</p>
+                </div>
+
+                <!-- Game Setup -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">🔹 游戏准备</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><strong>每人 5 颗骰子 + 一个骰盅</strong></li>
+                            <li class="mb-2"><strong>所有人一起摇骰子</strong> → 自己看，不给别人看</li>
+                            <li class="mb-2"><strong>人数：</strong>2-6人（4-6人最佳）</li>
+                            <li class="mb-0"><strong>时间：</strong>每轮15-30分钟</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- How to Play -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">🔹 游戏流程</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-primary">
+                            <h5><strong>开局喊点</strong></h5>
+                            <p class="mb-2">第一个玩家喊出一个数量和点数，例如：</p>
+                            <p class="mb-2"><strong>"三个 5"</strong> = 我认为所有人的骰子里至少有 3 个 5。</p>
+                            <p class="mb-0"><strong>默认情况下，1 可以当万能点数，算作任何数字。</strong></p>
+                        </div>
+                        
+                        <h5 class="mt-4 mb-3">轮到下一个玩家时，有三种选择：</h5>
+                        
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card border-success">
+                                    <div class="card-header bg-success text-white">
+                                        <h6 class="mb-0">1️⃣ 加码</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="small mb-2">必须比上一个更大。</p>
+                                        <ul class="small mb-0">
+                                            <li>可以提高数量（例如从"三个 5"改成"四个 5"）</li>
+                                            <li>也可以提高点数（例如从"三个 5"改成"三个 6"），这种情况一般会喊 "劈"</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card border-warning">
+                                    <div class="card-header bg-warning text-dark">
+                                        <h6 class="mb-0">2️⃣ 斋</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="small mb-0">如果不想让 1 当万能，可以直接喊"斋"，例如"斋四个 5"，表示必须真有 4 个 5，不能用 1 来凑。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card border-danger">
+                                    <div class="card-header bg-danger text-white">
+                                        <h6 class="mb-0">3️⃣ 开</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="small mb-0">如果怀疑上家在吹牛，可以喊"开"，所有人立刻开骰子。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reveal Rules -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">🔹 开骰子判定</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="alert alert-success">
+                                    <h6><strong>如果实际点数 ≥ 上家喊的点数</strong></h6>
+                                    <ul class="mb-0">
+                                        <li>喊"开"的人输</li>
+                                        <li>扣掉 1 颗骰子</li>
+                                        <li><strong>饮酒惩罚</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-danger">
+                                    <h6><strong>如果实际点数 < 上家喊的点数</strong></h6>
+                                    <ul class="mb-0">
+                                        <li>上家输</li>
+                                        <li>扣掉 1 颗骰子</li>
+                                        <li><strong>饮酒惩罚</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continue Game -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">🔹 继续游戏</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="mb-2">🎯 输的人少一个骰子，大家重新摇 → 进入下一轮</li>
+                            <li class="mb-0">🏆 <strong>谁骰子先扣光就出局，最后剩下的人获胜</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Common Commands -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">🔹 常见口令总结</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="alert alert-info text-center">
+                                    <h5 class="mb-2">🗡️ 劈</h5>
+                                    <p class="mb-0">改点数（通常换成更大的点数）</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="alert alert-warning text-center">
+                                    <h5 class="mb-2">🎯 斋</h5>
+                                    <p class="mb-0">排除万能 1，只算真点数</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="alert alert-danger text-center">
+                                    <h5 class="mb-2">🔓 开</h5>
+                                    <p class="mb-0">质疑对方，立刻开骰子</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategy Tips -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">💡 策略技巧</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <h6>🎯 虚张声势技巧</h6>
+                                <ul class="small">
+                                    <li>开始时保守竞价，观察其他人反应</li>
+                                    <li>注意观察玩家看到骰子时的表情</li>
+                                    <li>有时候喊自己真的有的点数</li>
+                                    <li>适时混合真话和假话</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h6>🧮 概率基础</h6>
+                                <ul class="small">
+                                    <li>5人游戏（25个骰子），每个点数约出现4个</li>
+                                    <li>游戏初期：更保守的竞价</li>
+                                    <li>游戏后期：高风险高回报</li>
+                                    <li>剩余骰子越少，竞价要越谨慎</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Game -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">🎮 游戏示例</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-light">
+                            <p><strong>情况：</strong>4人游戏，每人5个骰子（总共20个骰子）</p>
+                            <ul>
+                                <li><strong>玩家A：</strong>"2个4" （保守开始）</li>
+                                <li><strong>玩家B：</strong>"3个4" （加码数量）</li>
+                                <li><strong>玩家C：</strong>"3个5" （同数量，更高点数）</li>
+                                <li><strong>玩家D：</strong>"Liar!" （质疑）</li>
+                            </ul>
+                            <p class="mb-0"><strong>结果：</strong>打开所有骰子数一数，如果真的有至少3个5，玩家D输；如果少于3个5，玩家C输。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safety -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">🍺 安全饮酒提醒</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-warning">
+                            <ul class="mb-0">
+                                <li>🚫 请负责任地饮酒，了解自己的酒量限制</li>
+                                <li>💧 游戏过程中多喝水，保持身体水分</li>
+                                <li>🚗 绝不酒后驾车，安排代驾或其他交通方式</li>
+                                <li>🔞 仅限成年人参与（中国大陆18岁以上）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back Button -->
+                <div class="text-center mt-4">
+                    <a href="/zh/categories/drinking-games/" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> 返回酒类游戏
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">关于我们</h2>
+                    <p>最佳聚会游戏合集是您免费获得最佳聚会游戏的首要在线目的地！我们提供多样化的引人入胜的互动聚会游戏合集。</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">快速链接</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="/zh/index.html" class="text-light text-decoration-none">首页</a></li>
+                        <li><a href="/zh/feedback.html" class="text-light text-decoration-none">意见反馈</a></li>
+                        <li><a href="/zh/TheList.html" class="text-light text-decoration-none">游戏分类</a></li>
+                        <li><a href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer"
+                                class="text-decoration-none" style="color: #fcbf47 !important;">Support me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">&copy; 2025 Best Party Games. 保留所有权利.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
