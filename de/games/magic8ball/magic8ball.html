@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magischer 8-Ball | Persönliche Antworten</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../games/magic8ball/magic8ball.css">
+    <link rel="icon" href="../../../games/magic8ball/magic8ball.svg" type="image/svg+xml">
+    <meta name="description"
+        content="Magischer 8-Ball online! Personalisiere Antworten in klassisch, witzig, sarkastisch, romantisch & Trinkspiel-Modi. Kostenlos spielen!">
+    <meta name="keywords"
+        content="magischer 8 ball, wahrsager ball, schicksalsball, zukunft vorhersagen, entscheidungshilfe">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/de/games/magic8ball/magic8ball.html">
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Magischer 8-Ball | Erstelle deinen personalisierten Wahrsager">
+    <meta property="og:description"
+        content="Erstelle deinen eigenen magischen 8-Ball mit personalisierten Antworten! Wähle aus mehreren Modi oder erstelle deinen einzigartigen Wahrsager.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/de/games/magic8ball/magic8ball.html">
+    <meta property="og:image" content="https://www.bestpartygames.net/games/magic8ball/magic8ball.svg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/gameheader.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Magischer 8-Ball",
+        "description": "Erstelle deinen eigenen magischen 8-Ball mit personalisierten Antworten! Wähle zwischen klassischen, witzigen, sarkastischen, romantischen oder Trinkspiel-Modi, oder erstelle deinen einzigartigen Wahrsager.",
+        "url": "https://www.bestpartygames.net/de/games/magic8ball/magic8ball.html",
+        "image": "https://www.bestpartygames.net/games/magic8ball/magic8ball.svg",
+        "genre": "Wahrsager-Spiel",
+        "numberOfPlayers": "1+",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Best Party Games"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Best Party Games",
+            "url": "https://www.bestpartygames.net"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "ratingCount": "234"
+        },
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "Klassischer Modus",
+                "description": "Traditionelle magische 8-Ball Antworten"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Personalisierter Modus",
+                "description": "Erstelle deine eigenen individualisierten Antworten"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Themen-Modi",
+                "description": "Witzig, sarkastisch, romantisch und Trinkspiel-Versionen"
+            }
+        ],
+        "keywords": "magischer 8 ball, personalisierter 8 ball, wahrsager, schicksalsball, entscheidungshilfe"
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
+        crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body class="bg-light py-5">
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container py-4">
+        <div class="p-4">
+            <h1 class="text-center mb-4">Magischer 8-Ball</h1>
+
+            <div class="version-selector mb-4 text-center">
+                <label for="version" class="form-label me-2">Wähle eine Version:</label>
+                <select id="version" class="form-select form-select-sm d-inline-block w-auto">
+                    <option value="classic">Klassisch</option>
+                    <option value="silly">Witzig</option>
+                    <option value="sarcastic">Sarkastisch</option>
+                    <option value="romance">Romantisch</option>
+                    <option value="drinking">Trinkspiel</option>
+                    <option value="custom">Personalisiert</option>
+                </select>
+            </div>
+
+            <div class="magic-ball-container text-center mb-4">
+                <div class="magic-ball mx-auto">
+                    <div class="answer-container">
+                        <div class="answer" id="answer">8</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container mb-4">
+                <div class="input-group">
+                    <input type="text" id="question" class="form-control" placeholder="Stelle eine Frage...">
+                    <button id="shake-button" class="btn btn-dark">Schütteln</button>
+                </div>
+            </div>
+
+            <div class="history-container mb-4">
+                <h3 class="fs-5 mb-3">Fragen-Verlauf</h3>
+                <ul id="history-list" class="list-group"></ul>
+            </div>
+
+            <section class="info-section mt-5 pt-4 border-top">
+                <h2 class="fs-3 mb-3">Erstelle deinen eigenen magischen 8-Ball</h2>
+                <p class="text-muted">Unser magischer 8-Ball lässt dich dein Wahrsager-Erlebnis personalisieren.
+                    Egal ob du die traditionellen Antworten verwenden oder deine eigenen einzigartigen Antworten erstellen möchtest, 
+                    unser personalisierter magischer 8-Ball gibt dir die Freiheit, deinen Ball genau nach deinen Wünschen anzupassen.</p>
+
+                <h3 class="fs-4 mt-4 mb-3">So erstellst du einen personalisierten magischen 8-Ball</h3>
+                <p class="text-muted">Deinen eigenen magischen 8-Ball zu erstellen ist einfach:</p>
+                <ol class="text-muted">
+                    <li class="mb-2">Wähle "Personalisiert" aus dem Versions-Dropdown-Menü</li>
+                    <li class="mb-2">Gib deine eigenen Antworten in das Textfeld ein (eine pro Zeile)</li>
+                    <li class="mb-2">Klicke auf "Personalisierte Antworten speichern", um deine Antworten zu aktivieren</li>
+                    <li class="mb-2">Stelle eine Frage und schüttle den Ball, um deine personalisierten Antworten zu erhalten!</li>
+                </ol>
+
+                <h3 class="fs-4 mt-4 mb-3">Magischer 8-Ball Versionen</h3>
+                <p class="text-muted">Wähle aus unseren vorgefertigten Versionen oder erstelle deinen eigenen magischen 8-Ball:</p>
+                <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Klassisch</h5>
+                                <p class="card-text">Traditionelle magische 8-Ball Antworten</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Witzig</h5>
+                                <p class="card-text">Humorvolle und spielerische Antworten</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Sarkastisch</h5>
+                                <p class="card-text">Witzige und spöttische Antworten</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Romantisch</h5>
+                                <p class="card-text">Liebe und Beziehungsratschläge</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Trinkspiel</h5>
+                                <p class="card-text">Lustige Trinkspiel-Anweisungen</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">✨ Personalisiert</h5>
+                                <p class="card-text">Erstelle deine eigenen Antworten für ein einzigartiges Erlebnis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="fs-4 mt-4 mb-3">Über den magischen 8-Ball</h3>
+                <p class="text-muted">Der magische 8-Ball ist ein Wahrsager-Spielzeug, das 1946 von Albert Carter und
+                    Abe Bookman erfunden wurde. Ursprünglich "Syco-Seer" genannt, wurde er zu einem der beliebtesten 
+                    Spielzeuge des 20. Jahrhunderts und ist heute noch ein Kultgegenstand.</p>
+
+                <h3 class="fs-4 mt-4 mb-3">Warum einen personalisierten magischen 8-Ball erstellen?</h3>
+                <p class="text-muted">Die Personalisierung deines magischen 8-Balls ermöglicht es dir:</p>
+                <div class="card border-0 bg-light mb-4">
+                    <div class="card-body">
+                        <ul class="text-muted mb-0">
+                            <li class="mb-2">Thematische Antworten für besondere Anlässe wie Geburtstage oder Partys zu erstellen</li>
+                            <li class="mb-2">Insider-Witze mit Freunden oder Familie zu machen</li>
+                            <li class="mb-2">Einen magischen 8-Ball speziell für deine Interessen oder Hobbys zu gestalten</li>
+                            <li class="mb-2">Ein personalisiertes Geschenk für jemand Besonderen zu erstellen</li>
+                            <li class="mb-2">Ein individuelles Teambuilding-Tool für Arbeit oder Schule zu entwickeln</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="fs-4 mt-4 mb-3">Interessante Fakten über den magischen 8-Ball</h3>
+                <div class="card border-0 bg-light mb-4">
+                    <div class="card-body">
+                        <ul class="text-muted mb-0">
+                            <li class="mb-2">Der traditionelle magische 8-Ball enthält 20 mögliche Antworten</li>
+                            <li class="mb-2">Er wurde 2018 in die National Toy Hall of Fame aufgenommen</li>
+                            <li class="mb-2">Über 100 Millionen magische 8-Bälle wurden weltweit verkauft</li>
+                            <li class="mb-2">Das ursprüngliche Design war von einem Geisterschrift-Gerät inspiriert, das die Mutter des Erfinders benutzte</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="fs-4 mt-4 mb-3">Häufig gestellte Fragen</h3>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h4 class="accordion-header" id="faq1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                Wie erstelle ich einen personalisierten magischen 8-Ball?
+                            </button>
+                        </h4>
+                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Wähle einfach "Personalisiert" aus dem Versions-Dropdown, gib deine personalisierten Antworten 
+                                (eine pro Zeile) in das Textfeld ein und klicke auf "Personalisierte Antworten speichern". 
+                                Dein personalisierter magischer 8-Ball ist jetzt einsatzbereit!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Kann ich meine personalisierten Antworten dauerhaft speichern?
+                            </button>
+                        </h4>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Ja! Deine personalisierten magischen 8-Ball Antworten werden automatisch im lokalen Speicher 
+                                deines Browsers gespeichert und bei zukünftigen Besuchen wieder geladen.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Welche verschiedenen Themenmodi gibt es?
+                            </button>
+                        </h4>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Unser magischer 8-Ball bietet Klassisch (traditionell), Witzig (humorvoll), Sarkastisch 
+                                (spöttisch), Romantisch (Liebesratschläge), Trinkspiel (Partyspiel) und Personalisiert (deine eigenen) Versionen.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                Ist dieser magische 8-Ball kostenlos zu verwenden?
+                            </button>
+                        </h4>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Absolut! Unser magischer 8-Ball ist völlig kostenlos zu verwenden, ohne versteckte Gebühren 
+                                oder Premium-Funktionen.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-muted mt-4">Unser virtueller magischer 8-Ball bringt dieses klassische Erlebnis online 
+                    mit dem zusätzlichen Vorteil der Personalisierung. Erstelle noch heute dein eigenes einzigartiges Wahrsager-Erlebnis!</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/game-navigation-de.js"></script>
+    <script src="./magic8ball-de.js"></script>
+    
+</body>
+
+</html>

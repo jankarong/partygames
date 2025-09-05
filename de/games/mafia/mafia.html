@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Werwolf online spielen! Klassisches Sozialdeduktionsspiel für 6-15 Spieler. Dorfbewohner gegen Werwölfe - kostenlos und spannend!">
+    <meta name="keywords" content="Werwolf,Brettspiel,Sozialdeduktionsspiel,Partyspiel,Online Werwolf">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="Werwolf Brettspiel - Online Sozialdeduktionsspiel">
+    <meta property="og:description" content="Online Werwolf Brettspiel - Das klassische Sozialdeduktionsspiel! Erlebe aufregendes Werwolf-Gameplay für 6-15 Spieler.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../../../games/mafia/mafialogo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Werwolf Brettspiel - Online Sozialdeduktionsspiel">
+    <meta name="twitter:description" content="Online Werwolf Brettspiel - Das klassische aufregende Sozialdeduktionsspiel für 6-15 Spieler!">
+    <meta name="twitter:image" content="../../../games/mafia/mafialogo.png">
+    <title>Werwolf Online | Sozialdeduktionsspiel für 6-15 Spieler</title>
+    <link rel="canonical" href="https://partygames.com/de/games/mafia/mafia.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../games/mafia/mafialogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Werwolf Brettspiel",
+        "description": "Online Werwolf Brettspiel - Das klassische Sozialdeduktionsspiel! Erlebe aufregendes Werwolf-Gameplay, bei dem Dorfbewohner die versteckten Werwölfe finden müssen.",
+        "genre": "Board Game",
+        "numberOfPlayers": "6-15",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "320"
+        }
+    }
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Cinzel:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../games/mafia/mafia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/gameheader.css">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
+        crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container py-4">
+        <img src="../../../games/mafia/mafialogo.png" alt="Werwolf Brettspiel Logo" class="game-logo">
+        <h1 class="text-center mb-4">Werwolf Brettspiel</h1>
+
+        <div class="game-setup">
+            <div class="setup-section card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title">Spiel-Einstellungen</h2>
+                    <div class="total-players mb-4">
+                        <label for="playerCount" class="form-label">Gesamtanzahl Spieler:</label>
+                        <input type="number" id="playerCount" class="form-control" min="6" max="15" value="8">
+                    </div>
+
+                    <div class="role-selection">
+                        <h3 class="h5 mb-3">Rollenverteilung</h3>
+                        <div class="role-inputs row g-3">
+                            <div class="role-input col-md-4">
+                                <label for="mafiaCount" class="form-label">Werwölfe:</label>
+                                <input type="number" id="mafiaCount" class="form-control" min="1" value="2">
+                            </div>
+                            <div class="role-input col-md-4">
+                                <label for="doctorCount" class="form-label">Arzt:</label>
+                                <input type="number" id="doctorCount" class="form-control" min="0" max="1" value="1">
+                            </div>
+                            <div class="role-input col-md-4">
+                                <label for="detectiveCount" class="form-label">Seher:</label>
+                                <input type="number" id="detectiveCount" class="form-control" min="0" max="1" value="1">
+                            </div>
+                            <div class="role-input col-md-4">
+                                <label for="villagerCount" class="form-label">Dorfbewohner:</label>
+                                <input type="number" id="villagerCount" class="form-control" min="1" value="4">
+                            </div>
+                        </div>
+
+                        <!-- Benutzerdefinierte Rollen Bereich -->
+                        <div id="customRoleInputs" class="row g-3 mt-2"></div>
+                        <div class="role-summary mt-3">
+                            <p class="role-warning text-danger" id="roleWarning"></p>
+                        </div>
+                    </div>
+
+                    <button id="setupGame" class="btn btn-primary w-100 mt-3">Spiel starten</button>
+                    <button id="manageRoles" class="btn btn-secondary w-100 mt-3">Benutzerdefinierte Rollen verwalten</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="role-management mt-4" style="display: none;">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Benutzerdefinierte Rollenverwaltung</h2>
+
+                    <!-- Neue Rolle erstellen -->
+                    <div class="create-role-section mb-5">
+                        <h4 class="mb-3">Neue Rolle erstellen</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="roleName" class="form-label">Rollenname</label>
+                                <input type="text" id="roleName" class="form-control" placeholder="z.B.: Amor">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="roleTeam" class="form-label">Team</label>
+                                <select id="roleTeam" class="form-select">
+                                    <option value="villager">Dorfbewohner-Team</option>
+                                    <option value="mafia">Werwolf-Team</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleDescription" class="form-label">Rollenbeschreibung</label>
+                                <textarea id="roleDescription" class="form-control" rows="3"
+                                    placeholder="Beschreibe die Fähigkeiten und Funktion dieser Rolle..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleAbility" class="form-label">Nachtfähigkeit</label>
+                                <textarea id="roleAbility" class="form-control" rows="2"
+                                    placeholder="Beschreibe die Aktionen dieser Rolle in der Nachtphase... (optional)"></textarea>
+                            </div>
+                        </div>
+                        <button id="createRole" class="btn btn-primary mt-3">Rolle erstellen</button>
+                    </div>
+
+                    <!-- Bestehende Rollen Liste -->
+                    <div class="existing-roles-section mb-4">
+                        <h4 class="mb-3">Bestehende Rollen</h4>
+                        <div id="rolesList" class="row g-3"></div>
+                    </div>
+
+                    <div class="text-center">
+                        <button id="backToSetup" class="btn btn-secondary">Zurück zu Spiel-Einstellungen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area mt-4 position-relative" style="display: none;">
+            <button id="returnToSetup" class="btn btn-secondary"
+                style="position: absolute; left: 20px; top: 20px; z-index: 1000;">
+                <i class="fas fa-arrow-left"></i>
+                <span class="btn-text">Zurück zu Einstellungen</span>
+            </button>
+            <button id="startNewGame" class="btn btn-success"
+                style="position: absolute; right: 20px; top: 20px; z-index: 1000;">
+                <i class="fas fa-redo"></i>
+                <span class="btn-text">Neues Spiel starten</span>
+            </button>
+            <div class="role-cards card shadow-sm mt-5">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Spieler-Rollenkarten</h2>
+                    <div id="cardGrid"></div>
+                </div>
+            </div>
+
+            <div class="game-controls mt-4" style="display: none;">
+                <button id="startGame" class="btn btn-success btn-lg w-100">
+                    <i class="fas fa-play-circle me-2"></i>
+                    Nachtphase beginnen
+                </button>
+            </div>
+
+            <div class="role-instructions card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Rollenanweisungen</h2>
+                    <div id="mafiaInstructions" class="role-instruction">
+                        <h3 class="h5">Werwolf</h3>
+                        <ul>
+                            <li>Verstecke deine Identität vor den anderen Spielern</li>
+                            <li>Beratet euch nachts mit anderen Werwölfen, um einen Dorfbewohner zu eliminieren</li>
+                            <li>Tarnt euch tagsüber als Dorfbewohner, um nicht entdeckt zu werden</li>
+                        </ul>
+                    </div>
+                    <div id="villagerInstructions" class="role-instruction">
+                        <h3 class="h5">Dorfbewohner</h3>
+                        <ul>
+                            <li>Arbeitet mit anderen Dorfbewohnern zusammen, um die Werwölfe zu finden und zu eliminieren</li>
+                            <li>Beobachtet das Verhalten der anderen Spieler sorgfältig</li>
+                            <li>Eliminiert verdächtige Werwölfe in der Abstimmungsphase am Tag</li>
+                        </ul>
+                    </div>
+                    <div id="doctorInstructions" class="role-instruction">
+                        <h3 class="h5">Arzt</h3>
+                        <ul>
+                            <li>Kann jede Nacht einen Spieler vor der Eliminierung schützen</li>
+                            <li>Kann sich selbst schützen</li>
+                            <li>Halte deine Identität geheim</li>
+                        </ul>
+                    </div>
+                    <div id="detectiveInstructions" class="role-instruction">
+                        <h3 class="h5">Seher</h3>
+                        <ul>
+                            <li>Kann jede Nacht die Identität eines Spielers überprüfen</li>
+                            <li>Nutze deine Informationen, um die Dorfbewohner zu leiten</li>
+                            <li>Halte deine Identität geheim</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="night-actions card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Nachtphase</h2>
+                    <div id="narrator-text" class="mb-4"></div>
+
+                    <div id="action-area">
+                        <div id="mafia-action" class="role-action" style="display: none;">
+                            <h3>Werwolf-Aktion</h3>
+                            <p>Wählt einen Spieler zum Eliminieren:</p>
+                            <div id="mafia-targets" class="player-selection"></div>
+                            <button id="confirm-mafia" class="btn btn-danger mt-3">Auswahl bestätigen</button>
+                        </div>
+
+                        <div id="doctor-action" class="role-action" style="display: none;">
+                            <h3>Arzt-Aktion</h3>
+                            <p id="doctor-prompt"></p>
+                            <div id="doctor-choice" class="d-flex flex-column gap-2">
+                                <button id="save-player" class="btn btn-primary mt-3">Spieler retten</button>
+                                <button id="poison-player" class="btn btn-danger mt-3">Spieler vergiften</button>
+                                <button id="skip-action" class="btn btn-secondary mt-3">Aktion überspringen</button>
+                            </div>
+                            <div id="doctor-targets" class="player-selection" style="display: none;"></div>
+                            <button id="confirm-doctor" class="btn btn-primary mt-3"
+                                style="display: none;">Auswahl bestätigen</button>
+                        </div>
+
+                        <div id="detective-action" class="role-action" style="display: none;">
+                            <h3>Seher-Aktion</h3>
+                            <p>Wählt einen Spieler zum Überprüfen:</p>
+                            <div id="detective-targets" class="player-selection"></div>
+                            <div id="investigation-result" class="mt-3" style="display: none;">
+                                <p id="investigation-text" class="result-text"></p>
+                                <button id="confirm-detective" class="btn btn-primary mt-3">Weiter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="discussion-phase" class="discussion-phase" style="display: none;">
+                <h3>Diskussionszeit</h3>
+                <div class="night-summary mb-4">
+                    <p id="night-result" class="mb-3"></p>
+                    <div id="player-statuses" class="player-status-grid"></div>
+                </div>
+                <p class="discussion-prompt">Diskutiert darüber, wer eurer Meinung nach ein Werwolf sein könnte.</p>
+                <button id="end-discussion" class="btn btn-primary mt-4">Diskussion beenden</button>
+            </div>
+
+            <div class="voting-phase card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Abstimmungsphase</h2>
+                    <p class="voting-prompt">Stimmt für den Spieler ab, der eurer Meinung nach ein Werwolf ist:</p>
+                    <div id="voting-grid" class="voting-grid mt-3"></div>
+                    <button id="confirm-vote" class="btn btn-primary mt-4">Abstimmung bestätigen</button>
+                </div>
+            </div>
+
+            <div class="player-status card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Spielerstatus</h2>
+                    <div id="playerStatus" class="list-group mt-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-alert" style="display: none;">
+            <div class="alert-content card">
+                <div class="card-body text-center">
+                    <div class="alert-message mb-3"></div>
+                    <div class="d-flex flex-column align-items-center">
+                        <button class="btn btn-primary alert-confirm">OK</button>
+                        <button id="playAgainBtn" class="btn btn-success mt-2" style="display: none;">Nochmal spielen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rules-section card shadow-sm mt-4">
+            <div class="card-body text-white">
+                <h2 class="card-title text-white">Spielregeln</h2>
+
+                <h3>Spielübersicht</h3>
+                <p>Werwolf ist ein aufregendes soziales Deduktionsspiel, bei dem Spieler heimlich in zwei Teams aufgeteilt werden: Werwölfe und Dorfbewohner. Das Spiel wechselt zwischen Nacht- und Tagphasen, bis eine Seite gewinnt.</p>
+
+                <h3>Werwolf Spielregeln</h3>
+                <ul>
+                    <li><strong>Gesamtspielerzahl:</strong> 6-15 Spieler</li>
+                    <li><strong>Werwölfe:</strong> Böses Team, kennen sich gegenseitig (1-3 Spieler)</li>
+                    <li><strong>Dorfbewohner:</strong> Gewöhnliche Dorfbewohner, versuchen die Werwölfe zu finden</li>
+                    <li><strong>Arzt:</strong> Spezieller Dorfbewohner, kann retten und vergiften (0-1 Spieler)</li>
+                    <li><strong>Seher:</strong> Spezieller Dorfbewohner, kann jede Nacht eine Spieleridentität überprüfen (0-1 Spieler)</li>
+                </ul>
+
+                <h3>Spielablauf</h3>
+                <ol>
+                    <li><strong>Einrichtungsphase:</strong>
+                        <ul>
+                            <li>Jeder Spieler erhält eine geheime Rollenkarte</li>
+                            <li>Spieler müssen ihre Identität geheim halten, es sei denn, sie werden eliminiert</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nachtphase:</strong>
+                        <ul>
+                            <li>Alle Spieler "schlafen" (schließen die Augen)</li>
+                            <li>Werwölfe wachen auf und wählen einen Spieler zum Eliminieren</li>
+                            <li>Der Arzt wacht auf und kann wählen, zu retten oder zu vergiften</li>
+                            <li>Der Seher wacht auf und überprüft die Identität eines Spielers</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tagphase:</strong>
+                        <ul>
+                            <li>Alle Spieler "wachen auf"</li>
+                            <li>Ergebnisse der nächtlichen Aktionen werden bekannt gegeben</li>
+                            <li>Spieler diskutieren, wer die Werwölfe sein könnten</li>
+                            <li>Abstimmung zur Eliminierung eines verdächtigen Werwolfs</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>Spezielle Fähigkeiten</h3>
+                <ul>
+                    <li><strong>Arzt-Fähigkeiten:</strong>
+                        <ul>
+                            <li>Kann einmal im Spiel einen Spieler (einschließlich sich selbst) retten</li>
+                            <li>Kann einmal im Spiel einen Spieler vergiften</li>
+                            <li>Muss jede Nacht zwischen retten, vergiften oder überspringen wählen</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seher-Fähigkeiten:</strong>
+                        <ul>
+                            <li>Kann jede Nacht einen Spieler überprüfen</li>
+                            <li>Erfährt, ob der überprüfte Spieler ein Werwolf ist oder nicht</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Siegbedingungen</h3>
+                <ul>
+                    <li><strong>Dorfbewohner gewinnen:</strong> Alle Werwölfe eliminieren</li>
+                    <li><strong>Werwölfe gewinnen:</strong> Die Anzahl der Werwölfe entspricht oder übertrifft die Anzahl der Dorfbewohner</li>
+                </ul>
+
+                <h3>Werwolf Spieltipps</h3>
+                <ul>
+                    <li>Beobachte das Verhalten der Spieler während Diskussionen sorgfältig</li>
+                    <li>Spezielle Rollen (Arzt und Seher) sollten vorsichtig sein, ihre Identität preiszugeben</li>
+                    <li>Strategisches Abstimmen - manchmal kann Stimmenthaltung die beste Strategie sein</li>
+                    <li>Werwölfe müssen sich während Diskussionen als Dorfbewohner tarnen</li>
+                    <li>Wiederholtes Spielen mit einem festen Team hilft bei der Strategieentwicklung</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/game-navigation-de.js"></script>
+    <script src="mafia-de.js?v=12"></script>
+
+</body>
+
+</html>
