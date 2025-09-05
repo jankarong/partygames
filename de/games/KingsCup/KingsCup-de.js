@@ -119,10 +119,11 @@ class KingsCupGame {
     startGame() {
         if (this.gameEnded) {
             this.resetGame();
+            return;
         }
         
         this.gameStarted = true;
-        this.updateStartButton();
+        this.updateButtons();
         this.drawCard();
     }
 
@@ -133,12 +134,15 @@ class KingsCupGame {
         this.kingCount = 0;
         this.gameEnded = false;
         
-        document.getElementById('currentCard').innerHTML = '';
-        document.getElementById('cardRule').innerHTML = '';
-        document.getElementById('cardsRemaining').textContent = '52';
+        document.getElementById('cardValue').textContent = '?';
+        document.getElementById('cardSuit').textContent = '🃏';
+        document.getElementById('ruleName').textContent = 'Karte ziehen';
+        document.getElementById('ruleText').textContent = 'Klicke, um deine erste Karte zu ziehen!';
+        document.getElementById('cardsLeft').textContent = '52';
         document.getElementById('kingsDrawn').textContent = '0';
+        document.getElementById('cupContents').textContent = 'Leer';
         
-        this.updateStartButton();
+        this.updateUI();
     }
 
     drawCard() {
@@ -160,91 +164,90 @@ class KingsCupGame {
     }
 
     displayCard() {
-        const cardElement = document.getElementById('currentCard');
-        const suitColor = (this.currentCard.suit === '♥️' || this.currentCard.suit === '♦️') ? 'red' : 'black';
+        const suitColor = (this.currentCard.suit === '♥️' || this.currentCard.suit === '♦️') ? 'var(--primary-red)' : 'var(--black)';
         
-        cardElement.innerHTML = `
-            <div class="playing-card" style="color: ${suitColor}">
-                <div class="card-rank">${this.currentCard.rank}</div>
-                <div class="card-suit">${this.currentCard.suit}</div>
-            </div>
-        `;
+        document.getElementById('cardValue').textContent = this.currentCard.rank;
+        document.getElementById('cardSuit').innerHTML = this.currentCard.suit;
+        document.getElementById('cardValueSmall').textContent = this.currentCard.rank;
+        document.getElementById('cardSuitSmall').innerHTML = this.currentCard.suit;
+        
+        // Update colors
+        document.getElementById('cardSuit').style.color = suitColor;
+        document.getElementById('cardSuitSmall').style.color = suitColor;
     }
 
     applyRule() {
         const rule = this.cardRules[this.currentCard.rank];
-        const ruleElement = document.getElementById('cardRule');
         
-        ruleElement.innerHTML = `
-            <div class="rule-content">
-                <h3>${rule.icon} ${rule.name}</h3>
-                <p>${rule.rule}</p>
-            </div>
-        `;
+        document.getElementById('ruleName').textContent = rule.name;
+        document.getElementById('ruleText').textContent = rule.rule;
     }
 
     handleKing() {
-        const messageElement = document.getElementById('kingMessage');
         let message = '';
+        let cupContent = '';
 
         switch(this.kingCount) {
             case 1:
                 message = this.specialMessages.firstKing;
+                cupContent = '1 König gegossen';
                 break;
             case 2:
                 message = this.specialMessages.secondKing;
+                cupContent = '2 Könige gegossen';
                 break;
             case 3:
                 message = this.specialMessages.thirdKing;
+                cupContent = '3 Könige gegossen - ACHTUNG!';
                 break;
             case 4:
                 message = this.specialMessages.fourthKing;
+                cupContent = 'MUSS GELEERT WERDEN!';
                 this.gameEnded = true;
                 setTimeout(() => this.endGame(), 3000);
                 break;
         }
 
+        // Update Kings Cup display
+        document.getElementById('cupContents').textContent = cupContent;
+        
         if (message) {
-            messageElement.innerHTML = `<div class="king-message show">${message}</div>`;
-            
-            // Nachricht nach 5 Sekunden ausblenden (außer bei Spielende)
-            if (this.kingCount < 4) {
-                setTimeout(() => {
-                    messageElement.innerHTML = '';
-                }, 5000);
-            }
+            alert(message);
         }
     }
 
     updateGameStats() {
-        document.getElementById('cardsRemaining').textContent = this.deck.length;
+        document.getElementById('cardsLeft').textContent = this.deck.length;
         document.getElementById('kingsDrawn').textContent = this.kingCount;
     }
 
-    updateStartButton() {
-        const button = document.getElementById('drawButton');
+    updateButtons() {
+        const nextButton = document.getElementById('nextButton');
+        const resetButton = document.getElementById('resetButton');
+        
         if (!this.gameStarted) {
-            button.textContent = 'Spiel starten';
-            button.className = 'btn btn-success btn-lg';
-        } else if (this.gameEnded) {
-            button.textContent = 'Neues Spiel';
-            button.className = 'btn btn-primary btn-lg';
+            nextButton.style.display = 'none';
+            resetButton.style.display = 'none';
         } else {
-            button.textContent = 'Karte ziehen';
-            button.className = 'btn btn-warning btn-lg';
+            nextButton.style.display = 'inline-block';
+            resetButton.style.display = 'inline-block';
+            
+            if (this.gameEnded) {
+                nextButton.style.display = 'none';
+            }
         }
     }
 
     endGame() {
         this.gameEnded = true;
-        this.updateStartButton();
+        this.updateButtons();
         
         if (this.kingCount === 4) {
             // Spiel durch 4. König beendet
-            this.showGameEndModal('Spiel beendet!', 'Der vierte König wurde gezogen! Derjenige muss den Kings Cup austrinken!');
+            alert('Spiel beendet! Der vierte König wurde gezogen! Derjenige muss den Kings Cup austrinken!');
         } else {
             // Alle Karten aufgebraucht
-            this.showGameEndModal('Alle Karten gezogen!', 'Das Spiel ist zu Ende. Niemand musste den Kings Cup trinken!');
+            alert('Alle Karten gezogen! Das Spiel ist zu Ende. Niemand musste den Kings Cup trinken!');
         }
     }
 
@@ -269,28 +272,7 @@ class KingsCupGame {
     }
 
     bindEvents() {
-        const drawButton = document.getElementById('drawButton');
-        const rulesToggle = document.getElementById('rulesToggle');
-        const rulesContent = document.getElementById('rulesContent');
-
-        drawButton.addEventListener('click', () => {
-            if (!this.gameStarted || this.gameEnded) {
-                this.startGame();
-            } else {
-                this.drawCard();
-            }
-        });
-
-        rulesToggle.addEventListener('click', () => {
-            rulesContent.classList.toggle('show');
-            const icon = rulesToggle.querySelector('i');
-            if (rulesContent.classList.contains('show')) {
-                icon.className = 'fas fa-chevron-up';
-            } else {
-                icon.className = 'fas fa-chevron-down';
-            }
-        });
-
+        // Events are handled by global functions and HTML onclick attributes
         // Tastatur-Unterstützung
         document.addEventListener('keydown', (e) => {
             if (e.code === 'Space' && this.gameStarted && !this.gameEnded) {
@@ -301,7 +283,7 @@ class KingsCupGame {
     }
 
     updateUI() {
-        this.updateStartButton();
+        this.updateButtons();
         this.updateGameStats();
     }
 }
@@ -341,6 +323,29 @@ document.addEventListener('DOMContentLoaded', function() {
 // Funktionen für globale Verfügbarkeit
 window.KingsCupGame = KingsCupGame;
 window.showRandomTip = showRandomTip;
+
+// Globale Funktionen für HTML onclick Events
+function drawCard() {
+    if (kingsCupGame) {
+        if (!kingsCupGame.gameStarted) {
+            kingsCupGame.startGame();
+        } else if (!kingsCupGame.gameEnded) {
+            kingsCupGame.drawCard();
+        }
+    }
+}
+
+function nextCard() {
+    if (kingsCupGame && !kingsCupGame.gameEnded) {
+        kingsCupGame.drawCard();
+    }
+}
+
+function resetGame() {
+    if (kingsCupGame) {
+        kingsCupGame.resetGame();
+    }
+}
 
 // Spiel-Ende für Navigation API verfügbar machen
 window.onKingsCupGameEnd = function() {
