@@ -1,5 +1,5 @@
 name = "partygames"
 compatibility_date = "2025-09-12"
 
-[site]
-bucket = "./"
+[assets]
+directory = "./"
