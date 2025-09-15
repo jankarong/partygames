@@ -16,7 +16,9 @@
       "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\zh\\games\\mafia\\mafia.html\")",
       "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\games\\mafia\\mafia.html\")",
       "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\de\\index.html\")",
-      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\de\\games\\mafia\\mafia.html\")"
+      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\de\\games\\mafia\\mafia.html\")",
+      "Bash(magick:*)",
+      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\games\\lastshot\\lastshot.html\")"
     ],
     "deny": []
   }
