@@ -56,11 +56,11 @@ class LastShotGame {
         this.isMuted = !this.isMuted;
         const muteButton = document.getElementById('muteButton');
         if (this.isMuted) {
-            muteButton.textContent = '🔇 Sound OFF';
+            muteButton.textContent = '🔇 Ton AUS';
             muteButton.classList.remove('btn-secondary');
             muteButton.classList.add('btn-dark');
         } else {
-            muteButton.textContent = '🔊 Sound ON';
+            muteButton.textContent = '🔊 Ton AN';
             muteButton.classList.remove('btn-dark');
             muteButton.classList.add('btn-secondary');
         }
@@ -137,7 +137,7 @@ class LastShotGame {
             if (chamber === 'blank') {
                 this.playSound('hollow');
                 this.handleBlankChamber();
-                resultText.textContent = '🔘 BLANK! You\'re safe... for now.';
+                resultText.textContent = '🔘 LEER! Du bist sicher... vorerst.';
                 resultDisplay.className = 'result-display safe';
                 addShotButton.style.display = 'inline-block';
 
@@ -148,7 +148,7 @@ class LastShotGame {
             } else {
                 this.playSound('bang');
                 this.handleBulletChamber();
-                resultText.textContent = `💥 BULLET! Drink all ${this.shotsInPool} shots!`;
+                resultText.textContent = `💥 KUGEL! Trink alle ${this.shotsInPool} Shots!`;
                 resultDisplay.className = 'result-display danger';
 
                 setTimeout(() => {
@@ -189,11 +189,11 @@ class LastShotGame {
         this.updateUI();
 
         const resultText = document.getElementById('resultText');
-        resultText.textContent = `🥃 Shot added! Pool now has ${this.shotsInPool} shots.`;
+        resultText.textContent = `🥃 Shot hinzugefügt! Pool hat jetzt ${this.shotsInPool} Shots.`;
 
         setTimeout(() => {
             if (this.gameActive && this.currentChamber < this.chambers.length) {
-                resultText.textContent = 'Next player\'s turn! Click "Pull Trigger".';
+                resultText.textContent = 'Nächster Spieler ist dran! Klick "Abzug drücken".';
             }
         }, 2000);
     }
@@ -256,9 +256,9 @@ class LastShotGame {
         const newRoundButton = document.getElementById('newRoundButton');
 
         if (this.shotsInPool === 0) {
-            resultText.textContent = '💥 Lucky escape! No shots in the pool! Ready for a new round?';
+            resultText.textContent = '💥 Glück gehabt! Keine Shots im Pool! Bereit für eine neue Runde?';
         } else {
-            resultText.textContent = `💥 Game Over! Drink ${this.shotsInPool} shots and start a new round when ready!`;
+            resultText.textContent = `💥 Spiel vorbei! Trink ${this.shotsInPool} Shots und starte eine neue Runde wenn bereit!`;
         }
 
         triggerButton.style.display = 'none';
@@ -273,7 +273,7 @@ class LastShotGame {
     showGameSection() {
         document.getElementById('gameSetup').style.display = 'none';
         document.getElementById('gameSection').style.display = 'block';
-        document.getElementById('resultText').textContent = 'Game ready! First player, click "Pull Trigger"!';
+        document.getElementById('resultText').textContent = 'Spiel bereit! Erster Spieler, klick "Abzug drücken"!';
         this.announce('Game ready! First player, press Space to pull.');
         document.getElementById('resultDisplay').className = 'result-display';
         document.getElementById('triggerButton').style.display = 'inline-block';
@@ -301,7 +301,7 @@ class LastShotGame {
         this.updateCylinderDisplay();
 
         // Update UI for new round
-        document.getElementById('resultText').textContent = 'New round started! First player, click "Pull Trigger"!';
+        document.getElementById('resultText').textContent = 'Neue Runde gestartet! Erster Spieler, klick "Abzug drücken"!';
         this.announce('New round started! Press Space to pull.');
         document.getElementById('resultDisplay').className = 'result-display';
         document.getElementById('triggerButton').style.display = 'inline-block';

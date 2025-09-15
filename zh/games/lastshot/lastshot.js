@@ -56,11 +56,11 @@ class LastShotGame {
         this.isMuted = !this.isMuted;
         const muteButton = document.getElementById('muteButton');
         if (this.isMuted) {
-            muteButton.textContent = '🔇 Sound OFF';
+            muteButton.textContent = '🔇 声音关闭';
             muteButton.classList.remove('btn-secondary');
             muteButton.classList.add('btn-dark');
         } else {
-            muteButton.textContent = '🔊 Sound ON';
+            muteButton.textContent = '🔊 声音开启';
             muteButton.classList.remove('btn-dark');
             muteButton.classList.add('btn-secondary');
         }
@@ -137,7 +137,7 @@ class LastShotGame {
             if (chamber === 'blank') {
                 this.playSound('hollow');
                 this.handleBlankChamber();
-                resultText.textContent = '🔘 BLANK! You\'re safe... for now.';
+                resultText.textContent = '🔘 空弹！你现在安全了...';
                 resultDisplay.className = 'result-display safe';
                 addShotButton.style.display = 'inline-block';
 
@@ -148,7 +148,7 @@ class LastShotGame {
             } else {
                 this.playSound('bang');
                 this.handleBulletChamber();
-                resultText.textContent = `💥 BULLET! Drink all ${this.shotsInPool} shots!`;
+                resultText.textContent = `💥 实弹！喝掉所有 ${this.shotsInPool} 杯酒！`;
                 resultDisplay.className = 'result-display danger';
 
                 setTimeout(() => {
@@ -189,11 +189,11 @@ class LastShotGame {
         this.updateUI();
 
         const resultText = document.getElementById('resultText');
-        resultText.textContent = `🥃 Shot added! Pool now has ${this.shotsInPool} shots.`;
+        resultText.textContent = `🥃 已添加酒！酒池现在有 ${this.shotsInPool} 杯。`;
 
         setTimeout(() => {
             if (this.gameActive && this.currentChamber < this.chambers.length) {
-                resultText.textContent = 'Next player\'s turn! Click "Pull Trigger".';
+                resultText.textContent = '下一位玩家的回合！点击"扣扳机"。';
             }
         }, 2000);
     }
@@ -256,9 +256,9 @@ class LastShotGame {
         const newRoundButton = document.getElementById('newRoundButton');
 
         if (this.shotsInPool === 0) {
-            resultText.textContent = '💥 Lucky escape! No shots in the pool! Ready for a new round?';
+            resultText.textContent = '💥 幸运逃脱！酒池里没有酒！准备新回合吗？';
         } else {
-            resultText.textContent = `💥 Game Over! Drink ${this.shotsInPool} shots and start a new round when ready!`;
+            resultText.textContent = `💥 游戏结束！喝掉 ${this.shotsInPool} 杯酒，准备好后开始新回合！`;
         }
 
         triggerButton.style.display = 'none';
@@ -273,7 +273,7 @@ class LastShotGame {
     showGameSection() {
         document.getElementById('gameSetup').style.display = 'none';
         document.getElementById('gameSection').style.display = 'block';
-        document.getElementById('resultText').textContent = 'Game ready! First player, click "Pull Trigger"!';
+        document.getElementById('resultText').textContent = '游戏准备就绪！第一位玩家，点击"扣扳机"！';
         this.announce('Game ready! First player, press Space to pull.');
         document.getElementById('resultDisplay').className = 'result-display';
         document.getElementById('triggerButton').style.display = 'inline-block';
@@ -301,7 +301,7 @@ class LastShotGame {
         this.updateCylinderDisplay();
 
         // Update UI for new round
-        document.getElementById('resultText').textContent = 'New round started! First player, click "Pull Trigger"!';
+        document.getElementById('resultText').textContent = '新回合开始！第一位玩家，点击"扣扳机"！';
         this.announce('New round started! Press Space to pull.');
         document.getElementById('resultDisplay').className = 'result-display';
         document.getElementById('triggerButton').style.display = 'inline-block';
