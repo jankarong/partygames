@@ -58,9 +58,6 @@ class GameNavigation {
                     <a href="/index.html">
                         <i class="fas fa-home"></i> All Games
                     </a>
-                    <a href="/feedback.html">
-                        <i class="fas fa-comment"></i> Feedback
-                    </a>
                     <a href="/TheList.html">
                         <i class="fas fa-list"></i> The List
                     </a>

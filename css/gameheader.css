@@ -292,8 +292,8 @@
     background: #a8a8a8;
 }
 
-/* Mobile optimizations */
-@media (max-width: 768px) {
+/* Mobile and iPad optimizations */
+@media (max-width: 1024px) {
     .floating-nav {
         top: 15px;
         right: 15px;
@@ -377,6 +377,81 @@
     .quick-game-btn {
         padding: 6px 12px;
         font-size: 12px;
+    }
+}
+
+/* iPad specific optimizations (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .nav-menu {
+        min-width: 300px;
+        max-height: 75vh;
+    }
+
+    .game-links {
+        grid-template-columns: 1fr 1fr;
+        max-height: 50vh;
+    }
+
+    .quick-games-bar {
+        bottom: 20px;
+        left: 20px;
+        transform: none;
+        padding: 0;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .quick-games-bar.open {
+        width: 200px;
+        height: auto;
+        border-radius: 15px;
+        padding: 12px;
+        align-items: stretch;
+    }
+
+    #quick-access-toggle {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .quick-games-bar .quick-game-btn {
+        display: none;
+        padding: 10px 14px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .quick-games-bar.open .quick-game-btn {
+        display: block;
+    }
+
+    .quick-games-bar.open #quick-access-toggle {
+        position: static;
+        margin-bottom: 8px;
+    }
+
+    .quick-games-bar #try-text {
+        display: none;
     }
 }
 
