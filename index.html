@@ -84,9 +84,7 @@
         })(window, document, "clarity", "script", "q4t8s17fvw");
     </script>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
-        crossorigin="anonymous"></script>
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
@@ -117,6 +115,9 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="./TheList.html">The List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/premium.html">Premium</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer"
@@ -194,12 +195,13 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/lastshot/lastshot.png" class="card-img-top"
-                                alt="Last Shot Drinking Game" loading="lazy">
+                            <img src="./games/lastshot/lastshot.png" class="card-img-top" alt="Last Shot Drinking Game"
+                                loading="lazy">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Last Shot</h5>
-                            <p class="card-text">Russian roulette drinking game! Pull the trigger, survive or drink all shots!</p>
+                            <p class="card-text">Russian roulette drinking game! Pull the trigger, survive or drink all
+                                shots!</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="text-muted">3+ players</small>
                                 <a href="/games/lastshot/lastshot.html" class="btn btn-primary">Play Now</a>
@@ -549,16 +551,21 @@
                         <p class="text-light mb-0">&copy; 2025 PartyGameLab. All rights reserved.</p>
                         <div class="d-flex align-items-center gap-3">
                             <a href="https://turbo0.com/item/partygamelab" target="_blank" rel="noopener noreferrer">
-                                <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style="height: 54px; width: auto;" />
+                                <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0"
+                                    style="height: 54px; width: auto;" />
                             </a>
                             <a href="https://twelve.tools" target="_blank">
-                                <img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" width="200" height="54">
+                                <img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools"
+                                    width="200" height="54">
                             </a>
-                            <a href="https://launchigniter.com/product/partygamelab?ref=badge-partygamelab" target="_blank">
-                                <img src="https://launchigniter.com/api/badge/partygamelab?theme=neutral" alt="Featured on LaunchIgniter" width="212" height="55" />
+                            <a href="https://launchigniter.com/product/partygamelab?ref=badge-partygamelab"
+                                target="_blank">
+                                <img src="https://launchigniter.com/api/badge/partygamelab?theme=neutral"
+                                    alt="Featured on LaunchIgniter" width="212" height="55" />
                             </a>
                             <a href="https://fazier.com/launches/www.bestpartygames.net" target="_blank">
-                                <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width="120" alt="Fazier badge" />
+                                <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light"
+                                    width="120" alt="Fazier badge" />
                             </a>
                         </div>
                     </div>
@@ -572,10 +579,12 @@
 
     <!-- Auth JS -->
     <script src="./js/auth.js"></script>
+    <!-- Conditional Ad Loader -->
+    <script src="./js/ads-controller.js"></script>
 
     <script>
         // 页面加载完成后的额外处理
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // 监听认证状态变化
             if (window.authManager) {
                 window.authManager.onAuthStateChange((event, session) => {
@@ -591,8 +600,8 @@
             const userEmail = document.getElementById('user-email');
 
             // 当用户信息更新时，更新头像
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
                     if (mutation.type === 'childList' || mutation.type === 'characterData') {
                         const email = userEmail.textContent;
                         if (email && email !== 'user@example.com' && userAvatar) {

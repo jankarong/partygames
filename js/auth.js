@@ -14,6 +14,10 @@ function initSupabase() {
 
     if (!supabaseClient) {
         supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        // expose for other scripts (e.g., premium.js, ads-controller.js)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        window.supabaseClient = supabaseClient;
     }
     return true;
 }
