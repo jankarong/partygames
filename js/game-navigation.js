@@ -62,6 +62,9 @@ class GameNavigation {
                     <a href="/TheList.html">
                         <i class="fas fa-list"></i> The List
                     </a>
+                    <a href="/premium.html">
+                        <i class="fas fa-crown"></i> Premium
+                    </a>
                     <div class="auth-section">
                         <div class="auth-buttons" id="nav-auth-buttons">
                             <a href="/login.html" class="auth-link login-link">

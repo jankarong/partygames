@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Go Premium - PartyGameLab</title>
+    <title>升级至高级版 - PartyGameLab</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./style/main.css" rel="stylesheet">
-    <link href="./css/auth.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="image/favicon.png">
+    <link href="../style/main.css" rel="stylesheet">
+    <link href="../css/auth.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../image/favicon.png">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="image/partyGameLogo.png" alt="Party Games Logo">
+            <a class="navbar-brand" href="/zh/">
+                <img src="../image/partyGameLogo.png" alt="Party Games Logo">
                 <span class="brand-text">PartyGameLab</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -25,12 +25,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./TheList.html">The List</a>
+                        <a class="nav-link" href="./TheList.html">游戏分类</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
                             data-bs-toggle="dropdown">
-                            🇺🇸 English
+                            🇨🇳 中文
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/premium.html">🇺🇸 English</a></li>
@@ -42,8 +42,8 @@
                     <!-- 认证相关按钮 -->
                     <li class="nav-item" id="auth-buttons">
                         <div class="auth-buttons">
-                            <a href="./login.html" class="btn btn-auth-nav btn-login">Login</a>
-                            <a href="./register.html" class="btn btn-auth-nav btn-register">Sign Up</a>
+                            <a href="../login.html" class="btn btn-auth-nav btn-login">登录</a>
+                            <a href="../register.html" class="btn btn-auth-nav btn-register">注册</a>
                         </div>
                     </li>
 
@@ -53,9 +53,9 @@
                             <div class="user-avatar" id="user-avatar">U</div>
                             <div class="user-details">
                                 <div class="user-email" id="user-email">user@example.com</div>
-                                <span class="premium-status" id="premium-status">Free User</span>
+                                <span class="premium-status" id="premium-status">免费用户</span>
                             </div>
-                            <button class="btn btn-signout" onclick="handleSignOut()">Logout</button>
+                            <button class="btn btn-signout" onclick="handleSignOut()">退出登录</button>
                         </div>
                     </li>
                 </ul>
@@ -69,9 +69,9 @@
                 <div class="card shadow-sm">
                     <div class="card-body p-4">
                         <div class="text-center mb-4">
-                            <div class="badge text-dark mb-2" style="background: var(--accent);">🐦 EARLY BIRD SPECIAL</div>
-                            <h1 class="h2 mb-2 fw-bold">Upgrade to Premium</h1>
-                            <p class="h5 mb-0" style="color: var(--primary);">Only $2.99 • One-time payment • Lifetime access</p>
+                            <div class="badge text-dark mb-2" style="background: var(--accent);">🐦 早鸟特惠</div>
+                            <h1 class="h2 mb-2 fw-bold">升级至高级版</h1>
+                            <p class="h5 mb-0" style="color: var(--primary);">仅需 $2.99 • 一次性付费 • 终身使用</p>
                         </div>
 
                         <div class="row mb-4">
@@ -81,8 +81,8 @@
                                         <span class="text-white">✓</span>
                                     </div>
                                     <div>
-                                        <h6 class="mb-1 fw-bold">Ad-Free Experience</h6>
-                                        <small class="text-muted">Enjoy uninterrupted gaming without any ads</small>
+                                        <h6 class="mb-1 fw-bold">无广告体验</h6>
+                                        <small class="text-muted">畅享游戏体验，无任何广告干扰</small>
                                     </div>
                                 </div>
                             </div>
@@ -92,8 +92,8 @@
                                         <span class="text-white">⚡</span>
                                     </div>
                                     <div>
-                                        <h6 class="mb-1 fw-bold">Support Development</h6>
-                                        <small class="text-muted">Help us continue improving and creating games</small>
+                                        <h6 class="mb-1 fw-bold">支持开发</h6>
+                                        <small class="text-muted">帮助我们持续改进和创造更多游戏</small>
                                     </div>
                                 </div>
                             </div>
@@ -103,8 +103,8 @@
                                         <span class="text-white">🎮</span>
                                     </div>
                                     <div>
-                                        <h6 class="mb-1 fw-bold">Early Access</h6>
-                                        <small class="text-muted">Be first to try new party games before release</small>
+                                        <h6 class="mb-1 fw-bold">抢先体验</h6>
+                                        <small class="text-muted">优先体验新游戏，先于正式发布</small>
                                     </div>
                                 </div>
                             </div>
@@ -114,8 +114,8 @@
                                         <span class="text-white">💎</span>
                                     </div>
                                     <div>
-                                        <h6 class="mb-1 fw-bold">Priority Support</h6>
-                                        <small class="text-muted">Your feedback and suggestions get priority attention</small>
+                                        <h6 class="mb-1 fw-bold">优先支持</h6>
+                                        <small class="text-muted">您的反馈和建议将获得优先处理</small>
                                     </div>
                                 </div>
                             </div>
@@ -124,28 +124,28 @@
                         <div class="rounded p-3 mb-4" style="background: var(--bg-light);">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <small class="text-muted">Regular Price: <span class="text-decoration-line-through">$10.99</span></small>
-                                    <div class="h4 mb-0 fw-bold" style="color: var(--primary);">Early Bird Price: $2.99</div>
-                                    <small style="color: var(--primary);">Save 73% today!</small>
+                                    <small class="text-muted">原价: <span class="text-decoration-line-through">$10.99</span></small>
+                                    <div class="h4 mb-0 fw-bold" style="color: var(--primary);">早鸟价: $2.99</div>
+                                    <small style="color: var(--primary);">今日省73%!</small>
                                 </div>
                                 <div class="text-end">
-                                    <div class="badge" style="background: var(--accent); color: var(--text-dark);">73% OFF</div>
+                                    <div class="badge" style="background: var(--accent); color: var(--text-dark);">73%折扣</div>
                                 </div>
                             </div>
                         </div>
 
                         <div id="authNotice" class="alert alert-info" style="display:none;">
-                            Please log in to continue. <a href="/login.html" class="alert-link">Login</a>
+                            请先登录以继续。 <a href="/login.html" class="alert-link">登录</a>
                         </div>
 
                         <button id="goPremiumBtn" class="btn btn-lg w-100 fw-bold mb-3" style="height:60px; background: var(--gradient-primary); border: none; color: white;">
-                            🐦 Claim Early Bird Price - $2.99
+                            🐦 享受早鸟价 - $2.99
                         </button>
 
                         <div class="text-center">
                             <small class="text-muted d-flex align-items-center justify-content-center">
                                 <span class="me-2">🔒</span>
-                                Secure payment by Stripe
+                                Stripe 安全支付
                             </small>
                         </div>
 
@@ -155,17 +155,17 @@
 
                 <!-- Social Proof Section -->
                 <div class="text-center mt-4">
-                    <p class="text-muted small mb-2">Trusted by party enthusiasts worldwide</p>
+                    <p class="text-muted small mb-2">深受全球派对爱好者信赖</p>
                     <div class="d-flex justify-content-center align-items-center flex-wrap">
                         <div class="me-3 mb-2">
                             <span class="text-warning">★★★★★</span>
-                            <small class="text-muted ms-1">4.9/5 rating</small>
+                            <small class="text-muted ms-1">4.9/5 评分</small>
                         </div>
                         <div class="me-3 mb-2">
-                            <small class="text-muted">👥 10,000+ users</small>
+                            <small class="text-muted">👥 10,000+ 用户</small>
                         </div>
                         <div class="mb-2">
-                            <small class="text-muted">🎉 50,000+ games played</small>
+                            <small class="text-muted">🎉 50,000+ 场游戏</small>
                         </div>
                     </div>
                 </div>
@@ -179,26 +179,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <h2 class="h4 mb-4">About Us</h2>
-                    <p>PartyGameLab is your go-to online destination for the best party games available
-                        for free! We
-                        offer a diverse collection of engaging interactive party games including Truth or Dare, Never
-                        Have I Ever, Mafia,
-                        and more - perfect for virtual gatherings, parties, and team building events. Join thousands of
-                        players worldwide enjoying the best party games experience!</p>
+                    <h2 class="h4 mb-4">关于我们</h2>
+                    <p>PartyGameLab 是您免费享受最佳派对游戏的首选在线平台！我们提供丰富多样的互动派对游戏，包括真心话大冒险、从未试过、狼人杀等等 - 完美适用于虚拟聚会、派对和团建活动。加入全球数千名玩家，享受最佳派对游戏体验！</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <h2 class="h4 mb-4">Quick Links</h2>
+                    <h2 class="h4 mb-4">快速链接</h2>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-light text-decoration-none">Games</a></li>
-                        <li><a href="./TheList.html" class="text-light text-decoration-none">The List</a></li>
+                        <li><a href="index.html" class="text-light text-decoration-none">游戏</a></li>
+                        <li><a href="./TheList.html" class="text-light text-decoration-none">游戏分类</a></li>
                     </ul>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="d-flex justify-content-between align-items-center flex-wrap">
-                        <p class="text-light mb-0">&copy; 2025 PartyGameLab. All rights reserved.</p>
+                        <p class="text-light mb-0">&copy; 2025 PartyGameLab. 保留所有权利。</p>
                         <div class="d-flex align-items-center gap-3">
                             <a href="https://turbo0.com/item/partygamelab" target="_blank" rel="noopener noreferrer">
                                 <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0"

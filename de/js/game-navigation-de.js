@@ -64,6 +64,9 @@ class GameNavigation {
                     <a href="/de/TheList.html">
                         <i class="fas fa-list"></i> Spieleliste
                     </a>
+                    <a href="/de/premium.html">
+                        <i class="fas fa-crown"></i> Premium
+                    </a>
                     <div class="language-dropdown">
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇩🇪 Deutsch

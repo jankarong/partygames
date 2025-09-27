@@ -64,6 +64,9 @@ class GameNavigation {
                     <a href="/zh/TheList.html">
                         <i class="fas fa-list"></i> 游戏列表
                     </a>
+                    <a href="/zh/premium.html">
+                        <i class="fas fa-crown"></i> Premium
+                    </a>
                     <div class="language-dropdown">
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇨🇳 中文
