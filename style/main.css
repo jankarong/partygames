@@ -86,6 +86,16 @@ body {
     position: relative;
 }
 
+/* Ensure all navbar items (including buttons) are vertically centered */
+.navbar .navbar-nav {
+    align-items: center;
+}
+
+.navbar .navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
 .nav-link::after {
     content: '';
     position: absolute;
