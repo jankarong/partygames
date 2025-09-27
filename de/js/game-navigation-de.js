@@ -64,9 +64,6 @@ class GameNavigation {
                     <a href="/de/TheList.html">
                         <i class="fas fa-list"></i> Spieleliste
                     </a>
-                    <a href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer" style="color: #fcbf47 !important;">
-                        <i class="fas fa-heart"></i> Unterstützen
-                    </a>
                     <div class="language-dropdown">
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇩🇪 Deutsch
@@ -95,7 +92,6 @@ class GameNavigation {
             quickBar.innerHTML = `
                 <button id="quick-access-toggle"><i class="fas fa-layer-group"></i></button>
                 <a href="/de/index.html" class="quick-game-btn home-btn"><i class="fas fa-home"></i> Startseite</a>
-                <a href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer" class="quick-game-btn support-btn" style="color: #fcbf47 !important;"><i class="fas fa-heart"></i> Unterstützen</a>
                 <span id="try-text" style="color: rgba(255,255,255,0.7); font-size: 12px;">Probiere:</span>
                 ${popularGames.map(game => `
                     <a href="${game.url}" class="quick-game-btn">${game.name}</a>
