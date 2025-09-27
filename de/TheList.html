@@ -66,18 +66,16 @@
         })(window, document, "clarity", "script", "q4t8s17fvw");
     </script>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
-        crossorigin="anonymous"></script>
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-BYYFLML78Z');
+        gtag('config', 'G-BYYFLML78Z');
     </script>
 </head>
 
@@ -104,7 +102,8 @@
                         <a class="nav-link active" href="./TheList.html">Spielekategorien</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer" style="color: #fcbf47 !important;">Unterstützen</a>
+                        <a class="nav-link" href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer"
+                            style="color: #fcbf47 !important;">Unterstützen</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
@@ -239,8 +238,11 @@
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
                     <h2 class="h4 mb-4">Über uns</h2>
-                    <p>Beste Partyspiele Sammlung ist Ihre erste Anlaufstelle für die besten kostenlosen Partyspiele online! Wir bieten eine vielfältige Sammlung ansprechender interaktiver Partyspiele, darunter Wahrheit oder Pflicht, Ich hab noch nie, Werwolf und mehr - 
-                        perfekt für virtuelle Partys, Feiern und Teambuilding-Aktivitäten. Schließen Sie sich Tausenden von Spielern weltweit an und genießen Sie die beste Partyspiel-Erfahrung!</p>
+                    <p>Beste Partyspiele Sammlung ist Ihre erste Anlaufstelle für die besten kostenlosen Partyspiele
+                        online! Wir bieten eine vielfältige Sammlung ansprechender interaktiver Partyspiele, darunter
+                        Wahrheit oder Pflicht, Ich hab noch nie, Werwolf und mehr -
+                        perfekt für virtuelle Partys, Feiern und Teambuilding-Aktivitäten. Schließen Sie sich Tausenden
+                        von Spielern weltweit an und genießen Sie die beste Partyspiel-Erfahrung!</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <h2 class="h4 mb-4">Schnelle Links</h2>
@@ -248,7 +250,8 @@
                         <li><a href="index.html" class="text-light text-decoration-none">Startseite</a></li>
                         <li><a href="./feedback.html" class="text-light text-decoration-none">Feedback</a></li>
                         <li><a href="./TheList.html" class="text-light text-decoration-none">Spielekategorien</a></li>
-                        <li><a href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="color: #fcbf47 !important;">Unterstützen</a></li>
+                        <li><a href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer"
+                                class="text-decoration-none" style="color: #fcbf47 !important;">Unterstützen</a></li>
                     </ul>
                 </div>
             </div>
@@ -262,48 +265,51 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
 
     <!-- Ko-fi Widget -->
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
     <script>
-      kofiWidgetOverlay.draw('jankaaa', {
-        'type': 'floating-chat',
-        'floating-chat.donateButton.text': 'Support me',
-        'floating-chat.donateButton.background-color': '#fcbf47',
-        'floating-chat.donateButton.text-color': '#323842'
-      });
+        kofiWidgetOverlay.draw('jankaaa', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support me',
+            'floating-chat.donateButton.background-color': '#fcbf47',
+            'floating-chat.donateButton.text-color': '#323842'
+        });
     </script>
 
     <!-- Ko-fi Widget Position CSS -->
     <style>
-      /* Position Ko-fi widget in bottom right on desktop */
-      .floatingchat-container-wrap {
-        left: unset !important;
-        right: 16px !important;
-        bottom: 16px !important;
-        z-index: 1000 !important;
-      }
-      
-      /* Mobile specific positioning - bottom left to avoid navigation */
-      .floatingchat-container-wrap-mobi {
-        left: 16px !important;
-        right: unset !important;
-        bottom: 20px !important;
-        z-index: 1000 !important;
-      }
-      
-      /* Desktop popup positioning */
-      .floating-chat-kofi-popup-iframe {
-        bottom: 60px !important;
-        right: 16px !important;
-      }
-      
-      /* Mobile popup positioning - left side */
-      .floating-chat-kofi-popup-iframe-mobi {
-        bottom: 70px !important;
-        left: 16px !important;
-        right: unset !important;
-      }
+        /* Position Ko-fi widget in bottom right on desktop */
+        .floatingchat-container-wrap {
+            left: unset !important;
+            right: 16px !important;
+            bottom: 16px !important;
+            z-index: 1000 !important;
+        }
+
+        /* Mobile specific positioning - bottom left to avoid navigation */
+        .floatingchat-container-wrap-mobi {
+            left: 16px !important;
+            right: unset !important;
+            bottom: 20px !important;
+            z-index: 1000 !important;
+        }
+
+        /* Desktop popup positioning */
+        .floating-chat-kofi-popup-iframe {
+            bottom: 60px !important;
+            right: 16px !important;
+        }
+
+        /* Mobile popup positioning - left side */
+        .floating-chat-kofi-popup-iframe-mobi {
+            bottom: 70px !important;
+            left: 16px !important;
+            right: unset !important;
+        }
     </style>
 </body>
 

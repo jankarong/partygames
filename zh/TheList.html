@@ -66,22 +66,23 @@
         })(window, document, "clarity", "script", "q4t8s17fvw");
     </script>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
-        crossorigin="anonymous"></script>
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-BYYFLML78Z');
+        gtag('config', 'G-BYYFLML78Z');
     </script>
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -261,44 +262,44 @@
     <!-- Ko-fi Widget -->
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
     <script>
-      kofiWidgetOverlay.draw('jankaaa', {
-        'type': 'floating-chat',
-        'floating-chat.donateButton.text': 'Support me',
-        'floating-chat.donateButton.background-color': '#fcbf47',
-        'floating-chat.donateButton.text-color': '#323842'
-      });
+        kofiWidgetOverlay.draw('jankaaa', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support me',
+            'floating-chat.donateButton.background-color': '#fcbf47',
+            'floating-chat.donateButton.text-color': '#323842'
+        });
     </script>
 
     <!-- Ko-fi Widget Position CSS -->
     <style>
-      /* Position Ko-fi widget in bottom right on desktop */
-      .floatingchat-container-wrap {
-        left: unset !important;
-        right: 16px !important;
-        bottom: 16px !important;
-        z-index: 1000 !important;
-      }
-      
-      /* Mobile specific positioning - bottom left to avoid navigation */
-      .floatingchat-container-wrap-mobi {
-        left: 16px !important;
-        right: unset !important;
-        bottom: 20px !important;
-        z-index: 1000 !important;
-      }
-      
-      /* Desktop popup positioning */
-      .floating-chat-kofi-popup-iframe {
-        bottom: 60px !important;
-        right: 16px !important;
-      }
-      
-      /* Mobile popup positioning - left side */
-      .floating-chat-kofi-popup-iframe-mobi {
-        bottom: 70px !important;
-        left: 16px !important;
-        right: unset !important;
-      }
+        /* Position Ko-fi widget in bottom right on desktop */
+        .floatingchat-container-wrap {
+            left: unset !important;
+            right: 16px !important;
+            bottom: 16px !important;
+            z-index: 1000 !important;
+        }
+
+        /* Mobile specific positioning - bottom left to avoid navigation */
+        .floatingchat-container-wrap-mobi {
+            left: 16px !important;
+            right: unset !important;
+            bottom: 20px !important;
+            z-index: 1000 !important;
+        }
+
+        /* Desktop popup positioning */
+        .floating-chat-kofi-popup-iframe {
+            bottom: 60px !important;
+            right: 16px !important;
+        }
+
+        /* Mobile popup positioning - left side */
+        .floating-chat-kofi-popup-iframe-mobi {
+            bottom: 70px !important;
+            left: 16px !important;
+            right: unset !important;
+        }
     </style>
 </body>
 
