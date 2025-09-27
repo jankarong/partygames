@@ -10,16 +10,73 @@
         status.textContent = msg;
     }
 
-    async function getSessionUrl() {
+    async function checkPremiumStatus() {
         if (!window.authManager || !window.authManager.isAuthenticated()) {
+            return false;
+        }
+
+        try {
+            const isPremium = await window.authManager.checkUserPremiumStatus();
+            return isPremium;
+        } catch (e) {
+            console.error('Error checking premium status:', e);
+            return false;
+        }
+    }
+
+    async function updateButtonState() {
+        if (!window.authManager || !window.authManager.isAuthenticated()) {
+            // User not logged in
+            button.textContent = 'Login Required';
+            button.disabled = true;
+            authNotice && (authNotice.style.display = 'block');
+            return;
+        }
+
+        const isPremium = await checkPremiumStatus();
+        if (isPremium) {
+            // User is already premium
+            button.textContent = 'You are already a Premium member! 🎉';
+            button.disabled = true;
+            button.classList.remove('btn-primary', 'btn-success');
+            button.style.background = 'linear-gradient(135deg, #64748b 0%, #475569 100%)';
+            button.style.border = 'none';
+            button.style.color = 'white';
+            setStatus('You already have premium access. Enjoy ad-free experience!');
+        } else {
+            // User can purchase premium
+            button.textContent = '🚀 Get Premium Now - Only $2.99';
+            button.disabled = false;
+            button.classList.remove('btn-primary', 'btn-outline-success');
+            button.style.background = 'var(--gradient-primary)';
+            button.style.border = 'none';
+            button.style.color = 'white';
+            authNotice && (authNotice.style.display = 'none');
+        }
+    }
+
+    async function getSessionUrl() {
+        console.log('Starting checkout process...');
+
+        if (!window.authManager || !window.authManager.isAuthenticated()) {
+            console.log('User not authenticated');
             authNotice && (authNotice.style.display = 'block');
             setStatus('You need to login to continue.');
+            return;
+        }
+
+        // Check if user is already premium before creating payment
+        const isPremium = await checkPremiumStatus();
+        if (isPremium) {
+            console.log('User already premium');
+            setStatus('You are already a premium member!');
             return;
         }
 
         try {
             // Use Supabase client created in auth.js
             const sb = window.supabaseClient || window.supabase;
+            console.log('Supabase client:', sb);
             if (!sb) throw new Error('Supabase client not initialized');
 
             const { data: { session } } = await sb.auth.getSession();
@@ -31,14 +88,7 @@
             }
 
             // Call Edge Function using supabase-js
-            const codeInput = document.getElementById('couponInput');
             const payload = {};
-            const code = (codeInput && codeInput.value || '').trim();
-            if (code) {
-                // We pass promotion_code; Stripe will match if it's a valid promotion code id.
-                // If you intend to pass Coupon ID instead, type 'coupon'.
-                payload['promotion_code'] = code;
-            }
 
             const { data, error } = await sb.functions.invoke('create-checkout-session', {
                 method: 'POST',
@@ -49,8 +99,8 @@
             if (!data?.url) throw new Error('No session url');
             window.location.href = data.url;
         } catch (e) {
-            console.error(e);
-            setStatus('Failed to start checkout. Please try again.');
+            console.error('Checkout error:', e);
+            setStatus(`Failed to start checkout: ${e.message}. Please try again.`);
         }
     }
 
@@ -60,6 +110,22 @@
             getSessionUrl();
         });
     }
+
+    // Initialize button state when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        // Wait for auth manager to initialize
+        const checkAuthManager = setInterval(() => {
+            if (window.authManager) {
+                clearInterval(checkAuthManager);
+                updateButtonState();
+
+                // Listen for auth state changes
+                window.authManager.onAuthStateChange(() => {
+                    updateButtonState();
+                });
+            }
+        }, 100);
+    });
 })();
 
 
