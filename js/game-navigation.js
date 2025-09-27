@@ -35,6 +35,7 @@ class GameNavigation {
         this.makeLogosClickable();
         this.bindEvents();
         this.startPulseReminder();
+        this.initAuth();
     }
 
     createFloatingNav() {
@@ -64,6 +65,28 @@ class GameNavigation {
                     <a href="https://ko-fi.com/jankaaa" target="_blank" rel="noopener noreferrer" style="color: #fcbf47 !important;">
                         <i class="fas fa-heart"></i> Support me
                     </a>
+                    <div class="auth-section">
+                        <div class="auth-buttons" id="nav-auth-buttons">
+                            <a href="/login.html" class="auth-link login-link">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </a>
+                            <a href="/register.html" class="auth-link register-link">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </a>
+                        </div>
+                        <div class="user-info-nav" id="nav-user-info" style="display: none;">
+                            <div class="user-details-nav">
+                                <div class="user-avatar-nav" id="nav-user-avatar">U</div>
+                                <div class="user-text">
+                                    <div class="user-email-nav" id="nav-user-email">user@example.com</div>
+                                    <span class="premium-status-nav" id="nav-premium-status">Free User</span>
+                                </div>
+                            </div>
+                            <button class="signout-btn" onclick="handleSignOut()">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
                     <div class="language-dropdown">
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇺🇸 English
@@ -291,6 +314,62 @@ class GameNavigation {
         setTimeout(() => {
             this.showRecommendations();
         }, 2000);
+    }
+
+    // Initialize authentication
+    initAuth() {
+        // Wait for auth manager to be available
+        if (window.authManager) {
+            this.setupAuthUI();
+            window.authManager.onAuthStateChange((event, session) => {
+                this.updateAuthUI(session);
+            });
+        } else {
+            // Retry after a short delay
+            setTimeout(() => this.initAuth(), 100);
+        }
+    }
+
+    // Setup authentication UI
+    setupAuthUI() {
+        if (window.authManager && window.authManager.isAuthenticated()) {
+            this.updateAuthUI({ user: window.authManager.getCurrentUser() });
+        }
+    }
+
+    // Update auth UI based on user state
+    updateAuthUI(session) {
+        const authButtons = document.getElementById('nav-auth-buttons');
+        const userInfo = document.getElementById('nav-user-info');
+
+        if (!authButtons || !userInfo) return;
+
+        if (session && session.user) {
+            // User is logged in
+            authButtons.style.display = 'none';
+            userInfo.style.display = 'block';
+
+            const userEmail = document.getElementById('nav-user-email');
+            const userAvatar = document.getElementById('nav-user-avatar');
+            const premiumStatus = document.getElementById('nav-premium-status');
+
+            if (userEmail) userEmail.textContent = session.user.email;
+            if (userAvatar) userAvatar.textContent = session.user.email.charAt(0).toUpperCase();
+
+            // Check premium status if auth manager is available
+            if (window.authManager && window.authManager.checkUserPremiumStatus) {
+                window.authManager.checkUserPremiumStatus().then(isPremium => {
+                    if (premiumStatus) {
+                        premiumStatus.textContent = isPremium ? 'Premium' : 'Free User';
+                        premiumStatus.className = isPremium ? 'premium-status-nav premium' : 'premium-status-nav free';
+                    }
+                });
+            }
+        } else {
+            // User is not logged in
+            authButtons.style.display = 'block';
+            userInfo.style.display = 'none';
+        }
     }
 }
 

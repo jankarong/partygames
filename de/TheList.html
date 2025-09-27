@@ -14,6 +14,7 @@
 
     <!-- Custom CSS -->
     <link href="../style/main.css" rel="stylesheet">
+    <link href="../css/auth.css" rel="stylesheet">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.bestpartygames.net/de/TheList.html">
@@ -115,6 +116,26 @@
                             <li><a class="dropdown-item" href="/zh/TheList.html">🇨🇳 中文</a></li>
                             <li><a class="dropdown-item" href="/de/TheList.html">🇩🇪 Deutsch</a></li>
                         </ul>
+                    </li>
+
+                    <!-- Authentifizierung -->
+                    <li class="nav-item" id="auth-buttons">
+                        <div class="auth-buttons">
+                            <a href="../login.html" class="btn btn-auth-nav btn-login">Anmelden</a>
+                            <a href="../register.html" class="btn btn-auth-nav btn-register">Registrieren</a>
+                        </div>
+                    </li>
+
+                    <!-- Benutzerinformationen -->
+                    <li class="nav-item" id="user-info" style="display: none;">
+                        <div class="user-info">
+                            <div class="user-avatar" id="user-avatar">U</div>
+                            <div class="user-details">
+                                <div class="user-email" id="user-email">user@example.com</div>
+                                <span class="premium-status" id="premium-status">Kostenloser Nutzer</span>
+                            </div>
+                            <button class="btn btn-signout" onclick="handleSignOut()">Abmelden</button>
+                        </div>
                     </li>
                 </ul>
             </div>

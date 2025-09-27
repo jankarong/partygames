@@ -14,6 +14,7 @@
 
     <!-- Custom CSS -->
     <link href="./style/main.css" rel="stylesheet">
+    <link href="./css/auth.css" rel="stylesheet">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.bestpartygames.net/TheList.html">
@@ -110,6 +111,26 @@
                             <li><a class="dropdown-item" href="/TheList.html">🇺🇸 English</a></li>
                             <li><a class="dropdown-item" href="/zh/TheList.html">🇨🇳 中文</a></li>
                         </ul>
+                    </li>
+
+                    <!-- 认证相关按钮 -->
+                    <li class="nav-item" id="auth-buttons">
+                        <div class="auth-buttons">
+                            <a href="./login.html" class="btn btn-auth-nav btn-login">Login</a>
+                            <a href="./register.html" class="btn btn-auth-nav btn-register">Sign Up</a>
+                        </div>
+                    </li>
+
+                    <!-- 用户信息 -->
+                    <li class="nav-item" id="user-info" style="display: none;">
+                        <div class="user-info">
+                            <div class="user-avatar" id="user-avatar">U</div>
+                            <div class="user-details">
+                                <div class="user-email" id="user-email">user@example.com</div>
+                                <span class="premium-status" id="premium-status">Free User</span>
+                            </div>
+                            <button class="btn btn-signout" onclick="handleSignOut()">Logout</button>
+                        </div>
                     </li>
                 </ul>
             </div>

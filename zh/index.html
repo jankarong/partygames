@@ -34,6 +34,7 @@
 
     <!-- Custom CSS -->
     <link href="../style/main.css" rel="stylesheet">
+    <link href="../css/auth.css" rel="stylesheet">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.bestpartygames.net/zh/">
@@ -130,6 +131,26 @@
                             <li><a class="dropdown-item" href="/zh/">🇨🇳 中文</a></li>
                             <li><a class="dropdown-item" href="/de/">🇩🇪 Deutsch</a></li>
                         </ul>
+                    </li>
+
+                    <!-- 认证相关按钮 -->
+                    <li class="nav-item" id="auth-buttons">
+                        <div class="auth-buttons">
+                            <a href="../login.html" class="btn btn-auth-nav btn-login">登录</a>
+                            <a href="../register.html" class="btn btn-auth-nav btn-register">注册</a>
+                        </div>
+                    </li>
+
+                    <!-- 用户信息 -->
+                    <li class="nav-item" id="user-info" style="display: none;">
+                        <div class="user-info">
+                            <div class="user-avatar" id="user-avatar">U</div>
+                            <div class="user-details">
+                                <div class="user-email" id="user-email">user@example.com</div>
+                                <span class="premium-status" id="premium-status">免费用户</span>
+                            </div>
+                            <button class="btn btn-signout" onclick="handleSignOut()">退出</button>
+                        </div>
                     </li>
                 </ul>
             </div>
