@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="在线谁是卧底游戏 - 经典社交推理游戏！支持4-20人同时游戏，7种词汇分类，自定义词汇功能。完美的聚会、团建、家庭娱乐游戏，考验观察力和推理能力。手机优化界面，免费在线玩！">
+    <meta name="description"
+        content="在线谁是卧底游戏 - 经典社交推理游戏！支持4-20人同时游戏，7种词汇分类，自定义词汇功能。完美的聚会、团建、家庭娱乐游戏，考验观察力和推理能力。手机优化界面，免费在线玩！">
     <meta name="keywords" content="谁是卧底,在线游戏,社交推理游戏,聚会游戏,多人游戏,卧底游戏">
     <meta property="og:title" content="谁是卧底在线游戏 - 免费多人聚会游戏">
     <meta property="og:description" content="在线谁是卧底游戏！支持7种词汇分类，自定义词汇，手机优化界面，4-20人游戏。完美的聚会、团建、家庭娱乐游戏！">
@@ -72,18 +73,16 @@
     }
     </script>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189261833219365"
-        crossorigin="anonymous"></script>
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-BYYFLML78Z');
+        gtag('config', 'G-BYYFLML78Z');
     </script>
 </head>
 
@@ -280,6 +279,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
     <script src="../../js/game-navigation-zh.js"></script>
     <script src="undercover-zh.js"></script>
 
