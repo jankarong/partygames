@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - PartyGameLab</title>
+    <title>Registrieren - PartyGameLab</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Join PartyGameLab and enjoy the best party games experience without ads. Sign up now for premium membership.">
-    <meta name="keywords" content="sign up, membership, party games, ad-free">
+    <meta name="description" content="Treten Sie PartyGameLab bei und genießen Sie das beste werbefreie Party-Spielerlebnis. Jetzt für Premium-Mitgliedschaft registrieren.">
+    <meta name="keywords" content="registrieren, mitgliedschaft, party spiele, werbefrei">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="image/favicon.png">
+    <link rel="icon" type="image/png" href="../image/favicon.png">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="./css/auth.css" rel="stylesheet">
+    <link href="../css/auth.css" rel="stylesheet">
 
     <!-- Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -32,37 +32,37 @@
     <div class="auth-container">
         <div class="auth-card">
             <div class="auth-header">
-                <h1>Join Us</h1>
-                <p>Create your account for an ad-free experience</p>
+                <h1>Treten Sie uns bei</h1>
+                <p>Erstellen Sie Ihr Konto für eine werbefreie Erfahrung</p>
             </div>
 
             <form id="register-form" class="auth-form">
                 <div class="form-group">
-                    <label for="email" class="form-label">Email Address</label>
+                    <label for="email" class="form-label">E-Mail-Adresse</label>
                     <input type="email" id="email" name="email" class="form-control" required
-                           placeholder="Enter your email address">
+                           placeholder="Geben Sie Ihre E-Mail-Adresse ein">
                 </div>
 
                 <div class="form-group">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label">Passwort</label>
                     <input type="password" id="password" name="password" class="form-control" required
-                           placeholder="Enter your password (at least 6 characters)" minlength="6">
+                           placeholder="Geben Sie Ihr Passwort ein (mindestens 6 Zeichen)" minlength="6">
                     <div id="password-strength" class="password-strength"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <label for="confirm-password" class="form-label">Passwort bestätigen</label>
                     <input type="password" id="confirm-password" name="confirm-password" class="form-control" required
-                           placeholder="Enter your password again">
+                           placeholder="Geben Sie Ihr Passwort erneut ein">
                 </div>
 
 
-                <button type="submit" class="btn-auth">Create Account</button>
+                <button type="submit" class="btn-auth">Konto erstellen</button>
             </form>
 
             <div class="auth-links">
-                <p>Already have an account? <a href="./login.html">Sign In</a></p>
-                <p><a href="./index.html">← Back to Home</a></p>
+                <p>Haben Sie bereits ein Konto? <a href="./login.html">Anmelden</a></p>
+                <p><a href="./index.html">← Zurück zur Startseite</a></p>
             </div>
         </div>
     </div>
@@ -71,15 +71,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Auth JS -->
-    <script src="./js/auth.js"></script>
+    <script src="../js/auth.js"></script>
 
     <script>
-        // 页面加载完成后初始化
+        // Nach dem Laden der Seite initialisieren
         document.addEventListener('DOMContentLoaded', function() {
-            // 初始化注册表单处理
+            // Registrierungs-Formular-Behandlung initialisieren
             handleAuthForm('register-form', 'signup');
 
-            // 密码强度检查
+            // Passwort-Stärke-Prüfung
             const passwordInput = document.getElementById('password');
             const confirmPasswordInput = document.getElementById('confirm-password');
             const passwordStrength = document.getElementById('password-strength');
@@ -92,13 +92,13 @@
                 passwordStrength.className = 'password-strength ' + strength.class;
             });
 
-            // 密码确认检查
+            // Passwort-Bestätigung prüfen
             confirmPasswordInput.addEventListener('input', function() {
                 const password = passwordInput.value;
                 const confirmPassword = this.value;
 
                 if (confirmPassword && password !== confirmPassword) {
-                    this.setCustomValidity('Passwords do not match');
+                    this.setCustomValidity('Passwörter stimmen nicht überein');
                     this.classList.add('is-invalid');
                 } else {
                     this.setCustomValidity('');
@@ -109,13 +109,13 @@
                 }
             });
 
-            // 如果用户已登录，重定向到首页
+            // Wenn der Benutzer bereits angemeldet ist, zur Startseite weiterleiten
             if (window.authManager && window.authManager.isAuthenticated()) {
                 window.location.href = '/';
             }
         });
 
-        // 密码强度检查函数
+        // Passwort-Stärke-Prüfungs-Funktion
         function checkPasswordStrength(password) {
             let strength = 0;
             let text = '';
@@ -129,13 +129,13 @@
             if (/[^A-Za-z0-9]/.test(password)) strength += 1;
 
             if (strength < 3) {
-                text = 'Password strength: Weak';
+                text = 'Passwort-Stärke: Schwach';
                 className = 'password-strength-weak';
             } else if (strength < 5) {
-                text = 'Password strength: Medium';
+                text = 'Passwort-Stärke: Mittel';
                 className = 'password-strength-medium';
             } else {
-                text = 'Password strength: Strong';
+                text = 'Passwort-Stärke: Stark';
                 className = 'password-strength-strong';
             }
 
