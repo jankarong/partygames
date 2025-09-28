@@ -62,7 +62,7 @@ class GameNavigation {
                     <a href="/TheList.html">
                         <i class="fas fa-list"></i> The List
                     </a>
-                    <a href="/premium.html">
+                    <a href="/premium.html" class="premium-highlight">
                         <i class="fas fa-crown"></i> Premium
                     </a>
                     <div class="auth-section">
@@ -114,7 +114,7 @@ class GameNavigation {
             quickBar.innerHTML = `
                 <button id="quick-access-toggle"><i class="fas fa-layer-group"></i></button>
                 <a href="/index.html" class="quick-game-btn home-btn"><i class="fas fa-home"></i> Home</a>
-                <a href="/premium.html" class="quick-game-btn premium-btn"><i class="fas fa-crown"></i> Premium</a>
+                <a href="/premium.html" class="quick-game-btn premium-btn premium-highlight"><i class="fas fa-crown"></i> Premium</a>
                 <span id="try-text" style="color: rgba(255,255,255,0.7); font-size: 12px;">Try:</span>
                 ${popularGames.map(game => `
                     <a href="${game.url}" class="quick-game-btn">${game.name}</a>

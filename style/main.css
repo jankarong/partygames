@@ -404,3 +404,222 @@ body {
         background-attachment: scroll;
     }
 }
+
+/* Premium链接特殊样式 */
+.nav-link[href*="premium"],
+.quick-game-btn[href*="premium"],
+.premium-btn,
+.navbar .premium-highlight {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%) !important;
+    color: #1e293b !important;
+    font-weight: 700 !important;
+    border-radius: 20px !important;
+    padding: 8px 16px !important;
+    margin: 0 4px !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 8px rgba(234, 179, 8, 0.4) !important;
+    transition: all 0.3s ease !important;
+    border: 2px solid #facc15 !important;
+}
+
+.nav-link[href*="premium"]:hover,
+.quick-game-btn[href*="premium"]:hover,
+.premium-btn:hover,
+.navbar .premium-highlight:hover {
+    background: linear-gradient(135deg, #ca8a04 0%, #a16207 100%) !important;
+    color: white !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(234, 179, 8, 0.6) !important;
+    border-color: #eab308 !important;
+}
+
+/* 游戏导航中的Premium链接样式 */
+.nav-actions a[href*="premium"],
+.floating-nav a[href*="premium"],
+.nav-menu a[href*="premium"] {
+    background: var(--gradient-accent) !important;
+    color: var(--text-dark) !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    padding: 10px 15px !important;
+    margin: 5px 0 !important;
+    display: block !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(234, 179, 8, 0.3) !important;
+}
+
+.nav-actions a[href*="premium"]:hover,
+.floating-nav a[href*="premium"]:hover,
+.nav-menu a[href*="premium"]:hover {
+    background: var(--accent-dark) !important;
+    color: white !important;
+    transform: translateX(5px) !important;
+    box-shadow: 0 4px 12px rgba(234, 179, 8, 0.5) !important;
+}
+
+/* 特殊强化样式 - 确保游戏导航中的Premium链接显示正确 */
+.premium-highlight,
+a.premium-highlight {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%) !important;
+    color: #1e293b !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    padding: 10px 15px !important;
+    margin: 5px 0 !important;
+    display: block !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(234, 179, 8, 0.3) !important;
+    border: 2px solid #facc15 !important;
+}
+
+.premium-highlight:hover,
+a.premium-highlight:hover {
+    background: linear-gradient(135deg, #ca8a04 0%, #a16207 100%) !important;
+    color: white !important;
+    transform: translateX(5px) scale(1.02) !important;
+    box-shadow: 0 4px 12px rgba(234, 179, 8, 0.6) !important;
+    border-color: #eab308 !important;
+}
+
+/* 强力Premium按钮样式 - 确保覆盖所有默认样式 */
+.navbar .nav-link[href*="premium"],
+.nav-actions a[href*="premium"],
+.floating-nav a[href*="premium"],
+.nav-menu a[href*="premium"],
+.quick-game-btn[href*="premium"],
+.premium-highlight,
+a.premium-highlight,
+.premium-btn {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%) !important;
+    color: #1e293b !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    padding: 8px 16px !important;
+    box-shadow: 0 2px 8px rgba(234, 179, 8, 0.4) !important;
+    border: 2px solid #facc15 !important;
+    transition: all 0.3s ease !important;
+    margin: 2px 4px !important;
+    display: inline-block !important;
+}
+
+.navbar .nav-link[href*="premium"]:hover,
+.nav-actions a[href*="premium"]:hover,
+.floating-nav a[href*="premium"]:hover,
+.nav-menu a[href*="premium"]:hover,
+.quick-game-btn[href*="premium"]:hover,
+.premium-highlight:hover,
+a.premium-highlight:hover,
+.premium-btn:hover {
+    background: linear-gradient(135deg, #ca8a04 0%, #a16207 100%) !important;
+    color: white !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(234, 179, 8, 0.6) !important;
+    border-color: #eab308 !important;
+}
+
+/* 确保语言下拉菜单中的Premium链接保持普通样式 */
+.dropdown-menu .dropdown-item[href*="premium"] {
+    background: none !important;
+    color: inherit !important;
+    font-weight: normal !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0.5rem 1rem !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.dropdown-menu .dropdown-item[href*="premium"]:hover {
+    background: var(--bs-dropdown-link-hover-bg) !important;
+    color: var(--bs-dropdown-link-hover-color) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* 超强力Premium按钮样式 - 最高优先级确保主导航栏Premium按钮是黄色 */
+.navbar-nav .nav-item .nav-link[href*="premium"],
+.navbar .nav-link[href*="premium"],
+li.nav-item a[href*="premium"] {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%) !important;
+    color: #1e293b !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    border-radius: 20px !important;
+    padding: 8px 16px !important;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.5) !important;
+    border: 2px solid #facc15 !important;
+    transition: all 0.3s ease !important;
+    margin: 2px 8px !important;
+    display: inline-block !important;
+}
+
+.navbar-nav .nav-item .nav-link[href*="premium"]:hover,
+.navbar .nav-link[href*="premium"]:hover,
+li.nav-item a[href*="premium"]:hover {
+    background: linear-gradient(135deg, #ca8a04 0%, #a16207 100%) !important;
+    color: white !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 5px 15px rgba(234, 179, 8, 0.7) !important;
+    border-color: #eab308 !important;
+}
+
+/* 专门针对游戏导航中的Premium链接 - 超强力样式 */
+.floating-nav .nav-actions a.premium-highlight,
+.nav-menu .nav-actions a[href*="premium"],
+.nav-actions a.premium-highlight,
+div.nav-actions a[href*="premium"],
+.nav-actions > a[href*="premium"] {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%) !important;
+    color: #1e293b !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    padding: 10px 15px !important;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.5) !important;
+    border: 2px solid #facc15 !important;
+    transition: all 0.3s ease !important;
+    margin: 5px 0 !important;
+    display: block !important;
+}
+
+.floating-nav .nav-actions a.premium-highlight:hover,
+.nav-menu .nav-actions a[href*="premium"]:hover,
+.nav-actions a.premium-highlight:hover,
+div.nav-actions a[href*="premium"]:hover,
+.nav-actions > a[href*="premium"]:hover {
+    background: linear-gradient(135deg, #ca8a04 0%, #a16207 100%) !important;
+    color: white !important;
+    transform: translateX(5px) scale(1.02) !important;
+    box-shadow: 0 5px 15px rgba(234, 179, 8, 0.7) !important;
+    border-color: #eab308 !important;
+}
+
+/* 快速访问栏Premium链接样式 */
+.quick-games-bar a.premium-highlight,
+.quick-games-bar .premium-btn,
+#quickAccessBar a[href*="premium"] {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%) !important;
+    color: #1e293b !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    border-radius: 20px !important;
+    padding: 8px 12px !important;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.5) !important;
+    border: 2px solid #facc15 !important;
+    transition: all 0.3s ease !important;
+    margin: 0 4px !important;
+}
+
+.quick-games-bar a.premium-highlight:hover,
+.quick-games-bar .premium-btn:hover,
+#quickAccessBar a[href*="premium"]:hover {
+    background: linear-gradient(135deg, #ca8a04 0%, #a16207 100%) !important;
+    color: white !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 5px 15px rgba(234, 179, 8, 0.7) !important;
+    border-color: #eab308 !important;
+}
