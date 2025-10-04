@@ -6,19 +6,19 @@
 class GameNavigation {
     constructor() {
         this.games = [
-            { name: 'Magic 8 Ball', url: '/games/magic8ball/magic8ball.html', category: 'solo' },
-            { name: 'Truth or Dare', url: '/games/TruthorDare/TruthOrDare.html', category: 'party' },
-            { name: 'Never Have I Ever', url: '/games/NeverHaveIEver/NeverHaveIEver.html', category: 'party' },
-            { name: 'Who Is Most Likely', url: '/games/WhoIsMostLikely/WhoIsMostLikely.html', category: 'party' },
-            { name: 'Would You Rather', url: '/games/WouldYouRather/WouldYouRather.html', category: 'party' },
-            { name: 'Mafia', url: '/games/mafia/mafia.html', category: 'strategy' },
-            { name: 'Undercover', url: '/games/undercover/undercover.html', category: 'strategy' },
-            { name: 'Charades', url: '/games/charades/charades.html', category: 'party' },
-            { name: 'Hedbanz', url: '/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: 'Bottle Match Game', url: '/games/BottleMatchGame/BottleMatchGame.html', category: 'solo' },
-            { name: 'Sex Dice', url: '/games/sexdice/sexdice.html', category: 'adult' },
-            { name: 'Beer Number', url: '/games/beernumber/beernumber.html', category: 'drinking' },
-            { name: 'Kings Cup', url: '/games/KingsCup/KingsCup.html', category: 'drinking' }
+            { name: 'Magic 8 Ball', url: '/games/magic8ball/magic8ball.html', logo: '/games/magic8ball/magic8ball.svg', category: 'solo' },
+            { name: 'Truth or Dare', url: '/games/TruthorDare/TruthOrDare.html', logo: '/games/TruthorDare/TruthorDareLogo.png', category: 'party' },
+            { name: 'Never Have I Ever', url: '/games/NeverHaveIEver/NeverHaveIEver.html', logo: '/games/NeverHaveIEver/NeverHaveIEverLogo.png', category: 'party' },
+            { name: 'Who Is Most Likely', url: '/games/WhoIsMostLikely/WhoIsMostLikely.html', logo: '/games/WhoIsMostLikely/MostLikelyToLogo.png', category: 'party' },
+            { name: 'Would You Rather', url: '/games/WouldYouRather/WouldYouRather.html', logo: '/games/WouldYouRather/WouldYouRatherLogo.png', category: 'party' },
+            { name: 'Mafia', url: '/games/mafia/mafia.html', logo: '/games/mafia/mafialogo.png', category: 'strategy' },
+            { name: 'Undercover', url: '/games/undercover/undercover.html', logo: '/games/undercover/undercover.png', category: 'strategy' },
+            { name: 'Charades', url: '/games/charades/charades.html', logo: '/games/charades/CharadesLogo.png', category: 'party' },
+            { name: 'Hedbanz', url: '/games/hedbanzgame/hedbanzgame.html', logo: '/games/hedbanzgame/hedbanz.png', category: 'party' },
+            { name: 'Bottle Match Game', url: '/games/BottleMatchGame/BottleMatchGame.html', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
+            { name: 'Sex Dice', url: '/games/sexdice/sexdice.html', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
+            { name: 'Beer Number', url: '/games/beernumber/beernumber.html', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
+            { name: 'Kings Cup', url: '/games/KingsCup/KingsCup.html', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' }
         ];
 
         this.currentGame = this.getCurrentGame();
@@ -33,6 +33,7 @@ class GameNavigation {
     init() {
         this.createFloatingNav();
         this.createQuickAccessBar();
+        this.createOtherGamesPanel();
         this.makeLogosClickable();
         this.bindEvents();
         this.startPulseReminder();
@@ -47,32 +48,23 @@ class GameNavigation {
                 <i class="fas fa-gamepad"></i>
             </button>
             <div class="nav-menu" id="navMenu">
-                <h4><i class="fas fa-dice"></i> Other Games</h4>
-                <div class="game-links" id="gameLinks">
-                    ${this.games.map(game => `
-                        <a href="${game.url}" class="game-link ${game === this.currentGame ? 'current' : ''}" 
-                           data-category="${game.category}">
-                            ${game.name}
-                        </a>
-                    `).join('')}
-                </div>
                 <div class="nav-actions">
                     <a href="/index.html">
-                        <i class="fas fa-home"></i> All Games
+                        <i class="fas fa-home"></i><span>All Games</span>
                     </a>
                     <a href="/TheList.html">
-                        <i class="fas fa-list"></i> The List
+                        <i class="fas fa-list"></i><span>The List</span>
                     </a>
                     <a href="/premium.html" class="premium-highlight">
-                        <i class="fas fa-crown"></i> Premium
+                        <i class="fas fa-crown"></i><span>Premium</span>
                     </a>
                     <div class="auth-section">
                         <div class="auth-buttons" id="nav-auth-buttons">
                             <a href="/login.html" class="auth-link login-link">
-                                <i class="fas fa-sign-in-alt"></i> Login
+                                <i class="fas fa-sign-in-alt"></i><span>Login</span>
                             </a>
                             <a href="/register.html" class="auth-link register-link">
-                                <i class="fas fa-user-plus"></i> Sign Up
+                                <i class="fas fa-user-plus"></i><span>Sign Up</span>
                             </a>
                         </div>
                         <div class="user-info-nav" id="nav-user-info" style="display: none;">
@@ -90,7 +82,7 @@ class GameNavigation {
                     </div>
                     <div class="language-dropdown">
                         <button class="language-toggle">
-                            <i class="fas fa-globe"></i> 🇺🇸 English
+                            <i class="fas fa-globe"></i><span>🇺🇸 English</span>
                         </button>
                         <div class="language-menu">
                             <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
@@ -122,6 +114,32 @@ class GameNavigation {
                 `).join('')}
             `;
             document.body.appendChild(quickBar);
+        }
+    }
+
+    createOtherGamesPanel() {
+        // Get all games
+        const otherGames = this.games;
+
+        if (otherGames.length > 0) {
+            const panel = document.createElement('div');
+            panel.className = 'other-games-panel';
+            panel.innerHTML = `
+                <h3>Popular Party Games</h3>
+                <div class="other-games-grid">
+                    ${otherGames.map(game => `
+                        <a href="${game.url}" class="other-game-card ${game === this.currentGame ? 'current' : ''}">
+                            <div class="other-game-logo">
+                                <img src="${game.logo}" alt="${game.name}" loading="lazy">
+                            </div>
+                            <div class="other-game-name">${game.name}</div>
+                        </a>
+                    `).join('')}
+                </div>
+            `;
+
+            // Append to body to position fixed on far right
+            document.body.appendChild(panel);
         }
     }
 

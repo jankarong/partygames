@@ -40,12 +40,19 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Enhanced floating game navigation menu */
+/* Enhanced floating game navigation menu - Fixed to left side */
 .floating-nav {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 0;
+    left: 0;
+    height: 100vh;
     z-index: 1000;
+    width: 60px;
+    transition: width 0.3s ease;
+}
+
+.floating-nav:hover {
+    width: 250px;
 }
 
 .nav-toggle {
@@ -53,48 +60,54 @@
     height: 60px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
-    border-radius: 50%;
+    border-radius: 0;
     color: white;
     font-size: 24px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 
 .nav-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .nav-toggle.active {
-    transform: rotate(45deg);
+    transform: none;
 }
 
 .nav-menu {
     position: absolute;
-    top: 70px;
-    right: 0;
+    top: 60px;
+    left: 0;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    min-width: 280px;
-    max-height: 80vh;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
+    border-radius: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 15px 10px;
+    width: 60px;
+    height: calc(100vh - 60px);
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
     transition: all 0.3s ease;
     overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+}
+
+.floating-nav:hover .nav-menu {
+    width: 250px;
+    padding: 15px;
 }
 
 .nav-menu.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 .nav-menu h4 {
@@ -108,8 +121,8 @@
 
 .game-links {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 10px;
     margin-bottom: 15px;
     max-height: 50vh;
     overflow-y: auto;
@@ -117,41 +130,96 @@
 }
 
 .game-link {
-    display: block;
-    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
     color: #555;
     text-decoration: none;
     border-radius: 8px;
     font-size: 14px;
     transition: all 0.2s ease;
     border: 1px solid #eee;
+    background: #fafafa;
+}
+
+.game-link-logo {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 6px;
+    padding: 4px;
+    border: 1px solid #eee;
+}
+
+.game-link-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.game-link-name {
+    flex: 1;
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 .game-link:hover {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-decoration: none;
-    transform: translateY(-1px);
+    transform: translateX(3px);
+}
+
+.game-link:hover .game-link-logo {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .nav-actions {
-    border-top: 1px solid #eee;
-    padding-top: 10px;
+    padding-top: 0;
 }
 
 .nav-actions a {
-    display: block;
-    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
     color: #333;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 500;
-    transition: background 0.2s ease;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.nav-actions a i {
+    min-width: 24px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.nav-actions a span {
+    margin-left: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floating-nav:hover .nav-actions a span {
+    opacity: 1;
 }
 
 .nav-actions a:hover {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
     text-decoration: none;
+    transform: translateX(3px);
 }
 
 /* Language dropdown styles */
@@ -161,22 +229,42 @@
 }
 
 .language-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
     width: 100%;
-    padding: 8px 12px;
-    background: none;
-    border: 1px solid #eee;
-    border-radius: 6px;
+    padding: 12px;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 8px;
     color: #333;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.language-toggle i {
+    min-width: 24px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.language-toggle span {
+    margin-left: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floating-nav:hover .language-toggle span {
+    opacity: 1;
 }
 
 .language-toggle:hover {
-    background: #f8f9fa;
-    border-color: #ddd;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateX(3px);
 }
 
 .language-menu {
@@ -295,27 +383,58 @@
 /* Mobile and iPad optimizations */
 @media (max-width: 1024px) {
     .floating-nav {
-        top: 15px;
-        right: 15px;
+        top: 0;
+        left: 0;
+        width: 50px;
+    }
+
+    .floating-nav:hover {
+        width: 220px;
     }
 
     .nav-toggle {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
         font-size: 18px;
     }
 
     .nav-menu {
-        min-width: 260px;
-        right: -10px;
-        max-height: 70vh;
-        max-width: 90vw;
+        width: 50px;
+        top: 50px;
+        height: calc(100vh - 50px);
+        padding: 10px 5px;
+    }
+
+    .floating-nav:hover .nav-menu {
+        width: 220px;
+        padding: 12px;
+    }
+
+    .nav-actions a,
+    .auth-link {
+        padding: 10px 8px;
+    }
+
+    .nav-actions a i,
+    .auth-link i {
+        font-size: 16px;
+        min-width: 20px;
     }
 
     .game-links {
         grid-template-columns: 1fr;
         max-height: 40vh;
     }
+
+    .game-link-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .game-link-name {
+        font-size: 13px;
+    }
+}
 
     .quick-games-bar {
         bottom: 15px;
@@ -382,15 +501,31 @@
 
 /* iPad specific optimizations (768px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
+    .floating-nav {
+        width: 55px;
+        left: 0;
+    }
+
+    .floating-nav:hover {
+        width: 240px;
+    }
+
     .nav-toggle {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
         font-size: 20px;
     }
 
     .nav-menu {
-        min-width: 300px;
-        max-height: 75vh;
+        width: 55px;
+        top: 55px;
+        height: calc(100vh - 55px);
+        padding: 12px 8px;
+    }
+
+    .floating-nav:hover .nav-menu {
+        width: 240px;
+        padding: 15px;
     }
 
     .game-links {
@@ -591,6 +726,12 @@
     background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
     color: white;
     font-weight: 600;
+    border-color: #20c997;
+}
+
+.game-link.current .game-link-logo {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.98);
 }
 
 .game-link.current:hover {
@@ -614,19 +755,37 @@
 .auth-link {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
+    padding: 12px;
     color: #333;
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.3s ease;
     background: #f8f9fa;
     border: 2px solid transparent;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.auth-link i {
+    min-width: 24px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.auth-link span {
+    margin-left: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floating-nav:hover .auth-link span {
+    opacity: 1;
 }
 
 .auth-link:hover {
     text-decoration: none;
-    transform: translateY(-1px);
+    transform: translateX(3px);
 }
 
 .login-link:hover {
@@ -742,5 +901,231 @@
     .signout-btn {
         padding: 6px 10px;
         font-size: 0.75rem;
+    }
+}
+
+/* Right side other games panel */
+.other-games-panel {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 260px;
+    z-index: 100;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+/* Scrollbar styling for games panel */
+.other-games-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.other-games-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.other-games-panel::-webkit-scrollbar-thumb {
+    background: #d1d1d1;
+    border-radius: 3px;
+}
+
+.other-games-panel::-webkit-scrollbar-thumb:hover {
+    background: #b1b1b1;
+}
+
+/* Add margin to container when games panel exists */
+.container:has(.other-games-panel) {
+    margin-right: 290px;
+}
+
+@media (max-width: 1400px) {
+    .container:has(.other-games-panel) {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1600px) {
+    .other-games-panel {
+        width: 280px;
+    }
+
+    .container:has(.other-games-panel) {
+        margin-right: 310px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .other-games-panel {
+        width: 220px;
+        right: 10px;
+    }
+
+    .other-games-grid {
+        gap: 8px;
+    }
+
+    .other-game-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .other-game-name {
+        font-size: 12px;
+    }
+
+    .other-games-panel h3 {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .other-games-panel {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-nav {
+        width: 45px;
+    }
+
+    .floating-nav:hover {
+        width: 200px;
+    }
+
+    .nav-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .nav-menu {
+        width: 45px;
+        top: 45px;
+        height: calc(100vh - 45px);
+        padding: 8px 4px;
+    }
+
+    .floating-nav:hover .nav-menu {
+        width: 200px;
+        padding: 10px;
+    }
+
+    .nav-actions a,
+    .auth-link {
+        padding: 8px 6px;
+        font-size: 14px;
+    }
+
+    .nav-actions a i,
+    .auth-link i {
+        font-size: 14px;
+        min-width: 18px;
+    }
+}
+
+.other-games-panel h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.other-games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.other-game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: white;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    aspect-ratio: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.other-game-card:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+.other-game-logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.other-game-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.other-game-card:hover .other-game-logo {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.other-game-name {
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.other-game-card.current {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border-color: #20c997;
+}
+
+.other-game-card.current .other-game-logo {
+    background: rgba(255, 255, 255, 0.98);
+}
+
+
+/* Responsive adjustments for other games panel */
+@media (max-width: 1440px) {
+    .other-games-panel {
+        width: 240px;
+    }
+
+    .other-game-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .other-game-name {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .other-games-panel {
+        display: none;
     }
 }
