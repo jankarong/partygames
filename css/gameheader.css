@@ -813,11 +813,14 @@
     padding: 12px;
     background: #f8f9fa;
     border-radius: 8px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .user-avatar-nav {
     width: 35px;
     height: 35px;
+    min-width: 35px;
     border-radius: 50%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
@@ -830,6 +833,12 @@
 
 .user-text {
     flex: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floating-nav:hover .user-text {
+    opacity: 1;
 }
 
 .user-email-nav {
@@ -870,11 +879,25 @@
     align-items: center;
     gap: 5px;
     justify-content: center;
+    white-space: nowrap;
+}
+
+.signout-btn i {
+    min-width: 16px;
+}
+
+.signout-btn span {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floating-nav:hover .signout-btn span {
+    opacity: 1;
 }
 
 .signout-btn:hover {
     background: #c82333;
-    transform: translateY(-1px);
+    transform: translateX(3px);
 }
 
 /* Mobile responsiveness for auth */
@@ -987,41 +1010,7 @@
 
 @media (max-width: 768px) {
     .floating-nav {
-        width: 45px;
-    }
-
-    .floating-nav:hover {
-        width: 200px;
-    }
-
-    .nav-toggle {
-        width: 45px;
-        height: 45px;
-        font-size: 16px;
-    }
-
-    .nav-menu {
-        width: 45px;
-        top: 45px;
-        height: calc(100vh - 45px);
-        padding: 8px 4px;
-    }
-
-    .floating-nav:hover .nav-menu {
-        width: 200px;
-        padding: 10px;
-    }
-
-    .nav-actions a,
-    .auth-link {
-        padding: 8px 6px;
-        font-size: 14px;
-    }
-
-    .nav-actions a i,
-    .auth-link i {
-        font-size: 14px;
-        min-width: 18px;
+        display: none;
     }
 }
 

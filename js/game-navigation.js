@@ -76,7 +76,7 @@ class GameNavigation {
                                 </div>
                             </div>
                             <button class="signout-btn" onclick="handleSignOut()">
-                                <i class="fas fa-sign-out-alt"></i> Logout
+                                <i class="fas fa-sign-out-alt"></i><span>Logout</span>
                             </button>
                         </div>
                     </div>
