@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜瓶子 - 免费在线益智游戏</title>
+    <meta name="description" content="免费玩猜瓶子游戏！测试逻辑推理能力，挑战5个关卡。基于经典Mastermind机制的颜色匹配益智游戏">
+    <meta name="keywords" content="猜瓶子,益智游戏,逻辑游戏,颜色匹配,烧脑游戏">
+    <link rel="canonical" href="https://partygames.com/zh/games/BottleMatchGame/BottleMatchGame.html">
+    <meta property="og:title" content="猜瓶子 - 免费在线益智游戏">
+    <meta property="og:description" content="免费玩猜瓶子游戏！测试逻辑推理能力，挑战5个关卡">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://partygames.com/zh/games/BottleMatchGame/BottleMatchGame.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzQyOTllMSIvPgo8cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIGZpbGw9IiMyZDM3NDgiLz4KPHN2Zz4K">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "猜瓶子",
+      "description": "通过逻辑推理猜测正确的颜色序列，挑战5个难度递增的关卡",
+      "gameType": "益智游戏",
+      "numberOfPlayers": "1",
+      "url": "https://partygames.com/zh/games/BottleMatchGame/BottleMatchGame.html"
+    }
+    </script>
+</head>
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="game-container">
+        <h1>🍾 猜瓶子</h1>
+
+        <div class="level-info">
+            <div class="level-title">关卡 <span id="current-level">1</span> / 5</div>
+            <div class="level-details">
+                序列长度：<span id="sequence-length">3</span> |
+                颜色数：<span id="color-count">4</span> |
+                尝试次数：<span id="attempts">0</span>
+            </div>
+        </div>
+
+        <div class="secret-display" id="secret-display" style="display: none;">
+            秘密序列：<span id="secret-sequence"></span>
+        </div>
+
+        <div class="game-area" id="game-area">
+            <h3>选择你的猜测序列：</h3>
+            <div class="bottles-container" id="current-guess"></div>
+
+            <div class="controls">
+                <button class="submit-btn" id="submit-guess" onclick="submitGuess()">提交猜测</button>
+                <button onclick="clearGuess()">清空</button>
+                <button onclick="showSecret()">显示答案</button>
+            </div>
+
+            <div class="guess-section">
+                <h4>历史猜测：</h4>
+                <div id="guess-history"></div>
+            </div>
+        </div>
+
+        <div class="completion-screen" id="completion-screen">
+            <h2>🎉 恭喜完成所有关卡！</h2>
+            <div class="final-stats">
+                <h3>总体统计</h3>
+                <p>总用时：<span id="total-time">0</span> 秒</p>
+                <p>总猜测次数：<span id="total-attempts">0</span></p>
+                <p>平均每关猜测次数：<span id="avg-attempts">0</span></p>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">重新开始</button>
+        </div>
+    </div>
+
+    <section class="game-info">
+        <h2>猜瓶子游戏玩法</h2>
+        <p>猜瓶子是一款令人兴奋的在线逻辑益智游戏，基于经典的Mastermind游戏机制。通过5个难度递增的关卡，测试你的逻辑推理能力！</p>
+
+        <h3>游戏规则</h3>
+        <ul>
+            <li><strong>游戏目标：</strong> 在有限的尝试次数内猜出秘密颜色序列</li>
+            <li><strong>5个关卡：</strong> 每个关卡难度递增，序列更长、颜色更多</li>
+            <li><strong>反馈系统：</strong> 每次猜测后会收到关于正确位置的提示</li>
+            <li><strong>无重复颜色：</strong> 每个瓶子颜色在序列中只出现一次</li>
+        </ul>
+
+        <h3>如何玩</h3>
+        <ol>
+            <li><strong>选择颜色：</strong> 点击上方的位置，然后点击下方的颜色，或者直接拖拽颜色到位置上</li>
+            <li><strong>提交猜测：</strong> 填满所有位置后，点击"提交猜测"按钮</li>
+            <li><strong>查看反馈：</strong> 黑色钉子表示颜色和位置都正确</li>
+            <li><strong>调整策略：</strong> 根据反馈优化下一次猜测</li>
+            <li><strong>通关：</strong> 完全匹配所有瓶子即可进入下一关</li>
+        </ol>
+
+        <h3>游戏特色</h3>
+        <ul>
+            <li>✅ 免费在线玩猜瓶子游戏 - 无需下载</li>
+            <li>✅ 5个难度递增的挑战关卡</li>
+            <li>✅ 支持拖拽和点击两种操作方式</li>
+            <li>✅ 实时反馈你的猜测结果</li>
+            <li>✅ 记录尝试次数和完成时间</li>
+            <li>✅ 移动端友好的响应式设计</li>
+        </ul>
+
+        <h3>游戏技巧</h3>
+        <p><strong>系统化尝试：</strong> 一次测试一种颜色，逐步缩小可能性范围。</p>
+        <p><strong>排除法：</strong> 记录已经排除的颜色和位置组合。</p>
+        <p><strong>注意反馈：</strong> 黑色钉子表示颜色和位置都正确，要好好利用这个信息。</p>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="../../../js/game-navigation.js"></script>
+</body>
+</html>

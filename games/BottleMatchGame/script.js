@@ -1,4 +1,4 @@
-// 游戏配置
+// Game Configuration
 const LEVELS = [
     { level: 1, length: 3, colors: ['red', 'blue', 'green', 'yellow'] },
     { level: 2, length: 4, colors: ['red', 'blue', 'green', 'yellow'] },
@@ -8,11 +8,11 @@ const LEVELS = [
 ];
 
 const COLOR_NAMES = {
-    red: '红', blue: '蓝', green: '绿', yellow: '黄',
-    purple: '紫', orange: '橙', brown: '棕', pink: '粉'
+    red: 'Red', blue: 'Blue', green: 'Green', yellow: 'Yellow',
+    purple: 'Purple', orange: 'Orange', brown: 'Brown', pink: 'Pink'
 };
 
-// 游戏状态
+// Game State
 let currentLevel = 0;
 let secretSequence = [];
 let currentGuess = [];
@@ -22,10 +22,10 @@ let levelStartTime = 0;
 let totalAttempts = 0;
 let selectedBottleIndex = -1;
 
-// 防重复机制 - 全局存储所有使用过的序列
+// Anti-duplicate mechanism - global storage for all used sequences
 let previouslyUsedSequences = [];
 
-// 工具函数
+// Utility Functions
 function arrayEquals(a, b) {
     return a.length === b.length && a.every((val, i) => val === b[i]);
 }
@@ -46,38 +46,38 @@ function addToUsedSequences(sequence) {
     }
 }
 
-// 生成唯一序列（防重复机制 + 无重复颜色）
+// Generate unique sequence (anti-duplicate + no repeated colors)
 function generateUniqueSequence(length, colors) {
     let sequence;
     let attempts = 0;
-    const maxAttempts = 1000; // 防止无限循环
+    const maxAttempts = 1000; // Prevent infinite loop
 
     do {
         sequence = [];
-        const availableColors = [...colors]; // 复制颜色数组
+        const availableColors = [...colors]; // Copy colors array
 
-        // 确保序列中没有重复颜色
+        // Ensure no repeated colors in sequence
         for (let i = 0; i < length; i++) {
             if (availableColors.length === 0) {
-                // 如果可用颜色不够，重新开始
+                // If not enough colors available, restart
                 break;
             }
             const randomIndex = Math.floor(Math.random() * availableColors.length);
             const selectedColor = availableColors[randomIndex];
             sequence.push(selectedColor);
-            availableColors.splice(randomIndex, 1); // 移除已选择的颜色
+            availableColors.splice(randomIndex, 1); // Remove selected color
         }
 
         attempts++;
     } while ((sequence.length !== length || isSequenceUsed(sequence)) && attempts < maxAttempts);
 
     if (attempts >= maxAttempts) {
-        console.warn('无法生成唯一序列，可能所有组合都已使用');
-        // 清空已使用序列历史，重新开始
+        console.warn('Unable to generate unique sequence, all combinations may have been used');
+        // Clear used sequence history and restart
         previouslyUsedSequences = [];
-        console.log('已清空序列历史，重新生成');
+        console.log('Sequence history cleared, regenerating');
 
-        // 重新尝试生成一次
+        // Retry generation once
         sequence = [];
         const availableColors = [...colors];
         for (let i = 0; i < length; i++) {
@@ -92,15 +92,15 @@ function generateUniqueSequence(length, colors) {
     return sequence;
 }
 
-// 反馈计算函数（简化版Mastermind）
+// Feedback calculation function (simplified Mastermind)
 function getFeedback(guess, secret) {
-    let blackPegs = 0; // 位置和颜色都正确
-    let whitePegs = 0; // 颜色正确但位置错误
+    let blackPegs = 0; // Correct position and color
+    let whitePegs = 0; // Correct color but wrong position
 
     const secretCopy = [...secret];
     const guessCopy = [...guess];
 
-    // 计算黑色钉子（位置和颜色都正确）
+    // Calculate black pegs (correct position and color)
     for (let i = guessCopy.length - 1; i >= 0; i--) {
         if (guessCopy[i] === secretCopy[i]) {
             blackPegs++;
@@ -109,7 +109,7 @@ function getFeedback(guess, secret) {
         }
     }
 
-    // 计算白色钉子（颜色正确但位置错误）
+    // Calculate white pegs (correct color but wrong position)
     for (let i = 0; i < guessCopy.length; i++) {
         const index = secretCopy.indexOf(guessCopy[i]);
         if (index !== -1) {
@@ -121,7 +121,7 @@ function getFeedback(guess, secret) {
     return { black: blackPegs, white: whitePegs };
 }
 
-// UI函数
+// UI Functions
 function updateLevelInfo() {
     const level = LEVELS[currentLevel];
     document.getElementById('current-level').textContent = level.level;
@@ -148,13 +148,13 @@ function renderCurrentGuess() {
 
     const level = LEVELS[currentLevel];
 
-    // 创建猜测区域标题
+    // Create guess area title
     const guessTitle = document.createElement('h4');
-    guessTitle.textContent = '拖拽瓶子调换位置，或点击选择位置：';
+    guessTitle.textContent = 'Drag bottles to swap positions, or click to select:';
     guessTitle.style.marginBottom = '15px';
     container.appendChild(guessTitle);
 
-    // 创建猜测瓶子容器
+    // Create guess bottles container
     const guessBottlesContainer = document.createElement('div');
     guessBottlesContainer.className = 'bottles-container';
     guessBottlesContainer.style.marginBottom = '20px';
@@ -171,14 +171,14 @@ function renderCurrentGuess() {
             bottle.classList.add('selected');
         }
 
-        // 添加拖拽功能
+        // Add drag functionality
         if (currentGuess[i]) {
             bottle.draggable = true;
             bottle.ondragstart = (e) => handleDragStart(e, i);
             bottle.ondragend = (e) => handleDragEnd(e);
         }
 
-        // 添加放置功能
+        // Add drop functionality
         bottle.ondragover = (e) => handleDragOver(e);
         bottle.ondrop = (e) => handleDrop(e, i);
         bottle.ondragenter = (e) => handleDragEnter(e);
@@ -190,10 +190,10 @@ function renderCurrentGuess() {
 
     container.appendChild(guessBottlesContainer);
 
-    // 添加颜色选择区域
+    // Add color selection area
     const colorPalette = document.createElement('div');
     colorPalette.style.marginTop = '20px';
-    colorPalette.innerHTML = '<h4>点击颜色选择瓶子：</h4>';
+    colorPalette.innerHTML = '<h4>Click a color to select:</h4>';
 
     const colorsContainer = document.createElement('div');
     colorsContainer.className = 'bottles-container';
@@ -201,6 +201,12 @@ function renderCurrentGuess() {
     level.colors.forEach(color => {
         const bottle = createBottleElement(color);
         bottle.onclick = () => selectColor(color);
+
+        // Add drag functionality for color palette bottles
+        bottle.draggable = true;
+        bottle.ondragstart = (e) => handleColorDragStart(e, color);
+        bottle.ondragend = (e) => handleDragEnd(e);
+
         colorsContainer.appendChild(bottle);
     });
 
@@ -224,7 +230,7 @@ function selectColor(color) {
 
 function selectBottle(index, color) {
     if (selectedBottleIndex >= 0 && selectedBottleIndex !== index) {
-        // 交换瓶子位置
+        // Swap bottle positions
         const temp = currentGuess[selectedBottleIndex];
         currentGuess[selectedBottleIndex] = currentGuess[index];
         currentGuess[index] = temp;
@@ -236,20 +242,31 @@ function selectBottle(index, color) {
     }
 }
 
-// 拖拽功能处理函数
+// Drag functionality handlers
 let dragSourceIndex = -1;
+let dragSourceColor = null;
 
 function handleDragStart(e, index) {
     dragSourceIndex = index;
+    dragSourceColor = null;
     e.target.classList.add('dragging');
     e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', e.target.outerHTML);
+}
+
+function handleColorDragStart(e, color) {
+    dragSourceIndex = -1;
+    dragSourceColor = color;
+    e.target.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'copy';
     e.dataTransfer.setData('text/html', e.target.outerHTML);
 }
 
 function handleDragEnd(e) {
     e.target.classList.remove('dragging');
     dragSourceIndex = -1;
-    // 清除所有拖拽样式
+    dragSourceColor = null;
+    // Clear all drag styles
     document.querySelectorAll('.bottle').forEach(bottle => {
         bottle.classList.remove('drag-over');
     });
@@ -259,7 +276,7 @@ function handleDragOver(e) {
     if (e.preventDefault) {
         e.preventDefault();
     }
-    e.dataTransfer.dropEffect = 'move';
+    e.dataTransfer.dropEffect = dragSourceColor !== null ? 'copy' : 'move';
     return false;
 }
 
@@ -278,8 +295,15 @@ function handleDrop(e, targetIndex) {
 
     e.target.classList.remove('drag-over');
 
-    if (dragSourceIndex !== -1 && dragSourceIndex !== targetIndex) {
-        // 交换瓶子位置
+    // If dragging from color palette
+    if (dragSourceColor !== null) {
+        currentGuess[targetIndex] = dragSourceColor;
+        renderCurrentGuess();
+        updateSubmitButton();
+    }
+    // If dragging from guess positions
+    else if (dragSourceIndex !== -1 && dragSourceIndex !== targetIndex) {
+        // Swap bottle positions
         const temp = currentGuess[dragSourceIndex];
         currentGuess[dragSourceIndex] = currentGuess[targetIndex];
         currentGuess[targetIndex] = temp;
@@ -318,14 +342,14 @@ function renderGuessHistory() {
         const feedback = document.createElement('div');
         feedback.className = 'feedback';
 
-        // 添加黑色钉子
+        // Add black pegs
         for (let i = 0; i < entry.feedback.black; i++) {
             const peg = document.createElement('div');
             peg.className = 'peg black';
             feedback.appendChild(peg);
         }
 
-        // 添加白色钉子
+        // Add white pegs
         for (let i = 0; i < entry.feedback.white; i++) {
             const peg = document.createElement('div');
             peg.className = 'peg white';
@@ -338,62 +362,62 @@ function renderGuessHistory() {
     });
 }
 
-// 反馈弹窗函数
+// Feedback popup function
 function showFeedbackPopup(feedback, isCorrect = false) {
-    // 创建遮罩层
+    // Create overlay
     const overlay = document.createElement('div');
     overlay.className = 'popup-overlay';
     overlay.onclick = closeFeedbackPopup;
 
-    // 创建弹窗
+    // Create popup
     const popup = document.createElement('div');
     popup.className = `feedback-popup ${isCorrect ? 'success-feedback' : ''}`;
     popup.id = 'feedback-popup';
 
-    const title = isCorrect ? '🎉 恭喜答对了！' : '📊 本次猜测反馈';
+    const title = isCorrect ? '🎉 Congratulations!' : '📊 Guess Feedback';
 
-    // 计算关卡用时
+    // Calculate level time
     const levelTime = Math.floor((Date.now() - levelStartTime) / 1000);
 
     popup.innerHTML = `
         <h3>${title}</h3>
         <div class="feedback-details">
             <div class="feedback-item">
-                <span><span class="feedback-icon">⚫</span>位置和颜色都正确：</span>
-                <strong style="color: #2d3748; font-size: 1.3em;">${feedback.black} 个</strong>
+                <span><span class="feedback-icon">⚫</span>Correct position and color:</span>
+                <strong style="color: #2d3748; font-size: 1.3em;">${feedback.black}</strong>
             </div>
             ${isCorrect ? `
             <div style="margin-top: 20px; padding: 15px; background: #f0fff4; border-radius: 8px; border: 2px solid #9ae6b4;">
-                <h4 style="color: #38a169; margin-bottom: 10px;">关卡 ${LEVELS[currentLevel].level} 完成！</h4>
+                <h4 style="color: #38a169; margin-bottom: 10px;">Level ${LEVELS[currentLevel].level} Complete!</h4>
                 <div style="display: flex; justify-content: space-between; margin: 8px 0;">
-                    <span>🎯 猜测次数：</span>
-                    <strong style="color: #2d3748;">${guessHistory.length} 次</strong>
+                    <span>🎯 Attempts:</span>
+                    <strong style="color: #2d3748;">${guessHistory.length}</strong>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin: 8px 0;">
-                    <span>⏱️ 用时：</span>
-                    <strong style="color: #2d3748;">${levelTime} 秒</strong>
+                    <span>⏱️ Time:</span>
+                    <strong style="color: #2d3748;">${levelTime} seconds</strong>
                 </div>
             </div>
             ` : `
             <div style="margin-top: 15px; color: #4a5568;">
-                <small>继续猜测，您距离答案越来越近了！</small>
+                <small>Keep guessing, you're getting closer!</small>
             </div>
             `}
         </div>
         <button class="close-btn" onclick="closeFeedbackPopup()">
-            ${isCorrect ? '进入下一关' : '继续游戏'}
+            ${isCorrect ? 'Next Level' : 'Continue'}
         </button>
     `;
 
     document.body.appendChild(overlay);
     document.body.appendChild(popup);
 
-    // 如果答对了，设置自动关闭并进入下一关
+    // If correct, auto-close and proceed to next level
     if (isCorrect) {
         setTimeout(() => {
             closeFeedbackPopup();
             nextLevel();
-        }, 4000); // 延长到4秒让玩家看清统计信息
+        }, 4000); // Extended to 4 seconds to let player see stats
     }
 }
 
@@ -405,7 +429,7 @@ function closeFeedbackPopup() {
     if (overlay) overlay.remove();
 }
 
-// 游戏逻辑
+// Game Logic
 function startLevel() {
     const level = LEVELS[currentLevel];
     secretSequence = generateUniqueSequence(level.length, level.colors);
@@ -421,14 +445,14 @@ function startLevel() {
 
     document.getElementById('secret-display').style.display = 'none';
 
-    console.log(`关卡 ${level.level} 开始，秘密序列:`, secretSequence);
+    console.log(`Level ${level.level} started, secret sequence:`, secretSequence);
 }
 
 function submitGuess() {
     const level = LEVELS[currentLevel];
 
     if (currentGuess.length !== level.length || !currentGuess.every(color => color)) {
-        alert('请完成您的猜测序列！');
+        alert('Please complete your guess sequence!');
         return;
     }
 
@@ -443,16 +467,16 @@ function submitGuess() {
     updateLevelInfo();
     renderGuessHistory();
 
-    // 检查是否猜对
+    // Check if correct
     const isCorrect = feedback.black === level.length;
 
-    // 显示反馈弹窗
+    // Show feedback popup
     setTimeout(() => {
         showFeedbackPopup(feedback, isCorrect);
     }, 300);
 
     if (!isCorrect) {
-        // 保留玩家的猜测序列，不重置
+        // Keep player's guess sequence, don't reset
         selectedBottleIndex = -1;
         renderCurrentGuess();
         updateSubmitButton();
@@ -500,7 +524,7 @@ function restartGame() {
     totalAttempts = 0;
     gameStartTime = Date.now();
 
-    // 不清空 previouslyUsedSequences，保持防重复机制
+    // Don't clear previouslyUsedSequences, keep anti-duplicate mechanism
 
     document.getElementById('game-area').style.display = 'block';
     document.querySelector('.level-info').style.display = 'block';
@@ -509,11 +533,11 @@ function restartGame() {
     startLevel();
 }
 
-// 初始化游戏
+// Initialize Game
 function initGame() {
     gameStartTime = Date.now();
     startLevel();
 }
 
-// 页面加载完成后启动游戏
+// Start game after page loads
 window.onload = initGame;
