@@ -509,6 +509,55 @@
         </image:image>
     </url>
 
+    <!-- Bottle Match Game -->
+    <url>
+        <loc>https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html</loc>
+        <lastmod>2025-10-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/BottleMatchGame/bottlematch.png</image:loc>
+            <image:title>Bottle Match Game Online - Free Logic Puzzle</image:title>
+            <image:caption>Play Bottle Match Game Online free! Test your logic with 5 challenging levels. Guess the color sequence in this Mastermind-style puzzle game.</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame.html</loc>
+        <lastmod>2025-10-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/BottleMatchGame/bottlematch.png</image:loc>
+            <image:title>猜瓶子 - 免费在线益智游戏</image:title>
+            <image:caption>免费玩猜瓶子游戏！测试逻辑推理能力，挑战5个关卡。基于经典Mastermind机制的颜色匹配益智游戏</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame.html</loc>
+        <lastmod>2025-10-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
+        <image:image>
+            <image:loc>https://www.bestpartygames.net/games/BottleMatchGame/bottlematch.png</image:loc>
+            <image:title>Flaschen-Match-Spiel Online - Gratis Logikrätsel</image:title>
+            <image:caption>Spielen Sie Flaschen-Match-Spiel Online gratis! Testen Sie Ihre Logik mit 5 herausfordernden Levels in diesem Mastermind-Rätselspiel.</image:caption>
+        </image:image>
+    </url>
+
     <!-- German Game Pages -->
     <!-- Magic 8 Ball German -->
     <url>
