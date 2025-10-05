@@ -555,9 +555,14 @@ button:disabled {
 }
 
 @media (max-width: 600px) {
+    body {
+        padding: 60px 10px 20px; /* Top padding for hamburger menu */
+    }
+
     .game-container {
         padding: 20px;
-        margin: 10px;
+        margin: 10px auto;
+        width: calc(100% - 20px);
     }
 
     .bottles-container {
@@ -580,6 +585,10 @@ button:disabled {
     .feedback-popup {
         min-width: 280px;
         padding: 20px;
+    }
+
+    .game-info {
+        width: calc(100% - 20px);
     }
 }
 

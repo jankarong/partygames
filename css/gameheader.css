@@ -310,19 +310,7 @@
 
 /* Quick access bar for popular games */
 .quick-games-bar {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    padding: 10px 20px;
-    z-index: 999;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    transition: all 0.3s ease-in-out;
+    display: none;
 }
 
 #quick-access-toggle {
@@ -1004,13 +992,101 @@
 
 @media (max-width: 1024px) {
     .other-games-panel {
-        display: none;
+        position: static;
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        max-height: none;
+        padding: 20px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Reorder page elements on mobile */
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .game-container {
+        order: 1;
+    }
+
+    .other-games-panel {
+        order: 2;
+    }
+
+    .game-info {
+        order: 3;
     }
 }
 
 @media (max-width: 768px) {
+    /* Mobile hamburger menu at top */
     .floating-nav {
-        display: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .floating-nav:hover {
+        width: 100%;
+    }
+
+    .nav-toggle {
+        width: 100%;
+        height: 50px;
+        border-radius: 0;
+        font-size: 20px;
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+
+    .nav-toggle::after {
+        content: 'Menu';
+        margin-left: 10px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .nav-menu {
+        width: 100%;
+        top: 50px;
+        height: auto;
+        max-height: 0;
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-menu.show {
+        max-height: calc(100vh - 50px);
+        padding: 15px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .floating-nav:hover .nav-menu {
+        width: 100%;
+    }
+
+    .game-links {
+        grid-template-columns: repeat(2, 1fr);
+        max-height: 50vh;
+    }
+
+    .nav-actions a span,
+    .language-toggle span,
+    .auth-link span,
+    .user-text,
+    .signout-btn span {
+        opacity: 1 !important;
     }
 }
 
