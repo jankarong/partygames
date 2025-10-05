@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flaschen-Match-Spiel Online - Gratis Logikrätsel</title>
+    <meta name="description" content="Spielen Sie Flaschen-Match-Spiel Online gratis! Testen Sie Ihre Logik mit 5 herausfordernden Levels in diesem Mastermind-Rätselspiel.">
+    <meta name="keywords" content="Flaschen-Match-Spiel, Logikrätsel, Mastermind-Spiel, Farben-Match, Denksportaufgabe">
+    <meta property="og:title" content="Flaschen-Match-Spiel Online - Gratis Logikrätsel">
+    <meta property="og:description" content="Spielen Sie Flaschen-Match-Spiel Online gratis! Testen Sie Ihre Logik mit 5 herausfordernden Levels.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://partygames.com/de/games/BottleMatchGame/BottleMatchGame.html">
+    <link rel="canonical" href="https://partygames.com/de/games/BottleMatchGame/BottleMatchGame.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzQyOTllMSIvPgo8cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIGZpbGw9IiMyZDM3NDgiLz4KPHN2Zz4K">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Flaschen-Match-Spiel Online",
+      "description": "Ein Logikrätselspiel, bei dem Spieler die richtige Farbreihenfolge über 5 herausfordernde Levels erraten müssen",
+      "gameType": "Logikrätsel",
+      "numberOfPlayers": "1",
+      "url": "https://partygames.com/de/games/BottleMatchGame/BottleMatchGame.html",
+      "inLanguage": "de"
+    }
+    </script>
+
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="game-container">
+        <img src="../../../games/BottleMatchGame/bottlematch.png" alt="Flaschen-Match-Spiel Logo" class="game-logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+        <h1>Flaschen-Match-Spiel Online</h1>
+
+        <div class="level-info">
+            <div class="level-title">Level <span id="current-level">1</span> / 5</div>
+            <div class="level-details">
+                Länge: <span id="sequence-length">3</span> |
+                Farben: <span id="color-count">4</span> |
+                Versuche: <span id="attempts">0</span>
+            </div>
+        </div>
+
+        <div class="secret-display" id="secret-display" style="display: none;">
+            Geheime Sequenz: <span id="secret-sequence"></span>
+        </div>
+
+        <div class="game-area" id="game-area">
+            <h3>Wählen Sie Ihre Vermutung:</h3>
+            <div class="bottles-container" id="current-guess"></div>
+
+            <div class="controls">
+                <button class="submit-btn" id="submit-guess" onclick="submitGuess()">Vermutung abgeben</button>
+                <button onclick="clearGuess()">Löschen</button>
+                <button onclick="showSecret()">Antwort zeigen</button>
+            </div>
+
+            <div class="guess-section">
+                <h4>Vermutungsverlauf:</h4>
+                <div id="guess-history"></div>
+            </div>
+        </div>
+
+        <div class="completion-screen" id="completion-screen">
+            <h2>🎉 Herzlichen Glückwunsch! Alle Levels abgeschlossen!</h2>
+            <div class="final-stats">
+                <h3>Gesamtstatistik</h3>
+                <p>Gesamtzeit: <span id="total-time">0</span> Sekunden</p>
+                <p>Gesamtversuche: <span id="total-attempts">0</span></p>
+                <p>Durchschnittliche Versuche pro Level: <span id="avg-attempts">0</span></p>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">Spiel neu starten</button>
+        </div>
+    </div>
+
+    <section class="game-info">
+        <h2>Wie man Flaschen-Match-Spiel spielt</h2>
+        <p>Flaschen-Match-Spiel ist ein spannendes Online-Logikrätsel basierend auf dem klassischen Mastermind-Spiel. Testen Sie Ihre deduktiven Denkfähigkeiten über 5 zunehmend herausfordernde Levels!</p>
+
+        <h3>Spielregeln</h3>
+        <ul>
+            <li><strong>Ziel:</strong> Erraten Sie die geheime Farbreihenfolge, bevor Ihnen die Versuche ausgehen</li>
+            <li><strong>5 Levels:</strong> Jedes Level erhöht den Schwierigkeitsgrad mit längeren Sequenzen und mehr Farben</li>
+            <li><strong>Feedback-System:</strong> Nach jeder Vermutung erhalten Sie Hinweise über richtige Positionen</li>
+            <li><strong>Keine Wiederholungen:</strong> Jede Flaschenfarbe erscheint nur einmal in der Sequenz</li>
+        </ul>
+
+        <h3>Spielanleitung</h3>
+        <ol>
+            <li><strong>Farben auswählen:</strong> Klicken Sie auf eine Position in der oberen Reihe, dann auf eine Farbe unten, ODER ziehen Sie Farben direkt auf die Positionen</li>
+            <li><strong>Vermutung abgeben:</strong> Sobald alle Positionen gefüllt sind, klicken Sie auf "Vermutung abgeben"</li>
+            <li><strong>Feedback lesen:</strong> Schwarze Stifte zeigen richtige Farbe an richtiger Position</li>
+            <li><strong>Strategie anpassen:</strong> Nutzen Sie das Feedback, um Ihre nächste Vermutung zu verfeinern</li>
+            <li><strong>Level gewinnen:</strong> Ordnen Sie alle Flaschen richtig zu, um weiterzukommen</li>
+        </ol>
+
+        <h3>Spielfunktionen</h3>
+        <ul>
+            <li>✅ Kostenloses Online-Flaschen-Match-Spiel - kein Download erforderlich</li>
+            <li>✅ 5 herausfordernde Levels mit steigendem Schwierigkeitsgrad</li>
+            <li>✅ Drag-and-Drop- oder Klick-Auswahl-Steuerung</li>
+            <li>✅ Echtzeit-Feedback zu Ihren Vermutungen</li>
+            <li>✅ Verfolgen Sie Ihre Versuche und Abschlusszeit</li>
+            <li>✅ Mobilfreundliches responsives Design</li>
+        </ul>
+
+        <h3>Tipps & Strategie</h3>
+        <p><strong>Systematisch beginnen:</strong> Versuchen Sie, eine Farbe nach der anderen zu testen, um die Möglichkeiten einzugrenzen.</p>
+        <p><strong>Ausschlussverfahren nutzen:</strong> Behalten Sie im Auge, welche Farben und Positionen ausgeschlossen wurden.</p>
+        <p><strong>Auf Feedback achten:</strong> Schwarze Stifte zeigen SOWOHL richtige Farbe ALS AUCH Position an.</p>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/ads-controller.js"></script>
+    <script src="../../../js/game-navigation.js"></script>
+</body>
+</html>

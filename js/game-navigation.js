@@ -87,6 +87,7 @@ class GameNavigation {
                         <div class="language-menu">
                             <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
                             <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
+                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
                         </div>
                     </div>
                 </div>
@@ -138,8 +139,22 @@ class GameNavigation {
                 </div>
             `;
 
-            // Append to body to position fixed on far right
-            document.body.appendChild(panel);
+            // Insert panel based on screen size
+            // On desktop: append to body (will be positioned fixed on right)
+            // On mobile: insert after game container or before game-info
+            const gameContainer = document.querySelector('.game-container, .container');
+            const gameInfo = document.querySelector('.game-info');
+
+            if (gameInfo && gameInfo.parentNode) {
+                // Insert before game-info section
+                gameInfo.parentNode.insertBefore(panel, gameInfo);
+            } else if (gameContainer && gameContainer.nextSibling) {
+                // Insert after game container
+                gameContainer.parentNode.insertBefore(panel, gameContainer.nextSibling);
+            } else {
+                // Fallback: append to body
+                document.body.appendChild(panel);
+            }
         }
     }
 
@@ -251,23 +266,32 @@ class GameNavigation {
     switchLanguage(lang) {
         const currentPath = window.location.pathname;
         let newPath;
-        
+
         if (lang === 'zh') {
             // Switch to Chinese version
             if (currentPath.startsWith('/zh/')) {
                 // Already on Chinese version
                 return;
             }
-            newPath = '/zh' + currentPath;
+            // Remove /de/ if present, then add /zh/
+            newPath = '/zh' + currentPath.replace('/de/', '/');
+        } else if (lang === 'de') {
+            // Switch to German version
+            if (currentPath.startsWith('/de/')) {
+                // Already on German version
+                return;
+            }
+            // Remove /zh/ if present, then add /de/
+            newPath = '/de' + currentPath.replace('/zh/', '/');
         } else {
             // Switch to English version
-            if (!currentPath.startsWith('/zh/')) {
+            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/')) {
                 // Already on English version
                 return;
             }
-            newPath = currentPath.replace('/zh', '');
+            newPath = currentPath.replace('/zh', '').replace('/de', '');
         }
-        
+
         window.location.href = newPath;
     }
 

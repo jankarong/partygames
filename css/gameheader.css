@@ -994,31 +994,18 @@
     .other-games-panel {
         position: static;
         width: 100%;
-        max-width: 800px;
-        margin: 20px auto;
+        max-width: none;
+        margin: 0;
+        padding: 20px 15px;
         max-height: none;
-        padding: 20px;
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
     }
 
-    /* Reorder page elements on mobile */
-    body {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .game-container {
-        order: 1;
-    }
-
-    .other-games-panel {
-        order: 2;
-    }
-
-    .game-info {
-        order: 3;
+    .other-games-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
     }
 }
 
@@ -1088,6 +1075,36 @@
     .signout-btn span {
         opacity: 1 !important;
     }
+
+    .other-games-panel {
+        width: 100%;
+        padding: 15px;
+        margin: 0;
+    }
+
+    .other-games-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .other-game-card {
+        padding: 18px 10px;
+        aspect-ratio: auto;
+        min-height: 120px;
+        width: 100%;
+    }
+
+    .other-game-logo {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 10px;
+    }
+
+    .other-game-name {
+        font-size: 12px;
+        line-height: 1.3;
+        font-weight: 600;
+    }
 }
 
 .other-games-panel h3 {
@@ -1120,8 +1137,14 @@
     text-decoration: none;
     color: #333;
     transition: all 0.3s ease;
-    aspect-ratio: 1;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Desktop only - square cards */
+@media (min-width: 1025px) {
+    .other-game-card {
+        aspect-ratio: 1;
+    }
 }
 
 .other-game-card:hover {
@@ -1186,11 +1209,5 @@
 
     .other-game-name {
         font-size: 12px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .other-games-panel {
-        display: none;
     }
 }
