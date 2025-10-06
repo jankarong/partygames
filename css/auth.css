@@ -114,6 +114,46 @@
     box-shadow: none;
 }
 
+/* Google登录按钮 */
+.btn-google {
+    background: white;
+    border: 2px solid #e1e5e9;
+    color: #333;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-google:hover {
+    background: #f8f9fa;
+    border-color: #d1d5d9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-google:active {
+    transform: translateY(0);
+}
+
+.btn-google:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-google svg {
+    flex-shrink: 0;
+}
+
 .auth-links {
     text-align: center;
     margin-top: 2rem;

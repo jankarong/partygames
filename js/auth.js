@@ -99,6 +99,25 @@ class AuthManager {
         }
     }
 
+    // 使用谷歌登录
+    async signInWithGoogle() {
+        try {
+            const { data, error } = await supabaseClient.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                    redirectTo: window.location.origin + '/'
+                }
+            });
+
+            if (error) throw error;
+
+            return { success: true, data: data };
+        } catch (error) {
+            console.error('Google sign in error:', error);
+            return { success: false, error: error.message };
+        }
+    }
+
     // 登出用户
     async signOut() {
         try {
