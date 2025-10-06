@@ -22,6 +22,23 @@ let levelStartTime = 0;
 let totalAttempts = 0;
 let selectedBottleIndex = -1;
 
+// Sound Functions
+function playPlaceSound() {
+    const sound = document.getElementById('place-sound');
+    if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(e => console.log('Sound play failed:', e));
+    }
+}
+
+function playSuccessSound() {
+    const sound = document.getElementById('success-sound');
+    if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(e => console.log('Sound play failed:', e));
+    }
+}
+
 // Anti-duplicate mechanism - global storage for all used sequences
 let previouslyUsedSequences = [];
 
@@ -222,6 +239,7 @@ function selectPosition(index) {
 function selectColor(color) {
     if (selectedBottleIndex >= 0) {
         currentGuess[selectedBottleIndex] = color;
+        playPlaceSound();
         selectedBottleIndex = -1;
         renderCurrentGuess();
         updateSubmitButton();
@@ -298,6 +316,7 @@ function handleDrop(e, targetIndex) {
     // If dragging from color palette
     if (dragSourceColor !== null) {
         currentGuess[targetIndex] = dragSourceColor;
+        playPlaceSound();
         renderCurrentGuess();
         updateSubmitButton();
     }
@@ -364,6 +383,11 @@ function renderGuessHistory() {
 
 // Feedback popup function
 function showFeedbackPopup(feedback, isCorrect = false) {
+    // Play success sound if correct
+    if (isCorrect) {
+        playSuccessSound();
+    }
+
     // Create overlay
     const overlay = document.createElement('div');
     overlay.className = 'popup-overlay';

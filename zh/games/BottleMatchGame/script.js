@@ -22,6 +22,23 @@ let levelStartTime = 0;
 let totalAttempts = 0;
 let selectedBottleIndex = -1;
 
+// 音效函数
+function playPlaceSound() {
+    const sound = document.getElementById('place-sound');
+    if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(e => console.log('Sound play failed:', e));
+    }
+}
+
+function playSuccessSound() {
+    const sound = document.getElementById('success-sound');
+    if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(e => console.log('Sound play failed:', e));
+    }
+}
+
 // 防重复机制 - 全局存储所有使用过的序列
 let previouslyUsedSequences = [];
 
@@ -222,6 +239,7 @@ function selectPosition(index) {
 function selectColor(color) {
     if (selectedBottleIndex >= 0) {
         currentGuess[selectedBottleIndex] = color;
+        playPlaceSound();
         selectedBottleIndex = -1;
         renderCurrentGuess();
         updateSubmitButton();
@@ -298,6 +316,7 @@ function handleDrop(e, targetIndex) {
     // 如果是从颜色选择器拖拽
     if (dragSourceColor !== null) {
         currentGuess[targetIndex] = dragSourceColor;
+        playPlaceSound();
         renderCurrentGuess();
         updateSubmitButton();
     }
@@ -364,6 +383,11 @@ function renderGuessHistory() {
 
 // 反馈弹窗函数
 function showFeedbackPopup(feedback, isCorrect = false) {
+    // 如果答对了播放成功音效
+    if (isCorrect) {
+        playSuccessSound();
+    }
+
     // 创建遮罩层
     const overlay = document.createElement('div');
     overlay.className = 'popup-overlay';
