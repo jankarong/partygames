@@ -39,6 +39,14 @@ function playSuccessSound() {
     }
 }
 
+function playFailSound() {
+    const sound = document.getElementById('fail-sound');
+    if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(e => console.log('Sound play failed:', e));
+    }
+}
+
 // Anti-duplicate mechanism - global storage for all used sequences
 let previouslyUsedSequences = [];
 
@@ -383,9 +391,11 @@ function renderGuessHistory() {
 
 // Feedback popup function
 function showFeedbackPopup(feedback, isCorrect = false) {
-    // Play success sound if correct
+    // Play success or fail sound
     if (isCorrect) {
         playSuccessSound();
+    } else {
+        playFailSound();
     }
 
     // Create overlay

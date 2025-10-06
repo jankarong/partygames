@@ -39,6 +39,14 @@ function playSuccessSound() {
     }
 }
 
+function playFailSound() {
+    const sound = document.getElementById('fail-sound');
+    if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(e => console.log('Sound play failed:', e));
+    }
+}
+
 // 防重复机制 - 全局存储所有使用过的序列
 let previouslyUsedSequences = [];
 
@@ -383,9 +391,11 @@ function renderGuessHistory() {
 
 // 反馈弹窗函数
 function showFeedbackPopup(feedback, isCorrect = false) {
-    // 如果答对了播放成功音效
+    // 播放成功或失败音效
     if (isCorrect) {
         playSuccessSound();
+    } else {
+        playFailSound();
     }
 
     // 创建遮罩层
