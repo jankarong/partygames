@@ -64,112 +64,118 @@
     </nav>
 
     <main class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card shadow-sm">
-                    <div class="card-body p-4">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold mb-3">Wählen Sie Ihren Plan</h1>
+            <p class="lead text-muted">Entsperren Sie das volle PartyGameLab-Erlebnis</p>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            <!-- Free Plan -->
+            <div class="col-md-6 col-lg-5">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body p-4 d-flex flex-column">
                         <div class="text-center mb-4">
-                            <div class="badge text-dark mb-2" style="background: var(--accent);">🐦 FRÜHBUCHER-ANGEBOT</div>
-                            <h1 class="h2 mb-2 fw-bold">Auf Premium upgraden</h1>
-                            <p class="h5 mb-0" style="color: var(--primary);">Nur $2.99 • Einmalige Zahlung • Lebenslanger Zugang</p>
+                            <h3 class="fw-bold">Kostenlos</h3>
+                            <div class="my-3">
+                                <span class="display-4 fw-bold">$0</span>
+                            </div>
+                            <p class="text-muted">Für immer kostenlos</p>
                         </div>
 
-                        <div class="row mb-4">
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-start">
-                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width:40px;height:40px; background: var(--primary);">
-                                        <span class="text-white">✓</span>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">Werbefreies Erlebnis</h6>
-                                        <small class="text-muted">Genießen Sie ununterbrochenes Spielen ohne Werbung</small>
-                                    </div>
-                                </div>
+                        <ul class="list-unstyled mb-4 flex-grow-1">
+                            <li class="mb-3">
+                                <span class="text-success me-2">✓</span>
+                                Zugang zu allen Spielen
+                            </li>
+                            <li class="mb-3">
+                                <span class="text-success me-2">✓</span>
+                                Grundlegende Spielfunktionen
+                            </li>
+                            <li class="mb-3 text-muted">
+                                <span class="me-2">✗</span>
+                                Enthält Werbung
+                            </li>
+                            <li class="mb-3 text-muted">
+                                <span class="me-2">✗</span>
+                                Premium-Spielfunktionen
+                            </li>
+                        </ul>
+
+                        <button class="btn btn-outline-secondary w-100" disabled>Aktueller Plan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="col-md-6 col-lg-5">
+                <div class="card h-100 shadow-lg border-0" style="border: 2px solid var(--primary) !important;">
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge text-dark px-3 py-2" style="background: var(--accent);">🐦 FRÜHBUCHER - 73% RABATT</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="text-center mb-4 mt-3">
+                            <h3 class="fw-bold" style="color: var(--primary);">Premium</h3>
+                            <div class="my-3">
+                                <span class="text-muted text-decoration-line-through">$10.99</span>
+                                <span class="display-4 fw-bold d-block" style="color: var(--primary);">$2.99</span>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-start">
-                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width:40px;height:40px; background: var(--primary);">
-                                        <span class="text-white">⚡</span>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">Entwicklung unterstützen</h6>
-                                        <small class="text-muted">Helfen Sie uns bei der Verbesserung und Erstellung neuer Spiele</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-start">
-                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width:40px;height:40px; background: var(--primary);">
-                                        <span class="text-white">🎮</span>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">Early Access</h6>
-                                        <small class="text-muted">Seien Sie die Ersten, die neue Partyspiele vor der Veröffentlichung testen</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-start">
-                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width:40px;height:40px; background: var(--primary);">
-                                        <span class="text-white">💎</span>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">Prioritätssupport</h6>
-                                        <small class="text-muted">Ihr Feedback und Ihre Vorschläge erhalten Priorität</small>
-                                    </div>
-                                </div>
-                            </div>
+                            <p class="text-muted">Einmalige Zahlung • Lebenslanger Zugang</p>
                         </div>
 
-                        <div class="rounded p-3 mb-4" style="background: var(--bg-light);">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <small class="text-muted">Regulärer Preis: <span class="text-decoration-line-through">$10.99</span></small>
-                                    <div class="h4 mb-0 fw-bold" style="color: var(--primary);">Frühbucher-Preis: $2.99</div>
-                                    <small style="color: var(--primary);">Sparen Sie heute 73%!</small>
-                                </div>
-                                <div class="text-end">
-                                    <div class="badge" style="background: var(--accent); color: var(--text-dark);">73% RABATT</div>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="list-unstyled mb-4 flex-grow-1">
+                            <li class="mb-3">
+                                <span class="me-2" style="color: var(--primary);">✓</span>
+                                <strong>Alles in Kostenlos, plus:</strong>
+                            </li>
+                            <li class="mb-3">
+                                <span class="me-2" style="color: var(--primary);">✓</span>
+                                Werbefreies Erlebnis
+                            </li>
+                            <li class="mb-3">
+                                <span class="me-2" style="color: var(--primary);">✓</span>
+                                Premium-Spielfunktionen freischalten
+                            </li>
+                            <li class="mb-3">
+                                <span class="me-2" style="color: var(--primary);">✓</span>
+                                Priorität bei Feedback-Bearbeitung
+                            </li>
+                        </ul>
 
-                        <div id="authNotice" class="alert alert-info" style="display:none;">
+                        <div id="authNotice" class="alert alert-info mb-3" style="display:none;">
                             Bitte melden Sie sich an, um fortzufahren. <a href="./login.html" class="alert-link">Anmelden</a>
                         </div>
 
-                        <button id="goPremiumBtn" class="btn btn-lg w-100 fw-bold mb-3" style="height:60px; background: var(--gradient-primary); border: none; color: white;">
-                            🐦 Frühbucher-Preis sichern - $2.99
+                        <button id="goPremiumBtn" class="btn btn-lg w-100 fw-bold mb-3" style="background: var(--gradient-primary); border: none; color: white;">
+                            Jetzt Premium erhalten
                         </button>
 
                         <div class="text-center">
-                            <small class="text-muted d-flex align-items-center justify-content-center">
-                                <span class="me-2">🔒</span>
+                            <small class="text-muted">
+                                <span class="me-1">🔒</span>
                                 Sichere Zahlung mit Stripe
                             </small>
                         </div>
 
-                        <div id="status" class="mt-3 text-center text-muted" style="display:none;"></div>
+                        <div id="status" class="mt-3 text-center text-muted small" style="display:none;"></div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Social Proof Section -->
-                <div class="text-center mt-4">
-                    <p class="text-muted small mb-2">Vertraut von Party-Enthusiasten weltweit</p>
-                    <div class="d-flex justify-content-center align-items-center flex-wrap">
-                        <div class="me-3 mb-2">
-                            <span class="text-warning">★★★★★</span>
-                            <small class="text-muted ms-1">4.9/5 Bewertung</small>
-                        </div>
-                        <div class="me-3 mb-2">
-                            <small class="text-muted">👥 10.000+ Benutzer</small>
-                        </div>
-                        <div class="mb-2">
-                            <small class="text-muted">🎉 50.000+ Spiele gespielt</small>
-                        </div>
-                    </div>
+        <!-- Social Proof Section -->
+        <div class="text-center mt-5">
+            <p class="text-muted mb-3">Vertraut von Party-Enthusiasten weltweit</p>
+            <div class="d-flex justify-content-center align-items-center flex-wrap gap-4">
+                <div>
+                    <span class="text-warning">★★★★★</span>
+                    <small class="text-muted ms-1">4.9/5 Bewertung</small>
                 </div>
-
+                <div>
+                    <small class="text-muted">👥 10.000+ Benutzer</small>
+                </div>
+                <div>
+                    <small class="text-muted">🎉 50.000+ Spiele gespielt</small>
+                </div>
             </div>
         </div>
     </main>

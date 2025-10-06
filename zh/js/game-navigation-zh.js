@@ -74,6 +74,7 @@ class GameNavigation {
                         <div class="language-menu">
                             <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
                             <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
+                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
                         </div>
                     </div>
                 </div>
@@ -212,23 +213,32 @@ class GameNavigation {
     switchLanguage(lang) {
         const currentPath = window.location.pathname;
         let newPath;
-        
+
         if (lang === 'zh') {
             // 切换到中文版
             if (currentPath.startsWith('/zh/')) {
                 // 已经在中文版
                 return;
             }
-            newPath = '/zh' + currentPath;
+            // 移除 /de/ 如果存在，然后添加 /zh/
+            newPath = '/zh' + currentPath.replace('/de/', '/');
+        } else if (lang === 'de') {
+            // 切换到德语版
+            if (currentPath.startsWith('/de/')) {
+                // 已经在德语版
+                return;
+            }
+            // 移除 /zh/ 如果存在，然后添加 /de/
+            newPath = '/de' + currentPath.replace('/zh/', '/');
         } else {
             // 切换到英文版
-            if (!currentPath.startsWith('/zh/')) {
+            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/')) {
                 // 已经在英文版
                 return;
             }
-            newPath = currentPath.replace('/zh', '');
+            newPath = currentPath.replace('/zh', '').replace('/de', '');
         }
-        
+
         window.location.href = newPath;
     }
 

@@ -277,19 +277,43 @@ function handleAuthForm(formId, action) {
 
             if (result.success) {
                 if (action === 'signup') {
-                    showMessage('Registration successful! Please check your email for verification.', 'success');
+                    const messages = {
+                        'zh-CN': '注册成功！请查看您的邮箱进行验证',
+                        'en': 'Registration successful! Please check your email for verification',
+                        'de': 'Registrierung erfolgreich! Bitte überprüfen Sie Ihre E-Mail zur Verifizierung'
+                    };
+                    const lang = document.documentElement.lang || 'en';
+                    showMessage(messages[lang] || messages['en'], 'success');
                 } else {
-                    showMessage('Login successful!', 'success');
+                    const messages = {
+                        'zh-CN': '登录成功！正在跳转...',
+                        'en': 'Login successful! Redirecting...',
+                        'de': 'Anmeldung erfolgreich! Weiterleitung...'
+                    };
+                    const lang = document.documentElement.lang || 'en';
+                    showMessage(messages[lang] || messages['en'], 'success');
                     // 可以重定向到其他页面
                     setTimeout(() => {
                         window.location.href = '/';
                     }, 1500);
                 }
             } else {
-                showMessage('Error: ' + result.error, 'error');
+                const lang = document.documentElement.lang || 'en';
+                const errorPrefix = {
+                    'zh-CN': '错误: ',
+                    'en': 'Error: ',
+                    'de': 'Fehler: '
+                };
+                showMessage((errorPrefix[lang] || errorPrefix['en']) + result.error, 'error');
             }
         } catch (error) {
-            showMessage('An unknown error occurred: ' + error.message, 'error');
+            const lang = document.documentElement.lang || 'en';
+            const unknownErrorMsg = {
+                'zh-CN': '发生未知错误: ',
+                'en': 'An unknown error occurred: ',
+                'de': 'Ein unbekannter Fehler ist aufgetreten: '
+            };
+            showMessage((unknownErrorMsg[lang] || unknownErrorMsg['en']) + error.message, 'error');
         } finally {
             // 恢复按钮状态
             submitButton.disabled = false;
@@ -300,42 +324,120 @@ function handleAuthForm(formId, action) {
 
 // 显示消息
 function showMessage(message, type = 'info') {
-    // 移除现有消息
-    const existingMessage = document.getElementById('auth-message');
-    if (existingMessage) {
-        existingMessage.remove();
+    // 获取或创建toast容器
+    let toastContainer = document.querySelector('.toast-container');
+    if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.className = 'toast-container';
+        document.body.appendChild(toastContainer);
     }
 
-    // 创建新消息
-    const messageDiv = document.createElement('div');
-    messageDiv.id = 'auth-message';
-    messageDiv.className = `alert alert-${type === 'error' ? 'danger' : type === 'success' ? 'success' : 'info'} alert-dismissible fade show`;
-    messageDiv.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    // 获取页面语言
+    const lang = document.documentElement.lang || 'en';
+
+    // 多语言标题配置
+    const titleTranslations = {
+        success: {
+            'zh-CN': '成功',
+            'en': 'Success',
+            'de': 'Erfolg'
+        },
+        error: {
+            'zh-CN': '错误',
+            'en': 'Error',
+            'de': 'Fehler'
+        },
+        info: {
+            'zh-CN': '提示',
+            'en': 'Info',
+            'de': 'Info'
+        }
+    };
+
+    // 定义消息类型配置
+    const typeConfig = {
+        success: {
+            icon: '✓',
+            title: titleTranslations.success[lang] || titleTranslations.success['en']
+        },
+        error: {
+            icon: '✕',
+            title: titleTranslations.error[lang] || titleTranslations.error['en']
+        },
+        info: {
+            icon: 'ℹ',
+            title: titleTranslations.info[lang] || titleTranslations.info['en']
+        }
+    };
+
+    const config = typeConfig[type] || typeConfig.info;
+
+    // 关闭按钮的多语言标签
+    const closeLabel = {
+        'zh-CN': '关闭',
+        'en': 'Close',
+        'de': 'Schließen'
+    };
+
+    // 创建toast通知
+    const toast = document.createElement('div');
+    toast.className = `toast-notification ${type}`;
+    toast.innerHTML = `
+        <div class="toast-icon">${config.icon}</div>
+        <div class="toast-content">
+            <div class="toast-title">${config.title}</div>
+            <div class="toast-message">${message}</div>
+        </div>
+        <button class="toast-close" aria-label="${closeLabel[lang] || closeLabel['en']}">×</button>
+        <div class="toast-progress"></div>
     `;
 
-    // 插入到页面顶部
-    const container = document.querySelector('.container') || document.body;
-    container.insertBefore(messageDiv, container.firstChild);
+    // 添加到容器
+    toastContainer.appendChild(toast);
+
+    // 关闭按钮事件
+    const closeBtn = toast.querySelector('.toast-close');
+    closeBtn.addEventListener('click', () => {
+        closeToast(toast);
+    });
 
     // 5秒后自动消失
     setTimeout(() => {
-        if (messageDiv && messageDiv.parentNode) {
-            messageDiv.remove();
-        }
+        closeToast(toast);
     }, 5000);
+}
+
+// 关闭toast通知
+function closeToast(toast) {
+    toast.classList.add('hide');
+    setTimeout(() => {
+        if (toast && toast.parentNode) {
+            toast.remove();
+        }
+    }, 300);
 }
 
 // 登出函数
 async function handleSignOut() {
     const result = await window.authManager.signOut();
+    const lang = document.documentElement.lang || 'en';
+
     if (result.success) {
-        showMessage('Successfully logged out', 'success');
+        const successMsg = {
+            'zh-CN': '退出登录成功',
+            'en': 'Successfully logged out',
+            'de': 'Erfolgreich abgemeldet'
+        };
+        showMessage(successMsg[lang] || successMsg['en'], 'success');
         setTimeout(() => {
             window.location.reload();
         }, 1000);
     } else {
-        showMessage('Logout failed: ' + result.error, 'error');
+        const errorMsg = {
+            'zh-CN': '退出登录失败: ',
+            'en': 'Logout failed: ',
+            'de': 'Abmeldung fehlgeschlagen: '
+        };
+        showMessage((errorMsg[lang] || errorMsg['en']) + result.error, 'error');
     }
 }

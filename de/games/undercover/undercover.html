@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Undercover Spiel Online - Soziales Deduktionsspiel für 4-20 Spieler. Kostenlos spielen, keine Registrierung erforderlich">
+    <meta name="keywords"
+        content="undercover spiel online, soziales deduktionsspiel, spionagespiel, multiplayer spiele, mr white spiel online">
+    <meta property="og:title" content="Undercover Spiel Online - Kostenloses Multiplayer Partyspiel">
+    <meta property="og:description"
+        content="Spiele das ultimative Undercover soziale Deduktionsspiel online! Mit 13 Wortkategorien, benutzerdefinierten Wörtern, mobiloptimierter Oberfläche und Unterstützung für 4-20 Spieler. Perfekt für Partys, Teambuilding und Familienspaß. Kostenlos spielen!">
+    <meta property="og:image" content="./undercover.png">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Party Games">
+    <link rel="canonical" href="https://www.bestpartygames.net/de/games/undercover/undercover.html">
+    <title>Undercover Spiel Online | Kostenlos Multiplayer Mr White</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./undercovebg.jpg" as="image">
+    <link rel="preload" href="./undercover.png" as="image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./undercover.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./undercover.png">
+    <link rel="apple-touch-icon" href="./undercover.png">
+    <link rel="shortcut icon" href="./undercover.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="/style/main.css" rel="stylesheet">
+
+    <link href="undercover.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.hidden {
+            display: none;
+        }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Undercover Spiel Online",
+      "description": "Das ultimative soziale Deduktions-Partyspiel mit 13 Wortkategorien (Essen & Trinken, Tiere, Gegenstände, Berufe & Rollen, Unterhaltung, Natur & Wetter, Lustig, Sport & Fitness, Technologie & Digital, Reisen & Orte, Beziehungen, Marken & Unternehmen, Historische Persönlichkeiten), benutzerdefinierten Wörtern, mobiloptimierter Oberfläche mit großen touch-freundlichen Buttons und Unterstützung für mehrere Spion-Konfigurationen. Perfekt für Partys, Teambuilding, Familientreffen und Online-Events mit 4-20 Spielern.",
+      "numberOfPlayers": {
+        "@type": "QuantitativeValue",
+        "minValue": 4,
+        "maxValue": 20
+      },
+      "gameItem": "Online Partyspiel",
+      "audience": {
+        "@type": "Audience",
+        "suggestedMinAge": "12"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "http://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+
+    <main class="container" style="padding-top: 2rem; padding-bottom: 3rem;">
+        <div class="text-center mb-5">
+            <div class="game-logo-container mb-4">
+                <img src="./undercover.png" alt="Undercover Spiel Logo - Soziales Deduktions Partyspiel" class="game-logo"
+                    width="200" height="200" loading="lazy">
+            </div>
+            <h1 class="cute-title">Undercover Spiel Online</h1>
+            <p class="text-light mb-0">Finde den Undercover unter uns!</p>
+        </div>
+
+        <!-- Game Setup Section -->
+        <section id="setup-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4"
+            aria-labelledby="setup-title">
+            <div class="card-body p-4">
+                <h2 id="setup-title" class="card-title h4 mb-4 text-light">Spieleinstellungen</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="playerCount" class="text-light mb-2">Anzahl der Spieler (4-20)</label>
+                            <input type="number" class="form-control" id="playerCount" min="4" max="20" value="4"
+                                aria-describedby="playerCountHelp">
+                            <small id="playerCountHelp" class="form-text text-light">Wähle zwischen 4 und 20
+                                Spielern</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="undercoverCount" class="text-light mb-2">Anzahl der Spione (1-3)</label>
+                            <input type="number" class="form-control" id="undercoverCount" min="1" max="3" value="1"
+                                aria-describedby="spyCountHelp">
+                            <small id="spyCountHelp" class="form-text text-light">Wähle die Anzahl der Spione</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="whiteCount" class="text-light mb-2">Anzahl der Blanks</label>
+                            <input type="number" class="form-control" id="whiteCount" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <div class="mb-4">
+                        <label class="text-light mb-2 d-block" for="categorySelect">Wortkategorie wählen:</label>
+                        <select class="form-select" id="categorySelect" aria-label="Wortkategorie wählen">
+                            <option value="all">Alle Kategorien (Gemischt) 👑</option>
+                            <optgroup label="Kostenlose Kategorien">
+                                <option value="Essen & Trinken" selected>Essen & Trinken</option>
+                                <option value="Tiere">Tiere</option>
+                                <option value="Gegenstände">Gegenstände</option>
+                                <option value="Berufe & Rollen">Berufe & Rollen</option>
+                                <option value="Unterhaltung">Unterhaltung</option>
+                                <option value="Natur & Wetter">Natur & Wetter</option>
+                            </optgroup>
+                            <optgroup label="Premium Kategorien 🔒">
+                                <option value="Lustig">Lustig 👑</option>
+                                <option value="Sport & Fitness">Sport & Fitness 👑</option>
+                                <option value="Technologie & Digital">Technologie & Digital 👑</option>
+                                <option value="Reisen & Orte">Reisen & Orte 👑</option>
+                                <option value="Beziehungen">Beziehungen 👑</option>
+                                <option value="Marken & Unternehmen">Marken & Unternehmen 👑</option>
+                                <option value="Historische Persönlichkeiten">Historische Persönlichkeiten 👑</option>
+                            </optgroup>
+                        </select>
+                        <small class="text-light d-block mt-2">👑 Premium Kategorien erfordern eine Mitgliedschaft</small>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="useCustomWords">
+                        <label class="form-check-label" for="useCustomWords">Eigene Wörter verwenden</label>
+                    </div>
+                    <div id="customWordsSection" class="mt-3" style="display: none;">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="customCivilianWord" class="text-light mb-2">Zivilisten-Wort</label>
+                                    <input type="text" class="form-control" id="customCivilianWord">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="customUndercoverWord" class="text-light mb-2">Undercover-Wort</label>
+                                    <input type="text" class="form-control" id="customUndercoverWord">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-pink btn-lg px-5 rounded-pill" onclick="startGame()">
+                        <i class="fas fa-play me-2"></i>Spiel starten
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Upgrade Modal -->
+        <div id="premium-modal" class="modal-overlay hidden">
+            <div class="card bg-darker shadow-lg border-pink rounded-4" style="max-width: 500px; margin: 10% auto; position: relative;">
+                <div class="card-body p-4 text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-crown text-warning" style="font-size: 4rem;"></i>
+                    </div>
+                    <h3 class="h4 mb-3 text-light">Premium Kategorien freischalten</h3>
+                    <p class="text-light mb-4">Diese Kategorie erfordert eine Premium-Mitgliedschaft. Upgrade, um freizuschalten:</p>
+                    <ul class="text-light text-start mb-4" style="max-width: 300px; margin: 0 auto;">
+                        <li>Lustig - Humorvolle Wörter</li>
+                        <li>Sport & Fitness - Gesundheitsthemen</li>
+                        <li>Technologie & Digital - Moderne Technik</li>
+                        <li>Reisen & Orte - Weltweite Standorte</li>
+                        <li>Beziehungen - Emotionale Themen</li>
+                        <li>Marken & Unternehmen - Berühmte Marken</li>
+                        <li>Historische Persönlichkeiten - Historisches Wissen</li>
+                        <li>Alle Kategorien Gemischt Modus</li>
+                    </ul>
+                    <div class="d-flex gap-2 justify-content-center mt-4">
+                        <button class="btn btn-pink btn-lg px-4 rounded-pill" onclick="window.location.href='/de/premium.html'">
+                            <i class="fas fa-crown me-2"></i>Jetzt upgraden
+                        </button>
+                        <button class="btn btn-outline-pink btn-lg px-4 rounded-pill" onclick="closePremiumModal()">
+                            Abbrechen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Word Display Section -->
+        <div id="word-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
+            <div class="card-body p-4 text-center">
+                <h3 class="h5 mb-4 text-light">Spieler <span id="currentPlayer" class="text-pink">1</span> ist dran</h3>
+                <div class="flip-card mx-auto">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front d-flex align-items-center justify-content-center">
+                            <div class="cute-text">Tippen, um dein Wort zu sehen</div>
+                        </div>
+                        <div class="flip-card-back d-flex align-items-center justify-content-center">
+                            <div id="wordDisplay" class="cute-text"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-pink btn-lg px-5 rounded-pill mt-4" onclick="nextPlayer()">
+                    <i class="fas fa-arrow-right me-2"></i>Nächster Spieler
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Play Section -->
+        <div id="game-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
+            <div class="card-body p-4" id="game-content">
+                <h3 class="h5 mb-4 text-light">Spieler</h3>
+                <form id="voteForm">
+                    <div class="player-list rounded-4 p-3 mb-4" id="playerList">
+                        <!-- Players will be added here dynamically -->
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-pink btn-lg px-5 rounded-pill mb-3"
+                            onclick="eliminatePlayer()">
+                            <i class="fas fa-user-minus me-2"></i>Spieler eliminieren
+                        </button>
+                        <button type="button" class="btn btn-outline-pink btn-lg px-5 rounded-pill"
+                            onclick="resetGame()">
+                            <i class="fas fa-redo me-2"></i>Nochmal spielen
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Game Rules Section -->
+        <section class="card bg-darker shadow-lg mb-4 border-pink rounded-4">
+            <div class="card-body p-4">
+                <h2 class="card-title h4 mb-4 text-light">Wie man Undercover spielt</h2>
+                <div class="text-light">
+                    <h3 class="h6 text-pink mb-3">Spiel-Features:</h3>
+                    <ul class="mb-4">
+                        <li><strong>13 Wortkategorien:</strong> Essen & Trinken, Tiere, Gegenstände, Berufe & Rollen,
+                            Unterhaltung, Natur & Wetter, Lustig, Sport & Fitness, Technologie & Digital, Reisen & Orte,
+                            Beziehungen, Marken & Unternehmen, Historische Persönlichkeiten</li>
+                        <li><strong>Eigene Wörter:</strong> Erstelle deine eigenen Wortpaare für personalisiertes Spielerlebnis</li>
+                        <li><strong>Mobil optimiert:</strong> Große, touch-freundliche Auswahlbuttons für einfaches Spielen
+                            auf jedem Gerät</li>
+                        <li><strong>Flexible Spieleranzahl:</strong> Unterstützung für 4-20 Spieler mit anpassbaren Spion- und
+                            Blank-Karten-Optionen</li>
+                        <li><strong>Sofortiger Start:</strong> Keine Registrierung erforderlich, sofort losspielen</li>
+                    </ul>
+
+                    <h3 class="h6 text-pink mb-3">Spielregeln:</h3>
+                    <ol class="mb-4">
+                        <li>Jeder Spieler erhält ein geheimes Wort - die meisten Spieler erhalten das gleiche "Zivilisten"-Wort,
+                            während Undercover-Spieler ein ähnliches, aber anderes Wort erhalten.</li>
+                        <li>Die Spieler beschreiben nacheinander ihr Wort, ohne es direkt zu sagen.</li>
+                        <li>Nach jeder Runde könnt ihr mit unseren großen, leicht zu drückenden Buttons abstimmen,
+                            wer eurer Meinung nach der Undercover ist.</li>
+                        <li>Die Person mit den meisten Stimmen wird eliminiert.</li>
+                        <li>Das Spiel geht weiter, bis entweder alle Undercover-Spieler gefunden wurden (Zivilisten gewinnen)
+                            oder die Anzahl der Undercover den Zivilisten entspricht (Undercover gewinnt).</li>
+                    </ol>
+
+                    <h3 class="h6 text-pink mb-3">Profi-Tipps:</h3>
+                    <ul class="mb-4">
+                        <li><strong>Sei subtil:</strong> Vermeide es, in deinen Beschreibungen zu verraten, ob du ein Zivilist
+                            oder Undercover bist!</li>
+                        <li><strong>Höre genau zu:</strong> Achte auf subtile Unterschiede in der Art, wie andere ihre Wörter
+                            beschreiben</li>
+                        <li><strong>Nutze Kategorien strategisch:</strong> Verschiedene Wortkategorien bieten unterschiedliche
+                            Schwierigkeitsgrade</li>
+                        <li><strong>Mobilfreundlich:</strong> Unsere optimierte Oberfläche macht das Abstimmen auf
+                            Smartphones und Tablets schnell und einfach</li>
+                    </ul>
+
+                    <p class="mb-0"><strong>Perfekt für:</strong> Büropartys, Familientreffen, Teambuilding-Events,
+                        Online-Meetings, Schulaktivitäten und gesellschaftliche Zusammenkünfte. Die große Button-Oberfläche
+                        stellt sicher, dass jeder leicht mitmachen kann!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">Über uns</h2>
+                    <p>Party Games Collection ist Ihre erstklassige Online-Destination für kostenlose, interaktive Partyspiele.
+                        Wir bieten eine vielfältige Sammlung fesselnder sozialer Spiele, darunter Find the Spy, Never Have I Ever
+                        und mehr - perfekt für virtuelle Zusammenkünfte, Partys und Teambuilding-Events. Schließen Sie sich
+                        Tausenden von Spielern weltweit an für unvergessliche Spielerlebnisse!</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">Schnelllinks</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="../../index.html" class="text-light text-decoration-none">Spiele</a></li>
+                        <li><a href="../../feedback.html" class="text-light text-decoration-none">Feedback</a></li>
+                        <li><a href="../../TheList.html" class="text-light text-decoration-none">Die Liste</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">&copy; 2025 Party Games. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/de/js/game-navigation-de.js"></script>
+    <script src="undercover-de.js"></script>
+</body>
+
+</html>

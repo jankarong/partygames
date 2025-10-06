@@ -267,22 +267,36 @@ class GameNavigation {
         const currentPath = window.location.pathname;
         let newPath;
 
+        // Games that don't have Chinese/German versions
+        const englishOnlyGames = ['charades2', 'findthespy', 'numberguess'];
+        const isEnglishOnly = englishOnlyGames.some(game => currentPath.includes(game));
+
         if (lang === 'zh') {
             // Switch to Chinese version
             if (currentPath.startsWith('/zh/')) {
                 // Already on Chinese version
                 return;
             }
-            // Remove /de/ if present, then add /zh/
-            newPath = '/zh' + currentPath.replace('/de/', '/');
+            // If this is an English-only game, go to Chinese homepage instead
+            if (isEnglishOnly) {
+                newPath = '/zh/index.html';
+            } else {
+                // Remove /de/ if present, then add /zh/
+                newPath = '/zh' + currentPath.replace('/de/', '/');
+            }
         } else if (lang === 'de') {
             // Switch to German version
             if (currentPath.startsWith('/de/')) {
                 // Already on German version
                 return;
             }
-            // Remove /zh/ if present, then add /de/
-            newPath = '/de' + currentPath.replace('/zh/', '/');
+            // If this is an English-only game, go to German homepage instead
+            if (isEnglishOnly) {
+                newPath = '/de/index.html';
+            } else {
+                // Remove /zh/ if present, then add /de/
+                newPath = '/de' + currentPath.replace('/zh/', '/');
+            }
         } else {
             // Switch to English version
             if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/')) {

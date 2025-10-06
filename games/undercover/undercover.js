@@ -5,6 +5,7 @@ let gameState = {
     undercoverWord: '',
     eliminatedPlayers: new Set(),
     selectedCategories: ['Food & Drink', 'Animals', 'Objects', 'Jobs & Roles', 'Entertainment', 'Nature & Weather'],
+    premiumCategories: ['Funny', 'Sports & Fitness', 'Technology & Digital', 'Travel & Places', 'Relationships', 'Brands & Companies', 'Historical Figures'],
     wordsByCategory: {
         'Food & Drink': [
             ['Pizza', 'Burger'],
@@ -229,15 +230,346 @@ let gameState = {
             ['Tickle', 'Poke'],
             ['Squirt', 'Spray'],
             ['Squeeze', 'Pinch']
+        ],
+        'Sports & Fitness': [
+            ['Yoga', 'Pilates'],
+            ['Marathon', 'Sprint'],
+            ['Gym', 'Fitness Center'],
+            ['Treadmill', 'Bike'],
+            ['Dumbbells', 'Barbells'],
+            ['Pushup', 'Situp'],
+            ['Protein Shake', 'Energy Drink'],
+            ['Yoga Mat', 'Exercise Mat'],
+            ['Running Shoes', 'Training Shoes'],
+            ['Squat', 'Lunge'],
+            ['Cardio', 'Strength Training'],
+            ['Personal Trainer', 'Coach'],
+            ['Stretching', 'Warming Up'],
+            ['Bench Press', 'Chest Press'],
+            ['Burpee', 'Jump Squat'],
+            ['Plank', 'Bridge'],
+            ['Cycling', 'Spinning'],
+            ['CrossFit', 'Boot Camp'],
+            ['Boxing', 'Kickboxing'],
+            ['Jump Rope', 'Skipping'],
+            ['Pull Up', 'Chin Up'],
+            ['Deadlift', 'Clean and Jerk'],
+            ['Sports Bra', 'Tank Top'],
+            ['Water Bottle', 'Shaker'],
+            ['Resistance Band', 'Weight Belt'],
+            ['Foam Roller', 'Massage Ball'],
+            ['Fitness Tracker', 'Smartwatch'],
+            ['Recovery', 'Rest Day'],
+            ['Muscle Gain', 'Weight Loss'],
+            ['Rep', 'Set'],
+            ['Jogging', 'Running'],
+            ['Abs', 'Core'],
+            ['Biceps', 'Triceps'],
+            ['Rowing', 'Kayaking'],
+            ['Climbing', 'Bouldering'],
+            ['Zumba', 'Aerobics'],
+            ['HIIT', 'Circuit Training'],
+            ['Kettlebell', 'Medicine Ball'],
+            ['Leg Press', 'Calf Raise'],
+            ['Shoulder Press', 'Lateral Raise'],
+            ['Crunch', 'Leg Raise'],
+            ['Mountain Climber', 'High Knees'],
+            ['Wall Sit', 'Squat Hold'],
+            ['Rowing Machine', 'Elliptical'],
+            ['Protein Bar', 'Energy Bar'],
+            ['Pre-Workout', 'Post-Workout'],
+            ['Bulk', 'Cut'],
+            ['Gym Bag', 'Duffel Bag'],
+            ['Sneakers', 'Cleats'],
+            ['Sweatband', 'Headband']
+        ],
+        'Technology & Digital': [
+            ['Smartphone', 'Tablet'],
+            ['WiFi', 'Bluetooth'],
+            ['App', 'Software'],
+            ['Email', 'Text Message'],
+            ['Social Media', 'Platform'],
+            ['Streaming', 'Download'],
+            ['Cloud Storage', 'Hard Drive'],
+            ['Password', 'PIN'],
+            ['Screenshot', 'Screen Recording'],
+            ['Hashtag', 'Mention'],
+            ['Like', 'Share'],
+            ['Follower', 'Subscriber'],
+            ['Notification', 'Alert'],
+            ['Emoji', 'Sticker'],
+            ['Video Call', 'Voice Call'],
+            ['Browser', 'Search Engine'],
+            ['Website', 'Web Page'],
+            ['Upload', 'Download'],
+            ['Login', 'Sign In'],
+            ['Update', 'Upgrade'],
+            ['Bug', 'Glitch'],
+            ['AI', 'Machine Learning'],
+            ['VR', 'AR'],
+            ['Cryptocurrency', 'Bitcoin'],
+            ['NFT', 'Digital Art'],
+            ['Podcast', 'Audiobook'],
+            ['E-book', 'PDF'],
+            ['USB', 'SD Card'],
+            ['Router', 'Modem'],
+            ['Firewall', 'Antivirus'],
+            ['Backup', 'Restore'],
+            ['Cache', 'Cookies'],
+            ['Spam', 'Junk Mail'],
+            ['Folder', 'Directory'],
+            ['File', 'Document'],
+            ['Copy', 'Paste'],
+            ['Save', 'Export'],
+            ['Keyboard', 'Mouse'],
+            ['Touchscreen', 'Trackpad'],
+            ['Charger', 'Power Bank'],
+            ['Laptop', 'Desktop'],
+            ['SSD', 'HDD'],
+            ['RAM', 'Memory'],
+            ['CPU', 'Processor'],
+            ['GPU', 'Graphics Card'],
+            ['Pixel', 'Resolution'],
+            ['Refresh Rate', 'Frame Rate'],
+            ['Bandwidth', 'Speed'],
+            ['Server', 'Host'],
+            ['Domain', 'URL']
+        ],
+        'Travel & Places': [
+            ['Airport', 'Train Station'],
+            ['Hotel', 'Hostel'],
+            ['Passport', 'Visa'],
+            ['Suitcase', 'Backpack'],
+            ['Flight', 'Journey'],
+            ['Tourist', 'Traveler'],
+            ['Vacation', 'Holiday'],
+            ['Cruise', 'Yacht'],
+            ['Camping', 'Glamping'],
+            ['Museum', 'Gallery'],
+            ['Monument', 'Landmark'],
+            ['City', 'Town'],
+            ['Capital', 'Metropolis'],
+            ['Restaurant', 'Cafe'],
+            ['Bar', 'Pub'],
+            ['Mall', 'Market'],
+            ['Park', 'Plaza'],
+            ['Zoo', 'Aquarium'],
+            ['Temple', 'Church'],
+            ['Casino', 'Resort'],
+            ['Beach Resort', 'Ski Resort'],
+            ['Souvenir', 'Gift'],
+            ['Map', 'GPS'],
+            ['Tour Guide', 'Travel Agent'],
+            ['Boarding Pass', 'Ticket'],
+            ['Check-in', 'Check-out'],
+            ['Jet Lag', 'Time Zone'],
+            ['Foreign Currency', 'Exchange Rate'],
+            ['Duty Free', 'Tax Refund'],
+            ['Itinerary', 'Travel Plan'],
+            ['Taxi', 'Uber'],
+            ['Bus', 'Tram'],
+            ['Subway', 'Metro'],
+            ['Ferry', 'Boat'],
+            ['Rental Car', 'Lease'],
+            ['Motel', 'Inn'],
+            ['Airbnb', 'Homestay'],
+            ['Boutique Hotel', 'Luxury Hotel'],
+            ['Buffet', 'A la Carte'],
+            ['Street Food', 'Food Court'],
+            ['Viewpoint', 'Observation Deck'],
+            ['Beach', 'Coastline'],
+            ['Mountain', 'Peak'],
+            ['Valley', 'Gorge'],
+            ['Desert', 'Oasis'],
+            ['Rainforest', 'Jungle'],
+            ['Cathedral', 'Mosque'],
+            ['Palace', 'Castle'],
+            ['Statue', 'Sculpture'],
+            ['Bridge', 'Tower']
+        ],
+        'Relationships': [
+            ['Boyfriend', 'Girlfriend'],
+            ['Husband', 'Wife'],
+            ['Dating', 'Courting'],
+            ['First Date', 'Blind Date'],
+            ['Love', 'Crush'],
+            ['Valentine', 'Anniversary'],
+            ['Proposal', 'Engagement'],
+            ['Wedding', 'Marriage'],
+            ['Honeymoon', 'Vacation'],
+            ['Romance', 'Passion'],
+            ['Flirting', 'Teasing'],
+            ['Breakup', 'Divorce'],
+            ['Ex', 'Former'],
+            ['Single', 'Available'],
+            ['Commitment', 'Relationship'],
+            ['Trust', 'Loyalty'],
+            ['Jealousy', 'Envy'],
+            ['Argument', 'Fight'],
+            ['Makeup', 'Reconcile'],
+            ['Soulmate', 'Twin Flame'],
+            ['Friend Zone', 'Rejected'],
+            ['Chemistry', 'Connection'],
+            ['Red Flag', 'Deal Breaker'],
+            ['Toxic', 'Unhealthy'],
+            ['Supportive', 'Caring'],
+            ['Cheating', 'Affair'],
+            ['Long Distance', 'Remote'],
+            ['Exclusive', 'Committed'],
+            ['Casual', 'Serious'],
+            ['Moving In', 'Cohabiting'],
+            ['Partner', 'Significant Other'],
+            ['Bae', 'Sweetheart'],
+            ['Fiancé', 'Fiancée'],
+            ['Newlyweds', 'Just Married'],
+            ['Date Night', 'Quality Time'],
+            ['Kiss', 'Hug'],
+            ['Hold Hands', 'Cuddle'],
+            ['Compliment', 'Flattery'],
+            ['Gift', 'Surprise'],
+            ['Flowers', 'Chocolates'],
+            ['Love Letter', 'Text Message'],
+            ['Miss You', 'Thinking of You'],
+            ['Butterflies', 'Heart Racing'],
+            ['Spark', 'Vibe'],
+            ['Talking Stage', 'Getting to Know'],
+            ['Official', 'Going Steady'],
+            ['Open Relationship', 'Polyamory'],
+            ['Trial Separation', 'Break'],
+            ['Closure', 'Moving On'],
+            ['Rebound', 'Fling']
+        ],
+        'Brands & Companies': [
+            ['Apple', 'Samsung'],
+            ['Nike', 'Adidas'],
+            ['McDonald\'s', 'Burger King'],
+            ['Coca-Cola', 'Pepsi'],
+            ['Starbucks', 'Costa'],
+            ['Google', 'Bing'],
+            ['Facebook', 'Instagram'],
+            ['YouTube', 'TikTok'],
+            ['Amazon', 'eBay'],
+            ['Netflix', 'Disney+'],
+            ['Spotify', 'Apple Music'],
+            ['PlayStation', 'Xbox'],
+            ['iPhone', 'Android'],
+            ['Windows', 'Mac'],
+            ['Tesla', 'BMW'],
+            ['Mercedes', 'Audi'],
+            ['Toyota', 'Honda'],
+            ['Ford', 'Chevrolet'],
+            ['IKEA', 'HomeDepot'],
+            ['Walmart', 'Target'],
+            ['Louis Vuitton', 'Gucci'],
+            ['Rolex', 'Omega'],
+            ['Mastercard', 'Visa'],
+            ['Uber', 'Lyft'],
+            ['Airbnb', 'Booking.com'],
+            ['Subway', 'Chipotle'],
+            ['KFC', 'Popeyes'],
+            ['Pizza Hut', 'Domino\'s'],
+            ['H&M', 'Zara'],
+            ['Lego', 'Playmobil'],
+            ['Twitter', 'X'],
+            ['WhatsApp', 'Telegram'],
+            ['Zoom', 'Teams'],
+            ['Slack', 'Discord'],
+            ['Reddit', 'Tumblr'],
+            ['Twitch', 'Mixer'],
+            ['Snapchat', 'BeReal'],
+            ['LinkedIn', 'Indeed'],
+            ['PayPal', 'Venmo'],
+            ['Stripe', 'Square'],
+            ['FedEx', 'UPS'],
+            ['DHL', 'USPS'],
+            ['Porsche', 'Ferrari'],
+            ['Lamborghini', 'Bugatti'],
+            ['Lexus', 'Infiniti'],
+            ['Volkswagen', 'Mazda'],
+            ['Chanel', 'Dior'],
+            ['Prada', 'Versace'],
+            ['Armani', 'Burberry'],
+            ['Cartier', 'Tiffany']
+        ],
+        'Historical Figures': [
+            ['Napoleon', 'Caesar'],
+            ['Einstein', 'Newton'],
+            ['Gandhi', 'Mandela'],
+            ['Lincoln', 'Washington'],
+            ['Shakespeare', 'Dickens'],
+            ['Beethoven', 'Mozart'],
+            ['Leonardo da Vinci', 'Michelangelo'],
+            ['Picasso', 'Van Gogh'],
+            ['Marie Curie', 'Rosalind Franklin'],
+            ['Cleopatra', 'Nefertiti'],
+            ['Churchill', 'Roosevelt'],
+            ['Joan of Arc', 'Boudica'],
+            ['Marco Polo', 'Columbus'],
+            ['Darwin', 'Galileo'],
+            ['Socrates', 'Plato'],
+            ['Alexander the Great', 'Genghis Khan'],
+            ['Queen Victoria', 'Queen Elizabeth'],
+            ['Martin Luther King', 'Rosa Parks'],
+            ['Helen Keller', 'Anne Frank'],
+            ['Mother Teresa', 'Princess Diana'],
+            ['Karl Marx', 'Adam Smith'],
+            ['Freud', 'Jung'],
+            ['Tesla', 'Edison'],
+            ['Wright Brothers', 'Lindbergh'],
+            ['Armstrong', 'Aldrin'],
+            ['Homer', 'Virgil'],
+            ['Buddha', 'Confucius'],
+            ['Aristotle', 'Archimedes'],
+            ['Copernicus', 'Kepler'],
+            ['Voltaire', 'Rousseau'],
+            ['Mozart', 'Bach'],
+            ['Rembrandt', 'Vermeer'],
+            ['Dante', 'Petrarch'],
+            ['Frederick the Great', 'Peter the Great'],
+            ['Catherine the Great', 'Elizabeth I'],
+            ['Hannibal', 'Scipio'],
+            ['Sun Tzu', 'Machiavelli'],
+            ['Henry VIII', 'Louis XIV'],
+            ['Charlemagne', 'Otto the Great'],
+            ['Saladin', 'Richard the Lionheart'],
+            ['Attila the Hun', 'Tamerlane'],
+            ['Spartacus', 'Braveheart'],
+            ['Harriet Tubman', 'Sojourner Truth'],
+            ['Susan B. Anthony', 'Elizabeth Cady Stanton'],
+            ['Florence Nightingale', 'Clara Barton'],
+            ['Amelia Earhart', 'Bessie Coleman'],
+            ['Christopher Columbus', 'Vasco da Gama'],
+            ['Magellan', 'Cook'],
+            ['Lewis and Clark', 'Shackleton'],
+            ['Neil Armstrong', 'Yuri Gagarin']
         ]
     }
 };
 
-function startGame() {
+// Check if user has premium access
+async function isPremiumUser() {
+    // Use the global authManager to check premium status
+    if (window.authManager) {
+        return await window.authManager.checkUserPremiumStatus();
+    }
+    return false;
+}
+
+async function startGame() {
     const playerCount = parseInt(document.getElementById('playerCount').value);
     const undercoverCount = parseInt(document.getElementById('undercoverCount').value);
     const whiteCount = parseInt(document.getElementById('whiteCount').value);
     const useCustomWords = document.getElementById('useCustomWords').checked;
+    const selectedCategory = document.getElementById('categorySelect').value;
+
+    // Check if selected category requires premium (including 'all')
+    if (selectedCategory === 'all' || gameState.premiumCategories.includes(selectedCategory)) {
+        const isPremium = await isPremiumUser();
+        if (!isPremium) {
+            showPremiumModal();
+            return;
+        }
+    }
 
     if (undercoverCount + whiteCount >= playerCount) {
         alert('Too many undercover and Mr. White players!');
@@ -260,9 +592,6 @@ function startGame() {
         gameState.civilianWord = civilianWord;
         gameState.undercoverWord = undercoverWord;
     } else {
-        // Get selected category from dropdown
-        const selectedCategory = document.getElementById('categorySelect').value;
-
         let availableWordPairs = [];
 
         if (selectedCategory === 'all') {
@@ -448,6 +777,16 @@ function resetGame() {
     document.getElementById('setup-section').classList.remove('hidden');
 }
 
+
+// Show premium modal
+function showPremiumModal() {
+    document.getElementById('premium-modal').classList.remove('hidden');
+}
+
+// Close premium modal
+function closePremiumModal() {
+    document.getElementById('premium-modal').classList.add('hidden');
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const useCustomWordsCheckbox = document.getElementById('useCustomWords');
