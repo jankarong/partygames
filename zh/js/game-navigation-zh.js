@@ -35,6 +35,7 @@ class GameNavigation {
         this.makeLogosClickable();
         this.bindEvents();
         this.startPulseReminder();
+        this.initAuth();
     }
 
     createFloatingNav() {
@@ -67,6 +68,28 @@ class GameNavigation {
                     <a href="/zh/premium.html" class="premium-highlight">
                         <i class="fas fa-crown"></i> Premium
                     </a>
+                    <div class="auth-section">
+                        <div class="auth-buttons" id="nav-auth-buttons">
+                            <a href="/login.html" class="auth-link login-link">
+                                <i class="fas fa-sign-in-alt"></i><span>登录</span>
+                            </a>
+                            <a href="/register.html" class="auth-link register-link">
+                                <i class="fas fa-user-plus"></i><span>注册</span>
+                            </a>
+                        </div>
+                        <div class="user-info-nav" id="nav-user-info" style="display: none;">
+                            <div class="user-details-nav">
+                                <div class="user-avatar-nav" id="nav-user-avatar">U</div>
+                                <div class="user-text">
+                                    <div class="user-email-nav" id="nav-user-email">user@example.com</div>
+                                    <span class="premium-status-nav" id="nav-premium-status">免费用户</span>
+                                </div>
+                            </div>
+                            <button class="signout-btn" onclick="handleSignOut()">
+                                <i class="fas fa-sign-out-alt"></i><span>退出登录</span>
+                            </button>
+                        </div>
+                    </div>
                     <div class="language-dropdown">
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇨🇳 中文
@@ -304,6 +327,62 @@ class GameNavigation {
         setTimeout(() => {
             this.showRecommendations();
         }, 2000);
+    }
+
+    // 初始化认证功能
+    initAuth() {
+        // 等待auth manager可用
+        if (window.authManager) {
+            this.setupAuthUI();
+            window.authManager.onAuthStateChange((event, session) => {
+                this.updateAuthUI(session);
+            });
+        } else {
+            // 短暂延迟后重试
+            setTimeout(() => this.initAuth(), 100);
+        }
+    }
+
+    // 设置认证UI
+    setupAuthUI() {
+        if (window.authManager && window.authManager.isAuthenticated()) {
+            this.updateAuthUI({ user: window.authManager.getCurrentUser() });
+        }
+    }
+
+    // 根据用户状态更新认证UI
+    updateAuthUI(session) {
+        const authButtons = document.getElementById('nav-auth-buttons');
+        const userInfo = document.getElementById('nav-user-info');
+
+        if (!authButtons || !userInfo) return;
+
+        if (session && session.user) {
+            // 用户已登录
+            authButtons.style.display = 'none';
+            userInfo.style.display = 'block';
+
+            const userEmail = document.getElementById('nav-user-email');
+            const userAvatar = document.getElementById('nav-user-avatar');
+            const premiumStatus = document.getElementById('nav-premium-status');
+
+            if (userEmail) userEmail.textContent = session.user.email;
+            if (userAvatar) userAvatar.textContent = session.user.email.charAt(0).toUpperCase();
+
+            // 检查高级会员状态
+            if (window.authManager && window.authManager.checkUserPremiumStatus) {
+                window.authManager.checkUserPremiumStatus().then(isPremium => {
+                    if (premiumStatus) {
+                        premiumStatus.textContent = isPremium ? '高级会员' : '免费用户';
+                        premiumStatus.className = isPremium ? 'premium-status-nav premium' : 'premium-status-nav free';
+                    }
+                });
+            }
+        } else {
+            // 用户未登录
+            authButtons.style.display = 'block';
+            userInfo.style.display = 'none';
+        }
     }
 }
 

@@ -1,46 +1,46 @@
-// Default options
+// Standardoptionen
 const defaultActions = [
-    "Kiss",
-    "Nibble",
-    "Caress",
-    "Massage",
-    "Lick",
-    "Blow",
-    "Stroke",
-    "Touch",
-    "Tease"
+    "Küssen",
+    "Knabbern",
+    "Streicheln",
+    "Massieren",
+    "Lecken",
+    "Blasen",
+    "Streichen",
+    "Berühren",
+    "Necken"
 ];
 
 const defaultWheres = [
-    "Neck",
-    "Ears",
-    "Lips",
-    "Chest",
-    "Back",
-    "Thighs",
-    "Waist",
-    "Shoulders",
-    "Inner Arms"
+    "Nacken",
+    "Ohren",
+    "Lippen",
+    "Brust",
+    "Rücken",
+    "Oberschenkel",
+    "Taille",
+    "Schultern",
+    "Innere Arme"
 ];
 
 const defaultTimes = [
-    "5 seconds",
-    "10 seconds",
-    "15 seconds",
-    "20 seconds",
-    "25 seconds",
-    "30 seconds"
+    "5 Sekunden",
+    "10 Sekunden",
+    "15 Sekunden",
+    "20 Sekunden",
+    "25 Sekunden",
+    "30 Sekunden"
 ];
 
 let actions = [...defaultActions];
 let wheres = [...defaultWheres];
 let times = [...defaultTimes];
 
-// Initialize elements
+// Elemente initialisieren
 let actionDice, whereDice, timeDice, rollButton, resultDiv;
 let settingsButton, settingsPanel, actionOptions, whereOptions, timeOptions, saveNotification;
 
-// Initialize DOM elements after page load
+// DOM-Elemente nach dem Laden der Seite initialisieren
 function initializeElements() {
     actionDice = document.getElementById('actionDice');
     whereDice = document.getElementById('whereDice');
@@ -60,57 +60,57 @@ function getRandomItem(array) {
 }
 
 function rollDice() {
-    console.log('Rolling dice...');
+    console.log('Würfeln...');
 
-    // Add rolling animation class
+    // Rolling-Animation-Klasse hinzufügen
     actionDice.classList.add('rolling');
     whereDice.classList.add('rolling');
     timeDice.classList.add('rolling');
 
-    // Disable roll button during animation
+    // Würfelbutton während der Animation deaktivieren
     rollButton.disabled = true;
 
-    // Remove previous results
-    actionDice.querySelector('.dice-text').textContent = 'Rolling...';
-    whereDice.querySelector('.dice-text').textContent = 'Rolling...';
-    timeDice.querySelector('.dice-text').textContent = 'Rolling...';
+    // Vorherige Ergebnisse entfernen
+    actionDice.querySelector('.dice-text').textContent = 'Würfeln...';
+    whereDice.querySelector('.dice-text').textContent = 'Würfeln...';
+    timeDice.querySelector('.dice-text').textContent = 'Würfeln...';
     resultDiv.textContent = '';
 
-    // Wait for animation to complete
+    // Auf Abschluss der Animation warten
     setTimeout(() => {
-        // Get random options
+        // Zufällige Optionen abrufen
         const action = getRandomItem(actions);
         const where = getRandomItem(wheres);
         const time = getRandomItem(times);
 
-        // Update dice text
+        // Würfeltext aktualisieren
         actionDice.querySelector('.dice-text').textContent = action;
         whereDice.querySelector('.dice-text').textContent = where;
         timeDice.querySelector('.dice-text').textContent = time;
 
-        // Show result
-        resultDiv.textContent = `${action} ${where} for ${time}`;
+        // Ergebnis anzeigen
+        resultDiv.textContent = `${action} ${where} für ${time}`;
 
-        // Remove rolling animation class
+        // Rolling-Animation-Klasse entfernen
         actionDice.classList.remove('rolling');
         whereDice.classList.remove('rolling');
         timeDice.classList.remove('rolling');
 
-        // Re-enable roll button
+        // Würfelbutton wieder aktivieren
         rollButton.disabled = false;
     }, 1000);
 }
 
-// Check if user has premium access
+// Prüfen, ob Benutzer Premium-Zugang hat
 async function isPremiumUser() {
-    // Use the global authManager to check premium status
+    // Verwenden Sie den globalen authManager, um den Premium-Status zu prüfen
     if (window.authManager) {
         return await window.authManager.checkUserPremiumStatus();
     }
     return false;
 }
 
-// Show premium modal
+// Premium-Modal anzeigen
 function showPremiumModal() {
     const modal = document.getElementById('premium-modal');
     if (modal) {
@@ -118,7 +118,7 @@ function showPremiumModal() {
     }
 }
 
-// Close premium modal
+// Premium-Modal schließen
 function closePremiumModal() {
     const modal = document.getElementById('premium-modal');
     if (modal) {
@@ -126,9 +126,9 @@ function closePremiumModal() {
     }
 }
 
-// Settings Panel Functions
+// Einstellungspanel-Funktionen
 async function toggleSettings() {
-    // Check if user is premium before opening settings
+    // Vor dem Öffnen der Einstellungen prüfen, ob Benutzer Premium ist
     const isPremium = await isPremiumUser();
     if (!isPremium) {
         showPremiumModal();
@@ -156,7 +156,7 @@ function resetToDefault() {
     renderAllOptions();
 }
 
-// Track changes before saving
+// Änderungen vor dem Speichern verfolgen
 let pendingChanges = false;
 
 function renderOptions(options, containerId, type) {
@@ -223,7 +223,7 @@ function addOption(type) {
         'time': times
     };
 
-    const defaultValue = type === 'time' ? '30 seconds' : 'New Option';
+    const defaultValue = type === 'time' ? '30 Sekunden' : 'Neue Option';
     optionsMap[type].push(defaultValue);
     renderAllOptions();
     pendingChanges = true;
@@ -245,16 +245,16 @@ function renderAllOptions() {
 
 function loadSettings() {
     try {
-        const savedActions = localStorage.getItem('diceActions');
-        const savedWheres = localStorage.getItem('diceWheres');
-        const savedTimes = localStorage.getItem('diceTimes');
+        const savedActions = localStorage.getItem('diceActions-de');
+        const savedWheres = localStorage.getItem('diceWheres-de');
+        const savedTimes = localStorage.getItem('diceTimes-de');
 
         actions = savedActions ? JSON.parse(savedActions) : defaultActions;
         wheres = savedWheres ? JSON.parse(savedWheres) : defaultWheres;
         times = savedTimes ? JSON.parse(savedTimes) : defaultTimes;
     } catch (error) {
-        console.error('Error loading settings:', error);
-        // 如果出错，使用默认值
+        console.error('Fehler beim Laden der Einstellungen:', error);
+        // Falls ein Fehler auftritt, Standardwerte verwenden
         actions = [...defaultActions];
         wheres = [...defaultWheres];
         times = [...defaultTimes];
@@ -263,15 +263,15 @@ function loadSettings() {
 
 function saveSettings() {
     try {
-        localStorage.setItem('diceActions', JSON.stringify(actions));
-        localStorage.setItem('diceWheres', JSON.stringify(wheres));
-        localStorage.setItem('diceTimes', JSON.stringify(times));
+        localStorage.setItem('diceActions-de', JSON.stringify(actions));
+        localStorage.setItem('diceWheres-de', JSON.stringify(wheres));
+        localStorage.setItem('diceTimes-de', JSON.stringify(times));
     } catch (error) {
-        console.error('Error saving settings:', error);
+        console.error('Fehler beim Speichern der Einstellungen:', error);
     }
 }
 
-// 将需要的函数暴露到全局作用域
+// Erforderliche Funktionen für den globalen Scope verfügbar machen
 window.toggleSettings = toggleSettings;
 window.closeSettings = closeSettings;
 window.closePremiumModal = closePremiumModal;
@@ -281,18 +281,18 @@ window.removeOption = removeOption;
 window.resetToDefault = resetToDefault;
 window.saveChanges = saveChanges;
 
-// Initialize everything when the page loads
+// Alles beim Laden der Seite initialisieren
 window.addEventListener('load', () => {
-    console.log('Page loaded, initializing...');
+    console.log('Seite geladen, initialisiere...');
     initializeElements();
     loadSettings();
     renderAllOptions();
 
-    // Add event listeners
+    // Event-Listener hinzufügen
     rollButton.addEventListener('click', rollDice);
     settingsButton.addEventListener('click', toggleSettings);
 
-    // Add click outside listener to close settings
+    // Klick-außerhalb-Listener hinzufügen, um Einstellungen zu schließen
     document.addEventListener('click', (e) => {
         if (settingsPanel.classList.contains('open') &&
             !settingsPanel.contains(e.target) &&

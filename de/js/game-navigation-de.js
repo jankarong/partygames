@@ -35,6 +35,7 @@ class GameNavigation {
         this.makeLogosClickable();
         this.bindEvents();
         this.startPulseReminder();
+        this.initAuth();
     }
 
     createFloatingNav() {
@@ -67,6 +68,28 @@ class GameNavigation {
                     <a href="/de/premium.html" class="premium-highlight">
                         <i class="fas fa-crown"></i> Premium
                     </a>
+                    <div class="auth-section">
+                        <div class="auth-buttons" id="nav-auth-buttons">
+                            <a href="/login.html" class="auth-link login-link">
+                                <i class="fas fa-sign-in-alt"></i><span>Anmelden</span>
+                            </a>
+                            <a href="/register.html" class="auth-link register-link">
+                                <i class="fas fa-user-plus"></i><span>Registrieren</span>
+                            </a>
+                        </div>
+                        <div class="user-info-nav" id="nav-user-info" style="display: none;">
+                            <div class="user-details-nav">
+                                <div class="user-avatar-nav" id="nav-user-avatar">U</div>
+                                <div class="user-text">
+                                    <div class="user-email-nav" id="nav-user-email">user@example.com</div>
+                                    <span class="premium-status-nav" id="nav-premium-status">Kostenloser Benutzer</span>
+                                </div>
+                            </div>
+                            <button class="signout-btn" onclick="handleSignOut()">
+                                <i class="fas fa-sign-out-alt"></i><span>Abmelden</span>
+                            </button>
+                        </div>
+                    </div>
                     <div class="language-dropdown">
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇩🇪 Deutsch
@@ -314,6 +337,62 @@ class GameNavigation {
         setTimeout(() => {
             this.showRecommendations();
         }, 2000);
+    }
+
+    // Authentifizierung initialisieren
+    initAuth() {
+        // Warten, bis auth manager verfügbar ist
+        if (window.authManager) {
+            this.setupAuthUI();
+            window.authManager.onAuthStateChange((event, session) => {
+                this.updateAuthUI(session);
+            });
+        } else {
+            // Nach kurzer Verzögerung erneut versuchen
+            setTimeout(() => this.initAuth(), 100);
+        }
+    }
+
+    // Authentifizierungs-UI einrichten
+    setupAuthUI() {
+        if (window.authManager && window.authManager.isAuthenticated()) {
+            this.updateAuthUI({ user: window.authManager.getCurrentUser() });
+        }
+    }
+
+    // Authentifizierungs-UI basierend auf Benutzerstatus aktualisieren
+    updateAuthUI(session) {
+        const authButtons = document.getElementById('nav-auth-buttons');
+        const userInfo = document.getElementById('nav-user-info');
+
+        if (!authButtons || !userInfo) return;
+
+        if (session && session.user) {
+            // Benutzer ist angemeldet
+            authButtons.style.display = 'none';
+            userInfo.style.display = 'block';
+
+            const userEmail = document.getElementById('nav-user-email');
+            const userAvatar = document.getElementById('nav-user-avatar');
+            const premiumStatus = document.getElementById('nav-premium-status');
+
+            if (userEmail) userEmail.textContent = session.user.email;
+            if (userAvatar) userAvatar.textContent = session.user.email.charAt(0).toUpperCase();
+
+            // Premium-Status prüfen
+            if (window.authManager && window.authManager.checkUserPremiumStatus) {
+                window.authManager.checkUserPremiumStatus().then(isPremium => {
+                    if (premiumStatus) {
+                        premiumStatus.textContent = isPremium ? 'Premium' : 'Kostenloser Benutzer';
+                        premiumStatus.className = isPremium ? 'premium-status-nav premium' : 'premium-status-nav free';
+                    }
+                });
+            }
+        } else {
+            // Benutzer ist nicht angemeldet
+            authButtons.style.display = 'block';
+            userInfo.style.display = 'none';
+        }
     }
 }
 

@@ -101,8 +101,39 @@ function rollDice() {
     }, 1000);
 }
 
+// 检查用户是否为高级会员
+async function isPremiumUser() {
+    // 使用全局authManager检查高级会员状态
+    if (window.authManager) {
+        return await window.authManager.checkUserPremiumStatus();
+    }
+    return false;
+}
+
+// 显示高级会员弹窗
+function showPremiumModal() {
+    const modal = document.getElementById('premium-modal');
+    if (modal) {
+        modal.classList.remove('hidden');
+    }
+}
+
+// 关闭高级会员弹窗
+function closePremiumModal() {
+    const modal = document.getElementById('premium-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+    }
+}
+
 // 设置面板函数
-function toggleSettings() {
+async function toggleSettings() {
+    // 在打开设置前检查是否为高级会员
+    const isPremium = await isPremiumUser();
+    if (!isPremium) {
+        showPremiumModal();
+        return;
+    }
     settingsPanel.classList.toggle('open');
 }
 
@@ -243,6 +274,7 @@ function saveSettings() {
 // 将需要的函数暴露到全局作用域
 window.toggleSettings = toggleSettings;
 window.closeSettings = closeSettings;
+window.closePremiumModal = closePremiumModal;
 window.addOption = addOption;
 window.updateOption = updateOption;
 window.removeOption = removeOption;

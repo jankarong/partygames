@@ -443,25 +443,32 @@ function closeToast(toast) {
 
 // 登出函数
 async function handleSignOut() {
-    const result = await window.authManager.signOut();
     const lang = document.documentElement.lang || 'en';
 
-    if (result.success) {
-        const successMsg = {
-            'zh-CN': '退出登录成功',
-            'en': 'Successfully logged out',
-            'de': 'Erfolgreich abgemeldet'
-        };
-        showMessage(successMsg[lang] || successMsg['en'], 'success');
-        setTimeout(() => {
-            window.location.reload();
-        }, 1000);
-    } else {
-        const errorMsg = {
-            'zh-CN': '退出登录失败: ',
-            'en': 'Logout failed: ',
-            'de': 'Abmeldung fehlgeschlagen: '
-        };
-        showMessage((errorMsg[lang] || errorMsg['en']) + result.error, 'error');
+    try {
+        const result = await window.authManager.signOut();
+
+        if (result.success) {
+            const successMsg = {
+                'zh-CN': '退出登录成功',
+                'en': 'Successfully logged out',
+                'de': 'Erfolgreich abgemeldet'
+            };
+            showMessage(successMsg[lang] || successMsg['en'], 'success');
+        }
+    } catch (error) {
+        // 如果session已经不存在，也算成功退出
+        console.log('Session already cleared or missing:', error);
     }
+
+    // 无论如何都清理本地状态并刷新
+    setTimeout(() => {
+        // 清理本地存储
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.reload();
+    }, 500);
 }
+
+// 暴露到全局作用域
+window.handleSignOut = handleSignOut;
