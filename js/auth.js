@@ -115,8 +115,13 @@ class AuthManager {
     // 发送密码重置邮件
     async resetPassword(email) {
         try {
+            // 使用生产环境 URL，避免 localhost 问题
+            const redirectUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+                ? 'https://www.bestpartygames.net/reset-password.html'
+                : window.location.origin + '/reset-password.html';
+
             const { data, error } = await supabaseClient.auth.resetPasswordForEmail(email, {
-                redirectTo: window.location.origin + '/reset-password.html'
+                redirectTo: redirectUrl
             });
 
             if (error) throw error;
