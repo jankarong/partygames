@@ -4,8 +4,8 @@ let gameState = {
     civilianWord: '',
     undercoverWord: '',
     eliminatedPlayers: new Set(),
-    selectedCategories: ['食物饮品', '动物', '物品', '职业角色', '娱乐', '自然天气'],
-    premiumCategories: ['搞笑', '运动健身', '科技数码', '旅行地点', '情感关系', '品牌名称', '历史人物'],
+    selectedCategories: ['食物饮品', '动物', '物品', '职业角色', '娱乐', '自然天气', '搞笑'],
+    premiumCategories: ['运动健身', '科技数码', '旅行地点', '情感关系', '品牌名称', '历史人物'],
     wordsByCategory: {
         '食物饮品': [
             ['披萨', '汉堡'],
@@ -602,8 +602,8 @@ async function startGame() {
     const useCustomWords = document.getElementById('useCustomWords').checked;
     const selectedCategory = document.getElementById('categorySelect').value;
 
-    // 检查所选分类是否需要会员（包括'all'）
-    if (selectedCategory === 'all' || gameState.premiumCategories.includes(selectedCategory)) {
+    // 检查所选分类是否需要会员
+    if (gameState.premiumCategories.includes(selectedCategory)) {
         const isPremium = await isPremiumUser();
         if (!isPremium) {
             showPremiumModal();

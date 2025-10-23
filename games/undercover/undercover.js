@@ -4,8 +4,8 @@ let gameState = {
     civilianWord: '',
     undercoverWord: '',
     eliminatedPlayers: new Set(),
-    selectedCategories: ['Food & Drink', 'Animals', 'Objects', 'Jobs & Roles', 'Entertainment', 'Nature & Weather'],
-    premiumCategories: ['Funny', 'Sports & Fitness', 'Technology & Digital', 'Travel & Places', 'Relationships', 'Brands & Companies', 'Historical Figures'],
+    selectedCategories: ['Food & Drink', 'Animals', 'Objects', 'Jobs & Roles', 'Entertainment', 'Nature & Weather', 'Funny'],
+    premiumCategories: ['Sports & Fitness', 'Technology & Digital', 'Travel & Places', 'Relationships', 'Brands & Companies', 'Historical Figures'],
     wordsByCategory: {
         'Food & Drink': [
             ['Pizza', 'Burger'],
@@ -562,8 +562,8 @@ async function startGame() {
     const useCustomWords = document.getElementById('useCustomWords').checked;
     const selectedCategory = document.getElementById('categorySelect').value;
 
-    // Check if selected category requires premium (including 'all')
-    if (selectedCategory === 'all' || gameState.premiumCategories.includes(selectedCategory)) {
+    // Check if selected category requires premium
+    if (gameState.premiumCategories.includes(selectedCategory)) {
         const isPremium = await isPremiumUser();
         if (!isPremium) {
             showPremiumModal();
