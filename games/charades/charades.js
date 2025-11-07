@@ -23,6 +23,35 @@ const wordDatabase = {
         "Pirates of the Caribbean", "Frozen", "Avengers", "Toy Story",
         "Batman", "Indiana Jones", "Alien", "Jaws", "Superman", "Ghostbusters",
         "Wizard of Oz"
+    ],
+    funny: [
+        "Drunk", "Zombie", "Superhero", "Crying",
+        "Snob", "Banana Peel", "Chicken Dance",
+        "Elvis", "Invisible Box", "Sleepy",
+        "High Heels", "Baby", "Bad Back",
+        "Possessed", "Constipated", "Texting While Walking",
+        "Awkward Date", "Sneaking", "Drama", "Tripping",
+        "Hiccups", "Confused", "Shy", "Angry",
+        "Excited", "Tired", "Robot", "Astronaut"
+    ],
+    sports: [
+        "Swimming", "Tennis", "Basketball", "Football", "Baseball", "Soccer",
+        "Golf", "Volleyball", "Skiing", "Ice Hockey", "Boxing", "Wrestling",
+        "Gymnastics", "Surfing", "Skateboarding", "Rock Climbing", "Bowling",
+        "Table Tennis", "Badminton", "Archery"
+    ],
+    professions: [
+        "Doctor", "Teacher", "Chef", "Police Officer", "Firefighter", "Nurse",
+        "Engineer", "Lawyer", "Dentist", "Photographer", "Pilot", "Astronaut",
+        "Construction Worker", "Barber", "Actor", "Magician", "Clown", "Janitor",
+        "Librarian", "Security Guard"
+    ],
+    historical: [
+        "Napoleon Bonaparte", "Cleopatra", "Albert Einstein", "Shakespeare",
+        "Benjamin Franklin", "Joan of Arc", "Abraham Lincoln", "Julius Caesar",
+        "Marie Curie", "George Washington", "Queen Elizabeth I", "Leonardo da Vinci",
+        "Attila the Hun", "Socrates", "Martin Luther King Jr.", "Rosa Parks",
+        "Winston Churchill", "Marilyn Monroe", "Elvis Presley", "Mahatma Gandhi"
     ]
 };
 
