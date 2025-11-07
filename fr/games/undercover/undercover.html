@@ -1,57 +1,363 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agent Secret - Jeu de Déduction en Ligne</title>
-    <meta name="description" content="Jouez à Agent Secret en ligne ! Jeu de déduction et bluff pour les groupes.">
-    <meta name="keywords" content="agent secret, jeu de déduction, jeu de bluff, jeu de fête">
+    <meta name="description"
+        content="Jouez au Jeu Agent Secret en Ligne - jeu de déduction sociale pour 4-20 joueurs avec mots personnalisés. Gratuit, sans inscription">
+    <meta name="keywords"
+        content="jeu agent secret en ligne, jeu de déduction sociale, jeu d'espion, jeux multijoueurs, mr white jeu en ligne">
+    <meta property="og:title" content="Jeu Agent Secret en Ligne - Jeu de Société Multijoueur Gratuit">
+    <meta property="og:description"
+        content="Jouez au jeu de déduction sociale Agent Secret en ligne ! Contient 7 catégories de mots, mots personnalisés, interface optimisée mobile avec grands boutons de sélection, et support pour 4-20 joueurs. Parfait pour fêtes, team building et amusement en famille. Gratuit avec configuration instantanée !">
+    <meta property="og:image" content="./undercover.png">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Party Games">
     <link rel="canonical" href="https://www.bestpartygames.net/fr/games/undercover/undercover.html">
+    <title>Jeu Agent Secret en Ligne | Multijoueur Gratuit mr white en ligne</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./undercovebg.jpg" as="image">
+    <link rel="preload" href="./undercover.png" as="image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./undercover.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./undercover.png">
+    <link rel="apple-touch-icon" href="./undercover.png">
+    <link rel="shortcut icon" href="./undercover.png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../style/main.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="../../../style/main.css" rel="stylesheet">
+
     <link href="undercover.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.hidden {
+            display: none;
+        }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Jeu Agent Secret en Ligne",
+      "description": "Le jeu de déduction sociale ultime avec 7 catégories de mots diverses (Nourriture & Boissons, Animaux, Objets, Métiers & Rôles, Divertissement, Nature & Météo, Drôle), options de mots personnalisés, interface optimisée mobile avec grands boutons tactiles, support pour configurations d'espions multiples et mode carte blanche. Parfait pour fêtes, team building, rassemblements familiaux et événements en ligne avec 4-20 joueurs.",
+      "numberOfPlayers": {
+        "@type": "QuantitativeValue",
+        "minValue": 4,
+        "maxValue": 20
+      },
+      "gameItem": "Jeu de Société en Ligne",
+      "audience": {
+        "@type": "Audience",
+        "suggestedMinAge": "12"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "http://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
 </head>
+
 <body>
-    <div class="container py-4">
-        <h1 class="text-center mb-4">Agent Secret</h1>
-        <div class="game-card card shadow">
-            <div class="card-body">
-                <div class="setup-section mb-4">
-                    <h3>Configuration du Jeu</h3>
-                    <div class="form-group mb-3">
-                        <label for="playerCount">Nombre de joueurs :</label>
-                        <input type="number" id="playerCount" class="form-control" value="6" min="4" max="12">
+
+    <main class="container" style="padding-top: 2rem; padding-bottom: 3rem;">
+        <div class="text-center mb-5">
+            <div class="game-logo-container mb-4">
+                <img src="./undercover.png" alt="Logo du Jeu Agent Secret - Jeu de Déduction Sociale" class="game-logo"
+                    width="200" height="200" loading="lazy">
+            </div>
+            <h1 class="cute-title">Jeu Agent Secret en Ligne</h1>
+            <p class="text-light mb-0">Trouvez l'Agent Secret Parmi Nous !</p>
+        </div>
+
+        <!-- Game Setup Section -->
+        <section id="setup-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4"
+            aria-labelledby="setup-title">
+            <div class="card-body p-4">
+                <h2 id="setup-title" class="card-title h4 mb-4 text-light">Configuration du Jeu</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="playerCount" class="text-light mb-2">Nombre de Joueurs (4-20)</label>
+                            <input type="number" class="form-control" id="playerCount" min="4" max="20" value="4"
+                                aria-describedby="playerCountHelp">
+                            <small id="playerCountHelp" class="form-text text-light">Choisissez entre 4 et 20
+                                joueurs</small>
+                        </div>
                     </div>
-                    <button class="btn btn-primary w-100" id="startBtn">Commencer le Jeu</button>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="undercoverCount" class="text-light mb-2">Nombre d'Espions (1-3)</label>
+                            <input type="number" class="form-control" id="undercoverCount" min="1" max="3" value="1"
+                                aria-describedby="spyCountHelp">
+                            <small id="spyCountHelp" class="form-text text-light">Choisissez le nombre d'espions</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="whiteCount" class="text-light mb-2">Nombre de Blancs</label>
+                            <input type="number" class="form-control" id="whiteCount" min="0" value="0">
+                        </div>
+                    </div>
                 </div>
-                <div id="gameArea" style="display: none;">
-                    <div class="role-card p-4 bg-light rounded text-center mb-3">
-                        <h2 id="role">Votre Rôle</h2>
-                        <p id="roleDescription" class="lead"></p>
+
+                <div class="mt-4">
+                    <div class="mb-4">
+                        <label class="text-light mb-2 d-block" for="categorySelect">Sélectionnez une Catégorie de Mots :</label>
+                        <select class="form-select" id="categorySelect" aria-label="Sélectionnez une catégorie de mots">
+                            <option value="all">Toutes les Catégories (Mixte)</option>
+                            <optgroup label="Catégories Gratuites">
+                                <option value="Food & Drink" selected>Nourriture & Boissons</option>
+                                <option value="Animals">Animaux</option>
+                                <option value="Objects">Objets</option>
+                                <option value="Jobs & Roles">Métiers & Rôles</option>
+                                <option value="Entertainment">Divertissement</option>
+                                <option value="Nature & Weather">Nature & Météo</option>
+                                <option value="Funny">Drôle</option>
+                            </optgroup>
+                            <optgroup label="Catégories Premium 🔒">
+                                <option value="Sports & Fitness">Sports & Fitness 👑</option>
+                                <option value="Technology & Digital">Technologie & Digital 👑</option>
+                                <option value="Travel & Places">Voyages & Lieux 👑</option>
+                                <option value="Relationships">Relations 👑</option>
+                                <option value="Brands & Companies">Marques & Entreprises 👑</option>
+                                <option value="Historical Figures">Personnages Historiques 👑</option>
+                            </optgroup>
+                        </select>
+                        <small class="text-light d-block mt-2">👑 Les catégories premium nécessitent un abonnement</small>
                     </div>
-                    <div class="word-card p-4 bg-warning rounded text-center mb-3">
-                        <p id="word" class="lead">Le Mot Secret</p>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="useCustomWords">
+                        <label class="form-check-label" for="useCustomWords">Utiliser des Mots Personnalisés</label>
                     </div>
-                    <button class="btn btn-secondary w-100" id="nextBtn">Joueur Suivant</button>
+                    <div id="customWordsSection" class="mt-3" style="display: none;">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="customCivilianWord" class="text-light mb-2">Mot Civil</label>
+                                    <input type="text" class="form-control" id="customCivilianWord">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="customUndercoverWord" class="text-light mb-2">Mot Agent Secret</label>
+                                    <input type="text" class="form-control" id="customUndercoverWord">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-5 pt-3 border-top">
-                    <h3>Règles</h3>
-                    <ul>
-                        <li>Un joueur est l'Agent Secret, les autres connaissent le mot</li>
-                        <li>Les joueurs donnent des indices sur le mot</li>
-                        <li>L'Agent Secret essaie de deviner le mot</li>
-                        <li>Après chaque tour, les joueurs votent pour éliminer quelqu'un</li>
-                        <li>Si l'Agent Secret est éliminé, les autres gagnent</li>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-pink btn-lg px-5 rounded-pill" onclick="startGame()">
+                        <i class="fas fa-play me-2"></i>Commencer le Jeu
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Upgrade Modal -->
+        <div id="premium-modal" class="modal-overlay hidden">
+            <div class="card bg-darker shadow-lg border-pink rounded-4" style="max-width: 500px; margin: 10% auto; position: relative;">
+                <div class="card-body p-4 text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-crown text-warning" style="font-size: 4rem;"></i>
+                    </div>
+                    <h3 class="h4 mb-3 text-light">Débloquer les Catégories Premium</h3>
+                    <p class="text-light mb-4">Cette catégorie nécessite un abonnement premium. Passez à premium pour débloquer :</p>
+                    <ul class="text-light text-start mb-4" style="max-width: 300px; margin: 0 auto;">
+                        <li>Sports & Fitness - Thèmes santé</li>
+                        <li>Technologie & Digital - Tech moderne</li>
+                        <li>Voyages & Lieux - Lieux du monde</li>
+                        <li>Relations - Sujets émotionnels</li>
+                        <li>Marques & Entreprises - Marques célèbres</li>
+                        <li>Personnages Historiques - Connaissance historique</li>
                     </ul>
+                    <div class="d-flex gap-2 justify-content-center mt-4">
+                        <button class="btn btn-pink btn-lg px-4 rounded-pill" onclick="window.location.href='/premium.html'">
+                            <i class="fas fa-crown me-2"></i>Passer à Premium
+                        </button>
+                        <button class="btn btn-outline-pink btn-lg px-4 rounded-pill" onclick="closePremiumModal()">
+                            Annuler
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- Word Display Section -->
+        <div id="word-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
+            <div class="card-body p-4 text-center">
+                <h3 class="h5 mb-4 text-light">Tour du Joueur <span id="currentPlayer" class="text-pink">1</span></h3>
+                <div class="flip-card mx-auto">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front d-flex align-items-center justify-content-center">
+                            <div class="cute-text">Appuyez pour voir votre mot</div>
+                        </div>
+                        <div class="flip-card-back d-flex align-items-center justify-content-center">
+                            <div id="wordDisplay" class="cute-text"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-pink btn-lg px-5 rounded-pill mt-4" onclick="nextPlayer()">
+                    <i class="fas fa-arrow-right me-2"></i>Joueur Suivant
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Play Section -->
+        <div id="game-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
+            <div class="card-body p-4" id="game-content">
+                <h3 class="h5 mb-4 text-light">Joueurs</h3>
+                <form id="voteForm">
+                    <div class="player-list rounded-4 p-3 mb-4" id="playerList">
+                        <!-- Players will be added here dynamically -->
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-pink btn-lg px-5 rounded-pill mb-3"
+                            onclick="eliminatePlayer()">
+                            <i class="fas fa-user-minus me-2"></i>Éliminer un Joueur
+                        </button>
+                        <button type="button" class="btn btn-outline-pink btn-lg px-5 rounded-pill"
+                            onclick="resetGame()">
+                            <i class="fas fa-redo me-2"></i>Rejouer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Game Rules Section -->
+        <section class="card bg-darker shadow-lg mb-4 border-pink rounded-4">
+            <div class="card-body p-4">
+                <h2 class="card-title h4 mb-4 text-light">Comment Jouer au Jeu Agent Secret en Ligne</h2>
+                <div class="text-light">
+                    <h3 class="h6 text-pink mb-3">Fonctionnalités du Jeu :</h3>
+                    <ul class="mb-4">
+                        <li><strong>7 Catégories de Mots :</strong> Nourriture & Boissons, Animaux, Objets, Métiers & Rôles,
+                            Divertissement, Nature & Météo, et Drôle</li>
+                        <li><strong>Mots Personnalisés :</strong> Créez vos propres paires de mots pour un jeu personnalisé</li>
+                        <li><strong>Optimisé Mobile :</strong> Grands boutons de sélection tactiles pour jouer facilement
+                            sur tous les appareils</li>
+                        <li><strong>Nombre de Joueurs Flexible :</strong> Support pour 4-20 joueurs avec options d'espions et
+                            de cartes blanches personnalisables</li>
+                        <li><strong>Configuration Instantanée :</strong> Aucune inscription requise, commencez à jouer immédiatement</li>
+                    </ul>
+
+                    <h3 class="h6 text-pink mb-3">Comment Jouer :</h3>
+                    <ol class="mb-4">
+                        <li>Chaque joueur reçoit un mot secret - la plupart des joueurs reçoivent le même mot "civil", tandis que
+                            les joueurs agent secret reçoivent un mot similaire mais différent.</li>
+                        <li>Les joueurs décrivent à tour de rôle leur mot sans le dire directement.</li>
+                        <li>Après chaque tour, utilisez nos grands boutons faciles à toucher pour voter sur qui vous pensez être
+                            l'agent secret.</li>
+                        <li>La personne avec le plus de votes est éliminée.</li>
+                        <li>Le jeu continue jusqu'à ce que tous les agents secrets soient trouvés (les civils gagnent) ou que le nombre
+                            d'agents secrets égale celui des civils (les agents secrets gagnent).</li>
+                    </ol>
+
+                    <h3 class="h6 text-pink mb-3">Conseils Pro :</h3>
+                    <ul class="mb-4">
+                        <li><strong>Soyez Subtil :</strong> Évitez de révéler si vous êtes un civil ou un agent secret dans vos
+                            descriptions !</li>
+                        <li><strong>Écoutez Attentivement :</strong> Faites attention aux différences subtiles dans la façon dont les autres
+                            décrivent leurs mots</li>
+                        <li><strong>Utilisez les Catégories Stratégiquement :</strong> Différentes catégories de mots offrent des
+                            niveaux de difficulté variés</li>
+                        <li><strong>Convivial Mobile :</strong> Notre interface optimisée rend le vote rapide et facile sur
+                            téléphones et tablettes</li>
+                    </ul>
+
+                    <p class="mb-0"><strong>Parfait pour :</strong> Fêtes de bureau, rassemblements familiaux, événements de
+                        team building, réunions en ligne, activités en classe et rassemblements sociaux. L'interface à grands boutons
+                        garantit que tout le monde peut participer facilement !</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">À Propos</h2>
+                    <p>Party Games Collection est votre destination en ligne principale pour des jeux de société gratuits et interactifs. Nous
+                        offrons une collection diversifiée de jeux sociaux engageants incluant Trouvez l'Espion, Je N'ai Jamais,
+                        et plus - parfait pour rassemblements virtuels, fêtes et événements de team building. Rejoignez des milliers de
+                        joueurs dans le monde pour des expériences de jeu inoubliables !</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">Liens Rapides</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="../../../fr/index.html" class="text-light text-decoration-none">Jeux</a></li>
+                        <li><a href="../../../fr/feedback.html" class="text-light text-decoration-none">Commentaires</a></li>
+                        <li><a href="../../../fr/TheList.html" class="text-light text-decoration-none">La Liste</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">&copy; 2025 Party Games. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/auth.js"></script>
     <script src="/js/ads-controller.js"></script>
     <script src="../../../fr/js/game-navigation-fr.js"></script>
     <script src="undercover-fr.js"></script>
 </body>
+
 </html>
