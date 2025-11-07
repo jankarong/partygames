@@ -98,6 +98,7 @@ class GameNavigation {
                             <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
                             <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
                             <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
+                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
                         </div>
                     </div>
                 </div>
@@ -243,23 +244,31 @@ class GameNavigation {
                 // 已经在中文版
                 return;
             }
-            // 移除 /de/ 如果存在，然后添加 /zh/
-            newPath = '/zh' + currentPath.replace('/de/', '/');
+            // 移除 /de/ 和 /fr/ 如果存在，然后添加 /zh/
+            newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/');
         } else if (lang === 'de') {
             // 切换到德语版
             if (currentPath.startsWith('/de/')) {
                 // 已经在德语版
                 return;
             }
-            // 移除 /zh/ 如果存在，然后添加 /de/
-            newPath = '/de' + currentPath.replace('/zh/', '/');
+            // 移除 /zh/ 和 /fr/ 如果存在，然后添加 /de/
+            newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/');
+        } else if (lang === 'fr') {
+            // 切换到法语版
+            if (currentPath.startsWith('/fr/')) {
+                // 已经在法语版
+                return;
+            }
+            // 移除 /de/ 和 /zh/ 如果存在，然后添加 /fr/
+            newPath = '/fr' + currentPath.replace('/de/', '/').replace('/zh/', '/');
         } else {
             // 切换到英文版
-            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/')) {
+            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
                 // 已经在英文版
                 return;
             }
-            newPath = currentPath.replace('/zh', '').replace('/de', '');
+            newPath = currentPath.replace('/zh', '').replace('/de', '').replace('/fr', '');
         }
 
         window.location.href = newPath;

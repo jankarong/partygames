@@ -98,6 +98,7 @@ class GameNavigation {
                             <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
                             <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
                             <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
+                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
                         </div>
                     </div>
                 </div>
@@ -236,42 +237,37 @@ class GameNavigation {
     switchLanguage(lang) {
         const currentPath = window.location.pathname;
         let newPath;
-        
+
         if (lang === 'de') {
             // Zu deutscher Version wechseln
             if (currentPath.startsWith('/de/')) {
                 // Bereits in deutscher Version
                 return;
             }
-            if (currentPath.startsWith('/zh/')) {
-                newPath = currentPath.replace('/zh', '/de');
-            } else {
-                newPath = '/de' + currentPath;
-            }
+            newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/');
         } else if (lang === 'zh') {
             // Zu chinesischer Version wechseln
             if (currentPath.startsWith('/zh/')) {
                 // Bereits in chinesischer Version
                 return;
             }
-            if (currentPath.startsWith('/de/')) {
-                newPath = currentPath.replace('/de', '/zh');
-            } else {
-                newPath = '/zh' + currentPath;
+            newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/');
+        } else if (lang === 'fr') {
+            // Zu französischer Version wechseln
+            if (currentPath.startsWith('/fr/')) {
+                // Bereits in französischer Version
+                return;
             }
+            newPath = '/fr' + currentPath.replace('/de/', '/').replace('/zh/', '/');
         } else {
             // Zu englischer Version wechseln
-            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/')) {
+            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
                 // Bereits in englischer Version
                 return;
             }
-            if (currentPath.startsWith('/zh/')) {
-                newPath = currentPath.replace('/zh', '');
-            } else if (currentPath.startsWith('/de/')) {
-                newPath = currentPath.replace('/de', '');
-            }
+            newPath = currentPath.replace('/zh', '').replace('/de', '').replace('/fr', '');
         }
-        
+
         window.location.href = newPath;
     }
 

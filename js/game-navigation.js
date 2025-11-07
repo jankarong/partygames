@@ -91,6 +91,7 @@ class GameNavigation {
                             <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
                             <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
                             <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
+                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
                         </div>
                     </div>
                 </div>
@@ -271,7 +272,7 @@ class GameNavigation {
         const currentPath = window.location.pathname;
         let newPath;
 
-        // Games that don't have Chinese/German versions
+        // Games that don't have Chinese/German/French versions
         const englishOnlyGames = ['charades2', 'findthespy', 'numberguess'];
         const isEnglishOnly = englishOnlyGames.some(game => currentPath.includes(game));
 
@@ -285,8 +286,8 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/zh/index.html';
             } else {
-                // Remove /de/ if present, then add /zh/
-                newPath = '/zh' + currentPath.replace('/de/', '/');
+                // Remove /de/ and /fr/ if present, then add /zh/
+                newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/');
             }
         } else if (lang === 'de') {
             // Switch to German version
@@ -298,16 +299,29 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/de/index.html';
             } else {
-                // Remove /zh/ if present, then add /de/
-                newPath = '/de' + currentPath.replace('/zh/', '/');
+                // Remove /zh/ and /fr/ if present, then add /de/
+                newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/');
+            }
+        } else if (lang === 'fr') {
+            // Switch to French version
+            if (currentPath.startsWith('/fr/')) {
+                // Already on French version
+                return;
+            }
+            // If this is an English-only game, go to French homepage instead
+            if (isEnglishOnly) {
+                newPath = '/fr/index.html';
+            } else {
+                // Remove /zh/ and /de/ if present, then add /fr/
+                newPath = '/fr' + currentPath.replace('/zh/', '/').replace('/de/', '/');
             }
         } else {
             // Switch to English version
-            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/')) {
+            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
                 // Already on English version
                 return;
             }
-            newPath = currentPath.replace('/zh', '').replace('/de', '');
+            newPath = currentPath.replace('/zh', '').replace('/de', '').replace('/fr', '');
         }
 
         window.location.href = newPath;
