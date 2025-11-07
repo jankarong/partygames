@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jouez au jeu à boire Last Shot en ligne ! Jeu de roulette russe avec 1 balle. Tirez le cran de sûreté, survivez ou buvez des shots. Jeu gratuit en navigateur pour adultes.">
+    <meta name="keywords"
+        content="jeu à boire last shot, jeu roulette russe, jeux à boire en ligne, jeux pour adultes, roulette à boire">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="Last Shot - Jeu à Boire Roulette Russe">
+    <meta property="og:description"
+        content="Jouez au jeu à boire Last Shot en ligne ! Jeu de roulette russe avec 1 balle. Tirez le cran de sûreté, survivez ou buvez des shots. Jeu gratuit pour adultes.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.bestpartygames.net/fr/games/lastshot/lastshot.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Last Shot - Jeu à Boire Roulette Russe">
+    <meta property="og:site_name" content="Best Party Games">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Last Shot - Jeu à Boire Roulette Russe">
+    <meta name="twitter:description"
+        content="Jouez au jeu à boire Last Shot en ligne ! Jeu de roulette russe avec 1 balle. Tirez, survivez ou buvez. Jeu gratuit pour adultes.">
+    <meta name="twitter:image" content="https://www.bestpartygames.net/fr/games/lastshot/lastshot.png">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="fr">
+    <meta name="rating" content="mature">
+    <link rel="canonical" href="https://www.bestpartygames.net/fr/games/lastshot/lastshot.html">
+    <title>Last Shot - Jeu à Boire Roulette Russe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="lastshot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./lastshot.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Last Shot - Jeu à Boire",
+        "description": "Jouez au jeu à boire Last Shot en ligne ! Jeu de roulette russe avec 1 balle. Tirez le cran, survivez ou buvez des shots. Jeu gratuit pour adultes.",
+        "url": "https://www.bestpartygames.net/fr/games/lastshot/lastshot.html",
+        "image": "https://www.bestpartygames.net/fr/games/lastshot/lastshot.png",
+        "genre": "Jeu à Boire",
+        "numberOfPlayers": "3+",
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "Game",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "150"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="lastshot.png" alt="Logo Last Shot Jeu à Boire" title="Last Shot Jeu à Boire"
+                    class="game-logo">
+            </div>
+            <h1 class="text-center mb-4">Last Shot - Jeu à Boire</h1>
+
+            <!-- Top Toolbar: audio + quick actions -->
+            <div class="top-toolbar mb-3" id="topToolbar">
+                <div class="toolbar-left">
+                    <button class="btn btn-secondary btn-sm" id="muteButton" onclick="toggleMute()">
+                        🔊 Son Activé
+                    </button>
+                    <div class="volume-wrap">
+                        <input type="range" id="volumeSlider" min="0" max="100" value="75" class="volume-slider">
+                        <span class="volume-label">Volume</span>
+                    </div>
+                </div>
+                <div class="toolbar-right">
+                    <button class="btn btn-warning btn-sm" onclick="resetGame()">
+                        Nouveau Jeu
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game Setup Section -->
+            <div class="game-setup text-center mb-4" id="gameSetup">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Configuration du Jeu</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="blankChambers" class="form-label">Chambres Vides</label>
+                                <input type="number" class="form-control" id="blankChambers" value="5" min="1" max="99">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="bulletChambers" class="form-label">Chambres avec Balle</label>
+                                <input type="number" class="form-control" id="bulletChambers" value="1" min="1" max="1"
+                                    readonly>
+                                <small class="form-text text-muted">Fixé à 1 pour la Roulette Russe classique</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg" onclick="startNewRound()">Commencer un Nouveau Tour</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Section -->
+            <div class="game-section text-center" id="gameSection" style="display: none;">
+                <!-- Game Status -->
+                <div class="game-status mb-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="status-card pool">
+                                <div class="status-value" id="shotsInPool">0</div>
+                                <div class="status-label">Shots dans le Pool</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="status-card chambers">
+                                <div class="status-value" id="chambersLeft">6</div>
+                                <div class="status-label">Chambres Restantes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revolver Section -->
+                <div class="revolver-section mb-4">
+                    <div class="revolver-container">
+                        <div class="revolver" id="revolver">
+                            <div class="revolver-body">
+                                <div class="revolver-cylinder" id="revolverCylinder">
+                                    <div class="cylinder-chamber" data-chamber="0"></div>
+                                    <div class="cylinder-chamber" data-chamber="1"></div>
+                                    <div class="cylinder-chamber" data-chamber="2"></div>
+                                    <div class="cylinder-chamber" data-chamber="3"></div>
+                                    <div class="cylinder-chamber" data-chamber="4"></div>
+                                    <div class="cylinder-chamber" data-chamber="5"></div>
+                                </div>
+                                <div class="revolver-barrel"></div>
+                                <div class="revolver-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Area -->
+                <div class="action-area mb-4">
+                    <button class="btn btn-danger btn-lg pulse" id="triggerButton" onclick="pullTrigger()">
+                        Tirer le Cran
+                    </button>
+                    <button class="btn btn-primary btn-lg" id="newRoundButton" onclick="startNewRoundFromGame()"
+                        style="display: none;">
+                        Commencer un Nouveau Tour
+                    </button>
+                </div>
+
+                <!-- Result Display -->
+                <div class="result-display mb-4" id="resultDisplay">
+                    <div class="result-text" id="resultText" role="status" aria-live="polite">Cliquez sur "Tirer" pour commencer !</div>
+                </div>
+
+                <!-- Game Controls -->
+                <div class="controls mb-4">
+                    <button class="btn btn-success" id="addShotButton" onclick="addShot()" style="display: none;">
+                        Ajouter un Shot au Pool
+                    </button>
+                    <button class="btn btn-warning" onclick="resetGame()">
+                        Nouveau Jeu
+                    </button>
+                </div>
+
+                <!-- Keyboard hint -->
+                <div class="kb-hint text-muted mb-3">Appuyez sur Espace pour Tirer, N pour Nouveau Tour, R pour Réinitialiser</div>
+            </div>
+
+            <!-- Game Rules Section -->
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">Comment Jouer au Last Shot - Jeu à Boire</h2>
+                        <div class="rules-content">
+                            <p class="lead text-center mb-4">
+                                Last Shot est le jeu à boire roulette russe ultime pour les fêtes pour adultes. Ce jeu de fête en ligne gratuit combine l'excitation du hasard avec des défis de beuverie, parfait pour les groupes de 3+ joueurs. Testez votre chance avec notre revolver virtuel !
+                            </p>
+                            <h4 class="mb-3">Configuration du Jeu</h4>
+                            <ul class="rules-list">
+                                <li>L'hôte configure le nombre de chambres vides (1-99)</li>
+                                <li>Il y a toujours exactement 1 chambre avec balle (Roulette Russe classique)</li>
+                                <li>Avant de commencer, convenez d'un montant maximum par chambre vide pour prévenir une consommation excessive !</li>
+                                <li>Les joueurs se réunissent pour le défi de beuverie ultime</li>
+                                <li>Gardez les boissons prêtes !</li>
+                            </ul>
+
+                            <h4 class="mb-3 mt-4">Jeu</h4>
+                            <ol class="rules-list">
+                                <li>Les joueurs tirent le cran à tour de rôle</li>
+                                <li>Chambre vide : Vous êtes en sécurité ! Versez dans le pool de shots</li>
+                                <li>Stratégie : Vous pouvez verser le montant que vous voulez. Les bons joueurs versent peu au début et plus tard !</li>
+                                <li>Chambre avec balle : Malchance ! Buvez TOUS les shots accumulés</li>
+                                <li>Après une balle, le tour se réinitialise avec un revolver frais</li>
+                                <li>Continuez jusqu'à ce que vous arrêtiez !</li>
+                            </ol>
+
+                            <h4 class="mb-3 mt-4">Conseils Stratégiques</h4>
+                            <ul class="rules-list">
+                                <li>Plus de chambres vides = plus sûr mais des tours plus longs</li>
+                                <li>Seule 1 chambre avec balle fait de la vraie Roulette Russe !</li>
+                                <li>Vous pouvez configurer jusqu'à 99 chambres pour les jeux épiques !</li>
+                                <li>Au début du jeu, versez de petits montants puisque vos chances sont bonnes. À la fin, versez plus car quelqu'un aura bientôt la balle !</li>
+                                <li>Établissez des limites maximales avant de jouer pour garder le jeu amusant et stratégique !</li>
+                            </ul>
+
+                            <h4 class="mb-3 mt-4">Règles Importantes</h4>
+                            <ul class="rules-list">
+                                <li>C'est un jeu à boire pour adultes - jouez de manière responsable</li>
+                                <li>Établissez des limites de versement maximales avant de jouer</li>
+                                <li>Arrangez le transport sécurisé à l'avance</li>
+                                <li>Gardez l'eau disponible et restez hydraté</li>
+                                <li>Connaissez vos limites et arrêtez si nécessaire</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">Questions Fréquemment Posées</h3>
+
+                        <div class="faq-item">
+                            <h4>Qu'est-ce que le jeu à boire Last Shot ?</h4>
+                            <p>Last Shot est un jeu de style roulette russe où les joueurs tirent le cran sur un revolver virtuel. C'est un jeu de fête en ligne gratuit parfait pour les rassemblements d'adultes.</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h4>Comment fonctionne Last Shot ?</h4>
+                            <p>Les joueurs configurent les chambres vides (1-99) et il y a toujours 1 balle. Alternez en cliquant sur "Tirer" - si vous avez une chambre vide, vous êtes en sécurité et versez dans le pool. Hit la balle ? Buvez tous les shots !</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h4>Combien de joueurs peuvent jouer à Last Shot ?</h4>
+                            <p>Last Shot est conçu pour 3+ joueurs. Plus il y a de joueurs, plus il y a de suspense et plus le pool de shots peut être grand avant que quelqu'un ne reçoive la balle !</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h4>Last Shot est-il sûr à jouer ?</h4>
+                            <p>Last Shot est un jeu à boire virtuel - complètement sûr ! C'est joué dans votre navigateur sans armes réelles. Cependant, comme avec tous les jeux à boire, jouez de manière responsable.</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h4>Puis-je jouer à Last Shot sur mobile ?</h4>
+                            <p>Oui ! Last Shot est entièrement réactif et fonctionne parfaitement sur les appareils mobiles, les tablettes et les ordinateurs de bureau. Jouez n'importe où !</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h4>Combien devrais-je verser quand j'ai une chambre vide ?</h4>
+                            <p>C'est la stratégie ! Vous pouvez verser le montant que vous voulez. Les joueurs intelligents versent de petits montants au début (quand les chances sont bonnes) et plus tard (quand quelqu'un est plus susceptible de recevoir la balle bientôt).</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h4>Devrions-nous établir une limite maximale de versement ?</h4>
+                            <p>Absolument recommandé ! Établir un montant maximal de versement (comme "1 shot max par chambre") garde le jeu équilibré. Discutez et convenez des limites avant de commencer !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="../../../fr/js/game-navigation-fr.js"></script>
+    <script src="lastshot-fr.js"></script>
+
+</body>
+
+</html>

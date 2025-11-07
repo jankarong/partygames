@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préférez-Vous - Jeu de Fête</title>
+    <meta name="description" content="Jouez à Préférez-Vous en ligne ! Jeu de fête amusant pour les groupes et rassemblements.">
+    <meta name="keywords" content="préférez-vous, jeu de fête, jeu de groupe, jeu en ligne">
+    <link rel="canonical" href="https://www.bestpartygames.net/fr/games/WouldYouRather/WouldYouRather.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../games.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container py-4">
+        <h1 class="text-center mb-4">Préférez-Vous</h1>
+        <div class="game-card card shadow">
+            <div class="card-body">
+                <div class="question mb-4 p-3 bg-light rounded">
+                    <p class="lead text-center">Préférez-vous...</p>
+                </div>
+                <div class="options mb-4">
+                    <button class="btn btn-info btn-lg w-100 mb-2" id="option1">Option 1</button>
+                    <button class="btn btn-success btn-lg w-100" id="option2">Option 2</button>
+                </div>
+                <button class="btn btn-primary w-100 mb-3" id="nextBtn">Suivant</button>
+                <div class="stats">
+                    <p class="text-muted">Questions : <span id="count">0</span></p>
+                </div>
+                <div class="rules mt-5 pt-3 border-top">
+                    <h3>Comment Jouer</h3>
+                    <ul>
+                        <li>Lisez la question avec deux options</li>
+                        <li>Chaque joueur choisit son option préférée</li>
+                        <li>Discutez pourquoi vous avez choisi cette option</li>
+                        <li>Continuez avec la question suivante</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="../../../fr/js/game-navigation-fr.js"></script>
+    <script src="WouldYouRather-fr.js"></script>
+</body>
+</html>

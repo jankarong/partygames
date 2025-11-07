@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jouez au Jeu Hedbanz en ligne - le jeu de fête ultime pour les groupes ! Expérimentez le jeu Hedbanz classique avec des amis. Jeu Hedbanz gratuit en ligne, parfait pour les fêtes et les rassemblements !">
+    <meta name="keywords"
+        content="jeu hedbanz, hedbanz en ligne, jeux de fête, jeux de groupe, règles hedbanz, hedbanz en ligne">
+    <meta name="author" content="Party Games">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/fr/games/hedbanzgame/hedbanzgame.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./hedbanz.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jeu Hedbanz - Jeu de Fête Amusant en Ligne pour les Groupes">
+    <meta property="og:description"
+        content="Jouez au Jeu Hedbanz en ligne - le jeu de fête ultime pour les groupes ! Expérimentez le jeu Hedbanz classique avec des amis.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="hedbanz.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/fr/games/hedbanzgame/hedbanzgame.html">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jeu Hedbanz - Jeu de Fête Amusant en Ligne pour les Groupes">
+    <meta name="twitter:description"
+        content="Jouez au Jeu Hedbanz en ligne - le jeu de fête ultime pour les groupes ! Jeu Hedbanz gratuit en ligne, parfait pour les fêtes.">
+    <meta name="twitter:image" content="hedbanz.png">
+
+    <title>Jeu Hedbanz - Jeu de Fête Amusant en Ligne pour les Groupes</title>
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="hedbanzgame.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./hedbanz.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Jeu Hedbanz",
+        "description": "Jouez au Jeu Hedbanz en ligne - le jeu de fête ultime pour les groupes ! Expérimentez le jeu Hedbanz classique avec des amis. Jeu Hedbanz gratuit en ligne, parfait pour les fêtes et les rassemblements !",
+        "genre": "Jeu de Fête",
+        "numberOfPlayers": "2-10",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "95"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="game-container">
+        <img src="hedbanz.png" alt="Logo du Jeu Hedbanz" class="logo">
+        <h1>Jeu Hedbanz</h1>
+        <p class="subtitle">Jouez au jeu Hedbanz classique en ligne - l'expérience de jeu de fête ultime !</p>
+
+        <!-- Game Setup Screen -->
+        <div id="gameSetup" class="setup-screen">
+            <h2>Configuration du Jeu Hedbanz</h2>
+            <div class="setup-options">
+                <div class="player-setup">
+                    <label for="playerCount">Sélectionnez le nombre de joueurs :</label>
+                    <select id="playerCount" class="select-input">
+                        <option value="2">2 Joueurs</option>
+                        <option value="3">3 Joueurs</option>
+                        <option value="4">4 Joueurs</option>
+                        <option value="5">5 Joueurs</option>
+                        <option value="6">6 Joueurs</option>
+                        <option value="7">7 Joueurs</option>
+                        <option value="8">8 Joueurs</option>
+                        <option value="9">9 Joueurs</option>
+                        <option value="10">10 Joueurs</option>
+                    </select>
+                </div>
+                <button id="startGame" class="btn">Commencer le Jeu</button>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div id="gameArea" class="game-area" style="display: none;">
+            <div class="card-display">
+                <div class="current-card">
+                    <p>Votre carte apparaîtra ici</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="drawCard" class="btn">Tirer une Carte</button>
+                <button id="nextPlayer" class="btn" disabled>Joueur Suivant</button>
+            </div>
+
+            <div class="player-info">
+                <p>Joueur Actuel : <span id="currentPlayer">1</span></p>
+                <p>Joueurs Restants : <span id="remainingPlayers">2</span></p>
+            </div>
+        </div>
+
+        <!-- Rules Section -->
+        <div class="rules-section">
+            <h2>Règles du Jeu Hedbanz</h2>
+            <div class="rules-content">
+                <h3>🎯 Objectif du Jeu Hedbanz</h3>
+                <p>Expérimentez le jeu Hedbanz classique avec une touche unique ! Essayez d'éviter de faire les actions ou de dire
+                    les mots affichés
+                    sur votre carte. Si vous faites accidentellement l'action dans ce jeu hedbanz, vous serez éliminé. Le dernier
+                    joueur restant gagne !</p>
+
+                <h3>🎮 Comment Jouer au Jeu Hedbanz</h3>
+                <ol>
+                    <li>Choisissez 2-10 joueurs pour participer</li>
+                    <li>Les joueurs tirent des cartes à tour de rôle</li>
+                    <li>Après avoir tiré une carte, ce joueur doit éviter de faire l'action affichée sur sa carte</li>
+                    <li>Si un joueur fait son action interdite, d'autres joueurs peuvent le signaler, et ce joueur est éliminé</li>
+                    <li>Les joueurs éliminés peuvent toujours observer et signaler les actions des autres joueurs</li>
+                    <li>Le jeu continue jusqu'à ce qu'un seul joueur reste</li>
+                </ol>
+
+                <h3>💡 Conseils du Jeu Hedbanz</h3>
+                <ul>
+                    <li>Rappelez-vous : Agissez naturellement, ne tentez pas évidemment d'éviter votre action interdite</li>
+                    <li>Observez attentivement les autres joueurs pour repérer leurs actions interdites</li>
+                    <li>Restez alerte - les autres joueurs pourraient essayer de vous forcer à faire votre action</li>
+                    <li>Même si éliminé, restez engagé et aidez à repérer les erreurs des autres joueurs</li>
+                </ul>
+
+                <h3>ℹ️ À Propos de ce Jeu Hedbanz</h3>
+                <p>Si vous aimez les jeux en ligne comme Heads Up ou les jeux de fête classiques, vous adorerez cette expérience unique du jeu Hedbanz !
+                    Tandis que les jeux hedbanz traditionnels vous font deviner ce qui est sur votre tête, notre jeu Hedbanz en ligne
+                    vous défie d'éviter des actions spécifiques ! Parfait pour les groupes qui aiment le format classique du jeu Hedbanz.</p>
+            </div>
+        </div>
+    </div>
+    <script src="hedbanzgame-fr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="../../../fr/js/game-navigation-fr.js"></script>
+</body>
+
+</html>

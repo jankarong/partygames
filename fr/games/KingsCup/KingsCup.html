@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jouez au jeu à boire Kings Cup en ligne ! Le jeu de fête à boire classique avec des règles de cartes et des défis. Parfait pour les fêtes pour adultes et les rassemblements sociaux.">
+    <meta name="keywords"
+        content="jeu à boire kings cup, jeux à boire, jeux de fête à boire, règles kings cup, anneau de feu à boire, cercle de mort à boire">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="Kings Cup - Jeu à Boire Classique de Fête en Ligne">
+    <meta property="og:description"
+        content="Jouez au jeu à boire Kings Cup en ligne ! Le jeu de fête à boire classique avec des règles de cartes et des défis. Parfait pour les fêtes pour adultes et les rassemblements sociaux.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.bestpartygames.net/fr/games/KingsCup/kingscuplogo.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/fr/games/KingsCup/KingsCup.html">
+    <title>Kings Cup - Jeu à Boire Classique de Fête en Ligne</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="KingsCup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./kingscuplogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Kings Cup - Jeu à Boire",
+        "description": "Jouez au jeu à boire Kings Cup en ligne ! Le jeu de fête à boire classique avec des règles de cartes et des défis. Parfait pour les fêtes pour adultes et les rassemblements sociaux.",
+        "url": "https://www.bestpartygames.net/fr/games/KingsCup/KingsCup.html",
+        "image": "https://www.bestpartygames.net/fr/games/KingsCup/kingscuplogo.png",
+        "genre": "Jeu à Boire",
+        "numberOfPlayers": "3+",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Party Games"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Best Party Games",
+            "url": "https://www.bestpartygames.net"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "200"
+        },
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "Cartes à Jouer",
+                "description": "Jeu virtuel de cartes avec règles de jeu à boire"
+            },
+            {
+                "@type": "Thing",
+                "name": "Défis à Boire",
+                "description": "Activités classiques et règles de jeu de fête à boire"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="kingscuplogo.png" alt="Logo Kings Cup Jeu à Boire" title="Kings Cup Jeu à Boire"
+                    class="game-logo">
+            </div>
+            <h1 class="text-center mb-4">Kings Cup - Jeu à Boire</h1>
+
+            <div class="game-section text-center">
+                <!-- Game Status -->
+                <div id="gameStatus" class="game-status mb-3">
+                    <div class="cards-left">Cartes Restantes : <span id="cardsLeft">52</span></div>
+                    <div class="kings-drawn">Rois Tirés : <span id="kingsDrawn">0</span>/4</div>
+                </div>
+
+                <!-- Single Card Display -->
+                <div class="single-card-area mb-4">
+                    <div class="playing-card" id="playingCard" onclick="drawCard()">
+                        <div class="card-front" id="cardFront">
+                            <div class="card-header">
+                                <div class="card-value" id="cardValue">?</div>
+                                <div class="card-suit" id="cardSuit">🃏</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="rule-name" id="ruleName">Tirer une Carte</div>
+                                <div class="rule-text" id="ruleText">Cliquez pour tirer votre première carte !</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-value-small" id="cardValueSmall">?</div>
+                                <div class="card-suit-small" id="cardSuitSmall">🃏</div>
+                            </div>
+                        </div>
+                        <div class="card-back" id="cardBack" style="display: none;">
+                            <div class="deck-pattern">
+                                <span class="deck-icon">👑</span>
+                                <span class="deck-text">Kings Cup</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Controls -->
+                <div class="controls mb-4">
+                    <button class="btn btn-success" onclick="nextCard()" id="nextButton" style="display: none;">
+                        Suivant
+                    </button>
+                    <button class="btn btn-warning" onclick="resetGame()" id="resetButton" style="display: none;">
+                        Nouveau Jeu
+                    </button>
+                </div>
+
+                <!-- Kings Cup Display -->
+                <div class="kings-cup" id="kingsCup">
+                    <div class="cup-container">
+                        <div class="cup-icon">🏆</div>
+                        <div class="cup-text">Kings Cup</div>
+                        <div class="cup-contents" id="cupContents">Vide</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Rules Section -->
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">👑 Règles des Cartes et Actions</h3>
+                        <div class="rules-grid">
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">A<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card">A<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Cascade</div>
+                                    <div class="rule-desc">Tout le monde boit, ne peut s'arrêter que quand la personne avant arrête</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">A<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small">A<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">2<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">2<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Toi</div>
+                                    <div class="rule-desc">Choisissez quelqu'un qui boit</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">2<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">2<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">3<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">3<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Moi</div>
+                                    <div class="rule-desc">Vous buvez !</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">3<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">3<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">4<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">4<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Sol</div>
+                                    <div class="rule-desc">Touchez le sol, le dernier boit</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">4<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">4<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">5<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">5<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Gars</div>
+                                    <div class="rule-desc">Tous les garçons boivent ensemble</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">5<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">5<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">6<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card">6<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Filles</div>
+                                    <div class="rule-desc">Toutes les filles boivent ensemble</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">6<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small">6<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">7<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">7<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Ciel</div>
+                                    <div class="rule-desc">Pointez vers le haut, le dernier boit</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">7<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">7<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">8<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">8<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Compagnon</div>
+                                    <div class="rule-desc">Choisissez un copain de beuverie</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">8<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">8<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">9<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">9<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Rime</div>
+                                    <div class="rule-desc">Alternez avec des mots qui riment</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">9<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">9<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Catégories</div>
+                                    <div class="rule-desc">Nommez les éléments d'une catégorie</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">J<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">J<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Créer une Règle</div>
+                                    <div class="rule-desc">Créez une nouvelle règle de jeu</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">J<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">J<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">D<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">D<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Questions</div>
+                                    <div class="rule-desc">Posez uniquement des questions, pas de réponses</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">D<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">D<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">R<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">R<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Kings Cup</div>
+                                    <div class="rule-desc">Versez un verre dans la tasse, le 4e Roi boit tout</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">R<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">R<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Play Section -->
+            <div class="game-intro mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">🎮 Comment Jouer au Kings Cup - Jeu à Boire</h3>
+                        <p>Kings Cup est un jeu de fête à boire classique parfait pour les groupes pour adultes ! Chaque carte
+                            a une règle spéciale de beuverie qui crée des interactions amusantes. L'objectif est d'éviter de tirer le
+                            4e Roi, ce qui signifie boire le Kings Cup entier !</p>
+
+                        <h4 class="mt-4">✨ Configuration du Jeu</h4>
+                        <ul>
+                            <li>🃏 Un jeu virtuel de 52 cartes</li>
+                            <li>👥 3 joueurs ou plus pour le maximum de plaisir</li>
+                            <li>🏆 Un "Kings Cup" virtuel au centre</li>
+                            <li>🥤 Chaque joueur a sa propre boisson</li>
+                            <li>🎪 Un groupe amusant prêt pour les défis !</li>
+                        </ul>
+
+                        <h4 class="mt-4">🎯 Comment Jouer</h4>
+                        <ol>
+                            <li>👤 Les joueurs tirent des cartes à tour de rôle</li>
+                            <li>🃏 Suivez la règle pour la carte que vous avez tirée</li>
+                            <li>👑 Si vous tirez un Roi : Versez un peu de votre boisson dans le Kings Cup</li>
+                            <li>🍻 Tirez le 4e Roi ? Vous devez boire le Kings Cup entier !</li>
+                            <li>🎉 Le jeu se termine quand le 4e Roi boit la tasse !</li>
+                        </ol>
+
+                        <h4 class="mt-4">🔥 Règles Importantes à Retenir</h4>
+                        <ul>
+                            <li>🍻 <strong>Compagnon (8) :</strong> Choisissez un copain de beuverie. Quand vous buvez, il boit aussi !
+                                Cela dure jusqu'à ce que quelqu'un d'autre tire un 8.</li>
+                            <li>❓ <strong>Questions (D) :</strong> Vous ne pouvez poser que des questions. Quiconque répond
+                                (au lieu de poser une question en retour) boit. Exemple : A demande "Quelle heure est-il ?" B répond "9h30" ❌ B boit !</li>
+                            <li>📜 <strong>Créer une Règle (J) :</strong> Créez une règle que tout le monde doit suivre (par ex. "Ne pas jurer", "Pointer avec les coudes uniquement").</li>
+                            <li>👑 <strong>Kings Cup (R) :</strong> Versez un peu de boisson dans la tasse centrale. La personne malheureuse
+                                qui tire le 4e Roi boit tout !</li>
+                            <li>🌊 <strong>Cascade (A) :</strong> Tout le monde boit continuellement. Vous ne pouvez vous arrêter que si
+                                la personne avant vous s'arrête !</li>
+                        </ul>
+
+                        <h4 class="mt-4">🌟 Pourquoi Jouer à Notre Kings Cup - Jeu à Boire ?</h4>
+                        <ul>
+                            <li>🎨 Animations de jeu à boire fluides et design</li>
+                            <li>📱 Parfait pour les jeux de fête mobiles et sur bureau</li>
+                            <li>🎉 Aucune carte physique requise - jeu à boire numérique !</li>
+                            <li>🔄 Rejouabilité infinie avec jeu mélangé</li>
+                            <li>👥 Excellent pour les fêtes pour adultes, rassemblements ou réunions virtuelles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">❓ Questions Fréquemment Posées</h3>
+
+                        <div class="faq-item">
+                            <h5>🍻 Qu'est-ce que le jeu Kings Cup - Jeu à Boire ?</h5>
+                            <p>Kings Cup est un jeu de fête à boire classique où les joueurs tirent des cartes et suivent des règles de beuverie.
+                                C'est parfait pour les fêtes pour adultes et les rassemblements sociaux !</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>👥 Combien de joueurs faut-il pour Kings Cup - Jeu à Boire ?</h5>
+                            <p>Kings Cup est mieux avec 3-8 joueurs, mais vous pouvez jouer avec plus ! Plus il y a de joueurs, plus il y a de plaisir et d'interactions de beuverie.</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🃏 Que se passe-t-il quand tous les Rois sont tirés ?</h5>
+                            <p>Quand le 4e Roi est tiré, ce joueur doit boire le Kings Cup entier (qui contient des verres des 3 Rois précédents) !
+                                Cela termine le jeu - c'est le défi ultime !</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🔄 Puis-je personnaliser les règles du jeu à boire ?</h5>
+                            <p>Bien que les règles du Kings Cup dans notre jeu soient définies pour la cohérence, quand vous tirez un Valet
+                                (Créer une Règle), vous pouvez créer des règles de beuverie personnalisées pour votre groupe pendant cette session de jeu !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="../../../fr/js/game-navigation-fr.js"></script>
+    <script src="KingsCup-fr.js"></script>
+
+</body>
+
+</html>

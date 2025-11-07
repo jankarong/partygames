@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jouez à Devinez le Nombre - le jeu de devinette ultime en ligne ! Défiez-vous à deviner le bon nombre entre 1-100. Jeu gratuit en ligne, parfait pour les fêtes !">
+    <meta name="keywords"
+        content="devinez le nombre, jeu de devinette, jeu en ligne, jeux de fête, jeux amusants">
+    <meta name="author" content="Party Games">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Devinez le Nombre - Jeu de Devinette Amusant">
+    <meta property="og:description"
+        content="Jouez à Devinez le Nombre - le jeu de devinette ultime en ligne ! Défiez-vous à deviner le bon nombre entre 1-100.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/fr/games/beernumber/numberguessLogo.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Devinez le Nombre - Jeu de Devinette Amusant">
+    <meta name="twitter:description"
+        content="Jouez à Devinez le Nombre - le jeu de devinette ultime en ligne ! Gratuit à jouer.">
+    <meta name="twitter:image" content="/fr/games/beernumber/numberguessLogo.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bestpartygames.net/fr/games/beernumber/beernumber.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./numberguessLogo.png">
+
+    <title>Devinez le Nombre - Jeu de Devinette Amusant</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="beernumber.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./numberguessLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Devinez le Nombre",
+        "description": "Jouez à Devinez le Nombre - le jeu de devinette ultime en ligne ! Défiez-vous à deviner le bon nombre entre 1-100. Jeu gratuit en ligne, parfait pour les fêtes !",
+        "genre": "Jeu de Nombres",
+        "numberOfPlayers": "1+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "120"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="game-header text-center mb-4">
+                    <div class="logo-container">
+                        <img src="./numberguessLogo.png" alt="Devinez le Nombre - Jeu de Devinette"
+                            class="game-logo">
+                    </div>
+                    <h1 class="display-5 fw-bold">Devinez le Nombre</h1>
+                    <p class="lead">Le Jeu de Devinette Ultime</p>
+                    <div class="cute-bubbles">
+                        <div class="bubble bubble-1"></div>
+                        <div class="bubble bubble-2"></div>
+                        <div class="bubble bubble-3"></div>
+                        <div class="bubble bubble-4"></div>
+                    </div>
+                </div>
+
+                <div class="game-container card shadow">
+                    <div class="card-body">
+                        <div class="beer-container mb-4">
+                            <div class="beer-mug">
+                                <div class="beer-handle"></div>
+                                <div class="beer-glass">
+                                    <div class="beer-foam"></div>
+                                    <div class="beer-liquid">
+                                        <div class="beer-fill" id="beer-fill"></div>
+                                    </div>
+                                </div>
+                                <div class="beer-face">
+                                    <div class="beer-eyes">
+                                        <div class="beer-eye beer-eye-left"></div>
+                                        <div class="beer-eye beer-eye-right"></div>
+                                    </div>
+                                    <div class="beer-mouth"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="game-controls mb-4">
+                            <div class="input-group mb-3">
+                                <input type="number" id="guessInput" class="form-control"
+                                    placeholder="Devinez le nombre (1-100)" min="1" max="100">
+                                <button id="submitGuess" class="btn">
+                                    <i class="fas fa-beer me-2"></i>Devinez !
+                                </button>
+                            </div>
+                            <div id="message" class="alert d-none"></div>
+                        </div>
+
+                        <div id="history" class="guess-history mb-4"></div>
+                    </div>
+                </div>
+
+                <!-- Game Rules -->
+                <div class="card shadow mt-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">📋 Règles de Devinez le Nombre</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="rules-list">
+                            <li>🎯 Commencez en pensant à un nombre entre 1 et 100 pour que les autres le devinent</li>
+                            <li>🎮 Parfait pour le jeu en solo ou en groupe - défiez-vous ou vos amis à deviner le nombre correctement</li>
+                            <li>🔄 Quand vous devinez le nombre, vous recevrez des indices si votre devinette est trop haute ou trop basse</li>
+                            <li>🏆 Essayez de deviner le nombre en aussi peu de tentatives que possible pour obtenir le meilleur score</li>
+                            <li>🎉 Excellent jeu de devinette pour tous les âges - testez votre logique et votre chance !</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="card shadow mt-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">❓ Comment Jouer à Devinez le Nombre</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <h3>🎮 Comment fonctionne Devinez le Nombre ?</h3>
+                                <p>L'ordinateur pense à un nombre entre 1 et 100, et vous devez deviner ce nombre correctement.
+                                    Chaque fois que vous faites une devinette, vous recevrez un retour sur le fait que votre devinette est trop haute ou trop basse.
+                                    La chope de bière se remplit à mesure que vous vous rapprochez du nombre correct, ce qui en fait un jeu de devinette amusant !</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>🔄 Plusieurs personnes peuvent-elles jouer à Devinez le Nombre ?</h3>
+                                <p>Absolument ! Bien que vous puissiez jouer en solo pour deviner le nombre, c'est aussi amusant avec des amis.
+                                    Alternez en faisant des devinettes et voyez qui peut deviner le nombre en le moins de tentatives.
+                                    C'est un excellent jeu de devinette pour les fêtes et les rassemblements !</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>📝 Quelle est la stratégie pour Devinez le Nombre ?</h3>
+                                <p>Utilisez la stratégie de recherche binaire ! Commencez par 50, puis selon que c'est trop haut ou trop bas,
+                                    éliminez la moitié des nombres restants. Cette approche vous aide à deviner le nombre efficacement en le minimum de tentatives possible.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>🔄 Que se passe-t-il quand vous devinez correctement ?</h3>
+                                <p>Quand vous devinez correctement le nombre, vous gagnez le tour ! Le jeu affiche le nombre total de tentatives et vous pouvez commencer un nouveau tour pour essayer de battre votre score précédent.
+                                    Défiez-vous à deviner le nombre en moins de tentatives !</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>🎯 Des conseils pour jouer mieux ?</h3>
+                                <p>La clé pour maîtriser le jeu Devinez le Nombre est d'utiliser des approches systématiques. Commencez toujours par le nombre du milieu (50) et progressez logiquement.
+                                    Ce jeu de devinette récompense la réflexion stratégique plutôt que les devinettes aléatoires !</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content Section -->
+                <div class="card shadow mt-4 mb-5">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">🎯 À Propos du Jeu Devinez le Nombre</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>"Devinez le Nombre" est le jeu de devinette en ligne ultime qui défie votre logique et votre intuition.
+                            Il combine l'excitation classique de la devinette de nombres avec le jeu interactif moderne,
+                            créant une expérience parfaite d'entraînement cérébral.</p>
+
+                        <p>Ce jeu de devinette de nombres est incroyablement polyvalent - vous pouvez le jouer en solo pour améliorer votre réflexion logique
+                            ou avec des amis pour voir qui peut deviner le nombre le plus rapidement. Les règles sont simples : l'ordinateur pense à un nombre entre 1 et
+                            100, et vous prenez des tours pour deviner jusqu'à ce que quelqu'un le trouve correct. Chaque devinette vous donne un retour précieux !</p>
+
+                        <p>Ce qui fait de ce jeu l'un des meilleurs jeux de devinette de nombres en ligne est la stratégie impliquée. Utilisez-vous la recherche binaire
+                            pour réduire systématiquement les possibilités ? Ou vous fiez-vous à l'intuition et à la chance ? La visualisation de la chope de bière ajoute un élément amusant supplémentaire car elle se remplit en fonction de la proximité de votre devinette au nombre cible.</p>
+
+                        <p>Que vous cherchiez une énigme rapide, une activité de fête amusante, ou un moyen de passer du temps,
+                            "Devinez le Nombre" offre un jeu engageant et une stimulation mentale. C'est parfait pour améliorer la réflexion logique,
+                            pour rivaliser avec des amis, et pour profiter d'une expérience classique de devinette de nombres en ligne.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="beernumber-fr.js"></script>
+    <script src="../../../fr/js/game-navigation-fr.js"></script>
+</body>
+
+</html>

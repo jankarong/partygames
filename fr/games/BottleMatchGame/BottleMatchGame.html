@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu d'Appariement de Bouteilles - Puzzle Logique Gratuit</title>
+    <meta name="description" content="Jouez au Jeu d'Appariement de Bouteilles en ligne gratuitement ! Testez votre logique avec 5 niveaux stimulants. Devinez la séquence de couleurs dans ce jeu de puzzle de type Mastermind.">
+    <meta name="keywords" content="jeu d'appariement de bouteilles, puzzle logique, jeu mastermind, appariement de couleurs, énigme">
+    <link rel="canonical" href="https://partygames.com/fr/games/BottleMatchGame/BottleMatchGame.html">
+    <meta property="og:title" content="Jeu d'Appariement de Bouteilles - Puzzle Logique Gratuit">
+    <meta property="og:description" content="Jouez au Jeu d'Appariement de Bouteilles en ligne gratuitement ! Testez votre logique avec 5 niveaux stimulants.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://partygames.com/fr/games/BottleMatchGame/BottleMatchGame.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzQyOTllMSIvPgo8cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIGZpbGw9IiMyZDM3NDgiLz4KPHN2Zz4K">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Jeu d'Appariement de Bouteilles",
+      "description": "Un jeu de puzzle logique où les joueurs devinent la séquence de couleurs correcte sur 5 niveaux stimulants",
+      "gameType": "Puzzle Logique",
+      "numberOfPlayers": "1",
+      "url": "https://partygames.com/fr/games/BottleMatchGame/BottleMatchGame.html"
+    }
+    </script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="game-container">
+        <img src="bottlematch.png" alt="Logo du Jeu d'Appariement de Bouteilles" class="game-logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+        <h1>Jeu d'Appariement de Bouteilles en Ligne</h1>
+
+        <div class="level-info">
+            <div class="level-title">Niveau <span id="current-level">1</span> / 5</div>
+            <div class="level-details">
+                Longueur : <span id="sequence-length">3</span> |
+                Couleurs : <span id="color-count">4</span> |
+                Tentatives : <span id="attempts">0</span>
+            </div>
+        </div>
+
+        <div class="secret-display" id="secret-display" style="display: none;">
+            Séquence Secrète : <span id="secret-sequence"></span>
+        </div>
+
+        <div class="game-area" id="game-area">
+            <h3>Sélectionnez votre devinette :</h3>
+            <div class="bottles-container" id="current-guess"></div>
+
+            <div class="controls">
+                <button class="submit-btn" id="submit-guess" onclick="submitGuess()">Soumettre la Devinette</button>
+                <button onclick="clearGuess()">Effacer</button>
+                <button onclick="showSecret()">Afficher la Réponse</button>
+            </div>
+
+            <div class="guess-section">
+                <h4>Historique des Devinettes :</h4>
+                <div id="guess-history"></div>
+            </div>
+        </div>
+
+        <div class="completion-screen" id="completion-screen">
+            <h2>Félicitations ! Tous les Niveaux Terminés !</h2>
+            <div class="final-stats">
+                <h3>Statistiques Globales</h3>
+                <p>Temps Total : <span id="total-time">0</span> secondes</p>
+                <p>Tentatives Totales : <span id="total-attempts">0</span></p>
+                <p>Moyenne de Tentatives par Niveau : <span id="avg-attempts">0</span></p>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">Recommencer le Jeu</button>
+        </div>
+    </div>
+
+    <section class="game-info">
+        <h2>Comment Jouer au Jeu d'Appariement de Bouteilles</h2>
+        <p>Le Jeu d'Appariement de Bouteilles est un excitant puzzle logique en ligne basé sur le jeu classique Mastermind. Testez vos compétences en raisonnement déductif sur 5 niveaux progressivement stimulants !</p>
+
+        <h3>Règles du Jeu</h3>
+        <ul>
+            <li><strong>Objectif :</strong> Devinez la séquence de couleurs secrète avant de manquer de tentatives</li>
+            <li><strong>5 Niveaux :</strong> Chaque niveau augmente en difficulté avec des séquences plus longues et plus de couleurs</li>
+            <li><strong>Système de Retour :</strong> Après chaque devinette, recevez des indices sur les positions correctes</li>
+            <li><strong>Pas de Répétitions :</strong> Chaque couleur de bouteille n'apparaît qu'une seule fois dans la séquence</li>
+        </ul>
+
+        <h3>Comment Jouer</h3>
+        <ol>
+            <li><strong>Sélectionnez les Couleurs :</strong> Cliquez sur une position dans la ligne du haut, puis cliquez sur une couleur ci-dessous, OU glissez-déposez directement les couleurs aux positions</li>
+            <li><strong>Soumettez la Devinette :</strong> Une fois toutes les positions remplies, cliquez sur "Soumettre la Devinette"</li>
+            <li><strong>Lisez le Retour :</strong> Les chevilles noires indiquent la couleur correcte à la bonne position</li>
+            <li><strong>Ajustez la Stratégie :</strong> Utilisez le retour pour affiner votre prochaine devinette</li>
+            <li><strong>Gagnez le Niveau :</strong> Faites correspondre toutes les bouteilles correctement pour avancer</li>
+        </ol>
+
+        <h3>Caractéristiques du Jeu</h3>
+        <ul>
+            <li>Jeu d'appariement de bouteilles en ligne gratuit - aucun téléchargement requis</li>
+            <li>5 niveaux stimulants avec difficulté croissante</li>
+            <li>Contrôles par glisser-déposer ou clic-pour-sélectionner</li>
+            <li>Retour en temps réel sur vos devinettes</li>
+            <li>Suivez vos tentatives et votre temps d'accomplissement</li>
+            <li>Design réactif adapté aux appareils mobiles</li>
+        </ul>
+
+        <h3>Conseils et Stratégie</h3>
+        <p><strong>Commencez systématiquement :</strong> Essayez de tester une couleur à la fois pour réduire les possibilités.</p>
+        <p><strong>Utilisez l'élimination progressive :</strong> Gardez une trace des couleurs et positions qui ont été éliminées.</p>
+        <p><strong>Faites attention au retour :</strong> Les chevilles noires indiquent à la fois la couleur correcte ET la position.</p>
+    </section>
+
+    <!-- Sound Effects -->
+    <audio id="place-sound" src="place_item_sound.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="hooray_sound.mp3" preload="auto"></audio>
+    <audio id="fail-sound" src="fail_sound.mp3" preload="auto"></audio>
+
+    <script src="script-fr.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/ads-controller.js"></script>
+    <script src="../../../fr/js/game-navigation-fr.js"></script>
+</body>
+</html>
