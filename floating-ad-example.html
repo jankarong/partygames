@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悬浮广告示例</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/floating-ad.css">
+    <style>
+        body {
+            padding-bottom: 0;
+        }
+        .content {
+            padding: 40px 20px;
+            min-height: 150vh;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Party Games</a>
+        </div>
+    </nav>
+
+    <div class="content container">
+        <h1>悬浮广告示例页面</h1>
+        <p>向下滚动以查看悬浮广告的效果</p>
+
+        <section class="mt-5">
+            <h2>页面内容</h2>
+            <p>这是一个演示页面，用来展示悬浮广告的功能。</p>
+            <p>悬浮广告会在页面加载2秒后出现在底部，用户可以点击×按钮关闭它。</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </section>
+    </div>
+
+    <!-- 引入悬浮广告的CSS和JavaScript -->
+    <script src="js/floating-ad.js"></script>
+    <script>
+        // 初始化悬浮广告
+        document.addEventListener('DOMContentLoaded', function() {
+            const adManager = new FloatingAdManager({
+                showDelay: 2000, // 2秒后显示
+                rememberClosure: true, // 记住用户关闭状态
+                adCode: `
+                    <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323852/13624" target="_top" id="3323852">
+                        <img src="//a.impactradius-go.com/display-ad/13624-3323852" border="0" alt="Shopify" width="640" height="100"/>
+                    </a>
+                    <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323852/13624" style="position:absolute;visibility:hidden;" border="0" />
+                `
+            });
+        });
+    </script>
+</body>
+</html>
