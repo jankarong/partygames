@@ -146,12 +146,162 @@
                                 <textarea id="roleDescription" class="form-control" rows="3"
                                     placeholder="Décrivez les capacités et le but de ce rôle..."></textarea>
                             </div>
+                            <div class="col-12">
+                                <label for="roleAbility" class="form-label">Capacité Nocturne</label>
+                                <textarea id="roleAbility" class="form-control" rows="2"
+                                    placeholder="Décrivez les actions de la phase nocturne... (optionnel)"></textarea>
+                            </div>
                         </div>
                         <button id="createRole" class="btn btn-primary mt-3">Créer le Rôle</button>
                     </div>
 
+                    <div class="existing-roles-section mb-4">
+                        <h4 class="mb-3">Rôles Existants</h4>
+                        <div id="rolesList" class="row g-3"></div>
+                    </div>
+
                     <div class="text-center">
                         <button id="backToSetup" class="btn btn-secondary">Retour à la Configuration du Jeu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area mt-4 position-relative" style="display: none;">
+            <button id="returnToSetup" class="btn btn-secondary"
+                style="position: absolute; left: 20px; top: 20px; z-index: 1000;">
+                <i class="fas fa-arrow-left"></i>
+                <span class="btn-text">Retour à la Configuration</span>
+            </button>
+            <button id="startNewGame" class="btn btn-success"
+                style="position: absolute; right: 20px; top: 20px; z-index: 1000;">
+                <i class="fas fa-redo"></i>
+                <span class="btn-text">Nouveau Jeu</span>
+            </button>
+            <div class="role-cards card shadow-sm mt-5">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Cartes des Joueurs</h2>
+                    <div id="cardGrid"></div>
+                </div>
+            </div>
+
+            <div class="game-controls mt-4" style="display: none;">
+                <button id="startGame" class="btn btn-success btn-lg w-100">
+                    <i class="fas fa-play-circle me-2"></i>
+                    Commencer la Phase de Nuit
+                </button>
+            </div>
+
+            <div class="role-instructions card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Consignes de Votre Rôle</h2>
+                    <div id="mafiaInstructions" class="role-instruction">
+                        <h3 class="h5">Mafia</h3>
+                        <ul>
+                            <li>Gardez votre identité secrète vis-à-vis des autres joueurs</li>
+                            <li>La nuit, travaillez avec les autres membres de la Mafia pour éliminer un villageois</li>
+                            <li>Le jour, essayez de vous mélanger avec les villageois</li>
+                        </ul>
+                    </div>
+                    <div id="villagerInstructions" class="role-instruction">
+                        <h3 class="h5">Villageois</h3>
+                        <ul>
+                            <li>Travaillez ensemble pour identifier et éliminer la Mafia</li>
+                            <li>Observez attentivement le comportement des autres joueurs</li>
+                            <li>Votez pendant la phase du jour pour éliminer les suspects</li>
+                        </ul>
+                    </div>
+                    <div id="doctorInstructions" class="role-instruction">
+                        <h3 class="h5">Docteur</h3>
+                        <ul>
+                            <li>Protégez un joueur chaque nuit de l'élimination</li>
+                            <li>Vous pouvez vous protéger vous-même</li>
+                            <li>Gardez votre identité secrète</li>
+                        </ul>
+                    </div>
+                    <div id="detectiveInstructions" class="role-instruction">
+                        <h3 class="h5">Détective</h3>
+                        <ul>
+                            <li>Enquêtez sur un joueur chaque nuit pour apprendre son rôle</li>
+                            <li>Utilisez vos informations pour guider les villageois</li>
+                            <li>Gardez votre identité secrète</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="night-actions card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Phase de Nuit</h2>
+                    <div id="narrator-text" class="mb-4"></div>
+
+                    <div id="action-area">
+                        <div id="mafia-action" class="role-action" style="display: none;">
+                            <h3>Tour de la Mafia</h3>
+                            <p>Sélectionnez un joueur à éliminer :</p>
+                            <div id="mafia-targets" class="player-selection"></div>
+                            <button id="confirm-mafia" class="btn btn-danger mt-3">Confirmer la Sélection</button>
+                        </div>
+
+                        <div id="doctor-action" class="role-action" style="display: none;">
+                            <h3>Tour du Docteur</h3>
+                            <p id="doctor-prompt"></p>
+                            <div id="doctor-choice" class="d-flex flex-column gap-2">
+                                <button id="save-player" class="btn btn-primary mt-3">Sauver un Joueur</button>
+                                <button id="poison-player" class="btn btn-danger mt-3">Empoisonner un Joueur</button>
+                                <button id="skip-action" class="btn btn-secondary mt-3">Passer l'Action</button>
+                            </div>
+                            <div id="doctor-targets" class="player-selection" style="display: none;"></div>
+                            <button id="confirm-doctor" class="btn btn-primary mt-3" style="display: none;">Confirmer la Sélection</button>
+                        </div>
+
+                        <div id="detective-action" class="role-action" style="display: none;">
+                            <h3>Tour du Détective</h3>
+                            <p>Sélectionnez un joueur à enquêter :</p>
+                            <div id="detective-targets" class="player-selection"></div>
+                            <div id="investigation-result" class="mt-3" style="display: none;">
+                                <p id="investigation-text" class="result-text"></p>
+                                <button id="confirm-detective" class="btn btn-primary mt-3">Continuer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="discussion-phase" class="discussion-phase" style="display: none;">
+                <h3>Temps de Discussion</h3>
+                <div class="night-summary mb-4">
+                    <p id="night-result" class="mb-3"></p>
+                    <div id="player-statuses" class="player-status-grid"></div>
+                </div>
+                <p class="discussion-prompt">Discutez pour déterminer qui pourrait être la Mafia.</p>
+                <button id="end-discussion" class="btn btn-primary mt-4">Terminer la Discussion</button>
+            </div>
+
+            <div class="voting-phase card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Phase de Vote</h2>
+                    <p class="voting-prompt">Votez pour qui vous pensez être la Mafia :</p>
+                    <div id="voting-grid" class="voting-grid mt-3"></div>
+                    <button id="confirm-vote" class="btn btn-primary mt-4">Confirmer le Vote</button>
+                </div>
+            </div>
+
+            <div class="player-status card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Statut des Joueurs</h2>
+                    <div id="playerStatus" class="list-group mt-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-alert" style="display: none;">
+            <div class="alert-content card">
+                <div class="card-body text-center">
+                    <div class="alert-message mb-3"></div>
+                    <div class="d-flex flex-column align-items-center">
+                        <button class="btn btn-primary alert-confirm">OK</button>
+                        <button id="playAgainBtn" class="btn btn-success mt-2" style="display: none;">Rejouer</button>
                     </div>
                 </div>
             </div>
@@ -168,16 +318,52 @@
                 <ul>
                     <li><strong>Mafia :</strong> Joueurs malveillants qui connaissent l'identité des autres (1-3 joueurs)</li>
                     <li><strong>Villageois :</strong> Citoyens ordinaires essayant d'identifier la Mafia</li>
-                    <li><strong>Docteur :</strong> Villageois spécial qui peut sauver un joueur chaque nuit (0-1 joueur)</li>
-                    <li><strong>Détective :</strong> Villageois spécial qui peut enquêter sur un joueur chaque nuit (0-1 joueur)</li>
+                    <li><strong>Docteur :</strong> Villageois spécial qui peut sauver un joueur de l'élimination ET empoisonner un joueur pendant le jeu (0-1 joueur)</li>
+                    <li><strong>Détective :</strong> Villageois spécial qui peut enquêter sur l'identité d'un joueur chaque nuit (0-1 joueur)</li>
                 </ul>
 
                 <h3>Déroulement du Jeu</h3>
                 <ol>
-                    <li><strong>Phase de Configuration :</strong> Chaque joueur reçoit une carte de rôle secrète</li>
-                    <li><strong>Phase de Nuit :</strong> La Mafia élimine un joueur, le Docteur sauve quelqu'un, le Détective enquête</li>
-                    <li><strong>Phase de Jour :</strong> Les joueurs discutent et votent pour éliminer un suspect</li>
+                    <li><strong>Phase de Configuration :</strong>
+                        <ul>
+                            <li>Chaque joueur reçoit une carte de rôle secrète</li>
+                            <li>Les joueurs doivent garder leurs rôles secrets sauf s'ils sont éliminés</li>
+                        </ul>
+                    </li>
+                    <li><strong>Phase de Nuit :</strong>
+                        <ul>
+                            <li>Tous les joueurs « dorment » (ferment les yeux)</li>
+                            <li>Les membres de la Mafia se réveillent et choisissent un joueur à éliminer</li>
+                            <li>Le Docteur se réveille et peut choisir de sauver ou d'empoisonner un joueur</li>
+                            <li>Le Détective se réveille et peut enquêter sur l'identité d'un joueur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Phase de Jour :</strong>
+                        <ul>
+                            <li>Tous les joueurs « se réveillent »</li>
+                            <li>Les résultats des actions nocturnes sont révélés</li>
+                            <li>Les joueurs discutent et débattent sur qui pourrait être la Mafia</li>
+                            <li>Les joueurs votent pour éliminer un suspect supposé être de la Mafia</li>
+                        </ul>
+                    </li>
                 </ol>
+
+                <h3>Capacités Spéciales</h3>
+                <ul>
+                    <li><strong>Pouvoirs du Docteur :</strong>
+                        <ul>
+                            <li>Peut sauver un joueur (y compris lui-même) une fois par jeu</li>
+                            <li>Peut empoisonner un joueur une fois par jeu</li>
+                            <li>Doit choisir entre sauver, empoisonner ou passer chaque nuit</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pouvoir du Détective :</strong>
+                        <ul>
+                            <li>Peut enquêter sur un joueur chaque nuit</li>
+                            <li>Apprend si le joueur enquêté est de la Mafia ou non</li>
+                        </ul>
+                    </li>
+                </ul>
 
                 <h3>Conditions de Victoire</h3>
                 <ul>
@@ -185,12 +371,13 @@
                     <li><strong>La Mafia Gagne :</strong> Quand le nombre de Mafia égale ou dépasse le nombre de Villageois</li>
                 </ul>
 
-                <h3>Conseils pour Jouer</h3>
+                <h3>Conseils pour Jouer à Mafia</h3>
                 <ul>
-                    <li>Observez attentivement le comportement des joueurs</li>
-                    <li>Les rôles spéciaux doivent être prudents en révélant leur identité</li>
-                    <li>Utilisez strategiquement vos votes</li>
-                    <li>Ce jeu fonctionne mieux avec un groupe cohérent</li>
+                    <li>Observez attentivement le comportement des joueurs pendant les discussions dans ces jeux stratégiques</li>
+                    <li>Les rôles spéciaux (Docteur et Détective) doivent être prudents en révélant leur identité</li>
+                    <li>Utilisez strategiquement vos votes - parfois ne pas voter peut être la meilleure stratégie</li>
+                    <li>Les membres de la Mafia doivent essayer de se mélanger avec les villageois pendant les discussions</li>
+                    <li>Ce jeu fonctionne mieux avec un groupe cohérent pour développer des stratégies</li>
                 </ul>
             </div>
         </div>

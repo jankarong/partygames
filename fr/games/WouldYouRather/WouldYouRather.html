@@ -1,49 +1,172 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Préférez-Vous - Jeu de Fête</title>
-    <meta name="description" content="Jouez à Préférez-Vous en ligne ! Jeu de fête amusant pour les groupes et rassemblements.">
-    <meta name="keywords" content="préférez-vous, jeu de fête, jeu de groupe, jeu en ligne">
+    <meta name="description"
+        content="Jouez à Préférez-Vous Piquant - le jeu de fête pour adultes par excellence ! Découvrez une collection de questions Préférez-Vous piquantes. Parfait pour les fêtes et les événements sociaux !">
+    <meta name="keywords"
+        content="préférez-vous questions piquantes, jeu préférez-vous, questions piquantes, jeux de fête pour adultes">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="Préférez-Vous Questions Piquantes - Jeu de Fête pour Adultes">
+    <meta property="og:description"
+        content="Jouez à Préférez-Vous Questions Piquantes - le jeu de fête pour adultes par excellence avec des questions piquantes passionnantes. Parfait pour les fêtes et les rassemblements sociaux !">
+    <meta property="og:type" content="website">
     <link rel="canonical" href="https://www.bestpartygames.net/fr/games/WouldYouRather/WouldYouRather.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./WouldYouRatherLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Préférez-Vous Questions Piquantes",
+        "description": "Jouez à Préférez-Vous Questions Piquantes - le jeu de fête pour adultes par excellence ! Découvrez une collection de questions Préférez-Vous piquantes. Parfait pour les fêtes et les événements sociaux !",
+        "genre": "Jeu de Fête",
+        "numberOfPlayers": "2+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "ratingCount": "210"
+        }
+    }
+    </script>
+
+    <title>Préférez-Vous Questions Piquantes - Jeu de Fête pour Adultes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../../../css/gameheader.css">
-    <link rel="stylesheet" href="../../../games.css">
+    <link rel="stylesheet" href="../../../../games/games.css">
     <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./WouldYouRatherLogo.png">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
 </head>
-<body>
-    <div class="container py-4">
-        <h1 class="text-center mb-4">Préférez-Vous</h1>
-        <div class="game-card card shadow">
-            <div class="card-body">
-                <div class="question mb-4 p-3 bg-light rounded">
-                    <p class="lead text-center">Préférez-vous...</p>
+
+<body class="bg-light">
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-4">
+                    <img src="WouldYouRatherLogo.png" alt="Logo Préférez-Vous" class="img-fluid"
+                        style="max-width: 200px;">
                 </div>
-                <div class="options mb-4">
-                    <button class="btn btn-info btn-lg w-100 mb-2" id="option1">Option 1</button>
-                    <button class="btn btn-success btn-lg w-100" id="option2">Option 2</button>
+                <h1 class="text-center mb-5 display-4">Préférez-Vous Questions Piquantes</h1>
+                <div class="row justify-content-center align-items-center g-2 mt-4">
+                    <div class="col-md-5 d-flex justify-content-center">
+                        <div class="card option w-100" id="optionA">
+                            <div class="card-body d-flex flex-column justify-content-center text-center p-4">
+                                <p class="card-text mb-0" id="optionAText"></p>
+                                <div class="percentage mt-2" id="percentageA">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center">
+                        <div class="text-center vs">VS</div>
+                    </div>
+                    <div class="col-md-5 d-flex justify-content-center">
+                        <div class="card option w-100" id="optionB">
+                            <div class="card-body d-flex flex-column justify-content-center text-center p-4">
+                                <p class="card-text mb-0" id="optionBText"></p>
+                                <div class="percentage mt-2" id="percentageB">0%</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button class="btn btn-primary w-100 mb-3" id="nextBtn">Suivant</button>
-                <div class="stats">
-                    <p class="text-muted">Questions : <span id="count">0</span></p>
-                </div>
-                <div class="rules mt-5 pt-3 border-top">
-                    <h3>Comment Jouer</h3>
-                    <ul>
-                        <li>Lisez la question avec deux options</li>
-                        <li>Chaque joueur choisit son option préférée</li>
-                        <li>Discutez pourquoi vous avez choisi cette option</li>
-                        <li>Continuez avec la question suivante</li>
-                    </ul>
+                <div class="text-center mt-3">
+                    <button id="nextQuestion" class="btn btn-lg px-4">Question Suivante</button>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/auth.js"></script>
     <script src="/js/ads-controller.js"></script>
-    <script src="../../../fr/js/game-navigation-fr.js"></script>
     <script src="WouldYouRather-fr.js"></script>
+    <script src="../../../fr/js/game-navigation-fr.js"></script>
+
+    <section class="game-info container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Qu'est-ce que "Préférez-Vous Questions Piquantes" ?</h2>
+                    <p>Préférez-Vous Questions Piquantes est un jeu de fête passionnant pour adultes qui présente aux joueurs des dilemmes piquants et stimulants. À chaque tour, les joueurs doivent choisir entre deux options tout aussi intrigantes ou difficiles de notre collection de questions piquantes, ce qui mène à des discussions amusantes et révèle des aperçus sur les préférences et les personnalités de chacun.</p>
+                </article>
+
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Comment Jouer à Préférez-Vous</h2>
+                    <div class="game-rules">
+                        <ol>
+                            <li>Rassemblez vos amis ou votre famille dans un cadre confortable</li>
+                            <li>Lisez à tour de rôle les "Préférez-Vous Questions Piquantes" de notre collection</li>
+                            <li>Chacun doit choisir l'une des deux options - pas de compromis !</li>
+                            <li>Partagez votre raisonnement et discutez de vos choix</li>
+                            <li>Cliquez sur "Question Suivante" pour continuer le plaisir</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Pourquoi Jouer à Préférez-Vous Questions Piquantes ?</h2>
+                    <div class="benefits">
+                        <ul>
+                            <li>Brise-glace parfait avec des questions piquantes pour les fêtes et les rassemblements sociaux</li>
+                            <li>Encourage la pensée créative et la discussion avec des scénarios pour adultes</li>
+                            <li>Apprenez des choses surprenantes sur vos amis grâce à nos questions Préférez-Vous piquantes</li>
+                            <li>Aucun équipement spécial nécessaire</li>
+                            <li>Convient à tous les groupes d'âge</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Conseils pour une Expérience de Jeu Extraordinaire</h2>
+                    <div class="tips">
+                        <p>Pour rendre votre session de jeu Préférez-Vous Questions Piquantes encore plus agréable :</p>
+                        <ul>
+                            <li>Soyez honnête avec vos réponses</li>
+                            <li>Expliquez vos choix pour les rendre plus intéressants</li>
+                            <li>Ne jugez pas les réponses des autres - c'est du pur amusement !</li>
+                            <li>Essayez de penser rapidement - ne vous attardez pas trop sur vos réponses</li>
+                            <li>N'hésitez pas à ajouter vos propres questions de suivi</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
