@@ -1,43 +1,233 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jouez à Vérité ou Défi en ligne ! Jeu de fête classique pour les groupes et rassemblements. Générateur de défis et questions avec plus de 400 questions uniques.">
+    <meta name="keywords" content="vérité ou défi, jeu de vérité, jeu de fête, jeu en ligne, générateur de questions">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="Vérité ou Défi - Générateur en Ligne">
+    <meta property="og:description" content="Jouez à Vérité ou Défi en ligne ! Jeu de fête classique pour les groupes et rassemblements. Générateur de défis et questions avec plus de 400 questions uniques.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/fr/games/TruthorDare/TruthOrDare.html">
     <title>Vérité ou Défi - Jeu de Fête en Ligne</title>
-    <meta name="description" content="Jouez à Vérité ou Défi en ligne ! Jeu de fête classique pour les groupes et rassemblements.">
-    <meta name="keywords" content="vérité ou défi, jeu de vérité, jeu de fête, jeu en ligne">
-    <link rel="canonical" href="https://www.bestpartygames.net/fr/games/TruthorDare/TruthorDare.html">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/gameheader.css">
     <link rel="stylesheet" href="TruthOrDare.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./TruthorDareLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Vérité ou Défi - Générateur",
+        "description": "Jouez au jeu Vérité ou Défi en ligne ! Générateur gratuit et amusant avec des centaines de questions et de défis pour tous les âges.",
+        "url": "https://www.bestpartygames.net/fr/games/TruthorDare/TruthOrDare.html",
+        "image": "https://www.bestpartygames.net/fr/games/TruthorDare/TruthorDareLogo.png",
+        "genre": "Party Game",
+        "numberOfPlayers": "2+",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Party Games"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Best Party Games",
+            "url": "https://www.bestpartygames.net"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "ratingCount": "150"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
 </head>
+
 <body>
-    <div class="container py-4">
-        <h1 class="text-center mb-4">Vérité ou Défi</h1>
-        <div class="game-card card shadow">
-            <div class="card-body">
-                <div class="choice-buttons mb-4">
-                    <button class="btn btn-warning btn-lg w-100 mb-2" id="truthBtn">Vérité</button>
-                    <button class="btn btn-danger btn-lg w-100" id="dareBtn">Défi</button>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="TruthorDareLogo.png" alt="Vérité ou Défi Logo" title="Générateur de Jeu Vérité ou Défi"
+                    class="game-logo">
+            </div>
+            <h1 class="text-center mb-4">Vérité ou Défi - Générateur</h1>
+
+            <div class="game-section text-center">
+                <div id="selectedType" class="selected-type mb-3" style="display: none;"></div>
+                <div id="selectedDifficulty" class="selected-difficulty mb-3" style="display: none;"></div>
+
+                <div class="question-card mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p id="questionText" class="question-text mb-0">👇 Choisissez le mode de jeu ! 👇</p>
+                        </div>
+                    </div>
                 </div>
-                <div id="question" class="alert alert-info p-4 text-center" style="display: none; font-size: 18px;">
+
+                <!-- Difficulty selection (shown first) -->
+                <div class="difficulty-buttons" id="difficultyButtons">
+                    <button class="btn btn-success btn-lg choice-btn soft-btn" onclick="selectDifficulty('soft')">
+                        <span class="choice-icon">😊</span>
+                        <span class="choice-text">MODE SOFT</span>
+                    </button>
+                    <button class="btn btn-warning btn-lg choice-btn spicy-btn" onclick="selectDifficulty('spicy')">
+                        <span class="choice-icon">🌶️</span>
+                        <span class="choice-text">MODE ÉPICÉ</span>
+                    </button>
                 </div>
-                <button class="btn btn-secondary w-100" id="nextBtn" style="display: none;">Suivant</button>
-                <div class="mt-5 pt-3 border-top">
-                    <h3>Comment Jouer</h3>
-                    <ul>
-                        <li>Un joueur choisit Vérité ou Défi</li>
-                        <li>Pour Vérité : Répondez honnêtement à une question</li>
-                        <li>Pour Défi : Complétez un défi</li>
-                        <li>Passez le tour au joueur suivant</li>
-                    </ul>
+
+                <!-- Truth or Dare selection (shown after difficulty is selected) -->
+                <div class="choice-buttons" id="choiceButtons" style="display: none;">
+                    <button class="btn btn-info btn-lg choice-btn truth-btn" onclick="selectChoice('truth')">
+                        <span class="choice-icon">🤔</span>
+                        <span class="choice-text">VÉRITÉ</span>
+                    </button>
+                    <button class="btn btn-danger btn-lg choice-btn dare-btn" onclick="selectChoice('dare')">
+                        <span class="choice-icon">🎯</span>
+                        <span class="choice-text">DÉFI</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="controls mt-4 text-center">
+                <button class="btn btn-success" onclick="nextQuestion()" id="nextButton" style="display: none;">Question Suivante</button>
+                <button class="btn btn-secondary mt-3" onclick="resetGame()" id="resetButton"
+                    style="display: none;">Changer de Choix</button>
+                <button class="btn btn-outline-secondary mt-3" onclick="backToDifficulty()" id="backButton"
+                    style="display: none;">Retour au Mode</button>
+            </div>
+
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">🎮 Comment Jouer à Vérité ou Défi</h2>
+                        <h3 class="text-center mb-3">Règles du Jeu</h3>
+                        <ol class="text-start">
+                            <li>👋 Bienvenue dans notre jeu Vérité ou Défi en ligne ! D'abord, choisissez votre mode de jeu</li>
+                            <li>😊 <strong>Mode Soft</strong> : Convient à tous les âges, contenu familial, léger et amusant</li>
+                            <li>🌶️ <strong>Mode Épicé</strong> : Pour les adultes, contenu plus stimulant et approfondi</li>
+                            <li>🎮 Après avoir choisi la difficulté, les joueurs se relaient en cliquant sur "VÉRITÉ" ou "DÉFI"</li>
+                            <li>🤔 Si vous choisissez "VÉRITÉ", vous devez répondre honnêtement à la question</li>
+                            <li>🎯 Si vous choisissez "DÉFI", vous devez relever le défi proposé</li>
+                            <li>⚠️ Vous ne pouvez pas changer votre choix après avoir vu la question/défi</li>
+                            <li>💫 Si vous refusez de compléter une vérité ou un défi, vous devez faire face à une sanction décidée par le groupe</li>
+                            <li>🤝 Gardez toutes les vérités et défis appropriés et respectueux</li>
+                            <li>🎉 Notre générateur Vérité ou Défi contient 496 questions et défis, garantissant un plaisir infini !</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-intro mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">🎲 À Propos de Vérité ou Défi en Ligne</h2>
+                        <p>Bienvenue dans le jeu Vérité ou Défi en ligne ultime ! Notre générateur de jeu de fête gratuit apporte l'expérience classique de Vérité ou Défi à l'ère numérique, parfait pour les fêtes, les réunions ou les sorties virtuelles entre amis. Ce générateur Vérité ou Défi en ligne offre des divertissements infinis pour des groupes de toutes tailles.</p>
+
+                        <h3 class="mt-4">✨ Caractéristiques & Avantages</h3>
+                        <h4>Pourquoi Jouer à Notre Vérité ou Défi ?</h4>
+                        <ul>
+                            <li>🔄 496 questions et défis soigneusement conçus - jamais répétés !</li>
+                            <li>😊 Mode Soft : Contenu familial convenant à tous les âges</li>
+                            <li>🌶️ Mode Épicé : Contenu réservé aux adultes pour des expériences plus profondes</li>
+                            <li>🎪 Parfait pour les fêtes, les soirées pyjama ou les jeux en ligne</li>
+                            <li>🌐 Aucun téléchargement requis - jouez instantanément dans votre navigateur</li>
+                            <li>📱 Design adapté aux mobiles pour jouer en déplacement</li>
+                        </ul>
+
+                        <h3 class="mt-4">💡 Conseils & Stratégies du Jeu</h3>
+                        <h4>Comment Tirer le Meilleur de Votre Jeu</h4>
+                        <ul>
+                            <li>👥 Rassemblez un groupe de 3 joueurs ou plus pour la meilleure expérience</li>
+                            <li>🎯 Choisissez le mode de difficulté approprié en fonction de l'âge des participants</li>
+                            <li>🎵 Créez une atmosphère amusante et confortable</li>
+                            <li>🔄 Les joueurs se relaient en choisissant entre vérité et défi</li>
+                            <li>⏱️ Maintenez le jeu en mouvement en fixant des limites de temps pour les réponses</li>
+                            <li>🌶️ Les groupes d'adultes peuvent essayer le Mode Épicé pour des expériences plus stimulantes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">❓ FAQ Vérité ou Défi</h2>
+
+                        <h3>Modes de Jeu</h3>
+                        <div class="faq-item">
+                            <h5>😊🌶️ Quelle est la différence entre le Mode Soft et le Mode Épicé ?</h5>
+                            <p><strong>Mode Soft</strong> : Convient à tous les âges, contient 235 questions et défis familiaux légers et amusants. <strong>Mode Épicé</strong> : Conçu pour les adultes, contient 261 questions plus stimulantes et approfondies impliquant des sujets personnels plus profonds.</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>👨‍👩‍👧‍👦 Ce jeu Vérité ou Défi convient-il à tous les âges ?</h5>
+                            <p>Le Mode Soft convient aux joueurs de tous les âges avec un contenu totalement familial. Le Mode Épicé est plus adapté aux réunions d'adultes, bien que le contenu soit plus stimulant, il est toujours sûr et légal.</p>
+                        </div>
+
+                        <h3 class="mt-4">Exigences des Joueurs</h3>
+                        <div class="faq-item">
+                            <h5>👥 Combien de joueurs faut-il pour Vérité ou Défi ?</h5>
+                            <p>Bien que vous puissiez jouer avec seulement deux joueurs, le jeu est plus agréable avec 3 à 10 joueurs. Cela permet plus de variété dans les réponses et les interactions entre les joueurs.</p>
+                        </div>
+
+                        <h3 class="mt-4">Jeux en Ligne</h3>
+                        <div class="faq-item">
+                            <h5>🌐 Puis-je jouer à Vérité ou Défi en ligne avec des amis à distance ?</h5>
+                            <p>Absolument ! Notre jeu Vérité ou Défi en ligne fonctionne très bien pour les soirées jeux virtuelles. Partagez simplement votre écran lors d'un appel vidéo et tout le monde peut participer de n'importe où dans le monde.</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🔄 Les questions et défis se répètent-ils ?</h5>
+                            <p>Non ! Notre jeu contient 496 questions et défis soigneusement conçus (235 en Mode Soft, 261 en Mode Épicé), vous assurant du contenu frais et unique à chaque fois que vous jouez et ne vous ennuierez pas même pendant les longues sessions de jeu !</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/auth.js"></script>
-    <script src="/js/ads-controller.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/ads-controller.js"></script>
     <script src="../../../fr/js/game-navigation-fr.js"></script>
     <script src="TruthOrDare-fr.js"></script>
     <!-- Floating Ad -->

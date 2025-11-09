@@ -238,29 +238,51 @@ class GameNavigation {
         const currentPath = window.location.pathname;
         let newPath;
 
-        if (lang === 'de') {
-            // Zu deutscher Version wechseln
-            if (currentPath.startsWith('/de/')) {
-                // Bereits in deutscher Version
-                return;
-            }
-            newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/');
-        } else if (lang === 'zh') {
-            // Zu chinesischer Version wechseln
+        // Spiele, die keine chinesischen/deutschen/französischen Versionen haben
+        const englishOnlyGames = ['charades2', 'findthespy', 'numberguess'];
+        const isEnglishOnly = englishOnlyGames.some(game => currentPath.includes(game));
+
+        if (lang === 'zh') {
+            // Zur chinesischen Version wechseln
             if (currentPath.startsWith('/zh/')) {
                 // Bereits in chinesischer Version
                 return;
             }
-            newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/');
+            // Wenn dieses Spiel nur auf Englisch verfügbar ist, zur chinesischen Startseite
+            if (isEnglishOnly) {
+                newPath = '/zh/index.html';
+            } else {
+                // /de/ und /fr/ entfernen, dann /zh/ hinzufügen
+                newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/');
+            }
+        } else if (lang === 'de') {
+            // Zur deutschen Version wechseln
+            if (currentPath.startsWith('/de/')) {
+                // Bereits in deutscher Version
+                return;
+            }
+            // Wenn dieses Spiel nur auf Englisch verfügbar ist, zur deutschen Startseite
+            if (isEnglishOnly) {
+                newPath = '/de/index.html';
+            } else {
+                // /zh/ und /fr/ entfernen, dann /de/ hinzufügen
+                newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/');
+            }
         } else if (lang === 'fr') {
-            // Zu französischer Version wechseln
+            // Zur französischen Version wechseln
             if (currentPath.startsWith('/fr/')) {
                 // Bereits in französischer Version
                 return;
             }
-            newPath = '/fr' + currentPath.replace('/de/', '/').replace('/zh/', '/');
+            // Wenn dieses Spiel nur auf Englisch verfügbar ist, zur französischen Startseite
+            if (isEnglishOnly) {
+                newPath = '/fr/index.html';
+            } else {
+                // /zh/ und /de/ entfernen, dann /fr/ hinzufügen
+                newPath = '/fr' + currentPath.replace('/zh/', '/').replace('/de/', '/');
+            }
         } else {
-            // Zu englischer Version wechseln
+            // Zur englischen Version wechseln
             if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
                 // Bereits in englischer Version
                 return;

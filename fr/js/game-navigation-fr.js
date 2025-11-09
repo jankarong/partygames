@@ -272,7 +272,7 @@ class GameNavigation {
         const currentPath = window.location.pathname;
         let newPath;
 
-        // Games that don't have French versions yet
+        // Games that don't have Chinese/German/French versions
         const englishOnlyGames = ['charades2', 'findthespy', 'numberguess'];
         const isEnglishOnly = englishOnlyGames.some(game => currentPath.includes(game));
 
@@ -286,8 +286,8 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/zh/index.html';
             } else {
-                // Remove /fr/, /de/ if present, then add /zh/
-                newPath = '/zh' + currentPath.replace('/fr/', '/').replace('/de/', '/');
+                // Remove /de/ and /fr/ if present, then add /zh/
+                newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/');
             }
         } else if (lang === 'de') {
             // Switch to German version
@@ -299,8 +299,8 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/de/index.html';
             } else {
-                // Remove /fr/, /zh/ if present, then add /de/
-                newPath = '/de' + currentPath.replace('/fr/', '/').replace('/zh/', '/');
+                // Remove /zh/ and /fr/ if present, then add /de/
+                newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/');
             }
         } else if (lang === 'fr') {
             // Switch to French version
@@ -308,8 +308,13 @@ class GameNavigation {
                 // Already on French version
                 return;
             }
-            // Remove /en/, /zh/, /de/ if present, then add /fr/
-            newPath = '/fr' + currentPath.replace('/zh/', '/').replace('/de/', '');
+            // If this is an English-only game, go to French homepage instead
+            if (isEnglishOnly) {
+                newPath = '/fr/index.html';
+            } else {
+                // Remove /zh/ and /de/ if present, then add /fr/
+                newPath = '/fr' + currentPath.replace('/zh/', '/').replace('/de/', '/');
+            }
         } else {
             // Switch to English version
             if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {

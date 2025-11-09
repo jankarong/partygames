@@ -1,62 +1,139 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jamais Je N'ai - Jeu de Fête de Vérité</title>
-    <meta name="description" content="Jouez à Jamais Je N'ai en ligne ! Jeu de fête amusant pour les groupes. Découvrez des secrets avec ce jeu de fête classique.">
-    <meta name="keywords" content="jamais je n'ai, jeu jamais, jeu de vérité, jeu de fête, jeu en ligne">
-    <meta property="og:title" content="Jamais Je N'ai - Jeu de Fête Amusant">
-    <meta property="og:description" content="Jouez à Jamais Je N'ai en ligne ! Jeu de fête classique pour les groupes et rassemblements.">
+    <title>Jamais Je N'ai - Jeu de Fête en Ligne</title>
+    <meta name="description"
+        content="Jouez à Jamais Je N'ai en ligne ! Jeu de fête amusant pour les groupes avec des centaines de questions amusantes et pimentées.">
+    <meta name="keywords"
+        content="jamais je n'ai, jeu jamais, jeu de fête, jeu de vérité, jeu de fête amusant, jeu en ligne">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Jamais Je N'ai - Jeu de Fête en Ligne">
+    <meta property="og:description"
+        content="Jouez à Jamais Je N'ai en ligne ! Jeu de fête amusant pour les groupes et rassemblements avec des centaines de questions.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="NeverHaveIEverLogo.png">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Party Games">
     <link rel="canonical" href="https://www.bestpartygames.net/fr/games/NeverHaveIEver/NeverHaveIEver.html">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../css/gameheader.css">
-    <link rel="stylesheet" href="NeverHaveIEver.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./NeverHaveIEverLogo.png">
+
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Game",
-        "name": "Jamais Je N'ai",
-        "description": "Jouez à Jamais Je N'ai en ligne - jeu de fête amusant pour les groupes !",
+        "name": "Jamais Je N'ai - Jeu de Fête",
+        "description": "Jouez à Jamais Je N'ai en ligne ! Jeu de fête amusant pour les groupes avec des centaines de questions pimentées et amusantes.",
         "genre": "Jeu de Fête",
-        "numberOfPlayers": "2+",
+        "numberOfPlayers": "3+",
         "applicationCategory": "GameApplication",
-        "operatingSystem": "Web Browser"
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "250"
+        }
     }
     </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="NeverHaveIEver.css">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
 </head>
+
 <body>
-    <div class="container py-4">
-        <h1 class="text-center mb-4">Jamais Je N'ai</h1>
-        <div class="game-card card shadow">
-            <div class="card-body">
-                <div class="statement mb-4 p-4 bg-light rounded text-center">
-                    <h2 id="statement" class="display-5">Jamais je n'ai...</h2>
-                </div>
-                <div class="controls mb-4">
-                    <button class="btn btn-primary btn-lg w-100" id="nextBtn">Suivant</button>
-                </div>
-                <div class="stats">
-                    <p class="text-muted">Questions : <span id="count">0</span></p>
-                </div>
-                <div class="rules mt-5 pt-3 border-top">
-                    <h3>Comment Jouer</h3>
-                    <ul>
-                        <li>Une personne lit la déclaration</li>
-                        <li>Tous les autres ayant fait ce truc boivent</li>
-                        <li>Ceux qui n'ont pas fait le truc ne boivent pas</li>
-                        <li>Continuez avec la déclaration suivante</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <img src="NeverHaveIEverLogo.png" alt="Jamais Je N'ai Logo de Jeu de Fête" class="game-logo">
+        <h1>Jamais Je N'ai - Jeu de Fête Pimenté</h1>
+
+        <div class="game-card">
+            <p id="statement" class="statement">Cliquez sur Démarrer pour jouer !</p>
+        </div>
+        <div class="controls">
+            <button id="nextBtn" class="button" aria-label="Démarrer le Jeu">Démarrer</button>
+        </div>
+        <div class="rules">
+            <h2>Comment Jouer à Jamais Je N'ai</h2>
+            <p>Bienvenue dans notre collection ultime de questions Jamais Je N'ai amusantes et pimentées pour les fêtes !
+                Préparez-vous pour le jeu de fête le plus excitant avec les questions les plus amusantes. Voici comment jouer :</p>
+            <p data-emoji="🎮">1. Les joueurs se relaient en cliquant sur « Suivant » pour obtenir une déclaration.</p>
+            <p data-emoji="🙋">2. Si vous L'AVEZ FAIT, buvez un verre ou baissez un doigt.</p>
+            <p data-emoji="🤔">3. Si vous ne l'avez JAMAIS fait, ne faites rien.</p>
+            <p data-emoji="🏆">4. Le joueur ayant le plus de doigts levés à la fin gagne !</p>
+            <p data-emoji="🌶️">5. N'oubliez pas : Nos questions Jamais Je N'ai amusantes rendront votre fête inoubliable !</p>
+        </div>
+
+        <div class="game-info">
+            <h2>Plus de Détails Amusants !</h2>
+            <p>Préparez-vous pour la collection de questions Jamais Je N'ai la plus excitante qui réunit les amis
+                à travers les rires, les surprises et les moments inoubliables ! Nos questions spéciales amusantes et
+                pimentées tiendront tout le monde divertis toute la nuit avec l'expérience de fête ultime pour adultes !</p>
+
+            <h3 data-emoji="🎉">Moments de Fête Parfaits</h3>
+            <ul>
+                <li data-emoji="🎂">Célébrations d'Anniversaire Amusantes</li>
+                <li data-emoji="🎓">Sorties Universitaires Excitantes</li>
+                <li data-emoji="👰">Fêtes de Célibataire Incroyables</li>
+                <li data-emoji="🏠">Fêtes de Maison Confortables</li>
+                <li data-emoji="🤗">Réunions d'Amis Sympathiques</li>
+            </ul>
+
+            <h3 data-emoji="✨">Pourquoi Vous Aimerez Ce Jeu</h3>
+            <ul>
+                <li data-emoji="🔥">Questions Amusantes et Pimentées - De flirteur à des questions Jamais Je N'ai très audacieuses !</li>
+                <li data-emoji="📖">Règles Super Faciles - Tout le monde peut s'amuser !</li>
+                <li data-emoji="🌈">Jouer Partout - Parfait pour n'importe quel endroit !</li>
+                <li data-emoji="🎲">Toujours Frais - De nouvelles surprises à chaque fois !</li>
+                <li data-emoji="🎁">Totalement Gratuit - Juste du plaisir, pas de frais !</li>
+            </ul>
+
+            <h3 data-emoji="🎯">Manières Amusantes de Jouer</h3>
+            <ul>
+                <li data-emoji="🖐️">Amusement des Doigts Levés - Commencez avec 10, voyez qui tient !</li>
+                <li data-emoji="🥤">Sip & Tell - Buvez un verre pour chaque oui !</li>
+                <li data-emoji="🏅">Score & Partage - Gardez les points pour plus de rires !</li>
+                <li data-emoji="📚">Heure de l'Histoire - Partagez vos souvenirs amusants !</li>
+            </ul>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/auth.js"></script>
-    <script src="/js/ads-controller.js"></script>
-    <script src="../../../fr/js/game-navigation-fr.js"></script>
     <script src="NeverHaveIEver-fr.js"></script>
+    <script src="../../../fr/js/game-navigation-fr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/ads-controller.js"></script>
     <!-- Floating Ad -->
     <link rel="stylesheet" href="../../../css/floating-ad.css">
     <script src="../../../js/floating-ad.js"></script>
@@ -72,11 +149,11 @@
                         </a>
                         <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323852/13624" style="position:absolute;visibility:hidden;" border="0" />
                     `
-                    
+
                 });
             }
         });
     </script>
 </body>
-</html>
 
+</html>

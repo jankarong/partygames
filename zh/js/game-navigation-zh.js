@@ -238,30 +238,49 @@ class GameNavigation {
         const currentPath = window.location.pathname;
         let newPath;
 
+        // 没有中文/德文/法文版本的游戏
+        const englishOnlyGames = ['charades2', 'findthespy', 'numberguess'];
+        const isEnglishOnly = englishOnlyGames.some(game => currentPath.includes(game));
+
         if (lang === 'zh') {
             // 切换到中文版
             if (currentPath.startsWith('/zh/')) {
                 // 已经在中文版
                 return;
             }
-            // 移除 /de/ 和 /fr/ 如果存在，然后添加 /zh/
-            newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/');
+            // 如果这个游戏仅有英文版本，转到中文首页
+            if (isEnglishOnly) {
+                newPath = '/zh/index.html';
+            } else {
+                // 移除 /de/ 和 /fr/ 如果存在，然后添加 /zh/
+                newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/');
+            }
         } else if (lang === 'de') {
             // 切换到德语版
             if (currentPath.startsWith('/de/')) {
                 // 已经在德语版
                 return;
             }
-            // 移除 /zh/ 和 /fr/ 如果存在，然后添加 /de/
-            newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/');
+            // 如果这个游戏仅有英文版本，转到德文首页
+            if (isEnglishOnly) {
+                newPath = '/de/index.html';
+            } else {
+                // 移除 /zh/ 和 /fr/ 如果存在，然后添加 /de/
+                newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/');
+            }
         } else if (lang === 'fr') {
             // 切换到法语版
             if (currentPath.startsWith('/fr/')) {
                 // 已经在法语版
                 return;
             }
-            // 移除 /de/ 和 /zh/ 如果存在，然后添加 /fr/
-            newPath = '/fr' + currentPath.replace('/de/', '/').replace('/zh/', '/');
+            // 如果这个游戏仅有英文版本，转到法文首页
+            if (isEnglishOnly) {
+                newPath = '/fr/index.html';
+            } else {
+                // 移除 /de/ 和 /zh/ 如果存在，然后添加 /fr/
+                newPath = '/fr' + currentPath.replace('/de/', '/').replace('/zh/', '/');
+            }
         } else {
             // 切换到英文版
             if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
