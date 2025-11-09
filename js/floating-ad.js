@@ -23,9 +23,14 @@ class FloatingAdManager {
     /**
      * 初始化广告管理器
      */
-    init() {
+    async init() {
         // 检查用户是否在本次会话中关闭了广告
         if (this.options.rememberClosure && this.isAdClosed()) {
+            return;
+        }
+
+        // 检查用户是否是高级会员 - 高级会员不显示广告
+        if (await this.shouldHideForPremium()) {
             return;
         }
 
@@ -36,6 +41,31 @@ class FloatingAdManager {
             // 延迟显示
             setTimeout(() => this.show(), this.options.showDelay);
         }
+    }
+
+    /**
+     * 检查是否应该为高级会员隐藏广告
+     */
+    async shouldHideForPremium() {
+        try {
+            const sb = window.supabaseClient || window.supabase;
+            let session;
+            if (sb?.auth?.getSession) {
+                session = (await sb.auth.getSession()).data?.session;
+                if (!session) {
+                    await new Promise(r => setTimeout(r, 500));
+                    session = (await sb.auth.getSession()).data?.session;
+                }
+            }
+
+            if (session && window.authManager) {
+                const isPremium = await window.authManager.checkUserPremiumStatus();
+                return isPremium; // 如果是高级会员，返回 true（隐藏广告）
+            }
+        } catch (e) {
+            console.warn('floating-ad: premium check error', e);
+        }
+        return false; // 默认显示广告
     }
 
     /**
