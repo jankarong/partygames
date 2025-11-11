@@ -128,12 +128,6 @@ function closePremiumModal() {
 
 // 设置面板函数
 async function toggleSettings() {
-    // 在打开设置前检查是否为高级会员
-    const isPremium = await isPremiumUser();
-    if (!isPremium) {
-        showPremiumModal();
-        return;
-    }
     settingsPanel.classList.toggle('open');
 }
 

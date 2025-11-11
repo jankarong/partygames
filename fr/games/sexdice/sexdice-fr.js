@@ -128,12 +128,6 @@ function closePremiumModal() {
 
 // Fonctions du panneau de paramètres
 async function toggleSettings() {
-    // Vérifier si l'utilisateur est premium avant d'ouvrir les paramètres
-    const isPremium = await isPremiumUser();
-    if (!isPremium) {
-        showPremiumModal();
-        return;
-    }
     settingsPanel.classList.toggle('open');
 }
 

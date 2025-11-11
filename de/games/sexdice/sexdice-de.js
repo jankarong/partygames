@@ -128,12 +128,6 @@ function closePremiumModal() {
 
 // Einstellungspanel-Funktionen
 async function toggleSettings() {
-    // Vor dem Öffnen der Einstellungen prüfen, ob Benutzer Premium ist
-    const isPremium = await isPremiumUser();
-    if (!isPremium) {
-        showPremiumModal();
-        return;
-    }
     settingsPanel.classList.toggle('open');
 }
 
