@@ -1,4 +1,4 @@
-// Game data
+// Game data - Portuguese (PT-BR) Version
 const gameData = {
     currentType: null,
     currentDifficulty: null,
@@ -582,18 +582,18 @@ function selectDifficulty(difficulty) {
     
     // Show selected difficulty
     if (difficulty === 'soft') {
-        selectedDifficulty.innerHTML = '<span class="badge bg-success">Soft Mode</span>';
-        questionText.textContent = '👇 Pick Your Choice! Family-friendly content for all ages 👇';
+        selectedDifficulty.innerHTML = '<span class="badge bg-success">Modo Suave</span>';
+        questionText.textContent = '👇 Escolha Sua Opção! Conteúdo amigável para todas as idades 👇';
     } else {
-        selectedDifficulty.innerHTML = '<span class="badge bg-warning">Spicy Mode</span>';
-        questionText.textContent = '👇 Pick Your Choice! More challenging content for adults 👇';
+        selectedDifficulty.innerHTML = '<span class="badge bg-warning">Modo Picante</span>';
+        questionText.textContent = '👇 Escolha Sua Opção! Conteúdo mais desafiador para adultos 👇';
     }
     selectedDifficulty.style.display = 'block';
-    
+
     // Hide difficulty buttons, show truth/dare buttons
     difficultyButtons.style.display = 'none';
     choiceButtons.style.display = 'flex';
-    
+
     // Show back button
     backButton.style.display = 'inline-block';
 }
@@ -601,26 +601,26 @@ function selectDifficulty(difficulty) {
 // Select truth or dare
 function selectChoice(type) {
     gameData.currentType = type;
-    
+
     // Get random question
     const questions = gameData.questions[gameData.currentDifficulty][type];
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-    
+
     // Display question
     questionText.textContent = randomQuestion;
-    
+
     // Show selected type
     if (type === 'truth') {
-        selectedType.innerHTML = '<span class="badge bg-info">Truth</span>';
+        selectedType.innerHTML = '<span class="badge bg-info">Verdade</span>';
     } else {
-        selectedType.innerHTML = '<span class="badge bg-danger">Dare</span>';
+        selectedType.innerHTML = '<span class="badge bg-danger">Desafio</span>';
     }
     selectedType.style.display = 'block';
-    
+
     // Show control buttons
     nextButton.style.display = 'inline-block';
     resetButton.style.display = 'inline-block';
-    
+
     // Hide choice buttons
     choiceButtons.style.display = 'none';
 }
@@ -637,7 +637,7 @@ function nextQuestion() {
 // Back to difficulty selection
 function backToDifficulty() {
     gameData.currentType = null;
-    questionText.textContent = '👇 Choose Game Mode! 👇';
+    questionText.textContent = '👇 Escolha o Modo de Jogo! 👇';
     selectedType.style.display = 'none';
     nextButton.style.display = 'none';
     resetButton.style.display = 'none';
@@ -650,7 +650,7 @@ function backToDifficulty() {
 function resetGame() {
     gameData.currentType = null;
     gameData.currentDifficulty = null;
-    questionText.textContent = '👇 Choose Game Mode! 👇';
+    questionText.textContent = '👇 Escolha o Modo de Jogo! 👇';
     selectedType.style.display = 'none';
     selectedDifficulty.style.display = 'none';
     nextButton.style.display = 'none';
