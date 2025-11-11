@@ -562,15 +562,6 @@ async function startGame() {
     const useCustomWords = document.getElementById('useCustomWords').checked;
     const selectedCategory = document.getElementById('categorySelect').value;
 
-    // Check if selected category requires premium
-    if (gameState.premiumCategories.includes(selectedCategory)) {
-        const isPremium = await isPremiumUser();
-        if (!isPremium) {
-            showPremiumModal();
-            return;
-        }
-    }
-
     if (undercoverCount + whiteCount >= playerCount) {
         alert('Too many undercover and Mr. White players!');
         return;

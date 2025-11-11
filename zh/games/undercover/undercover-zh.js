@@ -602,15 +602,6 @@ async function startGame() {
     const useCustomWords = document.getElementById('useCustomWords').checked;
     const selectedCategory = document.getElementById('categorySelect').value;
 
-    // 检查所选分类是否需要会员
-    if (gameState.premiumCategories.includes(selectedCategory)) {
-        const isPremium = await isPremiumUser();
-        if (!isPremium) {
-            showPremiumModal();
-            return;
-        }
-    }
-
     if (undercoverCount + whiteCount >= playerCount) {
         alert('卧底和白板玩家人数过多！');
         return;
