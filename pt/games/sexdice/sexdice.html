@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sex Dice Online - Free love dice game for couples</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Lora:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="sexdice.css">
+    <meta name="description"
+        content="Play Sex Dice Online - the ultimate free love dice game for couples. Customize actions, body parts, and duration for exciting romantic moments.">
+    <meta name="keywords" content="sex dice online, love dice game, adult dice game, couple games, sexy dice generator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/games/sexdice/sexdice.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./sexdicelogo.png">
+
+    <meta property="og:title" content="Sex Dice Online - Free Intimate Dice Game for Couples">
+    <meta property="og:description"
+        content="Play Sex Dice Online - Roll the virtual dice to discover exciting actions, body parts, and durations to spice up your intimate moments with your partner.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/games/sexdice/sexdice.html">
+    <meta property="og:image" content="https://www.bestpartygames.net/games/sexdice/sexdicelogo.png">
+    <script src="sexdice.js" defer></script>
+    <script src="../../js/game-navigation.js"></script>
+    <link rel="stylesheet" href="../../css/gameheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Sex Dice Online",
+        "description": "Play Sex Dice Online - the ultimate free intimate dice game for couples. Customize actions, body parts, and duration for exciting romantic moments.",
+        "url": "https://www.bestpartygames.net/games/sexdice/sexdice.html",
+        "image": "https://www.bestpartygames.net/games/sexdice/sexdicelogo.png",
+        "genre": "Adult Game",
+        "numberOfPlayers": "2",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "Adults",
+            "suggestedMinAge": 18
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Best Party Games"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Best Party Games",
+            "url": "https://www.bestpartygames.net"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.3",
+            "ratingCount": "89"
+        },
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "Action Dice",
+                "description": "Customizable actions for intimate moments"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Body Part Dice",
+                "description": "Different body parts to focus on"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Duration Dice",
+                "description": "Time variations for activities"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div id="saveNotification" class="save-notification">
+        Changes saved successfully!
+    </div>
+
+
+
+    <main class="container">
+        <header class="logo-container">
+            <img src="./sexdicelogo.png" alt="Sex Dice Online Game Logo"
+                title="Sex Dice Online - Free Intimate Game for Couples" class="game-logo">
+        </header>
+        <h1>Sex Dice Online​</h1>
+        <section class="dice-container" aria-label="Interactive Dice Game">
+            <div id="actionDice" class="dice action">
+                <span class="dice-text">Action</span>
+            </div>
+            <div id="whereDice" class="dice where">
+                <span class="dice-text">Body</span>
+            </div>
+            <div id="timeDice" class="dice time">
+                <span class="dice-text">Time</span>
+            </div>
+        </section>
+        <section class="button-container">
+            <button type="button" id="rollButton" class="button primary">Roll the Dice</button>
+            <button type="button" id="settingsButton" class="button settings">⚙️ Customize</button>
+        </section>
+        <section id="result" class="result"></section>
+
+        <!-- SEO Optimized Content -->
+        <section class="game-info">
+            <h2>Spice Up Your Romance with Sex Dice Online</h2>
+            <p>Looking for a way to add excitement to your intimate moments? Our Sex Dice Online game is the ultimate
+                free digital solution designed
+                to bring fun exploration between partners. Simply click the dice to discover new combinations of
+                actions, body parts, and durations to enjoy together. This online sex dice generator provides endless
+                variety for couples.</p>
+
+            <h3>How To Play</h3>
+            <ol class="instructions">
+                <li>Click the "Roll the Dice" button to begin</li>
+                <li>The three dice will display a random action, body part, and duration</li>
+                <li>Follow the suggestion with your partner</li>
+                <li>Roll again for more fun combinations!</li>
+                <li>Use the "Customize" button to personalize options to your preferences</li>
+            </ol>
+
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4>Is Sex Dice Online free to play?</h4>
+                    <p>Yes! Our Sex Dice Online game is completely free with no hidden fees, downloads, or premium
+                        features required.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I customize the dice options?</h4>
+                    <p>Absolutely! Click the "Customize" button to add, edit, or remove options for actions, body parts,
+                        and durations. This feature is completely free for all users.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Will my custom settings be saved?</h4>
+                    <p>Yes, your personalized settings are saved to your browser's local storage and will be remembered
+                        for your next visit.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is Sex Dice Online mobile-friendly?</h4>
+                    <p>Yes! Our Sex Dice Online game works perfectly on smartphones, tablets, and desktop computers.
+                        Play anywhere, anytime!</p>
+                </div>
+            </div>
+
+            <h3>Benefits of Playing Sex Dice Online</h3>
+            <ul class="benefits-list">
+                <li><strong>Enhance Intimacy:</strong> Discover new ways to connect with your partner</li>
+                <li><strong>Break Routine:</strong> Add variety and spontaneity to your love life</li>
+                <li><strong>Improve Communication:</strong> Open up discussions about desires and preferences</li>
+                <li><strong>Fully Customizable:</strong> Tailor the game to your relationship's comfort level</li>
+                <li><strong>Private &amp; Secure:</strong> Your custom settings are stored locally, never on our servers
+                </li>
+            </ul>
+
+
+
+            <div class="romantic-ideas">
+                <h3>Romantic Ideas to Enhance Your Relationship</h3>
+                <p>Beyond the Sex Dice game, here are some creative ideas to strengthen your bond:</p>
+                <ul class="ideas-list">
+                    <li>Plan a surprise date night together</li>
+                    <li>Prepare a special candlelit dinner</li>
+                    <li>Write down your appreciation and love for your partner</li>
+                    <li>Try a new activity or learn a new skill together</li>
+                    <li>Create a daily ritual that's just for the two of you</li>
+                </ul>
+            </div>
+        </section>
+        <!-- End SEO Optimized Content -->
+    </main>
+
+
+    <!-- Premium Modal -->
+    <div id="premium-modal" class="modal-overlay hidden">
+        <div class="card shadow-lg rounded-4" style="max-width: 500px; margin: 10% auto; position: relative; background-color: #2d1b3d; border: 2px solid #d81b60;">
+            <div class="card-body p-4 text-center">
+                <div class="mb-4">
+                    <i class="fas fa-crown text-warning" style="font-size: 4rem;"></i>
+                </div>
+                <h3 class="h4 mb-3" style="color: #fff;">Unlock Customize Feature</h3>
+                <p class="mb-4" style="color: #fff;">Customizing dice options requires a premium membership. Upgrade to unlock:</p>
+                <ul class="text-start mb-4" style="max-width: 300px; margin: 0 auto; color: #fff;">
+                    <li>Customize actions, body parts, and durations</li>
+                    <li>Add your own custom options</li>
+                    <li>Save personalized settings</li>
+                    <li>Ad-free experience</li>
+                </ul>
+                <div class="d-flex gap-2 justify-content-center mt-4">
+                    <button class="btn btn-lg px-4 rounded-pill" style="background-color: #d81b60; color: white; border: none;" onclick="window.location.href='/premium.html'">
+                        <i class="fas fa-crown me-2"></i>Upgrade Now
+                    </button>
+                    <button class="btn btn-lg px-4 rounded-pill" style="background-color: transparent; color: white; border: 2px solid #d81b60;" onclick="closePremiumModal()">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="settingsPanel" class="settings-panel">
+        <div class="settings-header">
+            <button type="button" class="close-button" onclick="closeSettings()">×</button>
+            <h2>Customize</h2>
+        </div>
+        <div class="settings-content">
+            <div class="dice-options">
+                <h3>Actions</h3>
+                <div id="actionOptions"></div>
+                <button type="button" class="add-option" onclick="addOption('action')">+ Add Action</button>
+            </div>
+            <div class="dice-options">
+                <h3>Where</h3>
+                <div id="whereOptions"></div>
+                <button type="button" class="add-option" onclick="addOption('where')">+ Add Where</button>
+            </div>
+            <div class="dice-options">
+                <h3>Times</h3>
+                <div id="timeOptions"></div>
+                <button type="button" class="add-option" onclick="addOption('time')">+ Add Time</button>
+            </div>
+            <div class="settings-buttons">
+                <button type="button" class="button" onclick="resetToDefault()">Reset to Default</button>
+                <button type="button" class="button" onclick="saveChanges()">Save</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323852/13624" target="_top" id="3323852">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323852" border="0" alt="Shopify" width="640" height="100"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323852/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

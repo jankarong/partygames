@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes floating-hearts {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    background: #ffe6f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container {
+    max-width: 800px;
+    width: 98%;
+    background: white;
+    border-radius: 25px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    border: 3px solid #ff69b4;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before,
+.container::after {
+    content: '♥';
+    position: absolute;
+    color: #ff69b4;
+    opacity: 0.2;
+    font-size: 40px;
+    animation: floating-hearts 3s infinite;
+}
+
+.container::before {
+    left: 20px;
+    top: 20px;
+}
+
+.container::after {
+    right: 20px;
+    top: 20px;
+}
+
+.container img.game-logo {
+    max-width: 120px !important;
+    width: 120px !important;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    animation: float 3s ease-in-out infinite;
+    filter: brightness(0.95) saturate(0.9);
+    transition: all 0.3s ease;
+}
+
+.game-logo:hover {
+    filter: brightness(1) saturate(1);
+}
+
+h1 {
+    text-align: center;
+    color: #ff69b4;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-shadow: 2px 2px 0px rgba(255, 105, 180, 0.2);
+}
+
+.game-card {
+    background: #fff5f8;
+    border-radius: 25px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.15);
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ff69b4;
+}
+
+.statement {
+    font-size: 2em;
+    color: #ff1493;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.button {
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(255, 105, 180, 0.4);
+}
+
+.button::after {
+    content: '♥';
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.button:hover::after {
+    left: calc(100% + 20px);
+}
+
+.rules {
+    text-align: left;
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff5f8;
+    border-radius: 20px;
+    border: 2px dashed #ff69b4;
+}
+
+.rules h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ff69b4;
+}
+
+.rules p {
+    color: #ff85a2;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    position: relative;
+    padding-left: 35px;
+}
+
+.rules p::before {
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.rules p[data-emoji]::before {
+    content: attr(data-emoji);
+}
+
+.rules p:not([data-emoji])::before {
+    content: '♥';
+    color: #ff69b4;
+}
+
+.game-info {
+    text-align: left;
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff5f8;
+    border-radius: 20px;
+    border: 2px dashed #ff69b4;
+}
+
+.game-info h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff69b4;
+    text-shadow: 2px 2px 0px rgba(255, 105, 180, 0.2);
+}
+
+.game-info h3 {
+    color: #ff69b4;
+    margin: 20px 0 10px;
+    font-size: 1.2em;
+    position: relative;
+    padding-left: 35px;
+}
+
+.game-info h3::before {
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.game-info h3[data-emoji]::before {
+    content: attr(data-emoji);
+}
+
+.game-info h3:not([data-emoji])::before {
+    content: '♥';
+    color: #ff69b4;
+}
+
+.game-info li {
+    color: #ff85a2;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    position: relative;
+    padding-left: 35px;
+}
+
+.game-info li::before {
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.game-info li[data-emoji]::before {
+    content: attr(data-emoji);
+}
+
+.game-info li:not([data-emoji])::before {
+    content: '♥';
+    color: #ff69b4;
+    font-size: 0.9em;
+}
+
+.game-info p {
+    color: #ff85a2;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.game-info ul {
+    list-style: none;
+    margin: 10px 0;
+    padding-left: 10px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .container img.game-logo {
+        max-width: 100px !important;
+        width: 100px !important;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .statement {
+        font-size: 1.2em;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
+/* 强制覆盖logo大小 - 修复中文版logo过大问题 */
+body .container img.game-logo[src*="NeverHaveIEverLogo"] {
+    max-width: 120px !important;
+    width: 120px !important;
+}
+
+@media (max-width: 600px) {
+    body .container img.game-logo[src*="NeverHaveIEverLogo"] {
+        max-width: 100px !important;
+        width: 100px !important;
+    }
+}
+
+/* 手机端导航栏位置自定义 - 移到右下角避免与support me按钮冲突 */
+@media (max-width: 768px) {
+    .quick-games-bar {
+        bottom: 15px !important;
+        left: auto !important;
+        right: 15px !important;
+        transform: none !important;
+    }
+    
+    /* 确保在打开状态下也保持右侧位置 */
+    .quick-games-bar.open {
+        right: 15px !important;
+        left: auto !important;
+    }
+}

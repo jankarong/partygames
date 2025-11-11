@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Gerador de Verdade ou Desafio modos picante e familiar para casais, adultos, adolescentes, amigos! 496 perguntas e desafios únicos. Melhor jogo de festa online gratuito para trabalho e escola!">
+    <meta name="keywords"
+        content="verdade ou desafio, jogos de festa, jogos online, gerador verdade ou desafio, desafios picantes, gerador de jogos, jogos divertidos">
+    <meta name="author" content="Jogos de Festa">
+    <meta property="og:title" content="Gerador de Verdade ou Desafio - Modo Picante e Suave Online">
+    <meta property="og:description"
+        content="Gerador de Verdade ou Desafio modos picante e familiar para casais, adultos, adolescentes, amigos! 496 perguntas e desafios únicos. Melhor jogo de festa online gratuito!">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/pt/games/TruthorDare/TruthOrDare.html">
+    <title>Gerador de Verdade ou Desafio - Modo Picante e Suave Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/gameheader.css">
+    <link rel="stylesheet" href="TruthOrDare.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./TruthorDareLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Gerador de Verdade ou Desafio",
+        "description": "Jogue o jogo de festa Verdade ou Desafio final online! Gerador gratuito, divertido e familiar com perguntas e desafios infinitos para todas as idades.",
+        "url": "https://www.bestpartygames.net/pt/games/TruthorDare/TruthOrDare.html",
+        "image": "https://www.bestpartygames.net/games/TruthorDare/TruthorDareLogo.png",
+        "genre": "Jogo de Festa",
+        "numberOfPlayers": "2+",
+        "gamePlatform": "Navegador Web",
+        "operatingSystem": "Qualquer",
+        "applicationCategory": "Jogo",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "BRL"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Jogos de Festa"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Melhores Jogos de Festa",
+            "url": "https://www.bestpartygames.net/pt/"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "ratingCount": "150"
+        },
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "Perguntas de Verdade",
+                "description": "Perguntas honestas para revelar fatos interessantes sobre os jogadores"
+            },
+            {
+                "@type": "Thing",
+                "name": "Desafios",
+                "description": "Desafios divertidos e seguros para os jogadores completarem"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="TruthorDareLogo.png" alt="Truth or Dare Logo" title="Truth or Dare Party Game Generator"
+                    class="game-logo">
+            </div>
+            <h1 class="text-center mb-4">Gerador de Verdade ou Desafio</h1>
+
+            <div class="game-section text-center">
+                <div id="selectedType" class="selected-type mb-3" style="display: none;"></div>
+                <div id="selectedDifficulty" class="selected-difficulty mb-3" style="display: none;"></div>
+
+                <div class="question-card mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p id="questionText" class="question-text mb-0">👇 Escolha o Modo de Jogo! 👇</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Difficulty selection (shown first) -->
+                <div class="difficulty-buttons" id="difficultyButtons">
+                    <button class="btn btn-success btn-lg choice-btn soft-btn" onclick="selectDifficulty('soft')">
+                        <span class="choice-icon">😊</span>
+                        <span class="choice-text">MODO SUAVE</span>
+                    </button>
+                    <button class="btn btn-warning btn-lg choice-btn spicy-btn" onclick="selectDifficulty('spicy')">
+                        <span class="choice-icon">🌶️</span>
+                        <span class="choice-text">MODO PICANTE</span>
+                    </button>
+                </div>
+
+                <!-- Truth or Dare selection (shown after difficulty is selected) -->
+                <div class="choice-buttons" id="choiceButtons" style="display: none;">
+                    <button class="btn btn-info btn-lg choice-btn truth-btn" onclick="selectChoice('truth')">
+                        <span class="choice-icon">🤔</span>
+                        <span class="choice-text">VERDADE</span>
+                    </button>
+                    <button class="btn btn-danger btn-lg choice-btn dare-btn" onclick="selectChoice('dare')">
+                        <span class="choice-icon">🎯</span>
+                        <span class="choice-text">DESAFIO</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="controls mt-4 text-center">
+                <button class="btn btn-success" onclick="nextQuestion()" id="nextButton" style="display: none;">Próxima Pergunta</button>
+                <button class="btn btn-secondary mt-3" onclick="resetGame()" id="resetButton"
+                    style="display: none;">Mudar Escolha</button>
+                <button class="btn btn-outline-secondary mt-3" onclick="backToDifficulty()" id="backButton"
+                    style="display: none;">Voltar à Seleção de Modo</button>
+            </div>
+
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">🎮 Como Jogar Verdade ou Desafio</h2>
+                        <h3 class="text-center mb-3">Regras do Jogo</h3>
+                        <ol class="text-start">
+                            <li>👋 Bem-vindo ao nosso jogo online de Verdade ou Desafio! Primeiro, escolha seu modo de jogo</li>
+                            <li>😊 <strong>Modo Suave</strong>: Apropriado para todas as idades, conteúdo familiar, leve e divertido</li>
+                            <li>🌶️ <strong>Modo Picante</strong>: Para adultos, conteúdo mais desafiador e aprofundado</li>
+                            <li>🎮 Depois de escolher a dificuldade, os jogadores se alternam clicando em "VERDADE" ou "DESAFIO"</li>
+                            <li>🤔 Se você escolher "VERDADE", deve responder a pergunta honestamente</li>
+                            <li>🎯 Se você escolher "DESAFIO", deve executar o desafio fornecido</li>
+                            <li>⚠️ Você não pode mudar sua escolha depois de ver a pergunta/desafio</li>
+                            <li>💫 Se você se recusar a completar uma verdade ou desafio, deve enfrentar uma penalidade decidida pelo grupo</li>
+                            <li>🤝 Mantenha todas as verdades e desafios apropriados e respeitosos</li>
+                            <li>🎉 Nosso gerador de Verdade ou Desafio tem 496 perguntas e desafios, garantindo diversão infinita!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-intro mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">🎲 Sobre Verdade ou Desafio Online</h2>
+                        <p>Bem-vindo ao melhor gerador de jogo online de Verdade ou Desafio! Nosso jogo de festa gratuito traz a experiência clássica de Verdade ou Desafio para a era digital, perfeito para festas, reuniões ou encontros virtuais com amigos. Este gerador online de Verdade ou Desafio fornece entretenimento infinito para grupos de todos os tamanhos.</p>
+
+                        <h3 class="mt-4">✨ Características e Benefícios</h3>
+                        <h4>Por que Jogar Nosso Verdade ou Desafio?</h4>
+                        <ul>
+                            <li>🔄 496 perguntas e desafios cuidadosamente elaborados - nunca se repete!</li>
+                            <li>😊 Modo Suave: Conteúdo familiar apropriado para todas as idades</li>
+                            <li>🌶️ Modo Picante: Conteúdo desafiador exclusivo para adultos para experiências mais profundas</li>
+                            <li>🎪 Perfeito para festas, pijamadas ou noites de jogo virtual</li>
+                            <li>🌐 Sem necessidade de download - jogue instantaneamente no seu navegador</li>
+                            <li>📱 Design amigável para dispositivos móveis para jogar em qualquer lugar</li>
+                        </ul>
+
+                        <h3 class="mt-4">💡 Dicas e Estratégias do Jogo</h3>
+                        <h4>Como Aproveitar Ao Máximo Seu Jogo</h4>
+                        <ul>
+                            <li>👥 Reunir um grupo de 3 ou mais jogadores para a melhor experiência</li>
+                            <li>🎯 Escolha o modo de dificuldade apropriado com base na idade dos participantes</li>
+                            <li>🎵 Crie uma atmosfera divertida e confortável</li>
+                            <li>🔄 Reveze-se escolhendo entre verdade e desafio</li>
+                            <li>⏱️ Mantenha o jogo fluindo definindo limites de tempo para respostas</li>
+                            <li>🌶️ Grupos de adultos podem experimentar o Modo Picante para experiências mais desafiadoras</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">❓ Perguntas Frequentes sobre Verdade ou Desafio</h2>
+
+                        <h3>Modos de Jogo</h3>
+                        <div class="faq-item">
+                            <h5>😊🌶️ Qual é a diferença entre Modo Suave e Modo Picante?</h5>
+                            <p><strong>Modo Suave</strong>: Apropriado para todas as idades, contém 235 perguntas e desafios familiares que são leves e divertidos. <strong>Modo Picante</strong>: Projetado para adultos, contém 261 perguntas mais desafiadoras e aprofundadas envolvendo tópicos pessoais mais profundos.</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>👨‍👩‍👧‍👦 Este jogo de Verdade ou Desafio é apropriado para todas as idades?</h5>
+                            <p>O Modo Suave é apropriado para jogadores de todas as idades com conteúdo completamente familiar. O Modo Picante é mais adequado para reuniões de adultos, embora o conteúdo seja mais desafiador, ainda é seguro e legal.</p>
+                        </div>
+
+                        <h3 class="mt-4">Requisitos de Jogadores</h3>
+                        <div class="faq-item">
+                            <h5>👥 Quantos jogadores você precisa para Verdade ou Desafio?</h5>
+                            <p>Embora você possa jogar com apenas dois jogadores, o jogo é mais agradável com 3-10 jogadores. Isso permite mais variedade nas respostas e interações entre os jogadores.</p>
+                        </div>
+
+                        <h3 class="mt-4">Jogos Online</h3>
+                        <div class="faq-item">
+                            <h5>🌐 Posso jogar Verdade ou Desafio online com amigos remotamente?</h5>
+                            <p>Absolutamente! Nosso jogo online de Verdade ou Desafio funciona ótimo para noites de jogo virtual. Simplesmente compartilhe sua tela durante uma chamada de vídeo e todos podem participar de qualquer lugar do mundo.</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🔄 As perguntas e desafios se repetem?</h5>
+                            <p>Não! Nosso jogo contém 496 perguntas e desafios cuidadosamente projetados (235 no Modo Suave, 261 no Modo Picante), garantindo que você obtenha conteúdo fresco e único cada vez que jogar e não ficará entediado mesmo durante longas sessões de jogo!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/ads-controller.js"></script>
+    <script src="../../js/game-navigation.js"></script>
+    <script src="TruthOrDare.js"></script>
+
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323852/13624" target="_top" id="3323852">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323852" border="0" alt="Shopify" width="640" height="100"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323852/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

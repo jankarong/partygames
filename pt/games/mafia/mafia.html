@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jogue Mafia online - jogo de dedução social perfeito para 6-15 jogadores. Gratuito, sem registro necessário!">
+    <meta name="keywords"
+        content="máfia jogo online, jogos de dedução, jogo social, jogos de festa, máfia">
+    <meta name="author" content="Jogos de Festa">
+    <meta property="og:title" content="Máfia - Jogo de Dedução Social">
+    <meta property="og:description"
+        content="Jogue Máfia online - jogo de dedução social perfeito para 6-15 jogadores. Gratuito e sem registro!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="mafialogo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Máfia - Jogo de Dedução Social Online">
+    <meta name="twitter:description"
+        content="Jogue Máfia online - jogo perfeito para 6-15 jogadores. Dedução social e estratégia!">
+    <meta name="twitter:image" content="mafialogo.png">
+    <title>Máfia - Jogo de Dedução Social</title>
+    <link rel="canonical" href="https://www.bestpartygames.net/pt/games/mafia/mafia.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./mafialogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Mafia Board Games",
+        "description": "Play Mafia Board Games online - the ultimate social deduction party games! Experience thrilling mafia board games where players work together to find the Mafia among innocent villagers.",
+        "genre": "Board Game",
+        "numberOfPlayers": "6-15",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "320"
+        }
+    }
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Cinzel:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="mafia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/gameheader.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./mafialogo.png">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container py-4">
+        <img src="mafialogo.png" alt="Mafia Board Games Logo" class="game-logo">
+        <h1 class="text-center mb-4">Mafia Board Games</h1>
+
+        <div class="game-setup">
+            <div class="setup-section card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title">Game Setup</h2>
+                    <div class="total-players mb-4">
+                        <label for="playerCount" class="form-label">Total Players:</label>
+                        <input type="number" id="playerCount" class="form-control" min="6" max="15" value="8">
+                    </div>
+
+                    <div class="role-selection">
+                        <h3 class="h5 mb-3">Role Distribution</h3>
+                        <div class="role-inputs row g-3">
+                            <div class="role-input col-md-4">
+                                <label for="mafiaCount" class="form-label">Mafia:</label>
+                                <input type="number" id="mafiaCount" class="form-control" min="1" value="2">
+                            </div>
+                            <div class="role-input col-md-4">
+                                <label for="doctorCount" class="form-label">Doctor:</label>
+                                <input type="number" id="doctorCount" class="form-control" min="0" max="1" value="1">
+                            </div>
+                            <div class="role-input col-md-4">
+                                <label for="detectiveCount" class="form-label">Detective:</label>
+                                <input type="number" id="detectiveCount" class="form-control" min="0" max="1" value="1">
+                            </div>
+                            <div class="role-input col-md-4">
+                                <label for="villagerCount" class="form-label">Villagers:</label>
+                                <input type="number" id="villagerCount" class="form-control" min="1" value="4">
+                            </div>
+                        </div>
+
+                        <!-- Custom roles area -->
+                        <div id="customRoleInputs" class="row g-3 mt-2"></div>
+                        <div class="role-summary mt-3">
+                            <p class="role-warning text-danger" id="roleWarning"></p>
+                        </div>
+                    </div>
+
+                    <button id="setupGame" class="btn btn-primary w-100 mt-3">Start Game</button>
+                    <button id="manageRoles" class="btn btn-secondary w-100 mt-3">Manage Custom Roles</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="role-management mt-4" style="display: none;">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Custom Role Management</h2>
+
+                    <!-- Create new role -->
+                    <div class="create-role-section mb-5">
+                        <h4 class="mb-3">Create New Role</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="roleName" class="form-label">Role Name</label>
+                                <input type="text" id="roleName" class="form-control" placeholder="e.g. Cupid">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="roleTeam" class="form-label">Team</label>
+                                <select id="roleTeam" class="form-select">
+                                    <option value="villager">Villager Team</option>
+                                    <option value="mafia">Mafia Team</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleDescription" class="form-label">Role Description</label>
+                                <textarea id="roleDescription" class="form-control" rows="3"
+                                    placeholder="Describe this role's abilities and purpose..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleAbility" class="form-label">Night Ability</label>
+                                <textarea id="roleAbility" class="form-control" rows="2"
+                                    placeholder="Describe this role's night phase actions... (optional)"></textarea>
+                            </div>
+                        </div>
+                        <button id="createRole" class="btn btn-primary mt-3">Create Role</button>
+                    </div>
+
+                    <!-- Existing roles list -->
+                    <div class="existing-roles-section mb-4">
+                        <h4 class="mb-3">Existing Roles</h4>
+                        <div id="rolesList" class="row g-3"></div>
+                    </div>
+
+                    <div class="text-center">
+                        <button id="backToSetup" class="btn btn-secondary">Back to Game Setup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area mt-4 position-relative" style="display: none;">
+            <button id="returnToSetup" class="btn btn-secondary"
+                style="position: absolute; left: 20px; top: 20px; z-index: 1000;">
+                <i class="fas fa-arrow-left"></i>
+                <span class="btn-text">Back to Setup</span>
+            </button>
+            <button id="startNewGame" class="btn btn-success"
+                style="position: absolute; right: 20px; top: 20px; z-index: 1000;">
+                <i class="fas fa-redo"></i>
+                <span class="btn-text">Start New Game</span>
+            </button>
+            <div class="role-cards card shadow-sm mt-5">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Player Cards</h2>
+                    <div id="cardGrid"></div>
+                </div>
+            </div>
+
+            <div class="game-controls mt-4" style="display: none;">
+                <button id="startGame" class="btn btn-success btn-lg w-100">
+                    <i class="fas fa-play-circle me-2"></i>
+                    Start Night Phase
+                </button>
+            </div>
+
+            <div class="role-instructions card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Your Role Instructions</h2>
+                    <div id="mafiaInstructions" class="role-instruction">
+                        <h3 class="h5">Mafia</h3>
+                        <ul>
+                            <li>Keep your identity secret from other players</li>
+                            <li>At night, work with other Mafia members to eliminate villagers</li>
+                            <li>During the day, try to blend in with the villagers</li>
+                        </ul>
+                    </div>
+                    <div id="villagerInstructions" class="role-instruction">
+                        <h3 class="h5">Villager</h3>
+                        <ul>
+                            <li>Work together to identify and eliminate the Mafia</li>
+                            <li>Pay attention to other players' behavior</li>
+                            <li>Vote during the day phase to eliminate suspects</li>
+                        </ul>
+                    </div>
+                    <div id="doctorInstructions" class="role-instruction">
+                        <h3 class="h5">Doctor</h3>
+                        <ul>
+                            <li>Protect one player each night from being eliminated</li>
+                            <li>You can protect yourself</li>
+                            <li>Keep your identity secret</li>
+                        </ul>
+                    </div>
+                    <div id="detectiveInstructions" class="role-instruction">
+                        <h3 class="h5">Detective</h3>
+                        <ul>
+                            <li>Investigate one player each night to learn their role</li>
+                            <li>Use your information to guide the villagers</li>
+                            <li>Keep your identity secret</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="night-actions card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Night Phase</h2>
+                    <div id="narrator-text" class="mb-4"></div>
+
+                    <div id="action-area">
+                        <div id="mafia-action" class="role-action" style="display: none;">
+                            <h3>Mafia's Turn</h3>
+                            <p>Select a player to eliminate:</p>
+                            <div id="mafia-targets" class="player-selection"></div>
+                            <button id="confirm-mafia" class="btn btn-danger mt-3">Confirm Selection</button>
+                        </div>
+
+                        <div id="doctor-action" class="role-action" style="display: none;">
+                            <h3>Doctor's Turn</h3>
+                            <p id="doctor-prompt"></p>
+                            <div id="doctor-choice" class="d-flex flex-column gap-2">
+                                <button id="save-player" class="btn btn-primary mt-3">Save Player</button>
+                                <button id="poison-player" class="btn btn-danger mt-3">Poison Player</button>
+                                <button id="skip-action" class="btn btn-secondary mt-3">Skip Action</button>
+                            </div>
+                            <div id="doctor-targets" class="player-selection" style="display: none;"></div>
+                            <button id="confirm-doctor" class="btn btn-primary mt-3" style="display: none;">Confirm
+                                Selection</button>
+                        </div>
+
+                        <div id="detective-action" class="role-action" style="display: none;">
+                            <h3>Detective's Turn</h3>
+                            <p>Select a player to investigate:</p>
+                            <div id="detective-targets" class="player-selection"></div>
+                            <div id="investigation-result" class="mt-3" style="display: none;">
+                                <p id="investigation-text" class="result-text"></p>
+                                <button id="confirm-detective" class="btn btn-primary mt-3">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="discussion-phase" class="discussion-phase" style="display: none;">
+                <h3>Discussion Time</h3>
+                <div class="night-summary mb-4">
+                    <p id="night-result" class="mb-3"></p>
+                    <div id="player-statuses" class="player-status-grid"></div>
+                </div>
+                <p class="discussion-prompt">Discuss who you think might be the Mafia.</p>
+                <button id="end-discussion" class="btn btn-primary mt-4">End Discussion</button>
+            </div>
+
+            <div class="voting-phase card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Voting Phase</h2>
+                    <p class="voting-prompt">Vote for who you think is the Mafia:</p>
+                    <div id="voting-grid" class="voting-grid mt-3"></div>
+                    <button id="confirm-vote" class="btn btn-primary mt-4">Confirm Vote</button>
+                </div>
+            </div>
+
+            <div class="player-status card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">Players Status</h2>
+                    <div id="playerStatus" class="list-group mt-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-alert" style="display: none;">
+            <div class="alert-content card">
+                <div class="card-body text-center">
+                    <div class="alert-message mb-3"></div>
+                    <div class="d-flex flex-column align-items-center">
+                        <button class="btn btn-primary alert-confirm">OK</button>
+                        <button id="playAgainBtn" class="btn btn-success mt-2" style="display: none;">Play
+                            Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rules-section card shadow-sm mt-4">
+            <div class="card-body text-white">
+                <h2 class="card-title text-white">Game Rules</h2>
+
+                <h3>Overview</h3>
+                <p>Mafia Board Games are thrilling social deduction party games where players are secretly divided into
+                    two teams: the Mafia and the
+                    Villagers. These exciting board games alternate between night and day phases until one team wins.
+                </p>
+
+                <h3>Mafia Board Games Rules</h3>
+                <ul>
+                    <li><strong>Total Players:</strong> 6-15 players</li>
+                    <li><strong>Mafia:</strong> Evil players who know each other's identity (1-3 players)</li>
+                    <li><strong>Villagers:</strong> Regular townspeople trying to identify the Mafia</li>
+                    <li><strong>Doctor:</strong> A special villager who can save one person from elimination AND poison
+                        one person during the game (0-1 player)</li>
+                    <li><strong>Detective:</strong> A special villager who can investigate one player's identity each
+                        night (0-1 player)</li>
+                </ul>
+
+                <h3>Game Flow</h3>
+                <ol>
+                    <li><strong>Setup Phase:</strong>
+                        <ul>
+                            <li>Each player receives a secret role card</li>
+                            <li>Players must keep their roles secret unless eliminated</li>
+                        </ul>
+                    </li>
+                    <li><strong>Night Phase:</strong>
+                        <ul>
+                            <li>All players "sleep" (close their eyes)</li>
+                            <li>Mafia members wake up and choose one player to eliminate</li>
+                            <li>Doctor wakes up and can choose to save or poison a player</li>
+                            <li>Detective wakes up and can investigate one player's identity</li>
+                        </ul>
+                    </li>
+                    <li><strong>Day Phase:</strong>
+                        <ul>
+                            <li>All players "wake up"</li>
+                            <li>Night actions results are revealed</li>
+                            <li>Players discuss and debate who might be the Mafia</li>
+                            <li>Players vote to eliminate one suspected Mafia member</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>Special Abilities</h3>
+                <ul>
+                    <li><strong>Doctor's Powers:</strong>
+                        <ul>
+                            <li>Can save one player (including themselves) once per game</li>
+                            <li>Can poison one player once per game</li>
+                            <li>Must choose whether to save, poison, or skip each night</li>
+                        </ul>
+                    </li>
+                    <li><strong>Detective's Power:</strong>
+                        <ul>
+                            <li>Can investigate one player each night</li>
+                            <li>Learns whether the investigated player is Mafia or not</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Winning Conditions</h3>
+                <ul>
+                    <li><strong>Villagers Win:</strong> When all Mafia members are eliminated</li>
+                    <li><strong>Mafia Wins:</strong> When the number of Mafia equals or exceeds the number of Villagers
+                    </li>
+                </ul>
+
+                <h3>Tips for Playing Mafia Board Games</h3>
+                <ul>
+                    <li>Pay attention to player behavior during discussions in these strategic board games</li>
+                    <li>Special roles (Doctor and Detective) should be careful about revealing their identity</li>
+                    <li>Use voting strategically in mafia board games - sometimes not voting might be the best strategy
+                    </li>
+                    <li>Mafia members should try to blend in with villagers during discussions</li>
+                    <li>These board games work best with consistent group play to develop strategies</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="../../js/game-navigation.js"></script>
+    <script src="mafia.js"></script>
+
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323852/13624" target="_top" id="3323852">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323852" border="0" alt="Shopify" width="640" height="100"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323852/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

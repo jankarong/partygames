@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottle Match Game Online - Free Logic Puzzle</title>
+    <meta name="description" content="Play Bottle Match Game Online free! Test your logic with 5 challenging levels. Guess the color sequence in this Mastermind-style puzzle game.">
+    <meta name="keywords" content="bottle match game, logic puzzle, mastermind game, color matching, brain teaser">
+    <link rel="canonical" href="https://partygames.com/games/BottleMatchGame/BottleMatchGame.html">
+    <meta property="og:title" content="Bottle Match Game Online - Free Logic Puzzle">
+    <meta property="og:description" content="Play Bottle Match Game Online free! Test your logic with 5 challenging levels.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://partygames.com/games/BottleMatchGame/BottleMatchGame.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzQyOTllMSIvPgo8cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIGZpbGw9IiMyZDM3NDgiLz4KPHN2Zz4K">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/gameheader.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Bottle Match Game Online",
+      "description": "A logic puzzle game where players guess the correct color sequence across 5 challenging levels",
+      "gameType": "Logic Puzzle",
+      "numberOfPlayers": "1",
+      "url": "https://partygames.com/games/BottleMatchGame/BottleMatchGame.html"
+    }
+    </script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="game-container">
+        <img src="bottlematch.png" alt="Bottle Match Game Logo" class="game-logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+        <h1>Bottle Match Game Online</h1>
+
+        <div class="level-info">
+            <div class="level-title">Level <span id="current-level">1</span> / 5</div>
+            <div class="level-details">
+                Length: <span id="sequence-length">3</span> |
+                Colors: <span id="color-count">4</span> |
+                Attempts: <span id="attempts">0</span>
+            </div>
+        </div>
+
+        <div class="secret-display" id="secret-display" style="display: none;">
+            Secret Sequence: <span id="secret-sequence"></span>
+        </div>
+
+        <div class="game-area" id="game-area">
+            <h3>Select your guess:</h3>
+            <div class="bottles-container" id="current-guess"></div>
+
+            <div class="controls">
+                <button class="submit-btn" id="submit-guess" onclick="submitGuess()">Submit Guess</button>
+                <button onclick="clearGuess()">Clear</button>
+                <button onclick="showSecret()">Show Answer</button>
+            </div>
+
+            <div class="guess-section">
+                <h4>Guess History:</h4>
+                <div id="guess-history"></div>
+            </div>
+        </div>
+
+        <div class="completion-screen" id="completion-screen">
+            <h2>🎉 Congratulations! All Levels Complete!</h2>
+            <div class="final-stats">
+                <h3>Overall Statistics</h3>
+                <p>Total Time: <span id="total-time">0</span> seconds</p>
+                <p>Total Attempts: <span id="total-attempts">0</span></p>
+                <p>Average Attempts per Level: <span id="avg-attempts">0</span></p>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">Restart Game</button>
+        </div>
+    </div>
+
+    <section class="game-info">
+        <h2>How to Play Bottle Match Game</h2>
+        <p>Bottle Match Game is an exciting online logic puzzle based on the classic Mastermind game. Test your deductive reasoning skills across 5 progressively challenging levels!</p>
+
+        <h3>Game Rules</h3>
+        <ul>
+            <li><strong>Objective:</strong> Guess the secret color sequence before running out of attempts</li>
+            <li><strong>5 Levels:</strong> Each level increases in difficulty with longer sequences and more colors</li>
+            <li><strong>Feedback System:</strong> After each guess, receive hints about correct positions</li>
+            <li><strong>No Repeats:</strong> Each bottle color appears only once in the sequence</li>
+        </ul>
+
+        <h3>How to Play</h3>
+        <ol>
+            <li><strong>Select Colors:</strong> Click a position in the top row, then click a color below, OR drag colors directly to positions</li>
+            <li><strong>Submit Guess:</strong> Once all positions are filled, click "Submit Guess"</li>
+            <li><strong>Read Feedback:</strong> Black pegs show correct color in correct position</li>
+            <li><strong>Adjust Strategy:</strong> Use feedback to refine your next guess</li>
+            <li><strong>Win the Level:</strong> Match all bottles correctly to advance</li>
+        </ol>
+
+        <h3>Game Features</h3>
+        <ul>
+            <li>✅ Free online bottle matching game - no download required</li>
+            <li>✅ 5 challenging levels with increasing difficulty</li>
+            <li>✅ Drag-and-drop or click-to-select controls</li>
+            <li>✅ Real-time feedback on your guesses</li>
+            <li>✅ Track your attempts and completion time</li>
+            <li>✅ Mobile-friendly responsive design</li>
+        </ul>
+
+        <h3>Tips & Strategy</h3>
+        <p><strong>Start systematically:</strong> Try testing one color at a time to narrow down possibilities.</p>
+        <p><strong>Use process of elimination:</strong> Keep track of which colors and positions have been ruled out.</p>
+        <p><strong>Pay attention to feedback:</strong> Black pegs indicate both correct color AND position.</p>
+    </section>
+
+    <!-- Sound Effects -->
+    <audio id="place-sound" src="place_item_sound.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="hooray_sound.mp3" preload="auto"></audio>
+    <audio id="fail-sound" src="fail_sound.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/ads-controller.js"></script>
+    <script src="../../js/game-navigation.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323852/13624" target="_top" id="3323852">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323852" border="0" alt="Shopify" width="640" height="100"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323852/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

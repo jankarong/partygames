@@ -1,25 +1,32 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Party Games - Free Party Games Online for Adults</title>
+    <title>Melhores Jogos de Festa Online - Jogos Gratuitos para Adultos</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Discover the best party games online! Play FREE interactive games. Perfect for friends, family gatherings, and virtual parties. No download required">
+        content="Descubra os melhores jogos de festa online! Jogue Máfia, Verdade ou Desafio, Nunca Fiz e muito mais. Perfeito para festas, reuniões em família e team building. Gratuito e pronto para jogar!">
     <meta name="keywords"
-        content="best party games, party games online, free party games, adult party games, social games">
-    <meta name="saashub-verification" content="yxj0e8673u41" />
+        content="jogos de festa, jogos de grupo, jogos de sociedade, jogos grátis, team building, jogos para adultos">
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property=" og:title" content="Best Party Games - Free Party Games for Friends & Family">
+    <meta property="og:title" content="Melhores Jogos de Festa Online - Jogos Gratuitos para Adultos">
     <meta property="og:description"
-        content="Discover the best party games online! Play FREE interactive games. Perfect for friends, family gatherings, and virtual parties. No download required">
+        content="Descubra os melhores jogos de festa online! Jogue Máfia, Verdade ou Desafio, Nunca Fiz e muito mais. Perfeito para festas, reuniões em família e team building. Gratuito e pronto para jogar!">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.bestpartygames.net/">
+    <meta property="og:url" content="https://www.bestpartygames.net/pt/">
     <meta property="og:image" content="https://www.bestpartygames.net/image/partyGameLogo.png">
+
+    <!-- Language alternatives -->
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/">
+    <link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/">
+    <link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/">
+    <link rel="alternate" hreflang="fr" href="https://www.bestpartygames.net/fr/">
+    <link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/">
+    <link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="all">
@@ -30,31 +37,24 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="./style/main.css" rel="stylesheet">
-    <link href="./css/auth.css" rel="stylesheet">
-
-    <!-- Language alternatives -->
-    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/">
-    <link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/">
-    <link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/">
-    <link rel="alternate" hreflang="fr" href="https://www.bestpartygames.net/fr/">
-    <link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/">
-    <link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/">
+    <link href="../style/main.css" rel="stylesheet">
+    <link href="../css/auth.css" rel="stylesheet">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.bestpartygames.net/">
+    <link rel="canonical" href="https://www.bestpartygames.net/pt/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="image/favicon.png">
+    <link rel="icon" type="image/png" href="../image/favicon.png">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "PartyGameLab",
-        "url": "https://www.bestpartygames.net/",
-        "description": "Discover the best party games online! Play FREE interactive games perfect for friends, family gatherings, and virtual parties. No download required.",
+        "name": "Melhores Jogos de Festa Online",
+        "url": "https://www.bestpartygames.net/pt/",
+        "description": "Descubra os melhores jogos de festa online! Jogue Máfia, Verdade ou Desafio, Nunca Fiz e muito mais. Perfeito para festas, reuniões em família e team building. Gratuito e pronto para jogar!",
+        "inLanguage": "pt-BR",
         "publisher": {
             "@type": "Organization",
             "name": "PartyGameLab",
@@ -65,13 +65,13 @@
         },
         "mainEntity": {
             "@type": "ItemList",
-            "name": "Party Games Collection",
-            "description": "Collection of free online party games for friends and family",
-            "numberOfItems": 12
+            "name": "Coleção de Jogos de Festa",
+            "description": "Jogos online grátis para amigos e família",
+            "numberOfItems": 16
         },
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://www.bestpartygames.net/search?q={search_term_string}",
+            "target": "https://www.bestpartygames.net/pt/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     }
@@ -106,8 +106,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="image/partyGameLogo.png" alt="Party Games Logo">
+            <a class="navbar-brand" href="/pt/">
+                <img src="../image/partyGameLogo.png" alt="Logo de Jogos de Festa">
                 <span class="brand-text">PartyGameLab</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -116,7 +116,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./TheList.html">The List</a>
+                        <a class="nav-link" href="./TheList.html">Lista de Categorias</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./premium.html">Premium</a>
@@ -127,7 +127,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
                             data-bs-toggle="dropdown">
-                            🇺🇸 English
+                            🇧🇷 Português
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/">🇺🇸 English</a></li>
@@ -138,23 +138,23 @@
                         </ul>
                     </li>
 
-                    <!-- 认证相关按钮 -->
+                    <!-- Botões de Autenticação -->
                     <li class="nav-item" id="auth-buttons">
                         <div class="auth-buttons">
-                            <a href="./login.html" class="btn btn-auth-nav btn-login">Login</a>
-                            <a href="./register.html" class="btn btn-auth-nav btn-register">Sign Up</a>
+                            <a href="./login.html" class="btn btn-auth-nav btn-login">Entrar</a>
+                            <a href="./register.html" class="btn btn-auth-nav btn-register">Cadastro</a>
                         </div>
                     </li>
 
-                    <!-- 用户信息 -->
+                    <!-- Informações do Usuário -->
                     <li class="nav-item" id="user-info" style="display: none;">
                         <div class="user-info">
                             <div class="user-avatar" id="user-avatar">U</div>
                             <div class="user-details">
                                 <div class="user-email" id="user-email">user@example.com</div>
-                                <span class="premium-status" id="premium-status">Free User</span>
+                                <span class="premium-status" id="premium-status">Usuário Gratuito</span>
                             </div>
-                            <button class="btn btn-signout" onclick="handleSignOut()">Logout</button>
+                            <button class="btn btn-signout" onclick="handleSignOut()">Sair</button>
                         </div>
                     </li>
                 </ul>
@@ -165,9 +165,8 @@
     <!-- Hero Section -->
     <section class="hero-section text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Best Party Games Online</h1>
-            <p class="lead mb-0">Discover the best party games collection! Play FREE interactive games perfect for
-                friends, family gatherings, and virtual parties. No download required - start playing instantly!</p>
+            <h1 class="display-4 fw-bold mb-4">Melhores Jogos de Festa Online</h1>
+            <p class="lead mb-0">Descubra a melhor coleção de jogos de festa! Jogue jogos interativos GRÁTIS. Perfeito para amigos, reuniões em família e festas virtuais. Sem necessidade de download - comece a jogar agora!</p>
         </div>
     </section>
 
@@ -180,15 +179,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/BottleMatchGame/bottlematch.png" class="card-img-top"
-                                alt="Bottle Match Game" loading="lazy">
+                            <img src="../games/BottleMatchGame/bottlematch.png" class="card-img-top"
+                                alt="Jogo de Combinar Garrafas" loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Bottle Match Game</h5>
-                            <p class="card-text">Test your logic! Guess the color sequence in this Mastermind-style puzzle.</p>
+                            <h5 class="card-title">Jogo de Combinar Garrafas</h5>
+                            <p class="card-text">Teste sua lógica! Adivinhe a sequência de cores neste jogo de quebra-cabeça ao estilo Mastermind.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">1 player</small>
-                                <a href="/games/BottleMatchGame/BottleMatchGame.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">1 jogador</small>
+                                <a href="/pt/games/BottleMatchGame/BottleMatchGame.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -198,15 +197,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/KingsCup/kingscuplogo.png" class="card-img-top"
-                                alt="Kings Cup Drinking Game" loading="lazy">
+                            <img src="../games/KingsCup/kingscuplogo.png" class="card-img-top"
+                                alt="Jogo da Copa do Rei" loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Kings Cup</h5>
-                            <p class="card-text">Play the classic Kings Cup drinking game online with friends!</p>
+                            <h5 class="card-title">Jogo da Copa do Rei</h5>
+                            <p class="card-text">Jogue o clássico jogo da Copa do Rei com amigos online!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">3+ players</small>
-                                <a href="/games/KingsCup/KingsCup.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">3+ jogadores</small>
+                                <a href="/pt/games/KingsCup/KingsCup.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -216,16 +215,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/lastshot/lastshot.png" class="card-img-top" alt="Last Shot Drinking Game"
+                            <img src="../games/lastshot/lastshot.png" class="card-img-top" alt="Último Tiro"
                                 loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Last Shot</h5>
-                            <p class="card-text">Russian roulette drinking game! Pull the trigger, survive or drink all
-                                shots!</p>
+                            <h5 class="card-title">Último Tiro</h5>
+                            <p class="card-text">Jogo de festa emocionante! Puxe o gatilho, sobreviva ou beba todos os shots!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">3+ players</small>
-                                <a href="/games/lastshot/lastshot.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">3+ jogadores</small>
+                                <a href="/pt/games/lastshot/lastshot.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -239,12 +237,12 @@
                             <span>🧙‍♀️</span>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Witch's Poison</h5>
-                            <p class="card-text">Pick your poison in this mystical choice-making adventure game!</p>
+                            <h5 class="card-title">Veneno da Bruxa</h5>
+                            <p class="card-text">Escolha seu veneno nesta aventura mística de tomada de decisão!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">1+ players</small>
-                                <a href="/games/witchspoison/witchspoison.html"
-                                    class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">1+ jogador</small>
+                                <a href="/pt/games/witchspoison/witchspoison.html"
+                                    class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -254,15 +252,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/magic8ball/magic8ball.svg" class="card-img-top" alt="Magic 8 Ball"
+                            <img src="../games/magic8ball/magic8ball.svg" class="card-img-top" alt="Bola Mágica 8"
                                 loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Magic 8 Ball</h5>
-                            <p class="card-text">Shake the Magic 8 Ball to get answers to your burning questions!</p>
+                            <h5 class="card-title">Bola Mágica 8</h5>
+                            <p class="card-text">Agite a Bola Mágica 8 para obter respostas às suas perguntas!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">1+ players</small>
-                                <a href="/games/magic8ball/magic8ball.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">1+ jogador</small>
+                                <a href="/pt/games/magic8ball/magic8ball.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -272,15 +270,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/TruthorDare/TruthorDareLogo.png" class="card-img-top" alt="Truth or Dare"
+                            <img src="../games/TruthorDare/TruthorDareLogo.png" class="card-img-top" alt="Verdade ou Desafio"
                                 loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Truth or Dare</h5>
-                            <p class="card-text">The classic party game of truth and dares for endless fun!</p>
+                            <h5 class="card-title">Verdade ou Desafio</h5>
+                            <p class="card-text">O clássico jogo de festa - Verdade ou Desafio para diversão sem fim!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">2+ players</small>
-                                <a href="/games/TruthorDare/TruthOrDare.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">2+ jogadores</small>
+                                <a href="/pt/games/TruthorDare/TruthOrDare.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -290,15 +288,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/NeverHaveIEver/NeverHaveIEverLogo.png" class="card-img-top"
-                                alt="Never Have I Ever" loading="lazy">
+                            <img src="../games/NeverHaveIEver/NeverHaveIEverLogo.png" class="card-img-top"
+                                alt="Nunca Fiz" loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Never Have I Ever</h5>
-                            <p class="card-text">Play spicy Never Have I Ever questions for the ultimate party fun!</p>
+                            <h5 class="card-title">Nunca Fiz</h5>
+                            <p class="card-text">Jogue perguntas apimentadas "Nunca Fiz" para a diversão final da festa!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">3+ players</small>
-                                <a href="/games/NeverHaveIEver/NeverHaveIEver.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">3+ jogadores</small>
+                                <a href="/pt/games/NeverHaveIEver/NeverHaveIEver.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -308,16 +306,16 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/WhoIsMostLikely/MostLikelyToLogo.png" class="card-img-top"
-                                alt="Who Is Most Likely" loading="lazy">
+                            <img src="../games/WhoIsMostLikely/MostLikelyToLogo.png" class="card-img-top"
+                                alt="Quem Seria Mais Capaz" loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Who's More Likely To Questions</h5>
-                            <p class="card-text">Discover surprising things about friends with hilarious questions!</p>
+                            <h5 class="card-title">Quem Seria Mais Capaz</h5>
+                            <p class="card-text">Descubra coisas surpreendentes sobre amigos com perguntas hilariantes!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">3+ players</small>
-                                <a href="./games/WhoIsMostLikely/WhoIsMostLikely.html" class="btn btn-primary">Play
-                                    Now</a>
+                                <small class="text-muted">3+ jogadores</small>
+                                <a href="/pt/games/WhoIsMostLikely/WhoIsMostLikely.html" class="btn btn-primary">Jogar
+                                    Agora</a>
                             </div>
                         </div>
                     </div>
@@ -327,16 +325,16 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/WouldYouRather/WouldYouRatherLogo.png" class="card-img-top"
-                                alt="Would You Rather" loading="lazy">
+                            <img src="../games/WouldYouRather/WouldYouRatherLogo.png" class="card-img-top"
+                                alt="Você Preferiria" loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Would You Rather Questions Spicy</h5>
-                            <p class="card-text">Make tough choices with spicy would you rather questions and scenarios!
+                            <h5 class="card-title">Você Preferiria</h5>
+                            <p class="card-text">Faça escolhas difíceis com perguntas apimentadas e cenários emocionantes!
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">2+ players</small>
-                                <a href="/games/WouldYouRather/WouldYouRather.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">2+ jogadores</small>
+                                <a href="/pt/games/WouldYouRather/WouldYouRather.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -346,14 +344,14 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/mafia/mafialogo.png" class="card-img-top" alt="Mafia" loading="lazy">
+                            <img src="../games/mafia/mafialogo.png" class="card-img-top" alt="Máfia" loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Mafia Board Games</h5>
-                            <p class="card-text">Social deduction game where players hunt for hidden mafia members!</p>
+                            <h5 class="card-title">Máfia</h5>
+                            <p class="card-text">Jogo de dedução social onde jogadores caçam membros da máfia ocultos!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">6-12 players</small>
-                                <a href="/games/mafia/mafia.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">6-12 jogadores</small>
+                                <a href="/pt/games/mafia/mafia.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -363,15 +361,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/undercover/undercover.png" class="card-img-top" alt="Undercover Game"
+                            <img src="../games/undercover/undercover.png" class="card-img-top" alt="Infiltrado"
                                 loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Undercover</h5>
-                            <p class="card-text">A thrilling party game of deception, strategy and clever deduction!</p>
+                            <h5 class="card-title">Infiltrado</h5>
+                            <p class="card-text">Um emocionante jogo de festa cheio de engano, estratégia e dedução inteligente!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">4-12 players</small>
-                                <a href="/games/undercover/undercover.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">4-12 jogadores</small>
+                                <a href="/pt/games/undercover/undercover.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -382,15 +380,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/charades/CharadesLogo.png" class="card-img-top" alt="Charades"
+                            <img src="../games/charades/CharadesLogo.png" class="card-img-top" alt="Mímica"
                                 loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Charades Generator</h5>
-                            <p class="card-text">Generate unlimited charades words for epic party game sessions!</p>
+                            <h5 class="card-title">Gerador de Mímica</h5>
+                            <p class="card-text">Gere palavras ilimitadas para mímica em sessões de jogo de festa épicas!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">4+ players</small>
-                                <a href="/games/charades/charades.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">4+ jogadores</small>
+                                <a href="/pt/games/charades/charades.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -400,15 +398,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/hedbanzgame/hedbanz.png" class="card-img-top" alt="Hedbanz"
+                            <img src="../games/hedbanzgame/hedbanz.png" class="card-img-top" alt="Jogo Hedbanz"
                                 loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Hedbanz Game</h5>
-                            <p class="card-text">The ultimate guessing game where you discover what's on your head!</p>
+                            <h5 class="card-title">Jogo Hedbanz</h5>
+                            <p class="card-text">O jogo de adivinhação final onde você descobre o que está na sua cabeça!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">2+ players</small>
-                                <a href="/games/hedbanzgame/hedbanzgame.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">2+ jogadores</small>
+                                <a href="/pt/games/hedbanzgame/hedbanzgame.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -418,15 +416,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/sexdice/sexdicelogo.png" class="card-img-top" alt="Sex Dice"
+                            <img src="../games/sexdice/sexdicelogo.png" class="card-img-top" alt="Dados Picantes"
                                 loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Sex Dice</h5>
-                            <p class="card-text">Roll the dice for a fun and spicy romantic adventure together!</p>
+                            <h5 class="card-title">Dados Picantes</h5>
+                            <p class="card-text">Role os dados para uma aventura romântica divertida e picante juntos!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">2+ players</small>
-                                <a href="/games/sexdice/sexdice.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">2+ jogadores</small>
+                                <a href="/pt/games/sexdice/sexdice.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -436,15 +434,15 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="./games/beernumber/numberguessLogo.png" class="card-img-top"
-                                alt="Beer Number Game" loading="lazy">
+                            <img src="../games/beernumber/numberguessLogo.png" class="card-img-top"
+                                alt="Adivinhe o Número" loading="lazy">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Guess This Number</h5>
-                            <p class="card-text">Challenge yourself to guess the mystery number between 1 and 100!</p>
+                            <h5 class="card-title">Adivinhe o Número</h5>
+                            <p class="card-text">Desafie-se a adivinhar o número mistério entre 1 e 100!</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">1+ players</small>
-                                <a href="/games/beernumber/beernumber.html" class="btn btn-primary">Play Now</a>
+                                <small class="text-muted">1+ jogador</small>
+                                <a href="/pt/games/beernumber/beernumber.html" class="btn btn-primary">Jogar Agora</a>
                             </div>
                         </div>
                     </div>
@@ -458,11 +456,11 @@
                             <i class="fas fa-hourglass-half fa-5x text-secondary"></i>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Coming Soon</h5>
-                            <p class="card-text">New exciting party games are on the way! Stay tuned for updates.</p>
+                            <h5 class="card-title">Em Breve</h5>
+                            <p class="card-text">Novos jogos de festa emocionantes estão a caminho! Fique atento para atualizações.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="text-muted">TBD</small>
-                                <button class="btn btn-secondary" disabled>Coming Soon</button>
+                                <button class="btn btn-secondary" disabled>Em Breve</button>
                             </div>
                         </div>
                     </div>
@@ -477,66 +475,49 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="text-center mb-5">Why Choose Our Best Party Games Collection?</h2>
+                    <h2 class="text-center mb-5">Por que Escolher Nossa Coleção de Melhores Jogos de Festa?</h2>
 
                     <div class="mb-5">
-                        <h3 class="h4 mb-3">🎮 The Ultimate Party Games Experience</h3>
-                        <p>Our collection features the <strong>best party games</strong> carefully selected for maximum
-                            fun and engagement. Whether you're hosting a virtual party, family gathering, or friends'
-                            night out, we have the perfect games to break the ice and create unforgettable memories.</p>
+                        <h3 class="h4 mb-3">🎮 A Experiência Final de Jogos de Festa</h3>
+                        <p>Nossa coleção apresenta os <strong>melhores jogos de festa</strong> cuidadosamente selecionados para máxima diversão e engajamento. Quer você esteja hospedando uma festa virtual, reunião em família ou noite de amigos, temos os jogos perfeitos para quebrar o gelo e criar memórias inesquecíveis.</p>
                     </div>
 
                     <div class="mb-5">
-                        <h3 class="h4 mb-3">🎯 Games for Every Occasion</h3>
+                        <h3 class="h4 mb-3">🎯 Jogos para Cada Ocasião</h3>
                         <div class="row">
                             <div class="col-md-6">
-                                <h4 class="h5">Social Deduction Games</h4>
-                                <p>Experience thrilling games like <strong>Mafia</strong> and
-                                    <strong>Undercover</strong> - perfect for groups who love strategy and mystery.
-                                    These best party games challenge players to outsmart each other through deception
-                                    and deduction.
+                                <h4 class="h5">Jogos de Dedução Social</h4>
+                                <p>Experimente jogos emocionantes como <strong>Máfia</strong> e <strong>Infiltrado</strong> - perfeitos para grupos que amam estratégia e mistério. Esses melhores jogos de festa desafiam os jogadores a se superarem através de engano e dedução.
                                 </p>
                             </div>
                             <div class="col-md-6">
-                                <h4 class="h5">Question-Based Games</h4>
-                                <p>Break the ice with <strong>Truth or Dare</strong>, <strong>Never Have I
-                                        Ever</strong>, and <strong>Would You Rather</strong>. These interactive party
-                                    games are perfect for getting to know friends better and sparking hilarious
-                                    conversations.</p>
+                                <h4 class="h5">Jogos Baseados em Perguntas</h4>
+                                <p>Quebre o gelo com <strong>Verdade ou Desafio</strong>, <strong>Nunca Fiz</strong> e <strong>Você Preferiria</strong>. Estes jogos de festa interativos são perfeitos para conhecer amigos melhor e estimular conversas hilariantes.
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="mb-5">
-                        <h3 class="h4 mb-3">📱 Instant Play - No Downloads Required</h3>
-                        <p>All our <strong>best party games online</strong> are completely free and require no downloads
-                            or installations. Simply open your browser, choose a game, and start playing instantly.
-                            Perfect for spontaneous gatherings or planned events.</p>
+                        <h3 class="h4 mb-3">📱 Jogue Instantaneamente - Sem Download Necessário</h3>
+                        <p>Todos os nossos <strong>melhores jogos de festa online</strong> são completamente grátis e não requerem downloads ou instalações. Simplesmente abra seu navegador, escolha um jogo e comece a jogar instantaneamente. Perfeito para reuniões espontâneas ou eventos planejados.</p>
                     </div>
 
                     <div class="mb-5">
-                        <h3 class="h4 mb-3">👥 How to Choose the Perfect Party Game</h3>
+                        <h3 class="h4 mb-3">👥 Como Escolher o Jogo de Festa Perfeito</h3>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><strong>2-4 Players:</strong> Try Magic 8 Ball, Truth or Dare, or Would You
-                                Rather for intimate groups</li>
-                            <li class="mb-2"><strong>5-8 Players:</strong> Never Have I Ever and Who's Most Likely To
-                                are perfect for medium groups</li>
-                            <li class="mb-2"><strong>9+ Players:</strong> Mafia and Undercover shine with larger crowds
-                            </li>
-                            <li class="mb-2"><strong>Family Friendly:</strong> Charades and Hedbanz are great for all
-                                ages</li>
-                            <li class="mb-2"><strong>Adult Parties:</strong> Spicy versions of Never Have I Ever and
-                                Would You Rather</li>
+                            <li class="mb-2"><strong>2-4 Jogadores:</strong> Experimente Bola Mágica 8, Verdade ou Desafio ou Você Preferiria para grupos pequenos</li>
+                            <li class="mb-2"><strong>5-8 Jogadores:</strong> Nunca Fiz e Quem Seria Mais Capaz são perfeitos para grupos médios</li>
+                            <li class="mb-2"><strong>9+ Jogadores:</strong> Máfia e Infiltrado brilham com multidões maiores</li>
+                            <li class="mb-2"><strong>Amigável para Famílias:</strong> Mímica e Hedbanz são ótimos para todas as idades</li>
+                            <li class="mb-2"><strong>Festas para Adultos:</strong> Versões apimentadas de Nunca Fiz e Você Preferiria</li>
                         </ul>
                     </div>
 
                     <div class="text-center">
-                        <h3 class="h4 mb-3">🌟 Join Thousands Playing the Best Party Games</h3>
-                        <p>Our <strong>free party games</strong> have entertained thousands of players worldwide. From
-                            virtual team building to birthday parties, wedding celebrations to casual hangouts - our
-                            games bring people together and create lasting memories.</p>
-                        <p class="mb-0"><em>Ready to discover your new favorite party game? Browse our collection above
-                                and start playing the best party games online today!</em></p>
+                        <h3 class="h4 mb-3">🌟 Junte-se a Milhares Jogando os Melhores Jogos de Festa</h3>
+                        <p>Nossos <strong>jogos de festa grátis</strong> já entretiveram milhares de jogadores em todo o mundo. De team building virtual a festas de aniversário, celebrações de casamento a encontros casuais - nossos jogos reúnem pessoas e criam memórias duradouras.</p>
+                        <p class="mb-0"><em>Pronto para descobrir seu novo jogo de festa favorito? Navegue pela nossa coleção acima e comece a jogar os melhores jogos de festa online hoje!</em></p>
                     </div>
                 </div>
             </div>
@@ -548,19 +529,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <h2 class="h4 mb-4">About Us</h2>
-                    <p>PartyGameLab is your go-to online destination for the best party games available
-                        for free! We
-                        offer a diverse collection of engaging interactive party games including Truth or Dare, Never
-                        Have I Ever, Mafia,
-                        and more - perfect for virtual gatherings, parties, and team building events. Join thousands of
-                        players worldwide enjoying the best party games experience!</p>
+                    <h2 class="h4 mb-4">Sobre Nós</h2>
+                    <p>PartyGameLab é seu destino final para os melhores jogos de festa online grátis! Oferecemos uma coleção diversa de jogos de festa interativos envolventes, incluindo Verdade ou Desafio, Nunca Fiz, Máfia e muito mais - perfeitos para festas virtuais, reuniões e atividades de team building. Junte-se a milhares de jogadores em todo o mundo aproveitando a melhor experiência de jogos de festa!</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <h2 class="h4 mb-4">Quick Links</h2>
+                    <h2 class="h4 mb-4">Links Rápidos</h2>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-light text-decoration-none">Games</a></li>
-                        <li><a href="./TheList.html" class="text-light text-decoration-none">The List</a></li>
+                        <li><a href="index.html" class="text-light text-decoration-none">Jogos</a></li>
+                        <li><a href="./TheList.html" class="text-light text-decoration-none">Lista de Categorias</a></li>
                         <li><a href="https://ozagames.com/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none">Minigames</a></li>
                         <li><a href="https://lovemoneygame.live/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none">Love Money Game</a></li>
                     </ul>
@@ -569,7 +545,7 @@
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="d-flex justify-content-between align-items-center flex-wrap">
-                        <p class="text-light mb-0">&copy; 2025 PartyGameLab. All rights reserved.</p>
+                        <p class="text-light mb-0">&copy; 2025 PartyGameLab. Todos os direitos reservados.</p>
                         <div class="d-flex align-items-center gap-3">
                             <a href="https://turbo0.com/item/partygamelab" target="_blank" rel="noopener noreferrer">
                                 <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0"
@@ -599,28 +575,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- Auth JS -->
-    <script src="./js/auth.js"></script>
+    <script src="../js/auth.js"></script>
     <!-- Conditional Ad Loader -->
-    <script src="./js/ads-controller.js"></script>
+    <script src="../js/ads-controller.js"></script>
 
     <script>
-        // 页面加载完成后的额外处理
+        // Processamento adicional após carregamento da página
         document.addEventListener('DOMContentLoaded', function () {
-            // 监听认证状态变化
+            // Detectar mudanças no estado de autenticação
             if (window.authManager) {
                 window.authManager.onAuthStateChange((event, session) => {
-                    console.log('Main page auth state change:', event);
+                    console.log('Mudança no estado de autenticação:', event);
 
-                    // 可以在这里添加其他认证状态变化的处理逻辑
-                    // 比如更新页面内容、显示特定功能等
+                    // Adicionar lógica adicional de tratamento de estado aqui
                 });
             }
 
-            // 设置用户头像初始字母
+            // Definir letra inicial do avatar do usuário
             const userAvatar = document.getElementById('user-avatar');
             const userEmail = document.getElementById('user-email');
 
-            // 当用户信息更新时，更新头像
+            // Atualizar avatar quando informações do usuário mudarem
             const observer = new MutationObserver(function (mutations) {
                 mutations.forEach(function (mutation) {
                     if (mutation.type === 'childList' || mutation.type === 'characterData') {
@@ -646,7 +621,7 @@
     <script src="/js/floating-ad.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('FloatingAdManager available:', typeof FloatingAdManager !== 'undefined');
+            console.log('FloatingAdManager disponível:', typeof FloatingAdManager !== 'undefined');
             if (typeof FloatingAdManager !== 'undefined') {
                 new FloatingAdManager({
                     showDelay: 2000,
@@ -659,7 +634,7 @@
                     `
                 });
             } else {
-                console.error('FloatingAdManager not loaded');
+                console.error('FloatingAdManager não foi carregado');
             }
         });
     </script>
