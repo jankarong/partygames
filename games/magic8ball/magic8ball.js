@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
     customizeButton.addEventListener('click', () => modal.show());
 
 
-    // Answers for different versions
-    const answers = {
+    // Answers for different versions (use Portuguese if available)
+    let answers = window.ptAnswers || {
         classic: [
             "It is certain.",
             "It is decidedly so.",

@@ -1,77 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // DOM Elements
-    const magicBall = document.querySelector('.magic-ball');
-    const answerElement = document.getElementById('answer');
-    const questionInput = document.getElementById('question');
-    const shakeButton = document.getElementById('shake-button');
-    const versionSelect = document.getElementById('version');
-    const historyList = document.getElementById('history-list');
-
-    // Create customize button
-    const customizeButton = document.createElement('button');
-    customizeButton.className = 'btn btn-outline-primary mt-3 d-block w-100';
-    customizeButton.innerHTML = '<i class="fas fa-magic"></i> Personalize Suas Respostas';
-    shakeButton.parentNode.insertBefore(customizeButton, shakeButton.nextSibling);
-
-    // Create modal container
-    const modalContainer = document.createElement('div');
-    modalContainer.className = 'modal fade';
-    modalContainer.id = 'customAnswersModal';
-    modalContainer.setAttribute('tabindex', '-1');
-    modalContainer.innerHTML = `
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title">Personalize Suas Respostas Mágicas</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="alert alert-info alert-dismissible fade show mb-3" role="alert">
-                        Crie suas próprias respostas mágicas! Elas serão salvas automaticamente.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="customAnswer"
-                            placeholder="Digite sua resposta personalizada aqui..."
-                            maxlength="100">
-                        <button class="btn btn-primary" id="addCustomAnswer">
-                            <i class="fas fa-plus"></i> Adicionar
-                        </button>
-                    </div>
-                    <div class="custom-answers-wrapper">
-                        <ul class="list-group" id="customAnswersList"></ul>
-                        <div class="text-center mt-3" id="emptyState">
-                            <p class="text-muted">Ainda não há respostas personalizadas. Adicione a primeira!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer bg-light">
-                    <div class="w-100">
-                        <!-- Counter Row -->
-                        <div class="d-flex justify-content-center mb-3">
-                            <span class="badge bg-primary fs-6 px-3 py-2" id="customAnswerCount">0 respostas</span>
-                        </div>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-outline-danger" id="clearCustomAnswers">Limpar Tudo</button>
-                            <button type="button" class="btn btn-success" id="saveCustomAnswers">Confirmar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-    document.body.appendChild(modalContainer);
-
-    // Initialize Bootstrap modal
-    const modal = new bootstrap.Modal(modalContainer);
-
-    // Show modal when customize button is clicked
-    customizeButton.addEventListener('click', () => modal.show());
-
-
-    // Answers for different versions
-    const answers = {
+// Replace answers with Portuguese translations - run as early as possible
+if (typeof window.ptAnswers === 'undefined') {
+    window.ptAnswers = {
         classic: [
             "É certo.",
             "Decididamente sim.",
@@ -187,8 +116,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Load custom answers from localStorage
     let customAnswers = JSON.parse(localStorage.getItem('customAnswers')) || [];
 
-    // Add custom version to answers object
-    answers.custom = customAnswers;
+    // Add custom version to answers object (will be added by main script)
+    window.ptAnswers.custom = customAnswers;
 
     // Create and append custom answers UI
     function createCustomAnswersUI() {
@@ -278,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Update answers object and localStorage
-        answers.custom = customAnswers;
+        window.ptAnswers.custom = customAnswers;
         localStorage.setItem('customAnswers', JSON.stringify(customAnswers));
 
         // Add event listeners for action buttons
