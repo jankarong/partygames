@@ -5,24 +5,128 @@
 
 class GameNavigation {
     constructor() {
-        this.games = [
-            { name: 'Magic 8 Ball', url: '/games/magic8ball/magic8ball.html', logo: '/games/magic8ball/magic8ball.svg', category: 'solo' },
-            { name: 'Truth or Dare', url: '/games/TruthorDare/TruthOrDare.html', logo: '/games/TruthorDare/TruthorDareLogo.png', category: 'party' },
-            { name: 'Never Have I Ever', url: '/games/NeverHaveIEver/NeverHaveIEver.html', logo: '/games/NeverHaveIEver/NeverHaveIEverLogo.png', category: 'party' },
-            { name: 'Who Is Most Likely', url: '/games/WhoIsMostLikely/WhoIsMostLikely.html', logo: '/games/WhoIsMostLikely/MostLikelyToLogo.png', category: 'party' },
-            { name: 'Would You Rather', url: '/games/WouldYouRather/WouldYouRather.html', logo: '/games/WouldYouRather/WouldYouRatherLogo.png', category: 'party' },
-            { name: 'Mafia', url: '/games/mafia/mafia.html', logo: '/games/mafia/mafialogo.png', category: 'strategy' },
-            { name: 'Undercover', url: '/games/undercover/undercover.html', logo: '/games/undercover/undercover.png', category: 'strategy' },
-            { name: 'Charades', url: '/games/charades/charades.html', logo: '/games/charades/CharadesLogo.png', category: 'party' },
-            { name: 'Hedbanz', url: '/games/hedbanzgame/hedbanzgame.html', logo: '/games/hedbanzgame/hedbanz.png', category: 'party' },
-            { name: 'Bottle Match Game', url: '/games/BottleMatchGame/BottleMatchGame.html', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
-            { name: 'Sex Dice', url: '/games/sexdice/sexdice.html', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
-            { name: 'Beer Number', url: '/games/beernumber/beernumber.html', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
-            { name: 'Kings Cup', url: '/games/KingsCup/KingsCup.html', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' }
+        this.gamesData = [
+            { nameKey: 'Magic 8 Ball', url: '/games/magic8ball/magic8ball.html', logo: '/games/magic8ball/magic8ball.svg', category: 'solo' },
+            { nameKey: 'Truth or Dare', url: '/games/TruthorDare/TruthOrDare.html', logo: '/games/TruthorDare/TruthorDareLogo.png', category: 'party' },
+            { nameKey: 'Never Have I Ever', url: '/games/NeverHaveIEver/NeverHaveIEver.html', logo: '/games/NeverHaveIEver/NeverHaveIEverLogo.png', category: 'party' },
+            { nameKey: 'Who Is Most Likely', url: '/games/WhoIsMostLikely/WhoIsMostLikely.html', logo: '/games/WhoIsMostLikely/MostLikelyToLogo.png', category: 'party' },
+            { nameKey: 'Would You Rather', url: '/games/WouldYouRather/WouldYouRather.html', logo: '/games/WouldYouRather/WouldYouRatherLogo.png', category: 'party' },
+            { nameKey: 'Mafia', url: '/games/mafia/mafia.html', logo: '/games/mafia/mafialogo.png', category: 'strategy' },
+            { nameKey: 'Undercover', url: '/games/undercover/undercover.html', logo: '/games/undercover/undercover.png', category: 'strategy' },
+            { nameKey: 'Charades', url: '/games/charades/charades.html', logo: '/games/charades/CharadesLogo.png', category: 'party' },
+            { nameKey: 'Hedbanz', url: '/games/hedbanzgame/hedbanzgame.html', logo: '/games/hedbanzgame/hedbanz.png', category: 'party' },
+            { nameKey: 'Bottle Match Game', url: '/games/BottleMatchGame/BottleMatchGame.html', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
+            { nameKey: 'Sex Dice', url: '/games/sexdice/sexdice.html', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
+            { nameKey: 'Beer Number', url: '/games/beernumber/beernumber.html', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
+            { nameKey: 'Kings Cup', url: '/games/KingsCup/KingsCup.html', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' }
         ];
 
+        // Initialize games with localized names
+        this.games = this.initializeLocalizedGames();
         this.currentGame = this.getCurrentGame();
         this.init();
+    }
+
+    initializeLocalizedGames() {
+        const currentPath = window.location.pathname;
+        let currentLang = 'en';
+        if (currentPath.startsWith('/pt/')) {
+            currentLang = 'pt';
+        } else if (currentPath.startsWith('/zh/')) {
+            currentLang = 'zh';
+        } else if (currentPath.startsWith('/de/')) {
+            currentLang = 'de';
+        } else if (currentPath.startsWith('/fr/')) {
+            currentLang = 'fr';
+        }
+
+        const gameNames = this.getGameNames(currentLang);
+        return this.gamesData.map(game => ({
+            ...game,
+            name: gameNames[game.nameKey] || game.nameKey
+        }));
+    }
+
+    getGameNames(lang) {
+        const names = {
+            en: {
+                'Magic 8 Ball': 'Magic 8 Ball',
+                'Truth or Dare': 'Truth or Dare',
+                'Never Have I Ever': 'Never Have I Ever',
+                'Who Is Most Likely': 'Who Is Most Likely',
+                'Would You Rather': 'Would You Rather',
+                'Mafia': 'Mafia',
+                'Undercover': 'Undercover',
+                'Charades': 'Charades',
+                'Hedbanz': 'Hedbanz',
+                'Bottle Match Game': 'Bottle Match Game',
+                'Sex Dice': 'Sex Dice',
+                'Beer Number': 'Beer Number',
+                'Kings Cup': 'Kings Cup'
+            },
+            pt: {
+                'Magic 8 Ball': 'Bola Mágica',
+                'Truth or Dare': 'Verdade ou Desafio',
+                'Never Have I Ever': 'Nunca Fiz Isso',
+                'Who Is Most Likely': 'Quem Tem Mais Chance',
+                'Would You Rather': 'Prefiro Ou Prefiro',
+                'Mafia': 'Máfia',
+                'Undercover': 'Infiltrado',
+                'Charades': 'Mímica',
+                'Hedbanz': 'Hedbanz',
+                'Bottle Match Game': 'Jogo de Combinar Garrafas',
+                'Sex Dice': 'Dados Eróticos',
+                'Beer Number': 'Adivinha o Número',
+                'Kings Cup': 'Cálice do Rei'
+            },
+            zh: {
+                'Magic 8 Ball': '魔法8球',
+                'Truth or Dare': '真心话大冒险',
+                'Never Have I Ever': '从不曾我从不',
+                'Who Is Most Likely': '谁最有可能',
+                'Would You Rather': '你会选择谁',
+                'Mafia': '黑手党',
+                'Undercover': '卧底',
+                'Charades': '词语接龙',
+                'Hedbanz': '头脑画吧',
+                'Bottle Match Game': '瓶子匹配游戏',
+                'Sex Dice': '骰子游戏',
+                'Beer Number': '猜数字',
+                'Kings Cup': '国王杯'
+            },
+            de: {
+                'Magic 8 Ball': 'Magischer 8er-Ball',
+                'Truth or Dare': 'Wahrheit oder Pflicht',
+                'Never Have I Ever': 'Ich habe nie',
+                'Who Is Most Likely': 'Wer ist am ehesten',
+                'Would You Rather': 'Würdest du eher',
+                'Mafia': 'Mafia',
+                'Undercover': 'Undercover',
+                'Charades': 'Scharades',
+                'Hedbanz': 'Hedbanz',
+                'Bottle Match Game': 'Flaschenspiel',
+                'Sex Dice': 'Sex Würfel',
+                'Beer Number': 'Biernummer',
+                'Kings Cup': 'Königsbecher'
+            },
+            fr: {
+                'Magic 8 Ball': 'Boule 8 Magique',
+                'Truth or Dare': 'Vérité ou Défi',
+                'Never Have I Ever': 'Je n\'ai Jamais',
+                'Who Is Most Likely': 'Qui est le Plus Probable',
+                'Would You Rather': 'Tu Préfères Ou',
+                'Mafia': 'Mafia',
+                'Undercover': 'Infiltré',
+                'Charades': 'Charades',
+                'Hedbanz': 'Hedbanz',
+                'Bottle Match Game': 'Jeu d\'Appariement de Bouteilles',
+                'Sex Dice': 'Dés Sexuels',
+                'Beer Number': 'Numéro de Bière',
+                'Kings Cup': 'Coupe du Roi'
+            }
+        };
+
+        return names[lang] || names['en'];
     }
 
     getCurrentGame() {
