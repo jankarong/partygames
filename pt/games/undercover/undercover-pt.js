@@ -270,26 +270,37 @@ const undercoverTranslations = {
 // Replace word pairs with Portuguese translations
 function initializePTLocalization() {
     if (typeof gameState !== 'undefined' && gameState.wordsByCategory) {
-        gameState.wordsByCategory = undercoverTranslations.wordPairs;
-
-        // Also update category names
-        const newCategories = {};
-        Object.keys(gameState.wordsByCategory).forEach(key => {
-            if (undercoverTranslations.categories[key]) {
-                newCategories[undercoverTranslations.categories[key]] = gameState.wordsByCategory[key];
-                delete gameState.wordsByCategory[key];
-            }
-        });
-        Object.assign(gameState.wordsByCategory, newCategories);
+        // Replace the entire wordsByCategory with Portuguese translations
+        gameState.wordsByCategory = { ...undercoverTranslations.wordPairs };
     }
 }
 
-// Apply translations on page load
+// Wrapper for startGame to ensure localization is applied
+const originalStartGame = typeof startGame !== 'undefined' ? startGame : null;
+function startGamePT() {
+    initializePTLocalization();
+    if (originalStartGame) {
+        return originalStartGame.apply(this, arguments);
+    }
+}
+
+// Apply translations on script load
 if (typeof window !== 'undefined') {
     window.undercoverTranslations = undercoverTranslations;
     window.initializePTLocalization = initializePTLocalization;
 
-    // Wait for DOM to be ready
+    // Patch the startGame function to apply localization first
+    setTimeout(() => {
+        if (typeof startGame !== 'undefined') {
+            window.startGameOriginal = startGame;
+            window.startGame = function() {
+                initializePTLocalization();
+                return window.startGameOriginal.apply(this, arguments);
+            };
+        }
+    }, 100);
+
+    // Also apply on page ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializePTLocalization);
     } else {
