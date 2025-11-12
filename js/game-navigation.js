@@ -43,31 +43,53 @@ class GameNavigation {
     createFloatingNav() {
         const floatingNav = document.createElement('div');
         floatingNav.className = 'floating-nav';
+
+        // Determine language prefix for links
+        const currentPath = window.location.pathname;
+        let langPrefix = '';
+        let currentLang = 'en';
+        if (currentPath.startsWith('/pt/')) {
+            langPrefix = '/pt';
+            currentLang = 'pt';
+        } else if (currentPath.startsWith('/zh/')) {
+            langPrefix = '/zh';
+            currentLang = 'zh';
+        } else if (currentPath.startsWith('/de/')) {
+            langPrefix = '/de';
+            currentLang = 'de';
+        } else if (currentPath.startsWith('/fr/')) {
+            langPrefix = '/fr';
+            currentLang = 'fr';
+        }
+
+        // Get text in the current language
+        const texts = this.getNavTexts(currentLang);
+
         floatingNav.innerHTML = `
             <button class="nav-toggle" id="navToggle">
                 <i class="fas fa-gamepad"></i>
             </button>
             <div class="nav-menu" id="navMenu">
                 <div class="nav-actions">
-                    <a href="/index.html">
-                        <i class="fas fa-home"></i><span>All Games</span>
+                    <a href="${langPrefix}/index.html">
+                        <i class="fas fa-home"></i><span>${texts.allGames}</span>
                     </a>
-                    <a href="/TheList.html">
-                        <i class="fas fa-list"></i><span>The List</span>
+                    <a href="${langPrefix}/TheList.html">
+                        <i class="fas fa-list"></i><span>${texts.theList}</span>
                     </a>
-                    <a href="/premium.html" class="premium-highlight">
-                        <i class="fas fa-crown"></i><span>Premium</span>
+                    <a href="${langPrefix}/premium.html" class="premium-highlight">
+                        <i class="fas fa-crown"></i><span>${texts.premium}</span>
                     </a>
                     <a href="https://ozagames.com/" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-gamepad"></i><span>Minigames</span>
+                        <i class="fas fa-gamepad"></i><span>${texts.minigames}</span>
                     </a>
                     <div class="auth-section">
                         <div class="auth-buttons" id="nav-auth-buttons">
                             <a href="/login.html" class="auth-link login-link">
-                                <i class="fas fa-sign-in-alt"></i><span>Login</span>
+                                <i class="fas fa-sign-in-alt"></i><span>${texts.login}</span>
                             </a>
                             <a href="/register.html" class="auth-link register-link">
-                                <i class="fas fa-user-plus"></i><span>Sign Up</span>
+                                <i class="fas fa-user-plus"></i><span>${texts.signup}</span>
                             </a>
                         </div>
                         <div class="user-info-nav" id="nav-user-info" style="display: none;">
@@ -75,20 +97,21 @@ class GameNavigation {
                                 <div class="user-avatar-nav" id="nav-user-avatar">U</div>
                                 <div class="user-text">
                                     <div class="user-email-nav" id="nav-user-email">user@example.com</div>
-                                    <span class="premium-status-nav" id="nav-premium-status">Free User</span>
+                                    <span class="premium-status-nav" id="nav-premium-status">${texts.freeUser}</span>
                                 </div>
                             </div>
                             <button class="signout-btn" onclick="handleSignOut()">
-                                <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+                                <i class="fas fa-sign-out-alt"></i><span>${texts.logout}</span>
                             </button>
                         </div>
                     </div>
                     <div class="language-dropdown">
                         <button class="language-toggle">
-                            <i class="fas fa-globe"></i><span>🇺🇸 English</span>
+                            <i class="fas fa-globe"></i><span>${texts.currentLanguageFlag}</span>
                         </button>
                         <div class="language-menu">
                             <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
+                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
                             <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
                             <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
                             <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
@@ -100,10 +123,102 @@ class GameNavigation {
         document.body.appendChild(floatingNav);
     }
 
+    getNavTexts(lang) {
+        const translations = {
+            en: {
+                allGames: 'All Games',
+                theList: 'The List',
+                premium: 'Premium',
+                minigames: 'Minigames',
+                login: 'Login',
+                signup: 'Sign Up',
+                freeUser: 'Free User',
+                logout: 'Logout',
+                currentLanguageFlag: '🇺🇸 English',
+                tryText: 'Try:',
+                popularGames: 'Popular Party Games'
+            },
+            pt: {
+                allGames: 'Todos os Jogos',
+                theList: 'A Lista',
+                premium: 'Premium',
+                minigames: 'Minijogos',
+                login: 'Entrar',
+                signup: 'Criar Conta',
+                freeUser: 'Usuário Grátis',
+                logout: 'Sair',
+                currentLanguageFlag: '🇧🇷 Português',
+                tryText: 'Tente:',
+                popularGames: 'Jogos de Festa Populares'
+            },
+            zh: {
+                allGames: '所有游戏',
+                theList: '游戏列表',
+                premium: '高级版',
+                minigames: '小游戏',
+                login: '登录',
+                signup: '注册',
+                freeUser: '免费用户',
+                logout: '退出',
+                currentLanguageFlag: '🇨🇳 中文',
+                tryText: '尝试:',
+                popularGames: '热门派对游戏'
+            },
+            de: {
+                allGames: 'Alle Spiele',
+                theList: 'Die Liste',
+                premium: 'Premium',
+                minigames: 'Minispiele',
+                login: 'Anmelden',
+                signup: 'Registrieren',
+                freeUser: 'Kostenlos',
+                logout: 'Abmelden',
+                currentLanguageFlag: '🇩🇪 Deutsch',
+                tryText: 'Versuchen:',
+                popularGames: 'Beliebte Party-Spiele'
+            },
+            fr: {
+                allGames: 'Tous les Jeux',
+                theList: 'La Liste',
+                premium: 'Premium',
+                minigames: 'Mini-jeux',
+                login: 'Connexion',
+                signup: 'S\'inscrire',
+                freeUser: 'Utilisateur Gratuit',
+                logout: 'Déconnexion',
+                currentLanguageFlag: '🇫🇷 Français',
+                tryText: 'Essayez:',
+                popularGames: 'Jeux de Société Populaires'
+            }
+        };
+        return translations[lang] || translations['en'];
+    }
+
     createQuickAccessBar() {
         const popularGames = this.games.filter(game =>
             ['party', 'strategy'].includes(game.category) && game !== this.currentGame
         ).slice(0, 4);
+
+        // Determine language prefix for links
+        const currentPath = window.location.pathname;
+        let langPrefix = '';
+        let currentLang = 'en';
+        if (currentPath.startsWith('/pt/')) {
+            langPrefix = '/pt';
+            currentLang = 'pt';
+        } else if (currentPath.startsWith('/zh/')) {
+            langPrefix = '/zh';
+            currentLang = 'zh';
+        } else if (currentPath.startsWith('/de/')) {
+            langPrefix = '/de';
+            currentLang = 'de';
+        } else if (currentPath.startsWith('/fr/')) {
+            langPrefix = '/fr';
+            currentLang = 'fr';
+        }
+
+        // Get text in the current language
+        const texts = this.getNavTexts(currentLang);
 
         if (popularGames.length > 0) {
             const quickBar = document.createElement('div');
@@ -111,13 +226,18 @@ class GameNavigation {
             quickBar.id = 'quickAccessBar';
             quickBar.innerHTML = `
                 <button id="quick-access-toggle"><i class="fas fa-layer-group"></i></button>
-                <a href="/index.html" class="quick-game-btn home-btn"><i class="fas fa-home"></i> Home</a>
-                <a href="/premium.html" class="quick-game-btn premium-btn premium-highlight"><i class="fas fa-crown"></i> Premium</a>
-                <a href="https://ozagames.com/" target="_blank" rel="noopener noreferrer" class="quick-game-btn"><i class="fas fa-gamepad"></i> Minigames</a>
-                <span id="try-text" style="color: rgba(255,255,255,0.7); font-size: 12px;">Try:</span>
-                ${popularGames.map(game => `
-                    <a href="${game.url}" class="quick-game-btn">${game.name}</a>
-                `).join('')}
+                <a href="${langPrefix}/index.html" class="quick-game-btn home-btn"><i class="fas fa-home"></i> ${texts.allGames}</a>
+                <a href="${langPrefix}/premium.html" class="quick-game-btn premium-btn premium-highlight"><i class="fas fa-crown"></i> ${texts.premium}</a>
+                <a href="https://ozagames.com/" target="_blank" rel="noopener noreferrer" class="quick-game-btn"><i class="fas fa-gamepad"></i> ${texts.minigames}</a>
+                <span id="try-text" style="color: rgba(255,255,255,0.7); font-size: 12px;">${texts.tryText}</span>
+                ${popularGames.map(game => {
+                    // Add language prefix to game URL if on non-English version
+                    let gameUrl = game.url;
+                    if (langPrefix && !gameUrl.startsWith('/zh') && !gameUrl.startsWith('/pt') && !gameUrl.startsWith('/de') && !gameUrl.startsWith('/fr')) {
+                        gameUrl = langPrefix + gameUrl;
+                    }
+                    return `<a href="${gameUrl}" class="quick-game-btn">${game.name}</a>`;
+                }).join('')}
             `;
             document.body.appendChild(quickBar);
         }
@@ -127,20 +247,48 @@ class GameNavigation {
         // Get all games
         const otherGames = this.games;
 
+        // Determine current language from path
+        const currentPath = window.location.pathname;
+        let langPrefix = '';
+        let currentLang = 'en';
+        if (currentPath.startsWith('/pt/')) {
+            langPrefix = '/pt';
+            currentLang = 'pt';
+        } else if (currentPath.startsWith('/zh/')) {
+            langPrefix = '/zh';
+            currentLang = 'zh';
+        } else if (currentPath.startsWith('/de/')) {
+            langPrefix = '/de';
+            currentLang = 'de';
+        } else if (currentPath.startsWith('/fr/')) {
+            langPrefix = '/fr';
+            currentLang = 'fr';
+        }
+
+        // Get text in the current language
+        const texts = this.getNavTexts(currentLang);
+
         if (otherGames.length > 0) {
             const panel = document.createElement('div');
             panel.className = 'other-games-panel';
             panel.innerHTML = `
-                <h3>Popular Party Games</h3>
+                <h3>${texts.popularGames}</h3>
                 <div class="other-games-grid">
-                    ${otherGames.map(game => `
-                        <a href="${game.url}" class="other-game-card ${game === this.currentGame ? 'current' : ''}">
-                            <div class="other-game-logo">
-                                <img src="${game.logo}" alt="${game.name}" loading="lazy">
-                            </div>
-                            <div class="other-game-name">${game.name}</div>
-                        </a>
-                    `).join('')}
+                    ${otherGames.map(game => {
+                        // Add language prefix to game URL if on non-English version
+                        let gameUrl = game.url;
+                        if (langPrefix && !gameUrl.startsWith('/zh') && !gameUrl.startsWith('/pt') && !gameUrl.startsWith('/de') && !gameUrl.startsWith('/fr')) {
+                            gameUrl = langPrefix + gameUrl;
+                        }
+                        return `
+                            <a href="${gameUrl}" class="other-game-card ${game === this.currentGame ? 'current' : ''}">
+                                <div class="other-game-logo">
+                                    <img src="${game.logo}" alt="${game.name}" loading="lazy">
+                                </div>
+                                <div class="other-game-name">${game.name}</div>
+                            </a>
+                        `;
+                    }).join('')}
                 </div>
             `;
 
@@ -166,12 +314,25 @@ class GameNavigation {
     makeLogosClickable() {
         // Find game logos and make them clickable
         const logos = document.querySelectorAll('.game-logo, .logo-container img, img[alt*="Logo"], img[src*="logo"], img[src*="Logo"]');
-        
+
+        // Determine current language from path
+        const currentPath = window.location.pathname;
+        let homeUrl = '/index.html';
+        if (currentPath.startsWith('/pt/')) {
+            homeUrl = '/pt/index.html';
+        } else if (currentPath.startsWith('/zh/')) {
+            homeUrl = '/zh/index.html';
+        } else if (currentPath.startsWith('/de/')) {
+            homeUrl = '/de/index.html';
+        } else if (currentPath.startsWith('/fr/')) {
+            homeUrl = '/fr/index.html';
+        }
+
         logos.forEach(logo => {
             if (!logo.closest('a')) { // Only if not already wrapped in a link
                 logo.style.cursor = 'pointer';
                 logo.addEventListener('click', () => {
-                    window.location.href = '/index.html';
+                    window.location.href = homeUrl;
                 });
                 
                 // Add hover effect
@@ -272,11 +433,24 @@ class GameNavigation {
         const currentPath = window.location.pathname;
         let newPath;
 
-        // Games that don't have Chinese/German/French versions
+        // Games that don't have Portuguese/Chinese/German/French versions
         const englishOnlyGames = ['charades2', 'findthespy', 'numberguess'];
         const isEnglishOnly = englishOnlyGames.some(game => currentPath.includes(game));
 
-        if (lang === 'zh') {
+        if (lang === 'pt') {
+            // Switch to Portuguese version
+            if (currentPath.startsWith('/pt/')) {
+                // Already on Portuguese version
+                return;
+            }
+            // If this is an English-only game, go to Portuguese homepage instead
+            if (isEnglishOnly) {
+                newPath = '/pt/index.html';
+            } else {
+                // Remove /zh/, /de/, and /fr/ if present, then add /pt/
+                newPath = '/pt' + currentPath.replace('/zh/', '/').replace('/de/', '/').replace('/fr/', '/');
+            }
+        } else if (lang === 'zh') {
             // Switch to Chinese version
             if (currentPath.startsWith('/zh/')) {
                 // Already on Chinese version
@@ -286,8 +460,8 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/zh/index.html';
             } else {
-                // Remove /de/ and /fr/ if present, then add /zh/
-                newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/');
+                // Remove /pt/, /de/ and /fr/ if present, then add /zh/
+                newPath = '/zh' + currentPath.replace('/pt/', '/').replace('/de/', '/').replace('/fr/', '/');
             }
         } else if (lang === 'de') {
             // Switch to German version
@@ -299,8 +473,8 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/de/index.html';
             } else {
-                // Remove /zh/ and /fr/ if present, then add /de/
-                newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/');
+                // Remove /pt/, /zh/ and /fr/ if present, then add /de/
+                newPath = '/de' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/fr/', '/');
             }
         } else if (lang === 'fr') {
             // Switch to French version
@@ -312,16 +486,16 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/fr/index.html';
             } else {
-                // Remove /zh/ and /de/ if present, then add /fr/
-                newPath = '/fr' + currentPath.replace('/zh/', '/').replace('/de/', '/');
+                // Remove /pt/, /zh/ and /de/ if present, then add /fr/
+                newPath = '/fr' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/');
             }
         } else {
             // Switch to English version
-            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
+            if (!currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
                 // Already on English version
                 return;
             }
-            newPath = currentPath.replace('/zh', '').replace('/de', '').replace('/fr', '');
+            newPath = currentPath.replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '');
         }
 
         window.location.href = newPath;

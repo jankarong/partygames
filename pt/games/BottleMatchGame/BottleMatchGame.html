@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bottle Match Game Online - Free Logic Puzzle</title>
-    <meta name="description" content="Play Bottle Match Game Online free! Test your logic with 5 challenging levels. Guess the color sequence in this Mastermind-style puzzle game.">
-    <meta name="keywords" content="bottle match game, logic puzzle, mastermind game, color matching, brain teaser">
-    <link rel="canonical" href="https://partygames.com/games/BottleMatchGame/BottleMatchGame.html">
-    <meta property="og:title" content="Bottle Match Game Online - Free Logic Puzzle">
-    <meta property="og:description" content="Play Bottle Match Game Online free! Test your logic with 5 challenging levels.">
+    <title>Jogo de Combinar Garrafas - Quebra-cabeça de Lógica Grátis</title>
+    <meta name="description" content="Jogue Jogo de Combinar Garrafas online grátis! Teste sua lógica com 5 níveis desafiadores. Adivinhe a sequência de cores neste jogo de quebra-cabeça estilo Mastermind.">
+    <meta name="keywords" content="jogo combinar garrafas, quebra-cabeça lógica, mastermind, correspondência cores, desafio mental">
+    <link rel="canonical" href="https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame.html">
+    <meta property="og:title" content="Jogo de Combinar Garrafas - Quebra-cabeça de Lógica Grátis">
+    <meta property="og:description" content="Jogue Jogo de Combinar Garrafas online grátis! Teste sua lógica com 5 níveis desafiadores.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://partygames.com/games/BottleMatchGame/BottleMatchGame.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzQyOTllMSIvPgo8cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIGZpbGw9IiMyZDM3NDgiLz4KPHN2Zz4K">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <link rel="stylesheet" href="../../css/gameheader.css">
+    <link rel="stylesheet" href="/css/gameheader.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Game",
-      "name": "Bottle Match Game Online",
-      "description": "A logic puzzle game where players guess the correct color sequence across 5 challenging levels",
-      "gameType": "Logic Puzzle",
+      "name": "Jogo de Combinar Garrafas",
+      "description": "Um jogo de quebra-cabeça de lógica onde os jogadores adivinham a sequência de cores correta em 5 níveis desafiadores",
+      "inLanguage": "pt-BR",
+      "gameType": "Quebra-cabeça de Lógica",
       "numberOfPlayers": "1",
-      "url": "https://partygames.com/games/BottleMatchGame/BottleMatchGame.html"
+      "url": "https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame.html"
     }
     </script>
 
@@ -54,85 +55,85 @@
 <body>
     <!-- Enhanced Navigation will be inserted by JavaScript -->
     <div class="game-container">
-        <img src="bottlematch.png" alt="Bottle Match Game Logo" class="game-logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
-        <h1>Bottle Match Game Online</h1>
+        <img src="bottlematch.png" alt="Logo do Jogo de Combinar Garrafas" class="game-logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+        <h1>Jogo de Combinar Garrafas Online</h1>
 
         <div class="level-info">
-            <div class="level-title">Level <span id="current-level">1</span> / 5</div>
+            <div class="level-title">Nível <span id="current-level">1</span> / 5</div>
             <div class="level-details">
-                Length: <span id="sequence-length">3</span> |
-                Colors: <span id="color-count">4</span> |
-                Attempts: <span id="attempts">0</span>
+                Comprimento: <span id="sequence-length">3</span> |
+                Cores: <span id="color-count">4</span> |
+                Tentativas: <span id="attempts">0</span>
             </div>
         </div>
 
         <div class="secret-display" id="secret-display" style="display: none;">
-            Secret Sequence: <span id="secret-sequence"></span>
+            Sequência Secreta: <span id="secret-sequence"></span>
         </div>
 
         <div class="game-area" id="game-area">
-            <h3>Select your guess:</h3>
+            <h3>Selecione seu palpite:</h3>
             <div class="bottles-container" id="current-guess"></div>
 
             <div class="controls">
-                <button class="submit-btn" id="submit-guess" onclick="submitGuess()">Submit Guess</button>
-                <button onclick="clearGuess()">Clear</button>
-                <button onclick="showSecret()">Show Answer</button>
+                <button class="submit-btn" id="submit-guess" onclick="submitGuess()">Enviar Palpite</button>
+                <button onclick="clearGuess()">Limpar</button>
+                <button onclick="showSecret()">Mostrar Resposta</button>
             </div>
 
             <div class="guess-section">
-                <h4>Guess History:</h4>
+                <h4>Histórico de Palpites:</h4>
                 <div id="guess-history"></div>
             </div>
         </div>
 
         <div class="completion-screen" id="completion-screen">
-            <h2>🎉 Congratulations! All Levels Complete!</h2>
+            <h2>🎉 Parabéns! Todos os Níveis Completos!</h2>
             <div class="final-stats">
-                <h3>Overall Statistics</h3>
-                <p>Total Time: <span id="total-time">0</span> seconds</p>
-                <p>Total Attempts: <span id="total-attempts">0</span></p>
-                <p>Average Attempts per Level: <span id="avg-attempts">0</span></p>
+                <h3>Estatísticas Gerais</h3>
+                <p>Tempo Total: <span id="total-time">0</span> segundos</p>
+                <p>Total de Tentativas: <span id="total-attempts">0</span></p>
+                <p>Média de Tentativas por Nível: <span id="avg-attempts">0</span></p>
             </div>
-            <button class="restart-btn" onclick="restartGame()">Restart Game</button>
+            <button class="restart-btn" onclick="restartGame()">Reiniciar Jogo</button>
         </div>
     </div>
 
     <section class="game-info">
-        <h2>How to Play Bottle Match Game</h2>
-        <p>Bottle Match Game is an exciting online logic puzzle based on the classic Mastermind game. Test your deductive reasoning skills across 5 progressively challenging levels!</p>
+        <h2>Como Jogar Jogo de Combinar Garrafas</h2>
+        <p>Jogo de Combinar Garrafas é um emocionante quebra-cabeça lógico online baseado no clássico jogo Mastermind. Teste suas habilidades de dedução em 5 níveis progressivamente desafiadores!</p>
 
-        <h3>Game Rules</h3>
+        <h3>Regras do Jogo</h3>
         <ul>
-            <li><strong>Objective:</strong> Guess the secret color sequence before running out of attempts</li>
-            <li><strong>5 Levels:</strong> Each level increases in difficulty with longer sequences and more colors</li>
-            <li><strong>Feedback System:</strong> After each guess, receive hints about correct positions</li>
-            <li><strong>No Repeats:</strong> Each bottle color appears only once in the sequence</li>
+            <li><strong>Objetivo:</strong> Adivinhe a sequência secreta de cores antes de ficar sem tentativas</li>
+            <li><strong>5 Níveis:</strong> Cada nível aumenta em dificuldade com sequências mais longas e mais cores</li>
+            <li><strong>Sistema de Feedback:</strong> Após cada palpite, receba dicas sobre posições corretas</li>
+            <li><strong>Sem Repetições:</strong> Cada cor de garrafa aparece apenas uma vez na sequência</li>
         </ul>
 
-        <h3>How to Play</h3>
+        <h3>Como Jogar</h3>
         <ol>
-            <li><strong>Select Colors:</strong> Click a position in the top row, then click a color below, OR drag colors directly to positions</li>
-            <li><strong>Submit Guess:</strong> Once all positions are filled, click "Submit Guess"</li>
-            <li><strong>Read Feedback:</strong> Black pegs show correct color in correct position</li>
-            <li><strong>Adjust Strategy:</strong> Use feedback to refine your next guess</li>
-            <li><strong>Win the Level:</strong> Match all bottles correctly to advance</li>
+            <li><strong>Selecione Cores:</strong> Clique em uma posição na linha superior, depois clique em uma cor abaixo, OU arraste cores diretamente para as posições</li>
+            <li><strong>Envie o Palpite:</strong> Depois que todas as posições estiverem preenchidas, clique em "Enviar Palpite"</li>
+            <li><strong>Leia o Feedback:</strong> Pinos pretos mostram cor correta na posição correta</li>
+            <li><strong>Ajuste a Estratégia:</strong> Use o feedback para refinar seu próximo palpite</li>
+            <li><strong>Vença o Nível:</strong> Combine todas as garrafas corretamente para avançar</li>
         </ol>
 
-        <h3>Game Features</h3>
+        <h3>Características do Jogo</h3>
         <ul>
-            <li>✅ Free online bottle matching game - no download required</li>
-            <li>✅ 5 challenging levels with increasing difficulty</li>
-            <li>✅ Drag-and-drop or click-to-select controls</li>
-            <li>✅ Real-time feedback on your guesses</li>
-            <li>✅ Track your attempts and completion time</li>
-            <li>✅ Mobile-friendly responsive design</li>
+            <li>✅ Jogo de combinar garrafas online grátis - sem download necessário</li>
+            <li>✅ 5 níveis desafiadores com dificuldade crescente</li>
+            <li>✅ Controles de arrastar e soltar ou clicar para selecionar</li>
+            <li>✅ Feedback em tempo real sobre seus palpites</li>
+            <li>✅ Acompanhe suas tentativas e tempo de conclusão</li>
+            <li>✅ Design responsivo amigável para mobile</li>
         </ul>
 
-        <h3>Tips & Strategy</h3>
-        <p><strong>Start systematically:</strong> Try testing one color at a time to narrow down possibilities.</p>
-        <p><strong>Use process of elimination:</strong> Keep track of which colors and positions have been ruled out.</p>
-        <p><strong>Pay attention to feedback:</strong> Black pegs indicate both correct color AND position.</p>
+        <h3>Dicas e Estratégia</h3>
+        <p><strong>Comece sistematicamente:</strong> Tente testar uma cor de cada vez para estreitar as possibilidades.</p>
+        <p><strong>Use eliminação de processo:</strong> Acompanhe quais cores e posições foram descartadas.</p>
+        <p><strong>Preste atenção ao feedback:</strong> Pinos pretos indicam cor correta E posição correta.</p>
     </section>
 
     <!-- Sound Effects -->
@@ -140,13 +141,14 @@
     <audio id="success-sound" src="hooray_sound.mp3" preload="auto"></audio>
     <audio id="fail-sound" src="fail_sound.mp3" preload="auto"></audio>
 
+    <script src="script.js"></script>
     <script src="script-pt.js"></script>
-    <script src="../../js/auth.js"></script>
-    <script src="../../js/ads-controller.js"></script>
-    <script src="../../js/game-navigation.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation.js"></script>
     <!-- Floating Ad -->
-    <link rel="stylesheet" href="../../css/floating-ad.css">
-    <script src="../../js/floating-ad.js"></script>
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof FloatingAdManager !== 'undefined') {

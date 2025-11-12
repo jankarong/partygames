@@ -30,12 +30,13 @@
     {
         "@context": "https://schema.org",
         "@type": "Game",
-        "name": "Mafia Board Games",
-        "description": "Play Mafia Board Games online - the ultimate social deduction party games! Experience thrilling mafia board games where players work together to find the Mafia among innocent villagers.",
-        "genre": "Board Game",
+        "name": "Máfia - Jogo de Dedução Social",
+        "description": "Jogue Máfia online - o jogo de dedução social perfeito para festas! Experimente o emocionante jogo da máfia onde jogadores trabalham juntos para encontrar os membros da máfia entre os aldeões inocentes.",
+        "inLanguage": "pt-BR",
+        "genre": "Jogo de Tabuleiro",
         "numberOfPlayers": "6-15",
         "applicationCategory": "GameApplication",
-        "operatingSystem": "Web Browser",
+        "operatingSystem": "Navegador Web",
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -55,7 +56,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="mafia.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <link rel="stylesheet" href="../../css/gameheader.css">
+    <link rel="stylesheet" href="/css/gameheader.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./mafialogo.png">
 
@@ -84,35 +85,35 @@
 <body>
     <!-- Enhanced Navigation will be inserted by JavaScript -->
     <div class="container py-4">
-        <img src="mafialogo.png" alt="Mafia Board Games Logo" class="game-logo">
-        <h1 class="text-center mb-4">Mafia Board Games</h1>
+        <img src="mafialogo.png" alt="Logo do Jogo da Máfia" class="game-logo">
+        <h1 class="text-center mb-4">Jogo da Máfia</h1>
 
         <div class="game-setup">
             <div class="setup-section card shadow-sm">
                 <div class="card-body">
-                    <h2 class="card-title">Game Setup</h2>
+                    <h2 class="card-title">Configuração do Jogo</h2>
                     <div class="total-players mb-4">
-                        <label for="playerCount" class="form-label">Total Players:</label>
+                        <label for="playerCount" class="form-label">Total de Jogadores:</label>
                         <input type="number" id="playerCount" class="form-control" min="6" max="15" value="8">
                     </div>
 
                     <div class="role-selection">
-                        <h3 class="h5 mb-3">Role Distribution</h3>
+                        <h3 class="h5 mb-3">Distribuição de Papéis</h3>
                         <div class="role-inputs row g-3">
                             <div class="role-input col-md-4">
-                                <label for="mafiaCount" class="form-label">Mafia:</label>
+                                <label for="mafiaCount" class="form-label">Máfia:</label>
                                 <input type="number" id="mafiaCount" class="form-control" min="1" value="2">
                             </div>
                             <div class="role-input col-md-4">
-                                <label for="doctorCount" class="form-label">Doctor:</label>
+                                <label for="doctorCount" class="form-label">Médico:</label>
                                 <input type="number" id="doctorCount" class="form-control" min="0" max="1" value="1">
                             </div>
                             <div class="role-input col-md-4">
-                                <label for="detectiveCount" class="form-label">Detective:</label>
+                                <label for="detectiveCount" class="form-label">Detetive:</label>
                                 <input type="number" id="detectiveCount" class="form-control" min="0" max="1" value="1">
                             </div>
                             <div class="role-input col-md-4">
-                                <label for="villagerCount" class="form-label">Villagers:</label>
+                                <label for="villagerCount" class="form-label">Aldeões:</label>
                                 <input type="number" id="villagerCount" class="form-control" min="1" value="4">
                             </div>
                         </div>
@@ -124,8 +125,8 @@
                         </div>
                     </div>
 
-                    <button id="setupGame" class="btn btn-primary w-100 mt-3">Start Game</button>
-                    <button id="manageRoles" class="btn btn-secondary w-100 mt-3">Manage Custom Roles</button>
+                    <button id="setupGame" class="btn btn-primary w-100 mt-3">Iniciar Jogo</button>
+                    <button id="manageRoles" class="btn btn-secondary w-100 mt-3">Gerenciar Papéis Customizados</button>
                 </div>
             </div>
         </div>
@@ -133,21 +134,21 @@
         <div class="role-management mt-4" style="display: none;">
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <h2 class="card-title text-center mb-4">Custom Role Management</h2>
+                    <h2 class="card-title text-center mb-4">Gerenciamento de Papéis Customizados</h2>
 
                     <!-- Create new role -->
                     <div class="create-role-section mb-5">
-                        <h4 class="mb-3">Create New Role</h4>
+                        <h4 class="mb-3">Criar Novo Papel</h4>
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label for="roleName" class="form-label">Role Name</label>
-                                <input type="text" id="roleName" class="form-control" placeholder="e.g. Cupid">
+                                <label for="roleName" class="form-label">Nome do Papel</label>
+                                <input type="text" id="roleName" class="form-control" placeholder="ex. Cupido">
                             </div>
                             <div class="col-md-6">
-                                <label for="roleTeam" class="form-label">Team</label>
+                                <label for="roleTeam" class="form-label">Time</label>
                                 <select id="roleTeam" class="form-select">
-                                    <option value="villager">Villager Team</option>
-                                    <option value="mafia">Mafia Team</option>
+                                    <option value="villager">Time dos Aldeões</option>
+                                    <option value="mafia">Time da Máfia</option>
                                 </select>
                             </div>
                             <div class="col-12">
@@ -407,12 +408,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/auth.js"></script>
     <script src="/js/ads-controller.js"></script>
-    <script src="../../js/game-navigation.js"></script>
+    <script src="/js/game-navigation.js"></script>
+    <script src="mafia.js"></script>
     <script src="mafia-pt.js"></script>
 
     <!-- Floating Ad -->
-    <link rel="stylesheet" href="../../css/floating-ad.css">
-    <script src="../../js/floating-ad.js"></script>
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof FloatingAdManager !== 'undefined') {
