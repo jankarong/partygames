@@ -16,53 +16,88 @@ const undercoverTranslations = {
     },
     wordPairs: {
         'Food & Drink': [
-            ['Pizza', 'Hambúrguer'],
+            ['Pizza', 'Pastel'],
             ['Café', 'Chá'],
-            ['Refrigerante', 'Suco'],
-            ['Sorvete', 'Gelato'],
-            ['Pão', 'Bolo']
+            ['Refrigerante', 'Cerveja'],
+            ['Sorvete', 'Picolé'],
+            ['Pão de Queijo', 'Bolo de Chocolate'],
+            ['Arroz', 'Feijão'],
+            ['Macarrão', 'Batata'],
+            ['Frango', 'Carne Vermelha'],
+            ['Abacaxi', 'Melancia'],
+            ['Leite', 'Suco']
         ],
         'Animals': [
             ['Gato', 'Cachorro'],
             ['Leão', 'Tigre'],
-            ['Passarinho', 'Pombo'],
+            ['Passarinho', 'Coruja'],
             ['Peixe', 'Tubarão'],
-            ['Coelho', 'Esquilo']
+            ['Coelho', 'Esquilo'],
+            ['Vaca', 'Ovelha'],
+            ['Cavalo', 'Burro'],
+            ['Cobra', 'Sapo'],
+            ['Aranha', 'Formiga'],
+            ['Borboleta', 'Abelha']
         ],
         'Objects': [
-            ['Telefone', 'Tablet'],
+            ['Telefone', 'Smartwatch'],
             ['Cadeira', 'Sofá'],
             ['Livro', 'Revista'],
             ['Relógio', 'Despertador'],
-            ['Caneta', 'Lápis']
+            ['Caneta', 'Lápis'],
+            ['Televisão', 'Monitor'],
+            ['Cama', 'Colchão'],
+            ['Porta', 'Janela'],
+            ['Chave', 'Cadeado'],
+            ['Espelho', 'Quadro']
         ],
         'Jobs & Roles': [
             ['Policial', 'Ladrão'],
             ['Médico', 'Enfermeiro'],
             ['Professor', 'Aluno'],
             ['Cozinheiro', 'Garçom'],
-            ['Ator', 'Diretor']
+            ['Ator', 'Diretor'],
+            ['Engenheiro', 'Arquiteto'],
+            ['Piloto', 'Aeromoça'],
+            ['Dentista', 'Farmacêutico'],
+            ['Músico', 'Compositor'],
+            ['Jornalista', 'Fotógrafo']
         ],
         'Entertainment': [
             ['Filme', 'Série'],
             ['Música', 'Podcast'],
-            ['Jogo de Vídeo', 'Aplicativo'],
-            ['Teatro', 'Dança'],
-            ['Livro', 'Audiolivro']
+            ['Jogo de Vídeo', 'Aplicativo Móvel'],
+            ['Teatro', 'Circo'],
+            ['Livro', 'E-book'],
+            ['Novela', 'Documentário'],
+            ['Anime', 'Mangá'],
+            ['Dança', 'Mímica'],
+            ['Comédia Stand-up', 'Peça de Teatro'],
+            ['Karaokê', 'Karate']
         ],
         'Nature & Weather': [
             ['Sol', 'Lua'],
             ['Chuva', 'Neve'],
             ['Montanha', 'Vale'],
             ['Rio', 'Lago'],
-            ['Árvore', 'Flor']
+            ['Árvore', 'Flor'],
+            ['Praia', 'Deserto'],
+            ['Floresta', 'Caverna'],
+            ['Nuvem', 'Arco-íris'],
+            ['Trovão', 'Raio'],
+            ['Brisa', 'Tempestade']
         ],
         'Funny': [
             ['Gigante', 'Anão'],
             ['Herói', 'Vilão'],
             ['Zumbi', 'Vampiro'],
             ['Alienígena', 'Astronauta'],
-            ['Robô', 'Cyborg']
+            ['Robô', 'Cyborg'],
+            ['Bruxa', 'Fada'],
+            ['Dragão', 'Unicórnio'],
+            ['Pirata', 'Tesouro'],
+            ['Múmia', 'Fantasma'],
+            ['Dinossauro', 'Caverna']
         ]
     },
     messages: {
