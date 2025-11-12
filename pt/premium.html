@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ir Premium - PartyGameLab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/style/main.css" rel="stylesheet">
+    <link href="/css/auth.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/image/favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/pt/">
+                <img src="/image/partyGameLogo.png" alt="Logo de Jogos de Festa">
+                <span class="brand-text">PartyGameLab</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pt/TheList.html">A Lista</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            🇧🇷 Português
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/premium.html">🇺🇸 English</a></li>
+                            <li><a class="dropdown-item" href="/pt/premium.html">🇧🇷 Português</a></li>
+                            <li><a class="dropdown-item" href="/zh/premium.html">🇨🇳 中文</a></li>
+                            <li><a class="dropdown-item" href="/fr/premium.html">🇫🇷 Français</a></li>
+                            <li><a class="dropdown-item" href="/de/premium.html">🇩🇪 Deutsch</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Botões de autenticação -->
+                    <li class="nav-item" id="auth-buttons">
+                        <div class="auth-buttons">
+                            <a href="/pt/login.html" class="btn btn-auth-nav btn-login">Entrar</a>
+                            <a href="/pt/register.html" class="btn btn-auth-nav btn-register">Inscrever-se</a>
+                        </div>
+                    </li>
+
+                    <!-- Informações do usuário -->
+                    <li class="nav-item" id="user-info" style="display: none;">
+                        <div class="user-info">
+                            <div class="user-avatar" id="user-avatar">U</div>
+                            <div class="user-details">
+                                <div class="user-email" id="user-email">user@example.com</div>
+                                <span class="premium-status" id="premium-status">Usuário Grátis</span>
+                            </div>
+                            <button class="btn btn-signout" onclick="handleSignOut()">Sair</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold mb-3">Escolha Seu Plano</h1>
+            <p class="lead text-muted">Desbloqueie a experiência completa do PartyGameLab</p>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            <!-- Plano Grátis -->
+            <div class="col-md-6 col-lg-5">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="text-center mb-4">
+                            <h3 class="fw-bold">Grátis</h3>
+                            <div class="my-3">
+                                <span class="display-4 fw-bold">R$0</span>
+                            </div>
+                            <p class="text-muted">Gratuito para sempre</p>
+                        </div>
+
+                        <ul class="list-unstyled mb-4 flex-grow-1">
+                            <li class="mb-3">
+                                <span class="text-success me-2">✓</span>
+                                Acesso a todos os jogos
+                            </li>
+                            <li class="mb-3">
+                                <span class="text-success me-2">✓</span>
+                                Recursos básicos dos jogos
+                            </li>
+                            <li class="mb-3 text-muted">
+                                <span class="me-2">✗</span>
+                                Contém anúncios
+                            </li>
+                            <li class="mb-3 text-muted">
+                                <span class="me-2">✗</span>
+                                Recursos premium dos jogos
+                            </li>
+                        </ul>
+
+                        <button class="btn btn-outline-secondary w-100" disabled>Plano Atual</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plano Premium -->
+            <div class="col-md-6 col-lg-5">
+                <div class="card h-100 shadow-lg border-0" style="border: 2px solid var(--primary) !important;">
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge text-dark px-3 py-2" style="background: var(--accent);">🐦 OFERTA RÁPIDA - 73% DESC</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="text-center mb-4 mt-3">
+                            <h3 class="fw-bold" style="color: var(--primary);">Premium</h3>
+                            <div class="my-3">
+                                <span class="text-muted text-decoration-line-through">R$39,99</span>
+                                <span class="display-4 fw-bold d-block" style="color: var(--primary);">R$10,99</span>
+                            </div>
+                            <p class="text-muted">Pagamento único • Acesso vitalício</p>
+                        </div>
+
+                        <ul class="list-unstyled mb-4 flex-grow-1">
+                            <li class="mb-3">
+                                <span class="me-2" style="color: var(--primary);">✓</span>
+                                <strong>Tudo do Plano Grátis, mais:</strong>
+                            </li>
+                            <li class="mb-3">
+                                <span class="me-2" style="color: var(--primary);">✓</span>
+                                Experiência sem anúncios
+                            </li>
+                            <li class="mb-3">
+                                <span class="me-2" style="color: var(--primary);">✓</span>
+                                Apoie nosso desenvolvimento
+                            </li>
+                            <li class="mb-3">
+                                <span class="me-2" style="color: var(--primary);">✓</span>
+                                Atendimento prioritário de feedback
+                            </li>
+                        </ul>
+
+                        <div id="authNotice" class="alert alert-info mb-3" style="display:none;">
+                            Faça login para continuar. <a href="/pt/login.html" class="alert-link">Entrar</a>
+                        </div>
+
+                        <button id="goPremiumBtn" class="btn btn-lg w-100 fw-bold mb-3" style="background: var(--gradient-primary); border: none; color: white;">
+                            Obter Premium Agora
+                        </button>
+
+                        <div class="text-center">
+                            <small class="text-muted">
+                                <span class="me-1">🔒</span>
+                                Pagamento seguro por Stripe
+                            </small>
+                        </div>
+
+                        <div id="status" class="mt-3 text-center text-muted small" style="display:none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Prova Social -->
+        <div class="text-center mt-5">
+            <p class="text-muted mb-3">Confiado por entusiastas de festas em todo o mundo</p>
+            <div class="d-flex justify-content-center align-items-center flex-wrap gap-4">
+                <div>
+                    <span class="text-warning">★★★★★</span>
+                    <small class="text-muted ms-1">Classificação 4,9/5</small>
+                </div>
+                <div>
+                    <small class="text-muted">👥 Mais de 10.000 usuários</small>
+                </div>
+                <div>
+                    <small class="text-muted">🎉 Mais de 50.000 jogos realizados</small>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">Sobre Nós</h2>
+                    <p>PartyGameLab é seu destino online para os melhores jogos de festa disponíveis gratuitamente! Oferecemos uma coleção diversa de jogos de festa interativos e envolventes, incluindo Verdade ou Desafio, Nunca Fiz Isso, Máfia e muito mais - perfeitos para reuniões virtuais, festas e eventos de construção de equipes. Junte-se a milhares de jogadores em todo o mundo desfrutando da melhor experiência de jogos de festa!</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">Links Rápidos</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="/pt/index.html" class="text-light text-decoration-none">Jogos</a></li>
+                        <li><a href="/pt/TheList.html" class="text-light text-decoration-none">A Lista</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <p class="text-light mb-0">&copy; 2025 PartyGameLab. Todos os direitos reservados.</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <a href="https://turbo0.com/item/partygamelab" target="_blank" rel="noopener noreferrer">
+                                <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listado em Turbo0"
+                                    style="height: 54px; width: auto;" />
+                            </a>
+                            <a href="https://twelve.tools" target="_blank">
+                                <img src="https://twelve.tools/badge0-white.svg" alt="Destaque em Twelve Tools"
+                                    width="200" height="54">
+                            </a>
+                            <a href="https://launchigniter.com/product/partygamelab?ref=badge-partygamelab"
+                                target="_blank">
+                                <img src="https://launchigniter.com/api/badge/partygamelab?theme=neutral"
+                                    alt="Destaque em LaunchIgniter" width="212" height="55" />
+                            </a>
+                            <a href="https://fazier.com/launches/www.bestpartygames.net" target="_blank">
+                                <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light"
+                                    width="120" alt="Distintivo Fazier" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/premium.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323852/13624" target="_top" id="3323852">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323852" border="0" alt="Shopify" width="640" height="100"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323852/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
