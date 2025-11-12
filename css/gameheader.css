@@ -242,7 +242,8 @@
     transition: all 0.3s ease;
     text-align: left;
     white-space: nowrap;
-    overflow: hidden;
+    justify-content: center;
+    gap: 8px;
 }
 
 .language-toggle i {
@@ -253,12 +254,9 @@
 
 .language-toggle span {
     margin-left: 12px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.floating-nav:hover .language-toggle span {
     opacity: 1;
+    transition: opacity 0.3s ease;
+    font-size: 14px;
 }
 
 .language-toggle:hover {
