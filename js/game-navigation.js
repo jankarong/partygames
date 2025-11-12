@@ -75,7 +75,7 @@ class GameNavigation {
                 'Charades': 'Mímica',
                 'Hedbanz': 'Hedbanz',
                 'Bottle Match Game': 'Jogo de Combinar Garrafas',
-                'Sex Dice': 'Dados Eróticos',
+                'Sex Dice': 'Dados de Sexo Online',
                 'Beer Number': 'Adivinha o Número',
                 'Kings Cup': 'Cálice do Rei'
             },
@@ -189,10 +189,10 @@ class GameNavigation {
                     </a>
                     <div class="auth-section">
                         <div class="auth-buttons" id="nav-auth-buttons">
-                            <a href="/login.html" class="auth-link login-link">
+                            <a href="${langPrefix}/login.html" class="auth-link login-link">
                                 <i class="fas fa-sign-in-alt"></i><span>${texts.login}</span>
                             </a>
-                            <a href="/register.html" class="auth-link register-link">
+                            <a href="${langPrefix}/register.html" class="auth-link register-link">
                                 <i class="fas fa-user-plus"></i><span>${texts.signup}</span>
                             </a>
                         </div>
@@ -337,7 +337,7 @@ class GameNavigation {
                 ${popularGames.map(game => {
                     // Add language prefix to game URL if on non-English version
                     let gameUrl = game.url;
-                    if (langPrefix && !gameUrl.startsWith('/zh') && !gameUrl.startsWith('/pt') && !gameUrl.startsWith('/de') && !gameUrl.startsWith('/fr')) {
+                    if (langPrefix && !gameUrl.startsWith(langPrefix)) {
                         gameUrl = langPrefix + gameUrl;
                     }
                     return `<a href="${gameUrl}" class="quick-game-btn">${game.name}</a>`;
@@ -381,7 +381,7 @@ class GameNavigation {
                     ${otherGames.map(game => {
                         // Add language prefix to game URL if on non-English version
                         let gameUrl = game.url;
-                        if (langPrefix && !gameUrl.startsWith('/zh') && !gameUrl.startsWith('/pt') && !gameUrl.startsWith('/de') && !gameUrl.startsWith('/fr')) {
+                        if (langPrefix && !gameUrl.startsWith(langPrefix)) {
                             gameUrl = langPrefix + gameUrl;
                         }
                         return `
