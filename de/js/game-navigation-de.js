@@ -70,10 +70,10 @@ class GameNavigation {
                     </a>
                     <div class="auth-section">
                         <div class="auth-buttons" id="nav-auth-buttons">
-                            <a href="/login.html" class="auth-link login-link">
+                            <a href="/de/login.html" class="auth-link login-link">
                                 <i class="fas fa-sign-in-alt"></i><span>Anmelden</span>
                             </a>
-                            <a href="/register.html" class="auth-link register-link">
+                            <a href="/de/register.html" class="auth-link register-link">
                                 <i class="fas fa-user-plus"></i><span>Registrieren</span>
                             </a>
                         </div>
