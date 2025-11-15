@@ -15,28 +15,10 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/" />
         <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/" />
         <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/" />
-        <xhtml:link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/image/partyGameLogo.png</image:loc>
             <image:title>Party Games Collection</image:title>
-        </image:image>
-    </url>
-
-    <url>
-        <loc>https://www.bestpartygames.net/id/</loc>
-        <lastmod>2025-11-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/" />
-        <xhtml:link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/" />
-        <image:image>
-            <image:loc>https://www.bestpartygames.net/image/partyGameLogo.png</image:loc>
-            <image:title>Koleksi Game Pesta</image:title>
         </image:image>
     </url>
 
@@ -49,7 +31,6 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/" />
         <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/" />
         <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/" />
-        <xhtml:link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/image/partyGameLogo.png</image:loc>
@@ -66,7 +47,6 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/" />
         <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/" />
         <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/" />
-        <xhtml:link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/image/partyGameLogo.png</image:loc>
@@ -83,7 +63,6 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/" />
         <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/" />
         <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/" />
-        <xhtml:link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/image/partyGameLogo.png</image:loc>

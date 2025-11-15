@@ -244,6 +244,7 @@ class GameNavigation {
                             <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
                             <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
                             <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
+                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
                         </div>
                     </div>
                 </div>
@@ -615,16 +616,29 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/fr/index.html';
             } else {
-                // Remove /pt/, /zh/ and /de/ if present, then add /fr/
-                newPath = '/fr' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/');
+                // Remove /pt/, /zh/, /de/ and /id/ if present, then add /fr/
+                newPath = '/fr' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/').replace('/id/', '/');
+            }
+        } else if (lang === 'id') {
+            // Switch to Indonesian version
+            if (currentPath.startsWith('/id/')) {
+                // Already on Indonesian version
+                return;
+            }
+            // If this is an English-only game, go to Indonesian homepage instead
+            if (isEnglishOnly) {
+                newPath = '/id/index.html';
+            } else {
+                // Remove /pt/, /zh/, /de/ and /fr/ if present, then add /id/
+                newPath = '/id' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/').replace('/fr/', '/');
             }
         } else {
             // Switch to English version
-            if (!currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
+            if (!currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/')) {
                 // Already on English version
                 return;
             }
-            newPath = currentPath.replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '');
+            newPath = currentPath.replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '');
         }
 
         window.location.href = newPath;
