@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Diaktifkan - PartyGameLab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/premium-success.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../image/favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <div class="premium-success-container">
+        <div class="premium-success-card">
+            <div class="premium-icon-container">
+                <div class="premium-icon-bg" id="iconContainer">
+                    <div class="loading-spinner" id="loadingSpinner"></div>
+                    <span class="checkmark" id="checkmark">✓</span>
+                </div>
+            </div>
+
+            <h1 class="premium-title" id="pageTitle">Terima kasih! 🎉</h1>
+            <p class="premium-subtitle" id="pageSubtitle">Keanggotaan premium Anda sedang diaktifkan. Kami sedang memverifikasi pembayaran Anda.</p>
+
+            <div class="progress-container" id="progressContainer" style="display:none;">
+                <div class="progress-bar-custom">
+                    <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div id="status" class="status-message" style="display:none;"></div>
+
+            <div class="premium-features" id="features" style="display:none;">
+                <h3>Manfaat Premium Anda</h3>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Pengalaman sepenuhnya bebas iklan</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Akses ke semua permainan premium</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Dukungan prioritas</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">Fitur & pembaruan eksklusif</div>
+                </div>
+            </div>
+
+            <a href="/id/" class="btn-premium" id="homeButton" style="display:none;">Kembali ke Beranda</a>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script>
+        (async function () {
+            const status = document.getElementById('status');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const checkmark = document.getElementById('checkmark');
+            const progressContainer = document.getElementById('progressContainer');
+            const progressBar = document.getElementById('progressBar');
+            const pageTitle = document.getElementById('pageTitle');
+            const pageSubtitle = document.getElementById('pageSubtitle');
+            const features = document.getElementById('features');
+            const homeButton = document.getElementById('homeButton');
+
+            // Show progress bar
+            progressContainer.style.display = 'block';
+
+            // Function to create confetti
+            function createConfetti() {
+                const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe'];
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.className = 'confetti';
+                        confetti.style.left = Math.random() * 100 + '%';
+                        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                        document.querySelector('.premium-success-card').appendChild(confetti);
+                        setTimeout(() => confetti.remove(), 3000);
+                    }, i * 30);
+                }
+            }
+
+            // Function to show success state
+            function showSuccess() {
+                // Hide loading spinner
+                loadingSpinner.style.display = 'none';
+
+                // Show checkmark
+                checkmark.classList.add('show');
+
+                // Update title and subtitle
+                pageTitle.textContent = 'Selamat Datang di Premium! 🎉';
+                pageSubtitle.textContent = 'Akun Anda telah berhasil ditingkatkan. Nikmati pengalaman bebas iklan!';
+
+                // Update status
+                status.style.display = 'block';
+                status.className = 'status-message success';
+                status.innerHTML = '<span>✓</span> Premium aktif. Iklan tidak akan ditampilkan lagi.';
+
+                // Show features
+                features.style.display = 'block';
+
+                // Show home button
+                homeButton.style.display = 'inline-block';
+
+                // Hide progress bar
+                progressContainer.style.display = 'none';
+
+                // Trigger confetti
+                createConfetti();
+            }
+
+            // Function to update progress
+            function updateProgress(percent) {
+                progressBar.style.width = percent + '%';
+            }
+
+            // If we have session_id in URL, call confirm-session to force update
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const sid = urlParams.get('session_id');
+                if (sid && window.supabaseClient) {
+                    await window.supabaseClient.functions.invoke('confirm-session', {
+                        method: 'POST',
+                        body: { session_id: sid }
+                    });
+                }
+            } catch (_) { }
+
+            const start = Date.now();
+            const maxDuration = 60000; // 60 seconds
+            let attempts = 0;
+
+            while (Date.now() - start < maxDuration) {
+                try {
+                    if (!window.authManager) break;
+
+                    attempts++;
+                    const elapsed = Date.now() - start;
+                    const progress = Math.min((elapsed / maxDuration) * 100, 95);
+                    updateProgress(progress);
+
+                    const isPremium = await window.authManager.checkUserPremiumStatus();
+
+                    if (isPremium) {
+                        updateProgress(100);
+                        showSuccess();
+                        return;
+                    }
+
+                    // Update processing message
+                    status.style.display = 'block';
+                    status.className = 'status-message processing';
+                    status.innerHTML = '<span>⏳</span> Memverifikasi pembayaran Anda... Biasanya memakan waktu beberapa detik.';
+
+                } catch (_) {
+                    status.style.display = 'block';
+                    status.className = 'status-message processing';
+                    status.innerHTML = '<span>⏳</span> Menunggu verifikasi...';
+                }
+
+                await new Promise(r => setTimeout(r, 2000));
+            }
+
+            // Timeout message
+            status.style.display = 'block';
+            status.className = 'status-message warning';
+            status.innerHTML = '<span>⚠</span> Masih diproses. Jika memakan waktu lebih dari satu menit, silakan muat ulang halaman atau hubungi dukungan.';
+            homeButton.style.display = 'inline-block';
+        })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+

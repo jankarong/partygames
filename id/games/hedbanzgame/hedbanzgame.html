@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Main Hedbanz Game online - game pesta terbaik untuk kelompok! Nikmati game Hedbanz klasik dengan teman. Game Hedbanz online gratis sempurna untuk pesta!">
+    <meta name="keywords"
+        content="hedbanz game, hedbanz online, game pesta, game kelompok, aturan hedbanz, hedbanz online">
+    <meta name="author" content="Party Games">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/id/games/hedbanzgame/hedbanzgame.html">
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html">
+    <link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/games/hedbanzgame/hedbanzgame.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../games/hedbanzgame/hedbanz.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hedbanz Game - Game Pesta Online Menyenangkan">
+    <meta property="og:description"
+        content="Main Hedbanz Game online - game pesta terbaik untuk kelompok! Nikmati game Hedbanz klasik dengan teman.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../../games/hedbanzgame/hedbanz.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/id/games/hedbanzgame/hedbanzgame.html">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hedbanz Game - Game Pesta Online Menyenangkan">
+    <meta name="twitter:description"
+        content="Main Hedbanz Game online - game pesta terbaik untuk kelompok! Game Hedbanz online gratis sempurna untuk pesta.">
+    <meta name="twitter:image" content="../../games/hedbanzgame/hedbanz.png">
+
+    <title>Hedbanz Game - Game Pesta Online Menyenangkan</title>
+    <link rel="stylesheet" href="../../css/gameheader.css">
+    <link rel="stylesheet" href="../../games/hedbanzgame/hedbanzgame.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../games/hedbanzgame/hedbanz.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Hedbanz Game",
+        "description": "Main Hedbanz Game online - game pesta terbaik untuk kelompok! Nikmati game Hedbanz klasik dengan teman. Game Hedbanz online gratis sempurna untuk pesta dan pertemuan!",
+        "genre": "Game Pesta",
+        "numberOfPlayers": "2-10",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "inLanguage": "id",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "95"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="game-container">
+        <img src="../../games/hedbanzgame/hedbanz.png" alt="Logo Hedbanz Game" class="logo">
+        <h1>Hedbanz Game</h1>
+        <p class="subtitle">Main game Hedbanz klasik online - pengalaman game pesta terbaik!</p>
+
+        <!-- Game Setup Screen -->
+        <div id="gameSetup" class="setup-screen">
+            <h2>Pengaturan Hedbanz Game</h2>
+            <div class="setup-options">
+                <div class="player-setup">
+                    <label for="playerCount">Pilih jumlah pemain:</label>
+                    <select id="playerCount" class="select-input">
+                        <option value="2">2 Pemain</option>
+                        <option value="3">3 Pemain</option>
+                        <option value="4">4 Pemain</option>
+                        <option value="5">5 Pemain</option>
+                        <option value="6">6 Pemain</option>
+                        <option value="7">7 Pemain</option>
+                        <option value="8">8 Pemain</option>
+                        <option value="9">9 Pemain</option>
+                        <option value="10">10 Pemain</option>
+                    </select>
+                </div>
+                <button id="startGame" class="btn">Mulai Game</button>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div id="gameArea" class="game-area" style="display: none;">
+            <div class="card-display">
+                <div class="current-card">
+                    <p>Kartu Anda akan muncul di sini</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="drawCard" class="btn">Ambil Kartu</button>
+                <button id="nextPlayer" class="btn" disabled>Pemain Berikutnya</button>
+            </div>
+
+            <div class="player-info">
+                <p>Pemain Saat Ini: <span id="currentPlayer">1</span></p>
+                <p>Pemain Tersisa: <span id="remainingPlayers">2</span></p>
+            </div>
+        </div>
+
+        <!-- Rules Section -->
+        <div class="rules-section">
+            <h2>Aturan Hedbanz Game</h2>
+            <div class="rules-content">
+                <h3>🎯 Tujuan Hedbanz Game</h3>
+                <p>Nikmati game Hedbanz klasik dengan sentuhan unik! Coba hindari melakukan aksi atau mengucapkan
+                    kata yang ditampilkan di kartu Anda. Jika secara tidak sengaja melakukan aksi tersebut dalam game Hedbanz ini, Anda akan tersingkir. Pemain
+                    terakhir yang tersisa menang!</p>
+
+                <h3>🎮 Cara Main Hedbanz Game</h3>
+                <ol>
+                    <li>Pilih 2-10 pemain untuk berpartisipasi</li>
+                    <li>Pemain bergantian mengambil kartu</li>
+                    <li>Setelah mengambil kartu, pemain tersebut harus menghindari melakukan aksi yang ditampilkan di kartunya</li>
+                    <li>Jika seorang pemain melakukan aksi terlarangnya, pemain lain dapat menunjukkannya, dan pemain tersebut
+                        tersingkir</li>
+                    <li>Pemain yang tersingkir masih bisa mengamati dan menunjukkan aksi pemain lain</li>
+                    <li>Game berlanjut hingga hanya satu pemain yang tersisa</li>
+                </ol>
+
+                <h3>💡 Tips Hedbanz Game</h3>
+                <ul>
+                    <li>Ingat: Bertindaklah natural, jangan membuat usaha yang terlalu jelas untuk menghindari aksi terlarang Anda</li>
+                    <li>Perhatikan pemain lain dengan seksama untuk aksi terlarang mereka</li>
+                    <li>Tetap waspada - pemain lain mungkin mencoba menjebak Anda untuk melakukan aksi Anda</li>
+                    <li>Meskipun tersingkir, tetaplah terlibat dan bantu menemukan kesalahan pemain lain</li>
+                </ul>
+
+                <h3>ℹ️ Tentang Hedbanz Game Ini</h3>
+                <p>Jika Anda menikmati game online seperti heads up atau game pesta klasik, Anda akan menyukai pengalaman game Hedbanz
+                    yang unik ini!
+                    Sementara game hedbanz tradisional mengharuskan Anda menebak apa yang ada di kepala Anda, game Hedbanz online
+                    kami menantang Anda untuk menghindari aksi tertentu! Sempurna untuk kelompok yang menyukai format game Hedbanz
+                    klasik.</p>
+            </div>
+        </div>
+    </div>
+    <script src="../../games/hedbanzgame/hedbanzgame.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="../../js/game-navigation.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

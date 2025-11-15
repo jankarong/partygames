@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permainan Cocokkan Botol Online - Teka-Teki Logika Gratis</title>
+    <meta name="description" content="Mainkan Permainan Cocokkan Botol Online gratis! Uji logika Anda dengan 5 level menantang. Tebak urutan warna dalam permainan teka-teki bergaya Mastermind ini.">
+    <meta name="keywords" content="permainan cocokkan botol, teka-teki logika, permainan mastermind, pencocokan warna, asah otak">
+    <link rel="canonical" href="https://partygames.com/id/games/BottleMatchGame/BottleMatchGame.html">
+    <meta property="og:title" content="Permainan Cocokkan Botol Online - Teka-Teki Logika Gratis">
+    <meta property="og:description" content="Mainkan Permainan Cocokkan Botol Online gratis! Uji logika Anda dengan 5 level menantang.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://partygames.com/id/games/BottleMatchGame/BottleMatchGame.html">
+
+    <!-- Hreflang tags -->
+    <link rel="alternate" hreflang="en" href="https://partygames.com/games/BottleMatchGame/BottleMatchGame.html">
+    <link rel="alternate" hreflang="id" href="https://partygames.com/id/games/BottleMatchGame/BottleMatchGame.html">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzQyOTllMSIvPgo8cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIGZpbGw9IiMyZDM3NDgiLz4KPHN2Zz4K">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Permainan Cocokkan Botol Online",
+      "description": "Permainan teka-teki logika di mana pemain menebak urutan warna yang benar melalui 5 level menantang",
+      "gameType": "Teka-Teki Logika",
+      "numberOfPlayers": "1",
+      "url": "https://partygames.com/id/games/BottleMatchGame/BottleMatchGame.html",
+      "inLanguage": "id"
+    }
+    </script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="game-container">
+        <img src="bottlematch.png" alt="Logo Permainan Cocokkan Botol" class="game-logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+        <h1>Permainan Cocokkan Botol Online</h1>
+
+        <div class="level-info">
+            <div class="level-title">Level <span id="current-level">1</span> / 5</div>
+            <div class="level-details">
+                Panjang: <span id="sequence-length">3</span> |
+                Warna: <span id="color-count">4</span> |
+                Percobaan: <span id="attempts">0</span>
+            </div>
+        </div>
+
+        <div class="secret-display" id="secret-display" style="display: none;">
+            Urutan Rahasia: <span id="secret-sequence"></span>
+        </div>
+
+        <div class="game-area" id="game-area">
+            <h3>Pilih tebakan Anda:</h3>
+            <div class="bottles-container" id="current-guess"></div>
+
+            <div class="controls">
+                <button class="submit-btn" id="submit-guess" onclick="submitGuess()">Kirim Tebakan</button>
+                <button onclick="clearGuess()">Hapus</button>
+                <button onclick="showSecret()">Tampilkan Jawaban</button>
+            </div>
+
+            <div class="guess-section">
+                <h4>Riwayat Tebakan:</h4>
+                <div id="guess-history"></div>
+            </div>
+        </div>
+
+        <div class="completion-screen" id="completion-screen">
+            <h2>🎉 Selamat! Semua Level Selesai!</h2>
+            <div class="final-stats">
+                <h3>Statistik Keseluruhan</h3>
+                <p>Total Waktu: <span id="total-time">0</span> detik</p>
+                <p>Total Percobaan: <span id="total-attempts">0</span></p>
+                <p>Rata-rata Percobaan per Level: <span id="avg-attempts">0</span></p>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">Mulai Lagi</button>
+        </div>
+    </div>
+
+    <section class="game-info">
+        <h2>Cara Bermain Permainan Cocokkan Botol</h2>
+        <p>Permainan Cocokkan Botol adalah teka-teki logika online yang menarik berdasarkan permainan klasik Mastermind. Uji kemampuan penalaran deduktif Anda melalui 5 level yang semakin menantang!</p>
+
+        <h3>Aturan Permainan</h3>
+        <ul>
+            <li><strong>Tujuan:</strong> Tebak urutan warna rahasia sebelum kehabisan percobaan</li>
+            <li><strong>5 Level:</strong> Setiap level meningkat kesulitannya dengan urutan yang lebih panjang dan lebih banyak warna</li>
+            <li><strong>Sistem Umpan Balik:</strong> Setelah setiap tebakan, terima petunjuk tentang posisi yang benar</li>
+            <li><strong>Tidak Ada Pengulangan:</strong> Setiap warna botol hanya muncul sekali dalam urutan</li>
+        </ul>
+
+        <h3>Cara Bermain</h3>
+        <ol>
+            <li><strong>Pilih Warna:</strong> Klik posisi di baris atas, lalu klik warna di bawah, ATAU seret warna langsung ke posisi</li>
+            <li><strong>Kirim Tebakan:</strong> Setelah semua posisi terisi, klik "Kirim Tebakan"</li>
+            <li><strong>Baca Umpan Balik:</strong> Pasak hitam menunjukkan warna yang benar di posisi yang benar</li>
+            <li><strong>Sesuaikan Strategi:</strong> Gunakan umpan balik untuk menyempurnakan tebakan berikutnya</li>
+            <li><strong>Menangkan Level:</strong> Cocokkan semua botol dengan benar untuk maju</li>
+        </ol>
+
+        <h3>Fitur Permainan</h3>
+        <ul>
+            <li>✅ Permainan pencocokan botol online gratis - tidak perlu unduhan</li>
+            <li>✅ 5 level menantang dengan kesulitan yang meningkat</li>
+            <li>✅ Kontrol seret-lepas atau klik-untuk-pilih</li>
+            <li>✅ Umpan balik real-time pada tebakan Anda</li>
+            <li>✅ Lacak percobaan dan waktu penyelesaian Anda</li>
+            <li>✅ Desain responsif ramah seluler</li>
+        </ul>
+
+        <h3>Tips & Strategi</h3>
+        <p><strong>Mulai secara sistematis:</strong> Coba uji satu warna pada satu waktu untuk mempersempit kemungkinan.</p>
+        <p><strong>Gunakan proses eliminasi:</strong> Catat warna dan posisi mana yang telah disingkirkan.</p>
+        <p><strong>Perhatikan umpan balik:</strong> Pasak hitam menunjukkan warna DAN posisi yang benar.</p>
+    </section>
+
+    <!-- Sound Effects -->
+    <audio id="place-sound" src="place_item_sound.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="hooray_sound.mp3" preload="auto"></audio>
+    <audio id="fail-sound" src="fail_sound.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+    <script src="script-id.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-id.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+
+                });
+            }
+        });
+    </script>
+</body>
+</html>

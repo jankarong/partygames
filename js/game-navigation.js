@@ -30,20 +30,30 @@ class GameNavigation {
     initializeLocalizedGames() {
         const currentPath = window.location.pathname;
         let currentLang = 'en';
+        let langPrefix = '';
+
         if (currentPath.startsWith('/pt/')) {
             currentLang = 'pt';
+            langPrefix = '/pt';
         } else if (currentPath.startsWith('/zh/')) {
             currentLang = 'zh';
+            langPrefix = '/zh';
         } else if (currentPath.startsWith('/de/')) {
             currentLang = 'de';
+            langPrefix = '/de';
         } else if (currentPath.startsWith('/fr/')) {
             currentLang = 'fr';
+            langPrefix = '/fr';
+        } else if (currentPath.startsWith('/id/')) {
+            currentLang = 'id';
+            langPrefix = '/id';
         }
 
         const gameNames = this.getGameNames(currentLang);
         return this.gamesData.map(game => ({
             ...game,
-            name: gameNames[game.nameKey] || game.nameKey
+            name: gameNames[game.nameKey] || game.nameKey,
+            url: langPrefix + game.url
         }));
     }
 
@@ -123,6 +133,21 @@ class GameNavigation {
                 'Sex Dice': 'Dés Sexuels',
                 'Beer Number': 'Numéro de Bière',
                 'Kings Cup': 'Coupe du Roi'
+            },
+            id: {
+                'Magic 8 Ball': 'Bola Ajaib 8',
+                'Truth or Dare': 'Kebenaran atau Tantangan',
+                'Never Have I Ever': 'Saya Tidak Pernah',
+                'Who Is Most Likely': 'Siapa yang Paling Mungkin',
+                'Would You Rather': 'Lebih Suka Mana',
+                'Mafia': 'Mafia',
+                'Undercover': 'Undercover',
+                'Charades': 'Charades',
+                'Hedbanz': 'Hedbanz',
+                'Bottle Match Game': 'Permainan Cocokkan Botol',
+                'Sex Dice': 'Dadu Seks',
+                'Beer Number': 'Tebak Angka',
+                'Kings Cup': 'Gelas Raja'
             }
         };
 

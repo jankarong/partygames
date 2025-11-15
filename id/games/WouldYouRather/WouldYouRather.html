@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mainkan Pertanyaan Mau Yang Mana Spicy - permainan pesta dewasa terbaik! Temukan koleksi pertanyaan mau yang mana yang menarik. Sempurna untuk pesta dan acara sosial!">
+    <meta name="keywords"
+        content="pertanyaan mau yang mana spicy, permainan mau yang mana, pertanyaan spicy, permainan pesta dewasa">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="Pertanyaan Mau Yang Mana Spicy - Permainan Pesta Dewasa">
+    <meta property="og:description"
+        content="Mainkan Pertanyaan Mau Yang Mana Spicy - permainan pesta dewasa terbaik dengan pertanyaan spicy yang menarik. Sempurna untuk pesta dan pertemuan sosial!">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.bestpartygames.net/id/games/WouldYouRather/WouldYouRather.html">
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html">
+    <link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/games/WouldYouRather/WouldYouRather.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./WouldYouRatherLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Pertanyaan Mau Yang Mana Spicy",
+        "description": "Mainkan Pertanyaan Mau Yang Mana Spicy - permainan pesta dewasa terbaik! Temukan koleksi pertanyaan mau yang mana yang menarik. Sempurna untuk pesta dan acara sosial!",
+        "genre": "Permainan Pesta",
+        "numberOfPlayers": "2+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "ratingCount": "210"
+        }
+    }
+    </script>
+
+    <title>Pertanyaan Mau Yang Mana Spicy - Permainan Pesta Dewasa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../../games/games.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./WouldYouRatherLogo.png">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body class="bg-light">
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-4">
+                    <img src="WouldYouRatherLogo.png" alt="Logo Mau Yang Mana" class="img-fluid"
+                        style="max-width: 200px;">
+                </div>
+                <h1 class="text-center mb-5 display-4">Pertanyaan Mau Yang Mana Spicy</h1>
+                <div class="row justify-content-center align-items-center g-2 mt-4">
+                    <div class="col-md-5 d-flex justify-content-center">
+                        <div class="card option w-100" id="optionA">
+                            <div class="card-body d-flex flex-column justify-content-center text-center p-4">
+                                <p class="card-text mb-0" id="optionAText"></p>
+                                <div class="percentage mt-2" id="percentageA">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center">
+                        <div class="text-center vs">VS</div>
+                    </div>
+                    <div class="col-md-5 d-flex justify-content-center">
+                        <div class="card option w-100" id="optionB">
+                            <div class="card-body d-flex flex-column justify-content-center text-center p-4">
+                                <p class="card-text mb-0" id="optionBText"></p>
+                                <div class="percentage mt-2" id="percentageB">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button id="nextQuestion" class="btn btn-lg px-4">Pertanyaan Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/ads-controller.js"></script>
+    <script src="script.js"></script>
+    <script src="../../../js/game-navigation.js"></script>
+
+    <section class="game-info container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Apa itu "Pertanyaan Mau Yang Mana Spicy?"</h2>
+                    <p>Pertanyaan Mau Yang Mana Spicy adalah permainan pesta dewasa yang menarik yang menghadirkan dilema-dilema yang menantang dan spicy kepada para pemain. Setiap
+                        ronde, pemain harus memilih antara dua opsi yang sama-sama menarik atau sulit dari koleksi pertanyaan spicy kami, yang mengarah pada diskusi
+                        yang menyenangkan dan mengungkapkan wawasan tentang preferensi dan kepribadian masing-masing.</p>
+                </article>
+
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Cara Bermain Mau Yang Mana</h2>
+                    <div class="game-rules">
+                        <ol>
+                            <li>Kumpulkan teman atau keluarga Anda di tempat yang nyaman</li>
+                            <li>Bergantian membaca "Pertanyaan Mau Yang Mana Spicy" dari koleksi kami</li>
+                            <li>Semua orang harus memilih salah satu dari dua opsi - tanpa kompromi!</li>
+                            <li>Bagikan alasan Anda dan diskusikan pilihan Anda</li>
+                            <li>Klik "Pertanyaan Selanjutnya" untuk melanjutkan keseruannya</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Mengapa Bermain Pertanyaan Mau Yang Mana Spicy?</h2>
+                    <div class="benefits">
+                        <ul>
+                            <li>Pemecah suasana yang sempurna dengan pertanyaan spicy untuk pesta dan pertemuan sosial</li>
+                            <li>Mendorong pemikiran kreatif dan diskusi dengan skenario bertema dewasa</li>
+                            <li>Pelajari hal-hal mengejutkan tentang teman Anda melalui pertanyaan mau yang mana spicy kami
+                            </li>
+                            <li>Tidak memerlukan peralatan khusus</li>
+                            <li>Cocok untuk semua kelompok usia</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Tips untuk Pengalaman Permainan yang Luar Biasa</h2>
+                    <div class="tips">
+                        <p>Untuk membuat sesi permainan Pertanyaan Mau Yang Mana Spicy Anda lebih menyenangkan:</p>
+                        <ul>
+                            <li>Jujur dengan jawaban Anda</li>
+                            <li>Jelaskan pilihan Anda untuk membuatnya lebih menarik</li>
+                            <li>Jangan menghakimi jawaban orang lain - ini semua untuk bersenang-senang!</li>
+                            <li>Cobalah untuk berpikir cepat - jangan terlalu memikirkan respons Anda</li>
+                            <li>Jangan ragu untuk menambahkan pertanyaan lanjutan Anda sendiri</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../../css/floating-ad.css">
+    <script src="../../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

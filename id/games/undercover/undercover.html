@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jogue Infiltrado online - jogo de espião para 4-20 jogadores com dedução social. Gratuito, sem registro, múltiplas categorias!">
+    <meta name="keywords"
+        content="jogo infiltrado online, jogo espião dedução, jogos festa online, undercover game, jogar infiltrado">
+    <meta property="og:title" content="Jogo Undercover Online - Jogo de Festa Gratuito">
+    <meta property="og:description"
+        content="Jogue Infiltrado online - o jogo de espião perfeito com dedução social. Para 4-20 jogadores, palavras personalizadas e 13 categorias!">
+    <meta property="og:image" content="./undercover.png">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jogos de Festa">
+    <link rel="canonical" href="https://www.bestpartygames.net/id/games/undercover/undercover.html">
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover.html">
+    <link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/games/undercover/undercover.html">
+    <title>Jogo Undercover Online - Gratuito e sem Registro</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./undercovebg.jpg" as="image">
+    <link rel="preload" href="../../games/undercover/undercover.png" as="image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../games/undercover/undercover.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../games/undercover/undercover.png">
+    <link rel="apple-touch-icon" href="../../games/undercover/undercover.png">
+    <link rel="shortcut icon" href="../../games/undercover/undercover.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="../../style/main.css" rel="stylesheet">
+
+    <link href="../../games/undercover/undercover.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/gameheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.hidden {
+            display: none;
+        }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Infiltrado Online - Jogo de Espião e Dedução Social",
+      "description": "Jogue Infiltrado online, o melhor jogo de espião com dedução social! Apresenta 13 categorias de palavras (Comida e Bebida, Animais, Objetos, Empregos, Entretenimento, Natureza, Engraçado e mais), palavras personalizadas, interface otimizada para mobile, suporte para 4-20 jogadores, múltiplas configurações de espiões e cartões em branco. Perfeito para festas, eventos de construção de equipes, reuniões familiares e eventos online.",
+      "alternativeHeadline": "O Melhor Jogo de Infiltrado Online Gratuito",
+      "keywords": "infiltrado, espião, dedução social, jogo de festa, undercover game, jogar infiltrado, jogo multiplayer",
+      "numberOfPlayers": {
+        "@type": "QuantitativeValue",
+        "minValue": 4,
+        "maxValue": 20
+      },
+      "gameItem": "Jogo Online de Festa",
+      "audience": {
+        "@type": "Audience",
+        "suggestedMinAge": "12"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL",
+        "availability": "http://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+
+    <main class="container" style="padding-top: 2rem; padding-bottom: 3rem;">
+        <div class="text-center mb-5">
+            <div class="game-logo-container mb-4">
+                <img src="../../games/undercover/undercover.png" alt="Jogo do Infiltrado - Jogo de Dedução Social" class="game-logo"
+                    width="200" height="200" loading="lazy">
+            </div>
+            <h1 class="cute-title">Jogo Undercover Online</h1>
+            <p class="text-light mb-0">Encontre o Infiltrado Entre Nós!</p>
+        </div>
+
+        <!-- Game Setup Section -->
+        <section id="setup-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4"
+            aria-labelledby="setup-title">
+            <div class="card-body p-4">
+                <h2 id="setup-title" class="card-title h4 mb-4 text-light">Configuração do Jogo</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="playerCount" class="text-light mb-2">Número de Jogadores (4-20)</label>
+                            <input type="number" class="form-control" id="playerCount" min="4" max="20" value="4"
+                                aria-describedby="playerCountHelp">
+                            <small id="playerCountHelp" class="form-text text-light">Escolha entre 4 a 20 jogadores</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="undercoverCount" class="text-light mb-2">Número de Espiões (1-3)</label>
+                            <input type="number" class="form-control" id="undercoverCount" min="1" max="3" value="1"
+                                aria-describedby="spyCountHelp">
+                            <small id="spyCountHelp" class="form-text text-light">Escolha o número de espiões</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="whiteCount" class="text-light mb-2">Número em Branco</label>
+                            <input type="number" class="form-control" id="whiteCount" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <div class="mb-4">
+                        <label class="text-light mb-2 d-block" for="categorySelect">Selecione a Categoria de Palavras:</label>
+                        <select class="form-select" id="categorySelect" aria-label="Selecione a categoria de palavras">
+                            <option value="all">Todas as Categorias (Misturadas)</option>
+                            <optgroup label="Categorias">
+                                <option value="Food & Drink" selected>Comida e Bebida</option>
+                                <option value="Animals">Animais</option>
+                                <option value="Objects">Objetos</option>
+                                <option value="Jobs & Roles">Empregos e Funções</option>
+                                <option value="Entertainment">Entretenimento</option>
+                                <option value="Nature & Weather">Natureza e Clima</option>
+                                <option value="Funny">Engraçado</option>
+                                <option value="Sports & Fitness">Esportes e Fitness</option>
+                                <option value="Technology & Digital">Tecnologia e Digital</option>
+                                <option value="Travel & Places">Viagens e Lugares</option>
+                                <option value="Relationships">Relacionamentos</option>
+                                <option value="Brands & Companies">Marcas e Empresas</option>
+                                <option value="Historical Figures">Figuras Históricas</option>
+                            </optgroup>
+                        </select>
+                        <small class="text-light d-block mt-2">Todas as categorias são gratuitas para todos os usuários!</small>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="useCustomWords">
+                        <label class="form-check-label" for="useCustomWords">Usar Palavras Personalizadas</label>
+                    </div>
+                    <div id="customWordsSection" class="mt-3" style="display: none;">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="customCivilianWord" class="text-light mb-2">Palavra do Civil</label>
+                                    <input type="text" class="form-control" id="customCivilianWord">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="customUndercoverWord" class="text-light mb-2">Palavra do Infiltrado</label>
+                                    <input type="text" class="form-control" id="customUndercoverWord">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-pink btn-lg px-5 rounded-pill" onclick="startGame()">
+                        <i class="fas fa-play me-2"></i>Iniciar Jogo
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Upgrade Modal -->
+        <div id="premium-modal" class="modal-overlay hidden">
+            <div class="card bg-darker shadow-lg border-pink rounded-4" style="max-width: 500px; margin: 10% auto; position: relative;">
+                <div class="card-body p-4 text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-crown text-warning" style="font-size: 4rem;"></i>
+                    </div>
+                    <h3 class="h4 mb-3 text-light">Desbloqueie Categorias Premium</h3>
+                    <p class="text-light mb-4">Esta categoria requer uma assinatura premium. Faça upgrade para desbloquear:</p>
+                    <ul class="text-light text-start mb-4" style="max-width: 300px; margin: 0 auto;">
+                        <li>Esportes e Fitness - Temas de saúde</li>
+                        <li>Tecnologia e Digital - Tecnologia moderna</li>
+                        <li>Viagens e Lugares - Locais mundiais</li>
+                        <li>Relacionamentos - Tópicos emocionais</li>
+                        <li>Marcas e Empresas - Marcas famosas</li>
+                        <li>Figuras Históricas - Conhecimento histórico</li>
+                    </ul>
+                    <div class="d-flex gap-2 justify-content-center mt-4">
+                        <button class="btn btn-pink btn-lg px-4 rounded-pill" onclick="window.location.href='/premium.html'">
+                            <i class="fas fa-crown me-2"></i>Fazer Upgrade Agora
+                        </button>
+                        <button class="btn btn-outline-pink btn-lg px-4 rounded-pill" onclick="closePremiumModal()">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Word Display Section -->
+        <div id="word-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
+            <div class="card-body p-4 text-center">
+                <h3 class="h5 mb-4 text-light">Turno do Jogador <span id="currentPlayer" class="text-pink">1</span></h3>
+                <div class="flip-card mx-auto">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front d-flex align-items-center justify-content-center">
+                            <div class="cute-text">Toque para ver sua palavra</div>
+                        </div>
+                        <div class="flip-card-back d-flex align-items-center justify-content-center">
+                            <div id="wordDisplay" class="cute-text"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-pink btn-lg px-5 rounded-pill mt-4" onclick="nextPlayer()">
+                    <i class="fas fa-arrow-right me-2"></i>Próximo Jogador
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Play Section -->
+        <div id="game-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
+            <div class="card-body p-4" id="game-content">
+                <h3 class="h5 mb-4 text-light">Jogadores</h3>
+                <form id="voteForm">
+                    <div class="player-list rounded-4 p-3 mb-4" id="playerList">
+                        <!-- Players will be added here dynamically -->
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-pink btn-lg px-5 rounded-pill mb-3"
+                            onclick="eliminatePlayer()">
+                            <i class="fas fa-user-minus me-2"></i>Eliminar Jogador
+                        </button>
+                        <button type="button" class="btn btn-outline-pink btn-lg px-5 rounded-pill"
+                            onclick="resetGame()">
+                            <i class="fas fa-redo me-2"></i>Jogar Novamente
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Game Rules Section -->
+        <section class="card bg-darker shadow-lg mb-4 border-pink rounded-4">
+            <div class="card-body p-4">
+                <h2 class="card-title h4 mb-4 text-light">Como Jogar o Jogo Undercover Online</h2>
+                <div class="text-light">
+                    <h3 class="h6 text-pink mb-3">Características do Jogo Undercover Online:</h3>
+                    <ul class="mb-4">
+                        <li><strong>13 Categorias de Palavras:</strong> Comida e Bebida, Animais, Objetos, Empregos e Funções, Entretenimento, Natureza e Clima, Engraçado, Esportes e Fitness, Tecnologia e Digital, Viagens e Lugares, Relacionamentos, Marcas e Empresas, Figuras Históricas</li>
+                        <li><strong>Palavras Personalizadas:</strong> Crie seus próprios pares de palavras para jogabilidade personalizada no Jogo Undercover Online</li>
+                        <li><strong>Otimizado para Mobile:</strong> Botões de seleção grandes e amigáveis ao toque para jogabilidade fácil em qualquer dispositivo</li>
+                        <li><strong>Contagem Flexível de Jogadores:</strong> Suporte para 4-20 jogadores com opções personalizáveis de espiões e cartões em branco</li>
+                        <li><strong>Configuração Instantânea:</strong> Nenhum registro necessário, comece a jogar Undercover imediatamente</li>
+                    </ul>
+
+                    <h3 class="h6 text-pink mb-3">Como Jogar Undercover Online:</h3>
+                    <ol class="mb-4">
+                        <li>Cada jogador recebe uma palavra secreta - a maioria dos jogadores recebe a mesma palavra "civil", enquanto os jogadores undercover (espiões) recebem uma palavra similar mas diferente.</li>
+                        <li>Os jogadores se revezam descrevendo sua palavra sem dizê-la diretamente.</li>
+                        <li>Após cada rodada, use nossos botões grandes e fáceis de tocar para votar em quem você acha que é o undercover.</li>
+                        <li>A pessoa com mais votos é eliminada.</li>
+                        <li>O jogo Undercover continua até que todos os jogadores undercover sejam descobertos (civis vencem) ou o número de undercover iguale o número de civis (undercover vencem).</li>
+                    </ol>
+
+                    <h3 class="h6 text-pink mb-3">Dicas de Profissional para Undercover Online:</h3>
+                    <ul class="mb-4">
+                        <li><strong>Seja Sutil:</strong> Evite revelar se você é um civil ou undercover em suas descrições!</li>
+                        <li><strong>Escute com Atenção:</strong> Preste atenção às diferenças sutis em como os outros descrevem suas palavras no Jogo Undercover</li>
+                        <li><strong>Use Categorias Estrategicamente:</strong> Diferentes categorias de palavras oferecem níveis variados de dificuldade no Undercover Online</li>
+                        <li><strong>Mobile Amigável:</strong> Nossa interface otimizada torna a votação rápida e fácil em telefones e tablets</li>
+                    </ul>
+
+                    <p class="mb-0"><strong>Perfeito para:</strong> Festas de escritório, reuniões familiares, eventos de construção de equipes, reuniões online, atividades de sala de aula e encontros sociais. Jogue Undercover Online e aproveite a interface com botões grandes que garante que todos possam participar facilmente!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">Sobre Nós</h2>
+                    <p>Coleção de Jogos de Festa é seu destino online premier para jogos de festa gratuitos e interativos. Oferecemos uma coleção diversa de jogos sociais envolventes incluindo Encontre o Espião, Nunca Fiz, e muito mais - perfeitos para reuniões virtuais, festas e eventos de construção de equipes. Junte-se a milhares de jogadores em todo o mundo para experiências de jogo inesquecíveis!</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">Links Rápidos</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="../../index.html" class="text-light text-decoration-none">Jogos</a></li>
+                        <li><a href="../../feedback.html" class="text-light text-decoration-none">Feedback</a></li>
+                        <li><a href="../../TheList.html" class="text-light text-decoration-none">A Lista</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">&copy; 2025 Jogos de Festa. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/ads-controller.js"></script>
+    <script src="../../js/game-navigation-pt.js"></script>
+    <script src="../../games/undercover/undercover.js"></script>
+    <script src="undercover-pt.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
