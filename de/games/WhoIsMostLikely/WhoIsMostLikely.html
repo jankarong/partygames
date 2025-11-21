@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Spielen Sie Wer ist am ehesten... - Das ultimative Partyspiel! 50+ lustige Fragen für Freunde und Familie. Perfekt für Partys und Zusammenkünfte.">
+    <meta name="keywords"
+        content="wer ist am ehesten, wer ist am ehesten fragen, partyspiele, trinkspiele, eisbrecher spiele">
+    <meta name="author" content="Party Games Hub">
+    <meta property="og:title" content="Wer ist am ehesten... - #1 Partyspiel für Freunde">
+    <meta property="og:description"
+        content="Entdecken Sie 50+ lustige Wer-ist-am-ehesten-Fragen! Perfektes Partyspiel für Freunde und Familientreffen. Schaffen Sie unvergessliche Momente mit diesen ansprechenden Fragen!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="MostLikelyToLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/de/games/WhoIsMostLikely/WhoIsMostLikely.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wer ist am ehesten... - Ultimatives Partyspiel">
+    <meta name="twitter:description"
+        content="50+ lustige Fragen für das perfekte Partyspiel! Spielen Sie mit Freunden und Familie für endlosen Spaß und Gelächter.">
+    <meta name="twitter:image" content="MostLikelyToLogo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="German">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.bestpartygames.net/de/games/WhoIsMostLikely/WhoIsMostLikely.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./MostLikelyToLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Wer ist am ehesten...",
+        "description": "Spielen Sie Wer ist am ehesten... - Das ultimative Partyspiel! 50+ lustige Wer-ist-am-ehesten-Fragen für Freunde und Familie.",
+        "genre": "Partyspiel",
+        "numberOfPlayers": "3+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "180"
+        }
+    }
+    </script>
+
+    <title>Wer ist am ehesten... - Lustiges Partyspiel für Freunde</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/gameheader.css">
+    <link rel="stylesheet" href="WhoIsMostLikely.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./MostLikelyToLogo.png">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="text-center mb-4">
+                <img src="MostLikelyToLogo.png" alt="Wer ist am ehesten Logo" class="img-fluid game-logo"
+                    style="max-width: 200px;">
+            </div>
+            <h1 class="text-center mb-4">Wer ist am ehesten...</h1>
+
+            <div class="game-section mb-4">
+                <div class="question-card mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p id="questionText" class="question-text mb-4">Klicken Sie auf die Schaltfläche unten, um das Spiel zu starten!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary w-100" id="nextQuestionBtn">Spiel starten</button>
+            </div>
+
+            <div class="rules-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">Spielregeln & Tipps</h2>
+                        <div class="rules-content">
+                            <div class="rule-item mb-4">
+                                <h3>Empfohlene Anzahl der Spieler</h3>
+                                <p>4 oder mehr Spieler - Perfekt für Partys, Familientreffen oder Treffen mit Freunden!</p>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>So spielen Sie</h3>
+                                <p>1. Eine Person liest die "Wer-ist-am-ehesten-Fragen" laut vor</p>
+                                <p>2. Jeder zeigt auf die Person, die das ehesten machen würde</p>
+                                <p>3. Die Person mit den meisten Punkten trinkt oder macht eine lustige Herausforderung</p>
+                                <p>4. Verfolgen Sie, wer die meisten Punkte bekommt, für zusätzlichen Spaß!</p>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>Spielvariationen</h3>
+                                <ul>
+                                    <li><strong>Klassische Version:</strong> Perfekt für entspannte Zusammenkünfte und Familienveranstaltungen</li>
+                                    <li><strong>Trinkspiel-Version:</strong> Beliebt bei Partys (denken Sie daran, verantwortungsvoll zu trinken!)</li>
+                                    <li><strong>Punkte-Version:</strong> Behalten Sie die Punktzahl im Auge und krönen Sie einen Sieger am Ende</li>
+                                    <li><strong>Wahrheits-Version:</strong> Spieler müssen ihre Wahlen erklären</li>
+                                </ul>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>Warum Spieler dieses Spiel lieben</h3>
+                                <ul>
+                                    <li>Schafft lustige Momente mit "Wer-ist-am-ehesten"-Fragen</li>
+                                    <li>Perfekter Eisbrecher für neue Gruppen mit unterhaltsamen Fragen</li>
+                                    <li>Hilft Freunden, sich gegenseitig besser durch ansprechende Fragen kennenzulernen</li>
+                                    <li>Keine spezielle Ausrüstung erforderlich</li>
+                                    <li>Leicht zu erlernen, macht Spaß zu meistern</li>
+                                </ul>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>Beste Spielumgebungen</h3>
+                                <ul>
+                                    <li>Hauspartys 🏠</li>
+                                    <li>Geburtstagsfeier 🎂</li>
+                                    <li>Familientreffen 👨‍👩‍👧‍👦</li>
+                                    <li>Collegenächte 🎓</li>
+                                    <li>Teambuilding-Events 🤝</li>
+                                    <li>Ferienpartys 🎄</li>
+                                </ul>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>Pro-Tipps</h3>
+                                <ul>
+                                    <li>Ermutigen Sie alle, ehrlich zu antworten</li>
+                                    <li>Halten Sie das Spiel in gutem Tempo</li>
+                                    <li>Mischen Sie lustige und durchdachte Fragen</li>
+                                    <li>Schaffen Sie eine sichere und angenehme Umgebung</li>
+                                    <li>Machen Sie Fotos oder Videos der lustigsten Momente</li>
+                                </ul>
+                            </div>
+                            <div class="safety-note mt-4">
+                                <p class="text-muted"><small>Hinweis: Spielen Sie verantwortungsvoll und respektieren Sie die Gefühle anderer. Dieses Spiel ist für Spaß und Freundschaft gedacht!</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="WhoIsMostLikely-de.js"></script>
+    <script src="../../js/game-navigation-de.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

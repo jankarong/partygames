@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Spielen Sie Raten Sie diese Zahl - das ultimative Zahlenratespiel online! Fordern Sie sich selbst heraus, die richtige Zahl zwischen 1-100 zu erraten. Kostenloses Online-Zahlenratespiel perfekt für Partys und Spaß!">
+    <meta name="keywords"
+        content="zahlenratespiel, raten sie diese zahl, zahlenspiel, rätselspiel, online zahlenspiel, partyspiele, spaßspiele">
+    <meta name="author" content="Party Games">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Raten Sie diese Zahl - Lustiges Online-Zahlenratespiel">
+    <meta property="og:description"
+        content="Spielen Sie Raten Sie diese Zahl - das ultimative Zahlenratespiel online! Fordern Sie sich selbst heraus, die richtige Zahl zwischen 1-100 zu erraten.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/games/beernumber/numberguessLogo.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Raten Sie diese Zahl - Lustiges Online-Zahlenratespiel">
+    <meta name="twitter:description"
+        content="Spielen Sie Raten Sie diese Zahl - das ultimative Zahlenratespiel online! Kostenlos spielbar.">
+    <meta name="twitter:image" content="/games/beernumber/numberguessLogo.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bestpartygames.net/de/games/beernumber/beernumber.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./numberguessLogo.png">
+
+    <title>Raten Sie diese Zahl - Lustiges Online-Zahlenratespiel</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/gameheader.css">
+    <link rel="stylesheet" href="beernumber.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./numberguessLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Raten Sie diese Zahl",
+        "description": "Spielen Sie Raten Sie diese Zahl - das ultimative Zahlenratespiel online! Fordern Sie sich selbst heraus, die richtige Zahl zwischen 1-100 zu erraten. Kostenloses Online-Zahlenratespiel perfekt für Partys und Spaß!",
+        "genre": "Zahlenspiel",
+        "numberOfPlayers": "1+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "120"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="game-header text-center mb-4">
+                    <div class="logo-container">
+                        <img src="./numberguessLogo.png" alt="Raten Sie diese Zahl - Zahlenratespiel-Logo"
+                            class="game-logo">
+                    </div>
+                    <h1 class="display-5 fw-bold">Raten Sie diese Zahl</h1>
+                    <p class="lead">Das ultimative Zahlenratespiel</p>
+                    <div class="cute-bubbles">
+                        <div class="bubble bubble-1"></div>
+                        <div class="bubble bubble-2"></div>
+                        <div class="bubble bubble-3"></div>
+                        <div class="bubble bubble-4"></div>
+                    </div>
+                </div>
+
+                <div class="game-container card shadow">
+                    <div class="card-body">
+                        <div class="beer-container mb-4">
+                            <div class="beer-mug">
+                                <div class="beer-handle"></div>
+                                <div class="beer-glass">
+                                    <div class="beer-foam"></div>
+                                    <div class="beer-liquid">
+                                        <div class="beer-fill" id="beer-fill"></div>
+                                    </div>
+                                </div>
+                                <div class="beer-face">
+                                    <div class="beer-eyes">
+                                        <div class="beer-eye beer-eye-left"></div>
+                                        <div class="beer-eye beer-eye-right"></div>
+                                    </div>
+                                    <div class="beer-mouth"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="game-controls mb-4">
+                            <div class="input-group mb-3">
+                                <input type="number" id="guessInput" class="form-control"
+                                    placeholder="Raten Sie diese Zahl (1-100)" min="1" max="100">
+                                <button id="submitGuess" class="btn">
+                                    <i class="fas fa-beer me-2"></i>Raten!
+                                </button>
+                            </div>
+                            <div id="message" class="alert d-none"></div>
+                        </div>
+
+                        <div id="history" class="guess-history mb-4"></div>
+                    </div>
+                </div>
+
+                <!-- Game Rules -->
+                <div class="card shadow mt-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">📋 Raten Sie diese Zahl Regeln</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="rules-list">
+                            <li>🎯 Denken Sie sich eine Zahl zwischen 1 und 100 für andere aus, um diese Zahl zu erraten</li>
+                            <li>🎮 Perfekt für Einzelspiele oder Gruppen - fordern Sie sich selbst oder Freunde heraus, diese Zahl richtig zu erraten</li>
+                            <li>🔄 Beim Zahlenraten erhalten Sie Hinweise, ob Ihre Vermutung zu hoch oder zu niedrig ist</li>
+                            <li>🏆 Versuchen Sie, diese Zahl in möglichst wenigen Versuchen zu erraten, um die beste Punktzahl zu erzielen</li>
+                            <li>🎉 Großartiges Zahlenratespiel für alle Altersgruppen - testen Sie Ihre Logik und Ihr Glück!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="card shadow mt-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">❓ So spielen Sie Raten Sie diese Zahl</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <h3>🎮 Wie funktioniert Raten Sie diese Zahl?</h3>
+                                <p>Der Computer denkt sich eine Zahl zwischen 1 und 100 aus, und Sie müssen diese Zahl richtig erraten. Jedes Mal wenn Sie raten, erhalten Sie Feedback, ob Ihre Vermutung zu hoch oder zu niedrig ist. Der Bierkrug füllt sich auf, wenn Sie der richtigen Zahl näher kommen, was es zu einem spaßigen visuellen Zahlenratespiel macht!</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>🔄 Können mehrere Personen Raten Sie diese Zahl spielen?</h3>
+                                <p>Absolut! Während Sie allein spielen können, um diese Zahl zu erraten, macht es auch Spaß mit Freunden. Wechseln Sie sich ab, um Vermutungen zu machen, und sehen Sie, wer die Zahl mit den wenigsten Versuchen erraten kann. Es ist ein großartiges Zahlenratespiel für Partys und Zusammenkünfte!</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>📝 Welche Strategie gibt es für Raten Sie diese Zahl?</h3>
+                                <p>Verwenden Sie die binäre Suchstrategie! Beginnen Sie mit 50, dann basierend darauf, ob es zu hoch oder zu niedrig ist, eliminieren Sie die Hälfte der verbleibenden Zahlen. Dieser Ansatz hilft Ihnen, diese Zahl effizient in minimaler Zeit zu erraten.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>🔄 Was passiert, wenn Sie richtig raten?</h3>
+                                <p>Wenn Sie diese Zahl erfolgreich erraten, gewinnen Sie die Runde! Das Spiel zeigt Ihre Gesamtzahl von Versuchen, und Sie können eine neue Runde starten, um Ihre vorherige Punktzahl zu verbessern. Fordern Sie sich selbst heraus, die Zahl in weniger Versuchen zu erraten!</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>🎯 Tipps zum besseren Spielen?</h3>
+                                <p>Der Schlüssel zum Meistern von Raten Sie diese Zahl ist die Verwendung systematischer Ansätze. Beginnen Sie immer mit der mittleren Zahl (50) und arbeiten Sie sich logisch durch. Dieses Zahlenratespiel belohnt strategisches Denken gegenüber zufälligem Raten!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content Section -->
+                <div class="card shadow mt-4 mb-5">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">🎯 Über das Spiel Raten Sie diese Zahl</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>"Raten Sie diese Zahl" ist das ultimative Online-Zahlenratespiel, das Ihre Logik und Intuition herausfordert. Es kombiniert die klassische Spannung des Zahlenratens mit modernem interaktivem Gameplay und schafft eine perfekte Gehirn-Trainings-Erfahrung.</p>
+
+                        <p>Dieses Zahlenratespiel ist unglaublich vielseitig - Sie können es allein spielen, um Ihr logisches Denken zu verbessern, oder mit Freunden, um zu sehen, wer die Zahl am schnellsten erraten kann. Die Regeln sind einfach: Der Computer denkt sich eine Zahl zwischen 1 und 100 aus, und Sie wechseln sich ab zu raten, bis jemand die richtige Zahl findet. Jede Vermutung gibt Ihnen wertvollen Feedback!</p>
+
+                        <p>Was dieses zu einem der besten Zahlenratespiele online macht, ist die einbezogene Strategie. Verwenden Sie binäre Suche, um die Möglichkeiten systematisch einzugrenzen? Oder verlassen Sie sich auf Intuition und Glück? Die Bierverkostungs-Visualisierung fügt ein zusätzliches Element Spaß hinzu, wenn es sich basierend darauf füllt, wie nahe Ihre Vermutung an der Zielzahl liegt.</p>
+
+                        <p>Egal ob Sie ein schnelles Denksportspiel, eine lustige Parteiaktivität oder eine Möglichkeit zur Zeitvertreib suchen, "Raten Sie diese Zahl" bietet ansprechendes Gameplay und mentale Stimulation. Es ist perfekt zum Verbessern des logischen Denkens, zum Wettbewerb mit Freunden und zum Genießen einer klassischen Zahlenrate-Erfahrung online.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="beernumber-de.js"></script>
+    <script src="../../js/game-navigation-de.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
