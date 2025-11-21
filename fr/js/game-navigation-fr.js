@@ -6,19 +6,19 @@
 class GameNavigation {
     constructor() {
         this.games = [
-            { name: 'Boule Magique 8', url: '/fr/games/magic8ball/magic8ball.html', logo: '/games/magic8ball/magic8ball.svg', category: 'solo' },
-            { name: 'Vérité ou Défi', url: '/fr/games/TruthorDare/TruthOrDare.html', logo: '/games/TruthorDare/TruthorDareLogo.png', category: 'party' },
-            { name: 'Jamais Je N\'Aurais', url: '/fr/games/NeverHaveIEver/NeverHaveIEver.html', logo: '/games/NeverHaveIEver/NeverHaveIEverLogo.png', category: 'party' },
-            { name: 'Qui Est Le Plus Susceptible', url: '/fr/games/WhoIsMostLikely/WhoIsMostLikely.html', logo: '/games/WhoIsMostLikely/MostLikelyToLogo.png', category: 'party' },
-            { name: 'Préfères-tu', url: '/fr/games/WouldYouRather/WouldYouRather.html', logo: '/games/WouldYouRather/WouldYouRatherLogo.png', category: 'party' },
-            { name: 'Mafia', url: '/fr/games/mafia/mafia.html', logo: '/games/mafia/mafialogo.png', category: 'strategy' },
-            { name: 'Undercover', url: '/fr/games/undercover/undercover.html', logo: '/games/undercover/undercover.png', category: 'strategy' },
-            { name: 'Charades', url: '/fr/games/charades/charades.html', logo: '/games/charades/CharadesLogo.png', category: 'party' },
-            { name: 'Hedbanz', url: '/fr/games/hedbanzgame/hedbanzgame.html', logo: '/games/hedbanzgame/hedbanz.png', category: 'party' },
-            { name: 'Jeu d\'Appariement de Bouteilles', url: '/fr/games/BottleMatchGame/BottleMatchGame.html', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
-            { name: 'Dés d\'Aventure', url: '/fr/games/sexdice/sexdice.html', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
-            { name: 'Devinez le Nombre', url: '/fr/games/beernumber/beernumber.html', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
-            { name: 'Kings Cup', url: '/fr/games/KingsCup/KingsCup.html', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' }
+            { name: 'Boule Magique 8', url: '/fr/games/magic8ball/magic8ball', logo: '/games/magic8ball/magic8ball.svg', category: 'solo' },
+            { name: 'Vérité ou Défi', url: '/fr/games/TruthorDare/TruthOrDare', logo: '/games/TruthorDare/TruthorDareLogo.png', category: 'party' },
+            { name: 'Jamais Je N\'Aurais', url: '/fr/games/NeverHaveIEver/NeverHaveIEver', logo: '/games/NeverHaveIEver/NeverHaveIEverLogo.png', category: 'party' },
+            { name: 'Qui Est Le Plus Susceptible', url: '/fr/games/WhoIsMostLikely/WhoIsMostLikely', logo: '/games/WhoIsMostLikely/MostLikelyToLogo.png', category: 'party' },
+            { name: 'Préfères-tu', url: '/fr/games/WouldYouRather/WouldYouRather', logo: '/games/WouldYouRather/WouldYouRatherLogo.png', category: 'party' },
+            { name: 'Mafia', url: '/fr/games/mafia/mafia', logo: '/games/mafia/mafialogo.png', category: 'strategy' },
+            { name: 'Undercover', url: '/fr/games/undercover/undercover', logo: '/games/undercover/undercover.png', category: 'strategy' },
+            { name: 'Charades', url: '/fr/games/charades/charades', logo: '/games/charades/CharadesLogo.png', category: 'party' },
+            { name: 'Hedbanz', url: '/fr/games/hedbanzgame/hedbanzgame', logo: '/games/hedbanzgame/hedbanz.png', category: 'party' },
+            { name: 'Jeu d\'Appariement de Bouteilles', url: '/fr/games/BottleMatchGame/BottleMatchGame', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
+            { name: 'Dés d\'Aventure', url: '/fr/games/sexdice/sexdice', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
+            { name: 'Devinez le Nombre', url: '/fr/games/beernumber/beernumber', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
+            { name: 'Kings Cup', url: '/fr/games/KingsCup/KingsCup', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' }
         ];
 
         this.currentGame = this.getCurrentGame();

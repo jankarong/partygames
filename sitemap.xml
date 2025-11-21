@@ -93,28 +93,28 @@
 
     <!-- Support Pages -->
     <url>
-        <loc>https://www.bestpartygames.net/feedback.html</loc>
+        <loc>https://www.bestpartygames.net/feedback</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/feedback.html</loc>
+        <loc>https://www.bestpartygames.net/de/feedback</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/TheList.html</loc>
+        <loc>https://www.bestpartygames.net/TheList</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/TheList.html</loc>
+        <loc>https://www.bestpartygames.net/de/TheList</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -122,15 +122,15 @@
 
     <!-- Truth or Dare -->
     <url>
-        <loc>https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html</loc>
+        <loc>https://www.bestpartygames.net/games/TruthorDare/TruthOrDare</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/TruthorDare/TruthorDare.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/TruthorDare/TruthorDare" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/TruthorDare/TruthorDareLogo.png</image:loc>
             <image:title>Truth or Dare Generator</image:title>
@@ -139,15 +139,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/TruthorDare/TruthorDare.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/TruthorDare/TruthorDare" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/TruthorDare/TruthorDareLogo.png</image:loc>
             <image:title>真心话大冒险生成器</image:title>
@@ -156,15 +156,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/TruthorDare/TruthOrDare.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/TruthorDare/TruthOrDare</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/TruthorDare/TruthorDare.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/TruthorDare/TruthorDare" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/TruthorDare/TruthorDareLogo.png</image:loc>
             <image:title>Wahrheit oder Pflicht Generator</image:title>
@@ -173,15 +173,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/TruthorDare/TruthorDare.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/TruthorDare/TruthorDare</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/TruthorDare/TruthOrDare.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/TruthorDare/TruthorDare.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/TruthorDare/TruthOrDare" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/TruthorDare/TruthorDare" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/TruthorDare/TruthorDareLogo.png</image:loc>
             <image:title>Verdade ou Desafio</image:title>
@@ -191,15 +191,15 @@
 
     <!-- Magic 8 Ball -->
     <url>
-        <loc>https://www.bestpartygames.net/games/magic8ball/magic8ball.html</loc>
+        <loc>https://www.bestpartygames.net/games/magic8ball/magic8ball</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/magic8ball/magic8ball" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/magic8ball/magic8ball.svg</image:loc>
             <image:title>Magic 8 Ball</image:title>
@@ -208,15 +208,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/magic8ball/magic8ball.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/magic8ball/magic8ball</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/magic8ball/magic8ball" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/magic8ball/magic8ball.svg</image:loc>
             <image:title>神奇8号球</image:title>
@@ -225,15 +225,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/magic8ball/magic8ball.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/magic8ball/magic8ball</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/magic8ball/magic8ball" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/magic8ball/magic8ball.svg</image:loc>
             <image:title>Magischer 8-Ball</image:title>
@@ -242,15 +242,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/magic8ball/magic8ball.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/magic8ball/magic8ball</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/magic8ball/magic8ball.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/magic8ball/magic8ball.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/magic8ball/magic8ball" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/magic8ball/magic8ball" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/magic8ball/magic8ball.svg</image:loc>
             <image:title>Bola Mágica 8</image:title>
@@ -260,15 +260,15 @@
 
     <!-- Never Have I Ever -->
     <url>
-        <loc>https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html</loc>
+        <loc>https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEverLogo.png</image:loc>
             <image:title>Never Have I Ever Questions Spicy</image:title>
@@ -277,15 +277,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEverLogo.png</image:loc>
             <image:title>从未有过问题</image:title>
@@ -294,15 +294,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/NeverHaveIEver/NeverHaveIEver.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/NeverHaveIEver/NeverHaveIEver</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEverLogo.png</image:loc>
             <image:title>Ich hab noch nie Fragen</image:title>
@@ -311,15 +311,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/NeverHaveIEver/NeverHaveIEver.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/NeverHaveIEver/NeverHaveIEver</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/NeverHaveIEver/NeverHaveIEver.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/NeverHaveIEver/NeverHaveIEver" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEver" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/NeverHaveIEver/NeverHaveIEverLogo.png</image:loc>
             <image:title>Nunca Fui Pergunta</image:title>
@@ -329,14 +329,14 @@
 
     <!-- Who's Most Likely -->
     <url>
-        <loc>https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html</loc>
+        <loc>https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WhoIsMostLikely/WhoIsMostLikely.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WhoIsMostLikely/WhoIsMostLikely" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/WhoIsMostLikely/MostLikelyToLogo.png</image:loc>
             <image:title>Who's More Likely To Questions</image:title>
@@ -345,14 +345,14 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WhoIsMostLikely/WhoIsMostLikely.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WhoIsMostLikely/WhoIsMostLikely" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/WhoIsMostLikely/MostLikelyToLogo.png</image:loc>
             <image:title>谁最可能问题</image:title>
@@ -361,14 +361,14 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/WhoIsMostLikely/WhoIsMostLikely.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/WhoIsMostLikely/WhoIsMostLikely</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WhoIsMostLikely/WhoIsMostLikely.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WhoIsMostLikely/WhoIsMostLikely" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WhoIsMostLikely/WhoIsMostLikely" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WhoIsMostLikely/WhoIsMostLikely" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/WhoIsMostLikely/MostLikelyToLogo.png</image:loc>
             <image:title>Quem é Mais Provável</image:title>
@@ -378,15 +378,15 @@
 
     <!-- Would You Rather -->
     <url>
-        <loc>https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html</loc>
+        <loc>https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/WouldYouRather/WouldYouRatherLogo.png</image:loc>
             <image:title>Would You Rather Questions Spicy</image:title>
@@ -395,15 +395,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/WouldYouRather/WouldYouRatherLogo.png</image:loc>
             <image:title>你宁愿问题</image:title>
@@ -412,15 +412,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/WouldYouRather/WouldYouRather.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/WouldYouRather/WouldYouRather</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/WouldYouRather/WouldYouRatherLogo.png</image:loc>
             <image:title>Würdest du eher Fragen</image:title>
@@ -429,15 +429,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/WouldYouRather/WouldYouRather.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/WouldYouRather/WouldYouRather</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WouldYouRather/WouldYouRather.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/WouldYouRather/WouldYouRather" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/WouldYouRather/WouldYouRather" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/WouldYouRather/WouldYouRatherLogo.png</image:loc>
             <image:title>Você Preferia Perguntas</image:title>
@@ -447,15 +447,15 @@
 
     <!-- Mafia -->
     <url>
-        <loc>https://www.bestpartygames.net/games/mafia/mafia.html</loc>
+        <loc>https://www.bestpartygames.net/games/mafia/mafia</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/mafia/mafia" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/mafia/mafialogo.png</image:loc>
             <image:title>Mafia Board Games</image:title>
@@ -464,15 +464,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/mafia/mafia.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/mafia/mafia</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/mafia/mafia" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/mafia/mafialogo.png</image:loc>
             <image:title>狼人杀桌游</image:title>
@@ -481,15 +481,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/mafia/mafia.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/mafia/mafia</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/mafia/mafia" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/mafia/mafialogo.png</image:loc>
             <image:title>Werwolf Brettspiel</image:title>
@@ -498,15 +498,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/mafia/mafia.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/mafia/mafia</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/mafia/mafia.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/mafia/mafia.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/mafia/mafia" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/mafia/mafia" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/mafia/mafialogo.png</image:loc>
             <image:title>Jogo de Tabuleiro Máfia</image:title>
@@ -516,15 +516,15 @@
 
     <!-- Undercover -->
     <url>
-        <loc>https://www.bestpartygames.net/games/undercover/undercover.html</loc>
+        <loc>https://www.bestpartygames.net/games/undercover/undercover</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/undercover/undercover" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/undercover/undercover.png</image:loc>
             <image:title>Undercover</image:title>
@@ -533,15 +533,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/undercover/undercover.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/undercover/undercover</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/undercover/undercover" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/undercover/undercover.png</image:loc>
             <image:title>谁是卧底</image:title>
@@ -550,15 +550,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/undercover/undercover.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/undercover/undercover</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/undercover/undercover" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/undercover/undercover.png</image:loc>
             <image:title>Undercover</image:title>
@@ -567,15 +567,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/undercover/undercover.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/undercover/undercover</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/undercover/undercover.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/undercover/undercover.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/undercover/undercover" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/undercover/undercover" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/undercover/undercover.png</image:loc>
             <image:title>Encoberto</image:title>
@@ -585,15 +585,15 @@
 
     <!-- Charades -->
     <url>
-        <loc>https://www.bestpartygames.net/games/charades/charades.html</loc>
+        <loc>https://www.bestpartygames.net/games/charades/charades</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/charades/charades.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/charades/charades" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/charades/CharadesLogo.png</image:loc>
             <image:title>Charades Generator</image:title>
@@ -602,15 +602,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/charades/charades.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/charades/charades</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/charades/charades.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/charades/charades" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/charades/CharadesLogo.png</image:loc>
             <image:title>你划我猜生成器</image:title>
@@ -619,15 +619,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/charades/charades.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/charades/charades</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/charades/charades.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/charades/charades" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/charades/CharadesLogo.png</image:loc>
             <image:title>Tabu Generator</image:title>
@@ -636,15 +636,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/charades/charades.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/charades/charades</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/charades/charades.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/charades/charades.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/charades/charades" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/charades/charades" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/charades/CharadesLogo.png</image:loc>
             <image:title>Gerador de Charadas</image:title>
@@ -654,14 +654,14 @@
 
     <!-- Hedbanz -->
     <url>
-        <loc>https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html</loc>
+        <loc>https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/hedbanzgame/hedbanzgame.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/hedbanzgame/hedbanzgame" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/hedbanzgame/hedbanz.png</image:loc>
             <image:title>Hedbanz Game</image:title>
@@ -670,14 +670,14 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/hedbanzgame/hedbanzgame.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/hedbanzgame/hedbanzgame" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/hedbanzgame/hedbanz.png</image:loc>
             <image:title>猜猜我是谁游戏</image:title>
@@ -686,14 +686,14 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/hedbanzgame/hedbanzgame.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/hedbanzgame/hedbanzgame</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/hedbanzgame/hedbanzgame.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/hedbanzgame/hedbanzgame" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/hedbanzgame/hedbanzgame" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/hedbanzgame/hedbanz.png</image:loc>
             <image:title>Jogo Hedbanz</image:title>
@@ -703,15 +703,15 @@
 
     <!-- Sex Dice -->
     <url>
-        <loc>https://www.bestpartygames.net/games/sexdice/sexdice.html</loc>
+        <loc>https://www.bestpartygames.net/games/sexdice/sexdice</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/sexdice/sexdicelogo.png</image:loc>
             <image:title>Sex Dice</image:title>
@@ -720,15 +720,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/sexdice/sexdice.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/sexdice/sexdice</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/sexdice/sexdicelogo.png</image:loc>
             <image:title>情侣骰子</image:title>
@@ -737,15 +737,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/sexdice/sexdice.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/sexdice/sexdice</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/sexdice/sexdicelogo.png</image:loc>
             <image:title>Sex Würfel</image:title>
@@ -754,15 +754,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/sexdice/sexdice.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/sexdice/sexdice</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/sexdice/sexdicelogo.png</image:loc>
             <image:title>Dados de Sexo</image:title>
@@ -772,14 +772,14 @@
 
     <!-- Beer Number -->
     <url>
-        <loc>https://www.bestpartygames.net/games/beernumber/beernumber.html</loc>
+        <loc>https://www.bestpartygames.net/games/beernumber/beernumber</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/beernumber/beernumber.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/beernumber/beernumber.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/beernumber/beernumber.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/beernumber/beernumber.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/beernumber/beernumber" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/beernumber/beernumber" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/beernumber/beernumber" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/beernumber/beernumber" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/beernumber/numberguessLogo.png</image:loc>
             <image:title>Guess This Number</image:title>
@@ -788,14 +788,14 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/beernumber/beernumber.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/beernumber/beernumber</loc>
         <lastmod>2025-08-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/beernumber/beernumber.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/beernumber/beernumber.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/beernumber/beernumber.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/beernumber/beernumber.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/beernumber/beernumber" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/beernumber/beernumber" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/beernumber/beernumber" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/beernumber/beernumber" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/beernumber/numberguessLogo.png</image:loc>
             <image:title>猜数字游戏</image:title>
@@ -804,14 +804,14 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/beernumber/beernumber.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/beernumber/beernumber</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/beernumber/beernumber.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/beernumber/beernumber.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/beernumber/beernumber.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/beernumber/beernumber.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/beernumber/beernumber" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/beernumber/beernumber" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/beernumber/beernumber" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/beernumber/beernumber" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/beernumber/numberguessLogo.png</image:loc>
             <image:title>Adivinhe Este Número</image:title>
@@ -821,15 +821,15 @@
 
     <!-- Kings Cup -->
     <url>
-        <loc>https://www.bestpartygames.net/games/KingsCup/KingsCup.html</loc>
+        <loc>https://www.bestpartygames.net/games/KingsCup/KingsCup</loc>
         <lastmod>2025-08-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/KingsCup/KingsCup" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png</image:loc>
             <image:title>Kings Cup Drinking Game</image:title>
@@ -838,15 +838,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/KingsCup/KingsCup.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/KingsCup/KingsCup</loc>
         <lastmod>2025-08-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/KingsCup/KingsCup" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png</image:loc>
             <image:title>国王杯喝酒游戏</image:title>
@@ -855,15 +855,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/KingsCup/KingsCup.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/KingsCup/KingsCup</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/KingsCup/KingsCup" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png</image:loc>
             <image:title>Kings Cup Trinkspiel</image:title>
@@ -872,15 +872,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/KingsCup/KingsCup.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/KingsCup/KingsCup</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/KingsCup/KingsCup.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/KingsCup/KingsCup.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/KingsCup/KingsCup" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/KingsCup/KingsCup" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png</image:loc>
             <image:title>Jogo de Beber Kings Cup</image:title>
@@ -890,14 +890,14 @@
 
     <!-- Liar's Dice -->
     <url>
-        <loc>https://www.bestpartygames.net/games/liarsdice/liarsdice.html</loc>
+        <loc>https://www.bestpartygames.net/games/liarsdice/liarsdice</loc>
         <lastmod>2025-09-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/liarsdice/liarsdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/liarsdice/liarsdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/liarsdice/liarsdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/liarsdice/liarsdice.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/liarsdice/liarsdice" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/liarsdice/liarsdice" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/liarsdice/liarsdice" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/liarsdice/liarsdice" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/liarsdice/liarsdice-logo.png</image:loc>
             <image:title>Liar's Dice - Classic Bluffing Drinking Game</image:title>
@@ -906,14 +906,14 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/liarsdice/liarsdice.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/liarsdice/liarsdice</loc>
         <lastmod>2025-09-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/liarsdice/liarsdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/liarsdice/liarsdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/liarsdice/liarsdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/liarsdice/liarsdice.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/liarsdice/liarsdice" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/liarsdice/liarsdice" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/liarsdice/liarsdice" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/liarsdice/liarsdice" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/liarsdice/liarsdice-logo.png</image:loc>
             <image:title>大话骰 - 经典虚张声势饮酒游戏</image:title>
@@ -922,14 +922,14 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/liarsdice/liarsdice.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/liarsdice/liarsdice</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/liarsdice/liarsdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/liarsdice/liarsdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/liarsdice/liarsdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/liarsdice/liarsdice.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/liarsdice/liarsdice" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/liarsdice/liarsdice" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/liarsdice/liarsdice" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/liarsdice/liarsdice" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/liarsdice/liarsdice-logo.png</image:loc>
             <image:title>Dados de Mentiroso - Jogo de Beber Clássico</image:title>
@@ -939,15 +939,15 @@
 
     <!-- Bottle Match Game -->
     <url>
-        <loc>https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html</loc>
+        <loc>https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame</loc>
         <lastmod>2025-10-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/BottleMatchGame/bottlematch.png</image:loc>
             <image:title>Bottle Match Game Online - Free Logic Puzzle</image:title>
@@ -956,15 +956,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame</loc>
         <lastmod>2025-10-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/BottleMatchGame/bottlematch.png</image:loc>
             <image:title>猜瓶子 - 免费在线益智游戏</image:title>
@@ -973,15 +973,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame</loc>
         <lastmod>2025-10-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/BottleMatchGame/bottlematch.png</image:loc>
             <image:title>Flaschen-Match-Spiel Online - Gratis Logikrätsel</image:title>
@@ -990,15 +990,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/BottleMatchGame/BottleMatchGame" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/BottleMatchGame/BottleMatchGame" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/BottleMatchGame/bottlematch.png</image:loc>
             <image:title>Jogo de Correspondência de Garrafas Online - Puzzle Lógica Grátis</image:title>
@@ -1008,15 +1008,15 @@
 
     <!-- Last Shot -->
     <url>
-        <loc>https://www.bestpartygames.net/games/lastshot/lastshot.html</loc>
+        <loc>https://www.bestpartygames.net/games/lastshot/lastshot</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/lastshot/lastshot.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/lastshot/lastshot" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/lastshot/lastshot.png</image:loc>
             <image:title>Last Shot Drinking Game - Russian Roulette Party Game</image:title>
@@ -1025,15 +1025,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/zh/games/lastshot/lastshot.html</loc>
+        <loc>https://www.bestpartygames.net/zh/games/lastshot/lastshot</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/lastshot/lastshot.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/lastshot/lastshot" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/zh/games/lastshot/lastshot.png</image:loc>
             <image:title>最后一杯喝酒游戏 - 俄罗斯轮盘派对游戏</image:title>
@@ -1042,15 +1042,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/de/games/lastshot/lastshot.html</loc>
+        <loc>https://www.bestpartygames.net/de/games/lastshot/lastshot</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/lastshot/lastshot.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/lastshot/lastshot" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/de/games/lastshot/lastshot.png</image:loc>
             <image:title>Last Shot Trinkspiel - Russisches Roulette Party-Spiel</image:title>
@@ -1059,15 +1059,15 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/lastshot/lastshot.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/lastshot/lastshot</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/lastshot/lastshot.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/lastshot/lastshot.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/lastshot/lastshot" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/lastshot/lastshot" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/games/lastshot/lastshot.png</image:loc>
             <image:title>Último Tiro - Jogo de Festa Roleta Russa</image:title>
@@ -1077,13 +1077,13 @@
 
     <!-- Witch's Poison -->
     <url>
-        <loc>https://www.bestpartygames.net/games/witchspoison/witchspoison.html</loc>
+        <loc>https://www.bestpartygames.net/games/witchspoison/witchspoison</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/witchspoison/witchspoison.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/witchspoison/witchspoison.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/witchspoison/witchspoison.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/witchspoison/witchspoison" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/witchspoison/witchspoison" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/witchspoison/witchspoison" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/image/partyGameLogo.png</image:loc>
             <image:title>Witch's Poison - Mystical Choice Game</image:title>
@@ -1092,13 +1092,13 @@
     </url>
 
     <url>
-        <loc>https://www.bestpartygames.net/pt/games/witchspoison/witchspoison.html</loc>
+        <loc>https://www.bestpartygames.net/pt/games/witchspoison/witchspoison</loc>
         <lastmod>2025-11-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/witchspoison/witchspoison.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/witchspoison/witchspoison.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/witchspoison/witchspoison.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/witchspoison/witchspoison" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/witchspoison/witchspoison" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/witchspoison/witchspoison" />
         <image:image>
             <image:loc>https://www.bestpartygames.net/image/partyGameLogo.png</image:loc>
             <image:title>Veneno da Bruxa - Jogo de Escolha Mística</image:title>

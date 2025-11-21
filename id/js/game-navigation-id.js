@@ -6,18 +6,18 @@
 class GameNavigation {
     constructor() {
         this.games = [
-            { name: 'Bola Ajaib 8', url: '/id/games/magic8ball/magic8ball.html', category: 'solo' },
-            { name: 'Jujur atau Berani', url: '/id/games/TruthorDare/TruthOrDare.html', category: 'party' },
-            { name: 'Tidak Pernah Saya', url: '/id/games/NeverHaveIEver/NeverHaveIEver.html', category: 'party' },
-            { name: 'Siapa yang Paling Mungkin', url: '/id/games/WhoIsMostLikely/WhoIsMostLikely.html', category: 'party' },
-            { name: 'Lebih Suka Mana', url: '/id/games/WouldYouRather/WouldYouRather.html', category: 'party' },
-            { name: 'Mafia', url: '/id/games/mafia/mafia.html', category: 'strategy' },
-            { name: 'Penyamaran', url: '/id/games/undercover/undercover.html', category: 'strategy' },
-            { name: 'Tebak Gerakan', url: '/id/games/charades/charades.html', category: 'party' },
-            { name: 'Tebak Kata', url: '/id/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: 'Dadu Intim', url: '/id/games/sexdice/sexdice.html', category: 'adult' },
-            { name: 'Nomor Bir', url: '/id/games/beernumber/beernumber.html', category: 'drinking' },
-            { name: 'Piala Raja', url: '/id/games/KingsCup/KingsCup.html', category: 'drinking' }
+            { name: 'Bola Ajaib 8', url: '/id/games/magic8ball/magic8ball', category: 'solo' },
+            { name: 'Jujur atau Berani', url: '/id/games/TruthorDare/TruthOrDare', category: 'party' },
+            { name: 'Tidak Pernah Saya', url: '/id/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
+            { name: 'Siapa yang Paling Mungkin', url: '/id/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
+            { name: 'Lebih Suka Mana', url: '/id/games/WouldYouRather/WouldYouRather', category: 'party' },
+            { name: 'Mafia', url: '/id/games/mafia/mafia', category: 'strategy' },
+            { name: 'Penyamaran', url: '/id/games/undercover/undercover', category: 'strategy' },
+            { name: 'Tebak Gerakan', url: '/id/games/charades/charades', category: 'party' },
+            { name: 'Tebak Kata', url: '/id/games/hedbanzgame/hedbanzgame', category: 'party' },
+            { name: 'Dadu Intim', url: '/id/games/sexdice/sexdice', category: 'adult' },
+            { name: 'Nomor Bir', url: '/id/games/beernumber/beernumber', category: 'drinking' },
+            { name: 'Piala Raja', url: '/id/games/KingsCup/KingsCup', category: 'drinking' }
         ];
 
         this.currentGame = this.getCurrentGame();

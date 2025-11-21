@@ -6,18 +6,18 @@
 class GameNavigation {
     constructor() {
         this.games = [
-            { name: 'Magischer 8-Ball', url: '/de/games/magic8ball/magic8ball.html', category: 'solo' },
-            { name: 'Wahrheit oder Pflicht', url: '/de/games/TruthorDare/TruthOrDare.html', category: 'party' },
-            { name: 'Ich hab noch nie', url: '/de/games/NeverHaveIEver/NeverHaveIEver.html', category: 'party' },
-            { name: 'Wer würde am ehesten', url: '/de/games/WhoIsMostLikely/WhoIsMostLikely.html', category: 'party' },
-            { name: 'Was würdest du lieber', url: '/de/games/WouldYouRather/WouldYouRather.html', category: 'party' },
-            { name: 'Werwolf', url: '/de/games/mafia/mafia.html', category: 'strategy' },
-            { name: 'Undercover', url: '/de/games/undercover/undercover.html', category: 'strategy' },
-            { name: 'Scharade', url: '/de/games/charades/charades.html', category: 'party' },
-            { name: 'Hedbanz', url: '/de/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: 'Paar-Würfel', url: '/de/games/sexdice/sexdice.html', category: 'adult' },
-            { name: 'Zahlen raten', url: '/de/games/beernumber/beernumber.html', category: 'drinking' },
-            { name: 'Kings Cup', url: '/de/games/KingsCup/KingsCup.html', category: 'drinking' }
+            { name: 'Magischer 8-Ball', url: '/de/games/magic8ball/magic8ball', category: 'solo' },
+            { name: 'Wahrheit oder Pflicht', url: '/de/games/TruthorDare/TruthOrDare', category: 'party' },
+            { name: 'Ich hab noch nie', url: '/de/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
+            { name: 'Wer würde am ehesten', url: '/de/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
+            { name: 'Was würdest du lieber', url: '/de/games/WouldYouRather/WouldYouRather', category: 'party' },
+            { name: 'Werwolf', url: '/de/games/mafia/mafia', category: 'strategy' },
+            { name: 'Undercover', url: '/de/games/undercover/undercover', category: 'strategy' },
+            { name: 'Scharade', url: '/de/games/charades/charades', category: 'party' },
+            { name: 'Hedbanz', url: '/de/games/hedbanzgame/hedbanzgame', category: 'party' },
+            { name: 'Paar-Würfel', url: '/de/games/sexdice/sexdice', category: 'adult' },
+            { name: 'Zahlen raten', url: '/de/games/beernumber/beernumber', category: 'drinking' },
+            { name: 'Kings Cup', url: '/de/games/KingsCup/KingsCup', category: 'drinking' }
         ];
 
         this.currentGame = this.getCurrentGame();

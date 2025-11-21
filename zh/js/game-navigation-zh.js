@@ -6,18 +6,18 @@
 class GameNavigation {
     constructor() {
         this.games = [
-            { name: '神奇8号球', url: '/zh/games/magic8ball/magic8ball.html', category: 'solo' },
-            { name: '真心话大冒险', url: '/zh/games/TruthorDare/TruthOrDare.html', category: 'party' },
-            { name: '从来没有过', url: '/zh/games/NeverHaveIEver/NeverHaveIEver.html', category: 'party' },
-            { name: '谁最可能', url: '/zh/games/WhoIsMostLikely/WhoIsMostLikely.html', category: 'party' },
-            { name: '你更愿意', url: '/zh/games/WouldYouRather/WouldYouRather.html', category: 'party' },
-            { name: '狼人杀', url: '/zh/games/mafia/mafia.html', category: 'strategy' },
-            { name: '卧底', url: '/zh/games/undercover/undercover.html', category: 'strategy' },
-            { name: '比划猜词', url: '/zh/games/charades/charades.html', category: 'party' },
-            { name: '头脑风暴', url: '/zh/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: '情趣骰子', url: '/zh/games/sexdice/sexdice.html', category: 'adult' },
-            { name: '啤酒数字', url: '/zh/games/beernumber/beernumber.html', category: 'drinking' },
-            { name: '国王杯', url: '/zh/games/KingsCup/KingsCup.html', category: 'drinking' }
+            { name: '神奇8号球', url: '/zh/games/magic8ball/magic8ball', category: 'solo' },
+            { name: '真心话大冒险', url: '/zh/games/TruthorDare/TruthOrDare', category: 'party' },
+            { name: '从来没有过', url: '/zh/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
+            { name: '谁最可能', url: '/zh/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
+            { name: '你更愿意', url: '/zh/games/WouldYouRather/WouldYouRather', category: 'party' },
+            { name: '狼人杀', url: '/zh/games/mafia/mafia', category: 'strategy' },
+            { name: '卧底', url: '/zh/games/undercover/undercover', category: 'strategy' },
+            { name: '比划猜词', url: '/zh/games/charades/charades', category: 'party' },
+            { name: '头脑风暴', url: '/zh/games/hedbanzgame/hedbanzgame', category: 'party' },
+            { name: '情趣骰子', url: '/zh/games/sexdice/sexdice', category: 'adult' },
+            { name: '啤酒数字', url: '/zh/games/beernumber/beernumber', category: 'drinking' },
+            { name: '国王杯', url: '/zh/games/KingsCup/KingsCup', category: 'drinking' }
         ];
 
         this.currentGame = this.getCurrentGame();
