@@ -22,6 +22,47 @@ When adding new games, follow these SEO character limits:
 - Game logo should be in the same folder as the HTML file
 - Use existing CSS and JS structure for consistency
 
+## URL Structure (IMPORTANT for SEO)
+
+**All game URLs must NOT include `.html` extension** - This is critical for SEO:
+
+### Rules:
+- ❌ **WRONG**: `https://www.bestpartygames.net/games/sexdice/sexdice.html`
+- ✅ **CORRECT**: `https://www.bestpartygames.net/games/sexdice/sexdice`
+
+### Where to apply this rule:
+1. **Canonical URLs in HTML files**
+   ```html
+   <link rel="canonical" href="https://www.bestpartygames.net/games/sexdice/sexdice">
+   ```
+
+2. **All internal links in HTML**
+   ```html
+   <a href="/games/sexdice/sexdice">Link text</a>  <!-- NO .html -->
+   ```
+
+3. **Navigation links in JS files**
+   ```javascript
+   { name: 'Sex Dice', url: '/games/sexdice/sexdice' }  <!-- NO .html -->
+   ```
+
+4. **Sitemap (sitemap.xml)**
+   ```xml
+   <loc>https://www.bestpartygames.net/games/sexdice/sexdice</loc>  <!-- NO .html -->
+   ```
+
+5. **Meta tags (og:url, JSON-LD)**
+   ```html
+   <meta property="og:url" content="https://www.bestpartygames.net/games/sexdice/sexdice">
+   ```
+
+### Why this matters:
+- Cloudflare already handles URL rewriting (`.html` files are served without extension)
+- Google uses Sitemap as the source of truth for "real" URLs
+- If Sitemap has `.html`, Google indexes both versions, splitting SEO value
+- This causes 307 redirects and duplicate content issues
+- **Always remove `.html` to keep all SEO value on one canonical URL**
+
 ## Notes
 - Focus on natural keyword integration in title and description
 - Avoid keyword stuffing
