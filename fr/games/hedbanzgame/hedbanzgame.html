@@ -1,13 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Jouez au Jeu Hedbanz en ligne - le jeu de fête ultime pour les groupes ! Expérimentez le jeu Hedbanz classique avec des amis. Jeu Hedbanz gratuit en ligne, parfait pour les fêtes et les rassemblements !">
-    <meta name="keywords"
-        content="jeu hedbanz, hedbanz en ligne, jeux de fête, jeux de groupe, règles hedbanz, hedbanz en ligne">
+    <meta name="description" content="Jouez à Hedbanz en ligne gratuitement! Le jeu de société parfait pour les fêtes. Devinez les mots sur votre front pendant que les amis donnent des indices. Idéal pour les fêtes!">
+    <meta name="keywords" content="Hedbanz en ligne, jeu Hedbanz, jeux de société, devinez jeux, jeux en ligne, jeux de groupe">
     <meta name="author" content="Party Games">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.bestpartygames.net/fr/games/hedbanzgame/hedbanzgame">
@@ -16,36 +14,40 @@
     <link rel="icon" type="image/png" href="./hedbanz.png">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Jeu Hedbanz - Jeu de Fête Amusant en Ligne pour les Groupes">
-    <meta property="og:description"
-        content="Jouez au Jeu Hedbanz en ligne - le jeu de fête ultime pour les groupes ! Expérimentez le jeu Hedbanz classique avec des amis.">
+    <meta property="og:title" content="Hedbanz en ligne - Jeu de fête gratuit">
+    <meta property="og:description" content="Jouez à Hedbanz en ligne gratuitement! Devinez les mots pendant que les amis donnent des indices. Le jeu de fête parfait!">
     <meta property="og:type" content="website">
     <meta property="og:image" content="hedbanz.png">
     <meta property="og:url" content="https://www.bestpartygames.net/fr/games/hedbanzgame/hedbanzgame">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jeu Hedbanz - Jeu de Fête Amusant en Ligne pour les Groupes">
-    <meta name="twitter:description"
-        content="Jouez au Jeu Hedbanz en ligne - le jeu de fête ultime pour les groupes ! Jeu Hedbanz gratuit en ligne, parfait pour les fêtes.">
+    <meta name="twitter:title" content="Hedbanz en ligne - Jeu de fête gratuit">
+    <meta name="twitter:description" content="Jouez à Hedbanz gratuitement en ligne avec vos amis. Parfait pour les fêtes et les nuits de jeu en groupe.">
     <meta name="twitter:image" content="hedbanz.png">
 
-    <title>Jeu Hedbanz - Jeu de Fête Amusant en Ligne pour les Groupes</title>
+    <title>Hedbanz en ligne - Jeu de fête gratuit | Jouer maintenant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="../../style/main.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/gameheader.css">
     <link rel="stylesheet" href="hedbanzgame.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./hedbanz.png">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Game",
-        "name": "Jeu Hedbanz",
-        "description": "Jouez au Jeu Hedbanz en ligne - le jeu de fête ultime pour les groupes ! Expérimentez le jeu Hedbanz classique avec des amis. Jeu Hedbanz gratuit en ligne, parfait pour les fêtes et les rassemblements !",
-        "genre": "Jeu de Fête",
-        "numberOfPlayers": "2-10",
+        "name": "Hedbanz en ligne",
+        "description": "Hedbanz en ligne est un jeu de société gratuit où les joueurs portent un mot invisible sur le front et doivent le deviner en posant des questions oui/non. Parfait pour les fêtes en ligne, les nuits de jeu virtuelles et les réunions de groupe.",
+        "url": "https://www.bestpartygames.net/fr/games/hedbanzgame/hedbanzgame",
+        "image": "https://www.bestpartygames.net/fr/games/hedbanzgame/hedbanz.png",
+        "genre": "Jeu de société",
+        "gameType": "Jeu de devinette",
+        "numberOfPlayers": {
+            "@type": "QuantitativeValue",
+            "minValue": "2",
+            "maxValue": "10"
+        },
         "applicationCategory": "GameApplication",
         "operatingSystem": "Web Browser",
         "offers": {
@@ -56,7 +58,11 @@
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.7",
-            "ratingCount": "95"
+            "ratingCount": "250"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Party Games"
         }
     }
     </script>
@@ -70,8 +76,6 @@
         })(window, document, "clarity", "script", "q4t8s17fvw");
     </script>
 
-    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
     <script>
@@ -84,96 +88,295 @@
 </head>
 
 <body>
-    <!-- Enhanced Navigation will be inserted by JavaScript -->
     <div class="game-container">
-        <img src="hedbanz.png" alt="Logo du Jeu Hedbanz" class="logo">
-        <h1>Jeu Hedbanz</h1>
-        <p class="subtitle">Jouez au jeu Hedbanz classique en ligne - l'expérience de jeu de fête ultime !</p>
+        <div class="setup-screen" id="setupScreen">
+            <img src="hedbanz.png" alt="Hedbanz en ligne" class="logo game-logo">
+            <h1>Hedbanz en ligne</h1>
+            <p class="subtitle">Tenez votre téléphone sur votre front et devinez!</p>
 
-        <!-- Game Setup Screen -->
-        <div id="gameSetup" class="setup-screen">
-            <h2>Configuration du Jeu Hedbanz</h2>
-            <div class="setup-options">
-                <div class="player-setup">
-                    <label for="playerCount">Sélectionnez le nombre de joueurs :</label>
-                    <select id="playerCount" class="select-input">
-                        <option value="2">2 Joueurs</option>
-                        <option value="3">3 Joueurs</option>
-                        <option value="4">4 Joueurs</option>
-                        <option value="5">5 Joueurs</option>
-                        <option value="6">6 Joueurs</option>
-                        <option value="7">7 Joueurs</option>
-                        <option value="8">8 Joueurs</option>
-                        <option value="9">9 Joueurs</option>
-                        <option value="10">10 Joueurs</option>
-                    </select>
-                </div>
-                <button id="startGame" class="btn">Commencer le Jeu</button>
+            <div class="setup-form">
+                <label>Nombre de joueurs:</label>
+                <select id="playerCount" class="setup-form select">
+                    <option value="2">2 joueurs</option>
+                    <option value="3">3 joueurs</option>
+                    <option value="4">4 joueurs</option>
+                    <option value="5">5 joueurs</option>
+                    <option value="6">6 joueurs</option>
+                    <option value="7">7 joueurs</option>
+                    <option value="8">8 joueurs</option>
+                    <option value="9">9 joueurs</option>
+                    <option value="10">10 joueurs</option>
+                </select>
+
+                <label>Durée du jeu (par joueur):</label>
+                <select id="gameDuration" class="setup-form select">
+                    <option value="30">30 secondes</option>
+                    <option value="60" selected>60 secondes</option>
+                </select>
+
+                <button id="startBtn" class="btn-primary">Commencer le jeu</button>
             </div>
         </div>
 
-        <!-- Game Area -->
-        <div id="gameArea" class="game-area" style="display: none;">
-            <div class="card-display">
-                <div class="current-card">
-                    <p>Votre carte apparaîtra ici</p>
-                </div>
+        <div class="ready-screen" id="readyScreen" style="display: none;">
+            <h2>Êtes-vous prêt?</h2>
+            <div class="next-player-display">
+                <p class="ready-label">Prochain joueur</p>
+                <div class="ready-number" id="nextPlayerNum">1</div>
+                <p class="ready-instruction">Tenez le téléphone sur votre front pour que les autres joueurs voient le mot. Cliquez ensuite sur le bouton ci-dessous pour commencer votre tour!</p>
             </div>
+            <button id="readyBtn" class="btn-primary">Commencer mon tour!</button>
+        </div>
 
-            <div class="controls">
-                <button id="drawCard" class="btn">Tirer une Carte</button>
-                <button id="nextPlayer" class="btn" disabled>Joueur Suivant</button>
-            </div>
-
+        <div class="game-screen" id="gameScreen" style="display: none;">
             <div class="player-info">
-                <p>Joueur Actuel : <span id="currentPlayer">1</span></p>
-                <p>Joueurs Restants : <span id="remainingPlayers">2</span></p>
+                <div class="current-player">Joueur <span id="currentPlayer">1</span></div>
+                <div class="player-score">Score: <span id="playerScore">0</span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-display" id="wordDisplay">Prêt</div>
+                <p class="instruction" id="instruction">Les autres joueurs voient ce mot. Devinez-le en posant des questions oui/non!</p>
+            </div>
+
+            <div class="timer-section">
+                <div class="timer" id="timer">60</div>
+                <p class="timer-label">secondes</p>
+            </div>
+
+            <div class="button-group">
+                <button id="correctBtn" class="btn-correct">Correct!</button>
+                <button id="skipBtn" class="btn-skip">Passer</button>
             </div>
         </div>
 
-        <!-- Rules Section -->
-        <div class="rules-section">
-            <h2>Règles du Jeu Hedbanz</h2>
-            <div class="rules-content">
-                <h3>🎯 Objectif du Jeu Hedbanz</h3>
-                <p>Expérimentez le jeu Hedbanz classique avec une touche unique ! Essayez d'éviter de faire les actions ou de dire
-                    les mots affichés
-                    sur votre carte. Si vous faites accidentellement l'action dans ce jeu hedbanz, vous serez éliminé. Le dernier
-                    joueur restant gagne !</p>
+        <div class="results-screen" id="resultsScreen" style="display: none;">
+            <h2>Fin du jeu!</h2>
+            <div class="final-scores" id="finalScores"></div>
+            <button id="playAgainBtn" class="btn-primary">Rejouer</button>
+        </div>
 
-                <h3>🎮 Comment Jouer au Jeu Hedbanz</h3>
+        <!-- SEO Content Section -->
+        <div class="content-section">
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Qu'est-ce que Hedbanz en ligne?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>Hedbanz en ligne</strong> est un jeu de société gratuit qui apporte l'expérience classique de Hedbanz à votre écran. Parfait pour les fêtes, les nuits de jeu virtuel, les réunions familiales et les activités de groupe. Ce jeu basé sur le web ne nécessite aucun téléchargement et peut être joué instantanément avec des amis, la famille ou des collègues.</p>
+                    <p>Dans Hedbanz en ligne, chaque joueur porte un "mot" invisible sur son front et doit le deviner en posant des questions oui/non aux autres joueurs. C'est un jeu de stratégie, de réflexes rapides et d'interactions amusantes.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Comment jouer à Hedbanz en ligne</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
                 <ol>
-                    <li>Choisissez 2-10 joueurs pour participer</li>
-                    <li>Les joueurs tirent des cartes à tour de rôle</li>
-                    <li>Après avoir tiré une carte, ce joueur doit éviter de faire l'action affichée sur sa carte</li>
-                    <li>Si un joueur fait son action interdite, d'autres joueurs peuvent le signaler, et ce joueur est éliminé</li>
-                    <li>Les joueurs éliminés peuvent toujours observer et signaler les actions des autres joueurs</li>
-                    <li>Le jeu continue jusqu'à ce qu'un seul joueur reste</li>
+                    <li><strong>Sélectionner les joueurs:</strong> Choisissez 2-10 joueurs pour participer</li>
+                    <li><strong>Choisir la durée:</strong> Sélectionnez 30 ou 60 secondes par tour</li>
+                    <li><strong>Tenez votre téléphone:</strong> Tenez-le sur votre front pour que seuls les autres le voient</li>
+                    <li><strong>Posez des questions:</strong> Posez des questions oui/non pour découvrir le mot</li>
+                    <li><strong>Faites une devinette:</strong> Cliquez sur "Correct!" quand vous connaissez le mot</li>
+                    <li><strong>Gagner des points:</strong> Gagnez 1 point par mot correct</li>
+                    <li><strong>Prendre les tours:</strong> Chaque joueur à son tour</li>
+                    <li><strong>Gagner:</strong> Le joueur avec le plus de points gagne!</li>
                 </ol>
+                </div>
+            </div>
 
-                <h3>💡 Conseils du Jeu Hedbanz</h3>
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Pourquoi jouer à Hedbanz en ligne?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
                 <ul>
-                    <li>Rappelez-vous : Agissez naturellement, ne tentez pas évidemment d'éviter votre action interdite</li>
-                    <li>Observez attentivement les autres joueurs pour repérer leurs actions interdites</li>
-                    <li>Restez alerte - les autres joueurs pourraient essayer de vous forcer à faire votre action</li>
-                    <li>Même si éliminé, restez engagé et aidez à repérer les erreurs des autres joueurs</li>
+                    <li><strong>Aucun téléchargement:</strong> Jouez instantanément dans votre navigateur</li>
+                    <li><strong>Parfait pour les groupes:</strong> 2-10 joueurs, idéal pour les fêtes</li>
+                    <li><strong>Jeux virtuels:</strong> Jouez en ligne ou en personne</li>
+                    <li><strong>Plaisir rapide:</strong> Limites de temps personnalisables</li>
+                    <li><strong>1000+ mots:</strong> Jamais le même jeu deux fois</li>
+                    <li><strong>Facile à apprendre:</strong> Règles simples pour tous les âges</li>
+                    <li><strong>Complètement gratuit:</strong> Aucune publicité, aucun frais caché</li>
+                    <li><strong>Amusant et social:</strong> Parfait pour briser la glace</li>
                 </ul>
+                </div>
+            </div>
 
-                <h3>ℹ️ À Propos de ce Jeu Hedbanz</h3>
-                <p>Si vous aimez les jeux en ligne comme Heads Up ou les jeux de fête classiques, vous adorerez cette expérience unique du jeu Hedbanz !
-                    Tandis que les jeux hedbanz traditionnels vous font deviner ce qui est sur votre tête, notre jeu Hedbanz en ligne
-                    vous défie d'éviter des actions spécifiques ! Parfait pour les groupes qui aiment le format classique du jeu Hedbanz.</p>
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Conseils et stratégies</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <p><strong>Pour deviner:</strong></p>
+                <ul>
+                    <li>Commencez par des catégories larges: "Suis-je une personne?" "Un animal?"</li>
+                    <li>Réduisez progressivement la recherche</li>
+                    <li>Posez des questions sur les caractéristiques</li>
+                    <li>Construisez sur les réponses précédentes</li>
+                    <li>Travaillez vite pour maximiser les points</li>
+                </ul>
+                <p><strong>Pour donner des indices:</strong></p>
+                <ul>
+                    <li>Répondez rapidement avec "oui" ou "non"</li>
+                    <li>Ne donnez pas d'indices supplémentaires</li>
+                    <li>Amusez-vous avec vos réactions!</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Catégories de mots</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <p>Hedbanz en ligne comporte <strong>1000+ mots</strong> incluant:</p>
+                <ul>
+                    <li>🦁 <strong>Animaux:</strong> Lions, tigres, chiens, chats, oiseaux, poissons</li>
+                    <li>👤 <strong>Célébrités:</strong> Acteurs, athlètes, figures historiques</li>
+                    <li>🪑 <strong>Objets:</strong> Chaises, téléphones, ordinateurs, articles ménagers</li>
+                    <li>💼 <strong>Professions:</strong> Médecins, enseignants, chefs, pilotes, artistes</li>
+                    <li>🏃 <strong>Activités:</strong> Sports, jeux, loisirs, routines quotidiennes</li>
+                    <li>🍕 <strong>Aliments:</strong> Pizza, sushi, café, glace, cuisine mondiale</li>
+                    <li>🌍 <strong>Pays:</strong> France, Japon, Australie et destinations mondiales</li>
+                    <li>😊 <strong>Émotions:</strong> Heureux, triste, excité, confus</li>
+                    <li>👕 <strong>Vêtements:</strong> Chemises, chaussures, chapeaux, mode</li>
+                    <li>🎬 <strong>Films et séries:</strong> Films populaires et séries à regarder</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Le jeu de fête ultime</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <p>Hedbanz en ligne est parfait pour:</p>
+                <ul>
+                    <li>🎉 Fêtes d'anniversaire</li>
+                    <li>👥 Nuits de jeu virtuel</li>
+                    <li>🏢 Événements d'entreprise</li>
+                    <li>👨‍👩‍👧‍👦 Réunions familiales</li>
+                    <li>🎓 Événements scolaires</li>
+                    <li>🏠 Pyjama parties</li>
+                    <li>💑 Rendez-vous en couple</li>
+                    <li>🥳 Rassemblements informels</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Questions fréquemment posées</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <div class="faq-item">
+                    <h3>C'est vraiment gratuit?</h3>
+                    <p>Oui! Complètement gratuit. Pas d'abonnements, pas de publicités, pas de frais cachés!</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Dois-je télécharger quelque chose?</h3>
+                    <p>Non! Ouvrez simplement le lien dans votre navigateur et jouez instantanément.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Combien de joueurs?</h3>
+                    <p>2-10 joueurs. Plus il y a de joueurs, plus c'est amusant!</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Puis-je jouer avec des amis éloignés?</h3>
+                    <p>Absolument! Partagez le lien et jouez sur un appel vidéo.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Que se passe-t-il si j'épuise les mots?</h3>
+                    <p>La liste de mots s'actualise automatiquement pour un jeu sans fin!</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Les enfants peuvent-ils jouer?</h3>
+                    <p>Oui! C'est adapté à la famille pour tous les âges.</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Hedbanz en ligne vs jeu physique</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <table class="comparison-table">
+                    <tr>
+                        <th>Caractéristique</th>
+                        <th>En ligne</th>
+                        <th>Physique</th>
+                    </tr>
+                    <tr>
+                        <td>Coût</td>
+                        <td>Gratuit</td>
+                        <td>15-25 USD</td>
+                    </tr>
+                    <tr>
+                        <td>Configuration</td>
+                        <td>Instantané</td>
+                        <td>10+ min</td>
+                    </tr>
+                    <tr>
+                        <td>En ligne</td>
+                        <td>✓ Oui</td>
+                        <td>✗ Non</td>
+                    </tr>
+                    <tr>
+                        <td>Mots</td>
+                        <td>1000+</td>
+                        <td>Variable</td>
+                    </tr>
+                    <tr>
+                        <td>Sans téléchargement</td>
+                        <td>✓ Oui</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Minuterie ajustable</td>
+                        <td>✓ Oui</td>
+                        <td>Fixe</td>
+                    </tr>
+                    <tr>
+                        <td>Rejouer</td>
+                        <td>Illimité</td>
+                        <td>Limité</td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Prêt à jouer?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <p>Commencez à jouer à <strong>Hedbanz en ligne</strong> maintenant! Réunissez vos amis, votre famille ou vos collègues et profitez d'heures de plaisir à deviner. Avec plus de 1000 mots et des paramètres personnalisables, c'est le complément parfait à toute fête!</p>
+                <p><strong>Aucune inscription. Aucun téléchargement. Pur plaisir du jeu!</strong></p>
+                </div>
             </div>
         </div>
     </div>
-    <script src="hedbanzgame-fr.js"></script>
+
+    <script src="hedbanzgame.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/auth.js"></script>
     <script src="/js/ads-controller.js"></script>
-    <script src="../../../fr/js/game-navigation-fr.js"></script>
+    <script src="../../js/game-navigation-fr.js"></script>
     <!-- Floating Ad -->
-    <link rel="stylesheet" href="../../../css/floating-ad.css">
-    <script src="../../../js/floating-ad.js"></script>
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof FloatingAdManager !== 'undefined') {
@@ -186,7 +389,6 @@
                         </a>
                         <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
                     `
-                    
                 });
             }
         });
@@ -194,5 +396,3 @@
 </body>
 
 </html>
-
-

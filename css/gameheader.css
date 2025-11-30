@@ -422,7 +422,9 @@
     }
 }
 
+@media (max-width: 768px) {
     .quick-games-bar {
+        position: fixed;
         bottom: 15px;
         left: 15px;
         transform: none;
@@ -433,6 +435,8 @@
         flex-direction: column;
         justify-content: center;
         overflow: hidden;
+        z-index: 50;
+        pointer-events: auto;
     }
 
     .quick-games-bar.open {
@@ -520,6 +524,7 @@
     }
 
     .quick-games-bar {
+        position: fixed;
         bottom: 20px;
         left: 20px;
         transform: none;
@@ -530,6 +535,8 @@
         flex-direction: column;
         justify-content: center;
         overflow: hidden;
+        z-index: 50;
+        pointer-events: auto;
     }
 
     .quick-games-bar.open {
