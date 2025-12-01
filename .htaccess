@@ -1,3 +1,19 @@
+# Redirect .html extensions to non-.html URLs (SEO friendly)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# Redirect TruthorDare folder with TruthorDare filename to TruthOrDare
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+/TruthorDare)/TruthorDare$ $1/TruthOrDare [R=301,L]
+
+# Rewrite requests to serve .html files without requiring extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ $1.html [L]
+
 # Enable compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
