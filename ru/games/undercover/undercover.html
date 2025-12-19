@@ -206,8 +206,8 @@
                 <img src="./undercover.png" alt="Undercover Game Logo - Social Deduction Party Game" class="game-logo"
                     width="200" height="200" loading="lazy">
             </div>
-            <h1 class="cute-title">Undercover Game Online</h1>
-            <p class="text-light mb-0">Find the Undercover Among Us!</p>
+            <h1 class="cute-title">Игра Подпольщик Онлайн</h1>
+            <p class="text-light mb-0">Найди подпольщика среди нас!</p>
         </div>
 
         <!-- Установка игры Section -->
@@ -218,24 +218,24 @@
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label for="playerCount" class="text-light mb-2">Number of Игрокs (4-20)</label>
+                            <label for="playerCount" class="text-light mb-2">Количество игроков (4-20)</label>
                             <input type="number" class="form-control" id="playerCount" min="4" max="20" value="4"
                                 aria-describedby="playerCountHelp">
-                            <small id="playerCountHelp" class="form-text text-light">Choose between 4 to 20
-                                players</small>
+                            <small id="playerCountHelp" class="form-text text-light">Выберите от 4 до 20
+                                игроков</small>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label for="undercoverCount" class="text-light mb-2">Number of Spies (1-3)</label>
+                            <label for="undercoverCount" class="text-light mb-2">Количество шпионов (1-3)</label>
                             <input type="number" class="form-control" id="undercoverCount" min="1" max="3" value="1"
                                 aria-describedby="spyCountHelp">
-                            <small id="spyCountHelp" class="form-text text-light">Choose number of spies</small>
+                            <small id="spyCountHelp" class="form-text text-light">Выберите количество шпионов</small>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label for="whiteCount" class="text-light mb-2">Number of Blank</label>
+                            <label for="whiteCount" class="text-light mb-2">Количество пустых карт</label>
                             <input type="number" class="form-control" id="whiteCount" min="0" value="0">
                         </div>
                     </div>
@@ -243,45 +243,45 @@
 
                 <div class="mt-4">
                     <div class="mb-4">
-                        <label class="text-light mb-2 d-block" for="categorySelect">Select Word Category:</label>
-                        <select class="form-select" id="categorySelect" aria-label="Select word category">
-                            <option value="all">All Категории (Mixed)</option>
+                        <label class="text-light mb-2 d-block" for="categorySelect">Выберите категорию слов:</label>
+                        <select class="form-select" id="categorySelect" aria-label="Выберите категорию слов">
+                            <option value="all">Все категории (смешанные)</option>
                             <optgroup label="Категории">
-                                <option value="Food & Drink" selected>Food & Drink</option>
-                                <option value="Animals">Animals</option>
-                                <option value="Objects">Objects</option>
-                                <option value="Jobs & Roles">Jobs & Roles</option>
-                                <option value="Entertainment">Entertainment</option>
-                                <option value="Nature & Weather">Nature & Weather</option>
-                                <option value="Funny">Funny</option>
-                                <option value="Movies">Movies</option>
-                                <option value="Internet Slang">Internet Slang</option>
-                                <option value="Sports & Fitness">Sports & Fitness</option>
-                                <option value="Technology & Digital">Technology & Digital</option>
-                                <option value="Travel & Places">Travel & Places</option>
-                                <option value="Relationships">Relationships</option>
-                                <option value="Brands & Companies">Brands & Companies</option>
-                                <option value="Historical Figures">Historical Figures</option>
+                                <option value="Еда и напитки" selected>Еда и напитки</option>
+                                <option value="Животные">Животные</option>
+                                <option value="Предметы">Предметы</option>
+                                <option value="Профессии и роли">Профессии и роли</option>
+                                <option value="Развлечения">Развлечения</option>
+                                <option value="Природа и погода">Природа и погода</option>
+                                <option value="Смешное">Смешное</option>
+                                <option value="Фильмы">Фильмы</option>
+                                <option value="Интернет-сленг">Интернет-сленг</option>
+                                <option value="Спорт и фитнес">Спорт и фитнес</option>
+                                <option value="Технологии и цифровое">Технологии и цифровое</option>
+                                <option value="Путешествия и места">Путешествия и места</option>
+                                <option value="Отношения">Отношения</option>
+                                <option value="Бренды и компании">Бренды и компании</option>
+                                <option value="Исторические личности">Исторические личности</option>
                             </optgroup>
                         </select>
-                        <small class="text-light d-block mt-2">All categories are free for all users!</small>
+                        <small class="text-light d-block mt-2">Все категории бесплатны для всех пользователей!</small>
                     </div>
 
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="useCustomWords">
-                        <label class="form-check-label" for="useCustomWords">Use Custom Words</label>
+                        <label class="form-check-label" for="useCustomWords">Использовать свои слова</label>
                     </div>
                     <div id="customWordsSection" class="mt-3" style="display: none;">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="customCivilianWord" class="text-light mb-2">Civilian Word</label>
+                                    <label for="customCivilianWord" class="text-light mb-2">Слово мирных жителей</label>
                                     <input type="text" class="form-control" id="customCivilianWord">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="customUndercoverWord" class="text-light mb-2">Undercover Word</label>
+                                    <label for="customUndercoverWord" class="text-light mb-2">Слово подпольщика</label>
                                     <input type="text" class="form-control" id="customUndercoverWord">
                                 </div>
                             </div>
@@ -291,7 +291,7 @@
 
                 <div class="text-center mt-4">
                     <button class="btn btn-pink btn-lg px-5 rounded-pill" onclick="startGame()">
-                        <i class="fas fa-play me-2"></i>Start Game
+                        <i class="fas fa-play me-2"></i>Начать игру
                     </button>
                 </div>
             </div>
@@ -304,22 +304,22 @@
                     <div class="mb-4">
                         <i class="fas fa-crown text-warning" style="font-size: 4rem;"></i>
                     </div>
-                    <h3 class="h4 mb-3 text-light">Unlock Premium Категории</h3>
-                    <p class="text-light mb-4">This category requires a premium membership. Upgrade to unlock:</p>
+                    <h3 class="h4 mb-3 text-light">Разблокировать премиум категории</h3>
+                    <p class="text-light mb-4">Эта категория требует премиум-членства. Обновитесь, чтобы разблокировать:</p>
                     <ul class="text-light text-start mb-4" style="max-width: 300px; margin: 0 auto;">
-                        <li>Sports & Fitness - Health themes</li>
-                        <li>Technology & Digital - Modern tech</li>
-                        <li>Travel & Places - Worldwide locations</li>
-                        <li>Relationships - Emotional topics</li>
-                        <li>Brands & Companies - Famous brands</li>
-                        <li>Historical Figures - Historical knowledge</li>
+                        <li>Спорт и фитнес - Темы здоровья</li>
+                        <li>Технологии и цифровое - Современные технологии</li>
+                        <li>Путешествия и места - Мировые локации</li>
+                        <li>Отношения - Эмоциональные темы</li>
+                        <li>Бренды и компании - Известные бренды</li>
+                        <li>Исторические личности - Исторические знания</li>
                     </ul>
                     <div class="d-flex gap-2 justify-content-center mt-4">
                         <button class="btn btn-pink btn-lg px-4 rounded-pill" onclick="window.location.href='/premium.html'">
-                            <i class="fas fa-crown me-2"></i>Upgrade Now
+                            <i class="fas fa-crown me-2"></i>Обновить сейчас
                         </button>
                         <button class="btn btn-outline-pink btn-lg px-4 rounded-pill" onclick="closePremiumModal()">
-                            Cancel
+                            Отмена
                         </button>
                     </div>
                 </div>
@@ -329,19 +329,19 @@
         <!-- Word Display Section -->
         <div id="word-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
             <div class="card-body p-4 text-center">
-                <h3 class="h5 mb-4 text-light">Игрок <span id="currentИгрок" class="text-pink">1</span>'s Turn</h3>
+                <h3 class="h5 mb-4 text-light">Ход игрока <span id="currentPlayer" class="text-pink">1</span></h3>
                 <div class="flip-card mx-auto">
                     <div class="flip-card-inner">
                         <div class="flip-card-front d-flex align-items-center justify-content-center">
-                            <div class="cute-text">Tap to see your word</div>
+                            <div class="cute-text">Нажмите, чтобы увидеть ваше слово</div>
                         </div>
                         <div class="flip-card-back d-flex align-items-center justify-content-center">
                             <div id="wordDisplay" class="cute-text"></div>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-pink btn-lg px-5 rounded-pill mt-4" onclick="nextИгрок()">
-                    <i class="fas fa-arrow-right me-2"></i>Дальше Игрок
+                <button class="btn btn-pink btn-lg px-5 rounded-pill mt-4" onclick="nextPlayer()">
+                    <i class="fas fa-arrow-right me-2"></i>Следующий игрок
                 </button>
             </div>
         </div>
@@ -349,19 +349,19 @@
         <!-- Game Play Section -->
         <div id="game-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
             <div class="card-body p-4" id="game-content">
-                <h3 class="h5 mb-4 text-light">Игрокs</h3>
+                <h3 class="h5 mb-4 text-light">Игроки</h3>
                 <form id="voteForm">
                     <div class="player-list rounded-4 p-3 mb-4" id="playerList">
-                        <!-- Игрокs will be added here dynamically -->
+                        <!-- Игроки будут добавлены здесь динамически -->
                     </div>
                     <div class="text-center">
                         <button type="button" class="btn btn-pink btn-lg px-5 rounded-pill mb-3"
-                            onclick="eliminateИгрок()">
-                            <i class="fas fa-user-minus me-2"></i>Eliminate Игрок
+                            onclick="eliminatePlayer()">
+                            <i class="fas fa-user-minus me-2"></i>Исключить игрока
                         </button>
                         <button type="button" class="btn btn-outline-pink btn-lg px-5 rounded-pill"
                             onclick="resetGame()">
-                            <i class="fas fa-redo me-2"></i>Play Again
+                            <i class="fas fa-redo me-2"></i>Играть снова
                         </button>
                     </div>
                 </form>
@@ -370,54 +370,54 @@
         <!-- Правила игры Section -->
         <section class="card bg-darker shadow-lg mb-4 border-pink rounded-4">
             <div class="card-body p-4">
-                <h2 class="card-title h4 mb-4 text-light">Как играть Undercover Game Online</h2>
+                <h2 class="card-title h4 mb-4 text-light">Как играть в онлайн-игру Подпольщик</h2>
                 <div class="text-light">
-                    <h3 class="h6 text-pink mb-3">Game Features:</h3>
+                    <h3 class="h6 text-pink mb-3">Возможности игры:</h3>
                     <ul class="mb-4">
-                        <li><strong>Undercover & Mr White Modes:</strong> Play as Undercover (find the spy) or Mr White (blank card challenge) for varied gameplay</li>
-                        <li><strong>1500+ Word Pairs:</strong> Over 1500 word pairs across 15 diverse categories including Food & Drink, Animals, Objects, Jobs & Roles, Entertainment, Nature & Weather, Funny, Sports & Fitness, Technology & Digital, Travel & Places, Relationships, Brands & Companies, Historical Figures, Movies, and Internet Slang</li>
-                        <li><strong>Custom Words:</strong> Create your own word pairs for personalized Undercover or Mr White gameplay</li>
-                        <li><strong>Mobile Optimized:</strong> Large, touch-friendly selection buttons for easy gameplay
-                            on any device</li>
-                        <li><strong>Flexible Игрок Count:</strong> Support for 4-20 players with customizable spy and
-                            blank card (Mr White) options</li>
-                        <li><strong>Instant Setup:</strong> No registration required, start playing immediately</li>
+                        <li><strong>Режимы Подпольщик и Мистер Белый:</strong> Играйте как Подпольщик (найдите шпиона) или Мистер Белый (испытание с пустой картой) для разнообразного игрового процесса</li>
+                        <li><strong>Более 1500 пар слов:</strong> Более 1500 пар слов в 15 различных категориях, включая Еда и напитки, Животные, Предметы, Профессии и роли, Развлечения, Природа и погода, Смешное, Спорт и фитнес, Технологии и цифровое, Путешествия и места, Отношения, Бренды и компании, Исторические личности, Фильмы и Интернет-сленг</li>
+                        <li><strong>Свои слова:</strong> Создавайте свои собственные пары слов для персонализированной игры в Подпольщик или Мистер Белый</li>
+                        <li><strong>Оптимизировано для мобильных:</strong> Большие, удобные для нажатия кнопки выбора для легкой игры
+                            на любом устройстве</li>
+                        <li><strong>Гибкое количество игроков:</strong> Поддержка от 4 до 20 игроков с настраиваемыми параметрами шпионов и
+                            пустых карт (Мистер Белый)</li>
+                        <li><strong>Мгновенная настройка:</strong> Регистрация не требуется, начинайте играть немедленно</li>
                     </ul>
 
-                    <h3 class="h6 text-pink mb-3">Как играть Undercover:</h3>
+                    <h3 class="h6 text-pink mb-3">Как играть в Подпольщик:</h3>
                     <ol class="mb-4">
-                        <li>Each player receives a secret word - most players get the same "civilian" word, while
-                            undercover players get a similar but different word.</li>
-                        <li>Игрокs take turns describing their word without saying it directly.</li>
-                        <li>After each round, use our large, easy-to-tap buttons to vote on who you think is the
-                            undercover.</li>
-                        <li>The person with the most votes is eliminated.</li>
-                        <li>Game continues until either all undercover players are found (civilians win) or number of
-                            undercover equals civilians (undercover wins).</li>
+                        <li>Каждый игрок получает секретное слово - большинство игроков получают одинаковое "мирное" слово, в то время как
+                            подпольщики получают похожее, но отличающееся слово.</li>
+                        <li>Игроки по очереди описывают свое слово, не называя его напрямую.</li>
+                        <li>После каждого раунда используйте наши большие, удобные для нажатия кнопки, чтобы проголосовать за того, кто, по вашему мнению, является
+                            подпольщиком.</li>
+                        <li>Человек с наибольшим количеством голосов исключается.</li>
+                        <li>Игра продолжается до тех пор, пока либо все подпольщики не будут найдены (побеждают мирные жители), либо количество
+                            подпольщиков не станет равным количеству мирных жителей (побеждают подпольщики).</li>
                     </ol>
 
-                    <h3 class="h6 text-pink mb-3">Как играть Mr White (Blank Card Mode):</h3>
+                    <h3 class="h6 text-pink mb-3">Как играть в Мистер Белый (режим пустой карты):</h3>
                     <ol class="mb-4">
-                        <li>One or more players receive a blank card (Mr White) instead of the regular word.</li>
-                        <li>Mr White must listen to other players' descriptions and try to figure out the word without revealing they don't know it.</li>
-                        <li>Other players vote to eliminate the person they think is Mr White.</li>
-                        <li>If Mr White is eliminated before discovering the word, civilians win. If Mr White guesses correctly, they win!</li>
-                        <li>Mr White adds an extra layer of deception and challenge to the game.</li>
+                        <li>Один или несколько игроков получают пустую карту (Мистер Белый) вместо обычного слова.</li>
+                        <li>Мистер Белый должен слушать описания других игроков и пытаться угадать слово, не раскрывая того, что он его не знает.</li>
+                        <li>Другие игроки голосуют за исключение человека, который, по их мнению, является Мистером Белым.</li>
+                        <li>Если Мистер Белый исключен до того, как угадает слово, побеждают мирные жители. Если Мистер Белый угадывает правильно, он побеждает!</li>
+                        <li>Мистер Белый добавляет дополнительный уровень обмана и вызова в игру.</li>
                     </ol>
 
-                    <h3 class="h6 text-pink mb-3">Pro Tips:</h3>
+                    <h3 class="h6 text-pink mb-3">Профессиональные советы:</h3>
                     <ul class="mb-4">
-                        <li><strong>Be Subtle:</strong> Avoid revealing whether you're a civilian, undercover, or Mr White in your descriptions!</li>
-                        <li><strong>Listen Carefully:</strong> Pay attention to subtle differences in how others describe their words - especially for Mr White detection</li>
-                        <li><strong>Mr White Strategy:</strong> If you're Mr White, listen for common themes and clues. Pay attention to what descriptions have in common!</li>
-                        <li><strong>Spot Mr White:</strong> Look for players whose descriptions are vague, overly general, or seem uncertain - they might be Mr White!</li>
-                        <li><strong>Use Категории Strategically:</strong> Different word categories offer varying difficulty levels for both Undercover and Mr White modes</li>
-                        <li><strong>Mobile Friendly:</strong> Our optimized interface makes voting quick and easy on phones and tablets</li>
+                        <li><strong>Будьте тонкими:</strong> Избегайте раскрытия того, являетесь ли вы мирным жителем, подпольщиком или Мистером Белым в своих описаниях!</li>
+                        <li><strong>Слушайте внимательно:</strong> Обращайте внимание на тонкие различия в том, как другие описывают свои слова - особенно для обнаружения Мистера Белого</li>
+                        <li><strong>Стратегия Мистера Белого:</strong> Если вы Мистер Белый, слушайте общие темы и подсказки. Обращайте внимание на то, что общего в описаниях!</li>
+                        <li><strong>Обнаружить Мистера Белого:</strong> Ищите игроков, чьи описания расплывчаты, слишком общие или кажутся неуверенными - они могут быть Мистером Белым!</li>
+                        <li><strong>Используйте категории стратегически:</strong> Различные категории слов предлагают различные уровни сложности как для режима Подпольщик, так и для режима Мистер Белый</li>
+                        <li><strong>Удобно для мобильных устройств:</strong> Наш оптимизированный интерфейс делает голосование быстрым и легким на телефонах и планшетах</li>
                     </ul>
 
-                    <p class="mb-0"><strong>Perfect for:</strong> Office parties, family gatherings, team building
-                        events, online meetings, classroom activities, and social gatherings. The large button interface
-                        ensures everyone can participate easily!</p>
+                    <p class="mb-0"><strong>Идеально для:</strong> Офисных вечеринок, семейных встреч, корпоративных
+                        мероприятий, онлайн-встреч, школьных занятий и общественных собраний. Интерфейс с большими кнопками
+                        гарантирует, что каждый может легко участвовать!</p>
                 </div>
             </div>
         </section>
@@ -431,18 +431,18 @@
             <!-- FAQ Section -->
         <section class="card bg-darker shadow-lg mb-4 border-pink rounded-4">
             <div class="card-body p-4">
-                <h2 class="card-title h4 mb-4 text-light">Frequently Asked Вопросы</h2>
+                <h2 class="card-title h4 mb-4 text-light">Часто задаваемые вопросы</h2>
                 <div class="accordion" id="faqAccordion">
                     <!-- Question 1 -->
                     <div class="accordion-item bg-dark border-pink">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                How many players can play?
+                                Сколько игроков может играть?
                             </button>
                         </h2>
                         <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body bg-dark text-light">
-                                Ты can play with 4-20 players. The game works best with groups of 6-12 people for optimal gameplay experience.
+                                Вы можете играть с 4-20 игроками. Игра лучше всего работает с группами из 6-12 человек для оптимального игрового опыта.
                             </div>
                         </div>
                     </div>
@@ -451,12 +451,12 @@
                     <div class="accordion-item bg-dark border-pink">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                Is it free?
+                                Это бесплатно?
                             </button>
                         </h2>
                         <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body bg-dark text-light">
-                                Yes! The game is completely free to play. All 15 word categories and 1500+ word pairs are available for all users.
+                                Да! Игра полностью бесплатна. Все 15 категорий слов и более 1500 пар слов доступны для всех пользователей.
                             </div>
                         </div>
                     </div>
@@ -465,12 +465,12 @@
                     <div class="accordion-item bg-dark border-pink">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                Do I need to download anything?
+                                Нужно ли что-то скачивать?
                             </button>
                         </h2>
                         <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body bg-dark text-light">
-                                No! The game runs entirely in your browser. Just visit the website and start playing instantly - no download required!
+                                Нет! Игра полностью работает в вашем браузере. Просто зайдите на сайт и начните играть мгновенно - загрузка не требуется!
                             </div>
                         </div>
                     </div>
@@ -479,12 +479,12 @@
                     <div class="accordion-item bg-dark border-pink">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                Can we play with one phone?
+                                Можем ли мы играть с одним телефоном?
                             </button>
                         </h2>
                         <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body bg-dark text-light">
-                                Yes! Ты can pass one phone around to each player to see their word. The game is designed to work perfectly with a single device or multiple devices.
+                                Да! Вы можете передавать один телефон каждому игроку, чтобы увидеть свое слово. Игра разработана для идеальной работы с одним устройством или несколькими устройствами.
                             </div>
                         </div>
                     </div>
@@ -493,13 +493,13 @@
                     <div class="accordion-item bg-dark border-pink">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                                What's the difference between Undercover and Mr White?
+                                В чем разница между Подпольщиком и Мистером Белым?
                             </button>
                         </h2>
                         <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body bg-dark text-light">
-                                <strong>Undercover:</strong> One player gets a slightly different word and must hide their identity while others figure out who they are.<br><br>
-                                <strong>Mr White:</strong> One or more players get a blank card instead of a word and must guess the word from other players' descriptions.
+                                <strong>Подпольщик:</strong> Один игрок получает немного другое слово и должен скрывать свою личность, пока другие пытаются выяснить, кто он.<br><br>
+                                <strong>Мистер Белый:</strong> Один или несколько игроков получают пустую карту вместо слова и должны угадать слово по описаниям других игроков.
                             </div>
                         </div>
                     </div>
@@ -508,12 +508,12 @@
                     <div class="accordion-item bg-dark border-pink">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
-                                How long does a game take?
+                                Сколько времени занимает игра?
                             </button>
                         </h2>
                         <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body bg-dark text-light">
-                                A typical game takes 10-20 minutes depending on how many players are discussing and voting. Ты can play multiple rounds to keep the fun going!
+                                Типичная игра занимает 10-20 минут в зависимости от того, сколько игроков обсуждают и голосуют. Вы можете играть несколько раундов, чтобы продолжить веселье!
                             </div>
                         </div>
                     </div>
@@ -522,12 +522,12 @@
                     <div class="accordion-item bg-dark border-pink">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
-                                Can I use custom words?
+                                Могу ли я использовать свои слова?
                             </button>
                         </h2>
                         <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body bg-dark text-light">
-                                Absolutely! Ты can enter your own custom word pairs in the setup section. This is perfect for themed parties or inside jokes!
+                                Конечно! Вы можете ввести свои собственные пары слов в разделе настройки. Это идеально подходит для тематических вечеринок или внутренних шуток!
                             </div>
                         </div>
                     </div>
@@ -536,12 +536,12 @@
                     <div class="accordion-item bg-dark border-pink">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
-                                What word categories are available?
+                                Какие категории слов доступны?
                             </button>
                         </h2>
                         <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body bg-dark text-light">
-                                We have 15 diverse categories: Food & Drink, Animals, Objects, Jobs & Roles, Entertainment, Nature & Weather, Funny, Movies, Internet Slang, Sports & Fitness, Technology & Digital, Travel & Places, Relationships, Brands & Companies, and Historical Figures. Over 1500 word pairs in total!
+                                У нас есть 15 различных категорий: Еда и напитки, Животные, Предметы, Профессии и роли, Развлечения, Природа и погода, Смешное, Фильмы, Интернет-сленг, Спорт и фитнес, Технологии и цифровое, Путешествия и места, Отношения, Бренды и компании и Исторические личности. Более 1500 пар слов в общей сложности!
                             </div>
                         </div>
                     </div>
@@ -620,4 +620,5 @@
 </body>
 
 </html>
+
 

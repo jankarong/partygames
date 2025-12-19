@@ -1,238 +1,238 @@
-// Game words - 1000+ simple, common words
+// Слова для игры - 1000+ простых, распространенных слов
 const WORDS = [
-    // Animals (80)
-    "Lion", "Tiger", "Elephant", "Giraffe", "Zebra", "Monkey", "Penguin", "Eagle", "Dolphin", "Shark",
-    "Dog", "Cat", "Bear", "Rabbit", "Fox", "Owl", "Parrot", "Snake", "Whale", "Butterfly",
-    "Ant", "Bee", "Spider", "Frog", "Fish", "Turtle", "Crocodile", "Pig", "Cow", "Horse",
-    "Chicken", "Duck", "Swan", "Peacock", "Flamingo", "Penguin", "Seagull", "Hawk", "Dove", "Pigeon",
-    "Sparrow", "Robin", "Bluebird", "Hummingbird", "Woodpecker", "Raven", "Crow", "Alligator", "Lizard", "Iguana",
-    "Python", "Cobra", "Tortoise", "Salamander", "Toad", "Salmon", "Trout", "Tuna", "Goldfish", "Seahorse",
-    "Octopus", "Squid", "Jellyfish", "Starfish", "Crab", "Lobster", "Shrimp", "Leopard", "Jaguar", "Cougar",
-    "Puma", "Hyena", "Wolf", "Coyote", "Jackal", "Badger", "Otter", "Beaver", "Squirrel", "Chipmunk",
-    "Hamster", "Mouse", "Rat", "Hedgehog", "Porcupine", "Skunk", "Raccoon", "Kangaroo", "Koala", "Panda",
+    // Животные (80)
+    "Лев", "Тигр", "Слон", "Жираф", "Зебра", "Обезьяна", "Пингвин", "Орёл", "Дельфин", "Акула",
+    "Собака", "Кошка", "Медведь", "Кролик", "Лиса", "Сова", "Попугай", "Змея", "Кит", "Бабочка",
+    "Муравей", "Пчела", "Паук", "Лягушка", "Рыба", "Черепаха", "Крокодил", "Свинья", "Корова", "Лошадь",
+    "Курица", "Утка", "Лебедь", "Павлин", "Фламинго", "Пингвин", "Чайка", "Ястреб", "Голубь", "Голубь",
+    "Воробей", "Малиновка", "Синяя птица", "Колибри", "Дятел", "Ворон", "Ворона", "Аллигатор", "Ящерица", "Игуана",
+    "Питон", "Кобра", "Черепаха", "Саламандра", "Жаба", "Лосось", "Форель", "Тунец", "Золотая рыбка", "Морской конёк",
+    "Осьминог", "Кальмар", "Медуза", "Морская звезда", "Краб", "Омар", "Креветка", "Леопард", "Ягуар", "Пума",
+    "Пума", "Гиена", "Волк", "Койот", "Шакал", "Барсук", "Выдра", "Бобр", "Белка", "Бурундук",
+    "Хомяк", "Мышь", "Крыса", "Ёж", "Дикобраз", "Скунс", "Енот", "Кенгуру", "Коала", "Панда",
 
-    // Famous People (50)
-    "Einstein", "Marilyn Monroe", "Elvis", "Michael Jackson", "Taylor Swift",
-    "Leonardo DiCaprio", "Oprah", "Bill Gates", "Steve Jobs", "Elon Musk",
-    "Beyonce", "Jay-Z", "Dwayne Johnson", "Tom Cruise", "Brad Pitt",
-    "Angelina Jolie", "Jennifer Aniston", "George Clooney", "Matt Damon", "Christian Bale",
-    "Robert Downey Jr", "Chris Evans", "Scarlett Johansson", "Emma Stone", "Johnny Depp",
-    "Will Smith", "Tom Hanks", "Яryl Streep", "Denzel Washington", "Morgan Freeman",
-    "Samuel L Jackson", "Keanu Reeves", "Al Pacino", "Jack Nicholson", "Jack Black",
-    "Jim Carrey", "Eddie Murphy", "Chris Rock", "Jerry Seinfeld", "Conan O'Brien",
-    "David Beckham", "Cristiano Ronaldo", "Lionel Яssi", "Usain Bolt", "Michael Jordan",
-    "LeBron James", "Tiger Woods", "Roger Federer", "Serena Williams", "Venus Williams",
+    // Знаменитости (50)
+    "Эйнштейн", "Мэрилин Монро", "Элвис Пресли", "Майкл Джексон", "Тейлор Свифт",
+    "Леонардо Ди Каприо", "Опра Уинфри", "Билл Гейтс", "Стив Джобс", "Илон Маск",
+    "Бейонсе", "Джей-Зи", "Дуэйн Джонсон", "Том Круз", "Брэд Питт",
+    "Анджелина Джоли", "Дженнифер Энистон", "Джордж Клуни", "Мэтт Дэймон", "Кристиан Бэйл",
+    "Роберт Дауни Младший", "Крис Эванс", "Скарлетт Йоханссон", "Эмма Стоун", "Джонни Депп",
+    "Уилл Смит", "Том Хэнкс", "Мерил Стрип", "Дензел Вашингтон", "Морган Фриман",
+    "Сэмюэл Л. Джексон", "Киану Ривз", "Аль Пачино", "Джек Николсон", "Джек Блэк",
+    "Джим Керри", "Эдди Мёрфи", "Крис Рок", "Джерри Сайнфелд", "Конан О'Брайен",
+    "Дэвид Бекхэм", "Криштиану Роналду", "Лионель Месси", "Усэйн Болт", "Майкл Джордан",
+    "Леброн Джеймс", "Тайгер Вудс", "Роджер Федерер", "Серена Уильямс", "Винус Уильямс",
 
-    // Objects (100)
-    "Bicycle", "Telephone", "Television", "Computer", "Coffee Cup", "Bed", "Door", "Window", "Chair", "Table",
-    "Lamp", "Clock", "Book", "Pen", "Hat", "Shoe", "Spoon", "Knife", "Plate", "Watch",
-    "Car", "Bus", "Train", "Airplane", "Boat", "House", "Building", "Castle", "Tower", "Bridge",
-    "Sofa", "Couch", "Desk", "Cabinet", "Shelf", "Refrigerator", "Oven", "Microwave", "Washing Machine", "Phone",
-    "Tablet", "Laptop", "Monitor", "Keyboard", "Mouse", "Headphones", "Speaker", "Camera", "Mirror", "Picture",
-    "Painting", "Vase", "Pot", "Pan", "Kettle", "Blender", "Toaster", "Toilet", "Bathtub", "Shower",
-    "Bag", "Backpack", "Wallet", "Purse", "Belt", "Scarf", "Glove", "Sock", "Shirt", "Pants",
-    "Dress", "Jacket", "Coat", "Sweater", "T-shirt", "Jeans", "Shorts", "Boots", "Sandals", "Slippers",
-    "Necklace", "Ring", "Bracelet", "Earring", "Glasses", "Sunglasses", "Bicycle", "Motorcycle", "Skateboard", "Scooter",
-    "Ball", "Football", "Basketball", "Soccer Ball", "Tennis Ball", "Golf Ball", "Bowling Ball", "Frisbee", "Boomerang", "Kite",
+    // Предметы (100)
+    "Велосипед", "Телефон", "Телевизор", "Компьютер", "Кофейная чашка", "Кровать", "Дверь", "Окно", "Стул", "Стол",
+    "Лампа", "Часы", "Книга", "Ручка", "Шляпа", "Ботинок", "Ложка", "Нож", "Тарелка", "Наручные часы",
+    "Автомобиль", "Автобус", "Поезд", "Самолёт", "Лодка", "Дом", "Здание", "Замок", "Башня", "Мост",
+    "Диван", "Диван", "Письменный стол", "Шкаф", "Полка", "Холодильник", "Духовка", "Микроволновка", "Стиральная машина", "Телефон",
+    "Планшет", "Ноутбук", "Монитор", "Клавиатура", "Мышь", "Наушники", "Динамик", "Камера", "Зеркало", "Картина",
+    "Живопись", "Ваза", "Горшок", "Сковорода", "Чайник", "Блендер", "Тостер", "Унитаз", "Ванна", "Душ",
+    "Сумка", "Рюкзак", "Кошелёк", "Дамская сумочка", "Ремень", "Шарф", "Перчатка", "Носок", "Рубашка", "Брюки",
+    "Платье", "Куртка", "Пальто", "Свитер", "Футболка", "Джинсы", "Шорты", "Ботинки", "Сандалии", "Тапочки",
+    "Ожерелье", "Кольцо", "Браслет", "Серьга", "Очки", "Солнцезащитные очки", "Велосипед", "Мотоцикл", "Скейтборд", "Самокат",
+    "Мяч", "Футбольный мяч", "Баскетбольный мяч", "Футбольный мяч", "Теннисный мяч", "Мяч для гольфа", "Шар для боулинга", "Фрисби", "Бумеранг", "Воздушный змей",
 
-    // Professions (60)
-    "Доктор", "Teacher", "Chef", "Police Officer", "Firefighter", "Pilot", "Nurse", "Astronaut", "Artist", "Musician",
-    "Lawyer", "Judge", "Accountant", "Engineer", "Architect", "Electrician", "Plumber", "Carpenter", "Яchanic", "Farmer",
-    "Scientist", "Mathematician", "Surgeon", "Dentist", "Veterinarian", "Photographer", "Cameraman", "Actor", "Singer", "Dancer",
-    "Comedian", "Director", "Producer", "Journalist", "Reporter", "Editor", "Writer", "Novelist", "Poet", "Painter",
-    "Sculptor", "Musician", "Composer", "Conductor", "DJ", "Coach", "Trainer", "Athlete", "Referee", "Umpire",
-    "Chef", "Cook", "Baker", "Bartender", "Waiter", "Waitress", "Host", "Security Guard", "Janitor", "Gardener",
-    "Florist", "Hairdresser", "Makeup Artist", "Fashion Designer", "Interior Designer", "Architect", "Mayor", "Governor", "President", "Business Person",
+    // Профессии (60)
+    "Доктор", "Учитель", "Повар", "Полицейский", "Пожарный", "Пилот", "Медсестра", "Космонавт", "Художник", "Музыкант",
+    "Адвокат", "Судья", "Бухгалтер", "Инженер", "Архитектор", "Электрик", "Сантехник", "Плотник", "Механик", "Фермер",
+    "Учёный", "Математик", "Хирург", "Стоматолог", "Ветеринар", "Фотограф", "Оператор", "Актёр", "Певец", "Танцор",
+    "Комик", "Режиссёр", "Продюсер", "Журналист", "Репортёр", "Редактор", "Писатель", "Романист", "Поэт", "Живописец",
+    "Скульптор", "Музыкант", "Композитор", "Дирижёр", "Диджей", "Тренер", "Инструктор", "Спортсмен", "Судья", "Судья",
+    "Шеф-повар", "Повар", "Пекарь", "Бармен", "Официант", "Официантка", "Хозяин", "Охранник", "Уборщик", "Садовник",
+    "Флорист", "Парикмахер", "Визажист", "Модельер", "Дизайнер интерьера", "Архитектор", "Мэр", "Губернатор", "Президент", "Бизнесмен",
 
-    // Activities (80)
-    "Swimming", "Running", "Dancing", "Singing", "Cooking", "Reading", "Drawing", "Writing", "Sleeping", "Skiing",
-    "Hiking", "Climbing", "Jumping", "Walking", "Jogging", "Stretching", "Exercising", "Weight Lifting", "Boxing", "Yoga",
-    "Яditation", "Breathing", "Thinking", "Dreaming", "Laughing", "Crying", "Smiling", "Frowning", "Talking", "Listening",
-    "Whispering", "Shouting", "Screaming", "Whistling", "Humming", "Playing Guitar", "Playing Piano", "Playing Drums", "Painting", "Sculpting",
-    "Sketching", "Cooking", "Baking", "Grilling", "Frying", "Boiling", "Cleaning", "Washing", "Drying", "Ironing",
-    "Folding", "Working", "Studying", "Learning", "Teaching", "Shopping", "Buying", "Selling", "Traveling", "Exploring",
-    "Eating", "Drinking", "Throwing", "Catching", "Kicking", "Pushing", "Pulling", "Driving", "Flying", "Surfing",
-    "Building", "Creating", "Making", "Fixing", "Repairing", "Opening", "Closing", "Sitting", "Standing", "Lying Down",
+    // Действия (80)
+    "Плавание", "Бег", "Танцы", "Пение", "Готовка", "Чтение", "Рисование", "Письмо", "Сон", "Катание на лыжах",
+    "Поход", "Скалолазание", "Прыжки", "Ходьба", "Бег трусцой", "Растяжка", "Тренировка", "Поднятие тяжестей", "Бокс", "Йога",
+    "Медитация", "Дыхание", "Размышление", "Мечтание", "Смех", "Плач", "Улыбка", "Хмурость", "Разговор", "Слушание",
+    "Шёпот", "Крик", "Визг", "Свист", "Мурлыкание", "Игра на гитаре", "Игра на пианино", "Игра на барабанах", "Живопись", "Скульптура",
+    "Эскиз", "Готовка", "Выпечка", "Гриль", "Жарка", "Варка", "Уборка", "Мытьё", "Сушка", "Глажка",
+    "Складывание", "Работа", "Учёба", "Обучение", "Преподавание", "Покупки", "Покупка", "Продажа", "Путешествие", "Исследование",
+    "Еда", "Питьё", "Бросок", "Ловля", "Удар ногой", "Толкание", "Тяга", "Вождение", "Полёт", "Сёрфинг",
+    "Строительство", "Создание", "Изготовление", "Починка", "Ремонт", "Открытие", "Закрытие", "Сидение", "Стояние", "Лежание",
 
-    // Sports (70)
-    "Football", "Basketball", "Tennis", "Soccer", "Baseball", "Hockey", "Golf", "Bowling", "Boxing", "Surfing",
-    "Swimming", "Diving", "Water Polo", "Rowing", "Kayaking", "Cycling", "Mountain Biking", "Skiing", "Snowboarding", "Ice Skating",
-    "Badminton", "Ping Pong", "Squash", "Handball", "Lacrosse", "Cricket", "Softball", "American Football", "Rugby", "Volleyball",
-    "Beach Volleyball", "Netball", "Dodgeball", "Track and Field", "Sprinting", "Long Distance Running", "High Jump", "Long Jump", "Pole Vault", "Shot Put",
-    "Gymnastics", "Rock Climbing", "Wrestling", "Karate", "Taekwondo", "Judo", "Jiu-jitsu", "Martial Arts", "Horse Racing", "Equestrian",
-    "Roller Skating", "Skateboarding", "Parkour", "Archery", "Fencing", "Kendo", "Sumo", "Weightlifting", "Kickboxing", "Mixed Martial Arts",
-    "Triathlon", "Biathlon", "CrossFit", "Pilates", "Zumba", "Aerobics", "Dance", "Cheerleading", "Figure Skating", "Speed Skating",
+    // Спорт (70)
+    "Футбол", "Баскетбол", "Теннис", "Футбол", "Бейсбол", "Хоккей", "Гольф", "Боулинг", "Бокс", "Сёрфинг",
+    "Плавание", "Прыжки в воду", "Водное поло", "Гребля", "Каякинг", "Велоспорт", "Горный велосипед", "Лыжи", "Сноуборд", "Фигурное катание",
+    "Бадминтон", "Настольный теннис", "Сквош", "Гандбол", "Лакросс", "Крикет", "Софтбол", "Американский футбол", "Регби", "Волейбол",
+    "Пляжный волейбол", "Нетбол", "Вышибалы", "Лёгкая атлетика", "Спринт", "Бег на длинные дистанции", "Прыжок в высоту", "Прыжок в длину", "Прыжок с шестом", "Толкание ядра",
+    "Гимнастика", "Скалолазание", "Борьба", "Карате", "Тхэквондо", "Дзюдо", "Джиу-джитсу", "Боевые искусства", "Скачки", "Конный спорт",
+    "Роликовые коньки", "Скейтбординг", "Паркур", "Стрельба из лука", "Фехтование", "Кендо", "Сумо", "Тяжёлая атлетика", "Кикбоксинг", "Смешанные единоборства",
+    "Триатлон", "Биатлон", "Кроссфит", "Пилатес", "Зумба", "Аэробика", "Танцы", "Чирлидинг", "Фигурное катание", "Скоростной бег на коньках",
 
-    // Movies (70)
-    "Spider-Man", "Superman", "Batman", "Harry Potter", "Frozen", "Titanic", "Lion King", "Avengers", "Shrek", "Toy Story",
-    "Finding Nemo", "Inside Out", "Coco", "Moana", "Tangled", "Brave", "Cinderella", "Sleeping Beauty", "Snow White", "Pinocchio",
-    "Dumbo", "Bambi", "Jungle Book", "Aladdin", "Mulan", "Pocahontas", "Hercules", "Hunchback of Notre Dame", "Tarzan", "Little Яrmaid",
-    "Beauty and the Beast", "Enchanted", "Iron Man", "Captain America", "Thor", "Hulk", "Black Widow", "Ant-Man", "Доктор Strange", "Black Panther",
-    "Wonder Woman", "Aquaman", "Flash", "Godfather", "Scarface", "Pulp Fiction", "Inception", "Interstellar", "Avatar", "Avatar 2",
-    "Jurassic Park", "Jurassic World", "The Sixth Sense", "Split", "Get Out", "Scream", "Halloween", "Jaws", "The Ring", "Insidious",
-    "The Dark Knight", "The Dark Knight Rises", "The Matrix", "The Matrix Reloaded", "Star Wars", "Rogue One", "The Mandalorian", "Lord of the Rings", "The Hobbit", "Conjuring",
+    // Фильмы (70)
+    "Человек-паук", "Супермен", "Бэтмен", "Гарри Поттер", "Холодное сердце", "Титаник", "Король Лев", "Мстители", "Шрек", "История игрушек",
+    "В поисках Немо", "Головоломка", "Тайна Коко", "Моана", "Рапунцель", "Храбрая сердцем", "Золушка", "Спящая красавица", "Белоснежка", "Пиноккио",
+    "Дамбо", "Бэмби", "Книга джунглей", "Аладдин", "Мулан", "Покахонтас", "Геркулес", "Горбун из Нотр-Дама", "Тарзан", "Русалочка",
+    "Красавица и чудовище", "Зачарованная", "Железный человек", "Капитан Америка", "Тор", "Халк", "Чёрная вдова", "Человек-муравей", "Доктор Стрэндж", "Чёрная пантера",
+    "Чудо-женщина", "Аквамен", "Флэш", "Крёстный отец", "Лицо со шрамом", "Криминальное чтиво", "Начало", "Интерстеллар", "Аватар", "Аватар 2",
+    "Парк Юрского периода", "Мир Юрского периода", "Шестое чувство", "Сплит", "Прочь", "Крик", "Хэллоуин", "Челюсти", "Звонок", "Астрал",
+    "Тёмный рыцарь", "Тёмный рыцарь: Возрождение легенды", "Матрица", "Матрица: Перезагрузка", "Звёздные войны", "Изгой-один", "Мандалорец", "Властелин колец", "Хоббит", "Заклятие",
 
-    // TV Shows (40)
-    "Game of Thrones", "Breaking Bad", "The Office", "Friends", "The Crown", "Stranger Things", "The Mandalorian", "House of the Dragon",
-    "Dexter", "The Sopranos", "Mad Яn", "Downton Abbey", "Peaky Blinders", "Ozark", "Bodyguard", "Line of Duty",
-    "Schitt's Creek", "Community", "Parks and Recreation", "Brooklyn Nine-Nine", "The Good Place", "Veep", "Russian Doll", "Fleabag",
-    "Squid Game", "Money Heist", "Dark", "The Last of Us", "Chernobyl", "Mindhunter", "Tiger King", "Bridgerton",
-    "Succession", "The Rings of Power", "House of Dragons", "The Witcher", "Castlevania", "Arcane", "Cyberpunk", "The Boys",
+    // Телесериалы (40)
+    "Игра престолов", "Во все тяжкие", "Офис", "Друзья", "Корона", "Очень странные дела", "Мандалорец", "Дом дракона",
+    "Декстер", "Клан Сопрано", "Безумцы", "Аббатство Даунтон", "Острые козырьки", "Озарк", "Телохранитель", "Линия долга",
+    "Бухта Шиттс", "Сообщество", "Парки и зоны отдыха", "Бруклин 9-9", "Хорошее место", "Вице-президент", "Матрёшка", "Дрянь",
+    "Игра в кальмара", "Бумажный дом", "Тьма", "Последние из нас", "Чернобыль", "Охотник за разумом", "Король тигров", "Бриджертон",
+    "Наследники", "Кольца власти", "Дом дракона", "Ведьмак", "Castlevania", "Аркейн", "Киберпанк", "Пацаны",
 
-    // Food (100)
-    "Pizza", "Burger", "Sushi", "Ice Cream", "Chocolate", "Apple", "Banana", "Cake", "Coffee", "Pasta",
-    "Steak", "Chicken", "Fish", "Salmon", "Bread", "Bagel", "Donut", "Muffin", "Cookie", "Brownie",
-    "Pie", "Tart", "Pastry", "Croissant", "Sandwich", "Hot Dog", "Taco", "Burrito", "Enchilada", "Quesadilla",
-    "Nachos", "Salsa", "Guacamole", "Soup", "Stew", "Curry", "Chili", "Ramen", "Noodles", "Dumplings",
-    "Salad", "Spinach", "Lettuce", "Tomato", "Cucumber", "Carrot", "Broccoli", "Potato", "Corn", "Cheese",
-    "Milk", "Yogurt", "Butter", "Egg", "Ham", "Bacon", "Sausage", "Shrimp", "Lobster", "Crab",
-    "Oyster", "Mussel", "Rice", "Beans", "Peas", "Lentil", "Hummus", "Peanut", "Almond", "Walnut",
-    "Orange", "Strawberry", "Blueberry", "Raspberry", "Watermelon", "Pineapple", "Mango", "Peach", "Coconut", "Avocado",
-    "Pickle", "Olive", "Garlic", "Onion", "Pepper", "Salt", "Sugar", "Honey", "Jam", "Peanut Butter",
-    "Mayo", "Ketchup", "Mustard", "Hot Sauce", "Soy Sauce", "Vinegar", "Oil", "Lemon", "Lime", "Ginger",
+    // Еда (100)
+    "Пицца", "Бургер", "Суши", "Мороженое", "Шоколад", "Яблоко", "Банан", "Торт", "Кофе", "Паста",
+    "Стейк", "Курица", "Рыба", "Лосось", "Хлеб", "Бублик", "Пончик", "Кекс", "Печенье", "Брауни",
+    "Пирог", "Тарт", "Выпечка", "Круассан", "Сэндвич", "Хот-дог", "Тако", "Буррито", "Энчилада", "Кесадилья",
+    "Начос", "Сальса", "Гуакамоле", "Суп", "Рагу", "Карри", "Чили", "Рамен", "Лапша", "Пельмени",
+    "Салат", "Шпинат", "Салат", "Помидор", "Огурец", "Морковь", "Брокколи", "Картофель", "Кукуруза", "Сыр",
+    "Молоко", "Йогурт", "Масло", "Яйцо", "Ветчина", "Бекон", "Колбаса", "Креветка", "Омар", "Краб",
+    "Устрица", "Мидия", "Рис", "Фасоль", "Горох", "Чечевица", "Хумус", "Арахис", "Миндаль", "Грецкий орех",
+    "Апельсин", "Клубника", "Черника", "Малина", "Арбуз", "Ананас", "Манго", "Персик", "Кокос", "Авокадо",
+    "Огурец маринованный", "Оливка", "Чеснок", "Лук", "Перец", "Соль", "Сахар", "Мёд", "Варенье", "Арахисовая паста",
+    "Майонез", "Кетчуп", "Горчица", "Острый соус", "Соевый соус", "Уксус", "Масло", "Лимон", "Лайм", "Имбирь",
 
-    // Countries (60)
-    "France", "Japan", "Egypt", "Brazil", "Canada", "Australia", "India", "Germany", "Яxico", "Italy",
-    "Spain", "Portugal", "Greece", "Turkey", "Russia", "China", "South Korea", "Vietnam", "Thailand", "Philippines",
-    "Indonesia", "Malaysia", "Singapore", "Hong Kong", "Taiwan", "Pakistan", "Bangladesh", "Sri Lanka", "Nepal", "Bhutan",
-    "Iran", "Iraq", "Saudi Arabia", "United Arab Emirates", "Israel", "Lebanon", "Syria", "Jordan", "Sudan", "Libya",
-    "Tunisia", "Morocco", "Algeria", "Kenya", "Tanzania", "Uganda", "South Africa", "Zimbabwe", "Nigeria", "Ghana",
-    "United States", "United Kingdom", "Ireland", "Scotland", "Wales", "Sweden", "Norway", "Finland", "Denmark", "Poland",
-    "Czech Republic", "Hungary", "Romania", "Bulgaria", "Croatia", "Serbia", "Austria", "Switzerland", "Belgium", "Netherlands",
+    // Страны (60)
+    "Франция", "Япония", "Египет", "Бразилия", "Канада", "Австралия", "Индия", "Германия", "Мексика", "Италия",
+    "Испания", "Португалия", "Греция", "Турция", "Россия", "Китай", "Южная Корея", "Вьетнам", "Таиланд", "Филиппины",
+    "Индонезия", "Малайзия", "Сингапур", "Гонконг", "Тайвань", "Пакистан", "Бангладеш", "Шри-Ланка", "Непал", "Бутан",
+    "Иран", "Ирак", "Саудовская Аравия", "ОАЭ", "Израиль", "Ливан", "Сирия", "Иордания", "Судан", "Ливия",
+    "Тунис", "Марокко", "Алжир", "Кения", "Танзания", "Уганда", "ЮАР", "Зимбабве", "Нигерия", "Гана",
+    "США", "Великобритания", "Ирландия", "Шотландия", "Уэльс", "Швеция", "Норвегия", "Финляндия", "Дания", "Польша",
+    "Чехия", "Венгрия", "Румыния", "Болгария", "Хорватия", "Сербия", "Австрия", "Швейцария", "Бельгия", "Нидерланды",
 
-    // Emotions (60)
-    "Happy", "Sad", "Angry", "Surprised", "Scared", "Excited", "Confused", "Proud", "Nervous", "Relaxed",
-    "Anxious", "Stressed", "Depressed", "Optimistic", "Pessimistic", "Jealous", "Envious", "Grateful", "Ashamed", "Embarrassed",
-    "Confident", "Insecure", "Brave", "Cowardly", "Determined", "Motivated", "Discouraged", "Frustrated", "Annoyed", "Irritated",
-    "Amused", "Entertained", "Bored", "Interested", "Curious", "Disgusted", "Enamored", "Fond", "Indifferent", "Passionate",
-    "Apathetic", "Energetic", "Lethargic", "Calm", "Agitated", "Peaceful", "Turbulent", "Joyful", "Delighted", "Pleased",
-    "Content", "Satisfied", "Discontented", "Dissatisfied", "Restless", "Serene", "Loving", "Hateful", "Affectionate", "Cold",
+    // Эмоции (60)
+    "Счастливый", "Грустный", "Злой", "Удивлённый", "Испуганный", "Взволнованный", "Смущённый", "Гордый", "Нервный", "Расслабленный",
+    "Тревожный", "Напряжённый", "Подавленный", "Оптимистичный", "Пессимистичный", "Ревнивый", "Завистливый", "Благодарный", "Пристыженный", "Смущённый",
+    "Уверенный", "Неуверенный", "Смелый", "Трусливый", "Решительный", "Мотивированный", "Разочарованный", "Раздражённый", "Раздосадованный", "Раздражённый",
+    "Забавленный", "Развлечённый", "Скучающий", "Заинтересованный", "Любопытный", "Отвращённый", "Влюблённый", "Любящий", "Равнодушный", "Страстный",
+    "Апатичный", "Энергичный", "Вялый", "Спокойный", "Взволнованный", "Мирный", "Буйный", "Радостный", "Восхищённый", "Довольный",
+    "Удовлетворённый", "Удовлетворённый", "Недовольный", "Неудовлетворённый", "Беспокойный", "Безмятежный", "Любящий", "Ненавидящий", "Нежный", "Холодный",
 
-    // Body Parts (50)
-    "Head", "Brain", "Eyes", "Nose", "Mouth", "Teeth", "Tongue", "Ears", "Hair", "Face",
-    "Neck", "Shoulders", "Arms", "Elbows", "Hands", "Fingers", "Thumbs", "Chest", "Stomach", "Back",
-    "Waist", "Hips", "Legs", "Knees", "Ankles", "Feet", "Toes", "Heels", "Shins", "Thighs",
-    "Heart", "Lungs", "Liver", "Kidneys", "Skin", "Bones", "Muscles", "Veins", "Arteries", "Nerves",
-    "Nails", "Eyebrows", "Eyelashes", "Lips", "Chin", "Cheeks", "Forehead", "Palms", "Wrists", "Rib",
+    // Части тела (50)
+    "Голова", "Мозг", "Глаза", "Нос", "Рот", "Зубы", "Язык", "Уши", "Волосы", "Лицо",
+    "Шея", "Плечи", "Руки", "Локти", "Ладони", "Пальцы", "Большие пальцы", "Грудь", "Живот", "Спина",
+    "Талия", "Бёдра", "Ноги", "Колени", "Лодыжки", "Ступни", "Пальцы ног", "Пятки", "Голени", "Бёдра",
+    "Сердце", "Лёгкие", "Печень", "Почки", "Кожа", "Кости", "Мышцы", "Вены", "Артерии", "Нервы",
+    "Ногти", "Брови", "Ресницы", "Губы", "Подбородок", "Щёки", "Лоб", "Ладони", "Запястья", "Ребро",
 
-    // Drinks (40)
-    "Water", "Coffee", "Tea", "Juice", "Milk", "Soda", "Beer", "Wine", "Whiskey", "Vodka",
-    "Rum", "Tequila", "Gin", "Brandy", "Champagne", "Prosecco", "Lemonade", "Iced Tea", "Smoothie", "Milkshake",
-    "Latte", "Cappuccino", "Espresso", "Americano", "Mocha", "Macchiato", "Flat White", "Green Tea", "Black Tea", "Oolong Tea",
-    "Herbal Tea", "Chamomile Tea", "Peppermint Tea", "Ginger Tea", "Coconut Water", "Energy Drink", "Sports Drink", "Punch", "Cider", "Kombucha",
+    // Напитки (40)
+    "Вода", "Кофе", "Чай", "Сок", "Молоко", "Газировка", "Пиво", "Вино", "Виски", "Водка",
+    "Ром", "Текила", "Джин", "Бренди", "Шампанское", "Просекко", "Лимонад", "Холодный чай", "Смузи", "Молочный коктейль",
+    "Латте", "Капучино", "Эспрессо", "Американо", "Мокко", "Макиато", "Флэт уайт", "Зелёный чай", "Чёрный чай", "Улун",
+    "Травяной чай", "Ромашковый чай", "Мятный чай", "Имбирный чай", "Кокосовая вода", "Энергетик", "Спортивный напиток", "Пунш", "Сидр", "Чайный гриб",
 
-    // Clothes (50)
-    "Shirt", "T-shirt", "Pants", "Jeans", "Shorts", "Skirt", "Dress", "Jacket", "Coat", "Sweater",
-    "Hoodie", "Vest", "Suit", "Tie", "Belt", "Hat", "Cap", "Beanie", "Scarf", "Glove",
-    "Sock", "Underwear", "Bra", "Boxers", "Pajamas", "Swimsuit", "Bikini", "Trunks", "Boots", "Shoes",
-    "Sneakers", "Sandals", "Slippers", "Heels", "Flats", "Loafers", "Flip-flops", "Clogs", "Oxfords", "Pumps",
-    "Necklace", "Ring", "Bracelet", "Earring", "Pendant", "Brooch", "Watch", "Glasses", "Sunglasses", "Mask",
+    // Одежда (50)
+    "Рубашка", "Футболка", "Брюки", "Джинсы", "Шорты", "Юбка", "Платье", "Куртка", "Пальто", "Свитер",
+    "Толстовка", "Жилет", "Костюм", "Галстук", "Ремень", "Шляпа", "Кепка", "Шапка", "Шарф", "Перчатка",
+    "Носок", "Нижнее бельё", "Бюстгальтер", "Трусы", "Пижама", "Купальник", "Бикини", "Плавки", "Ботинки", "Туфли",
+    "Кроссовки", "Сандалии", "Тапочки", "Каблуки", "Балетки", "Мокасины", "Вьетнамки", "Сабо", "Оксфорды", "Туфли на каблуке",
+    "Ожерелье", "Кольцо", "Браслет", "Серьга", "Кулон", "Брошь", "Часы", "Очки", "Солнцезащитные очки", "Маска",
 
-    // Weather (40)
-    "Sunny", "Rainy", "Cloudy", "Snowy", "Windy", "Stormy", "Foggy", "Hail", "Sleet", "Thunder",
-    "Lightning", "Rainbow", "Tornado", "Hurricane", "Blizzard", "Drought", "Heat Wave", "Cold", "Frost", "Dew",
-    "Humidity", "Breeze", "Gale", "Typhoon", "Cyclone", "Monsoon", "Avalanche", "Tsunami", "Earthquake", "Volcano",
-    "Rain", "Snow", "Ice", "Wind", "Cloud", "Sun", "Moon", "Star", "Яteor", "Comet",
+    // Погода (40)
+    "Солнечно", "Дождливо", "Облачно", "Снежно", "Ветрено", "Шторм", "Туман", "Град", "Мокрый снег", "Гром",
+    "Молния", "Радуга", "Торнадо", "Ураган", "Метель", "Засуха", "Жара", "Холод", "Мороз", "Роса",
+    "Влажность", "Бриз", "Шторм", "Тайфун", "Циклон", "Муссон", "Лавина", "Цунами", "Землетрясение", "Вулкан",
+    "Дождь", "Снег", "Лёд", "Ветер", "Облако", "Солнце", "Луна", "Звезда", "Метеор", "Комета",
 
-    // Music (50)
-    "Rock", "Pop", "Hip Hop", "Rap", "Country", "Blues", "Jazz", "Classical", "Electronic", "Dance",
-    "Reggae", "Яtal", "Punk", "Folk", "Gospel", "Opera", "R&B", "Soul", "Indie", "Alternative",
-    "Grunge", "Techno", "House", "Trance", "Disco", "Funk", "Swing", "Salsa", "Tango", "Waltz",
-    "Ballet", "Tap Dance", "Jazz Dance", "Contemporary", "Breakdancing", "Musical Theatre", "Karaoke", "Concerts", "Festival", "Band",
-    "Orchestra", "Choir", "Guitar", "Piano", "Drums", "Violin", "Trumpet", "Saxophone", "Flute", "Harmonica",
+    // Музыка (50)
+    "Рок", "Поп", "Хип-хоп", "Рэп", "Кантри", "Блюз", "Джаз", "Классика", "Электронная музыка", "Танцевальная музыка",
+    "Регги", "Метал", "Панк", "Фолк", "Госпел", "Опера", "Ритм-энд-блюз", "Соул", "Инди", "Альтернатива",
+    "Гранж", "Техно", "Хаус", "Транс", "Диско", "Фанк", "Свинг", "Сальса", "Танго", "Вальс",
+    "Балет", "Чечётка", "Джаз-танец", "Современный танец", "Брейк-данс", "Музыкальный театр", "Караоке", "Концерт", "Фестиваль", "Группа",
+    "Оркестр", "Хор", "Гитара", "Пианино", "Барабаны", "Скрипка", "Труба", "Саксофон", "Флейта", "Губная гармошка",
 
-    // School/Learning (40)
-    "School", "University", "College", "Student", "Teacher", "Classroom", "Desk", "Blackboard", "Whiteboard", "Pencil",
-    "Eraser", "Book", "Notebook", "Backpack", "Locker", "Hallway", "Cafeteria", "Playground", "Gym", "Library",
-    "Computer Lab", "Science Lab", "Art Class", "Music Class", "Math", "English", "History", "Geography", "Science", "Physics",
-    "Chemistry", "Biology", "Literature", "Philosophy", "Psychology", "Sociology", "Economics", "Business", "Law", "Яdicine",
+    // Школа/Обучение (40)
+    "Школа", "Университет", "Колледж", "Студент", "Учитель", "Класс", "Парта", "Доска", "Маркерная доска", "Карандаш",
+    "Ластик", "Книга", "Тетрадь", "Рюкзак", "Шкафчик", "Коридор", "Столовая", "Игровая площадка", "Спортзал", "Библиотека",
+    "Компьютерный класс", "Лаборатория", "Урок рисования", "Урок музыки", "Математика", "Английский", "История", "География", "Наука", "Физика",
+    "Химия", "Биология", "Литература", "Философия", "Психология", "Социология", "Экономика", "Бизнес", "Право", "Медицина",
 
-    // Animals (Simple, continued)
-    "Bunny", "Puppy", "Kitten", "Lamb", "Chick", "Duckling", "Piglet", "Calf", "Foal", "Pony",
-    "Goat", "Sheep", "Cow", "Bull", "Ox", "Donkey", "Mule", "Camel", "Llama", "Alpaca",
-    "Deer", "Elk", "Moose", "Reindeer", "Antelope", "Buffalo", "Bison", "Yak", "Zebra", "Giraffe",
+    // Животные (продолжение)
+    "Кролик", "Щенок", "Котёнок", "Ягнёнок", "Цыплёнок", "Утёнок", "Поросёнок", "Телёнок", "Жеребёнок", "Пони",
+    "Коза", "Овца", "Корова", "Бык", "Вол", "Осёл", "Мул", "Верблюд", "Лама", "Альпака",
+    "Олень", "Лось", "Лось", "Северный олень", "Антилопа", "Буйвол", "Бизон", "Як", "Зебра", "Жираф",
 
-    // Simple Objects (continued)
-    "Toy", "Doll", "Action Figure", "Puzzle", "Game", "Card", "Dice", "Marble", "Yo-Yo", "Kite",
-    "Bike", "Tricycle", "Scooter", "Skateboard", "Roller Skates", "Roller Blades", "Sled", "Toboggan", "Surfboard", "Skateboard",
-    "Bucket", "Shovel", "Rake", "Broom", "Mop", "Towel", "Blanket", "Pillow", "Cushion", "Mattress",
-    "Rope", "String", "Wire", "Chain", "Hook", "Nail", "Screw", "Bolt", "Nut", "Wrench",
+    // Простые предметы (продолжение)
+    "Игрушка", "Кукла", "Фигурка", "Пазл", "Игра", "Карта", "Кубик", "Шарик", "Йо-йо", "Воздушный змей",
+    "Велосипед", "Трёхколёсный велосипед", "Самокат", "Скейтборд", "Роликовые коньки", "Роликовые коньки", "Санки", "Санки", "Доска для сёрфинга", "Скейтборд",
+    "Ведро", "Лопата", "Грабли", "Метла", "Швабра", "Полотенце", "Одеяло", "Подушка", "Подушка", "Матрас",
+    "Верёвка", "Нить", "Провод", "Цепь", "Крюк", "Гвоздь", "Винт", "Болт", "Гайка", "Гаечный ключ",
 
-    // Actions (Simple, continued)
-    "Jump", "Пропустить", "Hop", "Crawl", "Climb", "Slide", "Swing", "Roll", "Spin", "Twist",
-    "Bend", "Stretch", "Reach", "Grab", "Hold", "Release", "Throw", "Catch", "Kick", "Push",
-    "Pull", "Drag", "Lift", "Lower", "Raise", "Drop", "Bounce", "Roll", "Slide", "Glide",
-    "Wave", "Point", "Clap", "Snap", "Stomp", "Tap", "Pat", "Rub", "Tickle", "Scratch",
+    // Действия (продолжение)
+    "Прыжок", "Пропустить", "Прыжок", "Ползание", "Лазание", "Скольжение", "Качание", "Катание", "Вращение", "Скручивание",
+    "Наклон", "Растяжка", "Досягаемость", "Хватание", "Удержание", "Отпускание", "Бросок", "Ловля", "Удар", "Толкание",
+    "Тяга", "Волочение", "Подъём", "Опускание", "Поднятие", "Падение", "Отскок", "Катание", "Скольжение", "Скольжение",
+    "Махание", "Указывание", "Хлопок", "Щелчок", "Топот", "Стук", "Похлопывание", "Растирание", "Щекотка", "Царапание",
 
-    // Holidays (30)
-    "Christmas", "Halloween", "Easter", "Valentine's Day", "Thanksgiving", "Independence Day", "New Year's", "Hanukkah", "Diwali", "Eid",
-    "Mother's Day", "Father's Day", "Birthday", "Anniversary", "Wedding", "Wedding Cake", "Graduation", "Prom", "Carnival", "Parade",
-    "Festival", "Concert", "Sports Day", "School Day", "Work Day", "Vacation", "Holiday", "Weekend", "Weekday", "Tonight",
+    // Праздники (30)
+    "Рождество", "Хэллоуин", "Пасха", "День святого Валентина", "День благодарения", "День независимости", "Новый год", "Ханука", "Дивали", "Ураза-байрам",
+    "День матери", "День отца", "День рождения", "Годовщина", "Свадьба", "Свадебный торт", "Выпускной", "Выпускной бал", "Карнавал", "Парад",
+    "Фестиваль", "Концерт", "День спорта", "Школьный день", "Рабочий день", "Отпуск", "Праздник", "Выходные", "Будний день", "Сегодня вечером",
 
-    // Toys & Games (40)
-    "Lego", "Building Blocks", "Doll", "Action Figure", "Teddy Bear", "Stuffed Animal", "Puzzle", "Board Game", "Card Game", "Video Game",
-    "Game Console", "PlayStation", "Xbox", "Nintendo Switch", "Computer Game", "Mobile Game", "Arcade Game", "Casino Game", "Dice", "Card",
-    "Marker", "Crayon", "Colored Pencil", "Paint", "Brush", "Palette", "Canvas", "Sketchbook", "Whiteboard", "Sticker",
-    "Balloon", "Confetti", "Streamers", "Banner", "Decoration", "Party Hat", "Party Blower", "Mask", "Costume", "Makeup",
+    // Игрушки и игры (40)
+    "Лего", "Кубики", "Кукла", "Фигурка", "Плюшевый мишка", "Мягкая игрушка", "Пазл", "Настольная игра", "Карточная игра", "Видеоигра",
+    "Игровая консоль", "PlayStation", "Xbox", "Nintendo Switch", "Компьютерная игра", "Мобильная игра", "Аркадная игра", "Казино игра", "Кубики", "Карта",
+    "Маркер", "Мелок", "Цветной карандаш", "Краска", "Кисть", "Палитра", "Холст", "Альбом", "Маркерная доска", "Наклейка",
+    "Воздушный шар", "Конфетти", "Гирлянды", "Баннер", "Украшение", "Праздничная шляпа", "Дудка", "Маска", "Костюм", "Грим",
 
-    // Transportation (30)
-    "Car", "Truck", "Bus", "Van", "Train", "Subway", "Tram", "Taxi", "Bike", "Motorcycle",
-    "Airplane", "Helicopter", "Hot Air Balloon", "Sailboat", "Speedboat", "Yacht", "Submarine", "Rocket", "Spaceship", "Hovercraft",
-    "Skateboard", "Roller Skates", "Scooter", "Segway", "Horse", "Camel", "Elephant", "Boat", "Canoe", "Kayak",
+    // Транспорт (30)
+    "Автомобиль", "Грузовик", "Автобус", "Фургон", "Поезд", "Метро", "Трамвай", "Такси", "Велосипед", "Мотоцикл",
+    "Самолёт", "Вертолёт", "Воздушный шар", "Парусник", "Катер", "Яхта", "Подводная лодка", "Ракета", "Космический корабль", "Судно на воздушной подушке",
+    "Скейтборд", "Роликовые коньки", "Самокат", "Сегвей", "Лошадь", "Верблюд", "Слон", "Лодка", "Каноэ", "Байдарка",
 
-    // Kitchen (30)
-    "Fridge", "Freezer", "Stove", "Oven", "Microwave", "Dishwasher", "Sink", "Countertop", "Table", "Chair",
-    "Knife", "Fork", "Spoon", "Plate", "Bowl", "Cup", "Glass", "Mug", "Pot", "Pan",
-    "Spatula", "Wooden Spoon", "Whisk", "Blender", "Toaster", "Kettle", "Coffee Maker", "Can Opener", "Peeler", "Grater",
+    // Кухня (30)
+    "Холодильник", "Морозильник", "Плита", "Духовка", "Микроволновка", "Посудомойка", "Раковина", "Столешница", "Стол", "Стул",
+    "Нож", "Вилка", "Ложка", "Тарелка", "Миска", "Чашка", "Стакан", "Кружка", "Кастрюля", "Сковорода",
+    "Лопатка", "Деревянная ложка", "Венчик", "Блендер", "Тостер", "Чайник", "Кофеварка", "Консервный нож", "Овощечистка", "Тёрка",
 
-    // Bedroom (25)
-    "Bed", "Pillow", "Blanket", "Sheet", "Comforter", "Mattress", "Headboard", "Nightstand", "Dresser", "Closet",
-    "Wardrobe", "Cabinet", "Shelf", "Mirror", "Lamp", "Alarm Clock", "Window", "Curtain", "Blinds", "Door",
-    "Carpet", "Rug", "Chair", "Desk", "Drawer", "Coat Rack",
+    // Спальня (25)
+    "Кровать", "Подушка", "Одеяло", "Простыня", "Одеяло", "Матрас", "Изголовье", "Прикроватная тумбочка", "Комод", "Шкаф",
+    "Гардероб", "Шкаф", "Полка", "Зеркало", "Лампа", "Будильник", "Окно", "Занавеска", "Жалюзи", "Дверь",
+    "Ковёр", "Коврик", "Стул", "Стол", "Ящик", "Вешалка",
 
-    // Bathroom (20)
-    "Toilet", "Bathtub", "Shower", "Sink", "Faucet", "Mirror", "Яdicine Cabinet", "Towel Rack", "Soap Dispenser", "Toothbrush Holder",
-    "Trash Can", "Toilet Paper", "Bath Rug", "Shower Curtain", "Toothbrush", "Toothpaste", "Comb", "Brush", "Scale", "Soap",
+    // Ванная (20)
+    "Унитаз", "Ванна", "Душ", "Раковина", "Кран", "Зеркало", "Аптечка", "Вешалка для полотенец", "Дозатор мыла", "Подставка для зубных щёток",
+    "Мусорное ведро", "Туалетная бумага", "Коврик для ванной", "Штора для душа", "Зубная щётка", "Зубная паста", "Расчёска", "Щётка", "Весы", "Мыло",
 
-    // Simple Verbs (40)
-    "Eat", "Drink", "Sleep", "Wake", "Run", "Walk", "Sit", "Stand", "Jump", "Dance",
-    "Sing", "Shout", "Whisper", "Laugh", "Cry", "Smile", "Frown", "Wink", "Nod", "Shake",
-    "Wave", "Clap", "Snap", "Kick", "Hit", "Throw", "Catch", "Hold", "Drop", "Pick",
-    "Put", "Take", "Give", "Get", "Make", "Do", "Go", "Come", "Stay", "Leave",
+    // Простые глаголы (40)
+    "Есть", "Пить", "Спать", "Просыпаться", "Бежать", "Идти", "Сидеть", "Стоять", "Прыгать", "Танцевать",
+    "Петь", "Кричать", "Шептать", "Смеяться", "Плакать", "Улыбаться", "Хмуриться", "Подмигивать", "Кивать", "Трясти",
+    "Махать", "Хлопать", "Щёлкать", "Пинать", "Бить", "Бросать", "Ловить", "Держать", "Ронять", "Поднимать",
+    "Класть", "Брать", "Давать", "Получать", "Делать", "Делать", "Идти", "Приходить", "Оставаться", "Уходить",
 
-    // Simple Adjectives (40)
-    "Big", "Small", "Tall", "Short", "Long", "Wide", "Narrow", "Thick", "Thin", "Fast",
-    "Slow", "Hot", "Cold", "Warm", "Cool", "Soft", "Hard", "Rough", "Smooth", "Wet",
-    "Dry", "Clean", "Dirty", "Bright", "Dark", "Light", "Heavy", "Light", "Strong", "Weak",
-    "Good", "Bad", "Right", "Wrong", "True", "False", "New", "Old", "Тыng", "Ancient",
+    // Простые прилагательные (40)
+    "Большой", "Маленький", "Высокий", "Низкий", "Длинный", "Широкий", "Узкий", "Толстый", "Тонкий", "Быстрый",
+    "Медленный", "Горячий", "Холодный", "Тёплый", "Прохладный", "Мягкий", "Твёрдый", "Грубый", "Гладкий", "Мокрый",
+    "Сухой", "Чистый", "Грязный", "Яркий", "Тёмный", "Светлый", "Тяжёлый", "Лёгкий", "Сильный", "Слабый",
+    "Хороший", "Плохой", "Правильный", "Неправильный", "Истинный", "Ложный", "Новый", "Старый", "Молодой", "Древний",
 
-    // Colors (20)
-    "Red", "Blue", "Yellow", "Green", "Orange", "Purple", "Pink", "Brown", "Black", "White",
-    "Gray", "Grey", "Silver", "Gold", "Beige", "Turquoise", "Cyan", "Magenta", "Lime", "Navy",
+    // Цвета (20)
+    "Красный", "Синий", "Жёлтый", "Зелёный", "Оранжевый", "Фиолетовый", "Розовый", "Коричневый", "Чёрный", "Белый",
+    "Серый", "Серый", "Серебряный", "Золотой", "Бежевый", "Бирюзовый", "Голубой", "Пурпурный", "Лаймовый", "Тёмно-синий",
 
-    // Numbers (20)
-    "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
-    "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Twenty", "Thirty", "Hundred", "Thousand", "Million",
+    // Числа (20)
+    "Один", "Два", "Три", "Четыре", "Пять", "Шесть", "Семь", "Восемь", "Девять", "Десять",
+    "Одиннадцать", "Двенадцать", "Тринадцать", "Четырнадцать", "Пятнадцать", "Двадцать", "Тридцать", "Сто", "Тысяча", "Миллион",
 
-    // Shapes (15)
-    "Circle", "Square", "Triangle", "Rectangle", "Pentagon", "Hexagon", "Octagon", "Oval", "Diamond", "Star",
-    "Heart", "Cube", "Sphere", "Cone", "Cylinder", "Pyramid", "Prism",
+    // Фигуры (15)
+    "Круг", "Квадрат", "Треугольник", "Прямоугольник", "Пятиугольник", "Шестиугольник", "Восьмиугольник", "Овал", "Ромб", "Звезда",
+    "Сердце", "Куб", "Сфера", "Конус", "Цилиндр", "Пирамида", "Призма",
 
-    // Months (12)
-    "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",
+    // Месяцы (12)
+    "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь",
 
-    // Days (7)
-    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
+    // Дни недели (7)
+    "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье",
 
-    // Seasons (4)
-    "Spring", "Summer", "Fall", "Winter",
+    // Времена года (4)
+    "Весна", "Лето", "Осень", "Зима",
 ];
 
-// Game state
+// Состояние игры
 let state = {
     players: 2,
     duration: 60,
-    currentИгрок: 1,
+    currentPlayer: 1,
     scores: {},
     currentWord: null,
     usedWords: [],
@@ -253,11 +253,11 @@ const correctBtn = document.getElementById('correctBtn');
 const skipBtn = document.getElementById('skipBtn');
 const playAgainBtn = document.getElementById('playAgainBtn');
 
-// Initialize scores
+// Инициализация счёта
 function initGame() {
     state.players = parseInt(document.getElementById('playerCount').value);
     state.duration = parseInt(document.getElementById('gameDuration').value);
-    state.currentИгрок = 1;
+    state.currentPlayer = 1;
     state.scores = {};
     state.usedWords = [];
 
@@ -268,17 +268,17 @@ function initGame() {
     showReadyScreen();
 }
 
-// Show ready screen for next player
+// Показать экран готовности для следующего игрока
 function showReadyScreen() {
     setupScreen.style.display = 'none';
     gameScreen.style.display = 'none';
     resultsScreen.style.display = 'none';
     readyScreen.style.display = 'block';
 
-    document.getElementById('readyИгрокNum').textContent = state.currentИгрок;
+    document.getElementById('readyPlayerNum').textContent = state.currentPlayer;
 }
 
-// Start a player's turn
+// Начать ход игрока
 function startTurn() {
     state.currentScore = 0;
     state.timeLeft = state.duration;
@@ -288,14 +288,14 @@ function startTurn() {
     resultsScreen.style.display = 'none';
     gameScreen.style.display = 'block';
 
-    document.getElementById('currentИгрок').textContent = state.currentИгрок;
+    document.getElementById('currentPlayer').textContent = state.currentPlayer;
     document.getElementById('playerScore').textContent = state.currentScore;
 
     drawWord();
     startTimer();
 }
 
-// Draw a random word
+// Выбрать случайное слово
 function drawWord() {
     if (state.usedWords.length === WORDS.length) {
         state.usedWords = [];
@@ -311,7 +311,7 @@ function drawWord() {
     document.getElementById('wordDisplay').textContent = word;
 }
 
-// Start countdown timer
+// Запустить таймер обратного отсчёта
 function startTimer() {
     clearInterval(state.timerInterval);
 
@@ -325,33 +325,33 @@ function startTimer() {
     }, 1000);
 }
 
-// Handle correct answer
+// Обработать правильный ответ
 function handleCorrect() {
     state.currentScore++;
-    state.scores[state.currentИгрок]++;
+    state.scores[state.currentPlayer]++;
     document.getElementById('playerScore').textContent = state.currentScore;
     drawWord();
 }
 
-// Handle skip
-function handleПропустить() {
+// Обработать пропуск
+function handleSkip() {
     drawWord();
 }
 
-// End current player's turn
+// Завершить ход текущего игрока
 function endTurn() {
     state.isPlaying = false;
     clearInterval(state.timerInterval);
 
-    if (state.currentИгрок < state.players) {
-        state.currentИгрок++;
+    if (state.currentPlayer < state.players) {
+        state.currentPlayer++;
         showReadyScreen();
     } else {
         showResults();
     }
 }
 
-// Show final results
+// Показать финальные результаты
 function showResults() {
     gameScreen.style.display = 'none';
     resultsScreen.style.display = 'block';
@@ -361,20 +361,20 @@ function showResults() {
 
     sorted.forEach(([player, score], index) => {
         const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : '🥉';
-        html += `<div class="score-row">${medal} Игрок ${player}: <strong>${score}</strong> points</div>`;
+        html += `<div class="score-row">${medal} Игрок ${player}: <strong>${score}</strong> очков</div>`;
     });
 
     document.getElementById('finalScores').innerHTML = html;
 }
 
-// Event listeners
+// Обработчики событий
 startBtn.addEventListener('click', initGame);
 readyBtn.addEventListener('click', startTurn);
 correctBtn.addEventListener('click', () => {
     if (state.isPlaying) handleCorrect();
 });
 skipBtn.addEventListener('click', () => {
-    if (state.isPlaying) handleПропустить();
+    if (state.isPlaying) handleSkip();
 });
 playAgainBtn.addEventListener('click', () => {
     setupScreen.style.display = 'block';
@@ -383,15 +383,15 @@ playAgainBtn.addEventListener('click', () => {
     readyScreen.style.display = 'none';
 });
 
-// Accordion functionality
+// Функциональность аккордеона
 document.addEventListener('DOMContentLoaded', function() {
     const accordionButtons = document.querySelectorAll('.accordion-button');
 
-    // Debug: Log accordion elements
-    console.log('Accordion buttons found:', accordionButtons.length);
+    // Отладка: Вывести элементы аккордеона
+    console.log('Найдено кнопок аккордеона:', accordionButtons.length);
     accordionButtons.forEach((btn, index) => {
         const computedStyle = window.getComputedStyle(btn);
-        console.log(`Accordion ${index}:`, {
+        console.log(`Аккордеон ${index}:`, {
             title: btn.querySelector('.accordion-title')?.textContent,
             display: computedStyle.display,
             visibility: computedStyle.visibility,
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const accordionContent = this.nextElementSibling;
             const isActive = this.classList.contains('active');
 
-            // Close all other accordions
+            // Закрыть все другие аккордеоны
             accordionButtons.forEach(otherButton => {
                 if (otherButton !== button && otherButton.classList.contains('active')) {
                     otherButton.classList.remove('active');
@@ -415,12 +415,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Toggle current accordion
+            // Переключить текущий аккордеон
             this.classList.toggle('active');
             accordionContent.classList.toggle('active');
 
-            // Debug: Log state after toggle
-            console.log('Accordion clicked:', {
+            // Отладка: Вывести состояние после переключения
+            console.log('Аккордеон нажат:', {
                 title: this.querySelector('.accordion-title')?.textContent,
                 isNowActive: this.classList.contains('active'),
                 contentMaxHeight: window.getComputedStyle(accordionContent).maxHeight

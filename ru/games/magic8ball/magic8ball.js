@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Create customize button
     const customizeButton = document.createElement('button');
     customizeButton.className = 'btn btn-outline-primary mt-3 d-block w-100';
-    customizeButton.innerHTML = '<i class="fas fa-magic"></i> Customize Тыr Answers';
+    customizeButton.innerHTML = '<i class="fas fa-magic"></i> Настроить ответы';
     shakeButton.parentNode.insertBefore(customizeButton, shakeButton.nextSibling);
 
     // Create modal container
@@ -22,26 +22,26 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title">Customize Тыr Magic Answers</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title">Настроить волшебные ответы</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-info alert-dismissible fade show mb-3" role="alert">
-                        Create your own magic answers! They will be saved automatically.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        Создайте свои волшебные ответы! Они будут сохранены автоматически.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="customAnswer" 
-                            placeholder="Type your custom answer here..."
+                        <input type="text" class="form-control" id="customAnswer"
+                            placeholder="Введите свой ответ здесь..."
                             maxlength="100">
                         <button class="btn btn-primary" id="addCustomAnswer">
-                            <i class="fas fa-plus"></i> Add
+                            <i class="fas fa-plus"></i> Добавить
                         </button>
                     </div>
                     <div class="custom-answers-wrapper">
                         <ul class="list-group" id="customAnswersList"></ul>
                         <div class="text-center mt-3" id="emptyState">
-                            <p class="text-muted">No custom answers yet. Add your first one!</p>
+                            <p class="text-muted">Пока нет пользовательских ответов. Добавьте первый!</p>
                         </div>
                     </div>
                 </div>
@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="w-100">
                         <!-- Counter Row -->
                         <div class="d-flex justify-content-center mb-3">
-                            <span class="badge bg-primary fs-6 px-3 py-2" id="customAnswerCount">0 answers</span>
+                            <span class="badge bg-primary fs-6 px-3 py-2" id="customAnswerCount">0 ответов</span>
                         </div>
-                        
+
                         <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-outline-danger" id="clearCustomAnswers">Clear All</button>
-                            <button type="button" class="btn btn-success" id="saveCustomAnswers">Confirm</button>
+                            <button class="btn btn-outline-danger" id="clearCustomAnswers">Очистить всё</button>
+                            <button type="button" class="btn btn-success" id="saveCustomAnswers">Подтвердить</button>
                         </div>
                     </div>
                 </div>
@@ -73,114 +73,114 @@ document.addEventListener('DOMContentLoaded', function () {
     // Answers for different versions (use Portuguese if available)
     let answers = window.ptAnswers || {
         classic: [
-            "It is certain.",
-            "It is decidedly so.",
-            "Without a doubt.",
-            "Yes definitely.",
-            "Ты may rely on it.",
-            "As I see it, yes.",
-            "Most likely.",
-            "Outlook good.",
-            "Yes.",
-            "Signs point to yes.",
-            "Reply hazy, try again.",
-            "Ask again later.",
-            "Better not tell you now.",
-            "Cannot predict now.",
-            "Concentrate and ask again.",
-            "Don't count on it.",
-            "My reply is no.",
-            "My sources say no.",
-            "Outlook not so good.",
-            "Very doubtful."
+            "Бесспорно.",
+            "Предрешено.",
+            "Никаких сомнений.",
+            "Определённо да.",
+            "Можешь быть уверен в этом.",
+            "Мне кажется - да.",
+            "Вероятнее всего.",
+            "Хорошие перспективы.",
+            "Да.",
+            "Знаки говорят - да.",
+            "Пока не ясно, попробуй ещё раз.",
+            "Спроси позже.",
+            "Лучше не говорить тебе сейчас.",
+            "Сейчас нельзя предсказать.",
+            "Сконцентрируйся и спроси опять.",
+            "Даже не думай.",
+            "Мой ответ - нет.",
+            "По моим данным - нет.",
+            "Перспективы не очень хорошие.",
+            "Весьма сомнительно."
         ],
         silly: [
-            "As sure as unicorns are real!",
-            "My crystal ball says YES!",
-            "Absolutely... NOT!",
-            "The stars align to say maybe?",
-            "Ask me after my coffee break.",
-            "The magic hamster says yes!",
-            "Only if you hop on one foot.",
-            "My magic 8 ball is on vacation.",
-            "The answer is hiding under your bed.",
-            "Yes, but only on Tuesdays.",
-            "No way, José!",
-            "The universe says to try again.",
-            "That's a hard no from me.",
-            "Yes, with sprinkles on top!",
-            "My sources are giggling too hard to answer.",
-            "The answer is blowing in the wind.",
-            "Ask your pet, they know better.",
-            "The magic says yes, but logic says no.",
-            "Only if pigs start flying tomorrow.",
-            "The answer is 42. Always 42."
+            "Так же точно, как существуют единороги!",
+            "Мой хрустальный шар говорит ДА!",
+            "Абсолютно... НЕТ!",
+            "Звёзды намекают на возможно?",
+            "Спроси меня после кофе-брейка.",
+            "Волшебный хомячок сказал да!",
+            "Только если попрыгаешь на одной ноге.",
+            "Мой магический шар в отпуске.",
+            "Ответ прячется под твоей кроватью.",
+            "Да, но только по вторникам.",
+            "Ни в коем случае, Хосе!",
+            "Вселенная советует попробовать ещё раз.",
+            "Это категоричное нет от меня.",
+            "Да, с посыпкой сверху!",
+            "Мои источники смеются слишком сильно, чтобы ответить.",
+            "Ответ развеян по ветру.",
+            "Спроси своего питомца, он знает лучше.",
+            "Магия говорит да, но логика говорит нет.",
+            "Только если свиньи начнут летать завтра.",
+            "Ответ - 42. Всегда 42."
         ],
         sarcastic: [
-            "Oh, absolutely. And I'm the Queen of England.",
-            "Let me check my crystal ball... it says 'obviously not'.",
-            "Sure, and unicorns are real too.",
-            "Is water not wet?",
-            "I'd say yes, but I'd be lying.",
-            "In what universe would that be true?",
-            "Wow, you really asked that?",
-            "I'm going to pretend you didn't ask that.",
-            "Hmm, let me think... no.",
-            "The odds are slightly worse than winning the lottery. Twice.",
-            "I could answer, but I'm too busy rolling my eyes.",
-            "Do you really need me to answer that?",
-            "I'm laughing too hard to answer properly.",
-            "Oh honey, no.",
-            "Sure, when pigs fly first class.",
-            "I'd bet my non-existent money on 'no'.",
-            "That's hilarious. Дальше question please.",
-            "Are you serious right now?",
-            "I'm going to need more coffee before answering that.",
-            "The answer is so obvious I'm not even going to say it."
+            "О, конечно. А я королева Англии.",
+            "Дай-ка проверю свой хрустальный шар... он говорит 'очевидно нет'.",
+            "Конечно, и единороги тоже реальны.",
+            "А вода разве не мокрая?",
+            "Я бы сказал да, но я бы солгал.",
+            "В какой вселенной это было бы правдой?",
+            "Вау, ты правда это спросил?",
+            "Я сделаю вид, что ты этого не спрашивал.",
+            "Хмм, дай подумать... нет.",
+            "Шансы чуть хуже, чем дважды выиграть в лотерею.",
+            "Я мог бы ответить, но я слишком занят закатыванием глаз.",
+            "Тебе правда нужен мой ответ на это?",
+            "Я смеюсь слишком сильно, чтобы ответить правильно.",
+            "О милый, нет.",
+            "Конечно, когда свиньи полетят бизнес-классом.",
+            "Я бы поставил свои несуществующие деньги на 'нет'.",
+            "Это уморительно. Следующий вопрос, пожалуйста.",
+            "Ты сейчас серьёзно?",
+            "Мне нужно больше кофе, прежде чем отвечать на это.",
+            "Ответ настолько очевиден, что я даже не буду его говорить."
         ],
         romance: [
-            "Love is in the air!",
-            "Тыr heart knows the answer already.",
-            "Cupid's arrow never misses.",
-            "The stars align for romance.",
-            "Love will find a way.",
-            "Not all who wander in love are lost.",
-            "Follow your heart on this one.",
-            "Love is patient; maybe you should be too.",
-            "The heart wants what it wants.",
-            "Romance is just around the corner.",
-            "This love was written in the stars.",
-            "Maybe it's time to make the first move.",
-            "Love is a journey, not a destination.",
-            "Тыr romantic future looks bright!",
-            "Trust the process of love.",
-            "Sometimes love needs a little time.",
-            "The best love stories take time to unfold.",
-            "Тыr heart won't lead you astray.",
-            "Love comes when you least expect it.",
-            "This connection has potential."
+            "Любовь витает в воздухе!",
+            "Твоё сердце уже знает ответ.",
+            "Стрела Купидона никогда не промахивается.",
+            "Звёзды складываются в пользу романтики.",
+            "Любовь найдёт выход.",
+            "Не все, кто блуждает в любви, потеряны.",
+            "Следуй за своим сердцем в этом вопросе.",
+            "Любовь терпелива; возможно, тебе тоже стоит быть терпеливым.",
+            "Сердце хочет того, чего хочет.",
+            "Романтика уже не за горами.",
+            "Эта любовь была написана на звёздах.",
+            "Может быть, пора сделать первый шаг.",
+            "Любовь - это путешествие, а не пункт назначения.",
+            "Твоё романтическое будущее выглядит светлым!",
+            "Доверься процессу любви.",
+            "Иногда любви нужно немного времени.",
+            "Лучшие истории любви разворачиваются со временем.",
+            "Твоё сердце тебя не подведёт.",
+            "Любовь приходит, когда меньше всего её ждёшь.",
+            "У этой связи есть потенциал."
         ],
         drinking: [
-            "Drink up, buttercup!",
-            "Take a shot!",
-            "Bottoms up!",
-            "Тыr turn to drink!",
-            "Drink twice!",
+            "Пей до дна, лютик!",
+            "Принимай шот!",
+            "До дна!",
+            "Твоя очередь пить!",
+            "Пей дважды!",
             "Все пьют!",
-            "Пропустить your turn, lucky you!",
-            "Choose someone to drink!",
-            "No drink this time!",
-            "Cheers! Take a sip!",
-            "Drink water instead, stay hydrated!",
-            "Last person to raise their hand drinks!",
-            "Tell a joke or take a drink!",
-            "Drink if you've ever...",
-            "Rock, paper, scissors with your neighbor. Loser drinks!",
-            "Drink if you're wearing blue!",
-            "Take a sip for each pet you have!",
-            "Drink if you checked your phone in the last 10 minutes!",
-            "The tallest person drinks!",
-            "Drink if you've binged a show this week!"
+            "Пропусти свой ход, везунчик!",
+            "Выбери кого-нибудь выпить!",
+            "На этот раз не пьёшь!",
+            "За здоровье! Сделай глоток!",
+            "Вместо этого пей воду, оставайся гидратированным!",
+            "Последний, кто поднимет руку, пьёт!",
+            "Расскажи шутку или выпей!",
+            "Пей, если ты когда-нибудь...",
+            "Камень, ножницы, бумага с соседом. Проигравший пьёт!",
+            "Пей, если на тебе что-то синее!",
+            "Сделай глоток за каждого своего питомца!",
+            "Пей, если проверял телефон за последние 10 минут!",
+            "Самый высокий человек пьёт!",
+            "Пей, если запоем смотрел сериал на этой неделе!"
         ]
     };
 
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function createCustomAnswersUI() {
         // Add custom option to version select if not exists
         if (!Array.from(versionSelect.options).some(option => option.value === 'custom')) {
-            const customOption = new Option('✨ Custom Answers', 'custom');
+            const customOption = new Option('✨ Свои ответы', 'custom');
             versionSelect.add(customOption);
         }
 
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         clearButton.addEventListener('click', function () {
-            if (confirm('Are you sure you want to delete all custom answers?')) {
+            if (confirm('Вы уверены, что хотите удалить все пользовательские ответы?')) {
                 customAnswers = [];
                 updateCustomAnswersList();
             }
@@ -231,8 +231,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Update custom answer count when modal is shown
         modalContainer.addEventListener('show.bs.modal', () => {
-            document.getElementById('customAnswerCount').textContent =
-                `${customAnswers.length} answer${customAnswers.length !== 1 ? 's' : ''}`;
+            const count = customAnswers.length;
+            let text = `${count} ответ`;
+            if (count === 0 || count >= 5) text += 'ов';
+            else if (count === 1) text += '';
+            else if (count <= 4) text += 'а';
+            document.getElementById('customAnswerCount').textContent = text;
         });
 
     }
@@ -244,7 +248,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const countBadge = document.getElementById('customAnswerCount');
 
         list.innerHTML = '';
-        countBadge.textContent = `${customAnswers.length} answers`;
+        const count = customAnswers.length;
+        let text = `${count} ответ`;
+        if (count === 0 || count >= 5) text += 'ов';
+        else if (count === 1) text += '';
+        else if (count <= 4) text += 'а';
+        countBadge.textContent = text;
 
         if (customAnswers.length === 0) {
             emptyState.style.display = 'block';
@@ -621,22 +630,22 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize with the number 8
     answerElement.textContent = '8';
 
-    // 添加保存按钮的事件监听器 (Modal中的按钮)
+    // Добавление обработчика для кнопки сохранения (кнопка в модальном окне)
     document.getElementById('saveCustomAnswers').addEventListener('click', () => {
         if (customAnswers.length > 0) {
             versionSelect.value = 'custom';
             modal.hide();
-            // 显示提示消息
+            // Показать уведомление
             const toast = document.createElement('div');
             toast.className = 'toast position-fixed bottom-0 end-0 m-3';
             toast.setAttribute('role', 'alert');
             toast.innerHTML = `
                 <div class="toast-header bg-success text-white">
-                    <strong class="me-auto">Success</strong>
+                    <strong class="me-auto">Успешно</strong>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
                 </div>
                 <div class="toast-body">
-                    Тыr custom answers are now active!
+                    Ваши пользовательские ответы теперь активны!
                 </div>
             `;
             document.body.appendChild(toast);
@@ -644,7 +653,7 @@ document.addEventListener('DOMContentLoaded', function () {
             bsToast.show();
             setTimeout(() => toast.remove(), 3000);
         } else {
-            alert('Please add at least one custom answer before applying changes.');
+            alert('Пожалуйста, добавьте хотя бы один пользовательский ответ перед применением изменений.');
         }
     });
 

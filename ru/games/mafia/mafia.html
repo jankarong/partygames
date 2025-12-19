@@ -110,12 +110,12 @@
                 <div class="card-body">
                     <h2 class="card-title">Установка игры</h2>
                     <div class="total-players mb-4">
-                        <label for="playerCount" class="form-label">Total Игрокs:</label>
+                        <label for="playerCount" class="form-label">Всего игроков:</label>
                         <input type="number" id="playerCount" class="form-control" min="6" max="15" value="8">
                     </div>
 
                     <div class="role-selection">
-                        <h3 class="h5 mb-3">Role Distribution</h3>
+                        <h3 class="h5 mb-3">Распределение ролей</h3>
                         <div class="role-inputs row g-3">
                             <div class="role-input col-md-4">
                                 <label for="mafiaCount" class="form-label">Мафия:</label>
@@ -130,7 +130,7 @@
                                 <input type="number" id="detectiveCount" class="form-control" min="0" max="1" value="1">
                             </div>
                             <div class="role-input col-md-4">
-                                <label for="villagerCount" class="form-label">Жительs:</label>
+                                <label for="villagerCount" class="form-label">Жители:</label>
                                 <input type="number" id="villagerCount" class="form-control" min="1" value="4">
                             </div>
                         </div>
@@ -142,8 +142,8 @@
                         </div>
                     </div>
 
-                    <button id="setupGame" class="btn btn-primary w-100 mt-3">Start Game</button>
-                    <button id="manageRoles" class="btn btn-secondary w-100 mt-3">Manage Custom Roles</button>
+                    <button id="setupGame" class="btn btn-primary w-100 mt-3">Начать игру</button>
+                    <button id="manageRoles" class="btn btn-secondary w-100 mt-3">Управление пользовательскими ролями</button>
                 </div>
             </div>
         </div>
@@ -151,45 +151,45 @@
         <div class="role-management mt-4" style="display: none;">
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <h2 class="card-title text-center mb-4">Custom Role Management</h2>
+                    <h2 class="card-title text-center mb-4">Управление пользовательскими ролями</h2>
 
                     <!-- Create new role -->
                     <div class="create-role-section mb-5">
-                        <h4 class="mb-3">Create New Role</h4>
+                        <h4 class="mb-3">Создать новую роль</h4>
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label for="roleName" class="form-label">Role Name</label>
-                                <input type="text" id="roleName" class="form-control" placeholder="e.g. Cupid">
+                                <label for="roleName" class="form-label">Название роли</label>
+                                <input type="text" id="roleName" class="form-control" placeholder="например, Купидон">
                             </div>
                             <div class="col-md-6">
-                                <label for="roleTeam" class="form-label">Team</label>
+                                <label for="roleTeam" class="form-label">Команда</label>
                                 <select id="roleTeam" class="form-select">
-                                    <option value="villager">Житель Team</option>
-                                    <option value="mafia">Мафия Team</option>
+                                    <option value="villager">Команда жителей</option>
+                                    <option value="mafia">Команда мафии</option>
                                 </select>
                             </div>
                             <div class="col-12">
-                                <label for="roleDescription" class="form-label">Role Description</label>
+                                <label for="roleDescription" class="form-label">Описание роли</label>
                                 <textarea id="roleDescription" class="form-control" rows="3"
-                                    placeholder="Describe this role's abilities and purpose..."></textarea>
+                                    placeholder="Опишите способности и цель этой роли..."></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="roleAbility" class="form-label">Night Ability</label>
+                                <label for="roleAbility" class="form-label">Ночная способность</label>
                                 <textarea id="roleAbility" class="form-control" rows="2"
-                                    placeholder="Describe this role's night phase actions... (optional)"></textarea>
+                                    placeholder="Опишите действия этой роли в ночной фазе... (необязательно)"></textarea>
                             </div>
                         </div>
-                        <button id="createRole" class="btn btn-primary mt-3">Create Role</button>
+                        <button id="createRole" class="btn btn-primary mt-3">Создать роль</button>
                     </div>
 
                     <!-- Existing roles list -->
                     <div class="existing-roles-section mb-4">
-                        <h4 class="mb-3">Existing Roles</h4>
+                        <h4 class="mb-3">Существующие роли</h4>
                         <div id="rolesList" class="row g-3"></div>
                     </div>
 
                     <div class="text-center">
-                        <button id="backToSetup" class="btn btn-secondary">Back to Установка игры</button>
+                        <button id="backToSetup" class="btn btn-secondary">Вернуться к настройке игры</button>
                     </div>
                 </div>
             </div>
@@ -199,16 +199,16 @@
             <button id="returnToSetup" class="btn btn-secondary"
                 style="position: absolute; left: 20px; top: 20px; z-index: 1000;">
                 <i class="fas fa-arrow-left"></i>
-                <span class="btn-text">Back to Setup</span>
+                <span class="btn-text">Назад к настройкам</span>
             </button>
             <button id="startNewGame" class="btn btn-success"
                 style="position: absolute; right: 20px; top: 20px; z-index: 1000;">
                 <i class="fas fa-redo"></i>
-                <span class="btn-text">Start Новая игра</span>
+                <span class="btn-text">Начать новую игру</span>
             </button>
             <div class="role-cards card shadow-sm mt-5">
                 <div class="card-body">
-                    <h2 class="card-title text-center mb-4">Игрок Cards</h2>
+                    <h2 class="card-title text-center mb-4">Карты игроков</h2>
                     <div id="cardGrid"></div>
                 </div>
             </div>
@@ -216,43 +216,43 @@
             <div class="game-controls mt-4" style="display: none;">
                 <button id="startGame" class="btn btn-success btn-lg w-100">
                     <i class="fas fa-play-circle me-2"></i>
-                    Start Night Phase
+                    Начать ночную фазу
                 </button>
             </div>
 
             <div class="role-instructions card shadow-sm mt-4" style="display: none;">
                 <div class="card-body">
-                    <h2 class="card-title">Тыr Role Instructions</h2>
+                    <h2 class="card-title">Инструкции по ролям</h2>
                     <div id="mafiaInstructions" class="role-instruction">
                         <h3 class="h5">Мафия</h3>
                         <ul>
-                            <li>Keep your identity secret from other players</li>
-                            <li>At night, work with other Мафия members to eliminate villagers</li>
-                            <li>During the day, try to blend in with the villagers</li>
+                            <li>Держите свою личность в секрете от других игроков</li>
+                            <li>Ночью работайте с другими членами мафии, чтобы устранить жителей</li>
+                            <li>Днем старайтесь слиться с жителями</li>
                         </ul>
                     </div>
                     <div id="villagerInstructions" class="role-instruction">
                         <h3 class="h5">Житель</h3>
                         <ul>
-                            <li>Work together to identify and eliminate the Мафия</li>
-                            <li>Pay attention to other players' behavior</li>
-                            <li>Голос during the day phase to eliminate suspects</li>
+                            <li>Работайте вместе, чтобы выявить и устранить мафию</li>
+                            <li>Обращайте внимание на поведение других игроков</li>
+                            <li>Голосуйте в дневной фазе, чтобы устранить подозреваемых</li>
                         </ul>
                     </div>
                     <div id="doctorInstructions" class="role-instruction">
                         <h3 class="h5">Доктор</h3>
                         <ul>
-                            <li>Protect one player each night from being eliminated</li>
-                            <li>Ты can protect yourself</li>
-                            <li>Keep your identity secret</li>
+                            <li>Защищайте одного игрока каждую ночь от устранения</li>
+                            <li>Вы можете защитить себя</li>
+                            <li>Держите свою личность в секрете</li>
                         </ul>
                     </div>
                     <div id="detectiveInstructions" class="role-instruction">
                         <h3 class="h5">Детектив</h3>
                         <ul>
-                            <li>Investigate one player each night to learn their role</li>
-                            <li>Use your information to guide the villagers</li>
-                            <li>Keep your identity secret</li>
+                            <li>Расследуйте одного игрока каждую ночь, чтобы узнать его роль</li>
+                            <li>Используйте свою информацию, чтобы направлять жителей</li>
+                            <li>Держите свою личность в секрете</li>
                         </ul>
                     </div>
                 </div>
@@ -260,37 +260,36 @@
 
             <div class="night-actions card shadow-sm mt-4" style="display: none;">
                 <div class="card-body">
-                    <h2 class="card-title">Night Phase</h2>
+                    <h2 class="card-title">Ночная фаза</h2>
                     <div id="narrator-text" class="mb-4"></div>
 
                     <div id="action-area">
                         <div id="mafia-action" class="role-action" style="display: none;">
-                            <h3>Мафия's Turn</h3>
-                            <p>Select a player to eliminate:</p>
+                            <h3>Ход мафии</h3>
+                            <p>Выберите игрока для устранения:</p>
                             <div id="mafia-targets" class="player-selection"></div>
-                            <button id="confirm-mafia" class="btn btn-danger mt-3">Confirm Selection</button>
+                            <button id="confirm-mafia" class="btn btn-danger mt-3">Подтвердить выбор</button>
                         </div>
 
                         <div id="doctor-action" class="role-action" style="display: none;">
-                            <h3>Доктор's Turn</h3>
+                            <h3>Ход доктора</h3>
                             <p id="doctor-prompt"></p>
                             <div id="doctor-choice" class="d-flex flex-column gap-2">
-                                <button id="save-player" class="btn btn-primary mt-3">Save Игрок</button>
-                                <button id="poison-player" class="btn btn-danger mt-3">Poison Игрок</button>
-                                <button id="skip-action" class="btn btn-secondary mt-3">Пропустить Action</button>
+                                <button id="save-player" class="btn btn-primary mt-3">Спасти игрока</button>
+                                <button id="poison-player" class="btn btn-danger mt-3">Отравить игрока</button>
+                                <button id="skip-action" class="btn btn-secondary mt-3">Пропустить действие</button>
                             </div>
                             <div id="doctor-targets" class="player-selection" style="display: none;"></div>
-                            <button id="confirm-doctor" class="btn btn-primary mt-3" style="display: none;">Confirm
-                                Selection</button>
+                            <button id="confirm-doctor" class="btn btn-primary mt-3" style="display: none;">Подтвердить выбор</button>
                         </div>
 
                         <div id="detective-action" class="role-action" style="display: none;">
-                            <h3>Детектив's Turn</h3>
-                            <p>Select a player to investigate:</p>
+                            <h3>Ход детектива</h3>
+                            <p>Выберите игрока для расследования:</p>
                             <div id="detective-targets" class="player-selection"></div>
                             <div id="investigation-result" class="mt-3" style="display: none;">
                                 <p id="investigation-text" class="result-text"></p>
-                                <button id="confirm-detective" class="btn btn-primary mt-3">Continue</button>
+                                <button id="confirm-detective" class="btn btn-primary mt-3">Продолжить</button>
                             </div>
                         </div>
                     </div>
@@ -298,27 +297,27 @@
             </div>
 
             <div id="discussion-phase" class="discussion-phase" style="display: none;">
-                <h3>Discussion Time</h3>
+                <h3>Время обсуждения</h3>
                 <div class="night-summary mb-4">
                     <p id="night-result" class="mb-3"></p>
                     <div id="player-statuses" class="player-status-grid"></div>
                 </div>
-                <p class="discussion-prompt">Discuss who you think might be the Мафия.</p>
-                <button id="end-discussion" class="btn btn-primary mt-4">End Discussion</button>
+                <p class="discussion-prompt">Обсудите, кто, по вашему мнению, может быть мафией.</p>
+                <button id="end-discussion" class="btn btn-primary mt-4">Завершить обсуждение</button>
             </div>
 
             <div class="voting-phase card shadow-sm mt-4" style="display: none;">
                 <div class="card-body">
-                    <h2 class="card-title">Voting Phase</h2>
-                    <p class="voting-prompt">Голос for who you think is the Мафия:</p>
+                    <h2 class="card-title">Фаза голосования</h2>
+                    <p class="voting-prompt">Голосуйте за того, кто, по вашему мнению, является мафией:</p>
                     <div id="voting-grid" class="voting-grid mt-3"></div>
-                    <button id="confirm-vote" class="btn btn-primary mt-4">Confirm Голос</button>
+                    <button id="confirm-vote" class="btn btn-primary mt-4">Подтвердить голосование</button>
                 </div>
             </div>
 
             <div class="player-status card shadow-sm mt-4" style="display: none;">
                 <div class="card-body">
-                    <h2 class="card-title">Игрокs Status</h2>
+                    <h2 class="card-title">Статус игроков</h2>
                     <div id="playerStatus" class="list-group mt-3"></div>
                 </div>
             </div>
@@ -330,8 +329,7 @@
                     <div class="alert-message mb-3"></div>
                     <div class="d-flex flex-column align-items-center">
                         <button class="btn btn-primary alert-confirm">OK</button>
-                        <button id="playAgainBtn" class="btn btn-success mt-2" style="display: none;">Play
-                            Again</button>
+                        <button id="playAgainBtn" class="btn btn-success mt-2" style="display: none;">Играть снова</button>
                     </div>
                 </div>
             </div>
@@ -341,81 +339,77 @@
             <div class="card-body text-white">
                 <h2 class="card-title text-white">Правила игры</h2>
 
-                <h3>Overview</h3>
-                <p>Мафия Board Games are thrilling social deduction party games where players are secretly divided into
-                    two teams: the Мафия and the
-                    Жительs. These exciting board games alternate between night and day phases until one team wins.
+                <h3>Обзор</h3>
+                <p>Настольные игры "Мафия" - это захватывающие игры на социальную дедукцию для вечеринок, где игроки тайно разделены на две команды: мафию и жителей. Эти захватывающие настольные игры чередуют ночные и дневные фазы, пока одна из команд не победит.
                 </p>
 
-                <h3>Мафия Board Games Rules</h3>
+                <h3>Правила настольных игр "Мафия"</h3>
                 <ul>
-                    <li><strong>Total Игрокs:</strong> 6-15 players</li>
-                    <li><strong>Мафия:</strong> Evil players who know each other's identity (1-3 players)</li>
-                    <li><strong>Жительs:</strong> Regular townspeople trying to identify the Мафия</li>
-                    <li><strong>Доктор:</strong> A special villager who can save one person from elimination AND poison
-                        one person during the game (0-1 player)</li>
-                    <li><strong>Детектив:</strong> A special villager who can investigate one player's identity each
-                        night (0-1 player)</li>
+                    <li><strong>Всего игроков:</strong> 6-15 игроков</li>
+                    <li><strong>Мафия:</strong> Злые игроки, которые знают личности друг друга (1-3 игрока)</li>
+                    <li><strong>Жители:</strong> Обычные горожане, пытающиеся выявить мафию</li>
+                    <li><strong>Доктор:</strong> Особый житель, который может спасти одного человека от устранения И отравить одного человека во время игры (0-1 игрок)</li>
+                    <li><strong>Детектив:</strong> Особый житель, который может расследовать личность одного игрока каждую ночь (0-1 игрок)</li>
                 </ul>
 
-                <h3>Game Flow</h3>
+                <h3>Ход игры</h3>
                 <ol>
-                    <li><strong>Setup Phase:</strong>
+                    <li><strong>Фаза настройки:</strong>
                         <ul>
-                            <li>Each player receives a secret role card</li>
-                            <li>Игрокs must keep their roles secret unless eliminated</li>
+                            <li>Каждый игрок получает секретную карту роли</li>
+                            <li>Игроки должны держать свои роли в секрете, пока не будут устранены</li>
                         </ul>
                     </li>
-                    <li><strong>Night Phase:</strong>
+                    <li><strong>Ночная фаза:</strong>
                         <ul>
-                            <li>All players "sleep" (close their eyes)</li>
-                            <li>Мафия members wake up and choose one player to eliminate</li>
-                            <li>Доктор wakes up and can choose to save or poison a player</li>
-                            <li>Детектив wakes up and can investigate one player's identity</li>
+                            <li>Все игроки "спят" (закрывают глаза)</li>
+                            <li>Члены мафии просыпаются и выбирают одного игрока для устранения</li>
+                            <li>Доктор просыпается и может выбрать, спасти или отравить игрока</li>
+                            <li>Детектив просыпается и может расследовать личность одного игрока</li>
                         </ul>
                     </li>
-                    <li><strong>Day Phase:</strong>
+                    <li><strong>Дневная фаза:</strong>
                         <ul>
-                            <li>All players "wake up"</li>
-                            <li>Night actions results are revealed</li>
-                            <li>Игрокs discuss and debate who might be the Мафия</li>
-                            <li>Игрокs vote to eliminate one suspected Мафия member</li>
+                            <li>Все игроки "просыпаются"</li>
+                            <li>Раскрываются результаты ночных действий</li>
+                            <li>Игроки обсуждают и спорят о том, кто может быть мафией</li>
+                            <li>Игроки голосуют за устранение одного подозреваемого члена мафии</li>
                         </ul>
                     </li>
                 </ol>
 
-                <h3>Special Abilities</h3>
+                <h3>Особые способности</h3>
                 <ul>
-                    <li><strong>Доктор's Powers:</strong>
+                    <li><strong>Силы доктора:</strong>
                         <ul>
-                            <li>Can save one player (including themselves) once per game</li>
-                            <li>Can poison one player once per game</li>
-                            <li>Must choose whether to save, poison, or skip each night</li>
+                            <li>Может спасти одного игрока (включая себя) один раз за игру</li>
+                            <li>Может отравить одного игрока один раз за игру</li>
+                            <li>Должен выбрать, спасти, отравить или пропустить каждую ночь</li>
                         </ul>
                     </li>
-                    <li><strong>Детектив's Power:</strong>
+                    <li><strong>Сила детектива:</strong>
                         <ul>
-                            <li>Can investigate one player each night</li>
-                            <li>Learns whether the investigated player is Мафия or not</li>
+                            <li>Может расследовать одного игрока каждую ночь</li>
+                            <li>Узнает, является ли расследуемый игрок мафией или нет</li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3>Winning Conditions</h3>
+                <h3>Условия победы</h3>
                 <ul>
-                    <li><strong>Жительs Win:</strong> When all Мафия members are eliminated</li>
-                    <li><strong>Мафия Wins:</strong> When the number of Мафия equals or exceeds the number of Жительs
+                    <li><strong>Победа жителей:</strong> Когда все члены мафии устранены</li>
+                    <li><strong>Победа мафии:</strong> Когда количество членов мафии равно или превышает количество жителей
                     </li>
                 </ul>
 
-                <h3>Tips for Playing Мафия Board Games</h3>
+                <h3>Советы по игре в настольные игры "Мафия"</h3>
                 <ul>
-                    <li>Pay attention to player behavior during discussions in these strategic board games</li>
-                    <li>Special roles (Доктор and Детектив) should be careful about revealing their identity</li>
-                    <li>Use voting strategically in mafia board games - sometimes not voting might be the best strategy
+                    <li>Обращайте внимание на поведение игроков во время обсуждений в этих стратегических настольных играх</li>
+                    <li>Особые роли (доктор и детектив) должны быть осторожны в раскрытии своей личности</li>
+                    <li>Используйте голосование стратегически в настольных играх мафия - иногда неголосование может быть лучшей стратегией
                     </li>
-                    <li>Мафия members should try to blend in with villagers during discussions</li>
-                    <li>These board games work best with consistent group play to develop strategies</li>
+                    <li>Члены мафии должны стараться слиться с жителями во время обсуждений</li>
+                    <li>Эти настольные игры работают лучше всего с постоянной групповой игрой для развития стратегий</li>
                 </ul>
             </div>
         </div>

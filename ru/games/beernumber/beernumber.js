@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         history.innerHTML = `
-            <div class="guess-history-title">Number of guesses: ${guesses.length}</div>
+            <div class="guess-history-title">Количество попыток: ${guesses.length}</div>
             <div class="history-list">
                 ${guesses.map(num => `<span class="history-item">${num}</span>`).join('')}
             </div>
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Validate input
         if (isNaN(guess) || guess < 1 || guess > 100) {
-            message.textContent = 'Please enter a valid number between 1 and 100!';
+            message.textContent = 'Пожалуйста, введите правильное число от 1 до 100!';
             message.className = 'alert alert-danger';
             updateBeerFace('sad');
             return;
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Check if guess is correct
         if (guess === targetNumber) {
-            message.textContent = `Cheers! 🍻 Ты found the number ${targetNumber} in ${guesses.length} tries!`;
+            message.textContent = `Ура! 🍻 Вы нашли число ${targetNumber} за ${guesses.length} попыток!`;
             message.className = 'alert alert-success';
             isGameOver = true;
 
@@ -210,12 +210,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // Provide hint if guess is too low
         else if (guess < targetNumber) {
-            message.textContent = 'Too low! Тыr beer needs more filling! 🍺';
+            message.textContent = 'Слишком мало! Вашему пиву нужно больше! 🍺';
             message.className = 'alert alert-warning';
         }
         // Provide hint if guess is too high
         else {
-            message.textContent = 'Too high! Ты\'re overflowing the mug! 🍺';
+            message.textContent = 'Слишком много! Кружка переполнена! 🍺';
             message.className = 'alert alert-warning';
         }
 

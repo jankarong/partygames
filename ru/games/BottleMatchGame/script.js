@@ -1,4 +1,4 @@
-// Game Configuration
+// Конфигурация игры
 const LEVELS = [
     { level: 1, length: 3, colors: ['red', 'blue', 'green', 'yellow'] },
     { level: 2, length: 4, colors: ['red', 'blue', 'green', 'yellow'] },
@@ -8,11 +8,11 @@ const LEVELS = [
 ];
 
 const COLOR_NAMES = {
-    red: 'Red', blue: 'Blue', green: 'Green', yellow: 'Yellow',
-    purple: 'Purple', orange: 'Orange', brown: 'Brown', pink: 'Pink'
+    red: 'Красный', blue: 'Синий', green: 'Зелёный', yellow: 'Жёлтый',
+    purple: 'Фиолетовый', orange: 'Оранжевый', brown: 'Коричневый', pink: 'Розовый'
 };
 
-// Game State
+// Состояние игры
 let currentLevel = 0;
 let secretSequence = [];
 let currentGuess = [];
@@ -22,12 +22,12 @@ let levelStartTime = 0;
 let totalAttempts = 0;
 let selectedBottleIndex = -1;
 
-// Sound Functions
+// Звуковые функции
 function playPlaceSound() {
     const sound = document.getElementById('place-sound');
     if (sound) {
         sound.currentTime = 0;
-        sound.play().catch(e => console.log('Sound play failed:', e));
+        sound.play().catch(e => console.log('Воспроизведение звука не удалось:', e));
     }
 }
 
@@ -35,7 +35,7 @@ function playSuccessSound() {
     const sound = document.getElementById('success-sound');
     if (sound) {
         sound.currentTime = 0;
-        sound.play().catch(e => console.log('Sound play failed:', e));
+        sound.play().catch(e => console.log('Воспроизведение звука не удалось:', e));
     }
 }
 
@@ -43,14 +43,14 @@ function playFailSound() {
     const sound = document.getElementById('fail-sound');
     if (sound) {
         sound.currentTime = 0;
-        sound.play().catch(e => console.log('Sound play failed:', e));
+        sound.play().catch(e => console.log('Воспроизведение звука не удалось:', e));
     }
 }
 
-// Anti-duplicate mechanism - global storage for all used sequences
+// Механизм защиты от дубликатов - глобальное хранилище для всех использованных последовательностей
 let previouslyUsedSequences = [];
 
-// Utility Functions
+// Вспомогательные функции
 function arrayEquals(a, b) {
     return a.length === b.length && a.every((val, i) => val === b[i]);
 }
@@ -71,38 +71,38 @@ function addToUsedSequences(sequence) {
     }
 }
 
-// Generate unique sequence (anti-duplicate + no repeated colors)
+// Генерация уникальной последовательности (без дубликатов + без повторяющихся цветов)
 function generateUniqueSequence(length, colors) {
     let sequence;
     let attempts = 0;
-    const maxAttempts = 1000; // Prevent infinite loop
+    const maxAttempts = 1000; // Предотвращение бесконечного цикла
 
     do {
         sequence = [];
-        const availableColors = [...colors]; // Copy colors array
+        const availableColors = [...colors]; // Копия массива цветов
 
-        // Ensure no repeated colors in sequence
+        // Гарантировать отсутствие повторяющихся цветов в последовательности
         for (let i = 0; i < length; i++) {
             if (availableColors.length === 0) {
-                // If not enough colors available, restart
+                // Если недостаточно доступных цветов, перезапустить
                 break;
             }
             const randomIndex = Math.floor(Math.random() * availableColors.length);
             const selectedColor = availableColors[randomIndex];
             sequence.push(selectedColor);
-            availableColors.splice(randomIndex, 1); // Remove selected color
+            availableColors.splice(randomIndex, 1); // Удалить выбранный цвет
         }
 
         attempts++;
     } while ((sequence.length !== length || isSequenceUsed(sequence)) && attempts < maxAttempts);
 
     if (attempts >= maxAttempts) {
-        console.warn('Unable to generate unique sequence, all combinations may have been used');
-        // Clear used sequence history and restart
+        console.warn('Невозможно сгенерировать уникальную последовательность, возможно, использованы все комбинации');
+        // Очистить историю использованных последовательностей и перезапустить
         previouslyUsedSequences = [];
-        console.log('Sequence history cleared, regenerating');
+        console.log('История последовательностей очищена, перегенерация');
 
-        // Retry generation once
+        // Повторная попытка генерации
         sequence = [];
         const availableColors = [...colors];
         for (let i = 0; i < length; i++) {
@@ -117,15 +117,15 @@ function generateUniqueSequence(length, colors) {
     return sequence;
 }
 
-// Feedback calculation function (simplified Mastermind)
+// Функция расчета обратной связи (упрощенная Mastermind)
 function getFeedback(guess, secret) {
-    let blackPegs = 0; // Correct position and color
-    let whitePegs = 0; // Correct color but wrong position
+    let blackPegs = 0; // Правильная позиция и цвет
+    let whitePegs = 0; // Правильный цвет, но неправильная позиция
 
     const secretCopy = [...secret];
     const guessCopy = [...guess];
 
-    // Calculate black pegs (correct position and color)
+    // Подсчет черных колышков (правильная позиция и цвет)
     for (let i = guessCopy.length - 1; i >= 0; i--) {
         if (guessCopy[i] === secretCopy[i]) {
             blackPegs++;
@@ -134,7 +134,7 @@ function getFeedback(guess, secret) {
         }
     }
 
-    // Calculate white pegs (correct color but wrong position)
+    // Подсчет белых колышков (правильный цвет, но неправильная позиция)
     for (let i = 0; i < guessCopy.length; i++) {
         const index = secretCopy.indexOf(guessCopy[i]);
         if (index !== -1) {
@@ -146,7 +146,7 @@ function getFeedback(guess, secret) {
     return { black: blackPegs, white: whitePegs };
 }
 
-// UI Functions
+// Функции интерфейса
 function updateLevelInfo() {
     const level = LEVELS[currentLevel];
     document.getElementById('current-level').textContent = level.level;
@@ -173,13 +173,13 @@ function renderCurrentGuess() {
 
     const level = LEVELS[currentLevel];
 
-    // Create guess area title
+    // Создать заголовок области угадывания
     const guessTitle = document.createElement('h4');
-    guessTitle.textContent = 'Drag bottles to swap positions, or click to select:';
+    guessTitle.textContent = 'Перетащите бутылки для обмена позиций или нажмите для выбора:';
     guessTitle.style.marginBottom = '15px';
     container.appendChild(guessTitle);
 
-    // Create guess bottles container
+    // Создать контейнер для бутылок угадывания
     const guessBottlesContainer = document.createElement('div');
     guessBottlesContainer.className = 'bottles-container';
     guessBottlesContainer.style.marginBottom = '20px';
@@ -196,14 +196,14 @@ function renderCurrentGuess() {
             bottle.classList.add('selected');
         }
 
-        // Add drag functionality
+        // Добавить функцию перетаскивания
         if (currentGuess[i]) {
             bottle.draggable = true;
             bottle.ondragstart = (e) => handleDragStart(e, i);
             bottle.ondragend = (e) => handleDragEnd(e);
         }
 
-        // Add drop functionality
+        // Добавить функцию сброса
         bottle.ondragover = (e) => handleDragOver(e);
         bottle.ondrop = (e) => handleDrop(e, i);
         bottle.ondragenter = (e) => handleDragEnter(e);
@@ -215,10 +215,10 @@ function renderCurrentGuess() {
 
     container.appendChild(guessBottlesContainer);
 
-    // Add color selection area
+    // Добавить область выбора цвета
     const colorPalette = document.createElement('div');
     colorPalette.style.marginTop = '20px';
-    colorPalette.innerHTML = '<h4>Click a color to select:</h4>';
+    colorPalette.innerHTML = '<h4>Нажмите на цвет для выбора:</h4>';
 
     const colorsContainer = document.createElement('div');
     colorsContainer.className = 'bottles-container';
@@ -227,7 +227,7 @@ function renderCurrentGuess() {
         const bottle = createBottleElement(color);
         bottle.onclick = () => selectColor(color);
 
-        // Add drag functionality for color palette bottles
+        // Добавить функцию перетаскивания для бутылок цветовой палитры
         bottle.draggable = true;
         bottle.ondragstart = (e) => handleColorDragStart(e, color);
         bottle.ondragend = (e) => handleDragEnd(e);
@@ -256,7 +256,7 @@ function selectColor(color) {
 
 function selectBottle(index, color) {
     if (selectedBottleIndex >= 0 && selectedBottleIndex !== index) {
-        // Swap bottle positions
+        // Обмен позициями бутылок
         const temp = currentGuess[selectedBottleIndex];
         currentGuess[selectedBottleIndex] = currentGuess[index];
         currentGuess[index] = temp;
@@ -268,7 +268,7 @@ function selectBottle(index, color) {
     }
 }
 
-// Drag functionality handlers
+// Обработчики функций перетаскивания
 let dragSourceIndex = -1;
 let dragSourceColor = null;
 
@@ -292,7 +292,7 @@ function handleDragEnd(e) {
     e.target.classList.remove('dragging');
     dragSourceIndex = -1;
     dragSourceColor = null;
-    // Clear all drag styles
+    // Очистить все стили перетаскивания
     document.querySelectorAll('.bottle').forEach(bottle => {
         bottle.classList.remove('drag-over');
     });
@@ -321,16 +321,16 @@ function handleDrop(e, targetIndex) {
 
     e.target.classList.remove('drag-over');
 
-    // If dragging from color palette
+    // Если перетаскивание из цветовой палитры
     if (dragSourceColor !== null) {
         currentGuess[targetIndex] = dragSourceColor;
         playPlaceSound();
         renderCurrentGuess();
         updateSubmitButton();
     }
-    // If dragging from guess positions
+    // Если перетаскивание из позиций угадывания
     else if (dragSourceIndex !== -1 && dragSourceIndex !== targetIndex) {
-        // Swap bottle positions
+        // Обмен позициями бутылок
         const temp = currentGuess[dragSourceIndex];
         currentGuess[dragSourceIndex] = currentGuess[targetIndex];
         currentGuess[targetIndex] = temp;
@@ -369,14 +369,14 @@ function renderGuessHistory() {
         const feedback = document.createElement('div');
         feedback.className = 'feedback';
 
-        // Add black pegs
+        // Добавить черные колышки
         for (let i = 0; i < entry.feedback.black; i++) {
             const peg = document.createElement('div');
             peg.className = 'peg black';
             feedback.appendChild(peg);
         }
 
-        // Add white pegs
+        // Добавить белые колышки
         for (let i = 0; i < entry.feedback.white; i++) {
             const peg = document.createElement('div');
             peg.className = 'peg white';
@@ -389,69 +389,69 @@ function renderGuessHistory() {
     });
 }
 
-// Feedback popup function
+// Функция всплывающего окна обратной связи
 function showFeedbackPopup(feedback, isCorrect = false) {
-    // Play success or fail sound
+    // Воспроизвести звук успеха или неудачи
     if (isCorrect) {
         playSuccessSound();
     } else {
         playFailSound();
     }
 
-    // Create overlay
+    // Создать оверлей
     const overlay = document.createElement('div');
     overlay.className = 'popup-overlay';
     overlay.onclick = closeFeedbackPopup;
 
-    // Create popup
+    // Создать всплывающее окно
     const popup = document.createElement('div');
     popup.className = `feedback-popup ${isCorrect ? 'success-feedback' : ''}`;
     popup.id = 'feedback-popup';
 
-    const title = isCorrect ? '🎉 Congratulations!' : '📊 Guess Feedback';
+    const title = isCorrect ? '🎉 Поздравляем!' : '📊 Обратная связь';
 
-    // Calculate level time
+    // Рассчитать время уровня
     const levelTime = Math.floor((Date.now() - levelStartTime) / 1000);
 
     popup.innerHTML = `
         <h3>${title}</h3>
         <div class="feedback-details">
             <div class="feedback-item">
-                <span><span class="feedback-icon">⚫</span>Correct position and color:</span>
+                <span><span class="feedback-icon">⚫</span>Правильная позиция и цвет:</span>
                 <strong style="color: #2d3748; font-size: 1.3em;">${feedback.black}</strong>
             </div>
             ${isCorrect ? `
             <div style="margin-top: 20px; padding: 15px; background: #f0fff4; border-radius: 8px; border: 2px solid #9ae6b4;">
-                <h4 style="color: #38a169; margin-bottom: 10px;">Level ${LEVELS[currentLevel].level} Complete!</h4>
+                <h4 style="color: #38a169; margin-bottom: 10px;">Уровень ${LEVELS[currentLevel].level} пройден!</h4>
                 <div style="display: flex; justify-content: space-between; margin: 8px 0;">
-                    <span>🎯 Attempts:</span>
+                    <span>🎯 Попытки:</span>
                     <strong style="color: #2d3748;">${guessHistory.length}</strong>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin: 8px 0;">
-                    <span>⏱️ Time:</span>
-                    <strong style="color: #2d3748;">${levelTime} seconds</strong>
+                    <span>⏱️ Время:</span>
+                    <strong style="color: #2d3748;">${levelTime} секунд</strong>
                 </div>
             </div>
             ` : `
             <div style="margin-top: 15px; color: #4a5568;">
-                <small>Keep guessing, you're getting closer!</small>
+                <small>Продолжайте угадывать, вы приближаетесь!</small>
             </div>
             `}
         </div>
         <button class="close-btn" onclick="closeFeedbackPopup()">
-            ${isCorrect ? 'Дальше Level' : 'Continue'}
+            ${isCorrect ? 'Следующий уровень' : 'Продолжить'}
         </button>
     `;
 
     document.body.appendChild(overlay);
     document.body.appendChild(popup);
 
-    // If correct, auto-close and proceed to next level
+    // Если правильно, автоматически закрыть и перейти к следующему уровню
     if (isCorrect) {
         setTimeout(() => {
             closeFeedbackPopup();
             nextLevel();
-        }, 4000); // Extended to 4 seconds to let player see stats
+        }, 4000); // Увеличено до 4 секунд, чтобы игрок увидел статистику
     }
 }
 
@@ -463,7 +463,7 @@ function closeFeedbackPopup() {
     if (overlay) overlay.remove();
 }
 
-// Game Logic
+// Игровая логика
 function startLevel() {
     const level = LEVELS[currentLevel];
     secretSequence = generateUniqueSequence(level.length, level.colors);
@@ -479,14 +479,14 @@ function startLevel() {
 
     document.getElementById('secret-display').style.display = 'none';
 
-    console.log(`Level ${level.level} started, secret sequence:`, secretSequence);
+    console.log(`Уровень ${level.level} начат, секретная последовательность:`, secretSequence);
 }
 
 function submitGuess() {
     const level = LEVELS[currentLevel];
 
     if (currentGuess.length !== level.length || !currentGuess.every(color => color)) {
-        alert('Please complete your guess sequence!');
+        alert('Пожалуйста, завершите вашу последовательность!');
         return;
     }
 
@@ -501,16 +501,16 @@ function submitGuess() {
     updateLevelInfo();
     renderGuessHistory();
 
-    // Check if correct
+    // Проверить, правильно ли
     const isCorrect = feedback.black === level.length;
 
-    // Show feedback popup
+    // Показать всплывающее окно обратной связи
     setTimeout(() => {
         showFeedbackPopup(feedback, isCorrect);
     }, 300);
 
     if (!isCorrect) {
-        // Keep player's guess sequence, don't reset
+        // Сохранить последовательность игрока, не сбрасывать
         selectedBottleIndex = -1;
         renderCurrentGuess();
         updateSubmitButton();
@@ -558,7 +558,7 @@ function restartGame() {
     totalAttempts = 0;
     gameStartTime = Date.now();
 
-    // Don't clear previouslyUsedSequences, keep anti-duplicate mechanism
+    // Не очищать previouslyUsedSequences, сохранить механизм защиты от дубликатов
 
     document.getElementById('game-area').style.display = 'block';
     document.querySelector('.level-info').style.display = 'block';
@@ -567,11 +567,11 @@ function restartGame() {
     startLevel();
 }
 
-// Initialize Game
+// Инициализация игры
 function initGame() {
     gameStartTime = Date.now();
     startLevel();
 }
 
-// Start game after page loads
+// Начать игру после загрузки страницы
 window.onload = initGame;

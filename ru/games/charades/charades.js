@@ -1,57 +1,57 @@
-// Word Database
+// База данных слов
 const wordDatabase = {
     animals: [
-        "Elephant", "Giraffe", "Penguin", "Kangaroo", "Lion", "Tiger", "Monkey",
-        "Butterfly", "Spider", "Crocodile", "Dolphin", "Eagle", "Octopus",
-        "Panda", "Rabbit", "Snake", "Zebra", "Bear", "Owl", "Frog"
+        "Слон", "Жираф", "Пингвин", "Кенгуру", "Лев", "Тигр", "Обезьяна",
+        "Бабочка", "Паук", "Крокодил", "Дельфин", "Орёл", "Осьминог",
+        "Панда", "Кролик", "Змея", "Зебра", "Медведь", "Сова", "Лягушка"
     ],
     actions: [
-        "Swimming", "Dancing", "Skiing", "Cooking", "Painting", "Running",
-        "Playing Guitar", "Reading", "Sleeping", "Singing", "Boxing",
-        "Ice Skating", "Surfing", "Basketball", "Taking Photos",
-        "Fishing", "Juggling", "Tennis", "Diving", "Writing"
+        "Плавание", "Танцы", "Катание на лыжах", "Готовка", "Рисование", "Бег",
+        "Игра на гитаре", "Чтение", "Сон", "Пение", "Бокс",
+        "Катание на коньках", "Серфинг", "Баскетбол", "Фотографирование",
+        "Рыбалка", "Жонглирование", "Теннис", "Дайвинг", "Письмо"
     ],
     objects: [
-        "Umbrella", "Phone", "Computer", "Guitar", "Camera", "Clock",
-        "Glasses", "Book", "Chair", "Table", "Pencil", "Mirror", "Door",
-        "Window", "Lamp", "Television", "Bicycle", "Piano", "Backpack",
-        "Headphones"
+        "Зонт", "Телефон", "Компьютер", "Гитара", "Камера", "Часы",
+        "Очки", "Книга", "Стул", "Стол", "Карандаш", "Зеркало", "Дверь",
+        "Окно", "Лампа", "Телевизор", "Велосипед", "Пианино", "Рюкзак",
+        "Наушники"
     ],
     movies: [
-        "Star Wars", "Titanic", "Lion King", "Harry Potter", "Avatar",
-        "Jurassic Park", "Spider-Man", "The Matrix", "Finding Nemo",
-        "Pirates of the Caribbean", "Frozen", "Avengers", "Toy Story",
-        "Batman", "Indiana Jones", "Alien", "Jaws", "Superman", "Ghostbusters",
-        "Wizard of Oz"
+        "Звёздные войны", "Титаник", "Король Лев", "Гарри Поттер", "Аватар",
+        "Парк Юрского периода", "Человек-паук", "Матрица", "В поисках Немо",
+        "Пираты Карибского моря", "Холодное сердце", "Мстители", "История игрушек",
+        "Бэтмен", "Индиана Джонс", "Чужой", "Челюсти", "Супермен", "Охотники за привидениями",
+        "Волшебник страны Оз"
     ],
     funny: [
-        "Drunk", "Zombie", "Superhero", "Crying",
-        "Snob", "Banana Peel", "Chicken Dance",
-        "Elvis", "Invisible Box", "Sleepy",
-        "High Heels", "Baby", "Bad Back",
-        "Possessed", "Constipated", "Texting While Walking",
-        "Awkward Date", "Sneaking", "Drama", "Tripping",
-        "Hiccups", "Confused", "Shy", "Angry",
-        "Excited", "Tired", "Robot", "Astronaut"
+        "Пьяный", "Зомби", "Супергерой", "Плач",
+        "Сноб", "Банановая кожура", "Танец курицы",
+        "Элвис", "Невидимая коробка", "Сонный",
+        "Высокие каблуки", "Младенец", "Больная спина",
+        "Одержимый", "Запор", "СМС на ходу",
+        "Неловкое свидание", "Подкрадывание", "Драма", "Споткнулся",
+        "Икота", "Растерянный", "Застенчивый", "Злой",
+        "Взволнованный", "Усталый", "Робот", "Космонавт"
     ],
     sports: [
-        "Swimming", "Tennis", "Basketball", "Football", "Baseball", "Soccer",
-        "Golf", "Volleyball", "Skiing", "Ice Hockey", "Boxing", "Wrestling",
-        "Gymnastics", "Surfing", "Skateboarding", "Rock Climbing", "Bowling",
-        "Table Tennis", "Badminton", "Archery"
+        "Плавание", "Теннис", "Баскетбол", "Американский футбол", "Бейсбол", "Футбол",
+        "Гольф", "Волейбол", "Лыжи", "Хоккей", "Бокс", "Борьба",
+        "Гимнастика", "Серфинг", "Скейтбординг", "Скалолазание", "Боулинг",
+        "Настольный теннис", "Бадминтон", "Стрельба из лука"
     ],
     professions: [
-        "Доктор", "Teacher", "Chef", "Police Officer", "Firefighter", "Nurse",
-        "Engineer", "Lawyer", "Dentist", "Photographer", "Pilot", "Astronaut",
-        "Construction Worker", "Barber", "Actor", "Magician", "Clown", "Janitor",
-        "Librarian", "Security Guard"
+        "Доктор", "Учитель", "Шеф-повар", "Полицейский", "Пожарный", "Медсестра",
+        "Инженер", "Адвокат", "Стоматолог", "Фотограф", "Пилот", "Космонавт",
+        "Строитель", "Парикмахер", "Актёр", "Фокусник", "Клоун", "Уборщик",
+        "Библиотекарь", "Охранник"
     ],
     historical: [
-        "Napoleon Bonaparte", "Cleopatra", "Albert Einstein", "Shakespeare",
-        "Benjamin Franklin", "Joan of Arc", "Abraham Lincoln", "Julius Caesar",
-        "Marie Curie", "George Washington", "Queen Elizabeth I", "Leonardo da Vinci",
-        "Attila the Hun", "Socrates", "Martin Luther King Jr.", "Rosa Parks",
-        "Winston Churchill", "Marilyn Monroe", "Elvis Presley", "Mahatma Gandhi"
+        "Наполеон Бонапарт", "Клеопатра", "Альберт Эйнштейн", "Шекспир",
+        "Бенджамин Франклин", "Жанна д'Арк", "Авраам Линкольн", "Юлий Цезарь",
+        "Мария Кюри", "Джордж Вашингтон", "Королева Елизавета I", "Леонардо да Винчи",
+        "Аттила", "Сократ", "Мартин Лютер Кинг", "Роза Паркс",
+        "Уинстон Черчилль", "Мэрилин Монро", "Элвис Пресли", "Махатма Ганди"
     ]
 };
 
@@ -73,7 +73,7 @@ class CharadesGame {
     initializeButtons() {
         document.getElementById('start-game').addEventListener('click', () => this.startGame());
         document.getElementById('correct').addEventListener('click', () => this.handleCorrect());
-        document.getElementById('skip').addEventListener('click', () => this.handleПропустить());
+        document.getElementById('skip').addEventListener('click', () => this.handleSkip());
         document.getElementById('play-again').addEventListener('click', () => this.resetGame());
     }
 
@@ -100,7 +100,7 @@ class CharadesGame {
 
         this.currentWords = this.getWords(category);
         if (this.currentWords.length === 0) {
-            alert('Not enough words available!');
+            alert('Недостаточно слов!');
             return;
         }
 
@@ -139,7 +139,7 @@ class CharadesGame {
         this.timerInterval = setInterval(() => {
             this.timeLeft--;
             this.timerElement.textContent = this.timeLeft;
-            console.log("Timer:", this.timeLeft);
+            console.log("Таймер:", this.timeLeft);
 
             if (this.timeLeft <= 0) {
                 this.endGame();
@@ -151,7 +151,7 @@ class CharadesGame {
         if (this.currentWords.length > 0) {
             const word = this.currentWords.pop();
             this.currentWordElement.textContent = word;
-            console.log("Current word:", word);
+            console.log("Текущее слово:", word);
         } else {
             this.endGame();
         }
@@ -159,7 +159,7 @@ class CharadesGame {
 
     handleCorrect() {
         if (!this.isGameRunning) return;
-        console.log("Correct button clicked");
+        console.log("Кнопка правильно нажата");
 
         this.correctWords.push(this.currentWordElement.textContent);
         this.score += 1;
@@ -167,16 +167,16 @@ class CharadesGame {
         this.nextWord();
     }
 
-    handleПропустить() {
+    handleSkip() {
         if (!this.isGameRunning) return;
-        console.log("Пропустить button clicked");
+        console.log("Кнопка пропустить нажата");
 
         this.skippedWords.push(this.currentWordElement.textContent);
         this.nextWord();
     }
 
     updateScore() {
-        this.scoreElement.textContent = `Score: ${this.score}`;
+        this.scoreElement.textContent = `Счёт: ${this.score}`;
     }
 
     endGame() {
@@ -187,24 +187,24 @@ class CharadesGame {
         this.resultScreen.classList.remove('hidden');
         this.gameHeader.classList.remove('hidden');
 
-        document.getElementById('final-score').textContent = `Final Score: ${this.score}`;
+        document.getElementById('final-score').textContent = `Финальный счёт: ${this.score}`;
 
-        let summary = '<h3>Correct words:</h3>';
+        let summary = '<h3>Угаданные слова:</h3>';
         summary += this.correctWords.length > 0 ?
             `<p>${this.correctWords.join(', ')}</p>` :
-            '<p>None</p>';
+            '<p>Нет</p>';
 
-        summary += '<h3>Пропуститьped words:</h3>';
+        summary += '<h3>Пропущенные слова:</h3>';
         summary += this.skippedWords.length > 0 ?
             `<p>${this.skippedWords.join(', ')}</p>` :
-            '<p>None</p>';
+            '<p>Нет</p>';
 
         document.getElementById('word-summary').innerHTML = summary;
     }
 }
 
-// Initialize game when DOM is loaded
+// Инициализация игры при загрузке DOM
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM loaded, initializing game...");
+    console.log("DOM загружен, инициализация игры...");
     new CharadesGame();
 });

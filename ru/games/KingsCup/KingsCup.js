@@ -13,68 +13,68 @@ class KingsCupGame {
         this.cardRules = {
             'A': {
                 name: 'Водопад',
-                description: 'Everyone starts drinking and can\'t stop until the person before them stops! Goes clockwise from the card drawer.',
-                action: '🌊 Start the waterfall! Все пьют continuously until the person before you stops!'
+                description: 'Все начинают пить и не могут остановиться, пока не остановится человек перед ними! Идет по часовой стрелке от того, кто вытянул карту.',
+                action: '🌊 Начните водопад! Все пьют непрерывно, пока не остановится человек перед вами!'
             },
             '2': {
                 name: 'Ты',
-                description: 'Choose someone to drink. Point to any player and they must take a sip.',
-                action: '👉 Choose someone to drink! Point to a player and they take a sip!'
+                description: 'Выберите кого-то, кто будет пить. Укажите на любого игрока, и он должен сделать глоток.',
+                action: '👉 Выберите кого-то, кто будет пить! Укажите на игрока, и он сделает глоток!'
             },
             '3': {
                 name: 'Я',
-                description: 'Ты drink! The person who drew this card must take a sip.',
-                action: '🍻 Ты drink! Take a sip yourself!'
+                description: 'Ты пьешь! Человек, который вытянул эту карту, должен сделать глоток.',
+                action: '🍻 Ты пьешь! Сделай глоток сам!'
             },
             '4': {
                 name: 'Пол',
-                description: 'Everyone must touch the floor immediately. Last person to touch the floor drinks.',
-                action: '⬇️ Everyone touch the floor now! Last person drinks!'
+                description: 'Все должны немедленно коснуться пола. Последний, кто коснется пола, пьет.',
+                action: '⬇️ Все коснитесь пола сейчас! Последний пьет!'
             },
             '5': {
                 name: 'Парни',
-                description: 'All guys/boys drink together. Every male player takes a sip at the same time.',
-                action: '👦 All guys drink together! Boys take a sip!'
+                description: 'Все парни/мальчики пьют вместе. Каждый игрок мужского пола делает глоток одновременно.',
+                action: '👦 Все парни пьют вместе! Мальчики делают глоток!'
             },
             '6': {
                 name: 'Девочки',
-                description: 'Все девочки пьют together. Every female player takes a sip at the same time.',
-                action: '👧 Все девочки пьют together! Ladies take a sip!'
+                description: 'Все девочки пьют вместе. Каждый игрок женского пола делает глоток одновременно.',
+                action: '👧 Все девочки пьют вместе! Девушки делают глоток!'
             },
             '7': {
                 name: 'Рай',
-                description: 'Everyone points to the sky/ceiling immediately. Last person to point up drinks.',
-                action: '☝️ Everyone point to heaven now! Last person drinks!'
+                description: 'Все немедленно указывают на небо/потолок. Последний, кто укажет вверх, пьет.',
+                action: '☝️ Все укажите на небо сейчас! Последний пьет!'
             },
             '8': {
                 name: 'Напарник',
-                description: 'Choose a drinking buddy. Whenever you drink, they must drink too. This partnership lasts until someone else draws an 8.',
-                action: '👫 Choose your drinking mate! When you drink, they drink too until the next 8 is drawn!'
+                description: 'Выберите партнера по выпивке. Когда вы пьете, они тоже должны пить. Это партнерство длится до тех пор, пока кто-то другой не вытянет 8.',
+                action: '👫 Выберите партнера по выпивке! Когда вы пьете, они тоже пьют, пока не вытянут следующую 8!'
             },
             '9': {
                 name: 'Рифма',
-                description: 'Say a word, then everyone takes turns saying words that rhyme. First person who can\'t think of a rhyme or repeats a word does a challenge.',
-                action: '🎵 Start with a word! Everyone take turns rhyming. No repeats!'
+                description: 'Скажите слово, затем все по очереди говорят слова, которые рифмуются. Первый, кто не может придумать рифму или повторяет слово, выполняет задание.',
+                action: '🎵 Начните со слова! Все по очереди рифмуют. Без повторов!'
             },
             '10': {
                 name: 'Категории',
-                description: 'Name a category (like animals, colors, etc.), then everyone takes turns naming items in that category. First person who can\'t think of one does a challenge.',
-                action: '📝 Pick a category! Everyone name items. Can\'t think of one? Do a challenge!'
+                description: 'Назовите категорию (например, животные, цвета и т.д.), затем все по очереди называют предметы из этой категории. Первый, кто не может придумать, выполняет задание.',
+                action: '📝 Выберите категорию! Все называют предметы. Не можете придумать? Выполните задание!'
             },
             'J': {
-                name: 'Make a Rule',
-                description: 'Create a new rule that everyone must follow for the rest of the game. Be creative! Examples: "No pointing", "Speak in accents", "No saying names".',
-                action: '📜 Make a rule everyone must follow! Get creative! (e.g., "No pointing", "Speak in funny voices")'
+                name: 'Создать правило',
+                description: 'Создайте новое правило, которому все должны следовать до конца игры. Будьте креативны! Примеры: "Не указывать", "Говорить с акцентом", "Не говорить имена".',
+                action: '📜 Создайте правило, которому все должны следовать! Будьте креативны! (например, "Не указывать", "Говорить смешными голосами")'
             },
             'Q': {
                 name: 'Вопросы',
-                description: 'Ты can only ask questions to other players. Anyone who answers (instead of asking back) drinks. This continues until someone else draws a Queen.',
-                action: '❓ Ты can only ask questions! Anyone who answers (instead of asking back) drinks!'
+                description: 'Вы можете только задавать вопросы другим игрокам. Любой, кто ответит (вместо того, чтобы спросить в ответ), пьет. Это продолжается, пока кто-то другой не вытянет Даму.',
+                action: '❓ Вы можете только задавать вопросы! Любой, кто ответит (вместо того, чтобы спросить в ответ), пьет!'
             },
             'K': {
                 name: 'Король чаши',
-                description: 'Pour some of your drink into the Король чаши in the center. If this is the 4th King, you must drink the entire Король чаши and the game ends!',
-                action: '👑 Pour your drink into the Король чаши! This is the {kingNumber} King!'
+                description: 'Налейте часть вашего напитка в Король чаши в центре. Если это 4-й Король, вы должны выпить всю Король чаши, и игра заканчивается!',
+                action: '👑 Налейте свой напиток в Король чаши! Это {kingNumber} Король!'
             }
         };
 
@@ -233,9 +233,9 @@ class KingsCupGame {
         let actionDescription = rule.action;
         if (card.value === 'K') {
             if (this.kingsDrawn === 4) {
-                actionDescription = 'Fourth King! Ты must drink the entire Король чаши! Game Over! 🍻';
+                actionDescription = 'Четвертый Король! Вы должны выпить всю Король чаши! Игра окончена! 🍻';
             } else {
-                actionDescription = `Pour your drink into the Король чаши! This is the ${this.getOrdinal(this.kingsDrawn)} King!`;
+                actionDescription = `Налейте свой напиток в Король чаши! Это ${this.getOrdinal(this.kingsDrawn)} Король!`;
             }
         }
         
@@ -264,11 +264,11 @@ class KingsCupGame {
         
         if (this.kingsDrawn === 4) {
             // Game over - fourth king drawn
-            const kingCards = this.cupContents.map(card => 
+            const kingCards = this.cupContents.map(card =>
                 `<span class="king-card">${card}</span>`
             ).join('');
-            document.getElementById('cupContents').innerHTML = 
-                `<div style="margin-bottom: 0.5rem;"><strong>Game Over!</strong></div>${kingCards}`;
+            document.getElementById('cupContents').innerHTML =
+                `<div style="margin-bottom: 0.5rem;"><strong>Игра окончена!</strong></div>${kingCards}`;
         }
     }
 
@@ -290,12 +290,12 @@ class KingsCupGame {
         const ruleText = document.getElementById('ruleText');
         
         playingCard.classList.add('game-over');
-        
-        ruleName.innerHTML = '🎉 Game Over! 🎉';
+
+        ruleName.innerHTML = '🎉 Игра окончена! 🎉';
         ruleText.innerHTML = `
-            All 4 Kings have been drawn!<br>
-            🏆 The final King must drink the Король чаши!<br>
-            🎊 Thanks for playing!
+            Все 4 Короля вытянуты!<br>
+            🏆 Последний Король должен выпить Король чаши!<br>
+            🎊 Спасибо за игру!
         `;
         
         // Add celebration animation
@@ -364,8 +364,8 @@ class KingsCupGame {
     }
 
     getOrdinal(number) {
-        const ordinals = ['', '1st', '2nd', '3rd', '4th'];
-        return ordinals[number] || `${number}th`;
+        const ordinals = ['', '1-й', '2-й', '3-й', '4-й'];
+        return ordinals[number] || `${number}-й`;
     }
 }
 
@@ -492,17 +492,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add tooltip functionality if needed
     const playingCard = document.getElementById('playingCard');
     if (playingCard) {
-        playingCard.title = 'Click to draw a card (or press Space)';
+        playingCard.title = 'Нажмите, чтобы вытянуть карту (или нажмите Пробел)';
     }
-    
+
     const nextButton = document.getElementById('nextButton');
     if (nextButton) {
-        nextButton.title = 'Draw next card (or press Space)';
+        nextButton.title = 'Вытянуть следующую карту (или нажмите Пробел)';
     }
-    
+
     const resetButton = document.getElementById('resetButton');
     if (resetButton) {
-        resetButton.title = 'Start a new game (or press R)';
+        resetButton.title = 'Начать новую игру (или нажмите R)';
     }
 });
 

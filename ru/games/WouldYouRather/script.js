@@ -1,43 +1,43 @@
 const questions = [
     {
-        optionA: "Never be able to eat sweet foods again",
-        optionB: "Never be able to eat savory foods again"
+        optionA: "Никогда не иметь возможности есть сладкое",
+        optionB: "Никогда не иметь возможности есть соленое"
     },
     {
-        optionA: "Be able to read everyone's thoughts",
-        optionB: "Have everyone be able to read your thoughts"
+        optionA: "Уметь читать мысли всех людей",
+        optionB: "Чтобы все люди могли читать твои мысли"
     },
     {
-        optionA: "Go back in time and change one thing",
-        optionB: "See into the future"
+        optionA: "Вернуться в прошлое и изменить одну вещь",
+        optionB: "Заглянуть в будущее"
     },
     {
-        optionA: "Only be able to be awake during the day",
-        optionB: "Only be able to be awake during the night"
+        optionA: "Бодрствовать только днем",
+        optionB: "Бодрствовать только ночью"
     },
     {
-        optionA: "Be the smartest person in the world but unloved",
-        optionB: "Be the most loved person but have average intelligence"
+        optionA: "Быть самым умным человеком в мире, но нелюбимым",
+        optionB: "Быть самым любимым человеком, но со средним интеллектом"
     },
     {
-        optionA: "Teleport instantly but get motion sickness for 10 minutes each time",
-        optionB: "Be able to fly but only up to 10 feet high"
+        optionA: "Телепортироваться мгновенно, но испытывать укачивание 10 минут каждый раз",
+        optionB: "Уметь летать, но только на высоте до 3 метров"
     },
     {
-        optionA: "Never feel tired again",
-        optionB: "Never feel hungry again"
+        optionA: "Никогда не чувствовать усталость",
+        optionB: "Никогда не чувствовать голод"
     },
     {
-        optionA: "Be able to talk to animals",
-        optionB: "Be able to speak every human language"
+        optionA: "Уметь разговаривать с животными",
+        optionB: "Уметь говорить на всех человеческих языках"
     },
     {
-        optionA: "Have unlimited money but can only spend it on others",
-        optionB: "Have half as much money but can spend it on anything"
+        optionA: "Иметь неограниченные деньги, но тратить их только на других",
+        optionB: "Иметь вдвое меньше денег, но тратить на что угодно"
     },
     {
-        optionA: "Live in a world with no music",
-        optionB: "Live in a world with no movies or TV shows"
+        optionA: "Жить в мире без музыки",
+        optionB: "Жить в мире без фильмов и телешоу"
     }
 ];
 
@@ -52,19 +52,19 @@ const percentageA = document.getElementById('percentageA');
 const percentageB = document.getElementById('percentageB');
 const nextButton = document.getElementById('nextQuestion');
 
-function showДальшеQuestion() {
-    // Reset selections
+function showNextQuestion() {
+    // Сброс выбора
     optionA.classList.remove('selected');
     optionB.classList.remove('selected');
     percentageA.style.opacity = '0';
     percentageB.style.opacity = '0';
     selectedOption = null;
 
-    // Get next question
+    // Получить следующий вопрос
     currentQuestion = (currentQuestion + 1) % questions.length;
     const question = questions[currentQuestion];
 
-    // Update text
+    // Обновить текст
     optionAText.textContent = question.optionA;
     optionBText.textContent = question.optionB;
 }
@@ -75,24 +75,24 @@ function selectOption(option) {
     selectedOption = option;
     const otherOption = option === 'A' ? 'B' : 'A';
 
-    // Show selection
+    // Показать выбор
     document.getElementById(`option${option}`).classList.add('selected');
 
-    // Generate random percentages
+    // Генерировать случайные проценты
     const percentage = Math.floor(Math.random() * 31) + 35; // 35-65%
     const otherPercentage = 100 - percentage;
 
-    // Show percentages
+    // Показать проценты
     document.getElementById(`percentage${option}`).textContent = `${percentage}%`;
     document.getElementById(`percentage${otherOption}`).textContent = `${otherPercentage}%`;
-    
+
     document.getElementById(`percentage${option}`).style.opacity = '1';
     document.getElementById(`percentage${otherOption}`).style.opacity = '1';
 }
 
 optionA.addEventListener('click', () => selectOption('A'));
 optionB.addEventListener('click', () => selectOption('B'));
-nextButton.addEventListener('click', showДальшеQuestion);
+nextButton.addEventListener('click', showNextQuestion);
 
-// Show first question
-showДальшеQuestion();
+// Показать первый вопрос
+showNextQuestion();

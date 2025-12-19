@@ -8,22 +8,22 @@ class LastShotGame {
         this.gameActive = false;
         this.totalChambers = 0;
 
-        // Initialize audio
+        // Инициализация аудио
         this.hollowClickSound = new Audio('./hollow-click.mp3');
         this.bangSound = new Audio('./bang.mp3');
         this.setupAudio();
     }
 
     setupAudio() {
-        // Set initial volume levels
+        // Установка начальных уровней громкости
         this.hollowClickSound.volume = 0.7;
         this.bangSound.volume = 0.8;
 
-        // Preload audio files
+        // Предзагрузка аудиофайлов
         this.hollowClickSound.preload = 'auto';
         this.bangSound.preload = 'auto';
 
-        // Audio state
+        // Состояние аудио
         this.isMuted = false;
         this.volume = 0.75; // 75%
     }
@@ -34,20 +34,20 @@ class LastShotGame {
         try {
             if (soundType === 'hollow') {
                 this.hollowClickSound.volume = this.volume * 0.7;
-                this.hollowClickSound.currentTime = 0; // Reset to beginning
-                this.hollowClickSound.play().catch(e => console.log('Audio play failed:', e));
+                this.hollowClickSound.currentTime = 0; // Сброс в начало
+                this.hollowClickSound.play().catch(e => console.log('Ошибка воспроизведения аудио:', e));
             } else if (soundType === 'bang') {
                 this.bangSound.volume = this.volume * 0.8;
-                this.bangSound.currentTime = 0; // Reset to beginning
-                this.bangSound.play().catch(e => console.log('Audio play failed:', e));
+                this.bangSound.currentTime = 0; // Сброс в начало
+                this.bangSound.play().catch(e => console.log('Ошибка воспроизведения аудио:', e));
             }
         } catch (error) {
-            console.log('Audio error:', error);
+            console.log('Ошибка аудио:', error);
         }
     }
 
     setVolume(volume) {
-        this.volume = volume / 100; // Convert percentage to decimal
+        this.volume = volume / 100; // Преобразование процентов в десятичное число
         this.hollowClickSound.volume = this.volume * 0.7;
         this.bangSound.volume = this.volume * 0.8;
     }
@@ -56,11 +56,11 @@ class LastShotGame {
         this.isMuted = !this.isMuted;
         const muteButton = document.getElementById('muteButton');
         if (this.isMuted) {
-            muteButton.textContent = '🔇 Sound OFF';
+            muteButton.textContent = '🔇 Звук ВЫКЛ';
             muteButton.classList.remove('btn-secondary');
             muteButton.classList.add('btn-dark');
         } else {
-            muteButton.textContent = '🔊 Sound ON';
+            muteButton.textContent = '🔊 Звук ВКЛ';
             muteButton.classList.remove('btn-dark');
             muteButton.classList.add('btn-secondary');
         }
@@ -72,12 +72,12 @@ class LastShotGame {
         this.totalChambers = this.blankChambers + this.bulletChambers;
 
         if (this.totalChambers > 100) {
-            alert('Maximum 100 chambers allowed! Please reduce the number of blank chambers.');
+            alert('Максимум 100 патронов! Пожалуйста, уменьшите количество холостых патронов.');
             return;
         }
 
         if (this.blankChambers < 1) {
-            alert('Ты need at least 1 blank chamber!');
+            alert('Нужен хотя бы 1 холостой патрон!');
             return;
         }
 
@@ -97,11 +97,11 @@ class LastShotGame {
         this.updateUI();
         this.showGameSection();
         this.updateCylinderDisplay();
-        this.announce('Game ready! First player, press Space to pull.');
+        this.announce('Игра готова! Первый игрок, нажми Пробел для выстрела.');
     }
 
     shuffleChambers() {
-        // Use crypto.getRandomValues for better randomness if available
+        // Использование crypto.getRandomValues для лучшей случайности, если доступно
         const getRandomValue = () => {
             if (window.crypto && window.crypto.getRandomValues) {
                 const array = new Uint32Array(1);
@@ -111,7 +111,7 @@ class LastShotGame {
             return Math.random();
         };
 
-        // Fisher-Yates shuffle with better random source
+        // Тасовка Фишера-Йейтса с улучшенным источником случайности
         for (let i = this.chambers.length - 1; i > 0; i--) {
             const j = Math.floor(getRandomValue() * (i + 1));
             [this.chambers[i], this.chambers[j]] = [this.chambers[j], this.chambers[i]];
@@ -137,7 +137,7 @@ class LastShotGame {
             if (chamber === 'blank') {
                 this.playSound('hollow');
                 this.handleBlankChamber();
-                resultText.textContent = '🔘 BLANK! Ты\'re safe... for now.';
+                resultText.textContent = '🔘 ХОЛОСТОЙ! Ты в безопасности... пока что.';
                 resultDisplay.className = 'result-display safe';
                 addShotButton.style.display = 'inline-block';
 
@@ -148,7 +148,7 @@ class LastShotGame {
             } else {
                 this.playSound('bang');
                 this.handleBulletChamber();
-                resultText.textContent = `💥 BULLET! Drink all ${this.shotsInPool} shots!`;
+                resultText.textContent = `💥 ПУЛЯ! Выпей все ${this.shotsInPool} шотов!`;
                 resultDisplay.className = 'result-display danger';
 
                 setTimeout(() => {
@@ -189,11 +189,11 @@ class LastShotGame {
         this.updateUI();
 
         const resultText = document.getElementById('resultText');
-        resultText.textContent = `🥃 Shot added! Pool now has ${this.shotsInPool} shots.`;
+        resultText.textContent = `🥃 Шот добавлен! Теперь в банке ${this.shotsInPool} шотов.`;
 
         setTimeout(() => {
             if (this.gameActive && this.currentChamber < this.chambers.length) {
-                resultText.textContent = 'Дальше player\'s turn! Click "Pull Trigger".';
+                resultText.textContent = 'Следующий игрок! Нажми "Нажать на курок".';
             }
         }, 2000);
     }
@@ -210,18 +210,18 @@ class LastShotGame {
     updateCylinderDisplay() {
         const cylinder = document.getElementById('revolverCylinder');
 
-        // For larger numbers of chambers, show progress instead of individual chambers
+        // Для большого количества патронов показываем прогресс вместо отдельных патронов
         if (this.totalChambers > 6) {
             cylinder.innerHTML = `
                 <div class="chamber-progress">
-                    <div class="progress-text">Chamber ${this.currentChamber + 1}/${this.totalChambers}</div>
+                    <div class="progress-text">Патрон ${this.currentChamber + 1}/${this.totalChambers}</div>
                     <div class="progress-bar-container">
                         <div class="progress-bar" style="width: ${(this.currentChamber / this.totalChambers) * 100}%"></div>
                     </div>
                 </div>
             `;
         } else {
-            // Keep the original 6-chamber visual for smaller counts
+            // Оставляем оригинальный визуал с 6 патронами для малого количества
             cylinder.innerHTML = `
                 <div class="cylinder-chamber" data-chamber="0"></div>
                 <div class="cylinder-chamber" data-chamber="1"></div>
@@ -256,9 +256,9 @@ class LastShotGame {
         const newRoundButton = document.getElementById('newRoundButton');
 
         if (this.shotsInPool === 0) {
-            resultText.textContent = '💥 Lucky escape! No shots in the pool! Ready for a new round?';
+            resultText.textContent = '💥 Повезло! В банке нет шотов! Готов к новому раунду?';
         } else {
-            resultText.textContent = `💥 Game Over! Drink ${this.shotsInPool} shots and start a new round when ready!`;
+            resultText.textContent = `💥 Игра окончена! Выпей ${this.shotsInPool} шотов и начни новый раунд, когда будешь готов!`;
         }
 
         triggerButton.style.display = 'none';
@@ -273,8 +273,8 @@ class LastShotGame {
     showGameSection() {
         document.getElementById('gameSetup').style.display = 'none';
         document.getElementById('gameSection').style.display = 'block';
-        document.getElementById('resultText').textContent = 'Game ready! First player, click "Pull Trigger"!';
-        this.announce('Game ready! First player, press Space to pull.');
+        document.getElementById('resultText').textContent = 'Игра готова! Первый игрок, нажми "Нажать на курок"!';
+        this.announce('Игра готова! Первый игрок, нажми Пробел для выстрела.');
         document.getElementById('resultDisplay').className = 'result-display';
         document.getElementById('triggerButton').style.display = 'inline-block';
         document.getElementById('triggerButton').disabled = false;
@@ -282,13 +282,13 @@ class LastShotGame {
     }
 
     startNewRoundInGame() {
-        // Use the same settings as current game
+        // Использовать те же настройки, что и в текущей игре
         this.chambers = [];
         this.currentChamber = 0;
         this.shotsInPool = 0;
         this.gameActive = true;
 
-        // Recreate chambers with same configuration
+        // Пересоздать патроны с той же конфигурацией
         for (let i = 0; i < this.blankChambers; i++) {
             this.chambers.push('blank');
         }
@@ -300,9 +300,9 @@ class LastShotGame {
         this.updateUI();
         this.updateCylinderDisplay();
 
-        // Update UI for new round
-        document.getElementById('resultText').textContent = 'New round started! First player, click "Pull Trigger"!';
-        this.announce('New round started! Press Space to pull.');
+        // Обновить UI для нового раунда
+        document.getElementById('resultText').textContent = 'Новый раунд начат! Первый игрок, нажми "Нажать на курок"!';
+        this.announce('Новый раунд начат! Нажми Пробел для выстрела.');
         document.getElementById('resultDisplay').className = 'result-display';
         document.getElementById('triggerButton').style.display = 'inline-block';
         document.getElementById('triggerButton').disabled = false;
@@ -353,12 +353,12 @@ window.addEventListener('DOMContentLoaded', () => {
         if (value > 99) this.value = 99;
     });
 
-    // Volume slider event listener
+    // Слушатель события слайдера громкости
     document.getElementById('volumeSlider').addEventListener('input', function () {
         game.setVolume(this.value);
     });
 
-    // Keyboard shortcuts
+    // Клавиатурные сочетания
     document.addEventListener('keydown', (e) => {
         if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable)) {
             return;

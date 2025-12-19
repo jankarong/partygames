@@ -19,10 +19,10 @@ class МафияGame {
         this.roles = ['mafia', 'villager', 'doctor', 'detective'];
         this.customRoles = this.loadCustomRoles();
         this.roleDescriptions = {
-            mafia: 'Eliminate the villagers without being caught',
-            villager: 'Find and eliminate the Мафия',
-            doctor: 'Save one person during the game AND poison one person during the game',
-            detective: 'Investigate one player\'s identity each night'
+            mafia: 'Устраните жителей, не будучи пойманным',
+            villager: 'Найдите и устраните мафию',
+            doctor: 'Спасите одного человека во время игры И отравите одного человека во время игры',
+            detective: 'Расследуйте личность одного игрока каждую ночь'
         };
         this.roleNames = {
             mafia: 'Мафия',
@@ -77,25 +77,25 @@ class МафияGame {
         const roleTotal = mafiaCount + doctorCount + detectiveCount + villagerCount + customRoleCount;
 
         if (totalИгрокs < 3) {
-            warning.textContent = 'Minimum 3 players required';
+            warning.textContent = 'Требуется минимум 3 игрока';
             setupButton.disabled = true;
             return;
         }
 
         if (roleTotal !== totalИгрокs) {
-            warning.textContent = `Role total (${roleTotal}) doesn't match total players (${totalИгрокs})`;
+            warning.textContent = `Общее количество ролей (${roleTotal}) не соответствует общему количеству игроков (${totalИгрокs})`;
             setupButton.disabled = true;
             return;
         }
 
         if (villagerCount < 1) {
-            warning.textContent = 'Need at least 1 villager';
+            warning.textContent = 'Необходим хотя бы 1 житель';
             setupButton.disabled = true;
             return;
         }
 
         if (mafiaCount < 1) {
-            warning.textContent = 'Need at least 1 mafia';
+            warning.textContent = 'Необходим хотя бы 1 мафиози';
             setupButton.disabled = true;
             return;
         }
@@ -270,7 +270,7 @@ class МафияGame {
         // 显示当前角色的行动区域
         if (this.hasRole(this.currentNightRole)) {
             actionArea.style.display = 'block';
-            narratorText.textContent = `${this.currentNightRole.charAt(0).toUpperCase() + this.currentNightRole.slice(1)}, please open your eyes and make your selection.`;
+            narratorText.textContent = `${this.roleNames[this.currentNightRole] || this.currentNightRole.charAt(0).toUpperCase() + this.currentNightRole.slice(1)}, пожалуйста, откройте глаза и сделайте выбор.`;
             if (this.currentNightRole === 'doctor') {
                 this.startДокторTurn();
             } else {
@@ -315,7 +315,7 @@ class МафияGame {
                     // 显示调查结果
                     const resultDiv = document.getElementById('investigation-result');
                     const resultText = document.getElementById('investigation-text');
-                    resultText.textContent = `Игрок ${targetId} is ${targetИгрок.role === 'mafia' ? 'a Мафия member!' : 'not a Мафия member.'}`;
+                    resultText.textContent = `Игрок ${targetId} ${targetИгрок.role === 'mafia' ? 'является членом Мафии!' : 'не является членом Мафии.'}`;
                     resultText.className = `result-text ${targetИгрок.role === 'mafia' ? 'mafia' : 'villager'}`;
                     resultDiv.style.display = 'block';
 
@@ -372,14 +372,14 @@ class МафияGame {
             poisonButton.style.cursor = 'pointer';
         }
 
-        let promptText = `Игрок ${mafiaTarget.id} was targeted by the Мафия.`;
+        let promptText = `Игрок ${mafiaTarget.id} был целью Мафии.`;
         if (!this.doctorAbilities.hasUsedSave) {
-            promptText += ' Ты can save them,';
+            promptText += ' Вы можете спасти их,';
         }
         if (!this.doctorAbilities.hasUsedPoison) {
-            promptText += ' poison someone,';
+            promptText += ' отравить кого-то,';
         }
-        promptText += ' or skip your turn.';
+        promptText += ' или пропустить свой ход.';
 
         if (this.doctorAbilities.hasUsedSave) {
             saveButton.disabled = true;
@@ -486,9 +486,9 @@ class МафияGame {
         const nightResult = document.getElementById('night-result');
         const eliminatedИгрок = this.players.find(p => !p.isAlive);
         if (eliminatedИгрок) {
-            nightResult.textContent = `Last night, Игрок ${eliminatedИгрок.id} was eliminated.`;
+            nightResult.textContent = `Прошлой ночью Игрок ${eliminatedИгрок.id} был устранен.`;
         } else {
-            nightResult.textContent = 'No one was eliminated last night.';
+            nightResult.textContent = 'Прошлой ночью никто не был устранен.';
         }
 
         // 更新玩家状态
@@ -496,7 +496,7 @@ class МафияGame {
         statusGrid.innerHTML = this.players.map(player => `
             <div class="player-status-card ${player.isAlive ? '' : 'dead'}">
                 <div class="player-name">Игрок ${player.id}</div>
-                <div class="player-status">${player.isAlive ? 'Alive' : 'Dead'}</div>
+                <div class="player-status">${player.isAlive ? 'Жив' : 'Мертв'}</div>
             </div>
         `).join('');
 
@@ -551,7 +551,7 @@ class МафияGame {
     confirmГолос() {
         const selectedCard = document.querySelector('.vote-card.selected');
         if (!selectedCard) {
-            this.showAlert('Please select a player to vote for!');
+            this.showAlert('Пожалуйста, выберите игрока для голосования!');
             return;
         }
 
@@ -629,7 +629,7 @@ class МафияGame {
             const confirmButton = alertElement.querySelector('.alert-confirm');
             const playAgainBtn = document.getElementById('playAgainBtn');
 
-            messageElement.textContent = `Game Over! ${winner} Win!`;
+            messageElement.textContent = `Игра окончена! ${winner} победили!`;
             alertElement.style.display = 'flex';
 
             // 在游戏结束时隐藏 OK 按钮，只显示 Play Again 按钮
@@ -700,7 +700,7 @@ class МафияGame {
         statusGrid.innerHTML = this.players.map(player => `
             <div class="player-status-card ${player.isAlive ? '' : 'dead'}">
                 <div class="player-name">Игрок ${player.id}</div>
-                <div class="player-status">${player.isAlive ? 'Alive' : 'Dead'}</div>
+                <div class="player-status">${player.isAlive ? 'Жив' : 'Мертв'}</div>
             </div>
         `).join('');
     }
@@ -783,10 +783,10 @@ class МафияGame {
 
         // Display built-in roles
         const builtInRoles = [
-            { id: 'mafia', name: 'Мафия', team: 'mafia', description: 'Eliminate the villagers without being caught', builtin: true },
-            { id: 'villager', name: 'Житель', team: 'villager', description: 'Find and eliminate the Мафия', builtin: true },
-            { id: 'doctor', name: 'Доктор', team: 'villager', description: 'Save one person during the game AND poison one person during the game', builtin: true },
-            { id: 'detective', name: 'Детектив', team: 'villager', description: 'Investigate one player\'s identity each night', builtin: true }
+            { id: 'mafia', name: 'Мафия', team: 'mafia', description: 'Устраните жителей, не будучи пойманным', builtin: true },
+            { id: 'villager', name: 'Житель', team: 'villager', description: 'Найдите и устраните Мафию', builtin: true },
+            { id: 'doctor', name: 'Доктор', team: 'villager', description: 'Спасите одного человека во время игры И отравите одного человека во время игры', builtin: true },
+            { id: 'detective', name: 'Детектив', team: 'villager', description: 'Расследуйте личность одного игрока каждую ночь', builtin: true }
         ];
 
         [...builtInRoles, ...Object.values(this.customRoles)].forEach(role => {
@@ -819,7 +819,7 @@ class МафияGame {
         const ability = document.getElementById('roleAbility').value.trim();
 
         if (!name || !description) {
-            this.showAlert('Please fill in role name and description!');
+            this.showAlert('Пожалуйста, заполните название и описание роли!');
             return;
         }
 
@@ -856,7 +856,7 @@ class МафияGame {
     }
 
     deleteCustomRole(roleId) {
-        if (confirm(`Are you sure you want to delete role "${this.customRoles[roleId].name}"?`)) {
+        if (confirm(`Вы уверены, что хотите удалить роль "${this.customRoles[roleId].name}"?`)) {
             delete this.customRoles[roleId];
             delete this.roleDescriptions[roleId];
             delete this.roleNames[roleId];

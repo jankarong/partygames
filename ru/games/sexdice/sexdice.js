@@ -1,35 +1,35 @@
 // Default options
 const defaultActions = [
-    "Kiss",
-    "Nibble",
-    "Caress",
-    "Massage",
-    "Lick",
-    "Blow",
-    "Stroke",
-    "Touch",
-    "Tease"
+    "Поцелуй",
+    "Покусай",
+    "Погладь",
+    "Помассируй",
+    "Оближи",
+    "Подуй",
+    "Поласкай",
+    "Потрогай",
+    "Подразни"
 ];
 
 const defaultWheres = [
-    "Neck",
-    "Ears",
-    "Lips",
-    "Chest",
-    "Back",
-    "Thighs",
-    "Waist",
-    "Shoulders",
-    "Inner Arms"
+    "Шею",
+    "Уши",
+    "Губы",
+    "Грудь",
+    "Спину",
+    "Бёдра",
+    "Талию",
+    "Плечи",
+    "Внутреннюю часть рук"
 ];
 
 const defaultTimes = [
-    "5 seconds",
-    "10 seconds",
-    "15 seconds",
-    "20 seconds",
-    "25 seconds",
-    "30 seconds"
+    "5 секунд",
+    "10 секунд",
+    "15 секунд",
+    "20 секунд",
+    "25 секунд",
+    "30 секунд"
 ];
 
 let actions = [...defaultActions];
@@ -71,9 +71,9 @@ function rollDice() {
     rollButton.disabled = true;
 
     // Remove previous results
-    actionDice.querySelector('.dice-text').textContent = 'Rolling...';
-    whereDice.querySelector('.dice-text').textContent = 'Rolling...';
-    timeDice.querySelector('.dice-text').textContent = 'Rolling...';
+    actionDice.querySelector('.dice-text').textContent = 'Бросаем...';
+    whereDice.querySelector('.dice-text').textContent = 'Бросаем...';
+    timeDice.querySelector('.dice-text').textContent = 'Бросаем...';
     resultDiv.textContent = '';
 
     // Wait for animation to complete
@@ -89,7 +89,7 @@ function rollDice() {
         timeDice.querySelector('.dice-text').textContent = time;
 
         // Show result
-        resultDiv.textContent = `${action} ${where} for ${time}`;
+        resultDiv.textContent = `${action} ${where} в течение ${time}`;
 
         // Remove rolling animation class
         actionDice.classList.remove('rolling');
@@ -217,7 +217,7 @@ function addOption(type) {
         'time': times
     };
 
-    const defaultValue = type === 'time' ? '30 seconds' : 'New Option';
+    const defaultValue = type === 'time' ? '30 секунд' : 'Новая опция';
     optionsMap[type].push(defaultValue);
     renderAllOptions();
     pendingChanges = true;
@@ -248,7 +248,7 @@ function loadSettings() {
         times = savedTimes ? JSON.parse(savedTimes) : defaultTimes;
     } catch (error) {
         console.error('Error loading settings:', error);
-        // 如果出错，使用默认值
+        // Если произошла ошибка, используем значения по умолчанию
         actions = [...defaultActions];
         wheres = [...defaultWheres];
         times = [...defaultTimes];
@@ -265,7 +265,7 @@ function saveSettings() {
     }
 }
 
-// 将需要的函数暴露到全局作用域
+// Экспортируем необходимые функции в глобальную область видимости
 window.toggleSettings = toggleSettings;
 window.closeSettings = closeSettings;
 window.closePremiumModal = closePremiumModal;
