@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <!-- Ezoic Privacy Scripts - Must load first -->
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    <!-- Ezoic Header Script -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>意见反馈 - 分享您的想法 | 最佳聚会游戏合集</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="分享您的意见反馈，帮助我们改善您的游戏体验。您的意见对于让我们的聚会游戏变得更好非常重要。">
+    <meta name="keywords" content="聚会游戏反馈, 游戏建议, 用户反馈, 游戏改进">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="分享您的反馈 - 最佳聚会游戏合集">
+    <meta property="og:description" content="通过分享您宝贵的反馈来帮助我们改善您的游戏体验。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/zh/feedback">
+    <meta property="og:image" content="https://www.bestpartygames.net/image/partyGameLogo.png">
+
+    <!-- Language alternatives -->
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/feedback.html">
+    <link rel="alternate" hreflang="ru-RU" href="https://www.bestpartygames.net/zh/feedback.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/feedback.html">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../style/main.css" rel="stylesheet">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bestpartygames.net/zh/feedback">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../image/favicon.png">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/ru/">
+                <img src="../image/partyGameLogo.png" alt="聚会游戏标志">
+                <span class="brand-text">Best Party Games</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="feedback.html">意见反馈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="TheList.html">游戏分类</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            🇨🇳 中文
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/feedback.html">🇺🇸 English</a></li>
+                            <li><a class="dropdown-item" href="/ru/feedback.html">🇨🇳 中文</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Feedback Section -->
+    <section class="feedback-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="text-center mb-3">意见反馈</h1>
+                    <h2 class="text-center feedback-subtitle mb-5">我们重视您的意见！请告诉我们您的想法、建议或报告任何问题。</h2>
+
+                    <div class="feedback-form bg-light p-4 rounded shadow">
+                        <iframe
+                            data-tally-src="https://tally.so/embed/mDGbKp?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                            loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0"
+                            title="意见反馈表单"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">关于我们</h2>
+                    <p>最佳聚会游戏合集是您免费获得最佳互动聚会游戏的首要在线目的地。我们提供多样化的引人入胜的社交游戏合集，包括谁是卧底、我有你没有等 -
+                        非常适合虚拟聚会、派对和团建活动。加入全世界数千名玩家享受难忘的游戏体验！</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">快速链接</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">首页</a></li>
+                        <li><a href="./feedback.html" class="text-light text-decoration-none">意见反馈</a></li>
+                        <li><a href="./TheList.html" class="text-light text-decoration-none">游戏分类</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">&copy; 2025 聚会游戏. 保留所有权利.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+
+    <!-- Tally Embed Script -->
+    <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
+
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+

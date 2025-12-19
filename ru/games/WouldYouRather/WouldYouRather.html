@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <!-- Ezoic Privacy Scripts - Must load first -->
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    <!-- Ezoic Header Script -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Играйте в \"Что бы ты выбрал?\" - веселую игру для взрослых вечеринок! Откройте для себя коллекцию острых вопросов. Идеально для вечеринок и встреч!">
+    <meta name="keywords"
+        content="что бы ты выбрал, острые вопросы, игра для вечеринок, вопросы для взрослых, игра для компании">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="Что бы ты выбрал? - Острые вопросы для вечеринок">
+    <meta property="og:description"
+        content="Играйте в \"Что бы ты выбрал?\" - веселую игру для вечеринок с острыми вопросами. Идеально для взрослых компаний!">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.bestpartygames.net/ru/games/WouldYouRather/WouldYouRather">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./WouldYouRatherLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Что бы ты выбрал?",
+        "description": "Играйте в \"Что бы ты выбрал?\" - веселую игру для взрослых вечеринок! Откройте для себя коллекцию острых вопросов. Идеально для вечеринок!",
+        "genre": "Party Game",
+        "numberOfPlayers": "2+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "ratingCount": "210"
+        }
+    }
+    </script>
+
+    <title>Would Ты Rather Вопросы Spicy - Adult Party Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../games.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./WouldТыRatherLogo.png">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body class="bg-light">
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-4">
+                    <img src="WouldТыRatherLogo.png" alt="Would Ты Rather Logo" class="img-fluid"
+                        style="max-width: 200px;">
+                </div>
+                <h1 class="text-center mb-5 display-4">Would Ты Rather Вопросы Spicy</h1>
+                <div class="row justify-content-center align-items-center g-2 mt-4">
+                    <div class="col-md-5 d-flex justify-content-center">
+                        <div class="card option w-100" id="optionA">
+                            <div class="card-body d-flex flex-column justify-content-center text-center p-4">
+                                <p class="card-text mb-0" id="optionAText"></p>
+                                <div class="percentage mt-2" id="percentageA">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center">
+                        <div class="text-center vs">VS</div>
+                    </div>
+                    <div class="col-md-5 d-flex justify-content-center">
+                        <div class="card option w-100" id="optionB">
+                            <div class="card-body d-flex flex-column justify-content-center text-center p-4">
+                                <p class="card-text mb-0" id="optionBText"></p>
+                                <div class="percentage mt-2" id="percentageB">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button id="nextQuestion" class="btn btn-lg px-4">Дальше Question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="script.js"></script>
+    <script src="../../js/game-navigation-ru.js"></script>
+
+    <section class="game-info container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">What is "Would Ты Rather Вопросы Spicy?"</h2>
+                    <p>Would Ты Rather Вопросы Spicy is an exciting adult party game that presents players with
+                        challenging and spicy dilemmas. Each
+                        round, players must choose between two equally intriguing or difficult options from our spicy
+                        questions collection, leading to fun
+                        discussions and revealing insights about each other's preferences and personalities.</p>
+                </article>
+
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Как играть Would Ты Rather</h2>
+                    <div class="game-rules">
+                        <ol>
+                            <li>Gather your friends or family in a comfortable setting</li>
+                            <li>Take turns reading the "Would Ты Rather Вопросы Spicy" from our collection</li>
+                            <li>Everyone must choose one of the two options - no compromises!</li>
+                            <li>Share your reasoning and discuss your choices</li>
+                            <li>Click "Дальше Question" to continue the fun</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Why Play Would Ты Rather Вопросы Spicy?</h2>
+                    <div class="benefits">
+                        <ul>
+                            <li>Perfect ice-breaker with spicy questions for parties and social gatherings</li>
+                            <li>Encourages creative thinking and discussion with adult-themed scenarios</li>
+                            <li>Learn surprising things about your friends through our spicy would you rather questions
+                            </li>
+                            <li>No special equipment needed</li>
+                            <li>Suitable for all age groups</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="mb-5">
+                    <h2 class="h3 mb-4">Tips for an Amazing Game Experience</h2>
+                    <div class="tips">
+                        <p>To make your Would Ты Rather Вопросы Spicy game session even more enjoyable:</p>
+                        <ul>
+                            <li>Be honest with your answers</li>
+                            <li>Explain your choices to make it more interesting</li>
+                            <li>Don't judge others' answers - it's all in good fun!</li>
+                            <li>Try to think quickly - don't overthink your responses</li>
+                            <li>Feel free to add your own follow-up questions</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+

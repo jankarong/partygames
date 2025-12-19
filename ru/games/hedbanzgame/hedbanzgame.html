@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <!-- Ezoic Privacy Scripts - Must load first -->
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    <!-- Ezoic Header Script -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Играйте в Hedbanz онлайн бесплатно! Угадывайте слова, пока друзья дают подсказки. Лучшая игра в угадывание для групп, вечеринок и виртуальных встреч!">
+    <meta name="keywords"
+        content="hedbanz онлайн, игра hedbanz, игры для вечеринок, онлайн игра в угадывание, групповые игры, виртуальные игры, онлайн игры">
+    <meta name="author" content="Party Games">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ru/games/hedbanzgame/hedbanzgame">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./hedbanz.png">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Hedbanz Онлайн - Бесплатная игра в угадывание для групп">
+    <meta property="og:description"
+        content="Играйте в Hedbanz онлайн! Угадывайте слова, пока друзья дают подсказки. Идеально для групп и вечеринок. Без загрузки!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="hedbanz.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/ru/games/hedbanzgame/hedbanzgame">
+
+    <!-- Twitter Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hedbanz Онлайн - Бесплатная игра в угадывание">
+    <meta name="twitter:description"
+        content="Играйте в Hedbanz онлайн! Угадывайте слова, пока друзья дают подсказки. Отлично для вечеринок и групп!">
+    <meta name="twitter:image" content="hedbanz.png">
+
+    <title>Hedbanz Онлайн - Бесплатная игра в угадывание для вечеринок</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="../../style/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="hedbanzgame.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Hedbanz Online",
+        "description": "Hedbanz Online is a free guessing party game where players wear an invisible word and must guess it by asking yes/no questions to friends. Perfect for online parties, virtual game nights, and group gatherings.",
+        "url": "https://www.bestpartygames.net/games/hedbanzgame/hedbanzgame",
+        "image": "https://www.bestpartygames.net/games/hedbanzgame/hedbanz.png",
+        "genre": "Party Game",
+        "gameType": "Guessing Game",
+        "numberOfИгрокs": {
+            "@type": "QuantitativeValue",
+            "minValue": "2",
+            "maxValue": "10"
+        },
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "250"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Party Games"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="setup-screen" id="setupScreen">
+            <img src="hedbanz.png" alt="Hedbanz Online" class="logo game-logo">
+            <h1>Hedbanz Online</h1>
+            <p class="subtitle">Hold your phone to your forehead and guess!</p>
+
+            <div class="setup-form">
+                <label>Number of players:</label>
+                <select id="playerCount">
+                    <option value="2">2 Игрокs</option>
+                    <option value="3">3 Игрокs</option>
+                    <option value="4">4 Игрокs</option>
+                    <option value="5">5 Игрокs</option>
+                    <option value="6">6 Игрокs</option>
+                    <option value="7">7 Игрокs</option>
+                    <option value="8">8 Игрокs</option>
+                </select>
+
+                <label>Game duration:</label>
+                <select id="gameDuration">
+                    <option value="30">30 seconds per turn</option>
+                    <option value="60" selected>60 seconds per turn</option>
+                </select>
+
+                <button id="startBtn" class="btn-primary">Start Game</button>
+            </div>
+        </div>
+
+        <div class="game-screen" id="gameScreen" style="display: none;">
+            <div class="word-card">
+                <div class="word-display" id="wordDisplay">?</div>
+                <p class="instruction">Hold phone to forehead - others see the word!</p>
+            </div>
+
+            <div class="timer-section">
+                <div class="timer" id="timer">60</div>
+                <p class="timer-label">seconds</p>
+            </div>
+
+            <div class="button-group">
+                <button id="correctBtn" class="btn-correct">✓ Correct!</button>
+                <button id="skipBtn" class="btn-skip">✗ Пропустить</button>
+            </div>
+
+            <div class="player-info">
+                <div class="current-player">Игрок <span id="currentИгрок">1</span></div>
+                <div class="player-score">Score: <span id="playerScore">0</span></div>
+            </div>
+        </div>
+
+        <div class="ready-screen" id="readyScreen" style="display: none;">
+            <h2>Дальше Up!</h2>
+            <div class="next-player-display">
+                <p class="ready-label">Игрок</p>
+                <p class="ready-number" id="readyИгрокNum">1</p>
+                <p class="ready-instruction">Get ready! Hold the phone to your forehead</p>
+            </div>
+            <button id="readyBtn" class="btn-primary">Start My Turn!</button>
+        </div>
+
+        <div class="results-screen" id="resultsScreen" style="display: none;">
+            <h2>Game Over!</h2>
+            <div class="final-scores" id="finalScores"></div>
+            <button id="playAgainBtn" class="btn-primary">Play Again</button>
+        </div>
+
+        <!-- SEO Content Section -->
+        <div class="content-section">
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">What is Hedbanz Online?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>Hedbanz Online</strong> is a free web-based version of the classic party guessing game. Игрокs wear invisible words on their foreheads and must guess what they are by asking yes or no questions to other players. This engaging online party game is perfect for friends, family, and colleagues who want to play together remotely or in person.</p>
+                    <p>Unlike the physical card game, Hedbanz Online features an unlimited word database with hundreds of categories, ensuring every game is unique and fun. No cards needed—just a smartphone, tablet, or computer and an internet connection to start playing instantly.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Как играть Hedbanz - Complete Guide</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Learning how to play Hedbanz is simple and fun. Follow these steps to get started:</p>
+                    <ol>
+                        <li><strong>Select number of players:</strong> Choose between 2-10 players to customize your game</li>
+                        <li><strong>Pick game duration:</strong> Select 30 or 60 seconds per turn based on your preference</li>
+                        <li><strong>Hold your phone to forehead:</strong> The word displays on the screen, visible only to other players</li>
+                        <li><strong>Ask yes/no questions:</strong> Ask strategic questions to narrow down what word you're wearing</li>
+                        <li><strong>Make guesses:</strong> Once you think you know, guess the word by clicking the Correct button</li>
+                        <li><strong>Score points:</strong> Earn 1 point for every correct guess during your turn</li>
+                        <li><strong>Pass turns:</strong> After your time runs out, the next player takes their turn</li>
+                        <li><strong>Determine winner:</strong> The player with the most points when all turns are complete wins</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Best Party Games Online - Why Hedbanz Stands Out</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>When looking for the best <strong>party games online</strong>, Hedbanz Online checks all the boxes:</p>
+                    <ul>
+                        <li>✓ <strong>No downloads required</strong> - Play instantly in your web browser</li>
+                        <li>✓ <strong>Completely free</strong> - No hidden fees or premium subscriptions</li>
+                        <li>✓ <strong>Works on all devices</strong> - Desktop, tablet, smartphone compatibility</li>
+                        <li>✓ <strong>Supports 2-10 players</strong> - Perfect for small groups or larger parties</li>
+                        <li>✓ <strong>Play online or in-person</strong> - Host virtual game nights or gatherings</li>
+                        <li>✓ <strong>Easy to learn</strong> - Simple rules that anyone can understand in seconds</li>
+                        <li>✓ <strong>Highly engaging</strong> - Fast-paced gameplay keeps everyone entertained</li>
+                        <li>✓ <strong>Unlimited word variations</strong> - Never play the same game twice</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Hedbanz Game Категории - 1000+ Words</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>The Hedbanz guessing game includes words from diverse categories to keep gameplay fresh and challenging:</p>
+                    <ul>
+                        <li><strong>Animals:</strong> From common pets to exotic wildlife</li>
+                        <li><strong>Celebrities & Famous People:</strong> Movie stars, athletes, historical figures</li>
+                        <li><strong>Everyday Objects:</strong> Household items, tools, technology</li>
+                        <li><strong>Professions:</strong> Доктор, teacher, chef, artist, and more</li>
+                        <li><strong>Activities & Sports:</strong> Swimming, dancing, playing basketball</li>
+                        <li><strong>Food & Drinks:</strong> Pizza, sushi, coffee, ice cream</li>
+                        <li><strong>Countries & Landmarks:</strong> Travel-themed words and places</li>
+                        <li><strong>Emotions & Feelings:</strong> Happy, excited, confused, peaceful</li>
+                        <li><strong>Movies & TV Shows:</strong> Popular entertainment references</li>
+                        <li><strong>Clothing & Accessories:</strong> Fashion and wearable items</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Hedbanz Rules & Tips for Winning</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>Understanding Hedbanz rules helps you play strategically:</strong></p>
+                    <p><em>For the guessing player:</em></p>
+                    <ul>
+                        <li>Ask broad category questions first: "Am I a person?" "Am I an animal?"</li>
+                        <li>Use process of elimination to narrow down possibilities</li>
+                        <li>Ask about specific features or characteristics</li>
+                        <li>Work quickly to maximize correct guesses before time runs out</li>
+                        <li>Pay attention to other players' reactions for subtle clues</li>
+                    </ul>
+                    <p><em>For players giving clues:</em></p>
+                    <ul>
+                        <li>Answer honestly with only "yes" or "no"</li>
+                        <li>No hints, descriptions, or additional information allowed</li>
+                        <li>Keep responses quick to maintain game pace</li>
+                        <li>Maintain fair play and accuracy for a balanced game</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Virtual Game Nights - Perfect for Remote Groups</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Hedbanz Online is ideal for <strong>virtual game nights</strong> where friends and family are spread across different locations. Here's why it works so well for remote gatherings:</p>
+                    <ul>
+                        <li><strong>Video call compatible:</strong> Play on Zoom, Google Яet, or any video conference platform</li>
+                        <li><strong>No special equipment:</strong> Just smartphones or computers with internet access</li>
+                        <li><strong>Breaks the ice:</strong> Perfect for getting-to-know-you games in remote teams</li>
+                        <li><strong>Equal participation:</strong> Everyone gets equal turns and playing time</li>
+                        <li><strong>Inclusive fun:</strong> Works across different ages and skill levels</li>
+                        <li><strong>Multiple game modes:</strong> Adjust difficulty with different word categories</li>
+                    </ul>
+                    <p>Whether you're hosting a team building event, family reunion, or casual hangout with friends, <strong>Hedbanz</strong> keeps everyone engaged and entertained.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Group Games Online - Why Hedbanz Leads</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>When searching for engaging <strong>group games online</strong>, Hedbanz Online is a top choice because:</p>
+                    <ul>
+                        <li><strong>Minimal setup:</strong> No installation, no registration, no complications</li>
+                        <li><strong>Fast learning curve:</strong> Everyone understands the rules in under a minute</li>
+                        <li><strong>Scalable fun:</strong> Works just as well with 2 people as with 10</li>
+                        <li><strong>Instant entertainment:</strong> Start playing immediately without preparation</li>
+                        <li><strong>Natural interaction:</strong> Encourages conversation, laughter, and bonding</li>
+                        <li><strong>Replayable:</strong> With 1000+ words, games never feel repetitive</li>
+                        <li><strong>Accessible worldwide:</strong> Play with people from any country or timezone</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Frequently Asked Вопросы</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="faq-item">
+                        <h3>Is Hedbanz Online free to play?</h3>
+                        <p>Yes! Hedbanz Online is 100% free with no hidden charges, subscriptions, or premium content required.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do I need to download an app to play Hedbanz?</h3>
+                        <p>No. Simply open your web browser and start playing instantly. It works on desktop, tablet, and mobile devices.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How many players can play Hedbanz Online at once?</h3>
+                        <p>Hedbanz supports 2-10 players per game. More players generally means more fun and longer gameplay!</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I play Hedbanz Online with friends in different countries?</h3>
+                        <p>Absolutely! All you need is an internet connection. Play with friends globally via video call or in-person.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What happens when we run out of words?</h3>
+                        <p>The word list automatically refreshes, so you'll always have fresh words to guess. Unlimited gameplay!</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is Hedbanz appropriate for kids and families?</h3>
+                        <p>Yes! Hedbanz Online is family-friendly and suitable for all ages. It's perfect for family game nights.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">Get Started with Hedbanz Online Today</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Ready to play <strong>Hedbanz Online</strong>? It takes less than a minute to get started:</p>
+                    <ol>
+                        <li>Select the number of players (2-10)</li>
+                        <li>Choose your preferred game duration</li>
+                        <li>Click "Start Game" and begin playing</li>
+                        <li>Have fun with friends and family!</li>
+                    </ol>
+                    <p><strong>No registration. No downloads. No barriers.</strong> Just pure party game fun. Hedbanz Online is the perfect choice for anyone looking for the best free online party game experience.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="hedbanzgame.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="../../js/game-navigation-ru.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

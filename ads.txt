@@ -1,1 +1,14 @@
-google.com, pub-1189261833219365, DIRECT, f08c47fec0942fa0
+# Ezoic ads.txt file
+# This file authorizes ad sellers for bestpartygames.net
+
+# Ezoic
+ezoic.com, 19390, DIRECT
+google.com, pub-9558202322937832, RESELLER, f08c47fec0942fa0
+appnexus.com, 10239, RESELLER
+openx.com, 540298543, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 156872, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 19724, RESELLER, 0bfd66d529a55807
+indexexchange.com, 192311, RESELLER
+
+# For automatic updates, set up a cron job or use Cloudflare redirect
+# Redirect URL: https://srv.adstxtmanager.com/19390/bestpartygames.net

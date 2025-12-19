@@ -20,7 +20,8 @@
       "Bash(magick:*)",
       "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\games\\lastshot\\lastshot.html\")",
       "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\games\\bottlesequence\\index.html\")",
-      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\games\\BottleMatchGame\\BottleMatchGame.html\")"
+      "Bash(start \"C:\\Users\\X\\Documents\\GitHub\\partygames\\games\\BottleMatchGame\\BottleMatchGame.html\")",
+      "Bash(tree:*)"
     ],
     "deny": []
   }

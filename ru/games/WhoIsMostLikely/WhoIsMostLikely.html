@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <!-- Ezoic Privacy Scripts - Must load first -->
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    <!-- Ezoic Header Script -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Играйте в \"Кто скорее всего...\" - лучшую игру для вечеринок! 50+ веселых вопросов для друзей и семьи. Идеально для вечеринок!">
+    <meta name="keywords"
+        content="кто скорее всего, вопросы для вечеринки, игры для вечеринок, питейные игры, ледокольные игры">
+    <meta name="author" content="Party Games Hub">
+    <meta property="og:title" content="Кто скорее всего... - Лучшая игра для вечеринок">
+    <meta property="og:description"
+        content="Откройте 50+ веселых вопросов \"Кто скорее всего...\"! Идеальная игра для друзей и семьи. Создавайте незабываемые моменты!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="MostLikelyToLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/ru/games/WhoIsMostLikely/WhoIsMostLikely">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Кто скорее всего... - Лучшая игра для вечеринок">
+    <meta name="twitter:description"
+        content="50+ веселых вопросов для идеальной вечеринки! Играйте с друзьями и семьей для максимального веселья!">
+    <meta name="twitter:image" content="MostLikelyToLogo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.bestpartygames.net/ru/games/W/WhoIsMostLikely">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./MostLikelyToLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Who's More Likely To Вопросы",
+        "description": "Play Who's More Likely To Вопросы - The Ultimate Party Game! 50+ hilarious who's more likely to questions for friends and family.",
+        "genre": "Party Game",
+        "numberOfИгрокs": "3+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "180"
+        }
+    }
+    </script>
+
+    <title>Who's More Likely To Вопросы - Fun Party Game for Friends</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="WhoIsMostLikely.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./MostLikelyToLogo.png">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="text-center mb-4">
+                <img src="MostLikelyToLogo.png" alt="Who Is Most Likely To Logo" class="img-fluid game-logo"
+                    style="max-width: 200px;">
+            </div>
+            <h1 class="text-center mb-4">Who's More Likely To Вопросы</h1>
+
+            <div class="game-section mb-4">
+                <div class="question-card mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p id="questionText" class="question-text mb-4">Click the button below to start the game!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary w-100" id="nextQuestionBtn">Start Game</button>
+            </div>
+
+            <div class="rules-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">Правила игры & Tips</h2>
+                        <div class="rules-content">
+                            <div class="rule-item mb-4">
+                                <h3>Recommended Игрокs</h3>
+                                <p>4 or more players - Perfect for parties, family gatherings, or friend meetups!</p>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>Как играть</h3>
+                                <p>1. One person reads the "Who's more likely to questions" out loud</p>
+                                <p>2. Everyone points to the person they think is most likely to do it</p>
+                                <p>3. The person with the most points drinks or completes a fun challenge</p>
+                                <p>4. Keep track of who gets the most points for extra fun!</p>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>Game Variations</h3>
+                                <ul>
+                                    <li><strong>Classic Version:</strong> Perfect for casual gatherings and family
+                                        events</li>
+                                    <li><strong>Drinking Game Version:</strong> Popular at parties (remember to drink
+                                        responsibly!)</li>
+                                    <li><strong>Points Version:</strong> Keep score and crown a winner at the end</li>
+                                    <li><strong>Правда Version:</strong> Игрокs must explain their choices</li>
+                                </ul>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>Why Игрокs Love This Game</h3>
+                                <ul>
+                                    <li>Creates hilarious moments with who's more likely to questions</li>
+                                    <li>Perfect ice breaker for new groups with fun questions</li>
+                                    <li>Helps friends learn more about each other through engaging questions</li>
+                                    <li>No special equipment needed</li>
+                                    <li>Easy to learn, fun to master</li>
+                                </ul>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>Best Playing Environments</h3>
+                                <ul>
+                                    <li>House Parties 🏠</li>
+                                    <li>Birthday Celebrations 🎂</li>
+                                    <li>Family Gatherings 👨‍👩‍👧‍👦</li>
+                                    <li>College Dorm Nights 🎓</li>
+                                    <li>Team Building Events 🤝</li>
+                                    <li>Holiday Parties 🎄</li>
+                                </ul>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>Pro Tips</h3>
+                                <ul>
+                                    <li>Encourage everyone to be honest with their answers</li>
+                                    <li>Keep the game moving at a good pace</li>
+                                    <li>Mix funny and thoughtful questions</li>
+                                    <li>Create a safe and comfortable environment</li>
+                                    <li>Take photos or videos of the funniest moments</li>
+                                </ul>
+                            </div>
+                            <div class="safety-note mt-4">
+                                <p class="text-muted"><small>Note: Play responsibly and be mindful of others' feelings.
+                                        This game is designed for fun and friendship!</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="WhoIsMostLikely.js"></script>
+    <script src="../../js/game-navigation-ru.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+

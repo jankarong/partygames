@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <!-- Ezoic Privacy Scripts - Must load first -->
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    <!-- Ezoic Header Script -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Играйте в Короля чаши онлайн! Классическая игра для взрослых вечеринок с карточками и заданиями. Идеально для компаний друзей.">
+    <meta name="keywords"
+        content="король чаши, питейная игра, игры для вечеринок, правила короля чаши, кольцо огня, смерть в кругу">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="Король чаши - Онлайн питейная игра для вечеринок">
+    <meta property="og:description"
+        content="Играйте в Короля чаши онлайн! Классическая игра для вечеринок с карточками и веселыми заданиями.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ru/games/KingsCup/KingsCup">
+    <title>Король чаши - Онлайн питейная игра для вечеринок</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="KingsCup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./kingscuplogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Король чаши",
+        "description": "Играйте в Короля чаши онлайн! Классическая питейная игра для вечеринок с карточками и заданиями. Идеально для взрослых компаний.",
+        "url": "https://www.bestpartygames.net/ru/games/KingsCup/KingsCup",
+        "image": "https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png",
+        "genre": "Drinking Game",
+        "numberOfPlayers": "3+",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Party Games"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Best Party Games",
+            "url": "https://www.bestpartygames.net"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "200"
+        },
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "Playing Cards",
+                "description": "Virtual deck of cards with drinking game rules"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Drinking Challenges",
+                "description": "Classic party drinking game activities and rules"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="kingscuplogo.png" alt="Король чаши Drinking Game Logo" title="Король чаши Drinking Game"
+                    class="game-logo">
+            </div>
+            <h1 class="text-center mb-4">Король чаши Drinking Game</h1>
+
+            <div class="game-section text-center">
+                <!-- Game Status -->
+                <div id="gameStatus" class="game-status mb-3">
+                    <div class="cards-left">Карт осталось: <span id="cardsLeft">52</span></div>
+                    <div class="kings-drawn">Королей вытянуто: <span id="kingsDrawn">0</span>/4</div>
+                </div>
+
+                <!-- Single Card Display -->
+                <div class="single-card-area mb-4">
+                    <div class="playing-card" id="playingCard" onclick="drawCard()">
+                        <div class="card-front" id="cardFront">
+                            <div class="card-header">
+                                <div class="card-value" id="cardValue">?</div>
+                                <div class="card-suit" id="cardSuit">🃏</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="rule-name" id="ruleName">Вытянуть карту</div>
+                                <div class="rule-text" id="ruleText">Нажмите, чтобы вытянуть первую карту!</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-value-small" id="cardValueSmall">?</div>
+                                <div class="card-suit-small" id="cardSuitSmall">🃏</div>
+                            </div>
+                        </div>
+                        <div class="card-back" id="cardBack" style="display: none;">
+                            <div class="deck-pattern">
+                                <span class="deck-icon">👑</span>
+                                <span class="deck-text">Король чаши</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Controls -->
+                <div class="controls mb-4">
+                    <button class="btn btn-success" onclick="nextCard()" id="nextButton" style="display: none;">
+                        Дальше
+                    </button>
+                    <button class="btn btn-warning" onclick="resetGame()" id="resetButton" style="display: none;">
+                        Новая игра
+                    </button>
+                </div>
+
+                <!-- Король чаши Display -->
+                <div class="kings-cup" id="kingsCup">
+                    <div class="cup-container">
+                        <div class="cup-icon">🏆</div>
+                        <div class="cup-text">Король чаши</div>
+                        <div class="cup-contents" id="cupContents">Пусто</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правила игры Section -->
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">👑 Правила карт и действия</h3>
+                        <div class="rules-grid">
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">A<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card">A<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Водопад</div>
+                                    <div class="rule-desc">Все пьют, can't stop until person before you stops
+                                    </div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">A<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small">A<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">2<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">2<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Ты</div>
+                                    <div class="rule-desc">Pick someone to drink</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">2<span style="color: var(--primary-red);">♥</span>
+                                    </div>
+                                    <div class="rule-card-small">2<span style="color: var(--primary-red);">♥</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">3<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">3<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Я</div>
+                                    <div class="rule-desc">Ты drink!</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">3<span style="color: var(--primary-red);">♦</span>
+                                    </div>
+                                    <div class="rule-card-small">3<span style="color: var(--primary-red);">♦</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">4<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">4<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Пол</div>
+                                    <div class="rule-desc">Коснись земли, last one drinks</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">4<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">4<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">5<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">5<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Парни</div>
+                                    <div class="rule-desc">Все парни пьют together</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">5<span style="color: var(--primary-red);">♥</span>
+                                    </div>
+                                    <div class="rule-card-small">5<span style="color: var(--primary-red);">♥</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">6<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card">6<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Девочки</div>
+                                    <div class="rule-desc">Все девочки пьют together</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">6<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small">6<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">7<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">7<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Рай</div>
+                                    <div class="rule-desc">Указывай вверх, last one drinks</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">7<span style="color: var(--primary-red);">♦</span>
+                                    </div>
+                                    <div class="rule-card-small">7<span style="color: var(--primary-red);">♦</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">8<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">8<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Напарник</div>
+                                    <div class="rule-desc">Выберите напарника</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">8<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">8<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">9<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">9<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Рифма</div>
+                                    <div class="rule-desc">Рифмуйте по очереди words</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">9<span style="color: var(--primary-red);">♥</span>
+                                    </div>
+                                    <div class="rule-card-small">9<span style="color: var(--primary-red);">♥</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card rule-card-ten">10<span style="color: var(--black);">♠</span>
+                                    </div>
+                                    <div class="rule-card rule-card-ten">10<span style="color: var(--black);">♠</span>
+                                    </div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Категории</div>
+                                    <div class="rule-desc">Назовите предметы в категории</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small rule-card-ten">10<span
+                                            style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small rule-card-ten">10<span
+                                            style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">J<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">J<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Создать правило</div>
+                                    <div class="rule-desc">Создайте новое правило игры</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">J<span style="color: var(--primary-red);">♦</span>
+                                    </div>
+                                    <div class="rule-card-small">J<span style="color: var(--primary-red);">♦</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">Q<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">Q<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Вопросы</div>
+                                    <div class="rule-desc">Только вопросы, no answers</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">Q<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">Q<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">K<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">K<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">Король чаши</div>
+                                    <div class="rule-desc">Налейте напиток в чашку, 4th King drinks all</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">K<span style="color: var(--primary-red);">♥</span>
+                                    </div>
+                                    <div class="rule-card-small">K<span style="color: var(--primary-red);">♥</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Как играть Section -->
+            <div class="game-intro mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">🎮 Как играть Король чаши Drinking Game</h3>
+                        <p>Король чаши - это классическая игра для вечеринок perfect for adult groups! Each card
+                            has a special drinking rule that creates fun interactions. The goal is to avoid drawing the
+                            4th King, which means drinking the entire Король чаши!</p>
+
+                        <h4 class="mt-4">✨ Установка игры</h4>
+                        <ul>
+                            <li>🃏 One virtual deck of 52 cards</li>
+                            <li>👥 3 or more players for maximum fun</li>
+                            <li>🏆 A virtual "Король чаши" in the center</li>
+                            <li>🥤 Each player has their own drink</li>
+                            <li>🎪 A fun group ready for challenges!</li>
+                        </ul>
+
+                        <h4 class="mt-4">🎯 Как играть</h4>
+                        <ol>
+                            <li>👤 Игрокs take turns clicking "Вытянуть карту"</li>
+                            <li>🃏 Follow the rule for the card you drew</li>
+                            <li>👑 If you draw a King: Pour some of your drink into the Король чаши</li>
+                            <li>🍻 Draw the 4th King? Ты must drink the entire Король чаши!</li>
+                            <li>🎉 Game ends when the 4th King drinks the cup!</li>
+                        </ol>
+
+                        <h4 class="mt-4">🔥 Important Rules to Remember</h4>
+                        <ul>
+                            <li>🍻 <strong>Напарник (8):</strong> Choose a drinking buddy. When you drink, they drink too!
+                                This lasts until someone else draws an 8.</li>
+                            <li>❓ <strong>Вопросы (Q):</strong> Ты can only ask questions. Anyone who answers
+                                (instead of asking back) drinks. Example: A asks "What time is it?" B answers "9:30" ❌ B
+                                drinks!</li>
+                            <li>📜 <strong>Создать правило (J):</strong> Create any rule everyone must follow (e.g., "No
+                                swearing", "Point with elbows only").</li>
+                            <li>👑 <strong>Король чаши (K):</strong> Pour some drink into center cup. The unlucky person
+                                who draws the 4th King drinks it all!</li>
+                            <li>🌊 <strong>Водопад (A):</strong> Все пьют continuously. Ты can't stop until
+                                the person before you stops!</li>
+                        </ul>
+
+                        <h4 class="mt-4">🌟 Why Play Our Король чаши Drinking Game?</h4>
+                        <ul>
+                            <li>🎨 Smooth drinking game animations and design</li>
+                            <li>📱 Perfect for mobile and desktop party play</li>
+                            <li>🎉 No physical cards needed - digital drinking game!</li>
+                            <li>🔄 Endless replayability with shuffled deck</li>
+                            <li>👥 Great for adult parties, gatherings, or virtual hangouts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">❓ Frequently Asked Вопросы</h3>
+
+                        <div class="faq-item">
+                            <h5>🍻 What is Король чаши drinking game?</h5>
+                            <p>Король чаши - это классическая игра для вечеринок where players draw cards and
+                                follow drinking rules. It's perfect for adult parties and social gatherings!</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>👥 How many players do you need for Король чаши drinking game?</h5>
+                            <p>Король чаши drinking game is best with 3-8 players, but you can play with more! The more
+                                players, the more fun and drinking interactions you'll have.</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🃏 What happens when all Kings are drawn?</h5>
+                            <p>When the 4th King is drawn, that player must drink the entire Король чаши (which contains
+                                drinks from the previous 3 Kings)! This ends the game - it's the ultimate challenge!</p>
+                        </div>
+
+                        <div class="faq-item mt-3">
+                            <h5>🔄 Can I customize the drinking game rules?</h5>
+                            <p>While our Король чаши drinking game rules are set for consistency, when you draw a Jack
+                                (Make a Rule), you can create custom drinking rules for your group during that game
+                                session!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="../../js/game-navigation-ru.js"></script>
+    <script src="KingsCup.js"></script>
+
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+

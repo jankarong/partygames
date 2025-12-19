@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <!-- Ezoic Privacy Scripts - Must load first -->
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    <!-- Ezoic Header Script -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Играйте в \"Подпольщик и мистер Белый\" онлайн бесплатно! 1500+ слов, 15 категорий, свои слова для 4-20 игроков. Один телефон, без загрузки!">
+    <meta name="keywords"
+        content="подпольщик онлайн, игра на дедукцию, игра в шпионов, игры для нескольких, мистер белый онлайн">
+    <meta property="og:title" content="Подпольщик и мистер Белый - Бесплатная игра для вечеринок">
+    <meta property="og:description"
+        content="Играйте в \"Подпольщик и мистер Белый\" онлайн! Бесплатная игра на дедукцию. 1500+ слов, 15 категорий, мобильно для 4-20 игроков. Идеально для вечеринок!">
+    <meta property="og:image" content="./undercover.png">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Party Games">
+    <link rel="canonical" href="https://www.bestpartygames.net/ru/games/undercover/undercover">
+    <title>Подпольщик и мистер Белый - Бесплатная игра для вечеринок</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./undercovebg.jpg" as="image">
+    <link rel="preload" href="./undercover.png" as="image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./undercover.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./undercover.png">
+    <link rel="apple-touch-icon" href="./undercover.png">
+    <link rel="shortcut icon" href="./undercover.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="../../style/main.css" rel="stylesheet">
+
+    <link href="undercover.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.hidden {
+            display: none;
+        }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Undercover Game Online",
+      "description": "The ultimate social deduction party game featuring 1500+ word pairs across 15 diverse categories (Free: Food & Drink, Animals, Objects, Jobs & Roles, Entertainment, Nature & Weather, Funny, Movies, Internet Slang, Sports & Fitness, Technology & Digital, Travel & Places, Relationships, Brands & Companies, Historical Figures), custom word options, mobile-optimized interface with large touch-friendly buttons, support for multiple spy configurations, and blank card mode. Perfect for parties, team building, family gatherings, and online events with 4-20 players.",
+      "numberOfИгрокs": {
+        "@type": "QuantitativeValue",
+        "minValue": 4,
+        "maxValue": 20
+      },
+      "gameItem": "Online Party Game",
+      "audience": {
+        "@type": "Audience",
+        "suggestedMinAge": "12"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "http://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <!-- FAQ Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many players can play?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ты can play with 4-20 players. The game works best with groups of 6-12 people for optimal gameplay experience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! The game is completely free to play. All 15 word categories and 1500+ word pairs are available for all users."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to download anything?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No! The game runs entirely in your browser. Just visit the website and start playing instantly - no download required!"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we play with one phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Ты can pass one phone around to each player to see their word. The game is designed to work perfectly with a single device or multiple devices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between Undercover and Mr White?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Undercover: One player gets a slightly different word and must hide their identity while others figure out who they are. Mr White: One or more players get a blank card instead of a word and must guess the word from other players' descriptions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a game take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A typical game takes 10-20 minutes depending on how many players are discussing and voting. Ты can play multiple rounds to keep the fun going!"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use custom words?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! Ты can enter your own custom word pairs in the setup section. This is perfect for themed parties or inside jokes!"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What word categories are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We have 15 diverse categories: Food & Drink, Animals, Objects, Jobs & Roles, Entertainment, Nature & Weather, Funny, Movies, Internet Slang, Sports & Fitness, Technology & Digital, Travel & Places, Relationships, Brands & Companies, and Historical Figures. Over 1500 word pairs in total!"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+
+    <main class="container" style="padding-top: 2rem; padding-bottom: 3rem;">
+        <div class="text-center mb-5">
+            <div class="game-logo-container mb-4">
+                <img src="./undercover.png" alt="Undercover Game Logo - Social Deduction Party Game" class="game-logo"
+                    width="200" height="200" loading="lazy">
+            </div>
+            <h1 class="cute-title">Undercover Game Online</h1>
+            <p class="text-light mb-0">Find the Undercover Among Us!</p>
+        </div>
+
+        <!-- Установка игры Section -->
+        <section id="setup-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4"
+            aria-labelledby="setup-title">
+            <div class="card-body p-4">
+                <h2 id="setup-title" class="card-title h4 mb-4 text-light">Установка игры</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="playerCount" class="text-light mb-2">Number of Игрокs (4-20)</label>
+                            <input type="number" class="form-control" id="playerCount" min="4" max="20" value="4"
+                                aria-describedby="playerCountHelp">
+                            <small id="playerCountHelp" class="form-text text-light">Choose between 4 to 20
+                                players</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="undercoverCount" class="text-light mb-2">Number of Spies (1-3)</label>
+                            <input type="number" class="form-control" id="undercoverCount" min="1" max="3" value="1"
+                                aria-describedby="spyCountHelp">
+                            <small id="spyCountHelp" class="form-text text-light">Choose number of spies</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="whiteCount" class="text-light mb-2">Number of Blank</label>
+                            <input type="number" class="form-control" id="whiteCount" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <div class="mb-4">
+                        <label class="text-light mb-2 d-block" for="categorySelect">Select Word Category:</label>
+                        <select class="form-select" id="categorySelect" aria-label="Select word category">
+                            <option value="all">All Категории (Mixed)</option>
+                            <optgroup label="Категории">
+                                <option value="Food & Drink" selected>Food & Drink</option>
+                                <option value="Animals">Animals</option>
+                                <option value="Objects">Objects</option>
+                                <option value="Jobs & Roles">Jobs & Roles</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Nature & Weather">Nature & Weather</option>
+                                <option value="Funny">Funny</option>
+                                <option value="Movies">Movies</option>
+                                <option value="Internet Slang">Internet Slang</option>
+                                <option value="Sports & Fitness">Sports & Fitness</option>
+                                <option value="Technology & Digital">Technology & Digital</option>
+                                <option value="Travel & Places">Travel & Places</option>
+                                <option value="Relationships">Relationships</option>
+                                <option value="Brands & Companies">Brands & Companies</option>
+                                <option value="Historical Figures">Historical Figures</option>
+                            </optgroup>
+                        </select>
+                        <small class="text-light d-block mt-2">All categories are free for all users!</small>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="useCustomWords">
+                        <label class="form-check-label" for="useCustomWords">Use Custom Words</label>
+                    </div>
+                    <div id="customWordsSection" class="mt-3" style="display: none;">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="customCivilianWord" class="text-light mb-2">Civilian Word</label>
+                                    <input type="text" class="form-control" id="customCivilianWord">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="customUndercoverWord" class="text-light mb-2">Undercover Word</label>
+                                    <input type="text" class="form-control" id="customUndercoverWord">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-pink btn-lg px-5 rounded-pill" onclick="startGame()">
+                        <i class="fas fa-play me-2"></i>Start Game
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Upgrade Modal -->
+        <div id="premium-modal" class="modal-overlay hidden">
+            <div class="card bg-darker shadow-lg border-pink rounded-4" style="max-width: 500px; margin: 10% auto; position: relative;">
+                <div class="card-body p-4 text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-crown text-warning" style="font-size: 4rem;"></i>
+                    </div>
+                    <h3 class="h4 mb-3 text-light">Unlock Premium Категории</h3>
+                    <p class="text-light mb-4">This category requires a premium membership. Upgrade to unlock:</p>
+                    <ul class="text-light text-start mb-4" style="max-width: 300px; margin: 0 auto;">
+                        <li>Sports & Fitness - Health themes</li>
+                        <li>Technology & Digital - Modern tech</li>
+                        <li>Travel & Places - Worldwide locations</li>
+                        <li>Relationships - Emotional topics</li>
+                        <li>Brands & Companies - Famous brands</li>
+                        <li>Historical Figures - Historical knowledge</li>
+                    </ul>
+                    <div class="d-flex gap-2 justify-content-center mt-4">
+                        <button class="btn btn-pink btn-lg px-4 rounded-pill" onclick="window.location.href='/premium.html'">
+                            <i class="fas fa-crown me-2"></i>Upgrade Now
+                        </button>
+                        <button class="btn btn-outline-pink btn-lg px-4 rounded-pill" onclick="closePremiumModal()">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Word Display Section -->
+        <div id="word-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
+            <div class="card-body p-4 text-center">
+                <h3 class="h5 mb-4 text-light">Игрок <span id="currentИгрок" class="text-pink">1</span>'s Turn</h3>
+                <div class="flip-card mx-auto">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front d-flex align-items-center justify-content-center">
+                            <div class="cute-text">Tap to see your word</div>
+                        </div>
+                        <div class="flip-card-back d-flex align-items-center justify-content-center">
+                            <div id="wordDisplay" class="cute-text"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-pink btn-lg px-5 rounded-pill mt-4" onclick="nextИгрок()">
+                    <i class="fas fa-arrow-right me-2"></i>Дальше Игрок
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Play Section -->
+        <div id="game-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
+            <div class="card-body p-4" id="game-content">
+                <h3 class="h5 mb-4 text-light">Игрокs</h3>
+                <form id="voteForm">
+                    <div class="player-list rounded-4 p-3 mb-4" id="playerList">
+                        <!-- Игрокs will be added here dynamically -->
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-pink btn-lg px-5 rounded-pill mb-3"
+                            onclick="eliminateИгрок()">
+                            <i class="fas fa-user-minus me-2"></i>Eliminate Игрок
+                        </button>
+                        <button type="button" class="btn btn-outline-pink btn-lg px-5 rounded-pill"
+                            onclick="resetGame()">
+                            <i class="fas fa-redo me-2"></i>Play Again
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Правила игры Section -->
+        <section class="card bg-darker shadow-lg mb-4 border-pink rounded-4">
+            <div class="card-body p-4">
+                <h2 class="card-title h4 mb-4 text-light">Как играть Undercover Game Online</h2>
+                <div class="text-light">
+                    <h3 class="h6 text-pink mb-3">Game Features:</h3>
+                    <ul class="mb-4">
+                        <li><strong>Undercover & Mr White Modes:</strong> Play as Undercover (find the spy) or Mr White (blank card challenge) for varied gameplay</li>
+                        <li><strong>1500+ Word Pairs:</strong> Over 1500 word pairs across 15 diverse categories including Food & Drink, Animals, Objects, Jobs & Roles, Entertainment, Nature & Weather, Funny, Sports & Fitness, Technology & Digital, Travel & Places, Relationships, Brands & Companies, Historical Figures, Movies, and Internet Slang</li>
+                        <li><strong>Custom Words:</strong> Create your own word pairs for personalized Undercover or Mr White gameplay</li>
+                        <li><strong>Mobile Optimized:</strong> Large, touch-friendly selection buttons for easy gameplay
+                            on any device</li>
+                        <li><strong>Flexible Игрок Count:</strong> Support for 4-20 players with customizable spy and
+                            blank card (Mr White) options</li>
+                        <li><strong>Instant Setup:</strong> No registration required, start playing immediately</li>
+                    </ul>
+
+                    <h3 class="h6 text-pink mb-3">Как играть Undercover:</h3>
+                    <ol class="mb-4">
+                        <li>Each player receives a secret word - most players get the same "civilian" word, while
+                            undercover players get a similar but different word.</li>
+                        <li>Игрокs take turns describing their word without saying it directly.</li>
+                        <li>After each round, use our large, easy-to-tap buttons to vote on who you think is the
+                            undercover.</li>
+                        <li>The person with the most votes is eliminated.</li>
+                        <li>Game continues until either all undercover players are found (civilians win) or number of
+                            undercover equals civilians (undercover wins).</li>
+                    </ol>
+
+                    <h3 class="h6 text-pink mb-3">Как играть Mr White (Blank Card Mode):</h3>
+                    <ol class="mb-4">
+                        <li>One or more players receive a blank card (Mr White) instead of the regular word.</li>
+                        <li>Mr White must listen to other players' descriptions and try to figure out the word without revealing they don't know it.</li>
+                        <li>Other players vote to eliminate the person they think is Mr White.</li>
+                        <li>If Mr White is eliminated before discovering the word, civilians win. If Mr White guesses correctly, they win!</li>
+                        <li>Mr White adds an extra layer of deception and challenge to the game.</li>
+                    </ol>
+
+                    <h3 class="h6 text-pink mb-3">Pro Tips:</h3>
+                    <ul class="mb-4">
+                        <li><strong>Be Subtle:</strong> Avoid revealing whether you're a civilian, undercover, or Mr White in your descriptions!</li>
+                        <li><strong>Listen Carefully:</strong> Pay attention to subtle differences in how others describe their words - especially for Mr White detection</li>
+                        <li><strong>Mr White Strategy:</strong> If you're Mr White, listen for common themes and clues. Pay attention to what descriptions have in common!</li>
+                        <li><strong>Spot Mr White:</strong> Look for players whose descriptions are vague, overly general, or seem uncertain - they might be Mr White!</li>
+                        <li><strong>Use Категории Strategically:</strong> Different word categories offer varying difficulty levels for both Undercover and Mr White modes</li>
+                        <li><strong>Mobile Friendly:</strong> Our optimized interface makes voting quick and easy on phones and tablets</li>
+                    </ul>
+
+                    <p class="mb-0"><strong>Perfect for:</strong> Office parties, family gatherings, team building
+                        events, online meetings, classroom activities, and social gatherings. The large button interface
+                        ensures everyone can participate easily!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="card bg-darker shadow-lg mb-4 border-pink rounded-4">
+            <div class="card-body p-4">
+                <h2 class="card-title h4 mb-4 text-light">Frequently Asked Вопросы</h2>
+                <div class="accordion" id="faqAccordion">
+                    <!-- Question 1 -->
+                    <div class="accordion-item bg-dark border-pink">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                How many players can play?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-dark text-light">
+                                Ты can play with 4-20 players. The game works best with groups of 6-12 people for optimal gameplay experience.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="accordion-item bg-dark border-pink">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Is it free?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-dark text-light">
+                                Yes! The game is completely free to play. All 15 word categories and 1500+ word pairs are available for all users.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="accordion-item bg-dark border-pink">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Do I need to download anything?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-dark text-light">
+                                No! The game runs entirely in your browser. Just visit the website and start playing instantly - no download required!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="accordion-item bg-dark border-pink">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                Can we play with one phone?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-dark text-light">
+                                Yes! Ты can pass one phone around to each player to see their word. The game is designed to work perfectly with a single device or multiple devices.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="accordion-item bg-dark border-pink">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                What's the difference between Undercover and Mr White?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-dark text-light">
+                                <strong>Undercover:</strong> One player gets a slightly different word and must hide their identity while others figure out who they are.<br><br>
+                                <strong>Mr White:</strong> One or more players get a blank card instead of a word and must guess the word from other players' descriptions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="accordion-item bg-dark border-pink">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                How long does a game take?
+                            </button>
+                        </h2>
+                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-dark text-light">
+                                A typical game takes 10-20 minutes depending on how many players are discussing and voting. Ты can play multiple rounds to keep the fun going!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="accordion-item bg-dark border-pink">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                Can I use custom words?
+                            </button>
+                        </h2>
+                        <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-dark text-light">
+                                Absolutely! Ты can enter your own custom word pairs in the setup section. This is perfect for themed parties or inside jokes!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="accordion-item bg-dark border-pink">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                What word categories are available?
+                            </button>
+                        </h2>
+                        <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-dark text-light">
+                                We have 15 diverse categories: Food & Drink, Animals, Objects, Jobs & Roles, Entertainment, Nature & Weather, Funny, Movies, Internet Slang, Sports & Fitness, Technology & Digital, Travel & Places, Relationships, Brands & Companies, and Historical Figures. Over 1500 word pairs in total!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">About Us</h2>
+                    <p>Party Games Collection is your premier online destination for free, interactive party games. We
+                        offer a diverse collection of engaging social games including Find the Spy, Never Have I Ever,
+                        and more - perfect for virtual gatherings, parties, and team building events. Join thousands of
+                        players worldwide for unforgettable gaming experiences!</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">Quick Links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="../../index.html" class="text-light text-decoration-none">Games</a></li>
+                        <li><a href="../../feedback.html" class="text-light text-decoration-none">Feedback</a></li>
+                        <li><a href="../../TheList.html" class="text-light text-decoration-none">The List</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">&copy; 2025 Party Games. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="../../js/game-navigation-ru.js"></script>
+    <script src="undercover.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+

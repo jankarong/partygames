@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <!-- Ezoic Privacy Scripts - Must load first -->
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    <!-- Ezoic Header Script -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚会游戏列表 - 浏览所有游戏 | 聚会游戏合集</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../style/main.css" rel="stylesheet">
+    <link href="../css/auth.css" rel="stylesheet">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bestpartygames.net/zh/TheList">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../image/favicon.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "聚会游戏列表 - 浏览所有游戏",
+        "url": "https://www.bestpartygames.net/zh/TheList.html",
+        "description": "浏览我们完整的聚会游戏合集。为您的下次聚会、派对或家庭活动找到完美的游戏。",
+        "inLanguage": "zh-CN",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "完整聚会游戏合集",
+            "description": "按类别组织的所有可用聚会游戏完整列表",
+            "numberOfItems": 10,
+            "itemListOrder": "Unordered"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "首页",
+                    "item": "https://www.bestpartygames.net/zh/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "游戏列表",
+                    "item": "https://www.bestpartygames.net/zh/TheList.html"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/ru/">
+                <img src="../image/partyGameLogo.png" alt="聚会游戏标志">
+                <span class="brand-text">Best Party Games</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./feedback.html">意见反馈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./TheList.html">游戏分类</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./premium.html">Premium</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            🇨🇳 中文
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/TheList.html">🇺🇸 English</a></li>
+                            <li><a class="dropdown-item" href="/ru/TheList.html">🇨🇳 中文</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- 认证相关按钮 -->
+                    <li class="nav-item" id="auth-buttons">
+                        <div class="auth-buttons">
+                            <a href="./login.html" class="btn btn-auth-nav btn-login">登录</a>
+                            <a href="./register.html" class="btn btn-auth-nav btn-register">注册</a>
+                        </div>
+                    </li>
+
+                    <!-- 用户信息 -->
+                    <li class="nav-item" id="user-info" style="display: none;">
+                        <div class="user-info">
+                            <div class="user-avatar" id="user-avatar">U</div>
+                            <div class="user-details">
+                                <div class="user-email" id="user-email">user@example.com</div>
+                                <span class="premium-status" id="premium-status">免费用户</span>
+                            </div>
+                            <button class="btn btn-signout" onclick="handleSignOut()">退出</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">游戏分类</h1>
+            <p class="lead mb-0">按分类浏览我们的聚会游戏合集</p>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Drinking Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                🍺
+                            </div>
+                            <h3 class="card-title">
+                                <span>酒类游戏</span>
+                            </h3>
+                            <p class="card-text">适合酒会派对的完美游戏</p>
+                            <a href="./categories/drinking-games/" class="btn btn-primary">查看游戏</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Party Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                🎉
+                            </div>
+                            <h3 class="card-title">
+                                <span>聚会游戏</span>
+                            </h3>
+                            <p class="card-text">适合各种场合的经典聚会游戏</p>
+                            <a href="./categories/party-games/" class="btn btn-primary">查看游戏</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Couple Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                💕
+                            </div>
+                            <h3 class="card-title">
+                                <span>情侣游戏</span>
+                            </h3>
+                            <p class="card-text">适合情侣的亲密游戏</p>
+                            <a href="./categories/couple-games/" class="btn btn-primary">查看游戏</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                👥
+                            </div>
+                            <h3 class="card-title">
+                                <span>团队游戏</span>
+                            </h3>
+                            <p class="card-text">竞技性团队对战游戏</p>
+                            <a href="./categories/team-games/" class="btn btn-primary">查看游戏</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                👨‍👩‍👧‍👦
+                            </div>
+                            <h3 class="card-title">
+                                <span>家庭游戏</span>
+                            </h3>
+                            <p class="card-text">适合全家人的有趣游戏</p>
+                            <a href="./categories/family-games/" class="btn btn-primary">查看游戏</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Puzzle Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                🧩
+                            </div>
+                            <h3 class="card-title">
+                                <span>推理游戏</span>
+                            </h3>
+                            <p class="card-text">需要动脑思考的智力游戏</p>
+                            <a href="./categories/puzzle-games/" class="btn btn-primary">查看游戏</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">关于我们</h2>
+                    <p>最佳聚会游戏合集是您免费获得最佳聚会游戏的首要在线目的地！我们提供多样化的引人入胜的互动聚会游戏合集，包括真心话大冒险、我有你没有、狼人杀等 -
+                        非常适合虚拟聚会、派对和团建活动。加入全世界数千名玩家享受最佳聚会游戏体验！</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">快速链接</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">首页</a></li>
+                        <li><a href="./feedback.html" class="text-light text-decoration-none">意见反馈</a></li>
+                        <li><a href="./TheList.html" class="text-light text-decoration-none">游戏分类</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">&copy; 2025 聚会游戏. 保留所有权利.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+

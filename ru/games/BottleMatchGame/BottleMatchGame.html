@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <!-- Ezoic Privacy Scripts - Must load first -->
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    <!-- Ezoic Header Script -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра в совпадение бутылок - Онлайн логическая головоломка</title>
+    <meta name="description" content="Играйте в игру \"Совпадение бутылок\" онлайн бесплатно! Проверьте свою логику на 5 сложных уровнях. Угадайте правильную последовательность цветов.">
+    <meta name="keywords" content="игра совпадение бутылок, логическая головоломка, мастермайнд, подбор цветов, головоломка">
+    <link rel="canonical" href="https://www.bestpartygames.net/ru/games/B/BottleMatchGame">
+    <meta property="og:title" content="Игра в совпадение бутылок - Онлайн логическая головоломка">
+    <meta property="og:description" content="Играйте в игру \"Совпадение бутылок\" онлайн бесплатно! Проверьте свою логику на 5 сложных уровнях.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://partygames.com/games/BottleMatchGame/BottleMatchGame">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzQyOTllMSIvPgo8cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIGZpbGw9IiMyZDM3NDgiLz4KPHN2Zz4K">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Игра в совпадение бутылок",
+      "description": "Логическая головоломка, в которой игроки должны угадать правильную последовательность цветов на 5 сложных уровнях",
+      "gameType": "Logic Puzzle",
+      "numberOfPlayers": "1",
+      "url": "https://www.bestpartygames.net/ru/games/BottleMatchGame/BottleMatchGame"
+    }
+    </script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="game-container">
+        <img src="bottlematch.png" alt="Bottle Match Game Logo" class="game-logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+        <h1>Игра в совпадение бутылок онлайн</h1>
+
+        <div class="level-info">
+            <div class="level-title">Уровень <span id="current-level">1</span> / 5</div>
+            <div class="level-details">
+                Длина: <span id="sequence-length">3</span> |
+                Цвета: <span id="color-count">4</span> |
+                Попытки: <span id="attempts">0</span>
+            </div>
+        </div>
+
+        <div class="secret-display" id="secret-display" style="display: none;">
+            Правильная последовательность: <span id="secret-sequence"></span>
+        </div>
+
+        <div class="game-area" id="game-area">
+            <h3>Выберите вашу комбинацию:</h3>
+            <div class="bottles-container" id="current-guess"></div>
+
+            <div class="controls">
+                <button class="submit-btn" id="submit-guess" onclick="submitGuess()">Отправить ответ</button>
+                <button onclick="clearGuess()">Очистить</button>
+                <button onclick="showSecret()">Показать ответ</button>
+            </div>
+
+            <div class="guess-section">
+                <h4>История попыток:</h4>
+                <div id="guess-history"></div>
+            </div>
+        </div>
+
+        <div class="completion-screen" id="completion-screen">
+            <h2>🎉 Поздравляем! Все уровни пройдены!</h2>
+            <div class="final-stats">
+                <h3>Общая статистика</h3>
+                <p>Общее время: <span id="total-time">0</span> секунд</p>
+                <p>Всего попыток: <span id="total-attempts">0</span></p>
+                <p>Среднее попыток на уровень: <span id="avg-attempts">0</span></p>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">Начать заново</button>
+        </div>
+    </div>
+
+    <section class="game-info">
+        <h2>Как играть в "Совпадение бутылок"</h2>
+        <p>"Совпадение бутылок" - это захватывающая онлайн логическая головоломка на основе классической игры "Мастермайнд". Проверьте свои навыки логического мышления на 5 постепенно усложняющихся уровнях!</p>
+
+        <h3>Правила игры</h3>
+        <ul>
+            <li><strong>Цель:</strong> Угадайте правильную последовательность цветов, пока не закончились попытки</li>
+            <li><strong>5 уровней:</strong> Каждый уровень становится сложнее с более длинными последовательностями и большим количеством цветов</li>
+            <li><strong>Система обратной связи:</strong> После каждой попытки получайте подсказки о правильных позициях</li>
+            <li><strong>Без повторений:</strong> Каждый цвет бутылки появляется только один раз в последовательности</li>
+        </ul>
+
+        <h3>Как играть</h3>
+        <ol>
+            <li><strong>Выбор цветов:</strong> Нажмите на позицию в верхнем ряду, затем нажмите на цвет внизу, или перетащите цвета прямо на позиции</li>
+            <li><strong>Отправить ответ:</strong> После заполнения всех позиций нажмите "Отправить ответ"</li>
+            <li><strong>Прочитайте подсказку:</strong> Черные фишки показывают правильный цвет в правильной позиции</li>
+            <li><strong>Измените стратегию:</strong> Используйте подсказку для уточнения следующей попытки</li>
+            <li><strong>Пройдите уровень:</strong> Совпадите все цвета правильно, чтобы перейти на следующий уровень</li>
+        </ol>
+
+        <h3>Особенности игры</h3>
+        <ul>
+            <li>✅ Бесплатная онлайн игра "Совпадение бутылок" - загрузка не требуется</li>
+            <li>✅ 5 сложных уровней с постепенным увеличением сложности</li>
+            <li>✅ Управление перетаскиванием или нажатием для выбора</li>
+            <li>✅ Мгновенная обратная связь по вашим попыткам</li>
+            <li>✅ Отслеживайте ваши попытки и время завершения</li>
+            <li>✅ Адаптивный дизайн, удобный для мобильных устройств</li>
+        </ul>
+
+        <h3>Советы и стратегия</h3>
+        <p><strong>Начните систематически:</strong> Попробуйте проверить один цвет за раз, чтобы сузить возможности.</p>
+        <p><strong>Используйте метод исключения:</strong> Отслеживайте, какие цвета и позиции были исключены.</p>
+        <p><strong>Обратите внимание на подсказку:</strong> Черные фишки указывают на правильный цвет И правильную позицию.</p>
+    </section>
+
+    <!-- Sound Effects -->
+    <audio id="place-sound" src="place_item_sound.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="hooray_sound.mp3" preload="auto"></audio>
+    <audio id="fail-sound" src="fail_sound.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/ads-controller.js"></script>
+    <script src="../../js/game-navigation-ru.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="../../css/floating-ad.css">
+    <script src="../../js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
