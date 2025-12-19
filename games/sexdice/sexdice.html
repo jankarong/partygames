@@ -125,6 +125,12 @@
 
 <body>
     <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <!-- Ezoic Ad Placement 111 - Top of Game Page -->
+    <div class="container my-3">
+        <div id="ezoic-pub-ad-placeholder-111"></div>
+    </div>
+
+
     <div id="saveNotification" class="save-notification">
         Changes saved successfully!
     </div>
@@ -278,7 +284,13 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Ezoic Ad Placement 113 - Bottom of Game Page -->
+    <div class="container my-4">
+        <div id="ezoic-pub-ad-placeholder-113"></div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/auth.js"></script>
     <script src="/js/ads-controller.js"></script>
     <!-- Floating Ad -->
@@ -297,6 +309,19 @@
                         <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
                     `
                     
+                });
+            }
+        });
+    </script>
+
+    <!-- Ezoic Ad Loading Script -->
+    <script>
+        // Load all Ezoic ad placements on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ezstandalone !== 'undefined' && ezstandalone.cmd) {
+                ezstandalone.cmd.push(function() {
+                    // Load all game page ad placements at once for better performance
+                    ezstandalone.showAds(111, 112, 113);
                 });
             }
         });

@@ -193,6 +193,12 @@
 </head>
 
 <body>
+    <!-- Ezoic Ad Placement 111 - Top of Game Page -->
+    <div class="container my-3">
+        <div id="ezoic-pub-ad-placeholder-111"></div>
+    </div>
+
+
 
     <main class="container" style="padding-top: 2rem; padding-bottom: 3rem;">
         <div class="text-center mb-5">
@@ -416,7 +422,13 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
+        
+            <!-- Ezoic Ad Placement 112 - After Game Area -->
+            <div class="my-4">
+                <div id="ezoic-pub-ad-placeholder-112"></div>
+            </div>
+
+            <!-- FAQ Section -->
         <section class="card bg-darker shadow-lg mb-4 border-pink rounded-4">
             <div class="card-body p-4">
                 <h2 class="card-title h4 mb-4 text-light">Frequently Asked Вопросы</h2>
@@ -588,6 +600,19 @@
                         <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
                     `
                     
+                });
+            }
+        });
+    </script>
+
+    <!-- Ezoic Ad Loading Script -->
+    <script>
+        // Load all Ezoic ad placements on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ezstandalone !== 'undefined' && ezstandalone.cmd) {
+                ezstandalone.cmd.push(function() {
+                    // Load all game page ad placements at once for better performance
+                    ezstandalone.showAds(111, 112, 113);
                 });
             }
         });
