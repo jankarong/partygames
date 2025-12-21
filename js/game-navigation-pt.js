@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Componente de Navegação de Jogos (Versão Portuguesa)
  * Fornece navegação aprimorada entre jogos com menu flutuante e barra de acesso rápido
  */
@@ -91,13 +91,14 @@ class GameNavigation {
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇧🇷 Português
                         </button>
-                        <div class="language-menu">
-                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
-                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
-                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
-                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
-                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
-                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                                                <div class="language-menu">
+                            <a href="#" class="language-link" data-lang="en">English</a>
+                            <a href="#" class="language-link" data-lang="ru">Russian</a>
+                            <a href="#" class="language-link" data-lang="pt">Portuguese</a>
+                            <a href="#" class="language-link" data-lang="zh">Chinese</a>
+                            <a href="#" class="language-link" data-lang="de">German</a>
+                            <a href="#" class="language-link" data-lang="fr">French</a>
+                            <a href="#" class="language-link" data-lang="id">Indonesian</a>
                         </div>
                     </div>
                 </div>
@@ -237,69 +238,31 @@ class GameNavigation {
         const currentPath = window.location.pathname;
         let newPath;
 
-        // Jogos que não têm versões em português/chinês/alemão/francês
         const englishOnlyGames = ['charades2', 'findthespy', 'numberguess'];
         const isEnglishOnly = englishOnlyGames.some(game => currentPath.includes(game));
+        const stripLangPrefix = (path) => path
+            .replace('/ru/', '/')
+            .replace('/pt/', '/')
+            .replace('/zh/', '/')
+            .replace('/de/', '/')
+            .replace('/fr/', '/')
+            .replace('/id/', '/');
 
-        if (lang === 'pt') {
-            // Mudar para versão em português
-            if (currentPath.startsWith('/pt/')) {
-                // Já está em versão em português
+        if (lang === 'en') {
+            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/')) {
                 return;
             }
-            // Se este é um jogo apenas em inglês, ir para página inicial em português
-            if (isEnglishOnly) {
-                newPath = '/pt/index.html';
-            } else {
-                // Remova /zh/, /de/ e /fr/, depois adicione /pt/
-                newPath = '/pt' + currentPath.replace('/zh/', '/').replace('/de/', '/').replace('/fr/', '/');
-            }
-        } else if (lang === 'zh') {
-            // Mudar para versão chinesa
-            if (currentPath.startsWith('/zh/')) {
-                // Já está em versão chinesa
-                return;
-            }
-            // Se este é um jogo apenas em inglês, ir para página inicial em chinês
-            if (isEnglishOnly) {
-                newPath = '/zh/index.html';
-            } else {
-                // Remova /pt/, /de/ e /fr/, depois adicione /zh/
-                newPath = '/zh' + currentPath.replace('/pt/', '/').replace('/de/', '/').replace('/fr/', '/');
-            }
-        } else if (lang === 'de') {
-            // Mudar para versão alemã
-            if (currentPath.startsWith('/de/')) {
-                // Já está em versão alemã
-                return;
-            }
-            // Se este é um jogo apenas em inglês, ir para página inicial em alemão
-            if (isEnglishOnly) {
-                newPath = '/de/index.html';
-            } else {
-                // Remova /pt/, /zh/ e /fr/, depois adicione /de/
-                newPath = '/de' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/fr/', '/');
-            }
-        } else if (lang === 'fr') {
-            // Mudar para versão francesa
-            if (currentPath.startsWith('/fr/')) {
-                // Já está em versão francesa
-                return;
-            }
-            // Se este é um jogo apenas em inglês, ir para página inicial em francês
-            if (isEnglishOnly) {
-                newPath = '/fr/index.html';
-            } else {
-                // Remova /pt/, /zh/ e /de/, depois adicione /fr/
-                newPath = '/fr' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/');
-            }
+            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '');
         } else {
-            // Mudar para versão em inglês
-            if (!currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
-                // Já está em versão em inglês
+            const langPrefix = `/${lang}`;
+            if (currentPath.startsWith(`${langPrefix}/`)) {
                 return;
             }
-            newPath = currentPath.replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '');
+            if (isEnglishOnly) {
+                newPath = `${langPrefix}/index.html`;
+            } else {
+                newPath = langPrefix + stripLangPrefix(currentPath);
+            }
         }
 
         window.location.href = newPath;
@@ -436,3 +399,7 @@ window.GameNavigationAPI = {
     showRecommendations: () => window.gameNavigation?.showRecommendations(),
     onGameEnd: () => window.gameNavigation?.onGameEnd()
 };
+
+
+
+

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Spielnavigationskomponente (Deutsche Version)
  * Bietet verbesserte Navigation zwischen Spielen mit schwebendem Menü und Schnellzugriffsliste
  */
@@ -91,13 +91,14 @@ class GameNavigation {
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇩🇪 Deutsch
                         </button>
-                        <div class="language-menu">
-                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
-                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
-                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
-                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
-                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
-                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                                                <div class="language-menu">
+                            <a href="#" class="language-link" data-lang="en">English</a>
+                            <a href="#" class="language-link" data-lang="ru">Russian</a>
+                            <a href="#" class="language-link" data-lang="pt">Portuguese</a>
+                            <a href="#" class="language-link" data-lang="zh">Chinese</a>
+                            <a href="#" class="language-link" data-lang="de">German</a>
+                            <a href="#" class="language-link" data-lang="fr">French</a>
+                            <a href="#" class="language-link" data-lang="id">Indonesian</a>
                         </div>
                     </div>
                 </div>
@@ -237,69 +238,31 @@ class GameNavigation {
         const currentPath = window.location.pathname;
         let newPath;
 
-        // Spiele, die keine Portugiesisch/Chinesisch/Deutsch/Französisch-Versionen haben
         const englishOnlyGames = ['charades2', 'findthespy', 'numberguess'];
         const isEnglishOnly = englishOnlyGames.some(game => currentPath.includes(game));
+        const stripLangPrefix = (path) => path
+            .replace('/ru/', '/')
+            .replace('/pt/', '/')
+            .replace('/zh/', '/')
+            .replace('/de/', '/')
+            .replace('/fr/', '/')
+            .replace('/id/', '/');
 
-        if (lang === 'pt') {
-            // Zur portugiesischen Version wechseln
-            if (currentPath.startsWith('/pt/')) {
-                // Bereits auf portugiesischer Version
+        if (lang === 'en') {
+            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/')) {
                 return;
             }
-            // Wenn dies ein Nur-Englisch-Spiel ist, gehen Sie zur portugiesischen Startseite
-            if (isEnglishOnly) {
-                newPath = '/pt/index.html';
-            } else {
-                // Entfernen Sie /zh/, /de/ und /fr/, dann fügen Sie /pt/ hinzu
-                newPath = '/pt' + currentPath.replace('/zh/', '/').replace('/de/', '/').replace('/fr/', '/');
-            }
-        } else if (lang === 'zh') {
-            // Zur chinesischen Version wechseln
-            if (currentPath.startsWith('/zh/')) {
-                // Bereits auf chinesischer Version
-                return;
-            }
-            // Wenn dies ein Nur-Englisch-Spiel ist, gehen Sie zur chinesischen Startseite
-            if (isEnglishOnly) {
-                newPath = '/zh/index.html';
-            } else {
-                // Entfernen Sie /pt/, /de/ und /fr/, dann fügen Sie /zh/ hinzu
-                newPath = '/zh' + currentPath.replace('/pt/', '/').replace('/de/', '/').replace('/fr/', '/');
-            }
-        } else if (lang === 'de') {
-            // Zur deutschen Version wechseln
-            if (currentPath.startsWith('/de/')) {
-                // Bereits auf deutscher Version
-                return;
-            }
-            // Wenn dies ein Nur-Englisch-Spiel ist, gehen Sie zur deutschen Startseite
-            if (isEnglishOnly) {
-                newPath = '/de/index.html';
-            } else {
-                // Entfernen Sie /pt/, /zh/ und /fr/, dann fügen Sie /de/ hinzu
-                newPath = '/de' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/fr/', '/');
-            }
-        } else if (lang === 'fr') {
-            // Zur französischen Version wechseln
-            if (currentPath.startsWith('/fr/')) {
-                // Bereits auf französischer Version
-                return;
-            }
-            // Wenn dies ein Nur-Englisch-Spiel ist, gehen Sie zur französischen Startseite
-            if (isEnglishOnly) {
-                newPath = '/fr/index.html';
-            } else {
-                // Entfernen Sie /pt/, /zh/ und /de/, dann fügen Sie /fr/ hinzu
-                newPath = '/fr' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/');
-            }
+            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '');
         } else {
-            // Zur englischen Version wechseln
-            if (!currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
-                // Bereits auf englischer Version
+            const langPrefix = `/${lang}`;
+            if (currentPath.startsWith(`${langPrefix}/`)) {
                 return;
             }
-            newPath = currentPath.replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '');
+            if (isEnglishOnly) {
+                newPath = `${langPrefix}/index.html`;
+            } else {
+                newPath = langPrefix + stripLangPrefix(currentPath);
+            }
         }
 
         window.location.href = newPath;
@@ -436,3 +399,7 @@ window.GameNavigationAPI = {
     showRecommendations: () => window.gameNavigation?.showRecommendations(),
     onGameEnd: () => window.gameNavigation?.onGameEnd()
 };
+
+
+
+

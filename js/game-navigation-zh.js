@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 游戏导航组件（中文版本）
  * 提供带有浮动菜单和快速访问栏的游戏之间的增强导航
  */
@@ -91,13 +91,14 @@ class GameNavigation {
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇨🇳 中文
                         </button>
-                        <div class="language-menu">
-                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
-                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
-                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
-                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
-                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
-                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                                                <div class="language-menu">
+                            <a href="#" class="language-link" data-lang="en">English</a>
+                            <a href="#" class="language-link" data-lang="ru">Russian</a>
+                            <a href="#" class="language-link" data-lang="pt">Portuguese</a>
+                            <a href="#" class="language-link" data-lang="zh">Chinese</a>
+                            <a href="#" class="language-link" data-lang="de">German</a>
+                            <a href="#" class="language-link" data-lang="fr">French</a>
+                            <a href="#" class="language-link" data-lang="id">Indonesian</a>
                         </div>
                     </div>
                 </div>
@@ -237,69 +238,31 @@ class GameNavigation {
         const currentPath = window.location.pathname;
         let newPath;
 
-        // 没有葡萄牙语/中文/德文/法文版本的游戏
         const englishOnlyGames = ['charades2', 'findthespy', 'numberguess'];
         const isEnglishOnly = englishOnlyGames.some(game => currentPath.includes(game));
+        const stripLangPrefix = (path) => path
+            .replace('/ru/', '/')
+            .replace('/pt/', '/')
+            .replace('/zh/', '/')
+            .replace('/de/', '/')
+            .replace('/fr/', '/')
+            .replace('/id/', '/');
 
-        if (lang === 'pt') {
-            // 切换到葡萄牙语版本
-            if (currentPath.startsWith('/pt/')) {
-                // 已经在葡萄牙语版本上
+        if (lang === 'en') {
+            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/')) {
                 return;
             }
-            // 如果这是仅英语游戏，请转到葡萄牙语主页
-            if (isEnglishOnly) {
-                newPath = '/pt/index.html';
-            } else {
-                // 删除 /zh/、/de/ 和 /fr/，然后添加 /pt/
-                newPath = '/pt' + currentPath.replace('/zh/', '/').replace('/de/', '/').replace('/fr/', '/');
-            }
-        } else if (lang === 'zh') {
-            // 切换到中文版本
-            if (currentPath.startsWith('/zh/')) {
-                // 已经在中文版本上
-                return;
-            }
-            // 如果这是仅英语游戏，请转到中文主页
-            if (isEnglishOnly) {
-                newPath = '/zh/index.html';
-            } else {
-                // 删除 /pt/、/de/ 和 /fr/，然后添加 /zh/
-                newPath = '/zh' + currentPath.replace('/pt/', '/').replace('/de/', '/').replace('/fr/', '/');
-            }
-        } else if (lang === 'de') {
-            // 切换到德文版本
-            if (currentPath.startsWith('/de/')) {
-                // 已经在德文版本上
-                return;
-            }
-            // 如果这是仅英语游戏，请转到德文主页
-            if (isEnglishOnly) {
-                newPath = '/de/index.html';
-            } else {
-                // 删除 /pt/、/zh/ 和 /fr/，然后添加 /de/
-                newPath = '/de' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/fr/', '/');
-            }
-        } else if (lang === 'fr') {
-            // 切换到法文版本
-            if (currentPath.startsWith('/fr/')) {
-                // 已经在法文版本上
-                return;
-            }
-            // 如果这是仅英语游戏，请转到法文主页
-            if (isEnglishOnly) {
-                newPath = '/fr/index.html';
-            } else {
-                // 删除 /pt/、/zh/ 和 /de/，然后添加 /fr/
-                newPath = '/fr' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/');
-            }
+            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '');
         } else {
-            // 切换到英文版本
-            if (!currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/')) {
-                // 已经在英文版本上
+            const langPrefix = `/${lang}`;
+            if (currentPath.startsWith(`${langPrefix}/`)) {
                 return;
             }
-            newPath = currentPath.replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '');
+            if (isEnglishOnly) {
+                newPath = `${langPrefix}/index.html`;
+            } else {
+                newPath = langPrefix + stripLangPrefix(currentPath);
+            }
         }
 
         window.location.href = newPath;
@@ -436,3 +399,7 @@ window.GameNavigationAPI = {
     showRecommendations: () => window.gameNavigation?.showRecommendations(),
     onGameEnd: () => window.gameNavigation?.onGameEnd()
 };
+
+
+
+
