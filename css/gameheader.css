@@ -8,9 +8,12 @@
     }
 
     .container {
-        min-height: 100vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+    }
+
+    .container:has(.game-container) {
+        min-height: 100vh;
     }
 }
 
