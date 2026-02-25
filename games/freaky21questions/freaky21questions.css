@@ -38,6 +38,14 @@ body.bg-light {
     background: rgba(255, 255, 255, 0.2);
 }
 
+.freaky-hero-logo {
+    display: block;
+    width: min(180px, 46vw);
+    margin: 16px auto 8px;
+    border-radius: 18px;
+    box-shadow: 0 14px 30px rgba(8, 2, 18, 0.42);
+}
+
 .freaky-subline {
     color: rgba(255, 255, 255, 0.85);
     margin-top: 12px;
@@ -175,6 +183,13 @@ body.bg-light {
     .game-controls .btn {
         width: 100%;
         min-width: 0;
+    }
+
+    .freaky-hero-logo {
+        width: min(140px, 52vw);
+        margin-top: 12px;
+        margin-bottom: 6px;
+        border-radius: 14px;
     }
 
     .info-grid {

@@ -11,6 +11,7 @@ class GameNavigation {
             { name: 'Никогда я не...', url: '/ru/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: 'Кто скорее всего...', url: '/ru/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: 'Что бы ты выбрал?', url: '/ru/games/WouldYouRather/WouldYouRather', category: 'party' },
+            { name: '21 Острый Вопрос', url: '/ru/games/freaky21questions/freaky21questions', category: 'adult' },
             { name: 'Мафия', url: '/ru/games/mafia/mafia', category: 'strategy' },
             { name: 'Подпольщик', url: '/ru/games/undercover/undercover', category: 'strategy' },
             { name: 'Генератор шарад', url: '/ru/games/charades/charades', category: 'party' },

@@ -11,6 +11,7 @@ class GameNavigation {
             { name: '从来没有过', url: '/zh/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: '谁最可能', url: '/zh/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: '你更愿意', url: '/zh/games/WouldYouRather/WouldYouRather', category: 'party' },
+            { name: '辛辣21问', url: '/zh/games/freaky21questions/freaky21questions', category: 'adult' },
             { name: '狼人杀', url: '/zh/games/mafia/mafia', category: 'strategy' },
             { name: '卧底', url: '/zh/games/undercover/undercover', category: 'strategy' },
             { name: '比划猜词', url: '/zh/games/charades/charades', category: 'party' },

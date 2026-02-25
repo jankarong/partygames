@@ -11,6 +11,7 @@ class GameNavigation {
             { name: '从不曾我从不', url: '/zh/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: '谁最有可能', url: '/zh/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: '你会选择谁', url: '/zh/games/WouldYouRather/WouldYouRather', category: 'party' },
+            { name: '辛辣21问', url: '/zh/games/freaky21questions/freaky21questions', category: 'adult' },
             { name: '黑手党', url: '/zh/games/mafia/mafia', category: 'strategy' },
             { name: '卧底', url: '/zh/games/undercover/undercover', category: 'strategy' },
             { name: '词语接龙', url: '/zh/games/charades/charades', category: 'party' },
@@ -399,7 +400,6 @@ window.GameNavigationAPI = {
     showRecommendations: () => window.gameNavigation?.showRecommendations(),
     onGameEnd: () => window.gameNavigation?.onGameEnd()
 };
-
 
 
 

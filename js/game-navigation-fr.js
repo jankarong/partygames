@@ -11,6 +11,7 @@ class GameNavigation {
             { name: 'Je n\'ai Jamais', url: '/fr/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: 'Qui est le Plus Probable', url: '/fr/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: 'Tu Préfères Ou', url: '/fr/games/WouldYouRather/WouldYouRather', category: 'party' },
+            { name: '21 Questions Piquantes', url: '/fr/games/freaky21questions/freaky21questions', category: 'adult' },
             { name: 'Mafia', url: '/fr/games/mafia/mafia', category: 'strategy' },
             { name: 'Infiltré', url: '/fr/games/undercover/undercover', category: 'strategy' },
             { name: 'Charades', url: '/fr/games/charades/charades', category: 'party' },
@@ -399,7 +400,6 @@ window.GameNavigationAPI = {
     showRecommendations: () => window.gameNavigation?.showRecommendations(),
     onGameEnd: () => window.gameNavigation?.onGameEnd()
 };
-
 
 
 

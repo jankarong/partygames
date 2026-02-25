@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#231239" />
+      <stop offset="50%" stop-color="#1a0d2a" />
+      <stop offset="100%" stop-color="#120a1f" />
+    </linearGradient>
+    <linearGradient id="pinkPurple" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c13aff" />
+      <stop offset="100%" stop-color="#ff4f8f" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" rx="110" fill="url(#bg)" />
+  
+  <!-- Outer accent rings -->
+  <rect x="50" y="50" width="400" height="400" rx="80" fill="none" stroke="url(#pinkPurple)" stroke-width="4" opacity="0.3" />
+  <rect x="70" y="70" width="360" height="360" rx="64" fill="none" stroke="url(#pinkPurple)" stroke-width="12" />
+  
+  <!-- Number -->
+  <text x="250" y="290" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="190" fill="#ffffff" text-anchor="middle">21</text>
+  
+  <!-- Subtext -->
+  <text x="250" y="375" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="54" letter-spacing="6" fill="url(#pinkPurple)" text-anchor="middle" text-transform="uppercase">Freaky</text>
+
+  <!-- Aesthetic spicy accent (chili shape approximation or just a geometric accent) -->
+  <path d="M 230,110 Q 250,90 270,110 Q 290,140 250,155 Q 210,140 230,110 Z" fill="url(#pinkPurple)" />
+</svg>
