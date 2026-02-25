@@ -71,6 +71,39 @@
     width: 100%;
 }
 
+/* 京东图标式悬浮入口（用于中文页面，尽量不遮挡游戏区） */
+.floating-ad-container.jd-floating-ad {
+    left: auto;
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.jd-floating-ad .floating-ad-content {
+    width: auto;
+}
+
+.jd-floating-ad .jd-promo-link {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+.jd-floating-ad .jd-promo-link img {
+    width: clamp(160px, 18vw, 260px);
+    height: auto;
+    display: block;
+}
+
+.jd-floating-ad .floating-ad-close {
+    top: -10px;
+    right: -10px;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .floating-ad-container {
@@ -94,6 +127,23 @@
         width: 100% !important;
         height: auto !important;
     }
+
+    .floating-ad-container.jd-floating-ad {
+        right: 10px;
+        bottom: 10px;
+        padding: 0;
+    }
+
+    .jd-floating-ad .jd-promo-link img {
+        width: clamp(96px, 30vw, 130px);
+    }
+
+    .jd-floating-ad .floating-ad-close {
+        width: 28px;
+        height: 28px;
+        top: -8px;
+        right: -8px;
+    }
 }
 
 /* 与页面内容的间距 */
@@ -105,4 +155,8 @@ body.has-floating-ad {
     body.has-floating-ad {
         padding-bottom: 140px;
     }
+}
+
+body.has-floating-ad.jd-floating-ad-active {
+    padding-bottom: 0;
 }

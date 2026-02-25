@@ -10,6 +10,8 @@ class FloatingAdManager {
             scrollTrigger: options.scrollTrigger || false, // 是否需要滚动才显示
             scrollPercentage: options.scrollPercentage || 30, // 滚动百分比触发显示
             adCode: options.adCode || null, // 广告HTML代码
+            containerClass: options.containerClass || '', // 容器额外类名
+            bodyClass: options.bodyClass || '', // body额外类名
             storageKey: 'floatingAdClosed', // 存储关闭状态的key
             rememberClosure: options.rememberClosure !== false, // 是否记住用户关闭状态
             ...options
@@ -91,6 +93,9 @@ class FloatingAdManager {
         const container = document.createElement('div');
         container.className = 'floating-ad-container';
         container.id = 'floating-ad-container';
+        if (this.options.containerClass) {
+            container.classList.add(this.options.containerClass);
+        }
 
         const content = document.createElement('div');
         content.className = 'floating-ad-content';
@@ -122,6 +127,9 @@ class FloatingAdManager {
         const adElement = this.createAdElement();
         document.body.appendChild(adElement);
         document.body.classList.add('has-floating-ad');
+        if (this.options.bodyClass) {
+            document.body.classList.add(this.options.bodyClass);
+        }
         this.isShown = true;
     }
 
@@ -136,6 +144,9 @@ class FloatingAdManager {
             setTimeout(() => {
                 container.remove();
                 document.body.classList.remove('has-floating-ad');
+                if (this.options.bodyClass) {
+                    document.body.classList.remove(this.options.bodyClass);
+                }
             }, 300);
         }
 

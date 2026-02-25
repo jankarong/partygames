@@ -1,5 +1,40 @@
 // Conditionally load Google AdSense for non-premium users only
 (function () {
+    function enableLocalHtmlFallback() {
+        const host = window.location.hostname;
+        const isLocal = host === '127.0.0.1' || host === 'localhost';
+        if (!isLocal) return;
+
+        const shouldRewritePath = (path) => {
+            if (!path) return false;
+            if (path.endsWith('/')) return false;
+            // Has extension already (e.g. .html, .js, .png)
+            if (/\/[^/]+\.[a-z0-9]+$/i.test(path)) return false;
+            return true;
+        };
+
+        document.addEventListener('click', (event) => {
+            const anchor = event.target.closest('a[href]');
+            if (!anchor) return;
+            if (anchor.target === '_blank') return;
+            if (anchor.hasAttribute('download')) return;
+
+            const rawHref = anchor.getAttribute('href');
+            if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('mailto:') || rawHref.startsWith('tel:')) {
+                return;
+            }
+
+            const url = new URL(anchor.href, window.location.origin);
+            if (url.origin !== window.location.origin) return;
+            if (!shouldRewritePath(url.pathname)) return;
+
+            event.preventDefault();
+            window.location.href = `${url.pathname}.html${url.search}${url.hash}`;
+        });
+    }
+
+    enableLocalHtmlFallback();
+
     let injected = false;
 
     function injectAdSenseScript() {
@@ -54,6 +89,5 @@
         });
     }
 })();
-
 
 
