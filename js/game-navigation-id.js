@@ -11,7 +11,8 @@ class GameNavigation {
             { name: 'Saya Tidak Pernah', url: '/id/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: 'Siapa yang Paling Mungkin', url: '/id/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: 'Lebih Suka Mana', url: '/id/games/WouldYouRather/WouldYouRather', category: 'party' },
-            { name: '21 Pertanyaan Pedas', url: '/id/games/freaky21questions/freaky21questions', category: 'adult' },
+            
+            { name: 'Pertanyaan Paranoia Pedas', url: '/id/games/paranoiaquestionsdirty/paranoiaquestionsdirty', category: 'adult' },
             { name: 'Mafia', url: '/id/games/mafia/mafia', category: 'strategy' },
             { name: 'Undercover', url: '/id/games/undercover/undercover', category: 'strategy' },
             { name: 'Charades', url: '/id/games/charades/charades', category: 'party' },

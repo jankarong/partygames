@@ -11,7 +11,8 @@ class GameNavigation {
             { name: 'Nunca Fiz Isso', url: '/pt/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: 'Quem Tem Mais Chance', url: '/pt/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: 'Prefiro Ou Prefiro', url: '/pt/games/WouldYouRather/WouldYouRather', category: 'party' },
-            { name: '21 Perguntas Picantes', url: '/pt/games/freaky21questions/freaky21questions', category: 'adult' },
+            
+            { name: 'Perguntas de Paranoia Picantes', url: '/pt/games/paranoiaquestionsdirty/paranoiaquestionsdirty', category: 'adult' },
             { name: 'Máfia', url: '/pt/games/mafia/mafia', category: 'strategy' },
             { name: 'Infiltrado', url: '/pt/games/undercover/undercover', category: 'strategy' },
             { name: 'Mímica', url: '/pt/games/charades/charades', category: 'party' },

@@ -1,0 +1,165 @@
+:root {
+    --paranoia-bg: #120a1f;
+    --paranoia-bg-soft: #2c1142;
+    --paranoia-accent: #cf42ff;
+    --paranoia-accent-2: #ff4f9e;
+    --paranoia-text: #201a2d;
+}
+
+body.bg-light {
+    background:
+        radial-gradient(circle at 15% 0%, rgba(207, 66, 255, 0.16), transparent 32%),
+        radial-gradient(circle at 80% 10%, rgba(255, 79, 158, 0.14), transparent 30%),
+        #f4f3f8 !important;
+}
+
+.paranoia-shell {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.paranoia-hero {
+    background: linear-gradient(135deg, var(--paranoia-bg) 0%, var(--paranoia-bg-soft) 52%, #5a1f54 100%);
+    color: #fff;
+    border-radius: 22px;
+    padding: 36px 24px 30px;
+    box-shadow: 0 18px 40px rgba(21, 10, 38, 0.35);
+}
+
+.paranoia-kicker {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.paranoia-hero-logo {
+    display: block;
+    width: min(180px, 46vw);
+    margin: 16px auto 8px;
+    border-radius: 18px;
+    box-shadow: 0 14px 30px rgba(8, 2, 18, 0.42);
+}
+
+.paranoia-subline {
+    color: rgba(255, 255, 255, 0.88);
+    margin-top: 12px;
+}
+
+.paranoia-stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.paranoia-stat {
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.question-card {
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 0 16px 34px rgba(23, 9, 44, 0.12);
+    background: linear-gradient(180deg, #fff, #fdfbff);
+}
+
+.question-number {
+    font-size: 14px;
+    font-weight: 800;
+    color: #7c28bd;
+    margin-bottom: 12px;
+}
+
+.question-text {
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    line-height: 1.45;
+    font-weight: 700;
+    color: var(--paranoia-text);
+}
+
+.question-mode {
+    display: inline-block;
+    margin-top: 16px;
+    border-radius: 10px;
+    padding: 6px 12px;
+    background: #f1d9ff;
+    color: #5e2b7e;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.game-controls .btn {
+    min-width: 140px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+#nextBtn {
+    border: none;
+    background: linear-gradient(90deg, var(--paranoia-accent), var(--paranoia-accent-2));
+}
+
+#nextBtn:hover {
+    filter: brightness(1.04);
+}
+
+.content-card {
+    border-radius: 16px;
+}
+
+.content-card .faq-item {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    cursor: default;
+    box-shadow: none;
+}
+
+.content-card .faq-item + .faq-item {
+    margin-top: 12px;
+}
+
+.content-card .faq-item:hover {
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+.content-card .faq-item h3::before,
+.content-card .faq-item p::before {
+    content: none !important;
+}
+
+.content-card .faq-item p {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .paranoia-hero {
+        padding: 24px 14px 22px;
+        border-radius: 14px;
+    }
+
+    .paranoia-hero-logo {
+        width: min(140px, 52vw);
+        margin-top: 12px;
+        margin-bottom: 6px;
+        border-radius: 14px;
+    }
+
+    .game-controls .btn {
+        width: 100%;
+        min-width: 0;
+    }
+}

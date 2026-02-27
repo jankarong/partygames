@@ -16,6 +16,7 @@ class GameNavigation {
             { nameKey: 'Charades', url: '/games/charades/charades', logo: '/games/charades/CharadesLogo.png', category: 'party' },
             { nameKey: 'Hedbanz', url: '/games/hedbanzgame/hedbanzgame', logo: '/games/hedbanzgame/hedbanz.png', category: 'party' },
             { nameKey: '21 Questions Game Freaky', url: '/games/freaky21questions/freaky21questions', logo: '/image/favicon.png', category: 'adult' },
+            { nameKey: 'Paranoia Questions Dirty', url: '/games/paranoiaquestionsdirty/paranoiaquestionsdirty', logo: '/games/paranoiaquestionsdirty/logo.svg', category: 'adult' },
             { nameKey: 'Bottle Match Game', url: '/games/BottleMatchGame/BottleMatchGame', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
             { nameKey: 'Sex Dice', url: '/games/sexdice/sexdice', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
             { nameKey: 'Beer Number', url: '/games/beernumber/beernumber', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
@@ -71,6 +72,7 @@ class GameNavigation {
                 'Charades': 'Charades',
                 'Hedbanz': 'Hedbanz',
                 '21 Questions Game Freaky': '21 Questions Game Freaky',
+                'Paranoia Questions Dirty': 'Paranoia Questions Dirty',
                 'Bottle Match Game': 'Bottle Match Game',
                 'Sex Dice': 'Sex Dice',
                 'Beer Number': 'Beer Number',
@@ -87,6 +89,7 @@ class GameNavigation {
                 'Charades': 'Mímica',
                 'Hedbanz': 'Hedbanz',
                 '21 Questions Game Freaky': '21 Perguntas Picantes',
+                'Paranoia Questions Dirty': 'Perguntas de Paranoia Picantes',
                 'Bottle Match Game': 'Jogo de Combinar Garrafas',
                 'Sex Dice': 'Dados de Sexo Online',
                 'Beer Number': 'Adivinha o Número',
@@ -103,6 +106,7 @@ class GameNavigation {
                 'Charades': '词语接龙',
                 'Hedbanz': '头脑画吧',
                 '21 Questions Game Freaky': '辛辣21问',
+                'Paranoia Questions Dirty': '辛辣偏执问题',
                 'Bottle Match Game': '瓶子匹配游戏',
                 'Sex Dice': '骰子游戏',
                 'Beer Number': '猜数字',
@@ -119,6 +123,7 @@ class GameNavigation {
                 'Charades': 'Scharades',
                 'Hedbanz': 'Hedbanz',
                 '21 Questions Game Freaky': '21 Heiße Fragen',
+                'Paranoia Questions Dirty': 'Schmutzige Paranoia Fragen',
                 'Bottle Match Game': 'Flaschenspiel',
                 'Sex Dice': 'Sex Würfel',
                 'Beer Number': 'Biernummer',
@@ -135,6 +140,7 @@ class GameNavigation {
                 'Charades': 'Charades',
                 'Hedbanz': 'Hedbanz',
                 '21 Questions Game Freaky': '21 Questions Piquantes',
+                'Paranoia Questions Dirty': 'Questions Paranoïa Osées',
                 'Bottle Match Game': 'Jeu d\'Appariement de Bouteilles',
                 'Sex Dice': 'Dés Sexuels',
                 'Beer Number': 'Numéro de Bière',
@@ -151,6 +157,7 @@ class GameNavigation {
                 'Charades': 'Charades',
                 'Hedbanz': 'Hedbanz',
                 '21 Questions Game Freaky': '21 Pertanyaan Pedas',
+                'Paranoia Questions Dirty': 'Pertanyaan Paranoia Pedas',
                 'Bottle Match Game': 'Permainan Cocokkan Botol',
                 'Sex Dice': 'Dadu Seks',
                 'Beer Number': 'Tebak Angka',
@@ -732,5 +739,4 @@ window.GameNavigationAPI = {
     showRecommendations: () => window.gameNavigation?.showRecommendations(),
     onGameEnd: () => window.gameNavigation?.onGameEnd()
 }; 
-
 

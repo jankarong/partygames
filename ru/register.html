@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="ru">
 
 <head>
     <!-- Ezoic Privacy Scripts - Must load first -->
@@ -16,11 +16,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>注册 - PartyGameLab</title>
+    <title>Регистрация - PartyGameLab</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="加入PartyGameLab，享受最佳的无广告聚会游戏体验。立即注册高级会员。">
-    <meta name="keywords" content="注册, 会员, 聚会游戏, 无广告">
+    <meta name="description" content="Присоединяйтесь к PartyGameLab и получите лучший опыт игр для вечеринок без рекламы.">
+    <meta name="keywords" content="регистрация, аккаунт, игры для вечеринок, без рекламы">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../image/favicon.png">
@@ -44,37 +44,37 @@
     <div class="auth-container">
         <div class="auth-card">
             <div class="auth-header">
-                <h1>加入我们</h1>
-                <p>创建您的账户，享受无广告体验</p>
+                <h1>Присоединяйтесь</h1>
+                <p>Создайте аккаунт и играйте без рекламы</p>
             </div>
 
             <form id="register-form" class="auth-form">
                 <div class="form-group">
-                    <label for="email" class="form-label">邮箱地址</label>
+                    <label for="email" class="form-label">Электронная почта</label>
                     <input type="email" id="email" name="email" class="form-control" required
-                           placeholder="请输入您的邮箱地址">
+                           placeholder="Введите ваш email">
                 </div>
 
                 <div class="form-group">
-                    <label for="password" class="form-label">密码</label>
+                    <label for="password" class="form-label">Пароль</label>
                     <input type="password" id="password" name="password" class="form-control" required
-                           placeholder="请输入密码（至少6位字符）" minlength="6">
+                           placeholder="Введите пароль (минимум 6 символов)" minlength="6">
                     <div id="password-strength" class="password-strength"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="confirm-password" class="form-label">确认密码</label>
+                    <label for="confirm-password" class="form-label">Подтвердите пароль</label>
                     <input type="password" id="confirm-password" name="confirm-password" class="form-control" required
-                           placeholder="请再次输入密码">
+                           placeholder="Повторите пароль">
                 </div>
 
 
-                <button type="submit" class="btn-auth">创建账户</button>
+                <button type="submit" class="btn-auth">Создать аккаунт</button>
             </form>
 
             <div class="auth-links">
-                <p>已有账户？ <a href="./login.html">立即登录</a></p>
-                <p><a href="./index.html">← 返回首页</a></p>
+                <p>Уже есть аккаунт? <a href="./login.html">Войти</a></p>
+                <p><a href="./index.html">← На главную</a></p>
             </div>
         </div>
     </div>
@@ -86,12 +86,9 @@
     <script src="../js/auth.js"></script>
 
     <script>
-        // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', function() {
-            // 初始化注册表单处理
             handleAuthForm('register-form', 'signup');
 
-            // 密码强度检查
             const passwordInput = document.getElementById('password');
             const confirmPasswordInput = document.getElementById('confirm-password');
             const passwordStrength = document.getElementById('password-strength');
@@ -104,13 +101,12 @@
                 passwordStrength.className = 'password-strength ' + strength.class;
             });
 
-            // 密码确认检查
             confirmPasswordInput.addEventListener('input', function() {
                 const password = passwordInput.value;
                 const confirmPassword = this.value;
 
                 if (confirmPassword && password !== confirmPassword) {
-                    this.setCustomValidity('密码不匹配');
+                    this.setCustomValidity('Пароли не совпадают');
                     this.classList.add('is-invalid');
                 } else {
                     this.setCustomValidity('');
@@ -121,13 +117,11 @@
                 }
             });
 
-            // 如果用户已登录，重定向到首页
             if (window.authManager && window.authManager.isAuthenticated()) {
                 window.location.href = '/';
             }
         });
 
-        // 密码强度检查函数
         function checkPasswordStrength(password) {
             let strength = 0;
             let text = '';
@@ -141,13 +135,13 @@
             if (/[^A-Za-z0-9]/.test(password)) strength += 1;
 
             if (strength < 3) {
-                text = '密码强度：弱';
+                text = 'Надежность пароля: слабая';
                 className = 'password-strength-weak';
             } else if (strength < 5) {
-                text = '密码强度：中等';
+                text = 'Надежность пароля: средняя';
                 className = 'password-strength-medium';
             } else {
-                text = '密码强度：强';
+                text = 'Надежность пароля: высокая';
                 className = 'password-strength-strong';
             }
 
@@ -169,7 +163,7 @@
                         </a>
                         <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
                     `
-                    
+
                 });
             }
         });

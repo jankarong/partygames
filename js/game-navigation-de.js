@@ -11,7 +11,8 @@ class GameNavigation {
             { name: 'Ich habe nie', url: '/de/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: 'Wer ist am ehesten', url: '/de/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: 'Würdest du eher', url: '/de/games/WouldYouRather/WouldYouRather', category: 'party' },
-            { name: '21 Heiße Fragen', url: '/de/games/freaky21questions/freaky21questions', category: 'adult' },
+            
+            { name: 'Schmutzige Paranoia Fragen', url: '/de/games/paranoiaquestionsdirty/paranoiaquestionsdirty', category: 'adult' },
             { name: 'Mafia', url: '/de/games/mafia/mafia', category: 'strategy' },
             { name: 'Undercover', url: '/de/games/undercover/undercover', category: 'strategy' },
             { name: 'Scharades', url: '/de/games/charades/charades', category: 'party' },
