@@ -16,7 +16,7 @@ class GameNavigation {
             { nameKey: 'Charades', url: '/games/charades/charades', logo: '/games/charades/CharadesLogo.png', category: 'party' },
             { nameKey: 'Hedbanz', url: '/games/hedbanzgame/hedbanzgame', logo: '/games/hedbanzgame/hedbanz.png', category: 'party' },
             { nameKey: '21 Questions Game Freaky', url: '/games/freaky21questions/freaky21questions', logo: '/image/favicon.png', category: 'adult' },
-            { nameKey: 'Paranoia Questions Dirty', url: '/games/paranoiaquestionsdirty/paranoiaquestionsdirty', logo: '/games/paranoiaquestionsdirty/logo.svg', category: 'adult' },
+            { nameKey: 'Paranoia Questions Dirty', url: '/games/paranoiaquestionsdirty/paranoiaquestionsdirty', logo: '/games/paranoiaquestionsdirty/logo.png', category: 'adult' },
             { nameKey: 'Bottle Match Game', url: '/games/BottleMatchGame/BottleMatchGame', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
             { nameKey: 'Sex Dice', url: '/games/sexdice/sexdice', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
             { nameKey: 'Beer Number', url: '/games/beernumber/beernumber', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },

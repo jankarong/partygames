@@ -38,7 +38,7 @@
     <link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/">
     <link rel="alternate" hreflang="fr" href="https://www.bestpartygames.net/fr/">
     <link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/">
-    <link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/"
+    <link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/">
     <link rel="alternate" hreflang="tr" href="https://www.bestpartygames.net/tr/">
     <link rel="alternate" hreflang="ru" href="https://www.bestpartygames.net/ru/">
     <link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/">
@@ -137,7 +137,7 @@
                         <a class="nav-link" href="./premium.html">Premium</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://ozagames.com/" target="_blank" rel="noopener noreferrer">Minigames</a>
+                        <a class="nav-link" href="https://zagames.com/" target="_blank" rel="noopener noreferrer">Minigames</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
@@ -215,7 +215,7 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card game-card shadow-sm">
                         <div class="card-img-wrapper">
-                            <img src="../games/paranoiaquestionsdirty/logo.svg" class="card-img-top"
+                            <img src="../games/paranoiaquestionsdirty/logo.png" class="card-img-top"
                                 alt="Perguntas de Paranoia Picantes" loading="lazy">
                         </div>
                         <div class="card-body">
@@ -573,7 +573,7 @@
                     <ul class="list-unstyled">
                         <li><a href="index.html" class="text-light text-decoration-none">Jogos</a></li>
                         <li><a href="./TheList.html" class="text-light text-decoration-none">Lista de Categorias</a></li>
-                        <li><a href="https://ozagames.com/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none">Minigames</a></li>
+                        <li><a href="https://zagames.com/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none">Minigames</a></li>
                         <li><a href="https://lovemoneygame.live/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none">Love Money Game</a></li>
                     </ul>
                 </div>
@@ -597,7 +597,7 @@
                                     alt="Featured on LaunchIgniter" width="212" height="55" />
                             </a>
                             <a href="https://fazier.com/launches/www.bestpartygames.net" target="_blank">
-                                <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light"
+                                <img src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=light"
                                     width="120" alt="Fazier badge" />
                             </a>
                         </div>
@@ -618,20 +618,20 @@
     <script>
         // Processamento adicional após carregamento da página
         document.addEventListener('DOMContentLoaded', function () {
-            // Detectar mudanças no estado de autenticação
+        // Detectar mudanças no estado de autenticação
             if (window.authManager) {
                 window.authManager.onAuthStateChange((event, session) => {
                     console.log('Mudança no estado de autenticação:', event);
 
-                    // Adicionar lógica adicional de tratamento de estado aqui
+        // Adicionar lógica adicional de tratamento de estado aqui
                 });
             }
 
-            // Definir letra inicial do avatar do usuário
+        // Definir letra inicial do avatar do usuário
             const userAvatar = document.getElementById('user-avatar');
             const userEmail = document.getElementById('user-email');
 
-            // Atualizar avatar quando informações do usuário mudarem
+        // Atualizar avatar quando informações do usuário mudarem
             const observer = new MutationObserver(function (mutations) {
                 mutations.forEach(function (mutation) {
                     if (mutation.type === 'childList' || mutation.type === 'characterData') {

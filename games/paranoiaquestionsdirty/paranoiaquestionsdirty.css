@@ -39,10 +39,13 @@ body.bg-light {
 
 .paranoia-hero-logo {
     display: block;
-    width: min(180px, 46vw);
+    width: min(148px, 40vw);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
     margin: 16px auto 8px;
-    border-radius: 18px;
-    box-shadow: 0 14px 30px rgba(8, 2, 18, 0.42);
+    border-radius: 22px;
+    box-shadow: none;
 }
 
 .paranoia-subline {
@@ -152,10 +155,10 @@ body.bg-light {
     }
 
     .paranoia-hero-logo {
-        width: min(140px, 52vw);
+        width: min(124px, 48vw);
         margin-top: 12px;
         margin-bottom: 6px;
-        border-radius: 14px;
+        border-radius: 18px;
     }
 
     .game-controls .btn {
