@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <!-- Ezoic Privacy Scripts - Must load first -->
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    <!-- Ezoic Header Script -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Iyi Parti Oyunlari - Yetiskinler Icin Ucretsiz Online Oyunlar</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="En iyi parti oyunlarini online kesfedin. Arkadaslar, aile bulusmalari ve sanal partiler icin ucretsiz oynayin. Indirme gerekmez.">
+    <meta name="keywords"
+        content="oyun parti terbaik, oyun parti online, oyun parti ücretsiz, oyun parti yetişkin, oyun sosial">
+    <meta name="saashub-verification" content="yxj0e8673u41" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="En Iyi Parti Oyunlari - Arkadaslar ve Aile Icin Ucretsiz Oyunlar">
+    <meta property="og:description"
+        content="En iyi parti oyunlarini online kesfedin. Arkadaslar, aile bulusmalari ve sanal partiler icin ucretsiz oynayin. Indirme gerekmez.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/tr/">
+    <meta property="og:image" content="https://www.bestpartygames.net/image/partyGameLogo.png">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../style/main.css" rel="stylesheet">
+    <link href="../css/auth.css" rel="stylesheet">
+
+    <!-- Language alternatives -->
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/">
+    <link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/">
+    <link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/">
+    <link rel="alternate" hreflang="fr" href="https://www.bestpartygames.net/fr/">
+    <link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/">
+    <link rel="alternate" hreflang="tr" href="https://www.bestpartygames.net/tr/">
+    <link rel="alternate" hreflang="ru" href="https://www.bestpartygames.net/ru/">
+    <link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bestpartygames.net/tr/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../image/favicon.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PartyGameLab",
+        "url": "https://www.bestpartygames.net/tr/",
+        "description": "En iyi parti oyunlarını online keşfet! Arkadaşlarınla ve ailenle ücretsiz, interaktif oyunlar oyna. İndirme gerekmez.",
+        "inLanguage": "tr",
+        "publisher": {
+            "@type": "Organization",
+            "name": "PartyGameLab",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.bestpartygames.net/image/partyGameLogo.png"
+            }
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Parti Oyunlari Koleksiyonu",
+            "description": "Koleksi oyun parti online ücretsiz için arkadaş ve aile",
+            "numberOfItems": 12
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.bestpartygames.net/tr/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/tr/">
+                <img src="../image/partyGameLogo.png" alt="Parti Oyunlari Logo">
+                <span class="brand-text">PartyGameLab</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./TheList.html">Oyun Listesi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./premium.html">Premium</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ozagames.com/" target="_blank" rel="noopener noreferrer">Minigames</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            🇹🇷 Türkçe
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/">🇺🇸 English</a></li>
+                            <li><a class="dropdown-item" href="/zh/">🇨🇳 中文</a></li>
+                            <li><a class="dropdown-item" href="/de/">🇩🇪 Deutsch</a></li>
+                            <li><a class="dropdown-item" href="/fr/">🇫🇷 Français</a></li>
+                            <li><a class="dropdown-item" href="/pt/">🇧🇷 Português</a></li>
+                            <li><a class="dropdown-item" href="/tr/">🇹🇷 Türkçe</a></li>
+                            <li><a class="dropdown-item" href="/ru/">🇷🇺 Русский</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Auth-related buttons -->
+                    <li class="nav-item" id="auth-buttons">
+                        <div class="auth-buttons">
+                            <a href="./login.html" class="btn btn-auth-nav btn-login">Giris</a>
+                            <a href="./register.html" class="btn btn-auth-nav btn-register">Kaydol</a>
+                        </div>
+                    </li>
+
+                    <!-- User information -->
+                    <li class="nav-item" id="user-info" style="display: none;">
+                        <div class="user-info">
+                            <div class="user-avatar" id="user-avatar">U</div>
+                            <div class="user-details">
+                                <div class="user-email" id="user-email">user@example.com</div>
+                                <span class="premium-status" id="premium-status">Ucretsiz Kullanici</span>
+                            </div>
+                            <button class="btn btn-signout" onclick="handleSignOut()">Cikis</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">En Iyi Online Parti Oyunlari</h1>
+            <p class="lead mb-0">En iyi parti oyun koleksiyonunu keşfet! Arkadaşlar, aile buluşmaları ve sanal partiler için ücretsiz interaktif oyunlar seni bekliyor. Hemen oyna!</p>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games-section">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- 21 Sorular Baharatlı -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/freaky21questions/logo.svg" class="card-img-top"
+                                alt="21 Sorular Baharatlı" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">21 Sorular Baharatlı</h5>
+                            <p class="card-text">Çiftler, buluşmalar ve yetişkin partileri için baharatlı soru oyunu.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2+ oyuncu</small>
+                                <a href="/tr/games/freaky21questions/freaky21questions" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sorular Paranoia Baharatlı -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/paranoiaquestionsdirty/logo.svg" class="card-img-top"
+                                alt="Sorular Paranoia Baharatlı" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sorular Paranoia Baharatlı</h5>
+                            <p class="card-text">Yetişkin gruplar için 50 soruluk "en olası kim" paranoya turu.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">3+ oyuncu</small>
+                                <a href="/tr/games/paranoiaquestionsdirty/paranoiaquestionsdirty" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Piala Raja -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/KingsCup/kingscuplogo.png" class="card-img-top"
+                                alt="Piala Raja" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Piala Raja</h5>
+                            <p class="card-text">Arkadaşlarınla klasik Kings Cup içki oyununu online oyna!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">3+ oyuncu</small>
+                                <a href="/tr/games/KingsCup/KingsCup" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tembakan Terakhir -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/lastshot/lastshot.png" class="card-img-top" alt="Tembakan Terakhir"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tembakan Terakhir</h5>
+                            <p class="card-text">Gerilim dolu Rus ruleti tarzı tur: şansını dene, kurtul ya da yudumla!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">3+ oyuncu</small>
+                                <a href="/tr/games/lastshot/lastshot" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Racun Penyihir -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper"
+                            style="display: flex; justify-content: center; align-items: center; height: 200px; font-size: 5rem;">
+                            <span>🧙‍♀️</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Racun Penyihir</h5>
+                            <p class="card-text">Pilih racun Anda dalam petualangan pemilihan mistis olan penuh keajaiban!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">1+ oyuncu</small>
+                                <a href="/tr/games/witchspoison/witchspoison"
+                                    class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bola Ajaib 8 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/magic8ball/magic8ball.svg" class="card-img-top" alt="Bola Ajaib 8"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Bola Ajaib 8</h5>
+                            <p class="card-text">Kocok Bola Ajaib 8 için mendapatkan jawaban atas sorular olan mendesak!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">1+ oyuncu</small>
+                                <a href="/tr/games/magic8ball/magic8ball" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doğruluk mu Cesaret mi -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/TruthorDare/TruthorDareLogo.png" class="card-img-top" alt="Doğruluk mu Cesaret mi"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Doğruluk mu Cesaret mi</h5>
+                            <p class="card-text">Sınırsız eğlence için klasik Doğruluk mu Cesaret mi oyunu!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2+ oyuncu</small>
+                                <a href="/tr/games/TruthorDare/TruthOrDare" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hiç Yapmadım -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/NeverHaveIEver/NeverHaveIEverLogo.png" class="card-img-top"
+                                alt="Hiç Yapmadım" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hiç Yapmadım</h5>
+                            <p class="card-text">Partiyi canlandıran baharatlı "Hiç Yapmadım" sorularını oyna!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">3+ oyuncu</small>
+                                <a href="/tr/games/NeverHaveIEver/NeverHaveIEver" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- En Muhtemel Kim -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/WhoIsMostLikely/MostLikelyToLogo.png" class="card-img-top"
+                                alt="En Muhtemel Kim" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">En Muhtemel Kim - Sorular</h5>
+                            <p class="card-text">Keşfet hal-hal mengejutkan tentang arkadaş ile sorular olan menghibur!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">3+ oyuncu</small>
+                                <a href="./games/WhoIsMostLikely/WhoIsMostLikely" class="btn btn-primary">Oyna
+                                    Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lebih Suka Mana -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/WouldYouRather/WouldYouRatherLogo.png" class="card-img-top"
+                                alt="Lebih Suka Mana" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lebih Suka Mana - Sorular Baharatlı</h5>
+                            <p class="card-text">Zor seçimler içeren "Hangisini Seçersin" sorularıyla eğlenceyi artır!
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2+ oyuncu</small>
+                                <a href="/tr/games/WouldYouRather/WouldYouRather" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oyun Papan Mafia -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/mafia/mafialogo.png" class="card-img-top" alt="Mafia" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Oyun Papan Mafia</h5>
+                            <p class="card-text">Oyun deduksi sosial di mana oyuncu berburu anggota mafia olan tersembunyi!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">6-12 oyuncu</small>
+                                <a href="/tr/games/mafia/mafia" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Undercover -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/undercover/undercover.png" class="card-img-top" alt="Undercover Oyunu"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Undercover</h5>
+                            <p class="card-text">Blöf, strateji ve dedüksiyon sevenler için heyecanlı bir parti oyunu!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">4-12 oyuncu</small>
+                                <a href="/tr/games/undercover/undercover" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Pembuat Charades -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/charades/CharadesLogo.png" class="card-img-top" alt="Charades"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Pembuat Charades</h5>
+                            <p class="card-text">Sınırsız charades kelimeleriyle epik bir sessiz sinema turu başlat!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">4+ oyuncu</small>
+                                <a href="/tr/games/charades/charades" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oyun Hedbanz -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/hedbanzgame/hedbanz.png" class="card-img-top" alt="Hedbanz"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Oyun Hedbanz</h5>
+                            <p class="card-text">Oyun menebak paling akhir di mana Anda menemukan apa olan ada di kepala Anda!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2+ oyuncu</small>
+                                <a href="/tr/games/hedbanzgame/hedbanzgame" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dadu Seks -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/sexdice/sexdicelogo.png" class="card-img-top" alt="Dadu Seks"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dadu Seks</h5>
+                            <p class="card-text">Partnerinle romantik ve baharatlı bir macera için zarları at!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2+ oyuncu</small>
+                                <a href="/tr/games/sexdice/sexdice" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tebak Angka Ini -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/beernumber/numberguessLogo.png" class="card-img-top"
+                                alt="Tebak Angka Ini" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tebak Angka Ini</h5>
+                            <p class="card-text">Tantang diri Anda için menebak angka misterius antara 1 ve 100!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">1+ oyuncu</small>
+                                <a href="/tr/games/beernumber/beernumber" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oyun Cocokkan Botol -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/BottleMatchGame/bottlematch.png" class="card-img-top"
+                                alt="Oyun Cocokkan Botol" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Oyun Cocokkan Botol</h5>
+                            <p class="card-text">Uji logika Anda! Tebak urutan warna dalam oyun gaya Mastermind.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">1 oyuncu</small>
+                                <a href="/tr/games/BottleMatchGame/BottleMatchGame" class="btn btn-primary">Simdi Oyna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">Neden PartyGameLab?</h2>
+
+                    <div class="mb-5">
+                        <h3 class="h4 mb-3">🎮 Pengalaman Oyun Parti Terbaik</h3>
+                        <p>Koleksiyonumuzdaki <strong>en iyi parti oyunları</strong>, hızlı başlamanız ve yüksek etkileşim almanız için özenle seçildi. Sanal partilerde, aile buluşmalarında veya arkadaş gecelerinde buzları kolayca eritir ve unutulmaz anlar yaratır.</p>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="h4 mb-3">🎯 Oyun için Setiap Kesempatan</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="h5">Oyun Deduksi Sosial</h4>
+                                <p>Rasakan oyun olan mendebarkan seperti <strong>Mafia</strong> ve
+                                    <strong>Undercover</strong> - strateji ve gizemi seven gruplar için ideal.
+                                    Oyun parti terbaik ini menantang oyuncu için saling mengalahkan melalui tipu muslihat
+                                    ve deduksi.
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="h5">Oyun Berbasis Sorular</h4>
+                                <p><strong>Doğruluk mu Cesaret mi</strong>, <strong>Hiç Yapmadım</strong> ve <strong>Hangisini Seçersin</strong> ile buzları kırın. Bu oyunlar hem kahkaha hem güçlü sohbet akışı sağlar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="h4 mb-3">📱 Oyna Instant - Tidak Perlu Diunduh</h3>
+                        <p>Tüm <strong>online parti oyunlarımız</strong> ücretsizdir ve kurulum gerektirmez. Tarayıcıyı aç, oyunu seç ve anında başla.</p>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="h4 mb-3">👥 Doğru Oyunu Nasıl Seçersin?</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><strong>2-4 Oyuncu:</strong> Sihirli 8 Topu, Doğruluk mu Cesaret mi ve Hangisini Seçersin küçük gruplar için ideal</li>
+                            <li class="mb-2"><strong>5-8 Oyuncu:</strong> Hiç Yapmadım ve En Muhtemel Kim orta ölçekli gruplarda çok iyi çalışır</li>
+                            <li class="mb-2"><strong>9+ Oyuncu:</strong> Mafia ve Undercover kalabalık gruplarda en iyi performansı verir</li>
+                            <li class="mb-2"><strong>Aile Dostu:</strong> Charades ve Hedbanz her yaş için uygundur</li>
+                            <li class="mb-2"><strong>Yetişkin Partisi:</strong> Baharatlı Hiç Yapmadım ve Hangisini Seçersin turları</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center">
+                        <h3 class="h4 mb-3">🌟 Katıllah ile Ribuan Oyuncu Bermain Oyun Parti Terbaik</h3>
+                        <p><strong>Ücretsiz parti oyunlarımız</strong> dünya çapında binlerce oyuncuya ulaştı. Doğum günü kutlamalarından online ekip etkinliklerine kadar her ortamda insanları bir araya getirir.</p>
+                        <p class="mb-0"><em>Yeni favori parti oyununu bulmaya hazır mısın? Yukarıdaki oyunlardan birini seç ve hemen oyna!</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">Tentang Biz</h2>
+                    <p>PartyGameLab, ücretsiz online parti oyunları için buluşma noktandır. Doğruluk mu Cesaret mi, Hiç Yapmadım, Mafia ve daha fazlasıyla arkadaşlarınla hemen oynamaya başlayabilirsin.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">Tautan Cepat</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Oyun</a></li>
+                        <li><a href="./TheList.html" class="text-light text-decoration-none">Oyun Listesi</a></li>
+                        <li><a href="https://ozagames.com/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none">Minigames</a></li>
+                        <li><a href="https://lovemoneygame.live/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none">Oyun Uang Cinta</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <p class="text-light mb-0">&copy; 2025 PartyGameLab. Semua hak dilindungi.</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <a href="https://turbo0.com/item/partygamelab" target="_blank" rel="noopener noreferrer">
+                                <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Terkayıt di Turbo0"
+                                    style="height: 54px; width: auto;" />
+                            </a>
+                            <a href="https://twelve.tools" target="_blank">
+                                <img src="https://twelve.tools/badge0-white.svg" alt="Ditampilkan di Twelve Tools"
+                                    width="200" height="54">
+                            </a>
+                            <a href="https://launchigniter.com/product/partygamelab?ref=badge-partygamelab"
+                                target="_blank">
+                                <img src="https://launchigniter.com/api/badge/partygamelab?theme=neutral"
+                                    alt="Ditampilkan di LaunchIgniter" width="212" height="55" />
+                            </a>
+                            <a href="https://fazier.com/launches/www.bestpartygames.net" target="_blank">
+                                <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light"
+                                    width="120" alt="Lencana Fazier" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Auth JS -->
+    <script src="../js/auth.js"></script>
+    <!-- Conditional Ad Loader -->
+    <script src="../js/ads-controller.js"></script>
+
+    <script>
+        // Additional processing after page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            // Listen for authentication state changes
+            if (window.authManager) {
+                window.authManager.onAuthStateChange((event, session) => {
+                    console.log('Main page auth state change:', event);
+
+                    // Can add other auth state change handling logic here
+                    // Such as updating page content, showing specific features, etc.
+                });
+            }
+
+            // Set user avatar initial letter
+            const userAvatar = document.getElementById('user-avatar');
+            const userEmail = document.getElementById('user-email');
+
+            // Update avatar when user information is updated
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                        const email = userEmail.textContent;
+                        if (email && email !== 'user@example.com' && userAvatar) {
+                            userAvatar.textContent = email.charAt(0).toUpperCase();
+                        }
+                    }
+                });
+            });
+
+            if (userEmail) {
+                observer.observe(userEmail, {
+                    childList: true,
+                    characterData: true,
+                    subtree: true
+                });
+            }
+        });
+    </script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('FloatingAdManager available:', typeof FloatingAdManager !== 'undefined');
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 2000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                });
+            } else {
+                console.error('FloatingAdManager not loaded');
+            }
+        });
+    </script>
+</body>
+
+</html>

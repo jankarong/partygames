@@ -101,6 +101,7 @@ class GameNavigation {
                             <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
                             <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
                             <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
                         </div>
                     </div>
                 </div>

@@ -105,6 +105,7 @@ class GameNavigation {
                             <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
                             <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
                             <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
                         </div>
                     </div>
                 </div>
@@ -259,7 +260,8 @@ class GameNavigation {
                 newPath = '/ru/index.html';
             } else {
                 // Удалите /pt/, /zh/, /de/, /fr/, затем добавьте /ru/
-                newPath = '/ru' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/').replace('/fr/', '/').replace('/id/', '/');
+                newPath = '/ru' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/').replace('/fr/', '/').replace('/id/', '/').replace('/tr/', '/')
+            .replace('/tr/', '/');
             }
         } else if (lang === 'pt') {
             // Переключиться на португальскую версию
@@ -270,7 +272,8 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/pt/index.html';
             } else {
-                newPath = '/pt' + currentPath.replace('/ru/', '/').replace('/zh/', '/').replace('/de/', '/').replace('/fr/', '/').replace('/id/', '/');
+                newPath = '/pt' + currentPath.replace('/ru/', '/').replace('/zh/', '/').replace('/de/', '/').replace('/fr/', '/').replace('/id/', '/').replace('/tr/', '/')
+            .replace('/tr/', '/');
             }
         } else if (lang === 'zh') {
             // Переключиться на китайскую версию
@@ -281,7 +284,8 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/zh/index.html';
             } else {
-                newPath = '/zh' + currentPath.replace('/ru/', '/').replace('/pt/', '/').replace('/de/', '/').replace('/fr/', '/').replace('/id/', '/');
+                newPath = '/zh' + currentPath.replace('/ru/', '/').replace('/pt/', '/').replace('/de/', '/').replace('/fr/', '/').replace('/id/', '/').replace('/tr/', '/')
+            .replace('/tr/', '/');
             }
         } else if (lang === 'de') {
             // Переключиться на немецкую версию
@@ -292,7 +296,8 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/de/index.html';
             } else {
-                newPath = '/de' + currentPath.replace('/ru/', '/').replace('/pt/', '/').replace('/zh/', '/').replace('/fr/', '/').replace('/id/', '/');
+                newPath = '/de' + currentPath.replace('/ru/', '/').replace('/pt/', '/').replace('/zh/', '/').replace('/fr/', '/').replace('/id/', '/').replace('/tr/', '/')
+            .replace('/tr/', '/');
             }
         } else if (lang === 'fr') {
             // Переключиться на французскую версию
@@ -303,7 +308,8 @@ class GameNavigation {
             if (isEnglishOnly) {
                 newPath = '/fr/index.html';
             } else {
-                newPath = '/fr' + currentPath.replace('/ru/', '/').replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/').replace('/id/', '/');
+                newPath = '/fr' + currentPath.replace('/ru/', '/').replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/').replace('/id/', '/')
+            .replace('/tr/', '/');
             }
         } else if (lang === 'id') {
             // Переключиться на индонезийскую версию
@@ -318,11 +324,11 @@ class GameNavigation {
             }
         } else {
             // Переключиться на английскую версию
-            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/')) {
+            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/')) {
                 // Уже в английской версии
                 return;
             }
-            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '');
+            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '');
         }
 
         window.location.href = newPath;

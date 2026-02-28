@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Ezoic Privacy Scripts - Must load first -->
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    <!-- Ezoic Header Script -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sise Eslestirme Oyunu - Ucretsiz Mantik Bulmacasi</title>
+    <meta name="description" content="Sise Eslestirme Oyununu ucretsiz oyna! 5 zorlu seviyede mantigini test et. Bu Mastermind tarzı bulmacada renk dizisini tahmin et.">
+    <meta name="keywords" content="sise eslestirme oyunu, mantik bulmacasi, mastermind oyunu, renk eslestirme, zeka oyunu">
+    <link rel="canonical" href="https://partygames.com/games/BottleMatchGame/BottleMatchGame">
+    <meta property="og:title" content="Sise Eslestirme Oyunu - Ucretsiz Mantik Bulmacasi">
+    <meta property="og:description" content="Sise Eslestirme Oyununu ucretsiz oyna! 5 zorlu seviyede mantigini test et.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://partygames.com/games/BottleMatchGame/BottleMatchGame">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzQyOTllMSIvPgo8cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIGZpbGw9IiMyZDM3NDgiLz4KPHN2Zz4K">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Sise Eslestirme Oyunu",
+      "description": "Oyuncularin 5 zorlu seviyede dogru renk dizisini tahmin ettigi bir mantik bulmaca oyunu",
+      "gameType": "Mantik Bulmacasi",
+      "numberOfPlayers": "1",
+      "url": "https://partygames.com/games/BottleMatchGame/BottleMatchGame"
+    }
+    </script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <!-- Ezoic Ad Placement 111 - Top of Game Page -->
+    <div class="container my-3">
+        <div id="ezoic-pub-ad-placeholder-111"></div>
+    </div>
+
+
+    <div class="game-container">
+        <img src="bottlematch.png" alt="Sise Eslestirme Oyunu Logosu" class="game-logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+        <h1>Sise Eslestirme Oyunu</h1>
+
+        <div class="level-info">
+            <div class="level-title">Seviye <span id="current-level">1</span> / 5</div>
+            <div class="level-details">
+                Uzunluk: <span id="sequence-length">3</span> |
+                Renk: <span id="color-count">4</span> |
+                Deneme: <span id="attempts">0</span>
+            </div>
+        </div>
+
+        <div class="secret-display" id="secret-display" style="display: none;">
+            Gizli Dizi: <span id="secret-sequence"></span>
+        </div>
+
+        <div class="game-area" id="game-area">
+            <h3>Tahminini sec:</h3>
+            <div class="bottles-container" id="current-guess"></div>
+
+            <div class="controls">
+                <button class="submit-btn" id="submit-guess" onclick="submitGuess()">Tahmini Gonder</button>
+                <button onclick="clearGuess()">Temizle</button>
+                <button onclick="showSecret()">Cevabi Goster</button>
+            </div>
+
+            <div class="guess-section">
+                <h4>Tahmin Gecmisi:</h4>
+                <div id="guess-history"></div>
+            </div>
+        </div>
+
+        <div class="completion-screen" id="completion-screen">
+            <h2>🎉 Tebrikler! Tum Seviyeleri Tamamladin!</h2>
+            <div class="final-stats">
+                <h3>Genel Istatistikler</h3>
+                <p>Toplam Sure: <span id="total-time">0</span> saniye</p>
+                <p>Toplam Deneme: <span id="total-attempts">0</span></p>
+                <p>Seviye Basina Ortalama Deneme: <span id="avg-attempts">0</span></p>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">Oyunu Yeniden Baslat</button>
+        </div>
+    </div>
+
+    <section class="game-info">
+        <h2>Sise Eslestirme Oyunu Nasil Oynanir</h2>
+        <p>Sise Eslestirme Oyunu, klasik Mastermind oyununa dayanan eglenceli bir online mantik bulmacasidir. Artan zorluktaki 5 seviyede muhakeme becerilerini test et!</p>
+
+        <h3>Oyun Kurallari</h3>
+        <ul>
+            <li><strong>Amac:</strong> Deneme hakkin bitmeden gizli renk dizisini bul</li>
+            <li><strong>5 Seviye:</strong> Her seviyede dizi uzar ve renk sayisi artar</li>
+            <li><strong>Geri Bildirim:</strong> Her tahminden sonra dogru pozisyonlarla ilgili ipucu alirsin</li>
+            <li><strong>Tekrar Yok:</strong> Her sise rengi dizide sadece bir kez yer alir</li>
+        </ul>
+
+        <h3>Nasil Oynanir</h3>
+        <ol>
+            <li><strong>Renk Sec:</strong> Ustte bir pozisyona tikla, sonra alttan renk sec veya renkleri dogrudan pozisyona surukle</li>
+            <li><strong>Tahmini Gonder:</strong> Tum pozisyonlar doldugunda "Tahmini Gonder"e tikla</li>
+            <li><strong>Geri Bildirimi Oku:</strong> Siyah isaretler dogru renk + dogru pozisyonu gosterir</li>
+            <li><strong>Stratejini Gelistir:</strong> Sonraki tahminini geri bildirime gore duzenle</li>
+            <li><strong>Seviyeyi Gec:</strong> Tum siseleri dogru eslestirerek ilerle</li>
+        </ol>
+
+        <h3>Oyun Ozellikleri</h3>
+        <ul>
+            <li>✅ Ucretsiz online sise eslestirme oyunu - indirme gerekmez</li>
+            <li>✅ Artan zorlukta 5 seviye</li>
+            <li>✅ Surukle-birak veya tikla-sec kontrolleri</li>
+            <li>✅ Tahminlerine anlik geri bildirim</li>
+            <li>✅ Deneme sayisi ve tamamlama suresi takibi</li>
+            <li>✅ Mobil uyumlu responsive tasarim</li>
+        </ul>
+
+        <h3>Ipuclari ve Strateji</h3>
+        <p><strong>Sistematik basla:</strong> Ihtimalleri daraltmak icin renkleri tek tek test et.</p>
+        <p><strong>Eleme yontemini kullan:</strong> Elenen renkleri ve pozisyonlari not et.</p>
+        <p><strong>Geri bildirime dikkat et:</strong> Siyah isaret hem dogru renk hem de dogru pozisyon demektir.</p>
+    </section>
+
+    <!-- Sound Effects -->
+    <audio id="place-sound" src="place_item_sound.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="hooray_sound.mp3" preload="auto"></audio>
+    <audio id="fail-sound" src="fail_sound.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-tr.js"></script>
+    <!-- Floating Ad -->
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                    
+                });
+            }
+        });
+    </script>
+
+    <!-- Ezoic Ad Loading Script -->
+    <script>
+        // Load all Ezoic ad placements on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ezstandalone !== 'undefined' && ezstandalone.cmd) {
+                ezstandalone.cmd.push(function() {
+                    // Load all game page ad placements at once for better performance
+                    ezstandalone.showAds(111, 112, 113);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

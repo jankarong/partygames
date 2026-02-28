@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - PartyGameLab</title>
+    <meta name="description" content="PartyGameLab'e kayıt olun ve reklamsız parti oyunlarını hemen oynamaya başlayın.">
+    <meta name="keywords" content="kayıt ol, parti oyunları, premium üyelik">
+    <link rel="icon" type="image/png" href="../image/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="../css/auth.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Bize Katıl</h1>
+                <p>Reklamsız deneyim için hesabını oluştur</p>
+            </div>
+
+            <form id="register-form" class="auth-form">
+                <div class="form-group">
+                    <label for="email" class="form-label">E-posta Adresi</label>
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="E-posta adresinizi girin">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Şifre</label>
+                    <input type="password" id="password" name="password" class="form-control" required placeholder="En az 6 karakter" minlength="6">
+                    <div id="password-strength" class="password-strength"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password" class="form-label">Şifre Tekrar</label>
+                    <input type="password" id="confirm-password" name="confirm-password" class="form-control" required placeholder="Şifrenizi tekrar girin">
+                </div>
+
+                <button type="submit" class="btn-auth">Kayıt Ol</button>
+            </form>
+
+            <div class="auth-links">
+                <p>Zaten hesabın var mı? <a href="./login.html">Giriş Yap</a></p>
+                <p><a href="../index.html">← Ana sayfaya dön</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            handleAuthForm('register-form', 'signup');
+
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirm-password');
+            const passwordStrength = document.getElementById('password-strength');
+
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                const strength = checkPasswordStrength(password);
+                passwordStrength.textContent = strength.text;
+                passwordStrength.className = 'password-strength ' + strength.class;
+            });
+
+            confirmPasswordInput.addEventListener('input', function() {
+                const password = passwordInput.value;
+                const confirmPassword = this.value;
+                if (confirmPassword && password !== confirmPassword) {
+                    this.setCustomValidity('Şifreler eşleşmiyor');
+                    this.classList.add('is-invalid');
+                } else {
+                    this.setCustomValidity('');
+                    this.classList.remove('is-invalid');
+                    if (confirmPassword) this.classList.add('is-valid');
+                }
+            });
+
+            if (window.authManager && window.authManager.isAuthenticated()) {
+                window.location.href = '/';
+            }
+        });
+
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 6) strength += 1;
+            if (password.length >= 8) strength += 1;
+            if (/[a-z]/.test(password)) strength += 1;
+            if (/[A-Z]/.test(password)) strength += 1;
+            if (/[0-9]/.test(password)) strength += 1;
+            if (/[^A-Za-z0-9]/.test(password)) strength += 1;
+
+            if (strength < 3) return { text: 'Şifre gücü: Zayıf', class: 'password-strength-weak' };
+            if (strength < 5) return { text: 'Şifre gücü: Orta', class: 'password-strength-medium' };
+            return { text: 'Şifre gücü: Güçlü', class: 'password-strength-strong' };
+        }
+    </script>
+
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
+</body>
+</html>

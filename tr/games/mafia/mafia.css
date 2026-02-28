@@ -1,0 +1,2025 @@
+:root {
+    --primary-red: #ff6b8b;
+    --primary-purple: #6b4c9a;
+    --dark-bg: #1a1a2e;
+    --card-bg: #242444;
+    --border-color: #4a4a8a;
+    --text-color: #f0f0f5;
+    --text-muted: #b8b8d0;
+    --heading-font: 'Cinzel', serif;
+    --body-font: 'Crimson Pro', serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(107, 76, 154, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 107, 139, 0.1) 0%, transparent 50%);
+    color: var(--text-color);
+    min-height: 100vh;
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+.game-setup,
+.game-area,
+.rules-section {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(107, 76, 154, 0.2);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-setup:hover,
+.game-area:hover,
+.rules-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(107, 76, 154, 0.3);
+}
+
+.game-setup::before,
+.game-area::before,
+.rules-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-red), var(--primary-purple));
+    opacity: 0.8;
+}
+
+.setup-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-red);
+    font-family: var(--heading-font);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 15px rgba(255, 107, 139, 0.3);
+    }
+
+    50% {
+        text-shadow: 0 0 25px rgba(107, 76, 154, 0.5);
+    }
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+.total-players {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.role-selection {
+    background: rgba(26, 26, 46, 0.8);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(8px);
+}
+
+.role-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 20px;
+    margin-bottom: 16px;
+}
+
+.role-input {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    justify-content: space-between;
+    min-width: 0;
+}
+
+.role-input label {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1rem;
+    white-space: nowrap;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    min-width: fit-content;
+}
+
+.role-input input {
+    width: 60px;
+    min-width: 60px;
+    padding: 6px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: rgba(36, 36, 68, 0.8);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.role-input input:focus {
+    background-color: rgba(36, 36, 68, 0.95);
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 10px rgba(107, 76, 154, 0.2);
+}
+
+.role-summary {
+    background: rgba(26, 26, 46, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.role-warning {
+    color: var(--primary-red);
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+button {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    border: none;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(107, 76, 154, 0.4);
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.card-body {
+    position: relative;
+}
+
+.list-group-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+}
+
+.list-group-item.eliminated {
+    background: rgba(255, 71, 87, 0.2);
+    border-color: var(--primary-red);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.badge {
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.game-logo {
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 0 auto 20px;
+}
+
+/* Custom Bootstrap Overrides */
+.form-control {
+    background-color: var(--dark-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+}
+
+.form-control:focus {
+    background-color: var(--dark-bg);
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 2px rgba(107, 76, 154, 0.2);
+    color: var(--text-color);
+}
+
+.form-label {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-danger,
+.btn-primary,
+.btn-warning {
+    background: linear-gradient(135deg, #ff6b8b, #ff4757);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 139, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-danger:hover,
+.btn-primary:hover,
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 139, 0.4);
+    background: linear-gradient(135deg, #ff4757, #ff6b8b);
+    color: white;
+}
+
+.btn-danger:active,
+.btn-primary:active,
+.btn-warning:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(255, 107, 139, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    border: none;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d, #5a6268);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--heading-font);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+    background: linear-gradient(135deg, #5a6268, #6c757d);
+    color: white;
+}
+
+.btn-secondary:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(108, 117, 125, 0.3);
+}
+
+
+
+.instruction {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+#cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.role-card {
+    perspective: 1000px;
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.role-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+    color: white;
+}
+
+.card-back {
+    background: var(--card-bg);
+    transform: rotateY(180deg);
+    border: 2px solid var(--primary-purple);
+}
+
+.card-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--heading-font);
+}
+
+.role-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: var(--heading-font);
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-description {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.4;
+    font-family: var(--body-font);
+}
+
+/* Role-specific card styles */
+.role-mafia .role-name {
+    color: var(--primary-red);
+    background: linear-gradient(135deg, #ff6b8b, #ff4757);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-doctor .role-name {
+    background: linear-gradient(135deg, #2196f3, #03a9f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-detective .role-name {
+    background: linear-gradient(135deg, #ffc107, #ff9800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-villager .role-name {
+    background: linear-gradient(135deg, #4caf50, #8bc34a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.player-status {
+    margin-top: 20px;
+}
+
+.player-card {
+    background: var(--card-bg);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.player-card.dead {
+    opacity: 0.5;
+    background: var(--dark-bg);
+}
+
+.game-phase {
+    border-left: 4px solid var(--primary-red);
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+#phaseDescription {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.rules {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.rules ul,
+.rules ol {
+    padding-left: 20px;
+}
+
+.rules li {
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.h5,
+h5 {
+    color: #ffffff !important;
+    font-size: 1.2rem;
+    background: linear-gradient(90deg, var(--card-bg), rgba(255, 59, 74, 0.2), var(--card-bg));
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.role-selection h3 {
+    color: #ffffff !important;
+    background: linear-gradient(90deg, var(--card-bg), rgba(255, 59, 74, 0.2), var(--card-bg));
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+#returnToSetup {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    right: auto;
+    padding: 8px 16px;
+    z-index: 1000;
+    color: #ffffff;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    min-height: auto;
+}
+
+#returnToSetup:hover {
+    color: #f8f9fa;
+}
+
+#returnToSetup i {
+    margin-right: 8px;
+}
+
+/* 移动端游戏控制按钮优化 - 专业UI设计 */
+@media screen and (max-width: 768px) {
+
+    /* 为浮动按钮预留空间 */
+    .game-area {
+        padding-bottom: 90px !important;
+        padding-top: 90px !important;
+        /* 为顶部新游戏按钮预留空间 */
+    }
+
+    /* 返回按钮 - 现代浮动设计 */
+    #returnToSetup {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 56px;
+        height: 56px;
+        margin: 0;
+        padding: 0;
+        font-size: 1.3rem;
+        border-radius: 16px;
+        min-height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+        background: rgba(108, 117, 125, 0.95);
+        backdrop-filter: blur(12px);
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.3),
+            0 2px 8px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* 新游戏按钮 - 右上角位置，移动端优化 */
+    #startNewGame {
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        left: auto !important;
+        bottom: auto !important;
+        width: 56px !important;
+        height: 56px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 1.3rem !important;
+        border-radius: 16px !important;
+        min-height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 1001 !important;
+        background: linear-gradient(135deg, #28a745, #20c997) !important;
+        backdrop-filter: blur(12px);
+        border: 2px solid rgba(255, 255, 255, 0.2) !important;
+        box-shadow:
+            0 8px 24px rgba(40, 167, 69, 0.4),
+            0 2px 8px rgba(40, 167, 69, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    }
+
+    /* 悬停和点击效果 */
+    #returnToSetup:hover,
+    #returnToSetup:focus {
+        background: rgba(90, 98, 104, 1);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow:
+            0 12px 32px rgba(0, 0, 0, 0.4),
+            0 4px 12px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    #startNewGame:hover,
+    #startNewGame:focus {
+        background: linear-gradient(135deg, #218838, #1abc9c) !important;
+        transform: translateY(-3px) scale(1.02) !important;
+        box-shadow:
+            0 12px 32px rgba(40, 167, 69, 0.5),
+            0 4px 12px rgba(40, 167, 69, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+        border-color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    /* 按压反馈 */
+    #returnToSetup:active {
+        transform: translateY(-1px) scale(0.98);
+        transition: all 0.1s ease;
+    }
+
+    #startNewGame:active {
+        transform: translateY(-1px) scale(0.98) !important;
+        transition: all 0.1s ease !important;
+    }
+
+    /* 图标优化 */
+    #returnToSetup i,
+    #startNewGame i {
+        margin: 0;
+        font-size: 1.4rem;
+        color: white;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 移动端隐藏按钮文字，只显示图标 */
+    #returnToSetup .btn-text,
+    #startNewGame .btn-text {
+        display: none !important;
+    }
+
+    /* 触摸设备优化 */
+    @media (hover: none) and (pointer: coarse) {
+
+        #returnToSetup,
+        #startNewGame {
+            transition: all 0.2s ease;
+        }
+
+        #returnToSetup:active {
+            background: rgba(90, 98, 104, 1);
+            transform: scale(0.95);
+        }
+
+        #startNewGame:active {
+            background: linear-gradient(135deg, #218838, #1abc9c) !important;
+            transform: scale(0.95) !important;
+        }
+    }
+}
+
+/* 超小屏幕优化 (小于480px) */
+@media screen and (max-width: 480px) {
+    .game-area {
+        padding-bottom: 80px !important;
+        padding-top: 80px !important;
+        /* 为顶部按钮预留空间 */
+    }
+
+    #returnToSetup {
+        width: 52px !important;
+        height: 52px !important;
+        bottom: 16px !important;
+        left: 16px !important;
+        font-size: 1.2rem !important;
+    }
+
+    #startNewGame {
+        width: 52px !important;
+        height: 52px !important;
+        top: 16px !important;
+        right: 16px !important;
+        font-size: 1.2rem !important;
+    }
+
+    #returnToSetup i,
+    #startNewGame i {
+        font-size: 1.3rem !important;
+    }
+}
+
+/* 横屏模式优化 */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    #returnToSetup {
+        width: 48px !important;
+        height: 48px !important;
+        bottom: 12px !important;
+        left: 12px !important;
+    }
+
+    #startNewGame {
+        width: 48px !important;
+        height: 48px !important;
+        top: 12px !important;
+        right: 12px !important;
+    }
+
+    .game-area {
+        padding-bottom: 70px !important;
+        padding-top: 70px !important;
+    }
+}
+
+/* Role Instructions */
+.role-instructions {
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    margin-top: 1.5rem;
+}
+
+.role-instructions .card-body {
+    padding: 1.5rem;
+}
+
+.role-instruction {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.role-instruction h3 {
+    color: var(--primary-red);
+    margin-bottom: 0.75rem;
+    font-family: var(--heading-font);
+}
+
+.role-instruction ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.role-instruction li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.role-instruction li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Role-specific colors */
+#mafiaInstructions {
+    border-left: 4px solid #ff6b8b;
+}
+
+#villagerInstructions {
+    border-left: 4px solid #4caf50;
+}
+
+#doctorInstructions {
+    border-left: 4px solid #2196f3;
+}
+
+#detectiveInstructions {
+    border-left: 4px solid #ffc107;
+}
+
+/* Night Actions */
+.night-actions {
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.night-actions .card-body {
+    padding: 2rem;
+}
+
+.night-phase h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+#narrator-text {
+    font-size: 1.2rem;
+    color: var(--primary-red);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--heading-font);
+}
+
+.role-action {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.role-action p {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.player-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.player-option {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.player-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 76, 154, 0.4);
+    border-color: var(--primary-purple);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.player-option.selected {
+    background: var(--primary-purple);
+    border-color: var(--primary-red);
+    color: white;
+    box-shadow: 0 0 15px rgba(107, 76, 154, 0.6);
+}
+
+/* Role-specific action styles */
+#mafia-action .player-option.selected {
+    background: #ff4757;
+    border-color: #ff6b8b;
+}
+
+#doctor-action .player-option.selected {
+    background: #2196f3;
+    border-color: #03a9f4;
+}
+
+#detective-action .player-option.selected {
+    background: #ffc107;
+    border-color: #ff9800;
+}
+
+#next-role {
+    width: 100%;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.dead {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.choice-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.choice-buttons .btn {
+    min-width: 150px;
+}
+
+.result-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.result-text.mafia {
+    background: rgba(255, 71, 87, 0.2);
+    border: 2px solid #ff4757;
+}
+
+.result-text.villager {
+    background: rgba(76, 209, 55, 0.2);
+    border: 2px solid #4cd137;
+}
+
+.discussion-phase {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(107, 76, 154, 0.2);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discussion-phase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-red), var(--primary-purple));
+    opacity: 0.8;
+}
+
+.discussion-phase .card-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-red);
+    font-family: var(--heading-font);
+    font-weight: 700;
+}
+
+.discussion-phase .discussion-content {
+    text-align: center;
+}
+
+.discussion-phase .btn-danger {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    border: none;
+    padding: 10px 20px;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.discussion-phase .btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 107, 139, 0.4);
+}
+
+.night-summary {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.discussion-prompt {
+    color: white;
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+#end-discussion {
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+    min-width: 200px;
+}
+
+/* Hide player list but keep the title */
+#playerStatus {
+    display: none !important;
+}
+
+/* Player status grid layout */
+.player-status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.player-status-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.player-status-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-red));
+    opacity: 0.8;
+    border-radius: 15px 15px 0 0;
+}
+
+.player-status-card.dead {
+    opacity: 0.6;
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.player-name {
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.player-status {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Voting phase styles */
+.voting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.vote-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.vote-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(107, 76, 154, 0.3);
+}
+
+.vote-card.selected {
+    border: 2px solid var(--primary-red);
+    background: rgba(255, 107, 139, 0.1);
+}
+
+.vote-card.dead {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.voting-prompt {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Custom Alert Styles */
+.custom-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 46, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.alert-content {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    padding: 2.5rem;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    animation: alertAppear 0.3s ease-out;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.alert-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-red), var(--primary-purple));
+    opacity: 0.8;
+    border-radius: 15px 15px 0 0;
+}
+
+.alert-message {
+    color: var(--text-color);
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, var(--text-color), #b8b8d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.alert-confirm {
+    min-width: 120px;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    border: none;
+    color: var(--text-color);
+    font-family: var(--heading-font);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(107, 76, 154, 0.3);
+}
+
+.alert-confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(107, 76, 154, 0.4);
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+}
+
+@keyframes alertAppear {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Medium Screen Adjustments */
+@media screen and (max-width: 900px) and (min-width: 769px) {
+    .role-inputs {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .role-input {
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 1rem;
+        /* 启用平滑滚动 */
+        scroll-behavior: smooth;
+        /* 防止用户缩放 */
+        touch-action: pan-x pan-y;
+    }
+
+    .container {
+        padding: 15px 10px;
+        /* 增加底部安全区域 */
+        padding-bottom: calc(15px + env(safe-area-inset-bottom, 0px));
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .game-logo {
+        max-width: 120px;
+        height: auto;
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    .setup-section {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .role-inputs {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .role-input {
+        width: 100%;
+        margin-bottom: 0;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .role-input label {
+        font-size: 1rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .role-input input {
+        width: 70px;
+        min-height: 40px;
+        padding: 8px 12px;
+        font-size: 16px;
+        /* 防止iOS缩放 */
+        border-radius: 8px;
+        touch-action: manipulation;
+        /* 优化触摸响应 */
+    }
+
+    .role-selection {
+        padding: 16px 12px;
+    }
+
+    .role-selection h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    /* 优化按钮触摸目标 */
+    .btn {
+        min-height: 48px !important;
+        padding: 12px 20px !important;
+        font-size: 1.1rem !important;
+        border-radius: 12px !important;
+        touch-action: manipulation;
+        /* 添加触觉反馈效果 */
+        transition: all 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn:active {
+        transform: scale(0.98) !important;
+    }
+
+    .game-controls button {
+        min-height: 56px;
+        font-size: 1.2rem;
+        padding: 16px 24px;
+        margin: 8px 0;
+        border-radius: 16px;
+        font-weight: 700;
+    }
+
+    .card {
+        margin: 15px 0;
+        padding: 20px 15px;
+        border-radius: 16px;
+        /* 增强卡片阴影 */
+        box-shadow: 0 4px 20px rgba(107, 76, 154, 0.15);
+    }
+
+    .role-cards .card {
+        min-height: auto;
+    }
+
+    .custom-alert .alert-content {
+        width: 90%;
+        max-width: none;
+        margin: 10px;
+        border-radius: 16px;
+    }
+
+    /* 优化角色卡片触摸区域 */
+    .role-card {
+        width: 140px;
+        height: 180px;
+        margin: 8px;
+        /* 增加触摸反馈 */
+        transition: all 0.2s ease;
+    }
+
+    .role-card:active {
+        transform: scale(0.95);
+    }
+
+    /* 优化玩家选择按钮 */
+    .player-option {
+        min-height: 56px;
+        padding: 16px 12px;
+        font-size: 1.1rem;
+        border-radius: 12px;
+        touch-action: manipulation;
+        /* 增强点击反馈 */
+        transition: all 0.2s ease, transform 0.1s ease;
+    }
+
+    .player-option:active {
+        transform: scale(0.96);
+    }
+
+    /* 投票卡片优化 */
+    .vote-card {
+        min-height: 64px;
+        padding: 16px 12px;
+        border-radius: 12px;
+        touch-action: manipulation;
+        transition: all 0.2s ease, transform 0.1s ease;
+    }
+
+    .vote-card:active {
+        transform: scale(0.96);
+    }
+
+    /* 添加粘性游戏进度指示器 */
+    .mobile-game-status {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(26, 26, 46, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 12px 20px;
+        margin: -15px -10px 20px -10px;
+        border-bottom: 2px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
+
+    /* 浮动操作按钮 */
+    .floating-action-btn {
+        position: fixed;
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+        border-radius: 50%;
+        box-shadow: 0 4px 20px rgba(255, 107, 139, 0.4);
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        z-index: 999;
+        transition: all 0.3s ease;
+        touch-action: manipulation;
+    }
+
+    .floating-action-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 25px rgba(255, 107, 139, 0.5);
+    }
+
+    .floating-action-btn:active {
+        transform: scale(0.9);
+    }
+
+    /* 改进信息卡片布局 */
+    .info-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-left: 4px solid var(--primary-purple);
+        padding: 16px 20px;
+        margin: 16px 0;
+        border-radius: 0 12px 12px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .info-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, var(--primary-purple), var(--primary-red));
+    }
+
+    /* 游戏阶段标题优化 */
+    .phase-title {
+        text-align: center;
+        font-size: 1.4rem;
+        font-family: var(--heading-font);
+        color: var(--primary-red);
+        margin: 20px 0 16px 0;
+        padding: 16px;
+        background: rgba(255, 107, 139, 0.1);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 107, 139, 0.2);
+        position: sticky;
+        top: 60px;
+        z-index: 90;
+        backdrop-filter: blur(8px);
+    }
+
+    /* 角色卡片网格改进 */
+    #cardGrid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 12px;
+        padding: 16px 0;
+        justify-items: center;
+    }
+
+    /* 玩家状态网格改进 - 移动端一行两个 */
+    .player-status-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 16px 0;
+    }
+
+    .player-status-card {
+        padding: 10px 12px;
+        border-radius: 12px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--border-color);
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+        min-height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .player-status-card:not(.dead):hover {
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(107, 76, 154, 0.2);
+    }
+
+    /* 移动端玩家名称和状态文字优化 */
+    .player-name {
+        font-size: 1rem !important;
+        margin-bottom: 0.3rem !important;
+        line-height: 1.2;
+        font-weight: 600;
+    }
+
+    .player-status {
+        font-size: 0.8rem !important;
+        line-height: 1.1;
+        opacity: 0.9;
+    }
+
+    /* 投票网格改进 */
+    .voting-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+        padding: 16px 0;
+    }
+
+    /* 改进夜晚行动布局 */
+    .role-action {
+        margin-bottom: 24px;
+        padding: 20px 16px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--border-color);
+    }
+
+    .role-action h3 {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+        text-align: center;
+        color: var(--primary-red);
+    }
+
+    .player-selection {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .btn {
+        padding: 12px 16px !important;
+        font-size: 1rem !important;
+        min-height: 44px !important;
+    }
+
+    .mobile-game-status {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+
+    .phase-title {
+        font-size: 1.2rem;
+        padding: 12px;
+        margin: 16px 0 12px 0;
+    }
+
+    /* 小屏幕角色分配优化 */
+    .role-selection {
+        padding: 12px 10px;
+    }
+
+    .role-selection h3 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .role-inputs {
+        gap: 8px;
+    }
+
+    .role-input {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .role-input label {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .role-input input {
+        width: 60px;
+        min-height: 36px;
+        padding: 6px 8px;
+        font-size: 15px;
+    }
+
+    .role-summary {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        margin-top: 10px;
+    }
+
+    #cardGrid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 8px;
+    }
+
+    .role-card {
+        width: 110px;
+        height: 150px;
+    }
+
+    /* 超小屏幕也保持一行两个，但缩小间距 */
+    .player-status-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 12px 0;
+    }
+
+    /* 超小屏幕的玩家卡片进一步优化 */
+    .player-status-card {
+        padding: 8px 10px !important;
+        min-height: 70px !important;
+    }
+
+    .player-name {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    .player-status {
+        font-size: 0.75rem !important;
+    }
+
+    .voting-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+    }
+
+    .player-selection {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .role-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .role-input input {
+        width: 70px;
+        min-width: 60px;
+    }
+
+    #cardGrid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .role-card {
+        width: 120px;
+        height: 160px;
+    }
+
+    .card-number {
+        font-size: 1.2rem;
+    }
+
+    .role-name {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .role-description {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+}
+
+/* 移动端游戏状态增强 */
+@media (max-width: 768px) {
+
+    /* 游戏进度条 */
+    .game-progress-bar {
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        overflow: hidden;
+        margin: 8px 0;
+    }
+
+    .game-progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary-purple), var(--primary-red));
+        border-radius: 2px;
+        transition: width 0.5s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .game-progress-fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+    /* 昼夜转换效果 */
+    .night-mode {
+        background: linear-gradient(135deg,
+                rgba(13, 13, 35, 0.95) 0%,
+                rgba(26, 26, 46, 0.95) 100%);
+        animation: nightTransition 1s ease-in-out;
+    }
+
+    .day-mode {
+        background: linear-gradient(135deg,
+                rgba(26, 26, 46, 0.95) 0%,
+                rgba(36, 36, 68, 0.95) 100%);
+        animation: dayTransition 1s ease-in-out;
+    }
+
+    @keyframes nightTransition {
+        0% {
+            filter: brightness(1);
+        }
+
+        50% {
+            filter: brightness(0.3);
+        }
+
+        100% {
+            filter: brightness(0.7);
+        }
+    }
+
+    @keyframes dayTransition {
+        0% {
+            filter: brightness(0.7);
+        }
+
+        50% {
+            filter: brightness(1.2);
+        }
+
+        100% {
+            filter: brightness(1);
+        }
+    }
+
+    /* 角色状态指示器 */
+    .role-status-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--text-color);
+    }
+
+    .role-status-indicator::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: currentColor;
+        animation: pulse 2s infinite;
+    }
+
+    .role-status-indicator.alive::before {
+        background: #4cd137;
+    }
+
+    .role-status-indicator.dead::before {
+        background: #ff4757;
+        animation: none;
+    }
+
+    .role-status-indicator.protected::before {
+        background: #2196f3;
+    }
+
+    .role-status-indicator.investigated::before {
+        background: #ffc107;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    /* 投票倒计时可视化 */
+    .vote-timer {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary-red);
+    }
+
+    .vote-timer::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        border-radius: 50%;
+        border: 2px solid transparent;
+        border-top-color: var(--primary-red);
+        animation: countdown-spin 1s linear infinite;
+    }
+
+    @keyframes countdown-spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* 角色能力状态显示 */
+    .ability-status {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 12px 0;
+    }
+
+    .ability-badge {
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ability-badge.available {
+        background: rgba(76, 209, 55, 0.2);
+        border: 1px solid #4cd137;
+        color: #4cd137;
+    }
+
+    .ability-badge.used {
+        background: rgba(255, 71, 87, 0.2);
+        border: 1px solid #ff4757;
+        color: #ff4757;
+        opacity: 0.6;
+    }
+
+    .ability-badge.cooldown {
+        background: rgba(255, 193, 7, 0.2);
+        border: 1px solid #ffc107;
+        color: #ffc107;
+    }
+
+    /* 玩家淘汰动画 */
+    .eliminated-player {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .eliminated-player::before {
+        content: '💀';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        z-index: 10;
+        animation: eliminatedAppear 0.8s ease-out;
+    }
+
+    .eliminated-player::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 71, 87, 0.3);
+        z-index: 9;
+        animation: eliminatedOverlay 0.8s ease-out;
+    }
+
+    @keyframes eliminatedAppear {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        50% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    @keyframes eliminatedOverlay {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* 胜利庆祝动画 */
+    .victory-celebration {
+        animation: victoryPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes victoryPulse {
+
+        0%,
+        100% {
+            box-shadow: 0 0 20px rgba(76, 209, 55, 0.4);
+            border-color: #4cd137;
+        }
+
+        50% {
+            box-shadow: 0 0 40px rgba(76, 209, 55, 0.8);
+            border-color: #2ecc71;
+            transform: scale(1.02);
+        }
+    }
+
+    /* 快速反馈提示 */
+    .feedback-toast {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(26, 26, 46, 0.95);
+        color: var(--text-color);
+        padding: 12px 20px;
+        border-radius: 25px;
+        border: 1px solid var(--border-color);
+        backdrop-filter: blur(10px);
+        z-index: 999;
+        font-size: 0.9rem;
+        font-weight: 600;
+        animation: toastSlideIn 0.3s ease-out;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .feedback-toast.success {
+        border-color: #4cd137;
+        color: #4cd137;
+    }
+
+    .feedback-toast.error {
+        border-color: #ff4757;
+        color: #ff4757;
+    }
+
+    .feedback-toast.info {
+        border-color: var(--primary-purple);
+        color: var(--primary-purple);
+    }
+
+    @keyframes toastSlideIn {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, -20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    }
+}
+
+/* 手机端导航栏位置自定义 - 移到右下角避免与support me按钮冲突 */
+@media (max-width: 768px) {
+    .quick-games-bar {
+        bottom: 15px !important;
+        left: auto !important;
+        right: 15px !important;
+        transform: none !important;
+    }
+
+    /* 确保在打开状态下也保持右侧位置 */
+    .quick-games-bar.open {
+        right: 15px !important;
+        left: auto !important;
+    }
+}

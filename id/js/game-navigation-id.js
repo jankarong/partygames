@@ -101,6 +101,7 @@ class GameNavigation {
                             <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
                             <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
                             <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
                         </div>
                     </div>
                 </div>
@@ -255,7 +256,8 @@ class GameNavigation {
                 newPath = '/zh/index.html';
             } else {
                 // Hapus /de/, /fr/, dan /id/ jika ada, lalu tambahkan /zh/
-                newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/').replace('/id/', '/');
+                newPath = '/zh' + currentPath.replace('/de/', '/').replace('/fr/', '/').replace('/id/', '/').replace('/tr/', '/')
+            .replace('/tr/', '/');
             }
         } else if (lang === 'de') {
             // Beralih ke versi Jerman
@@ -268,7 +270,8 @@ class GameNavigation {
                 newPath = '/de/index.html';
             } else {
                 // Hapus /zh/, /fr/, dan /id/ jika ada, lalu tambahkan /de/
-                newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/').replace('/id/', '/');
+                newPath = '/de' + currentPath.replace('/zh/', '/').replace('/fr/', '/').replace('/id/', '/').replace('/tr/', '/')
+            .replace('/tr/', '/');
             }
         } else if (lang === 'fr') {
             // Beralih ke versi Prancis
@@ -281,7 +284,8 @@ class GameNavigation {
                 newPath = '/fr/index.html';
             } else {
                 // Hapus /de/, /zh/, dan /id/ jika ada, lalu tambahkan /fr/
-                newPath = '/fr' + currentPath.replace('/de/', '/').replace('/zh/', '/').replace('/id/', '/');
+                newPath = '/fr' + currentPath.replace('/de/', '/').replace('/zh/', '/').replace('/id/', '/')
+            .replace('/tr/', '/');
             }
         } else if (lang === 'id') {
             // Beralih ke versi Indonesia
@@ -298,11 +302,11 @@ class GameNavigation {
             }
         } else {
             // Beralih ke versi Inggris
-            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/')) {
+            if (!currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/')) {
                 // Sudah di versi Inggris
                 return;
             }
-            newPath = currentPath.replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '');
+            newPath = currentPath.replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '');
         }
 
         window.location.href = newPath;

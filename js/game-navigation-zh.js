@@ -101,6 +101,7 @@ class GameNavigation {
                             <a href="#" class="language-link" data-lang="de">German</a>
                             <a href="#" class="language-link" data-lang="fr">French</a>
                             <a href="#" class="language-link" data-lang="id">Indonesian</a>
+                            <a href="#" class="language-link" data-lang="tr">Turkish</a>
                         </div>
                     </div>
                 </div>
@@ -248,13 +249,14 @@ class GameNavigation {
             .replace('/zh/', '/')
             .replace('/de/', '/')
             .replace('/fr/', '/')
-            .replace('/id/', '/');
+            .replace('/id/', '/')
+            .replace('/tr/', '/');
 
         if (lang === 'en') {
-            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/')) {
+            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/')) {
                 return;
             }
-            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '');
+            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '');
         } else {
             const langPrefix = `/${lang}`;
             if (currentPath.startsWith(`${langPrefix}/`)) {

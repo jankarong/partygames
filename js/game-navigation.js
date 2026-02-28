@@ -49,6 +49,9 @@ class GameNavigation {
         } else if (currentPath.startsWith('/id/')) {
             currentLang = 'id';
             langPrefix = '/id';
+        } else if (currentPath.startsWith('/tr/')) {
+            currentLang = 'tr';
+            langPrefix = '/tr';
         }
 
         const gameNames = this.getGameNames(currentLang);
@@ -162,6 +165,23 @@ class GameNavigation {
                 'Sex Dice': 'Dadu Seks',
                 'Beer Number': 'Tebak Angka',
                 'Kings Cup': 'Gelas Raja'
+            },
+            tr: {
+                'Magic 8 Ball': 'Sihirli 8 Topu',
+                'Truth or Dare': 'Dogruluk mu Cesaret mi',
+                'Never Have I Ever': 'Hic Yapmadim',
+                'Who Is Most Likely': 'En Muhtemel Kim',
+                'Would You Rather': 'Hangisini Secersin',
+                'Mafia': 'Mafya',
+                'Undercover': 'Gizli Ajan',
+                'Charades': 'Sessiz Sinema',
+                'Hedbanz': 'Hedbanz',
+                '21 Questions Game Freaky': 'Seksi 21 Soru',
+                'Paranoia Questions Dirty': 'Cesur Paranoya Sorulari',
+                'Bottle Match Game': 'Sise Eslestirme Oyunu',
+                'Sex Dice': 'Seks Zari',
+                'Beer Number': 'Sayi Tahmin',
+                'Kings Cup': 'Kings Cup'
             }
         };
 
@@ -203,6 +223,9 @@ class GameNavigation {
         } else if (currentPath.startsWith('/fr/')) {
             langPrefix = '/fr';
             currentLang = 'fr';
+        } else if (currentPath.startsWith('/tr/')) {
+            langPrefix = '/tr';
+            currentLang = 'tr';
         }
 
         // Get text in the current language
@@ -260,6 +283,7 @@ class GameNavigation {
                             <a href="#" class="language-link" data-lang="de">German</a>
                             <a href="#" class="language-link" data-lang="fr">French</a>
                             <a href="#" class="language-link" data-lang="id">Indonesian</a>
+                            <a href="#" class="language-link" data-lang="tr">Turkish</a>
                         </div>
                     </div>
                 </div>
@@ -360,6 +384,9 @@ class GameNavigation {
         } else if (currentPath.startsWith('/fr/')) {
             langPrefix = '/fr';
             currentLang = 'fr';
+        } else if (currentPath.startsWith('/tr/')) {
+            langPrefix = '/tr';
+            currentLang = 'tr';
         }
 
         // Get text in the current language
@@ -408,6 +435,9 @@ class GameNavigation {
         } else if (currentPath.startsWith('/fr/')) {
             langPrefix = '/fr';
             currentLang = 'fr';
+        } else if (currentPath.startsWith('/tr/')) {
+            langPrefix = '/tr';
+            currentLang = 'tr';
         }
 
         // Get text in the current language
@@ -471,6 +501,8 @@ class GameNavigation {
             homeUrl = '/de/index.html';
         } else if (currentPath.startsWith('/fr/')) {
             homeUrl = '/fr/index.html';
+        } else if (currentPath.startsWith('/tr/')) {
+            homeUrl = '/tr/index.html';
         }
 
         logos.forEach(logo => {
@@ -586,13 +618,14 @@ class GameNavigation {
             .replace('/zh/', '/')
             .replace('/de/', '/')
             .replace('/fr/', '/')
-            .replace('/id/', '/');
+            .replace('/id/', '/')
+            .replace('/tr/', '/');
 
         if (lang === 'en') {
-            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/')) {
+            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/')) {
                 return;
             }
-            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '');
+            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '');
         } else {
             const langPrefix = `/${lang}`;
             if (currentPath.startsWith(`${langPrefix}/`)) {

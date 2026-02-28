@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="dc soruları 18 arıyorsan bu sayfa tam sana gore. Dogruluk mu Cesaret mi oyunu, 18+ modlar, mobil uyumlu ve ucretsiz.">
+    <meta name="keywords" content="dc soruları 18, dc sorulari 18, doğruluk mu cesaret mi 18+, yetişkin parti oyunu, online oyun">
+    <meta property="og:title" content="dc soruları 18 | Doğruluk mu Cesaret mi Oyunu">
+    <meta property="og:description" content="dc soruları 18 odakli Dogruluk mu Cesaret mi oyunu. Yumusak ve Baharatli modlarla tarayicida hemen oyna.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/tr/games/TruthorDare/TruthOrDare">
+    <meta name="robots" content="index,follow">
+
+    <link rel="canonical" href="https://www.bestpartygames.net/tr/games/TruthorDare/TruthOrDare">
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/TruthorDare/TruthOrDare">
+    <link rel="alternate" hreflang="tr" href="https://www.bestpartygames.net/tr/games/TruthorDare/TruthOrDare">
+
+    <title>dc soruları 18 | Doğruluk mu Cesaret mi Oyunu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="TruthOrDare.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="TruthorDareLogo.png">
+</head>
+<body>
+    <div class="container my-3">
+        <div id="ezoic-pub-ad-placeholder-111"></div>
+    </div>
+
+    <div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="TruthorDareLogo.png" alt="Doğruluk mu Cesaret mi logosu" class="game-logo">
+            </div>
+            <h1 class="text-center mb-3">dc soruları 18</h1>
+            <p class="text-center mb-4">Dogruluk mu Cesaret mi 18+ sorular, cesaret gorevleri ve hizli parti modu.</p>
+
+            <div class="game-section text-center">
+                <div id="selectedType" class="selected-type mb-3" style="display:none;"></div>
+                <div id="selectedDifficulty" class="selected-difficulty mb-3" style="display:none;"></div>
+
+                <div class="question-card mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p id="questionText" class="question-text mb-0">👇 Oyun modunu sec! 👇</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="difficulty-buttons" id="difficultyButtons">
+                    <button class="btn btn-success btn-lg choice-btn soft-btn" onclick="selectDifficulty('soft')">
+                        <span class="choice-icon">😊</span>
+                        <span class="choice-text">YUMUSAK MOD</span>
+                    </button>
+                    <button class="btn btn-warning btn-lg choice-btn spicy-btn" onclick="selectDifficulty('spicy')">
+                        <span class="choice-icon">🌶️</span>
+                        <span class="choice-text">BAHARATLI MOD</span>
+                    </button>
+                </div>
+
+                <div class="choice-buttons" id="choiceButtons" style="display:none;">
+                    <button class="btn btn-info btn-lg choice-btn truth-btn" onclick="selectChoice('truth')">
+                        <span class="choice-icon">🤔</span>
+                        <span class="choice-text">GERCEK</span>
+                    </button>
+                    <button class="btn btn-danger btn-lg choice-btn dare-btn" onclick="selectChoice('dare')">
+                        <span class="choice-icon">🎯</span>
+                        <span class="choice-text">CESARET</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="controls mt-4 text-center">
+                <button class="btn btn-success" onclick="nextQuestion()" id="nextButton" style="display:none;">Sonraki Soru</button>
+                <button class="btn btn-secondary mt-3" onclick="resetGame()" id="resetButton" style="display:none;">Secimi Degistir</button>
+                <button class="btn btn-outline-secondary mt-3" onclick="backToDifficulty()" id="backButton" style="display:none;">Moda Geri Don</button>
+            </div>
+
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">Nasıl Oynanır</h2>
+                        <ol class="text-start">
+                            <li>Önce mod seçin: Yumusak veya Baharatli.</li>
+                            <li>Sırayla Gercek ya da Cesaret seçin.</li>
+                            <li>Gercek seçilirse soru dürüstçe cevaplanır.</li>
+                            <li>Cesaret seçilirse görev uygulanır.</li>
+                            <li>Grupta saygı ve sınırlar korunur.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <section class="mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">Neden Herkes "dc soruları 18" Arıyor?</h2>
+                        <p>
+                            "dc soruları 18" araması yapan kullanıcılar genellikle hızlı, pratik ve gerçekten oynanabilir bir
+                            Dogruluk mu Cesaret mi deneyimi istiyor. Uzun ve dağınık liste yerine bu sayfa, tek ekranda
+                            modu seçip soruya veya göreve direkt geçmenizi sağlar. Özellikle çiftler, yakın arkadaş grupları
+                            ve yetişkin parti ortamları için akışı bozmayan bir yapı sunar.
+                        </p>
+                        <p>
+                            Bu oyunda iki temel mod vardır: Yumusak Mod ve Baharatli Mod. Yumusak Mod daha hafif ve
+                            iletişim odaklı sorular içerirken, Baharatli Mod daha cesur ve sınırları test eden içerikler sunar.
+                            Böylece grup dinamiğine göre oyunu anında ayarlayabilir, ortamı gereksizce sertleştirmeden
+                            eğlenceyi yükseltebilirsiniz.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">dc soruları 18 ile Oyun Akışını Güçlendirme</h2>
+                        <ul class="text-start">
+                            <li><strong>Başlangıç:</strong> İlk 2-3 turda Yumusak Mod ile ısınma yapın.</li>
+                            <li><strong>Geçiş:</strong> Grup rahatladığında Baharatli Mod'a geçin.</li>
+                            <li><strong>Denge:</strong> Zorlayıcı içeriklerde "pas" hakkı verin.</li>
+                            <li><strong>Tempo:</strong> Sorular arasında uzun tartışmaya girmeden devam edin.</li>
+                            <li><strong>Saygı:</strong> Her oyuncunun kişisel sınırı oyunun üstündedir.</li>
+                        </ul>
+                        <p class="mb-0">
+                            Kısacası "dc soruları 18" odaklı bu sayfa, hem eğlenceyi hem de grup konforunu birlikte korumak
+                            için tasarlandı. Amaç sadece daha cesur soru görmek değil, oynanabilir ve sürdürülebilir bir oyun
+                            ritmi yakalamaktır.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">Sık Sorulan Sorular (dc soruları 18)</h2>
+                        <div class="text-start">
+                            <h3 class="h5">Bu sayfa ücretsiz mi?</h3>
+                            <p>Evet. Dogruluk mu Cesaret mi oyunu tamamen ücretsizdir ve tarayıcıda çalışır.</p>
+
+                            <h3 class="h5">dc soruları 18 sadece çiftler için mi?</h3>
+                            <p>Hayır. Çiftler, arkadaş grupları ve yetişkin parti ortamlarında rahatça oynanabilir.</p>
+
+                            <h3 class="h5">Rahatsız edici sorular atlanabilir mi?</h3>
+                            <p>Evet. Oyunda pas hakkı vermek en sağlıklı yöntemdir ve akışı korur.</p>
+
+                            <h3 class="h5">Mobilde sorunsuz çalışır mı?</h3>
+                            <p>Evet. Sayfa mobil uyumludur; hızlı tıklama ve okunabilir metin düzeniyle oynanır.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div id="ezoic-pub-ad-placeholder-113"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-tr.js"></script>
+    <script src="TruthOrDare-tr.js"></script>
+
+    <link rel="stylesheet" href="/css/floating-ad.css">
+    <script src="/js/floating-ad.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof FloatingAdManager !== 'undefined') {
+                new FloatingAdManager({
+                    showDelay: 3000,
+                    rememberClosure: true,
+                    adCode: `
+                        <a rel="sponsored" href="https://shopify.pxf.io/c/6627714/3323847/13624" target="_top" id="3323847">
+                            <img src="//a.impactradius-go.com/display-ad/13624-3323847" border="0" alt="" width="1456" height="180"/>
+                        </a>
+                        <img height="0" width="0" src="https://imp.pxf.io/i/6627714/3323847/13624" style="position:absolute;visibility:hidden;" border="0" />
+                    `
+                });
+            }
+            if (typeof ezstandalone !== 'undefined' && ezstandalone.cmd) {
+                ezstandalone.cmd.push(function() { ezstandalone.showAds(111, 112, 113); });
+            }
+        });
+    </script>
+</body>
+</html>
