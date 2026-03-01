@@ -54,7 +54,7 @@ body {
     padding: 10px;
 }
 
-.container {
+.game-container {
     max-width: 800px;
     width: 98%;
     background: white;
@@ -67,8 +67,8 @@ body {
     overflow: hidden;
 }
 
-.container::before,
-.container::after {
+.game-container::before,
+.game-container::after {
     content: '♥';
     position: absolute;
     color: #ff69b4;
@@ -77,17 +77,17 @@ body {
     animation: floating-hearts 3s infinite;
 }
 
-.container::before {
+.game-container::before {
     left: 20px;
     top: 20px;
 }
 
-.container::after {
+.game-container::after {
     right: 20px;
     top: 20px;
 }
 
-.container img.game-logo {
+.game-container img.game-logo {
     max-width: 120px !important;
     width: 120px !important;
     height: auto;
@@ -287,11 +287,11 @@ h1 {
 }
 
 @media (max-width: 600px) {
-    .container {
+    .game-container {
         padding: 20px;
     }
 
-    .container img.game-logo {
+    .game-container img.game-logo {
         max-width: 100px !important;
         width: 100px !important;
     }
@@ -314,7 +314,7 @@ h1 {
 }
 
 /* 强制覆盖logo大小 - 修复中文版logo过大问题 */
-body .container img.game-logo[src*="NeverHaveIEverLogo"] {
+body .game-container img.game-logo[src*="NeverHaveIEverLogo"] {
     max-width: 120px !important;
     width: 120px !important;
 }

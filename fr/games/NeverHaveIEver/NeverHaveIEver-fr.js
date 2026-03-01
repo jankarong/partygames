@@ -88,10 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    resetButton.addEventListener('click', () => {
-        usedStatements = [];
-        nextButton.disabled = false;
-        statementElement.textContent = 'Cliquez sur "Démarrer" pour commencer!';
-        nextButton.textContent = 'Démarrer';
-    });
+    if (resetButton) {
+        resetButton.addEventListener('click', () => {
+            usedStatements = [];
+            nextButton.disabled = false;
+            statementElement.textContent = 'Cliquez sur "Démarrer" pour commencer !';
+            nextButton.textContent = 'Démarrer';
+        });
+    }
 });

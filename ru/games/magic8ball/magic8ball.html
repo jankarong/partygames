@@ -73,21 +73,21 @@
         "gameItem": [
             {
                 "@type": "Thing",
-                "name": "Classic Mode",
-                "description": "Traditional Магический шар 8 responses"
+                "name": "Классический режим",
+                "description": "Классические ответы шара"
             },
             {
                 "@type": "Thing", 
-                "name": "Custom Mode",
-                "description": "Create your own personalized answers"
+                "name": "Свои ответы",
+                "description": "Создайте собственные ответы"
             },
             {
                 "@type": "Thing", 
-                "name": "Themed Modes",
-                "description": "Silly, sarcastic, romance, and drinking game versions"
+                "name": "Тематические режимы",
+                "description": "Смешной, саркастичный, романтический и режим для вечеринки"
             }
         ],
-        "keywords": "custom magic 8 ball, personalized magic 8 ball, magic 8 ball maker, fortune telling, decision maker"
+        "keywords": "магический шар 8, свои ответы, онлайн оракул, предсказания"
     }
     </script>
 
@@ -123,17 +123,17 @@
 
     <div class="container py-4">
         <div class="p-4">
-            <h1 class="text-center mb-4">Custom Магический шар 8</h1>
+            <h1 class="text-center mb-4">Магический шар 8</h1>
 
             <div class="version-selector mb-4 text-center">
-                <label for="version" class="form-label me-2">Choose a version:</label>
+                <label for="version" class="form-label me-2">Выберите режим:</label>
                 <select id="version" class="form-select form-select-sm d-inline-block w-auto">
-                    <option value="classic">Classic</option>
-                    <option value="silly">Silly</option>
-                    <option value="sarcastic">Sarcastic</option>
-                    <option value="romance">Romance</option>
-                    <option value="drinking">Drinking</option>
-                    <option value="custom">Custom</option>
+                    <option value="classic">Классика</option>
+                    <option value="silly">Смешной</option>
+                    <option value="sarcastic">Сарказм</option>
+                    <option value="romance">Романтика</option>
+                    <option value="drinking">Для вечеринки</option>
+                    <option value="custom">Свои ответы</option>
                 </select>
             </div>
 
@@ -149,134 +149,127 @@
             <div class="question-container mb-4">
                 <div class="input-group">
                     <input type="text" id="question" class="form-control" placeholder="Задайте вопрос...">
-                    <button id="shake-button" class="btn btn-dark">Shake</button>
+                    <button id="shake-button" class="btn btn-dark">Спросить</button>
                 </div>
             </div>
 
 
             <div class="history-container mb-4">
-                <h3 class="fs-5 mb-3">Question History</h3>
+                <h3 class="fs-5 mb-3">История вопросов</h3>
                 <ul id="history-list" class="list-group"></ul>
             </div>
 
             <section class="info-section mt-5 pt-4 border-top">
-                <h2 class="fs-3 mb-3">Create Тыr Own Custom Магический шар 8</h2>
-                <p class="text-muted">Our Custom Магический шар 8 lets you personalize your fortune-telling experience.
-                    Whether you want to use the traditional answers or create your own unique responses, our custom
-                    magic 8 ball maker gives
-                    you the freedom to customize your Магический шар 8 exactly how you want it.</p>
+                <h2 class="fs-3 mb-3">Создайте свой Магический шар 8</h2>
+                <p class="text-muted">Наш Магический шар 8 позволяет полностью настроить ответы под ваш стиль: от классики до своих шуток для друзей.</p>
 
-                <h3 class="fs-4 mt-4 mb-3">How to Create a Custom Магический шар 8</h3>
-                <p class="text-muted">Creating your own personalized Магический шар 8 is easy:</p>
+                <h3 class="fs-4 mt-4 mb-3">Как настроить свои ответы</h3>
+                <p class="text-muted">Настроить свои ответы очень просто:</p>
                 <ol class="text-muted">
-                    <li class="mb-2">Select "Custom" from the version dropdown menu</li>
-                    <li class="mb-2">Enter your own custom answers in the text area (one per line)</li>
-                    <li class="mb-2">Click "Save Custom Answers" to apply your personalized responses</li>
-                    <li class="mb-2">Задайте вопрос and shake the ball to get your custom answers!</li>
+                    <li class="mb-2">Выберите режим «Свои ответы» в списке</li>
+                    <li class="mb-2">Введите свои ответы (по одному в строке)</li>
+                    <li class="mb-2">Нажмите «Сохранить свои ответы»</li>
+                    <li class="mb-2">Задайте вопрос и получите случайный ответ!</li>
                 </ol>
 
-                <h3 class="fs-4 mt-4 mb-3">Магический шар 8 Versions</h3>
-                <p class="text-muted">Choose from our pre-made versions or create your own custom Магический шар 8:</p>
+                <h3 class="fs-4 mt-4 mb-3">Режимы Магического шара 8</h3>
+                <p class="text-muted">Выберите готовый режим или создайте свой набор ответов:</p>
                 <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
                     <div class="col">
                         <div class="card h-100 border-0 bg-light">
                             <div class="card-body">
-                                <h5 class="card-title">Classic</h5>
-                                <p class="card-text">Traditional Магический шар 8 responses</p>
+                                <h5 class="card-title">Классика</h5>
+                                <p class="card-text">Классические ответы шара</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0 bg-light">
                             <div class="card-body">
-                                <h5 class="card-title">Silly</h5>
-                                <p class="card-text">Humorous and playful answers</p>
+                                <h5 class="card-title">Смешной</h5>
+                                <p class="card-text">Шутливые и легкие ответы</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0 bg-light">
                             <div class="card-body">
-                                <h5 class="card-title">Sarcastic</h5>
-                                <p class="card-text">Witty and snarky responses</p>
+                                <h5 class="card-title">Сарказм</h5>
+                                <p class="card-text">Саркастичные ответы</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0 bg-light">
                             <div class="card-body">
-                                <h5 class="card-title">Romance</h5>
-                                <p class="card-text">Love and relationship advice</p>
+                                <h5 class="card-title">Романтика</h5>
+                                <p class="card-text">Ответы про отношения</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0 bg-light">
                             <div class="card-body">
-                                <h5 class="card-title">Drinking</h5>
-                                <p class="card-text">Fun drinking game instructions</p>
+                                <h5 class="card-title">Для вечеринки</h5>
+                                <p class="card-text">Ответы для вечеринки</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0 bg-light">
                             <div class="card-body">
-                                <h5 class="card-title">✨ Custom</h5>
-                                <p class="card-text">Create your own personalized answers for a truly unique experience
+                                <h5 class="card-title">✨ Свои ответы</h5>
+                                <p class="card-text">Создайте собственный набор ответов
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <h3 class="fs-4 mt-4 mb-3">About the Магический шар 8</h3>
-                <p class="text-muted">The Магический шар 8 is a fortune-telling toy invented in 1946 by Albert Carter and
-                    Abe Bookman. Originally called the "Syco-Seer," it became one of the most popular toys of the 20th
-                    century and remains a
-                    cultural icon today.</p>
+                <h3 class="fs-4 mt-4 mb-3">О Магическом шаре 8</h3>
+                <p class="text-muted">Магический шар 8 — игрушка-предсказатель, созданная в 1946 году. Изначально она
+                    называлась «Syco-Seer», а позже стала одной из самых узнаваемых классических игрушек в мире.</p>
 
-                <h3 class="fs-4 mt-4 mb-3">Why Create a Custom Магический шар 8?</h3>
-                <p class="text-muted">Personalizing your Магический шар 8 allows you to:</p>
+                <h3 class="fs-4 mt-4 mb-3">Зачем делать свои ответы</h3>
+                <p class="text-muted">Персонализация Магического шара 8 позволяет:</p>
                 <div class="card border-0 bg-light mb-4">
                     <div class="card-body">
                         <ul class="text-muted mb-0">
-                            <li class="mb-2">Create themed answers for special occasions like birthdays or parties</li>
-                            <li class="mb-2">Make inside jokes with friends or family</li>
-                            <li class="mb-2">Design a Магический шар 8 specific to your interests or hobbies</li>
-                            <li class="mb-2">Create a personalized gift for someone special</li>
-                            <li class="mb-2">Make a custom team-building tool for work or school</li>
+                            <li class="mb-2">Сделать тематические ответы для дня рождения или вечеринки</li>
+                            <li class="mb-2">Добавить локальные шутки для друзей и семьи</li>
+                            <li class="mb-2">Настроить ответы под свои интересы</li>
+                            <li class="mb-2">Сделать персональный подарок</li>
+                            <li class="mb-2">Использовать как инструмент для тимбилдинга</li>
                         </ul>
                     </div>
                 </div>
 
-                <h3 class="fs-4 mt-4 mb-3">Fun Facts About the Магический шар 8</h3>
+                <h3 class="fs-4 mt-4 mb-3">Интересные факты о Магическом шаре 8</h3>
                 <div class="card border-0 bg-light mb-4">
                     <div class="card-body">
                         <ul class="text-muted mb-0">
-                            <li class="mb-2">The traditional Магический шар 8 contains 20 possible answers</li>
-                            <li class="mb-2">It was inducted into the National Toy Hall of Fame in 2018</li>
-                            <li class="mb-2">Over 100 million Магический шар 8s have been sold worldwide</li>
-                            <li class="mb-2">The original design was inspired by a spirit writing device used by the
-                                inventor's mother</li>
+                            <li class="mb-2">Классический Магический шар 8 содержит 20 возможных ответов</li>
+                            <li class="mb-2">В 2018 году игрушка вошла в Национальный зал славы игрушек</li>
+                            <li class="mb-2">По миру продано более 100 миллионов Магических шаров 8</li>
+                            <li class="mb-2">Идея дизайна была вдохновлена гадательным устройством, которым пользовалась
+                                мать изобретателя</li>
                         </ul>
                     </div>
                 </div>
 
-                <h3 class="fs-4 mt-4 mb-3">Frequently Asked Вопросы</h3>
+                <h3 class="fs-4 mt-4 mb-3">Часто задаваемые вопросы</h3>
                 <div class="accordion" id="faqAccordion">
                     <div class="accordion-item">
                         <h4 class="accordion-header" id="faq1">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                How do I create a custom Магический шар 8?
+                                Как создать свои ответы в Магическом шаре 8?
                             </button>
                         </h4>
                         <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1"
                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted">
-                                Simply select "Custom" from the version dropdown, enter your personalized answers (one
-                                per line) in the text area, and click "Save Custom Answers". Тыr custom magic 8 ball is
-                                now ready to use!
+                                Выберите режим «Свои ответы», введите варианты (по одному в строке) и нажмите «Сохранить свои ответы».
                             </div>
                         </div>
                     </div>
@@ -284,14 +277,13 @@
                         <h4 class="accordion-header" id="faq2">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                Can I save my custom answers permanently?
+                                Можно ли сохранить свои ответы надолго?
                             </button>
                         </h4>
                         <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted">
-                                Yes! Тыr custom magic 8 ball answers are automatically saved in your browser's local
-                                storage and will be remembered for future visits.
+                                Да. Ответы сохраняются в браузере (localStorage) и остаются при следующих посещениях.
                             </div>
                         </div>
                     </div>
@@ -299,14 +291,13 @@
                         <h4 class="accordion-header" id="faq3">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                What are the different themed versions available?
+                                Какие режимы доступны?
                             </button>
                         </h4>
                         <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted">
-                                Our custom magic 8 ball offers Classic (traditional), Silly (humorous), Sarcastic
-                                (witty), Romance (love advice), Drinking (party game), and Custom (your own) versions.
+                                Доступны режимы: Классика, Смешной, Сарказм, Романтика, Для вечеринки и Свои ответы.
                             </div>
                         </div>
                     </div>
@@ -314,22 +305,19 @@
                         <h4 class="accordion-header" id="faq4">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                Is this custom Магический шар 8 free to use?
+                                Эта версия Магического шара 8 бесплатна?
                             </button>
                         </h4>
                         <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4"
                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted">
-                                Absolutely! Our custom magic 8 ball is completely free to use with no hidden fees or
-                                premium features required.
+                                Да, полностью бесплатно: без подписок и скрытых платежей.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <p class="text-muted mt-4">Our virtual Custom Магический шар 8 brings this classic experience online with
-                    the
-                    added benefit of personalization. Create your own unique fortune-telling experience today!</p>
+                <p class="text-muted mt-4">Виртуальный Магический шар 8 сочетает классический формат и персональные ответы. Настройте его под свою компанию и пользуйтесь бесплатно.</p>
             </section>
         </div>
     </div>
@@ -377,5 +365,4 @@
 </body>
 
 </html>
-
 

@@ -28,9 +28,9 @@
     <meta property="og:image" content="https://www.bestpartygames.net/games/lastshot/lastshot.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Last Shot Drinking Game - Russian Roulette Party Game">
+    <meta property="og:image:alt" content="Последний выстрел — русская рулетка для вечеринки">
     <meta property="og:site_name" content="Best Party Games">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="ru_RU">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Последний выстрел - Русская рулетка для вечеринок">
     <meta name="twitter:description"
@@ -41,11 +41,11 @@
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
-    <meta name="language" content="en">
+    <meta name="language" content="ru">
     <meta name="rating" content="mature">
     <meta name="distribution" content="global">
-    <link rel="canonical" href="https://www.bestpartygames.net/ru/games/l/lastshot">
-    <title>Last Shot Drinking Game - Russian Roulette Party Game</title>
+    <link rel="canonical" href="https://www.bestpartygames.net/ru/games/lastshot/lastshot">
+    <title>Последний выстрел — русская рулетка для вечеринки</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/gameheader.css">
     <link rel="stylesheet" href="lastshot.css">
@@ -61,12 +61,12 @@
     {
         "@context": "https://schema.org",
         "@type": "Game",
-        "name": "Last Shot Drinking Game",
-        "description": "Play Last Shot drinking game online! Russian roulette party game with 1 bullet. Pull trigger, survive or drink shots. Free browser game for adults.",
-        "url": "https://www.bestpartygames.net/games/lastshot/lastshot",
+        "name": "Последний выстрел",
+        "description": "Игра Последний выстрел онлайн: русская рулетка для вечеринки с одним боевым патроном.",
+        "url": "https://www.bestpartygames.net/ru/games/lastshot/lastshot",
         "image": "https://www.bestpartygames.net/games/lastshot/lastshot.png",
-        "genre": "Drinking Game",
-        "numberOfИгрокs": "3+",
+        "genre": "Питьевая игра",
+        "numberOfPlayers": "3+",
         "gamePlatform": "Web Browser",
         "operatingSystem": "Any",
         "applicationCategory": "Game",
@@ -91,8 +91,8 @@
             "bestRating": "5",
             "worstRating": "1"
         },
-        "keywords": "drinking game, party game, russian roulette, adult game, online game, browser game",
-        "inLanguage": "en",
+        "keywords": "последний выстрел, русская рулетка, питьевая игра, игра для вечеринки",
+        "inLanguage": "ru",
         "isAccessibleForFree": true,
         "dateCreated": "2024-01-01",
         "dateModified": "2024-01-01",
@@ -144,20 +144,20 @@
     <div class="container">
         <div class="game-container">
             <div class="logo-container text-center mb-4">
-                <img src="lastshot.png" alt="Last Shot Drinking Game Logo" title="Last Shot Drinking Game"
+                <img src="lastshot.png" alt="Логотип игры Последний выстрел" title="Последний выстрел"
                     class="game-logo">
             </div>
-            <h1 class="text-center mb-4">Last Shot Drinking Game</h1>
+            <h1 class="text-center mb-4">Последний выстрел</h1>
 
             <!-- Top Toolbar: audio + quick actions -->
             <div class="top-toolbar mb-3" id="topToolbar">
                 <div class="toolbar-left">
                     <button class="btn btn-secondary btn-sm" id="muteButton" onclick="toggleMute()">
-                        🔊 Sound ON
+                        🔊 Звук ВКЛ
                     </button>
                     <div class="volume-wrap">
                         <input type="range" id="volumeSlider" min="0" max="100" value="75" class="volume-slider">
-                        <span class="volume-label">Volume</span>
+                        <span class="volume-label">Громкость</span>
                     </div>
                 </div>
                 <div class="toolbar-right">
@@ -174,17 +174,17 @@
                         <h3 class="mb-3">🔧 Установка игры</h3>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="blankChambers" class="form-label">Blank Chambers</label>
+                                <label for="blankChambers" class="form-label">Холостые патроны</label>
                                 <input type="number" class="form-control" id="blankChambers" value="5" min="1" max="99">
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="bulletChambers" class="form-label">Bullet Chambers</label>
+                                <label for="bulletChambers" class="form-label">Боевые патроны</label>
                                 <input type="number" class="form-control" id="bulletChambers" value="1" min="1" max="1"
                                     readonly>
-                                <small class="form-text text-muted">Fixed at 1 for classic Russian Roulette</small>
+                                <small class="form-text text-muted">Всегда 1 боевой патрон для классической рулетки</small>
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-lg" onclick="startNewRound()">Start New Round</button>
+                        <button class="btn btn-primary btn-lg" onclick="startNewRound()">Начать новый раунд</button>
                     </div>
                 </div>
             </div>
@@ -197,13 +197,13 @@
                         <div class="col-6">
                             <div class="status-card pool">
                                 <div class="status-value" id="shotsInPool">0</div>
-                                <div class="status-label">Shots in Pool</div>
+                                <div class="status-label">Шотов в банке</div>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="status-card chambers">
                                 <div class="status-value" id="chambersLeft">6</div>
-                                <div class="status-label">Chambers Left</div>
+                                <div class="status-label">Осталось патронов</div>
                             </div>
                         </div>
                     </div>
@@ -232,18 +232,17 @@
                 <!-- Action Area -->
                 <div class="action-area mb-4">
                     <button class="btn btn-danger btn-lg pulse" id="triggerButton" onclick="pullTrigger()">
-                        🔫 Pull Trigger
+                        🔫 Нажать на курок
                     </button>
                     <button class="btn btn-primary btn-lg" id="newRoundButton" onclick="startNewRoundFromGame()"
                         style="display: none;">
-                        🎯 Start New Round
+                        🎯 Начать новый раунд
                     </button>
                 </div>
 
                 <!-- Result Display -->
                 <div class="result-display mb-4" id="resultDisplay">
-                    <div class="result-text" id="resultText" role="status" aria-live="polite">Click "Pull Trigger" to
-                        start!</div>
+                    <div class="result-text" id="resultText" role="status" aria-live="polite">Нажмите «Нажать на курок», чтобы начать!</div>
                 </div>
 
                 <!-- Game Controls -->
@@ -257,73 +256,58 @@
                 </div>
 
                 <!-- Keyboard hint -->
-                <div class="kb-hint text-muted mb-3">Press Space to Pull, N for New Round, R to Reset</div>
+                <div class="kb-hint text-muted mb-3">Пробел — выстрел, N — новый раунд, R — сброс</div>
             </div>
 
             <!-- Правила игры Section -->
             <div class="rules-section mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="text-center mb-3">🎯 Как играть Last Shot Drinking Game</h2>
+                        <h2 class="text-center mb-3">🎯 Как играть в «Последний выстрел»</h2>
                         <div class="rules-content">
                             <p class="lead text-center mb-4">
-                                Last Shot is the ultimate Russian roulette drinking game for adult parties. This free
-                                online party game combines the thrill of chance with drinking challenges, perfect for
-                                groups of 3 or more players. Test your luck with our virtual revolver!
+                                «Последний выстрел» — это русская рулетка для взрослой компании. Бесплатная браузерная игра сочетает риск и стратегию: после холостого выстрела игрок добавляет шот в общий банк.
                             </p>
                             <h4 class="mb-3">🔧 Установка игры</h4>
                             <ul class="rules-list">
-                                <li>🔫 Host configures the number of blank chambers (1-99)</li>
-                                <li>💥 There is always exactly 1 bullet chamber (classic Russian Roulette)</li>
-                                <li>📏 <strong>Set Pour Limits:</strong> Before starting, agree on a maximum pour amount
-                                    per blank (e.g., "no more than 1 shot per pour"). This prevents excessive drinking
-                                    and keeps the game balanced!</li>
-                                <li>👥 Игрокs gather around for the ultimate drinking challenge</li>
-                                <li>🥃 Keep drinks ready - you'll need them!</li>
+                                <li>🔫 Ведущий задает число холостых патронов (1-99)</li>
+                                <li>💥 Боевой патрон всегда один (классическая рулетка)</li>
+                                <li>📏 <strong>Лимит налива:</strong> заранее договоритесь о максимуме за один холостой (например, не больше 1 шота).</li>
+                                <li>👥 Соберите всех игроков у экрана</li>
+                                <li>🥃 Подготовьте напитки заранее</li>
                             </ul>
 
-                            <h4 class="mb-3 mt-4">🎮 Gameplay</h4>
+                            <h4 class="mb-3 mt-4">🎮 Ход игры</h4>
                             <ol class="rules-list">
-                                <li>👤 Игрокs take turns clicking "Pull Trigger"</li>
-                                <li>🔘 <strong>Blank Chamber:</strong> Ты're safe! Now you can choose how much to pour
-                                    into the shot pool - this is where strategy comes in!</li>
-                                <li>🧠 <strong>Strategic Pouring:</strong> Игрокs can pour as little or as much as they
-                                    want when they get a blank. Consider the odds - with 10 blanks and 1 bullet, you
-                                    might pour less early on, but more as fewer chambers remain!</li>
-                                <li>💥 <strong>Bullet Chamber:</strong> Bad luck! Drink ALL shots that have been
-                                    accumulated in the pool</li>
-                                <li>🔄 After a bullet is fired, the round resets with a fresh revolver and empty pool
+                                <li>👤 Игроки по очереди нажимают «Нажать на курок»</li>
+                                <li>🔘 <strong>Холостой:</strong> вы в безопасности и решаете, сколько добавить в банк шотов.</li>
+                                <li>🧠 <strong>Стратегия:</strong> в начале выгодно наливать меньше, к концу раунда — осторожнее, риск быстро растет.</li>
+                                <li>💥 <strong>Пуля:</strong> не повезло — выпейте все шоты из банка</li>
+                                <li>🔄 После пули начинается новый раунд с пустым банком
                                 </li>
-                                <li>🎉 Continue until you decide to stop (or can't continue!)</li>
+                                <li>🎉 Продолжайте, пока компания хочет играть</li>
                             </ol>
 
-                            <h4 class="mb-3 mt-4">🎯 Strategy Tips</h4>
+                            <h4 class="mb-3 mt-4">🎯 Советы по стратегии</h4>
                             <ul class="rules-list">
-                                <li>🎲 More blank chambers = safer but longer rounds</li>
-                                <li>💥 Only 1 bullet chamber makes it true Russian Roulette!</li>
-                                <li>🔢 Ты can configure up to 99 blank chambers for epic games!</li>
-                                <li>🥃 <strong>Pouring Strategy:</strong> Early in the game, pour small amounts since
-                                    your odds are good. As chambers run out, consider pouring more since someone will
-                                    get the bullet soon!</li>
-                                <li>📏 <strong>Suggested Limits:</strong> Try "max 1 shot per pour" for balanced games,
-                                    or "max 0.5 shots" for lighter sessions. This keeps the game fun without getting too
-                                    intense!</li>
-                                <li>🧮 <strong>Calculate Risk:</strong> With 2 players and 10 blanks, you're relatively
-                                    safe early on. But with only 2 chambers left, the risk jumps to 50%!</li>
-                                <li>🎪 The tension builds as both the pool grows larger AND fewer chambers remain</li>
-                                <li>📊 With N total chambers, each player has 1/N chance of getting the bullet</li>
-                                <li>🤔 <strong>Mind Games:</strong> Watch how much others pour - are they confident or
-                                    playing it safe?</li>
+                                <li>🎲 Больше холостых — безопаснее, но раунд длиннее</li>
+                                <li>💥 Один боевой патрон сохраняет классический формат</li>
+                                <li>🔢 Можно выставить до 99 холостых патронов</li>
+                                <li>🥃 <strong>Налив:</strong> увеличивайте ставки аккуратно, когда патронов остается мало.</li>
+                                <li>📏 <strong>Рекомендуемый лимит:</strong> 0.5-1 шот за холостой для безопасного темпа.</li>
+                                <li>🧮 <strong>Оценивайте риск:</strong> чем меньше патронов осталось, тем выше шанс пули.</li>
+                                <li>🎪 Напряжение растет вместе с банком шотов</li>
+                                <li>📊 При N патронах шанс пули в текущем ходе равен 1/N</li>
+                                <li>🤔 <strong>Психология:</strong> следите, как наливают другие — агрессивно или осторожно.</li>
                             </ul>
 
-                            <h4 class="mb-3 mt-4">⚠️ Important Rules</h4>
+                            <h4 class="mb-3 mt-4">⚠️ Важные правила</h4>
                             <ul class="rules-list">
-                                <li>🔞 This is an adult drinking game - play responsibly</li>
-                                <li>📏 <strong>Set Pour Limits:</strong> Establish maximum pour amounts before playing
-                                    to prevent excessive drinking</li>
-                                <li>🚗 Arrange safe transportation beforehand</li>
-                                <li>💧 Keep water available and stay hydrated</li>
-                                <li>🛑 Know your limits and stop if needed</li>
+                                <li>🔞 Это игра 18+, играйте ответственно</li>
+                                <li>📏 Установите лимит налива до начала игры</li>
+                                <li>🚗 Заранее продумайте безопасную дорогу домой</li>
+                                <li>💧 Держите рядом воду</li>
+                                <li>🛑 Знайте меру и останавливайтесь вовремя</li>
                             </ul>
                         </div>
                     </div>
@@ -340,55 +324,41 @@
             <div class="faq-section mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="text-center mb-3">❓ Frequently Asked Вопросы</h3>
+                        <h3 class="text-center mb-3">❓ Часто задаваемые вопросы</h3>
 
                         <div class="faq-item">
-                            <h4>🍻 What is Last Shot drinking game?</h4>
-                            <p>Last Shot is a Russian roulette style drinking game where players take turns pulling the
-                                trigger on a virtual revolver. It's a free online party game perfect for adult
-                                gatherings with 3 or more players.</p>
+                            <h4>🍻 Что такое «Последний выстрел»?</h4>
+                            <p>Это браузерная игра в формате русской рулетки: игроки по очереди нажимают на курок виртуального револьвера. Формат лучше всего подходит для компаний от 3 человек.</p>
                         </div>
 
                         <div class="faq-item mt-3">
-                            <h4>🎯 How does the Last Shot game work?</h4>
-                            <p>Игрокs configure blank chambers (1-99) and there's always 1 bullet. Take turns clicking
-                                "Pull Trigger" - if you get a blank, you're safe and add a shot to the pool. Hit the
-                                bullet? Drink all accumulated shots!</p>
+                            <h4>🎯 Как работает игра?</h4>
+                            <p>Игроки задают число холостых патронов (1-99), боевой патрон всегда один. При холостом ходе добавляют шот в банк. При пуле — выпивают банк.</p>
                         </div>
 
                         <div class="faq-item mt-3">
-                            <h4>👥 How many players can play Last Shot?</h4>
-                            <p>Last Shot drinking game is designed for 3 or more players. The more players, the longer
-                                the suspense and the bigger the shot pool can grow before someone gets the bullet!</p>
+                            <h4>👥 Сколько игроков нужно?</h4>
+                            <p>Рекомендуется от 3 игроков. Чем больше людей, тем дольше растет напряжение и банк шотов.</p>
                         </div>
 
                         <div class="faq-item mt-3">
-                            <h4>🔞 Is Last Shot safe to play?</h4>
-                            <p>Last Shot is a virtual drinking game - completely safe! It's played in your browser with
-                                no real weapons. However, as with all drinking games, please play responsibly and know
-                                your limits.</p>
+                            <h4>🔞 Безопасна ли игра?</h4>
+                            <p>Игра полностью виртуальная и не использует реальное оружие. Но это формат с алкоголем, поэтому важно соблюдать меру.</p>
                         </div>
 
                         <div class="faq-item mt-3">
-                            <h4>📱 Can I play Last Shot on mobile?</h4>
-                            <p>Yes! Last Shot drinking game is fully responsive and works perfectly on mobile devices,
-                                tablets, and desktops. Play anywhere your party takes you!</p>
+                            <h4>📱 Работает ли на телефоне?</h4>
+                            <p>Да, страница адаптирована для телефона, планшета и компьютера.</p>
                         </div>
 
                         <div class="faq-item mt-3">
-                            <h4>🥃 How much should I pour when I get a blank?</h4>
-                            <p>That's the strategy! Ты can pour any amount you want. Smart players pour small amounts
-                                early (when odds are in their favor) and larger amounts later (when someone is more
-                                likely to get the bullet soon). With 2 players and 10 blanks, you might start with tiny
-                                pours, but pour generously when only 3-4 chambers remain!</p>
+                            <h4>🥃 Сколько наливать после холостого?</h4>
+                            <p>Это часть стратегии. Обычно в начале наливают меньше, а ближе к концу — осторожно повышают ставки.</p>
                         </div>
 
                         <div class="faq-item mt-3">
-                            <h4>📏 Should we set a maximum pour limit?</h4>
-                            <p>Absolutely recommended! Setting a maximum pour amount (like "1 shot max per blank" or
-                                "0.5 shots max") keeps the game balanced and prevents excessive drinking. This way, the
-                                game stays fun and strategic without becoming too intense. Discuss and agree on limits
-                                before starting!</p>
+                            <h4>📏 Нужен ли лимит налива?</h4>
+                            <p>Да, это рекомендуется. Лимит (например, 0.5-1 шот за холостой) делает игру более безопасной и честной.</p>
                         </div>
                     </div>
                 </div>
@@ -445,5 +415,4 @@
 </body>
 
 </html>
-
 
