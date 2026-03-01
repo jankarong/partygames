@@ -5,6 +5,15 @@
         const isLocal = host === '127.0.0.1' || host === 'localhost';
         if (!isLocal) return;
 
+        const normalizeLocalPath = (path) => {
+            if (!path) return path;
+            // Fix malformed locale prefixes like /fr../games/... -> /fr/games/...
+            return path
+                .replace(/^\/([a-z]{2})\.\.\//i, '/$1/')
+                .replace(/^\/([a-z]{2})\.\./i, '/$1/')
+                .replace(/\/{2,}/g, '/');
+        };
+
         const shouldRewritePath = (path) => {
             if (!path) return false;
             if (path.endsWith('/')) return false;
@@ -26,10 +35,22 @@
 
             const url = new URL(anchor.href, window.location.origin);
             if (url.origin !== window.location.origin) return;
-            if (!shouldRewritePath(url.pathname)) return;
+            const normalizedPath = normalizeLocalPath(url.pathname);
+
+            // If path is malformed, fix it first.
+            if (normalizedPath !== url.pathname) {
+                event.preventDefault();
+                const fixedTarget = shouldRewritePath(normalizedPath)
+                    ? `${normalizedPath}.html${url.search}${url.hash}`
+                    : `${normalizedPath}${url.search}${url.hash}`;
+                window.location.href = fixedTarget;
+                return;
+            }
+
+            if (!shouldRewritePath(normalizedPath)) return;
 
             event.preventDefault();
-            window.location.href = `${url.pathname}.html${url.search}${url.hash}`;
+            window.location.href = `${normalizedPath}.html${url.search}${url.hash}`;
         });
     }
 
@@ -89,5 +110,4 @@
         });
     }
 })();
-
 
