@@ -16,7 +16,7 @@ class GameNavigation {
             { name: 'Мафия', url: '/ru/games/mafia/mafia', category: 'strategy' },
             { name: 'Подпольщик', url: '/ru/games/undercover/undercover', category: 'strategy' },
             { name: 'Генератор шарад', url: '/ru/games/charades/charades', category: 'party' },
-            { name: 'Hedbanz', url: '/ru/games/hedbanzgame/hedbanzgame', category: 'party' },
+            { name: 'Повязка на лбу онлайн', url: '/ru/games/hedbanzgame/hedbanzgame', category: 'party' },
             { name: 'Любовные кубики', url: '/ru/games/sexdice/sexdice', category: 'adult' },
             { name: 'Угадайте число', url: '/ru/games/beernumber/beernumber', category: 'drinking' },
             { name: 'Король чаши', url: '/ru/games/KingsCup/KingsCup', category: 'drinking' },
