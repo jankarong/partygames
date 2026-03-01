@@ -740,6 +740,10 @@ h1::after {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+    .kingscup-top-ad {
+        display: none !important;
+    }
+
     .container {
         padding: 0;
         margin: 0;
@@ -747,7 +751,7 @@ h1::after {
     }
     
     .game-container {
-        margin: 0.5rem;
+        margin: 0.25rem 0.5rem 0.5rem;
         padding: 1rem;
         border-radius: 15px;
     }
