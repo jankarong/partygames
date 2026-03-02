@@ -460,12 +460,43 @@ h1 {
 
 @media (max-width: 768px) {
     body {
-        align-items: flex-start;
-        padding-top: 2rem;
+        display: block;
+        align-items: stretch;
+        justify-content: flex-start;
+        padding: 62px 10px 14px;
     }
 
     .container {
-        padding: 15px;
+        width: 100%;
+        max-width: 100% !important;
+        margin: 0 auto;
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    main.container {
+        max-width: 100% !important;
+    }
+
+    h1 {
+        font-size: clamp(2.2rem, 12vw, 3.2rem);
+        margin-bottom: 1.25rem;
+    }
+
+    .button-container {
+        gap: 10px;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .dice-text {
+        font-size: clamp(1rem, 4.2vw, 1.2rem);
+        line-height: 1.25;
+        word-break: break-word;
     }
 }
 
