@@ -8,6 +8,7 @@ class GameNavigation {
         this.gamesData = [
             { nameKey: 'Magic 8 Ball', url: '/games/magic8ball/magic8ball', logo: '/games/magic8ball/magic8ball.svg', category: 'solo' },
             { nameKey: 'Truth or Dare', url: '/games/TruthorDare/TruthOrDare', logo: '/games/TruthorDare/TruthorDareLogo.png', category: 'party' },
+            { nameKey: 'Truth or Dare Couples', url: '/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples', logo: '/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouplesLogo.png', category: 'adult' },
             { nameKey: 'Never Have I Ever', url: '/games/NeverHaveIEver/NeverHaveIEver', logo: '/games/NeverHaveIEver/NeverHaveIEverLogo.png', category: 'party' },
             { nameKey: 'Who Is Most Likely', url: '/games/WhoIsMostLikely/WhoIsMostLikely', logo: '/games/WhoIsMostLikely/MostLikelyToLogo.png', category: 'party' },
             { nameKey: 'Would You Rather', url: '/games/WouldYouRather/WouldYouRather', logo: '/games/WouldYouRather/WouldYouRatherLogo.png', category: 'party' },
@@ -67,6 +68,7 @@ class GameNavigation {
             en: {
                 'Magic 8 Ball': 'Magic 8 Ball',
                 'Truth or Dare': 'Truth or Dare',
+                'Truth or Dare Couples': 'Truth or Dare for Couples',
                 'Never Have I Ever': 'Never Have I Ever',
                 'Who Is Most Likely': 'Who Is Most Likely',
                 'Would You Rather': 'Would You Rather',
@@ -84,6 +86,7 @@ class GameNavigation {
             pt: {
                 'Magic 8 Ball': 'Bola Mágica',
                 'Truth or Dare': 'Verdade ou Desafio',
+                'Truth or Dare Couples': 'Verdade ou Desafio para Casais',
                 'Never Have I Ever': 'Nunca Fiz Isso',
                 'Who Is Most Likely': 'Quem Tem Mais Chance',
                 'Would You Rather': 'Prefiro Ou Prefiro',
@@ -101,6 +104,7 @@ class GameNavigation {
             zh: {
                 'Magic 8 Ball': '魔法8球',
                 'Truth or Dare': '真心话大冒险',
+                'Truth or Dare Couples': '情侣真心话大冒险',
                 'Never Have I Ever': '从不曾我从不',
                 'Who Is Most Likely': '谁最有可能',
                 'Would You Rather': '你会选择谁',
@@ -118,6 +122,7 @@ class GameNavigation {
             de: {
                 'Magic 8 Ball': 'Magischer 8er-Ball',
                 'Truth or Dare': 'Wahrheit oder Pflicht',
+                'Truth or Dare Couples': 'Wahrheit oder Pflicht für Paare',
                 'Never Have I Ever': 'Ich habe nie',
                 'Who Is Most Likely': 'Wer ist am ehesten',
                 'Would You Rather': 'Würdest du eher',
@@ -135,6 +140,7 @@ class GameNavigation {
             fr: {
                 'Magic 8 Ball': 'Boule 8 Magique',
                 'Truth or Dare': 'Vérité ou Défi',
+                'Truth or Dare Couples': 'Vérité ou Défi pour Couples',
                 'Never Have I Ever': 'Je n\'ai Jamais',
                 'Who Is Most Likely': 'Qui est le Plus Probable',
                 'Would You Rather': 'Tu Préfères Ou',
@@ -152,6 +158,7 @@ class GameNavigation {
             id: {
                 'Magic 8 Ball': 'Bola Ajaib 8',
                 'Truth or Dare': 'Kebenaran atau Tantangan',
+                'Truth or Dare Couples': 'Truth or Dare untuk Pasangan',
                 'Never Have I Ever': 'Saya Tidak Pernah',
                 'Who Is Most Likely': 'Siapa yang Paling Mungkin',
                 'Would You Rather': 'Lebih Suka Mana',
@@ -169,6 +176,7 @@ class GameNavigation {
             tr: {
                 'Magic 8 Ball': 'Sihirli 8 Topu',
                 'Truth or Dare': 'Dogruluk mu Cesaret mi',
+                'Truth or Dare Couples': 'Ciftler icin Dogruluk Cesaret',
                 'Never Have I Ever': 'Hic Yapmadim',
                 'Who Is Most Likely': 'En Muhtemel Kim',
                 'Would You Rather': 'Hangisini Secersin',
