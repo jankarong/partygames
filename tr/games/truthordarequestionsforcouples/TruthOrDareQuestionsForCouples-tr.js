@@ -1,319 +1,177 @@
-const gameData = {
-    currentType: null,
-    currentDifficulty: null,
-    questions: {
-        soft: { truth: [
-            "Bir hayvana dönüşme şansın olsaydı bu ne olurdu?",
-            "En tuhaf çocukluk fanteziniz neydi?",
-            "En sevdiğiniz emoji hangisi?",
-            "Bir günlüğüne görünmez olsaydınız ne yapardınız?",
-            "En sevdiğiniz film alıntısı nedir?",
-            "Şimdiye kadar yaptığınız en sıkıcı şey nedir?",
-            "En sevdiğiniz çocukluk anınız nedir?",
-            "En çok gurur duyduğun şey nedir?",
-            "En büyük korkunuz nedir?",
-            "En sevdiğiniz çizgi film karakteri hangisi?",
-            "Hangi beceriyi öğrenebilmeyi isterdin?",
-            "En sevdiğiniz mevsim hangisi?",
-            "Günün en sevdiğiniz saati hangisi?",
-            "Hangi evcil hayvana sahip olmak isterdin?",
-            "En sevdiğiniz hava hangisi?",
-            "En çok hangi tema parkını ziyaret etmek istersiniz?",
-            "En sevdiğiniz atıştırmalık hangisi?",
-            "Bir gün boyunca hangi işi denemek isterdin?",
-            "En sevdiğiniz koku hangisi?",
-            "Nasıl bir evde yaşamak isterdiniz?",
-            "Eğer herhangi bir süper güce sahip olabilseydin bu ne olurdu?",
-            "Zamanda yolculuk yapma imkanınız olsaydı neyi değiştirirdiniz?",
-            "Bir günlüğüne herhangi bir ünlü olma şansın olsaydı kimi seçerdin?",
-            "En sevdiğiniz kurgusal karakter kim?",
-            "Yeni bir yiyecek icat etme şansınız olsaydı bu ne olurdu?",
-            "En sevdiğiniz tatil hangisi ve neden?",
-            "Herhangi bir film veya dizi dünyasında yaşayabilseydiniz bu hangisi olurdu?",
-            "Hayalinizdeki seyahat hedefi neresi?",
-            "Dünyayla ilgili bir şeyi değiştirebilseydiniz bu ne olurdu?",
-            "En sevdiğiniz çocukluk oyunu hangisi?",
-            "Yeni bir tatil yaratabilseydin bu ne olurdu?",
-            "Herhangi bir tarihi figürle sohbet etme şansın olsaydı kimi seçerdin?",
-            "Herhangi bir büyülü eşyaya sahip olabilseydin bu ne olurdu?",
-            "Herhangi bir kitabın ana karakteri olma şansınız olsaydı hangisini seçerdiniz?",
-            "Hayalinizdeki evi inşa edebilseydiniz neye benzerdi?",
-            "Eğer bir film çekebilseydiniz bu hangi tür olurdu?",
-            "Herhangi bir mağaza açma şansınız olsa bu ne olurdu?",
-            "Bir oyun tasarlasaydınız bu ne tür olurdu?",
-            "Eğer bir robot asistanınız olsaydı onun ne yapmasını isterdiniz?",
-            "Yeni bir spor yaratabilseydin bu ne olurdu?",
-            "En sevdiğiniz yemek hangisi?",
-            "En sevdiğiniz içecek hangisi?",
-            "En sevdiğiniz renk nedir?",
-            "En sevdiğiniz müzik türü nedir?",
-            "En sevdiğiniz spor hangisi?",
-            "En sevdiğiniz kitap hangisi?",
-            "En sevdiğiniz film hangisi?",
-            "En sevdiğiniz TV şovu hangisi?",
-            "En sevdiğiniz oyun hangisi?",
-            "En sevdiğiniz sosyal medya platformu hangisi?"
-], dare: [
-            "Walk like a penguin",
-            "Talk in a weird voice until the next round",
-            "Imitate a celebrity until the next round",
-            "Wear socks as gloves for 5 minutes",
-            "Burnunuzu (veya dirseğinizi) yalamayı deneyin",
-            "Say 'I'm so handsome/beautiful' to the mirror 10 times",
-            "Speak with a fake foreign accent for 5 minutes",
-            "Act like a cat - movements and sounds",
-            "Act like a dog - movements and sounds",
-            "Pretend to be a robot when speaking",
-            "Kıçınla mektup yaz",
-            "Gözleriniz kapalı bir otoportre çizin",
-            "Adını ayak parmaklarınla ​​kalem tutarak yaz",
-            "Imitate a baby crying for 30 seconds",
-            "Pretend to swim",
-            "Walk like an elderly person",
-            "Hop like a frog 10 times",
-            "Strike a superhero pose",
-            "Pretend to drive a car",
-            "Imitate a sneeze sound",
-            "10 şınav çek",
-            "Stand on one foot for 1 minute",
-            "Perform a dance",
-            "Sing a complete song",
-            "Say a tongue twister",
-            "Şaka söyle",
-            "Kısa bir oyun gerçekleştirin",
-            "Draw a self-portrait",
-            "5 mekik yapın",
-            "Say a complete sentence backwards",
-            "Sing 'Happy Birthday' in English",
-            "Imitate a commercial",
-            "Perform a magic trick",
-            "Yoga pozu yapın",
-            "Clap with one hand 10 times",
-            "Walk straight with eyes closed for 10 steps",
-            "Bir kitabı başınızın üstünde dengeleyerek yürüyün",
-            "Spin in place 10 times",
-            "50 kez ip atlayın (bir ipiniz varmış gibi davranın)",
-            "Make a funny face",
-            "Give someone a hug",
-            "Give someone a small gift",
-            "Give someone a surprise",
-            "Sincerely compliment someone",
-            "Praise everyone present",
-            "Give someone a shoulder massage",
-            "High-five someone 10 times",
-            "Give someone a high-five",
-            "Dance with someone",
-            "Birinin saçınıza şekil vermesine izin verin"
-] },
-        romantic: { truth: [
-            "Bir hayvana dönüşme şansın olsaydı bu ne olurdu?",
-            "En tuhaf çocukluk fanteziniz neydi?",
-            "En sevdiğiniz emoji hangisi?",
-            "Bir günlüğüne görünmez olsaydınız ne yapardınız?",
-            "En sevdiğiniz film alıntısı nedir?",
-            "Şimdiye kadar yaptığınız en sıkıcı şey nedir?",
-            "En sevdiğiniz çocukluk anınız nedir?",
-            "En çok gurur duyduğun şey nedir?",
-            "En büyük korkunuz nedir?",
-            "En sevdiğiniz çizgi film karakteri hangisi?",
-            "Hangi beceriyi öğrenebilmeyi isterdin?",
-            "En sevdiğiniz mevsim hangisi?",
-            "Günün en sevdiğiniz saati hangisi?",
-            "Hangi evcil hayvana sahip olmak isterdin?",
-            "En sevdiğiniz hava hangisi?",
-            "En çok hangi tema parkını ziyaret etmek istersiniz?",
-            "En sevdiğiniz atıştırmalık hangisi?",
-            "Bir gün boyunca hangi işi denemek isterdin?",
-            "En sevdiğiniz koku hangisi?",
-            "Nasıl bir evde yaşamak isterdiniz?",
-            "Eğer herhangi bir süper güce sahip olabilseydin bu ne olurdu?",
-            "Zamanda yolculuk yapma imkanınız olsaydı neyi değiştirirdiniz?",
-            "Bir günlüğüne herhangi bir ünlü olma şansın olsaydı kimi seçerdin?",
-            "En sevdiğiniz kurgusal karakter kim?",
-            "Yeni bir yiyecek icat etme şansınız olsaydı bu ne olurdu?",
-            "En sevdiğiniz tatil hangisi ve neden?",
-            "Herhangi bir film veya dizi dünyasında yaşayabilseydiniz bu hangisi olurdu?",
-            "Hayalinizdeki seyahat hedefi neresi?",
-            "Dünyayla ilgili bir şeyi değiştirebilseydiniz bu ne olurdu?",
-            "En sevdiğiniz çocukluk oyunu hangisi?",
-            "Yeni bir tatil yaratabilseydin bu ne olurdu?",
-            "Herhangi bir tarihi figürle sohbet etme şansın olsaydı kimi seçerdin?",
-            "Herhangi bir büyülü eşyaya sahip olabilseydin bu ne olurdu?",
-            "Herhangi bir kitabın ana karakteri olma şansınız olsaydı hangisini seçerdiniz?",
-            "Hayalinizdeki evi inşa edebilseydiniz neye benzerdi?",
-            "Eğer bir film çekebilseydiniz bu hangi tür olurdu?",
-            "Herhangi bir mağaza açma şansınız olsa bu ne olurdu?",
-            "Bir oyun tasarlasaydınız bu ne tür olurdu?",
-            "Eğer bir robot asistanınız olsaydı onun ne yapmasını isterdiniz?",
-            "Yeni bir spor yaratabilseydin bu ne olurdu?",
-            "En sevdiğiniz yemek hangisi?",
-            "En sevdiğiniz içecek hangisi?",
-            "En sevdiğiniz renk nedir?",
-            "En sevdiğiniz müzik türü nedir?",
-            "En sevdiğiniz spor hangisi?",
-            "En sevdiğiniz kitap hangisi?",
-            "En sevdiğiniz film hangisi?",
-            "En sevdiğiniz TV şovu hangisi?",
-            "En sevdiğiniz oyun hangisi?",
-            "En sevdiğiniz sosyal medya platformu hangisi?"
-], dare: [
-            "Walk like a penguin",
-            "Talk in a weird voice until the next round",
-            "Imitate a celebrity until the next round",
-            "Wear socks as gloves for 5 minutes",
-            "Burnunuzu (veya dirseğinizi) yalamayı deneyin",
-            "Say 'I'm so handsome/beautiful' to the mirror 10 times",
-            "Speak with a fake foreign accent for 5 minutes",
-            "Act like a cat - movements and sounds",
-            "Act like a dog - movements and sounds",
-            "Pretend to be a robot when speaking",
-            "Kıçınla mektup yaz",
-            "Gözleriniz kapalı bir otoportre çizin",
-            "Adını ayak parmaklarınla ​​kalem tutarak yaz",
-            "Imitate a baby crying for 30 seconds",
-            "Pretend to swim",
-            "Walk like an elderly person",
-            "Hop like a frog 10 times",
-            "Strike a superhero pose",
-            "Pretend to drive a car",
-            "Imitate a sneeze sound",
-            "10 şınav çek",
-            "Stand on one foot for 1 minute",
-            "Perform a dance",
-            "Sing a complete song",
-            "Say a tongue twister",
-            "Şaka söyle",
-            "Kısa bir oyun gerçekleştirin",
-            "Draw a self-portrait",
-            "5 mekik yapın",
-            "Say a complete sentence backwards",
-            "Sing 'Happy Birthday' in English",
-            "Imitate a commercial",
-            "Perform a magic trick",
-            "Yoga pozu yapın",
-            "Clap with one hand 10 times",
-            "Walk straight with eyes closed for 10 steps",
-            "Bir kitabı başınızın üstünde dengeleyerek yürüyün",
-            "Spin in place 10 times",
-            "50 kez ip atlayın (bir ipiniz varmış gibi davranın)",
-            "Make a funny face",
-            "Give someone a hug",
-            "Give someone a small gift",
-            "Give someone a surprise",
-            "Sincerely compliment someone",
-            "Praise everyone present",
-            "Give someone a shoulder massage",
-            "High-five someone 10 times",
-            "Give someone a high-five",
-            "Dance with someone",
-            "Birinin saçınıza şekil vermesine izin verin"
-] },
-        spicy: { truth: [
-            "En son ne zaman yalan söyledin? Kime?",
-            "Burada hiç gizlice birinden hoşlandın mı?",
-            "En utanç verici anınız nedir?",
-            "Seni en çok ne ağlattı?",
-            "Kime aşık oldun? Hala konuşuyor musun?",
-            "En unutulmaz romantik deneyiminiz nedir?",
-            "İdeal randevunuz nasıl?",
-            "Aşk uğruna yaptığınız en çılgın şey nedir?",
-            "Kendinizle ilgili en az sevdiğiniz şey nedir?",
-            "Kendinizi en çok ne zaman suçlu hissettiniz?",
-            "Başkalarının bilmediği alışkanlığınız nedir?",
-            "En büyük pişmanlığın ne?",
-            "Yaptığınız en dürtüsel şey nedir?",
-            "Birine en çok ne söylemek istersin?",
-            "Başkalarının bilmesini istemediğiniz şey nedir?",
-            "Yaptığınız en çocukça şey nedir?",
-            "En çok hangi anıyı unutmak istiyorsun?",
-            "Gelecekle ilgili en büyük endişeniz nedir?",
-            "Keşfedilmesini istemediğin gizlice ne yaptın?",
-            "Yaptığınız en utanç verici şey nedir?",
-            "İlk öpücüğünüz nasıldı?",
-            "Hiç karmaşık bir ilişki yaşadınız mı?",
-            "Hiç aldattın mı ya da bunu düşündün mü?",
-            "Yaşadığınız en kötü ayrılık neydi?",
-            "Ayrılık sırasında söylediğiniz en sert şey nedir?",
-            "Kaç erkek/kız arkadaşın oldu?",
-            "En çok kiminle çıkmak isterdin?",
-            "Bir ilişkide söylediğiniz en büyük yalan nedir?",
-            "Hiç belirsiz bir ilişkiniz oldu mu?",
-            "Sevmediğiniz biriyle para karşılığında çıkar mısınız?",
-            "Hiç birinin telefonuna baktınız mı?",
-            "Hiç çevrimiçi bir ilişkiniz oldu mu?",
-            "Arkadaşınızın eski sevgilisiyle çıkar mıydınız?",
-            "En çok hangi eski sevgilinizle tekrar bir araya gelmek istersiniz?",
-            "Birisi hakkında gördüğünüz en çılgın rüya nedir?",
-            "Hiç aynı cinsiyetten birine ilgi duydunuz mu?",
-            "En çok hangi ünlüyle birlikte olmak isterdin?",
-            "Açık bir ilişkiyi kabul eder misiniz?",
-            "Hiç bir öğretmene veya otorite figürüne karşı hisleriniz oldu mu?",
-            "En büyük romantik fanteziniz nedir?",
-            "Bir arkadaşınıza neden kızdınız?",
-            "Ailene ne için kızdın?",
-            "Buradaki birinin en çok hangi özelliğinden nefret ediyorsunuz?",
-            "Burada birinin arkasından ne söyledin?",
-            "Buradaki birinin neyini kıskanıyorsun?",
-            "Sizce burada en sahte olan kim?",
-            "Sizce burada en narsist kim?",
-            "En çok kimi tokatlamak istersin?",
-            "Sizce şu anki hayatını en az hak eden kim?",
-            "En çok hangi tip insanı küçümsersiniz?"
-], dare: [
-            "İsmini kıçınla yaz",
-            "Rujla yüzünüze bir desen çizin",
-            "Act drunk",
-            "Act angry",
-            "Dilinle burnunu yala",
-            "Çoraplarınızı çıkarın ve başkalarının onları koklamasına izin verin",
-            "Act out the pain of childbirth",
-            "Wear clothes of the opposite gender and take a photo",
-            "Başkalarının vücudunuza yazmasına izin verin",
-            "Başkalarının sizi gözleriniz kapalı beslemesine izin verin",
-            "Bırakın makyajınızı başkaları yapsın",
-            "En utanç verici deneyiminizi canlandırın",
-            "En nefret ettiğiniz kişiyi taklit edin",
-            "Take an exaggerated selfie",
-            "En çok korktuğunuz şeyi yapın",
-            "Imitate a baby crying",
-            "Poponuzla birlikte patlayana kadar bir balonun üzerinde oturun",
-            "İlk buluşma gerginliğinizi canlandırın",
-            "Sarhoşken nasıl göründüğünüzü taklit edin",
-            "Korktuğunuz zaman tepkinizi sergileyin",
-            "Eski sevgiline 'Seni özledim' mesajı at",
-            "Sing loudly in public",
-            "Hug a stranger",
-            "Post an ugly photo of yourself on social media",
-            "Kişilerinizden rastgele bir kişiyi satış elemanı gibi davranarak arayın",
-            "Dance in public",
-            "Post 'I'm in love' on social media",
-            "Call a random person pretending to be a robot",
-            "'Hepinizi seviyorum!' diye bağırın halka açık",
-            "Call a random person pretending to be an alien",
-            "Confess to a stranger on the street",
-            "En tuhaf deneyiminizi herkesin önünde itiraf edin",
-            "En çok hangi ünlüyle tanışmak istediğinizi yüksek sesle söyleyin",
-            "En nefret ettiğiniz kişiyi arayın ve özür dileyin",
-            "En utanç verici sırrınızı yüksek sesle söyleyin",
-            "Telefonunuzdaki en komik fotoğrafı başkalarına gösterin",
-            "En nefret ettiğiniz kişiyi herkesin önünde taklit edin",
-            "Kusurlarınızdan birini yüksek sesle itiraf edin",
-            "Birisi hakkındaki gerçek fikrinizi kamuya açık bir şekilde ifade edin",
-            "Yanlış yaptığınız bir şey için herkesin önünde özür dileyin",
-            "En büyük pişmanlığını yüksek sesle söyle",
-            "Kiss someone on the cheek",
-            "Give someone a shoulder massage",
-            "Hug someone for 30 seconds",
-            "Sit on someone's lap",
-            "Birinin saçınıza şekil vermesine izin verin",
-            "Hold hands with someone and spin around",
-            "Give someone a long hug",
-            "Take a cheek-to-cheek photo with someone",
-            "Birinin kolunuza çizim yapmasına izin verin"
-] }
-    }
+const make50 = (base, generator) => {
+  const out = [...base];
+  let i = 0;
+  while (out.length < 50) {
+    out.push(generator(i, out.length));
+    i += 1;
+  }
+  return out.slice(0, 50);
 };
-const t = { choose: "👇 Cift modunu secin 👇", chooseRound: "👇 Dogruluk veya Cesaret secin 👇", chooseRomantic: "👇 Romantik mod: Dogruluk veya Cesaret 👇", chooseSpicy: "👇 Cesur mod: Dogruluk veya Cesaret 👇", softBadge: "Yumusak mod", romanticBadge: "Romantik mod", spicyBadge: "Cesur mod", truthBadge: "Dogruluk", dareBadge: "Cesaret" };
+
+const softTopics = ["randevu", "hafta sonu", "gunluk rutin", "kisa gezi", "aksam", "sabah", "playlist", "fotograf", "opusme", "yuruyus"];
+const romanticTopics = ["yildonumu", "ask mektubu", "gelecek", "ev", "rituel", "soz", "guven", "yakınlik", "ortak plan", "ani"];
+const spicyTopics = ["flort", "dokunus", "tempo", "atmosfer", "fantezi", "goz temasi", "cekim", "iletisim", "sinir", "aftercare"];
+
+const softTruth = make50([
+  "Benim hakkimdaki ilk izlenimin neydi?",
+  "Bende hangi kucuk sey seni sevildigini hissettiriyor?",
+  "Bizim en sevdigin randevu anin hangisi?",
+  "Ne zaman bana en yakin hissediyorsun?",
+  "Cift olarak en iyi yaptigimiz sey ne?",
+  "Bendeki hangi aliskanligi cok tatli buluyorsun?",
+  "Bu yil benimle hangi kisa geziyi yapmak istersin?",
+  "Iliskimizde birlikte gelistirmemiz gereken sey ne?",
+  "Bizim hangi fotografimizi en cok seviyorsun?",
+  "Hangi sarilma sekli seni en cok rahatlatiyor?",
+  "Hangi gunluk ritueli korumaliyiz?",
+  "Benden duydugun hangi iltifat aklinda kaldi?",
+  "Dusuk butceli ideal randevun nasil olurdu?",
+  "Hangi ic sakamizi hic kaybetmek istemezsin?",
+  "Hangi durumda harika bir takim oldugumuzu dusunuyorsun?",
+  "Hafta sonlari neyi daha fazla yapmaliyiz?",
+  "Hangi kiyafetimi en cekici buluyorsun?",
+  "Birlikte yaptigimiz hangi sakin aktivite seni dinlendiriyor?",
+  "Gunluk hayatimizdaki en sevdigin kisim ne?",
+  "Bu hafta bana ne icin tesekkur etmek istersin?"
+], (i) => `${softTopics[i % softTopics.length]} konusunda su an cift olarak bize en cok uyan fikir sence ne?`);
+
+const softDare = make50([
+  "Partnerine 20 saniye icten bir sarilma ver.",
+  "Partnerine 3 net iltifat soyle.",
+  "Ilk bulusmanizi 30 saniyede canlandirin.",
+  "30 saniye el ele tutusup goz temasi kurun.",
+  "Partnerine simdi kisa tatli bir mesaj at.",
+  "Bir sarki boyunca birlikte dans edin.",
+  "1 dakika omuz masaji yap.",
+  "Simdi bir cift selfie'si cekin.",
+  "Bugun icin minnettar oldugun 5 seyi soyle.",
+  "1 dakikada bir sonraki bulusmayi planlayin.",
+  "Partnerine fısıldayarak sevdigin bir ozelligini soyle.",
+  "Kendinize gizli bir cift isareti bulun.",
+  "Bir nakarati birlikte soyleyin.",
+  "10 senkron squat yapin.",
+  "Sirayla en sevdiginiz 5 bulusmayi sayin.",
+  "45 saniye konusmadan sarilin.",
+  "Iliskiniz icin mini bir kadeh kaldirma cumlesi soyleyin.",
+  "Bu hafta bir telefonpsuz mini bulusma karari alin.",
+  "Ikiniz de su cumleyi tamamlayin: Seni seciyorum cunku...",
+  "20 saniye el ele yuruyun."
+], (i) => `${softTopics[i % softTopics.length]} temali 20 saniyelik mini bir cift gorevi yapin.`);
+
+const romanticTruth = make50([
+  "Benimle ciddi bir iliski istedigini ne zaman fark ettin?",
+  "Benden hangi romantik jesti asla sikici bulmazsin?",
+  "Hangi ortak animiz sana film sahnesi gibi geliyor?",
+  "Benimle mutlaka yapmak istedigin hayal bulusma nedir?",
+  "Bu iliski sana ask hakkinda ne ogretti?",
+  "Zor gunlerinde sana nasil iyi geliyorum?",
+  "Aramizdaki en onemli soz hangisi?",
+  "Benimle kutlamak istedigin bir sonraki buyuk adim ne?",
+  "Hangi sarki bizim resmi cift sarkimiz olmali?",
+  "Bendeki hangi ozellik sana guven veriyor?",
+  "Hangi romantik gelenegi baslatmak istersin?",
+  "Uzak kaldigimizda bende en cok neyi ozluyorsun?",
+  "Ask hikayemizi tek kelimeyle nasil anlatirsin?",
+  "Aramizdaki duygusal yakinlik senin icin ne demek?",
+  "Benden gelen hangi kucuk hareket gununu guzellestiriyor?",
+  "Romantizmi uzun vadede nasil guclu tutariz?",
+  "Hikayemizin hangi bolumunu anlatmayi seviyorsun?",
+  "Bana en son ne zaman yeniden asik oldun?",
+  "Date nightlarda hangi bolumu korumaliyiz?",
+  "Gelecekte bizi hayal ettigin en guzel sahne hangisi?"
+], (i) => `${romanticTopics[i % romanticTopics.length]} konusunda iliskimize en uygun hayalin ne?`);
+
+const romanticDare = make50([
+  "Iki satir romantik not yaz ve sesli oku.",
+  "5 saniye alin opucugu ver.",
+  "Partnerini ask mektubu tarzinda anlat.",
+  "El ele tutusup birbirinizi secme nedeninizden 5 tane soyleyin.",
+  "30 saniye konusmadan goz temasi yapin.",
+  "Bu aksam icin mini bir bulusma planlayin.",
+  "En sevdiginiz cift fotografi pozunu tekrar yapin.",
+  "Iliskiniz icin 1 minnet ve 1 dilek soyle.",
+  "1 dakika el masaji yap.",
+  "Bir tur sadece iltifat ederek konus.",
+  "Romantik bir sarki satiri mirmirlan.",
+  "30 saniye muziksiz yavas dans edin.",
+  "Size ozel bir cift mottosu bulun.",
+  "3 kez su cumleyi tamamla: Seni takdir ediyorum cunku...",
+  "Bu ay icin romantik bir plan paylas.",
+  "Bizim sonraki bolumumuz basliyor baslikli foto cekin.",
+  "Tek cumlede kalpten bir tesekkur soyleyin.",
+  "Hala kelebek etkisi yaratan bir anini paylas.",
+  "Yarin icin sevecen bir davranis sozu ver.",
+  "Turu, riza ile bir opucukle bitirin."
+], (i) => `${romanticTopics[i % romanticTopics.length]} temali 20 saniyelik romantik bir gorev yapin.`);
+
+const spicyTruth = make50([
+  "Henuz anlatmadigin hangi fantazin var?",
+  "Benim seni en cok etkileyen flort tarzim ne?",
+  "Bende seni aninda atesleyen sey ne?",
+  "Benimle denemek istedigin yeni yakinlik aktivitesi ne?",
+  "Hangi kiyafetimi daha cekici buluyorsun?",
+  "Yakinlikta daha fazla ne yasamak istersin?",
+  "Hangi dokunusum seni hem rahatlatip hem heyecanlandiriyor?",
+  "En sevdigin opusme tarzi hangisi?",
+  "Benden daha cok hangi adimi baslatmami istersin?",
+  "Hangi ortam/ambiyans sende daha iyi calisiyor?",
+  "Yakinlikta senin icin olmazsa olmaz sinir nedir?",
+  "Hangi aftercare sekli sana en iyi geliyor?",
+  "Benden duydugunda en cekici gelen kelimeler hangileri?",
+  "Spicy anlardan once mutlaka netlestirmemiz gereken sey ne?",
+  "Guvenli ama cesur hangi fikri denemek istersin?",
+  "Hangi iltifatim seni en cok arzulandigini hissettiriyor?",
+  "Yavas yaklasimda en sevdigin tempo ne?",
+  "Uzun suredir sormami istedigin yakinlik sorusu ne?",
+  "Daha cesur anlarda seni en guvende hissettiren ne?",
+  "Aramizdaki kimyada asla kaybetmek istemedigin sey ne?"
+], (i) => `${spicyTopics[i % spicyTopics.length]} konusunda ikimiz icin hem heyecanli hem guvenli yol ne olur?`);
+
+const spicyDare = make50([
+  "10 saniye boyunca ozguvenli bir flort cumlesi fisilda.",
+  "10 saniyelik yavas bir opucuk ver (rizayla).",
+  "Partnerinin bedeninde en sevdigin noktayi alçak sesle soyle.",
+  "20 saniye yogun goz temasi yapin.",
+  "Daha sonra acilmak uzere flortoz bir mesaj gonder.",
+  "1 dakika boyun masaji yap.",
+  "Ayni cumlede bir sinir ve bir istek soyle.",
+  "20 saniyede ideal gece atmosferinizi tarif et.",
+  "15 saniye cok yakin yavas dans yapin.",
+  "Bir sonraki ozel bulusma icin seksi ama guvenli fikir soyle.",
+  "Kod kelime ile hizli guvenlik check-in yapin.",
+  "Bir spicy evet/hayir sorusu sor ve durust cevapla.",
+  "Alin, yanak ve el opucugunu sirayla ver.",
+  "Muzikle 20 saniye duyusal sallanma yapin.",
+  "Su cumleyi tamamla: Bu gece seninle ... istiyorum.",
+  "Bir romantik bir tutkulu iltifat yap.",
+  "Gel buraya jesti yapip gulumse.",
+  "Kimyanizi anlatan 3 kelime soyle.",
+  "Rizali 10 saniyelik PG13 lap dance versiyonu yapin.",
+  "Turu guvenli ve spicy mini challenge ile bitirin."
+], (i) => `${spicyTopics[i % spicyTopics.length]} temali 20 saniyelik, rizali bir gorev yapin.`);
+
+const gameData = {
+  currentType: null,
+  currentDifficulty: null,
+  questions: {
+    soft: { truth: softTruth, dare: softDare },
+    romantic: { truth: romanticTruth, dare: romanticDare },
+    spicy: { truth: spicyTruth, dare: spicyDare }
+  }
+};
+
+const t = {
+  choose: "👇 Cift modunu secin 👇",
+  chooseRound: "👇 Dogruluk mu Cesaret mi secin 👇",
+  chooseRomantic: "👇 Romantik mod: Dogruluk mu Cesaret mi 👇",
+  chooseSpicy: "👇 Atesli mod: Dogruluk mu Cesaret mi 👇",
+  softBadge: "Yumusak mod",
+  romanticBadge: "Romantik mod",
+  spicyBadge: "Atesli mod",
+  truthBadge: "Dogruluk",
+  dareBadge: "Cesaret"
+};
+
 const questionText = document.getElementById('questionText');
 const nextButton = document.getElementById('nextButton');
 const resetButton = document.getElementById('resetButton');
@@ -322,14 +180,64 @@ const selectedType = document.getElementById('selectedType');
 const selectedDifficulty = document.getElementById('selectedDifficulty');
 const difficultyButtons = document.getElementById('difficultyButtons');
 const choiceButtons = document.getElementById('choiceButtons');
+
 function selectDifficulty(difficulty) {
   gameData.currentDifficulty = difficulty;
-  if (difficulty === 'soft') { selectedDifficulty.innerHTML = '<span class="badge bg-success">' + t.softBadge + '</span>'; questionText.textContent = t.chooseRound; }
-  else if (difficulty === 'romantic') { selectedDifficulty.innerHTML = '<span class="badge bg-primary">' + t.romanticBadge + '</span>'; questionText.textContent = t.chooseRomantic; }
-  else { selectedDifficulty.innerHTML = '<span class="badge bg-warning">' + t.spicyBadge + '</span>'; questionText.textContent = t.chooseSpicy; }
-  selectedDifficulty.style.display='block'; difficultyButtons.style.display='none'; choiceButtons.style.display='flex'; backButton.style.display='inline-block';
+  if (difficulty === 'soft') {
+    selectedDifficulty.innerHTML = '<span class="badge bg-success">' + t.softBadge + '</span>';
+    questionText.textContent = t.chooseRound;
+  } else if (difficulty === 'romantic') {
+    selectedDifficulty.innerHTML = '<span class="badge bg-primary">' + t.romanticBadge + '</span>';
+    questionText.textContent = t.chooseRomantic;
+  } else {
+    selectedDifficulty.innerHTML = '<span class="badge bg-warning">' + t.spicyBadge + '</span>';
+    questionText.textContent = t.chooseSpicy;
+  }
+  selectedDifficulty.style.display = 'block';
+  difficultyButtons.style.display = 'none';
+  choiceButtons.style.display = 'flex';
+  backButton.style.display = 'inline-block';
 }
-function selectChoice(type) { gameData.currentType=type; const questions=gameData.questions[gameData.currentDifficulty][type]; questionText.textContent=questions[Math.floor(Math.random()*questions.length)]; selectedType.innerHTML = type==='truth' ? '<span class="badge bg-info">'+t.truthBadge+'</span>' : '<span class="badge bg-danger">'+t.dareBadge+'</span>'; selectedType.style.display='block'; nextButton.style.display='inline-block'; resetButton.style.display='inline-block'; choiceButtons.style.display='none'; }
-function nextQuestion() { if(!gameData.currentType||!gameData.currentDifficulty)return; const questions=gameData.questions[gameData.currentDifficulty][gameData.currentType]; questionText.textContent=questions[Math.floor(Math.random()*questions.length)]; }
-function backToDifficulty() { gameData.currentType=null; questionText.textContent=t.choose; selectedType.style.display='none'; nextButton.style.display='none'; resetButton.style.display='none'; backButton.style.display='none'; choiceButtons.style.display='none'; difficultyButtons.style.display='flex'; }
-function resetGame() { gameData.currentType=null; gameData.currentDifficulty=null; questionText.textContent=t.choose; selectedType.style.display='none'; selectedDifficulty.style.display='none'; nextButton.style.display='none'; resetButton.style.display='none'; backButton.style.display='none'; choiceButtons.style.display='none'; difficultyButtons.style.display='flex'; }
+
+function selectChoice(type) {
+  gameData.currentType = type;
+  const questions = gameData.questions[gameData.currentDifficulty][type];
+  questionText.textContent = questions[Math.floor(Math.random() * questions.length)];
+  selectedType.innerHTML = type === 'truth'
+    ? '<span class="badge bg-info">' + t.truthBadge + '</span>'
+    : '<span class="badge bg-danger">' + t.dareBadge + '</span>';
+  selectedType.style.display = 'block';
+  nextButton.style.display = 'inline-block';
+  resetButton.style.display = 'inline-block';
+  choiceButtons.style.display = 'none';
+}
+
+function nextQuestion() {
+  if (!gameData.currentType || !gameData.currentDifficulty) return;
+  const questions = gameData.questions[gameData.currentDifficulty][gameData.currentType];
+  questionText.textContent = questions[Math.floor(Math.random() * questions.length)];
+}
+
+function backToDifficulty() {
+  gameData.currentType = null;
+  questionText.textContent = t.choose;
+  selectedType.style.display = 'none';
+  nextButton.style.display = 'none';
+  resetButton.style.display = 'none';
+  backButton.style.display = 'none';
+  choiceButtons.style.display = 'none';
+  difficultyButtons.style.display = 'flex';
+}
+
+function resetGame() {
+  gameData.currentType = null;
+  gameData.currentDifficulty = null;
+  questionText.textContent = t.choose;
+  selectedType.style.display = 'none';
+  selectedDifficulty.style.display = 'none';
+  nextButton.style.display = 'none';
+  resetButton.style.display = 'none';
+  backButton.style.display = 'none';
+  choiceButtons.style.display = 'none';
+  difficultyButtons.style.display = 'flex';
+}

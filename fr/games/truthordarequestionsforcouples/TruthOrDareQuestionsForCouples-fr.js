@@ -1,319 +1,177 @@
-const gameData = {
-    currentType: null,
-    currentDifficulty: null,
-    questions: {
-        soft: { truth: [
-            "Si tu pouvais te transformer en animal, lequel choisirais-tu ?",
-            "Quel était ton fantasme d'enfance le plus bizarre ?",
-            "Quel est ton emoji préféré ?",
-            "Si tu étais invisible pendant une journée, que ferais-tu ?",
-            "Quelle est ta citation de film préférée ?",
-            "Quel est la chose la plus ennuyeuse que tu aies jamais faite ?",
-            "Quel est ton souvenir d'enfance préféré ?",
-            "De quoi es-tu le plus fier ?",
-            "Quelle est ta plus grande peur ?",
-            "Quel est ton personnage de dessin animé préféré ?",
-            "Quelle compétence aimerais-tu apprendre ?",
-            "Quelle est ta saison préférée ?",
-            "Quel est ton moment préféré de la journée ?",
-            "Quel animal aimerais-tu avoir comme animal de compagnie ?",
-            "Quel est ton temps préféré ?",
-            "Quel parc d'attractions aimerais-tu visiter ?",
-            "Quel est ton snack préféré ?",
-            "Quel emploi aimerais-tu essayer pendant une journée ?",
-            "Quelle est ton odeur préférée ?",
-            "Quel type de maison aimerais-tu habiter ?",
-            "Si tu pouvais avoir un superpouvir, lequel choisirais-tu ?",
-            "Si tu pouvais voyager dans le temps, qu'aimerais-tu changer ?",
-            "Si tu pouvais être une célébrité pendant une journée, qui choisirais-tu ?",
-            "Quel est ton personnage fictif préféré ?",
-            "Si tu pouvais inventer un nouveau plat, ce serait quoi ?",
-            "Quel est ta fête préférée et pourquoi ?",
-            "Si tu pouvais vivre dans le monde d'un film ou d'une série, lequel choisirais-tu ?",
-            "Quel est ta destination de rêve ?",
-            "Si tu pouvais changer une chose au monde, ce serait quoi ?",
-            "Quel est ton jeu d'enfance préféré ?",
-            "Si tu pouvais créer une nouvelle fête, ce serait comment ?",
-            "Si tu pouvais discuter avec une figure historique, qui choisirais-tu ?",
-            "Si tu pouvais posséder un objet magique, ce serait quoi ?",
-            "Si tu pouvais être le personnage principal d'un livre, lequel choisirais-tu ?",
-            "Si tu pouvais construire ta maison de rêve, à quoi ressemblerait-elle ?",
-            "Si tu pouvais faire un film, quel genre choisirais-tu ?",
-            "Si tu pouvais ouvrir n'importe quel type de magasin, ce serait quoi ?",
-            "Si tu pouvais concevoir un jeu, quel type serait-ce ?",
-            "Si tu pouvais avoir un assistant robot, que voudrais-tu qu'il fasse ?",
-            "Si tu pouvais créer un nouveau sport, ce serait quoi ?",
-            "Préfères-tu la baguette, le pain de mie ou la brioche ?",
-            "Aimes-tu plus le vin blanc, le vin rouge ou le vin rosé ?",
-            "Quelle est ta couleur préférée ?",
-            "Préfères-tu la musique française, le jazz ou la musique classique ?",
-            "Quel est ton sport français préféré : équitation, cyclisme, foot ou rugby ?",
-            "Quel auteur français aimes-tu le plus lire ?",
-            "Quel film français est ton préféré ?",
-            "Quelle série télévisée française regardes-tu ?",
-            "Préfères-tu les jeux de société ou les jeux de cartes ?",
-            "Utilises-tu plutôt Instagram, TikTok ou Facebook ?"
-], dare: [
-            "Marche comme un pingouin",
-            "Parle avec une voix bizarre jusqu'au prochain tour",
-            "Imite une célébrité jusqu'au prochain tour",
-            "Porte des chaussettes comme gants pendant 5 minutes",
-            "Essaie de te lécher le nez (ou le coude)",
-            "Dis 'Je suis si beau/belle' au miroir 10 fois",
-            "Parle avec un faux accent étranger pendant 5 minutes",
-            "Agis comme un chat - mouvements et bruits",
-            "Agis comme un chien - mouvements et bruits",
-            "Prétends être un robot quand tu parles",
-            "Écris des lettres avec tes fesses",
-            "Dessine un autoportrait les yeux fermés",
-            "Écris ton nom avec tes orteils en tenant un stylo",
-            "Imite un bébé qui pleure pendant 30 secondes",
-            "Prétends nager",
-            "Marche comme une personne âgée",
-            "Saute comme une grenouille 10 fois",
-            "Prends une pose de superhéros",
-            "Prétends conduire une voiture",
-            "Imite le bruit d'un éternuement",
-            "Fais 10 pompes en style français (avec élégance)",
-            "Effectue l'arabesque (posture de ballet français)",
-            "Danse un tango ou une valse",
-            "Chante 'La Vie en Rose' ou une chanson de Jacques Brel",
-            "Récite un passage de Molière ou Victor Hugo",
-            "Raconte une blague française typique",
-            "Effectue une courte scène de Théâtre du Vieux Belleville",
-            "Dessine un portrait dans le style cubiste français",
-            "Fais 5 abdominaux tout en parlant français avec accent",
-            "Décris la Joconde sans mentionner son sourire",
-            "Chante 'La Marseillaise' avec passion",
-            "Imite un serveur français snobbiste de restaurant",
-            "Effectue un mime français à la Charlie Chaplin",
-            "Fais une pose de yoga comme dans un hatha yoga français",
-            "Applaudis à la française (lentement et avec élégance)",
-            "Marche comme un Parisien chic pendant 10 pas",
-            "Marche en équilibrant une baguette sur ta tête",
-            "Tourne sur place 10 fois en levant un verre invisible",
-            "Saute à la corde (prétends) 50 fois en disant 'Oh là là !'",
-            "Fais une grimace typiquement française (moue)",
-            "Fais deux bises à quelqu'un (à la française)",
-            "Offre un verre à quelqu'un (en prétendant)",
-            "Fais une surprise avec un toast à quelqu'un",
-            "Complimente sincèrement le style de quelqu'un",
-            "Lève un verre à tout le monde présent",
-            "Fais un massage des épaules à quelqu'un de manière relaxante",
-            "Fait une blague avec quelqu'un 10 fois",
-            "Partage une blague typiquement française avec quelqu'un",
-            "Danse un valse avec quelqu'un",
-            "Laisse quelqu'un te coiffer à la française"
-] },
-        romantic: { truth: [
-            "Si tu pouvais te transformer en animal, lequel choisirais-tu ?",
-            "Quel était ton fantasme d'enfance le plus bizarre ?",
-            "Quel est ton emoji préféré ?",
-            "Si tu étais invisible pendant une journée, que ferais-tu ?",
-            "Quelle est ta citation de film préférée ?",
-            "Quel est la chose la plus ennuyeuse que tu aies jamais faite ?",
-            "Quel est ton souvenir d'enfance préféré ?",
-            "De quoi es-tu le plus fier ?",
-            "Quelle est ta plus grande peur ?",
-            "Quel est ton personnage de dessin animé préféré ?",
-            "Quelle compétence aimerais-tu apprendre ?",
-            "Quelle est ta saison préférée ?",
-            "Quel est ton moment préféré de la journée ?",
-            "Quel animal aimerais-tu avoir comme animal de compagnie ?",
-            "Quel est ton temps préféré ?",
-            "Quel parc d'attractions aimerais-tu visiter ?",
-            "Quel est ton snack préféré ?",
-            "Quel emploi aimerais-tu essayer pendant une journée ?",
-            "Quelle est ton odeur préférée ?",
-            "Quel type de maison aimerais-tu habiter ?",
-            "Si tu pouvais avoir un superpouvir, lequel choisirais-tu ?",
-            "Si tu pouvais voyager dans le temps, qu'aimerais-tu changer ?",
-            "Si tu pouvais être une célébrité pendant une journée, qui choisirais-tu ?",
-            "Quel est ton personnage fictif préféré ?",
-            "Si tu pouvais inventer un nouveau plat, ce serait quoi ?",
-            "Quel est ta fête préférée et pourquoi ?",
-            "Si tu pouvais vivre dans le monde d'un film ou d'une série, lequel choisirais-tu ?",
-            "Quel est ta destination de rêve ?",
-            "Si tu pouvais changer une chose au monde, ce serait quoi ?",
-            "Quel est ton jeu d'enfance préféré ?",
-            "Si tu pouvais créer une nouvelle fête, ce serait comment ?",
-            "Si tu pouvais discuter avec une figure historique, qui choisirais-tu ?",
-            "Si tu pouvais posséder un objet magique, ce serait quoi ?",
-            "Si tu pouvais être le personnage principal d'un livre, lequel choisirais-tu ?",
-            "Si tu pouvais construire ta maison de rêve, à quoi ressemblerait-elle ?",
-            "Si tu pouvais faire un film, quel genre choisirais-tu ?",
-            "Si tu pouvais ouvrir n'importe quel type de magasin, ce serait quoi ?",
-            "Si tu pouvais concevoir un jeu, quel type serait-ce ?",
-            "Si tu pouvais avoir un assistant robot, que voudrais-tu qu'il fasse ?",
-            "Si tu pouvais créer un nouveau sport, ce serait quoi ?",
-            "Préfères-tu la baguette, le pain de mie ou la brioche ?",
-            "Aimes-tu plus le vin blanc, le vin rouge ou le vin rosé ?",
-            "Quelle est ta couleur préférée ?",
-            "Préfères-tu la musique française, le jazz ou la musique classique ?",
-            "Quel est ton sport français préféré : équitation, cyclisme, foot ou rugby ?",
-            "Quel auteur français aimes-tu le plus lire ?",
-            "Quel film français est ton préféré ?",
-            "Quelle série télévisée française regardes-tu ?",
-            "Préfères-tu les jeux de société ou les jeux de cartes ?",
-            "Utilises-tu plutôt Instagram, TikTok ou Facebook ?"
-], dare: [
-            "Marche comme un pingouin",
-            "Parle avec une voix bizarre jusqu'au prochain tour",
-            "Imite une célébrité jusqu'au prochain tour",
-            "Porte des chaussettes comme gants pendant 5 minutes",
-            "Essaie de te lécher le nez (ou le coude)",
-            "Dis 'Je suis si beau/belle' au miroir 10 fois",
-            "Parle avec un faux accent étranger pendant 5 minutes",
-            "Agis comme un chat - mouvements et bruits",
-            "Agis comme un chien - mouvements et bruits",
-            "Prétends être un robot quand tu parles",
-            "Écris des lettres avec tes fesses",
-            "Dessine un autoportrait les yeux fermés",
-            "Écris ton nom avec tes orteils en tenant un stylo",
-            "Imite un bébé qui pleure pendant 30 secondes",
-            "Prétends nager",
-            "Marche comme une personne âgée",
-            "Saute comme une grenouille 10 fois",
-            "Prends une pose de superhéros",
-            "Prétends conduire une voiture",
-            "Imite le bruit d'un éternuement",
-            "Fais 10 pompes en style français (avec élégance)",
-            "Effectue l'arabesque (posture de ballet français)",
-            "Danse un tango ou une valse",
-            "Chante 'La Vie en Rose' ou une chanson de Jacques Brel",
-            "Récite un passage de Molière ou Victor Hugo",
-            "Raconte une blague française typique",
-            "Effectue une courte scène de Théâtre du Vieux Belleville",
-            "Dessine un portrait dans le style cubiste français",
-            "Fais 5 abdominaux tout en parlant français avec accent",
-            "Décris la Joconde sans mentionner son sourire",
-            "Chante 'La Marseillaise' avec passion",
-            "Imite un serveur français snobbiste de restaurant",
-            "Effectue un mime français à la Charlie Chaplin",
-            "Fais une pose de yoga comme dans un hatha yoga français",
-            "Applaudis à la française (lentement et avec élégance)",
-            "Marche comme un Parisien chic pendant 10 pas",
-            "Marche en équilibrant une baguette sur ta tête",
-            "Tourne sur place 10 fois en levant un verre invisible",
-            "Saute à la corde (prétends) 50 fois en disant 'Oh là là !'",
-            "Fais une grimace typiquement française (moue)",
-            "Fais deux bises à quelqu'un (à la française)",
-            "Offre un verre à quelqu'un (en prétendant)",
-            "Fais une surprise avec un toast à quelqu'un",
-            "Complimente sincèrement le style de quelqu'un",
-            "Lève un verre à tout le monde présent",
-            "Fais un massage des épaules à quelqu'un de manière relaxante",
-            "Fait une blague avec quelqu'un 10 fois",
-            "Partage une blague typiquement française avec quelqu'un",
-            "Danse un valse avec quelqu'un",
-            "Laisse quelqu'un te coiffer à la française"
-] },
-        spicy: { truth: [
-            "Quand as-tu menti pour la dernière fois ? À qui ?",
-            "As-tu secrètement aimé quelqu'un ici ?",
-            "Quel est ton moment le plus embarrassant ?",
-            "Qu'est-ce qui t'a fait pleurer le plus fort ?",
-            "Qui as-tu eu un crush ? Tu lui parles encore ?",
-            "Quelle est ta plus mémorable expérience romantique ?",
-            "À quoi ressemble ta date idéale ?",
-            "Qu'est-ce que tu as fait de plus fou pour l'amour ?",
-            "Quelle est la chose que tu aimes le moins chez toi ?",
-            "Quand as-tu senti le plus de culpabilité ?",
-            "Quelle habitude as-tu que les autres ne connaissent pas ?",
-            "Quel est ton plus grand regret ?",
-            "Quelle est la chose la plus impulsive que tu aies faite ?",
-            "Qu'aimerais-tu le plus dire à quelqu'un ?",
-            "Quel est quelque chose que tu ne veux pas que les autres sachent ?",
-            "Quelle est la chose la plus infantile que tu aies faite ?",
-            "Quel souvenir voudrais-tu oublier ?",
-            "Quelle est ta plus grande préoccupation pour l'avenir ?",
-            "Qu'as-tu fait secrètement que tu ne veux pas découvrir ?",
-            "Quelle est la chose la plus embarrassante que tu aies faite ?",
-            "Comment était ton premier baiser ? Était-ce romantique ou maladroit ?",
-            "As-tu déjà eu une situation sentimentale compliquée avec deux personnes ?",
-            "Envisagerais-tu une relation ouverte à la française ?",
-            "Quelle était la rupture la plus difficile de ta vie ?",
-            "As-tu déjà rompu une relation de manière blessante ?",
-            "Combien de relations sérieuses as-tu eu jusqu'à présent ?",
-            "Y a-t-il quelqu'un dans le groupe qui t'attire ?",
-            "Quel mensonge as-tu dit dans une relation pour éviter un conflit ?",
-            "As-tu déjà eu une amitié qui semblait être plus qu'une amitié ?",
-            "Choisirait-tu un partenaire riche mais ennuyeux ou pauvre mais passionné ?",
-            "As-tu déjà regardé le téléphone de ton partenaire sans permission ?",
-            "As-tu déjà maintenu une relation à distance ?",
-            "Qu'en est-il de fréquenter l'ex-partenaire d'un ami proche ?",
-            "Y a-t-il un ex avec lequel tu aimerais réessayer ?",
-            "Quel scénario romantique as-tu rêvé secrètement ?",
-            "T'es-tu déjà senti attiré par quelqu'un du même sexe ?",
-            "Quel acteur/actrice français admires-tu le plus ?",
-            "Accepterais-tu une relation où vous êtes libres de voir d'autres personnes ?",
-            "T'es-tu déjà senti attiré par un professeur ou quelqu'un d'une position supérieure ?",
-            "Quel est ton fantasme romantique secret ?",
-            "Qu'est-ce dont tu as été en colère contre un ami ?",
-            "Qu'est-ce dont tu as été en colère contre ta famille ?",
-            "Quel trait détestes-tu le plus chez quelqu'un ici ?",
-            "Qu'as-tu dit derrière le dos de quelqu'un ici ?",
-            "Qu'envies-tu chez quelqu'un ici ?",
-            "Qui ici penses-tu qui est le plus faux ?",
-            "Qui ici penses-tu qui est le plus narcissique ?",
-            "Qui voudrais-tu le plus gifler ?",
-            "Qui penses-tu qui mérite le moins sa vie actuelle ?",
-            "Quel type de personne méprises-tu le plus ?"
-], dare: [
-            "Écris ton nom avec tes fesses",
-            "Dessine un motif sur ton visage avec du rouge à lèvres",
-            "Fais semblant d'être saoul",
-            "Fais semblant d'être en colère",
-            "Lèche ton nez avec ta langue",
-            "Enlève tes chaussettes et laisse d'autres les sentir",
-            "Fais semblant d'avoir des contractions de travail",
-            "Porte des vêtements du sexe opposé et prends une photo",
-            "Laisse d'autres écrire sur ton corps",
-            "Laisse d'autres te nourrir les yeux fermés",
-            "Laisse d'autres te maquiller",
-            "Fais semblant de ton expérience la plus embarrassante",
-            "Imite la personne que tu détestes le plus",
-            "Prends un selfie exagéré",
-            "Fais semblant d'avoir peur de la plupart",
-            "Imite un bébé qui pleure",
-            "Assieds-toi sur un ballon jusqu'à ce qu'il éclate avec tes fesses",
-            "Fais semblant de la nervosité de ta première date",
-            "Imite comment tu as l'air quand tu es saoul",
-            "Fais semblant de ta réaction quand tu es effrayé",
-            "Envoie un message à ton ex 'Je me demande comment tu vas'",
-            "Chante 'La Vie en Rose' fort en public",
-            "Fais la bise à un étranger dans la rue",
-            "Publie une photo non-retouchée de toi sur les réseaux sociaux",
-            "Appelle un restaurant en prétendant être un critique gastronomique",
-            "Danse une valse seul(e) en public",
-            "Publie 'J'aime quelqu'un' sur les réseaux sociaux",
-            "Appelle quelqu'un en faisant semblant d'être inspecteur de la Sûreté",
-            "Déclame 'À bas les hypocrites !' en public (comme Victor Hugo)",
-            "Appelle quelqu'un en parlant avec un accent français exagéré",
-            "Dis à un étranger dans la rue ce que tu penses vraiment",
-            "Avoue publiquement ton moment le plus maladroit",
-            "Dis à haute voix quel acteur français tu trouves le plus attirant",
-            "Appelle quelqu'un que tu as offensé et excuse-toi sincèrement",
-            "Partage un secret modéré que tu gardais caché",
-            "Montre aux autres ta photo la plus embarrassante",
-            "Imite publiquement quelqu'un que tu juges sévèrement",
-            "Dis à haute voix une insécurité que tu as",
-            "Exprime ton opinion honnête sur le style de quelqu'un",
-            "Donne une apologie sincère pour un acte passé",
-            "Partage ton plus grand regret ou réalisation",
-            "Fais un baiser sur la joue à quelqu'un",
-            "Fais un massage des épaules à quelqu'un",
-            "Fais un câlin à quelqu'un pendant 30 secondes",
-            "Assieds-toi sur les genoux de quelqu'un",
-            "Laisse quelqu'un te coiffer",
-            "Tiens la main avec quelqu'un et tourne autour",
-            "Fais un long câlin à quelqu'un",
-            "Prends une photo joue contre joue avec quelqu'un",
-            "Laisse quelqu'un te dessiner sur le bras"
-] }
-    }
+const make50 = (base, generator) => {
+  const out = [...base];
+  let i = 0;
+  while (out.length < 50) {
+    out.push(generator(i, out.length));
+    i += 1;
+  }
+  return out.slice(0, 50);
 };
-const t = { choose: "👇 Choisissez votre mode couple 👇", chooseRound: "👇 Choisissez Vérité ou Action 👇", chooseRomantic: "👇 Mode romantique: Vérité ou Action 👇", chooseSpicy: "👇 Mode épicé: Vérité ou Action 👇", softBadge: "Mode doux", romanticBadge: "Mode romantique", spicyBadge: "Mode épicé", truthBadge: "Vérité", dareBadge: "Action" };
+
+const softTopics = ["rendez-vous", "week-end", "routine", "voyage", "soir", "matin", "playlist", "photo", "baiser", "balade"];
+const romanticTopics = ["anniversaire", "lettre d'amour", "avenir", "maison", "rituel", "promesse", "confiance", "intimite", "projet", "souvenir"];
+const spicyTopics = ["flirt", "contact", "rythme", "ambiance", "fantaisie", "regard", "attirance", "communication", "limite", "aftercare"];
+
+const softTruth = make50([
+  "Quelle etait ta premiere impression de moi ?",
+  "Quelle petite attention de ma part te fait te sentir aime(e) ?",
+  "Quel souvenir de nos rendez-vous prefères-tu ?",
+  "A quel moment te sens-tu le plus proche de moi ?",
+  "Qu'est-ce qu'on fait le mieux en couple ?",
+  "Quelle habitude chez moi te parait adorable ?",
+  "Quel petit voyage veux-tu faire avec moi cette annee ?",
+  "Quel point devons-nous ameliorer ensemble ?",
+  "Quelle est ta photo de couple preferee ?",
+  "Quel geste tendre de ma part te rassure le plus ?",
+  "Quel rituel quotidien devrions-nous garder ?",
+  "Quel compliment de moi te reste en tete ?",
+  "A quoi ressemble ton rendez-vous ideal petit budget ?",
+  "Quel delire interne veux-tu garder pour toujours ?",
+  "Dans quelle situation sommes-nous une super equipe ?",
+  "Que devrions-nous faire plus souvent le week-end ?",
+  "Quelle tenue de moi te plait le plus ?",
+  "Quelle activite calme a deux te detend le plus ?",
+  "Quelle partie de notre routine te rend heureux(se) ?",
+  "De quoi veux-tu me remercier cette semaine ?"
+], (i) => `Quelle idee autour de ${softTopics[i % softTopics.length]} correspond le mieux a notre couple en ce moment ?`);
+
+const softDare = make50([
+  "Fais un calin sincere de 20 secondes a ton/ta partenaire.",
+  "Donne 3 compliments precis.",
+  "Rejouez votre premier rendez-vous en 30 secondes.",
+  "Tenez-vous la main et regardez-vous 30 secondes.",
+  "Envoie un message doux a ton/ta partenaire maintenant.",
+  "Dansez ensemble sur une chanson complete.",
+  "Fais 1 minute de massage des epaules.",
+  "Prenez un selfie de couple maintenant.",
+  "Dis 5 choses pour lesquelles tu es reconnaissant(e).",
+  "Planifiez votre prochain rendez-vous en 1 minute.",
+  "Chuchote une chose que tu apprecies chez ton/ta partenaire.",
+  "Inventez un signe secret de couple.",
+  "Chantez ensemble un refrain romantique.",
+  "Faites 10 squats synchronises.",
+  "Donnez vos 5 rendez-vous preferes chacun votre tour.",
+  "Faites un calin silencieux de 45 secondes.",
+  "Faites un mini toast a votre relation.",
+  "Fixez un mini rendez-vous sans telephone cette semaine.",
+  "Terminez la phrase tous les deux : Je te choisis parce que...",
+  "Marchez main dans la main 20 secondes."
+], (i) => `Faites une mini-challenge de 20 secondes sur le theme ${softTopics[i % softTopics.length]}.`);
+
+const romanticTruth = make50([
+  "Quand as-tu compris que tu voulais du serieux avec moi ?",
+  "Quelle attention romantique de ma part ne te lasse jamais ?",
+  "Quel souvenir de nous ressemble a une scene de film ?",
+  "Quel rendez-vous de reve veux-tu vivre avec moi ?",
+  "Qu'est-ce que notre relation t'a appris sur l'amour ?",
+  "Comment je rends tes journees difficiles plus douces ?",
+  "Quelle promesse entre nous est la plus importante ?",
+  "Quel prochain cap veux-tu franchir avec moi ?",
+  "Quelle chanson devrait etre notre chanson officielle ?",
+  "Quel trait chez moi te fait te sentir en securite ?",
+  "Quelle tradition romantique veux-tu creer avec moi ?",
+  "Qu'est-ce qui te manque le plus quand on est loin ?",
+  "Quel mot decrit le mieux notre histoire d'amour ?",
+  "Que signifie l'intimite emotionnelle pour toi entre nous ?",
+  "Quel petit geste de moi illumine ta journee ?",
+  "Comment garder la romance forte sur le long terme ?",
+  "Quelle partie de notre histoire racontes-tu avec plaisir ?",
+  "Quand es-tu retombe(e) amoureux(se) de moi recemment ?",
+  "Que doit-on proteger absolument pendant nos date nights ?",
+  "Quelle image de notre futur te fait le plus rever ?"
+], (i) => `Quelle vision autour de ${romanticTopics[i % romanticTopics.length]} te semble la plus juste pour nous ?`);
+
+const romanticDare = make50([
+  "Ecris deux lignes romantiques et lis-les a voix haute.",
+  "Fais un bisou sur le front pendant 5 secondes.",
+  "Decris ton/ta partenaire comme dans une lettre d'amour.",
+  "Tenez-vous la main et donnez 5 raisons de votre choix mutuel.",
+  "30 secondes de regard sans parler.",
+  "Planifiez un mini rendez-vous pour ce soir.",
+  "Reproduisez votre pose de photo de couple preferee.",
+  "Donne 1 gratitude et 1 souhait pour votre relation.",
+  "Fais 1 minute de massage des mains.",
+  "Parle uniquement en compliments pendant un tour.",
+  "Fredonne une ligne d'une chanson romantique.",
+  "Dansez lentement 30 secondes sans musique.",
+  "Inventez une devise de couple privee.",
+  "Dis 3 fois : Je t'apprecie parce que...",
+  "Partage un plan romantique pour ce mois-ci.",
+  "Prenez une photo intitulee Notre prochain chapitre.",
+  "Dites chacun un merci du coeur en une phrase.",
+  "Partage un souvenir qui te donne encore des papillons.",
+  "Promets une attention tendre pour demain.",
+  "Finissez le tour avec un bisou consenti."
+], (i) => `Faites une action romantique de 20 secondes sur ${romanticTopics[i % romanticTopics.length]}.`);
+
+const spicyTruth = make50([
+  "Quelle fantaisie ne m'as-tu pas encore confiee ?",
+  "Comment aimes-tu que je te drague ?",
+  "Qu'est-ce que je fais qui t'allume instantanement ?",
+  "Quelle nouveaute intime veux-tu essayer avec moi ?",
+  "Quelle tenue de moi te parait la plus attirante ?",
+  "Qu'aimerais-tu vivre plus souvent dans notre intimite ?",
+  "Quel toucher de ma part te detend et t'excite a la fois ?",
+  "Quel type de baiser preferes-tu ?",
+  "Qu'aimerais-tu que j'initie plus souvent ?",
+  "Quelle ambiance marche le mieux pour toi ?",
+  "Quelle limite intime est essentielle pour toi ?",
+  "Quel aftercare te fait le plus de bien ?",
+  "Quels mots de moi te paraissent les plus seduisants ?",
+  "Qu'est-ce qu'on doit toujours clarifier avant un moment spicy ?",
+  "Quelle idee audacieuse mais safe veux-tu tester ?",
+  "Quel compliment de moi te fait te sentir desire(e) ?",
+  "Quelle montee en douceur prefères-tu ?",
+  "Quelle question intime voulais-tu me poser depuis longtemps ?",
+  "Qu'est-ce qui te securise le plus quand on ose davantage ?",
+  "Quel element de notre chimie veux-tu absolument garder ?"
+], (i) => `Comment gerer ${spicyTopics[i % spicyTopics.length]} pour que ce soit excitant et confortable pour nous deux ?`);
+
+const spicyDare = make50([
+  "Chuchote une phrase de flirt confiante pendant 10 secondes.",
+  "Fais un baiser lent de 10 secondes (avec consentement).",
+  "Dis a voix basse ce que tu aimes sur le corps de ton/ta partenaire.",
+  "Faites 20 secondes de regard intense.",
+  "Envoie un message flirty pour plus tard ce soir.",
+  "Fais 1 minute de massage de la nuque.",
+  "Dis une limite et un desir dans la meme phrase.",
+  "Decris votre setup de soiree ideale en 20 secondes.",
+  "Faites 15 secondes de danse lente tres proche.",
+  "Donne une idee sexy pour votre prochain rendez-vous prive.",
+  "Faites un check-in securite avec un mot de code.",
+  "Pose une question spicy oui/non et reponds honnetement.",
+  "Donne un bisou front, joue et main dans cet ordre.",
+  "Bougez sensuellement 20 secondes sur une musique.",
+  "Termine la phrase : Ce soir, j'ai envie de...",
+  "Donne un compliment romantique et un compliment passionne.",
+  "Fais un geste viens ici avec un sourire.",
+  "Donne 3 mots pour decrire votre alchimie.",
+  "Faites une version PG13 de lap dance de 10 secondes (consentie).",
+  "Finissez avec un mini challenge spicy et safe."
+], (i) => `Faites une action consentie de 20 secondes sur ${spicyTopics[i % spicyTopics.length]}.`);
+
+const gameData = {
+  currentType: null,
+  currentDifficulty: null,
+  questions: {
+    soft: { truth: softTruth, dare: softDare },
+    romantic: { truth: romanticTruth, dare: romanticDare },
+    spicy: { truth: spicyTruth, dare: spicyDare }
+  }
+};
+
+const t = {
+  choose: "👇 Choisissez votre mode couple 👇",
+  chooseRound: "👇 Choisissez Verite ou Action 👇",
+  chooseRomantic: "👇 Mode romantique : Verite ou Action 👇",
+  chooseSpicy: "👇 Mode epice : Verite ou Action 👇",
+  softBadge: "Mode doux",
+  romanticBadge: "Mode romantique",
+  spicyBadge: "Mode epice",
+  truthBadge: "Verite",
+  dareBadge: "Action"
+};
+
 const questionText = document.getElementById('questionText');
 const nextButton = document.getElementById('nextButton');
 const resetButton = document.getElementById('resetButton');
@@ -322,14 +180,64 @@ const selectedType = document.getElementById('selectedType');
 const selectedDifficulty = document.getElementById('selectedDifficulty');
 const difficultyButtons = document.getElementById('difficultyButtons');
 const choiceButtons = document.getElementById('choiceButtons');
+
 function selectDifficulty(difficulty) {
   gameData.currentDifficulty = difficulty;
-  if (difficulty === 'soft') { selectedDifficulty.innerHTML = '<span class="badge bg-success">' + t.softBadge + '</span>'; questionText.textContent = t.chooseRound; }
-  else if (difficulty === 'romantic') { selectedDifficulty.innerHTML = '<span class="badge bg-primary">' + t.romanticBadge + '</span>'; questionText.textContent = t.chooseRomantic; }
-  else { selectedDifficulty.innerHTML = '<span class="badge bg-warning">' + t.spicyBadge + '</span>'; questionText.textContent = t.chooseSpicy; }
-  selectedDifficulty.style.display='block'; difficultyButtons.style.display='none'; choiceButtons.style.display='flex'; backButton.style.display='inline-block';
+  if (difficulty === 'soft') {
+    selectedDifficulty.innerHTML = '<span class="badge bg-success">' + t.softBadge + '</span>';
+    questionText.textContent = t.chooseRound;
+  } else if (difficulty === 'romantic') {
+    selectedDifficulty.innerHTML = '<span class="badge bg-primary">' + t.romanticBadge + '</span>';
+    questionText.textContent = t.chooseRomantic;
+  } else {
+    selectedDifficulty.innerHTML = '<span class="badge bg-warning">' + t.spicyBadge + '</span>';
+    questionText.textContent = t.chooseSpicy;
+  }
+  selectedDifficulty.style.display = 'block';
+  difficultyButtons.style.display = 'none';
+  choiceButtons.style.display = 'flex';
+  backButton.style.display = 'inline-block';
 }
-function selectChoice(type) { gameData.currentType=type; const questions=gameData.questions[gameData.currentDifficulty][type]; questionText.textContent=questions[Math.floor(Math.random()*questions.length)]; selectedType.innerHTML = type==='truth' ? '<span class="badge bg-info">'+t.truthBadge+'</span>' : '<span class="badge bg-danger">'+t.dareBadge+'</span>'; selectedType.style.display='block'; nextButton.style.display='inline-block'; resetButton.style.display='inline-block'; choiceButtons.style.display='none'; }
-function nextQuestion() { if(!gameData.currentType||!gameData.currentDifficulty)return; const questions=gameData.questions[gameData.currentDifficulty][gameData.currentType]; questionText.textContent=questions[Math.floor(Math.random()*questions.length)]; }
-function backToDifficulty() { gameData.currentType=null; questionText.textContent=t.choose; selectedType.style.display='none'; nextButton.style.display='none'; resetButton.style.display='none'; backButton.style.display='none'; choiceButtons.style.display='none'; difficultyButtons.style.display='flex'; }
-function resetGame() { gameData.currentType=null; gameData.currentDifficulty=null; questionText.textContent=t.choose; selectedType.style.display='none'; selectedDifficulty.style.display='none'; nextButton.style.display='none'; resetButton.style.display='none'; backButton.style.display='none'; choiceButtons.style.display='none'; difficultyButtons.style.display='flex'; }
+
+function selectChoice(type) {
+  gameData.currentType = type;
+  const questions = gameData.questions[gameData.currentDifficulty][type];
+  questionText.textContent = questions[Math.floor(Math.random() * questions.length)];
+  selectedType.innerHTML = type === 'truth'
+    ? '<span class="badge bg-info">' + t.truthBadge + '</span>'
+    : '<span class="badge bg-danger">' + t.dareBadge + '</span>';
+  selectedType.style.display = 'block';
+  nextButton.style.display = 'inline-block';
+  resetButton.style.display = 'inline-block';
+  choiceButtons.style.display = 'none';
+}
+
+function nextQuestion() {
+  if (!gameData.currentType || !gameData.currentDifficulty) return;
+  const questions = gameData.questions[gameData.currentDifficulty][gameData.currentType];
+  questionText.textContent = questions[Math.floor(Math.random() * questions.length)];
+}
+
+function backToDifficulty() {
+  gameData.currentType = null;
+  questionText.textContent = t.choose;
+  selectedType.style.display = 'none';
+  nextButton.style.display = 'none';
+  resetButton.style.display = 'none';
+  backButton.style.display = 'none';
+  choiceButtons.style.display = 'none';
+  difficultyButtons.style.display = 'flex';
+}
+
+function resetGame() {
+  gameData.currentType = null;
+  gameData.currentDifficulty = null;
+  questionText.textContent = t.choose;
+  selectedType.style.display = 'none';
+  selectedDifficulty.style.display = 'none';
+  nextButton.style.display = 'none';
+  resetButton.style.display = 'none';
+  backButton.style.display = 'none';
+  choiceButtons.style.display = 'none';
+  difficultyButtons.style.display = 'flex';
+}

@@ -1,319 +1,177 @@
-const gameData = {
-    currentType: null,
-    currentDifficulty: null,
-    questions: {
-        soft: { truth: [
-            "In welches Tier würdest du dich verwandeln wollen?",
-            "Was war deine seltsamste Kindheitsfantasie?",
-            "Welches ist dein Lieblings-Emoji?",
-            "Was würdest du tun, wenn du einen Tag lang unsichtbar wärst?",
-            "Welcher ist dein Lieblings-Filmzitat?",
-            "Was war das Langweiligste, was du je gemacht hast?",
-            "Was ist deine schönste Kindheitserinnerung?",
-            "Worauf bist du am meisten stolz?",
-            "Wovor hast du am meisten Angst?",
-            "Wer ist deine Lieblings-Cartoon-Figur?",
-            "Welche Fähigkeit würdest du gerne lernen?",
-            "Welche ist deine Lieblingsjahreszeit?",
-            "Welche Tageszeit magst du am liebsten?",
-            "Welches Haustier hättest du gerne?",
-            "Welches ist dein Lieblingswetter?",
-            "Welchen Freizeitpark würdest du gerne besuchen?",
-            "Was ist dein Lieblings-Snack?",
-            "Welchen Beruf würdest du gerne mal ausprobieren?",
-            "Welcher ist dein Lieblingsduft?",
-            "In welcher Art von Haus würdest du gerne wohnen?",
-            "Welche Superkraft hättest du gerne?",
-            "Wenn du durch die Zeit reisen könntest, was würdest du ändern?",
-            "Welcher Prominente wärst du gerne für einen Tag?",
-            "Wer ist deine Lieblingsfigur aus Filmen oder Serien?",
-            "Welches neue Essen würdest du erfinden?",
-            "Welches ist dein Lieblingsfeiertag und warum?",
-            "In welcher Film- oder Serienwelt würdest du gerne leben?",
-            "Wohin würdest du am liebsten reisen?",
-            "Wenn du eine Sache auf der Welt ändern könntest, was wäre das?",
-            "Welches war dein Lieblingsspiel als Kind?",
-            "Welchen neuen Feiertag würdest du erfinden?",
-            "Mit welcher historischen Person würdest du gerne sprechen?",
-            "Welchen Zaubergegenstand hättest du gerne?",
-            "Der Hauptcharakter welches Buches wärst du gerne?",
-            "Wie würde dein Traumhaus aussehen?",
-            "Welchen Film würdest du gerne drehen?",
-            "Was für ein Geschäft würdest du gerne eröffnen?",
-            "Welches Spiel würdest du gerne entwickeln?",
-            "Was sollte dein Roboter-Assistent können?",
-            "Welche neue Sportart würdest du erfinden?",
-            "Was isst du am liebsten?",
-            "Was trinkst du am liebsten?",
-            "Welche ist deine Lieblingsfarbe?",
-            "Welche Musik hörst du am liebsten?",
-            "Welchen Sport machst du gerne?",
-            "Welches ist dein Lieblingsbuch?",
-            "Welcher ist dein Lieblingsfilm?",
-            "Welche ist deine Lieblingsserie?",
-            "Welches ist dein Lieblingsspiel?",
-            "Welche App benutzt du am häufigsten?"
-], dare: [
-            "Gehe wie ein Pinguin",
-            "Sprich mit einer komischen Stimme bis zur nächsten Runde",
-            "Imitiere einen Prominenten bis zur nächsten Runde",
-            "Trage deine Socken als Handschuhe für 5 Minuten",
-            "Versuche deine eigene Nase (oder deinen Ellbogen) zu lecken",
-            "Sage 10 Mal vor dem Spiegel 'Ich bin so schön/hübsch'",
-            "Sprich 5 Minuten lang mit einem falschen Akzent",
-            "Imitiere eine Katze mit Bewegungen und Geräuschen",
-            "Imitiere einen Hund mit Bewegungen und Geräuschen",
-            "Tue so, als wärst du ein Roboter",
-            "Singe dein Lieblingslied wie ein Opernstar",
-            "Tanze ohne Musik für 30 Sekunden",
-            "Erzähle einen Witz, auch wenn er schlecht ist",
-            "Mache 10 Hampelmänner",
-            "Spreche 2 Minuten lang nur in Reimen",
-            "Imitiere deinen Lieblingsschauspieler",
-            "Mache ein Selfie mit einer lustigen Grimasse",
-            "Gehe rückwärts bis zur nächsten Runde",
-            "Singe das Alphabet rückwärts",
-            "Stelle ein berühmtes Gemälde nach",
-            "Erfinde einen neuen Tanz und führe ihn vor",
-            "Erzähle eine Geschichte nur mit Handbewegungen",
-            "Führe ein Schauspiel ohne Worte auf",
-            "Zeichne ein Porträt von jemandem aus der Gruppe",
-            "Komponiere ein kurzes Lied über das heutige Wetter",
-            "Führe eine Modenschau mit deiner aktuellen Kleidung auf",
-            "Bastle etwas aus den Gegenständen in der Nähe",
-            "Denke dir eine neue Begrüßung aus und bringe sie allen bei",
-            "Erfinde eine Kurzgeschichte mit allen Anwesenden als Charaktere",
-            "Mache Tiergeräusche und lasse andere raten",
-            "Erzähle jedem Anwesenden etwas Nettes",
-            "Frage jemanden nach seinem Lieblingswitz",
-            "Gib jemandem ein ehrliches Kompliment",
-            "Teile eine peinliche Geschichte von dir",
-            "Erzähle von deinem stolzesten Moment",
-            "Sage jedem, was du an ihm magst",
-            "Entschuldige dich bei jemandem für etwas Kleines",
-            "Erzähle von einem Moment, in dem du mutig warst",
-            "Teile deinen besten Ratschlag",
-            "Erzähle von deinem Lieblingsfamilienmitglied",
-            "Halte eine einminütige Dankesrede",
-            "Führe eine Pressekonferenz über dein letztes Abenteuer",
-            "Erzähle das Märchen von Rotkäppchen als Nachrichtensprecher",
-            "Führe ein Bewerbungsgespräch für den Job als 'Professioneller Partygast'",
-            "Halte eine Verkaufspräsentation für einen alltäglichen Gegenstand",
-            "Erzähle den anderen, wie man Zähne putzt, als wäre es Raketenwissenschaft",
-            "Erkläre, wie man Wasser trinkt, als wärst du ein Wissenschaftler",
-            "Führe vor, wie man auf verschiedene Arten geht (traurig, glücklich, etc.)",
-            "Stelle verschiedene Emotionen nur mit deinem Gesicht dar",
-            "Beschreibe dein heutiges Frühstück wie ein Restaurantkritiker"
-] },
-        romantic: { truth: [
-            "In welches Tier würdest du dich verwandeln wollen?",
-            "Was war deine seltsamste Kindheitsfantasie?",
-            "Welches ist dein Lieblings-Emoji?",
-            "Was würdest du tun, wenn du einen Tag lang unsichtbar wärst?",
-            "Welcher ist dein Lieblings-Filmzitat?",
-            "Was war das Langweiligste, was du je gemacht hast?",
-            "Was ist deine schönste Kindheitserinnerung?",
-            "Worauf bist du am meisten stolz?",
-            "Wovor hast du am meisten Angst?",
-            "Wer ist deine Lieblings-Cartoon-Figur?",
-            "Welche Fähigkeit würdest du gerne lernen?",
-            "Welche ist deine Lieblingsjahreszeit?",
-            "Welche Tageszeit magst du am liebsten?",
-            "Welches Haustier hättest du gerne?",
-            "Welches ist dein Lieblingswetter?",
-            "Welchen Freizeitpark würdest du gerne besuchen?",
-            "Was ist dein Lieblings-Snack?",
-            "Welchen Beruf würdest du gerne mal ausprobieren?",
-            "Welcher ist dein Lieblingsduft?",
-            "In welcher Art von Haus würdest du gerne wohnen?",
-            "Welche Superkraft hättest du gerne?",
-            "Wenn du durch die Zeit reisen könntest, was würdest du ändern?",
-            "Welcher Prominente wärst du gerne für einen Tag?",
-            "Wer ist deine Lieblingsfigur aus Filmen oder Serien?",
-            "Welches neue Essen würdest du erfinden?",
-            "Welches ist dein Lieblingsfeiertag und warum?",
-            "In welcher Film- oder Serienwelt würdest du gerne leben?",
-            "Wohin würdest du am liebsten reisen?",
-            "Wenn du eine Sache auf der Welt ändern könntest, was wäre das?",
-            "Welches war dein Lieblingsspiel als Kind?",
-            "Welchen neuen Feiertag würdest du erfinden?",
-            "Mit welcher historischen Person würdest du gerne sprechen?",
-            "Welchen Zaubergegenstand hättest du gerne?",
-            "Der Hauptcharakter welches Buches wärst du gerne?",
-            "Wie würde dein Traumhaus aussehen?",
-            "Welchen Film würdest du gerne drehen?",
-            "Was für ein Geschäft würdest du gerne eröffnen?",
-            "Welches Spiel würdest du gerne entwickeln?",
-            "Was sollte dein Roboter-Assistent können?",
-            "Welche neue Sportart würdest du erfinden?",
-            "Was isst du am liebsten?",
-            "Was trinkst du am liebsten?",
-            "Welche ist deine Lieblingsfarbe?",
-            "Welche Musik hörst du am liebsten?",
-            "Welchen Sport machst du gerne?",
-            "Welches ist dein Lieblingsbuch?",
-            "Welcher ist dein Lieblingsfilm?",
-            "Welche ist deine Lieblingsserie?",
-            "Welches ist dein Lieblingsspiel?",
-            "Welche App benutzt du am häufigsten?"
-], dare: [
-            "Gehe wie ein Pinguin",
-            "Sprich mit einer komischen Stimme bis zur nächsten Runde",
-            "Imitiere einen Prominenten bis zur nächsten Runde",
-            "Trage deine Socken als Handschuhe für 5 Minuten",
-            "Versuche deine eigene Nase (oder deinen Ellbogen) zu lecken",
-            "Sage 10 Mal vor dem Spiegel 'Ich bin so schön/hübsch'",
-            "Sprich 5 Minuten lang mit einem falschen Akzent",
-            "Imitiere eine Katze mit Bewegungen und Geräuschen",
-            "Imitiere einen Hund mit Bewegungen und Geräuschen",
-            "Tue so, als wärst du ein Roboter",
-            "Singe dein Lieblingslied wie ein Opernstar",
-            "Tanze ohne Musik für 30 Sekunden",
-            "Erzähle einen Witz, auch wenn er schlecht ist",
-            "Mache 10 Hampelmänner",
-            "Spreche 2 Minuten lang nur in Reimen",
-            "Imitiere deinen Lieblingsschauspieler",
-            "Mache ein Selfie mit einer lustigen Grimasse",
-            "Gehe rückwärts bis zur nächsten Runde",
-            "Singe das Alphabet rückwärts",
-            "Stelle ein berühmtes Gemälde nach",
-            "Erfinde einen neuen Tanz und führe ihn vor",
-            "Erzähle eine Geschichte nur mit Handbewegungen",
-            "Führe ein Schauspiel ohne Worte auf",
-            "Zeichne ein Porträt von jemandem aus der Gruppe",
-            "Komponiere ein kurzes Lied über das heutige Wetter",
-            "Führe eine Modenschau mit deiner aktuellen Kleidung auf",
-            "Bastle etwas aus den Gegenständen in der Nähe",
-            "Denke dir eine neue Begrüßung aus und bringe sie allen bei",
-            "Erfinde eine Kurzgeschichte mit allen Anwesenden als Charaktere",
-            "Mache Tiergeräusche und lasse andere raten",
-            "Erzähle jedem Anwesenden etwas Nettes",
-            "Frage jemanden nach seinem Lieblingswitz",
-            "Gib jemandem ein ehrliches Kompliment",
-            "Teile eine peinliche Geschichte von dir",
-            "Erzähle von deinem stolzesten Moment",
-            "Sage jedem, was du an ihm magst",
-            "Entschuldige dich bei jemandem für etwas Kleines",
-            "Erzähle von einem Moment, in dem du mutig warst",
-            "Teile deinen besten Ratschlag",
-            "Erzähle von deinem Lieblingsfamilienmitglied",
-            "Halte eine einminütige Dankesrede",
-            "Führe eine Pressekonferenz über dein letztes Abenteuer",
-            "Erzähle das Märchen von Rotkäppchen als Nachrichtensprecher",
-            "Führe ein Bewerbungsgespräch für den Job als 'Professioneller Partygast'",
-            "Halte eine Verkaufspräsentation für einen alltäglichen Gegenstand",
-            "Erzähle den anderen, wie man Zähne putzt, als wäre es Raketenwissenschaft",
-            "Erkläre, wie man Wasser trinkt, als wärst du ein Wissenschaftler",
-            "Führe vor, wie man auf verschiedene Arten geht (traurig, glücklich, etc.)",
-            "Stelle verschiedene Emotionen nur mit deinem Gesicht dar",
-            "Beschreibe dein heutiges Frühstück wie ein Restaurantkritiker"
-] },
-        spicy: { truth: [
-            "Was ist das Peinlichste, was dir je passiert ist?",
-            "Welchen Fehler bereust du am meisten?",
-            "Was ist dein größtes Geheimnis?",
-            "Über wen warst du schonmal eifersüchtig?",
-            "Was war dein größter Vertrauensbruch?",
-            "Welche Lüge erzählst du am häufigsten?",
-            "Was ist deine größte Unsicherheit?",
-            "Welche deiner Eigenschaften würdest du gerne ändern?",
-            "Was ist dein größter Traum, den du nie jemandem erzählt hast?",
-            "Wann hast du das letzte Mal geweint und warum?",
-            "Welche Beziehung bereust du am meisten?",
-            "Was ist das Schlechteste, was ein Freund über dich gesagt hat?",
-            "Wen aus der Gruppe findest du am attraktivsten?",
-            "Welchen ersten Eindruck hattest du von jedem hier?",
-            "Mit wem aus der Gruppe würdest du gerne mehr Zeit verbringen?",
-            "Über wen hier denkst du manchmal nach, wenn die Person nicht da ist?",
-            "Welcher Charakter von jemandem hier irritiert dich am meisten?",
-            "Wem hier würdest du am ehesten ein Geheimnis anvertrauen?",
-            "Wen hier würdest du bei einem Zombie-Apokalypse als ersten opfern?",
-            "Von wem hier würdest du dir am liebsten Rat holen?",
-            "Was denkst du wirklich über dich selbst?",
-            "Welche Phase deines Lebens war die schwierigste?",
-            "Was ist das Mutigste, was du je getan hast?",
-            "Welchen Aspekt der Gesellschaft findest du am problematischsten?",
-            "Was ist deine kontroverseste Meinung?",
-            "Welche Eigenschaft bewunderst du an anderen, die du nicht hast?",
-            "Was ist das Selbstloseste, was du je getan hast?",
-            "Welche deiner Entscheidungen hat dich am meisten geprägt?",
-            "Was ist das Unethischste, was du je getan hast?",
-            "Welche Erfahrung hat deine Weltanschauung am meisten verändert?",
-            "Würdest du lügen, um jemandes Gefühle zu schonen?",
-            "Würdest du einen kleinen Betrug begehen, wenn niemand es merken würde?",
-            "Wie wichtig ist dir der gesellschaftliche Status?",
-            "Was würdest du für eine Million Euro tun?",
-            "Würdest du einen Tag lang das Leben von jemandem aus der Gruppe tauschen wollen?",
-            "Welche gesellschaftliche Norm findest du überholt?",
-            "Was denkst du über die Rolle sozialer Medien in unserem Leben?",
-            "Glaubst du, dass Menschen grundsätzlich gut oder schlecht sind?",
-            "Wie wichtig ist dir die Meinung anderer über dich?",
-            "Würdest du deine Überzeugungen für Geld ändern?",
-            "Was bereust du, nicht getan zu haben?",
-            "Welchen Rat würdest du deinem jüngeren Ich geben?",
-            "Was möchtest du erreicht haben, bevor du stirbst?",
-            "Welche Angst hält dich am meisten zurück?",
-            "Was ist dein größter innerer Konflikt?",
-            "Wie stellst du dir dein Leben in 20 Jahren vor?",
-            "Was würdest du anders machen, wenn du nochmal von vorn anfangen könntest?",
-            "Welche Eigenschaften suchst du in einem Lebenspartner?",
-            "Was ist dein dunkelster Gedanke?",
-            "Welche Version von dir magst du am wenigsten?"
-], dare: [
-            "Entschuldige dich bei jemandem, dem du wehgetan hast",
-            "Erzähle von einem Moment, in dem du jemanden enttäuscht hast",
-            "Gestehe eine Lüge, die du jemandem hier erzählt hast",
-            "Erzähle von einem Moment, in dem du dich geschämt hast",
-            "Teile eine Angst mit, die du noch nie jemandem erzählt hast",
-            "Erzähle von einer Zeit, in der du jemanden falsch eingeschätzt hast",
-            "Gib zu, wann du das letzte Mal neidisch warst",
-            "Erzähle von einem Moment, in dem du mutig hättest sein sollen, es aber nicht warst",
-            "Teile eine Erinnerung, die dich immer noch beschäftigt",
-            "Erzähle von einem Mal, als du jemand anderen verletzt hast",
-            "Sage jedem hier, was du wirklich über ihn denkst (ehrlich aber respektvoll)",
-            "Erzähle deine ehrliche erste Meinung über jeden hier",
-            "Gib jemandem ein Kompliment, das du noch nie ausgesprochen hast",
-            "Entschuldige dich bei jemandem für etwas aus der Vergangenheit",
-            "Erzähle jemandem hier etwas, was du schon lange sagen wolltest",
-            "Frage jemanden nach Vergebung für etwas Bestimmtes",
-            "Teile mit jemandem ein Geheimnis",
-            "Erzähle jemandem, wie wichtig er dir ist",
-            "Sage jemandem, wofür du ihm dankbar bist",
-            "Gestehe jemandem gegenüber eine Schwäche",
-            "Erzähle von deinem größten persönlichen Versagen",
-            "Teile eine kontroverse Meinung und erkläre, warum du so denkst",
-            "Erzähle von einem Moment, der dein Leben verändert hat",
-            "Beschreibe deine größte Angst vor der Zukunft",
-            "Erzähle von einem Mal, als du deine Prinzipien kompromittiert hast",
-            "Teile etwas mit, wofür du dich schämst",
-            "Erzähle von einer schweren Entscheidung, die du treffen musstest",
-            "Beschreibe einen Moment, in dem du dich völlig verloren gefühlt hast",
-            "Erzähle von einer Zeit, in der du dich selbst enttäuscht hast",
-            "Teile deine größte Unsicherheit mit",
-            "Gestehe etwas, was du getan hast und was du für falsch hältst",
-            "Erzähle von einem Mal, als du gelogen hast, um dir selbst zu helfen",
-            "Teile eine Situation, in der du weggeschaut hast, obwohl du hättest handeln sollen",
-            "Erzähle von einem Vorurteil, das du hattest und überwunden hast",
-            "Beschreibe eine Situation, in der du unfair zu jemandem warst",
-            "Erzähle von einem Mal, als du jemanden im Stich gelassen hast",
-            "Teile eine Entscheidung, die du getroffen hast und die anderen geschadet hat",
-            "Erzähle von einem Moment, in dem du schwach warst",
-            "Beschreibe eine Situation, in der du heuchlerisch warst",
-            "Erzähle von einem Mal, als du egoistisch gehandelt hast",
-            "Führe ein 5-minütiges ernsthaftes Gespräch mit jemandem über eure Freundschaft",
-            "Erzähle jemandem, wie er dich beeinflusst hat",
-            "Teile mit der Gruppe deine tiefste Sorge über die Zukunft",
-            "Sprich über ein Thema, das dir wichtig ist, aber über das du normalerweise schweigst",
-            "Erzähle, welche Lektion das Leben dich am schwersten gelehrt hat",
-            "Beschreibe, was Glück für dich bedeutet",
-            "Erkläre, was du an der Welt ändern würdest und warum",
-            "Teile deine Gedanken über den Sinn des Lebens",
-            "Erzähle, was du von deinen Eltern gelernt hast (Gutes und Schlechtes)",
-            "Beschreibe, wie du dir eine perfekte Welt vorstellst"
-] }
-    }
+const make50 = (base, generator) => {
+  const out = [...base];
+  let i = 0;
+  while (out.length < 50) {
+    out.push(generator(i, out.length));
+    i += 1;
+  }
+  return out.slice(0, 50);
 };
-const t = { choose: "👇 Wähle euren Paar-Modus 👇", chooseRound: "👇 Wähle Wahrheit oder Pflicht 👇", chooseRomantic: "👇 Romantischer Modus: Wahrheit oder Pflicht 👇", chooseSpicy: "👇 Pikanter Modus: Wahrheit oder Pflicht 👇", softBadge: "Sanfter Modus", romanticBadge: "Romantischer Modus", spicyBadge: "Pikanter Modus", truthBadge: "Wahrheit", dareBadge: "Pflicht" };
+
+const softTopics = ["Date", "Wochenende", "Alltag", "Urlaub", "Abend", "Morgenroutine", "Playlist", "Foto", "Kuss", "Spaziergang"];
+const romanticTopics = ["Jahrestag", "Liebesbrief", "Traumurlaub", "Zukunft", "Zuhause", "Ritual", "Versprechen", "Sicherheitsgefuhl", "Bindung", "Nahe"];
+const spicyTopics = ["Flirt", "Beruhrung", "Tempo", "Stimmung", "Fantasie", "Blickkontakt", "Anziehung", "Kommunikation", "Grenze", "Aftercare"];
+
+const softTruth = make50([
+  "Was war dein erster Eindruck von mir?",
+  "Welche kleine Sache von mir gibt dir sofort das Gefuhl, geliebt zu sein?",
+  "Welche gemeinsame Erinnerung macht dich immer wieder glucklich?",
+  "Wann fuhlst du dich mir am nachsten?",
+  "Was machen wir als Paar besonders gut?",
+  "Welche Gewohnheit von mir findest du besonders cute?",
+  "Welche kurze Reise willst du dieses Jahr mit mir machen?",
+  "Was sollen wir als Paar bewusst verbessern?",
+  "Welche unserer Fotos magst du am meisten?",
+  "Welche Art von Umarmung von mir tut dir am besten?",
+  "Welches gemeinsame Ritual sollten wir beibehalten?",
+  "Welche meiner Aussagen hat dir lange gutgetan?",
+  "Was ist dein liebstes Low-Budget-Date mit mir?",
+  "Welche unserer Insider-Witze willst du nie verlieren?",
+  "Wann sind wir fur dich das beste Team?",
+  "Was sollen wir an Wochenenden ofter machen?",
+  "Welche Outfit-Kombination von mir magst du am meisten?",
+  "Welche gemeinsame Aktivitat entspannt dich sofort?",
+  "Was ist dein Lieblingsmoment in unserem Alltag?",
+  "Wofur willst du mir diese Woche Danke sagen?"
+], (i) => `Welche Idee rund um ${softTopics[i % softTopics.length]} passt gerade am besten zu uns als Paar?`);
+
+const softDare = make50([
+  "Gib deinem Partner/deiner Partnerin eine ehrliche 20-Sekunden-Umarmung.",
+  "Sag 3 konkrete Komplimente.",
+  "Spielt euer erstes Date in 30 Sekunden nach.",
+  "Haltet 30 Sekunden Handchen und Blickkontakt.",
+  "Schick deinem Partner/deiner Partnerin jetzt eine kurze liebe Nachricht.",
+  "Tanzt zusammen einen ganzen Song.",
+  "Mach eine Minute Schultermassage.",
+  "Macht ein neues Paar-Selfie.",
+  "Nenne 5 Dinge, fur die du heute dankbar bist.",
+  "Plant in 1 Minute euer nachstes Date.",
+  "Flustere etwas, das du gerade besonders schatzt.",
+  "Erfindet ein geheimes Paar-Handzeichen.",
+  "Singt zusammen eine Refrainzeile.",
+  "Macht 10 synchrone Kniebeugen.",
+  "Nennt abwechselnd eure 5 Lieblingsdates.",
+  "Kuschelt 45 Sekunden ohne zu sprechen.",
+  "Macht einen kleinen Toast auf eure Beziehung.",
+  "Macht heute ein No-Phone-Minidate aus.",
+  "Sagt beide den Satz: Ich wahle dich, weil ...",
+  "Geht 20 Sekunden Hand in Hand durch den Raum."
+], (i) => `Macht jetzt gemeinsam eine 20-Sekunden-Challenge zum Thema ${softTopics[i % softTopics.length]}.`);
+
+const romanticTruth = make50([
+  "Wann hast du gemerkt, dass du mit mir etwas Ernstes willst?",
+  "Welche romantische Geste von mir vergisst du nie?",
+  "Welche Erinnerung von uns fuhlt sich wie Filmszene an?",
+  "Welche Traum-Verabredung willst du unbedingt mit mir erleben?",
+  "Was hat unsere Beziehung dich uber Liebe gelehrt?",
+  "Wie mache ich schwere Tage fur dich leichter?",
+  "Welches Versprechen zwischen uns ist dir am wichtigsten?",
+  "Welchen Meilenstein willst du als Nachstes mit mir feiern?",
+  "Welcher Song sollte unser offizieller Paar-Song sein?",
+  "Welche Eigenschaft von mir gibt dir emotionale Sicherheit?",
+  "Welche gemeinsame Tradition willst du starten?",
+  "Was vermisst du an mir am meisten, wenn wir getrennt sind?",
+  "Welches Wort beschreibt unsere Liebesgeschichte am besten?",
+  "Was bedeutet emotionale Intimitat fur dich in unserer Beziehung?",
+  "Welche kleine Geste macht deinen Tag sofort heller?",
+  "Was sollten wir tun, damit unsere Romantik langfristig stark bleibt?",
+  "Welche Szene unserer Geschichte erzahlst du besonders gern?",
+  "Wann hast du dich zuletzt neu in mich verliebt?",
+  "Was soll in Date-Nights fur uns heilig bleiben?",
+  "Welche Zukunftsszene von uns siehst du oft vor dir?"
+], (i) => `Welche Vorstellung zu ${romanticTopics[i % romanticTopics.length]} fuhlt sich fur unsere Beziehung am stimmigsten an?`);
+
+const romanticDare = make50([
+  "Schreib zwei romantische Zeilen und lies sie laut vor.",
+  "Gib einen langsamen Stirnkuss fur 5 Sekunden.",
+  "Beschreibe deinen Partner/deine Partnerin wie in einem Liebesbrief.",
+  "Haltet Handchen und nennt 5 Grunde, warum ihr euch wahltt.",
+  "30 Sekunden nur Blickkontakt, keine Worte.",
+  "Plant jetzt ein Mini-Date fur heute Abend.",
+  "Macht eure Lieblingspose von einem Paarfoto nach.",
+  "Sag 1 Dankbarkeit und 1 Wunsch fur eure Beziehung.",
+  "Gib eine Minute Handmassage.",
+  "Sprich eine Runde lang nur in Komplimenten.",
+  "Summ eine romantische Liedzeile.",
+  "Tanze 30 Sekunden langsam ohne Musik.",
+  "Erfindet ein privates Paar-Motto.",
+  "Nenne 3 Mal: Ich schatze dich, weil ...",
+  "Nenne einen romantischen Plan fur diesen Monat.",
+  "Macht ein Foto mit dem Titel Unser nachstes Kapitel.",
+  "Sagt beide ein herzliches Danke in einem Satz.",
+  "Teilt eine Erinnerung, die noch Schmetterlinge auslost.",
+  "Versprecht je eine liebevolle Tat fur morgen.",
+  "Beendet die Runde mit einem einvernehmlichen Kuss."
+], (i) => `Macht eine gemeinsame 20-Sekunden-Romantikaufgabe zum Thema ${romanticTopics[i % romanticTopics.length]}.`);
+
+const spicyTruth = make50([
+  "Welche Fantasie hast du mir noch nicht erzahlt?",
+  "Wie flirte ich am effektivsten mit dir?",
+  "Was von mir macht dich sofort an?",
+  "Welche neue intime Aktivitat willst du mit mir ausprobieren?",
+  "Welches Outfit von mir findest du besonders attraktiv?",
+  "Was willst du in unserer Intimitat ofter erleben?",
+  "Welche Beruhrung von mir macht dich ruhig und aufgeregt zugleich?",
+  "Welche Art von Kuss magst du am meisten?",
+  "Was soll ich ofter initiieren?",
+  "Welche Stimmung funktioniert fur dich am besten?",
+  "Welche Grenze ist dir in intimen Momenten besonders wichtig?",
+  "Welche Art Nachsorge tut dir am meisten gut?",
+  "Welche Worte von mir fuhlen sich fur dich am verfuhrerischsten an?",
+  "Was sollten wir vor spicy Momenten immer kurz klaren?",
+  "Welche sichere Idee fur ein mutigeres Date hast du?",
+  "Welche meiner Komplimente lassen dich am meisten strahlen?",
+  "Welche langsame Annaherung magst du besonders?",
+  "Welche intime Frage wolltest du mir lange stellen?",
+  "Was gibt dir bei mutigen Momenten am meisten Sicherheit?",
+  "Was willst du bei unserer Chemie auf jeden Fall beibehalten?"
+], (i) => `Wie sollen wir bei ${spicyTopics[i % spicyTopics.length]} vorgehen, damit es fur uns beide aufregend und sicher bleibt?`);
+
+const spicyDare = make50([
+  "Flustere 10 Sekunden lang einen selbstbewussten Flirt-Satz.",
+  "Gib einen langsamen Kuss fur 10 Sekunden (einvernehmlich).",
+  "Sag leise, was du am Korper deines Partners/deiner Partnerin besonders magst.",
+  "Macht 20 Sekunden intensiven Blickkontakt.",
+  "Schick eine flirty Nachricht fur spater heute.",
+  "Gib eine Minute Nackenmassage.",
+  "Sag eine Grenze und einen Wunsch in einem Satz.",
+  "Beschreibe euer ideales Date-Night-Setup in 20 Sekunden.",
+  "Macht einen langsamen 15-Sekunden-Tanz in enger Haltung.",
+  "Nenne einen kussen Plan fur euer nachstes privates Date.",
+  "Macht einen Safety-Check-in mit einem Codewort.",
+  "Frag eine spicy Ja/Nein-Frage und antworte ehrlich.",
+  "Gib Stirn-, Wangen- und Handkuss nacheinander.",
+  "Macht 20 Sekunden sinnliches Schaukeln zu einem Song.",
+  "Sag den Satz: Heute Abend mochte ich mit dir ...",
+  "Gib ein romantisches und ein leidenschaftliches Kompliment.",
+  "Macht eine verspielte Come-here-Geste mit Lacheln.",
+  "Nenne drei Worte fur eure Chemie.",
+  "Macht einvernehmlich eine 10-Sekunden-PG13-Lapdance-Version.",
+  "Beendet die Runde mit einer sicheren, spicy Mini-Challenge."
+], (i) => `Macht jetzt eine einvernehmliche 20-Sekunden-Aufgabe zum Thema ${spicyTopics[i % spicyTopics.length]}.`);
+
+const gameData = {
+  currentType: null,
+  currentDifficulty: null,
+  questions: {
+    soft: { truth: softTruth, dare: softDare },
+    romantic: { truth: romanticTruth, dare: romanticDare },
+    spicy: { truth: spicyTruth, dare: spicyDare }
+  }
+};
+
+const t = {
+  choose: "👇 Wahlt euren Paarmodus 👇",
+  chooseRound: "👇 Wahlt Wahrheit oder Pflicht 👇",
+  chooseRomantic: "👇 Romantischer Modus: Wahrheit oder Pflicht 👇",
+  chooseSpicy: "👇 Spicy Modus: Wahrheit oder Pflicht 👇",
+  softBadge: "Sanfter Modus",
+  romanticBadge: "Romantischer Modus",
+  spicyBadge: "Spicy Modus",
+  truthBadge: "Wahrheit",
+  dareBadge: "Pflicht"
+};
+
 const questionText = document.getElementById('questionText');
 const nextButton = document.getElementById('nextButton');
 const resetButton = document.getElementById('resetButton');
@@ -322,14 +180,64 @@ const selectedType = document.getElementById('selectedType');
 const selectedDifficulty = document.getElementById('selectedDifficulty');
 const difficultyButtons = document.getElementById('difficultyButtons');
 const choiceButtons = document.getElementById('choiceButtons');
+
 function selectDifficulty(difficulty) {
   gameData.currentDifficulty = difficulty;
-  if (difficulty === 'soft') { selectedDifficulty.innerHTML = '<span class="badge bg-success">' + t.softBadge + '</span>'; questionText.textContent = t.chooseRound; }
-  else if (difficulty === 'romantic') { selectedDifficulty.innerHTML = '<span class="badge bg-primary">' + t.romanticBadge + '</span>'; questionText.textContent = t.chooseRomantic; }
-  else { selectedDifficulty.innerHTML = '<span class="badge bg-warning">' + t.spicyBadge + '</span>'; questionText.textContent = t.chooseSpicy; }
-  selectedDifficulty.style.display='block'; difficultyButtons.style.display='none'; choiceButtons.style.display='flex'; backButton.style.display='inline-block';
+  if (difficulty === 'soft') {
+    selectedDifficulty.innerHTML = '<span class="badge bg-success">' + t.softBadge + '</span>';
+    questionText.textContent = t.chooseRound;
+  } else if (difficulty === 'romantic') {
+    selectedDifficulty.innerHTML = '<span class="badge bg-primary">' + t.romanticBadge + '</span>';
+    questionText.textContent = t.chooseRomantic;
+  } else {
+    selectedDifficulty.innerHTML = '<span class="badge bg-warning">' + t.spicyBadge + '</span>';
+    questionText.textContent = t.chooseSpicy;
+  }
+  selectedDifficulty.style.display = 'block';
+  difficultyButtons.style.display = 'none';
+  choiceButtons.style.display = 'flex';
+  backButton.style.display = 'inline-block';
 }
-function selectChoice(type) { gameData.currentType=type; const questions=gameData.questions[gameData.currentDifficulty][type]; questionText.textContent=questions[Math.floor(Math.random()*questions.length)]; selectedType.innerHTML = type==='truth' ? '<span class="badge bg-info">'+t.truthBadge+'</span>' : '<span class="badge bg-danger">'+t.dareBadge+'</span>'; selectedType.style.display='block'; nextButton.style.display='inline-block'; resetButton.style.display='inline-block'; choiceButtons.style.display='none'; }
-function nextQuestion() { if(!gameData.currentType||!gameData.currentDifficulty)return; const questions=gameData.questions[gameData.currentDifficulty][gameData.currentType]; questionText.textContent=questions[Math.floor(Math.random()*questions.length)]; }
-function backToDifficulty() { gameData.currentType=null; questionText.textContent=t.choose; selectedType.style.display='none'; nextButton.style.display='none'; resetButton.style.display='none'; backButton.style.display='none'; choiceButtons.style.display='none'; difficultyButtons.style.display='flex'; }
-function resetGame() { gameData.currentType=null; gameData.currentDifficulty=null; questionText.textContent=t.choose; selectedType.style.display='none'; selectedDifficulty.style.display='none'; nextButton.style.display='none'; resetButton.style.display='none'; backButton.style.display='none'; choiceButtons.style.display='none'; difficultyButtons.style.display='flex'; }
+
+function selectChoice(type) {
+  gameData.currentType = type;
+  const questions = gameData.questions[gameData.currentDifficulty][type];
+  questionText.textContent = questions[Math.floor(Math.random() * questions.length)];
+  selectedType.innerHTML = type === 'truth'
+    ? '<span class="badge bg-info">' + t.truthBadge + '</span>'
+    : '<span class="badge bg-danger">' + t.dareBadge + '</span>';
+  selectedType.style.display = 'block';
+  nextButton.style.display = 'inline-block';
+  resetButton.style.display = 'inline-block';
+  choiceButtons.style.display = 'none';
+}
+
+function nextQuestion() {
+  if (!gameData.currentType || !gameData.currentDifficulty) return;
+  const questions = gameData.questions[gameData.currentDifficulty][gameData.currentType];
+  questionText.textContent = questions[Math.floor(Math.random() * questions.length)];
+}
+
+function backToDifficulty() {
+  gameData.currentType = null;
+  questionText.textContent = t.choose;
+  selectedType.style.display = 'none';
+  nextButton.style.display = 'none';
+  resetButton.style.display = 'none';
+  backButton.style.display = 'none';
+  choiceButtons.style.display = 'none';
+  difficultyButtons.style.display = 'flex';
+}
+
+function resetGame() {
+  gameData.currentType = null;
+  gameData.currentDifficulty = null;
+  questionText.textContent = t.choose;
+  selectedType.style.display = 'none';
+  selectedDifficulty.style.display = 'none';
+  nextButton.style.display = 'none';
+  resetButton.style.display = 'none';
+  backButton.style.display = 'none';
+  choiceButtons.style.display = 'none';
+  difficultyButtons.style.display = 'flex';
+}
