@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Компонент навигации по играм (версия на русском)
  * Обеспечивает улучшенную навигацию между играми с плавающим меню и быстрым доступом
  */
@@ -8,6 +8,7 @@ class GameNavigation {
         this.games = [
             { name: 'Магический шар 8', url: '/ru/games/magic8ball/magic8ball', category: 'solo' },
             { name: 'Правда или вызов', url: '/ru/games/TruthorDare/TruthOrDare', category: 'party' },
+            { name: 'Pravda ili Deistvie dlya Par', url: '/ru/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples', category: 'adult' },
             { name: 'Никогда я не...', url: '/ru/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: 'Кто скорее всего...', url: '/ru/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: 'Что бы ты выбрал?', url: '/ru/games/WouldYouRather/WouldYouRather', category: 'party' },

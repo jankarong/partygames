@@ -8,6 +8,7 @@ class GameNavigation {
         this.games = [
             { name: 'Bola Ajaib 8', url: '/id/games/magic8ball/magic8ball', category: 'solo' },
             { name: 'Kebenaran atau Tantangan', url: '/id/games/TruthorDare/TruthOrDare', category: 'party' },
+            { name: 'Truth or Dare untuk Pasangan', url: '/id/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples', category: 'adult' },
             { name: 'Saya Tidak Pernah', url: '/id/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: 'Siapa yang Paling Mungkin', url: '/id/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: 'Lebih Suka Mana', url: '/id/games/WouldYouRather/WouldYouRather', category: 'party' },

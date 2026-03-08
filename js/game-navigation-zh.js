@@ -8,6 +8,7 @@ class GameNavigation {
         this.games = [
             { name: '魔法8球', url: '/zh/games/magic8ball/magic8ball', category: 'solo' },
             { name: '真心话大冒险', url: '/zh/games/TruthorDare/TruthOrDare', category: 'party' },
+            { name: '情侣真心话大冒险', url: '/zh/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples', category: 'adult' },
             { name: '从不曾我从不', url: '/zh/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: '谁最有可能', url: '/zh/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: '你会选择谁', url: '/zh/games/WouldYouRather/WouldYouRather', category: 'party' },

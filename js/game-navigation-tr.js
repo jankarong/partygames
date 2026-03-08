@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Компонент навигации по играм (версия на русском)
  * Обеспечивает улучшенную навигацию между играми с плавающим меню и быстрым доступом
  */
@@ -8,6 +8,7 @@ class GameNavigation {
         this.games = [
             { name: 'Sihirli 8 Topu', url: '/tr/games/magic8ball/magic8ball', category: 'solo' },
             { name: 'Dogruluk mu Cesaret mi', url: '/tr/games/TruthorDare/TruthOrDare', category: 'party' },
+            { name: 'Ciftler icin Dogruluk Cesaret', url: '/tr/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples', category: 'adult' },
             { name: 'Hic Yapmadim', url: '/tr/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: 'En Muhtemel Kim', url: '/tr/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: 'Hangisini Secersin', url: '/tr/games/WouldYouRather/WouldYouRather', category: 'party' },

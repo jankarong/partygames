@@ -8,6 +8,7 @@ class GameNavigation {
         this.games = [
             { name: 'Boule 8 Magique', url: '/fr/games/magic8ball/magic8ball', category: 'solo' },
             { name: 'Vérité ou Défi', url: '/fr/games/TruthorDare/TruthOrDare', category: 'party' },
+            { name: 'Action ou Vérité pour Couples', url: '/fr/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples', category: 'adult' },
             { name: 'Je n\'ai Jamais', url: '/fr/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
             { name: 'Qui est le Plus Probable', url: '/fr/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
             { name: 'Tu Préfères Ou', url: '/fr/games/WouldYouRather/WouldYouRather', category: 'party' },
