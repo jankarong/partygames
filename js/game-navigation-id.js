@@ -17,7 +17,7 @@ class GameNavigation {
             { name: 'Mafia', url: '/id/games/mafia/mafia', category: 'strategy' },
             { name: 'Undercover', url: '/id/games/undercover/undercover', category: 'strategy' },
             { name: 'Charades', url: '/id/games/charades/charades', category: 'party' },
-            { name: 'Hedbanz', url: '/id/games/hedbanzgame/hedbanzgame', category: 'party' },
+            { name: 'Headbands', url: '/id/games/hedbanzgame/hedbanzgame', category: 'party' },
             { name: 'Dadu Seks', url: '/id/games/sexdice/sexdice', category: 'adult' },
             { name: 'Tebak Angka', url: '/id/games/beernumber/beernumber', category: 'drinking' },
             { name: 'Gelas Raja', url: '/id/games/KingsCup/KingsCup', category: 'drinking' }
@@ -404,6 +404,5 @@ window.GameNavigationAPI = {
     showRecommendations: () => window.gameNavigation?.showRecommendations(),
     onGameEnd: () => window.gameNavigation?.onGameEnd()
 };
-
 
 

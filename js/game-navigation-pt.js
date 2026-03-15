@@ -17,7 +17,7 @@ class GameNavigation {
             { name: 'Máfia', url: '/pt/games/mafia/mafia', category: 'strategy' },
             { name: 'Infiltrado', url: '/pt/games/undercover/undercover', category: 'strategy' },
             { name: 'Mímica', url: '/pt/games/charades/charades', category: 'party' },
-            { name: 'Hedbanz', url: '/pt/games/hedbanzgame/hedbanzgame', category: 'party' },
+            { name: 'Headbands', url: '/pt/games/hedbanzgame/hedbanzgame', category: 'party' },
             { name: 'Dados de Sexo Online', url: '/pt/games/sexdice/sexdice', category: 'adult' },
             { name: 'Adivinha o Número', url: '/pt/games/beernumber/beernumber', category: 'drinking' },
             { name: 'Cálice do Rei', url: '/pt/games/KingsCup/KingsCup', category: 'drinking' }
@@ -404,6 +404,5 @@ window.GameNavigationAPI = {
     showRecommendations: () => window.gameNavigation?.showRecommendations(),
     onGameEnd: () => window.gameNavigation?.onGameEnd()
 };
-
 
 
