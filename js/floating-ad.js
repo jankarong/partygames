@@ -26,6 +26,10 @@ class FloatingAdManager {
      * 初始化广告管理器
      */
     async init() {
+        // Bottom popup ads are disabled site-wide.
+        this.cleanupExistingAds();
+        return;
+
         // 检查用户是否在本次会话中关闭了广告
         if (this.options.rememberClosure && this.isAdClosed()) {
             return;
@@ -42,6 +46,17 @@ class FloatingAdManager {
         } else {
             // 延迟显示
             setTimeout(() => this.show(), this.options.showDelay);
+        }
+    }
+
+    cleanupExistingAds() {
+        const existing = document.getElementById('floating-ad-container');
+        if (existing) {
+            existing.remove();
+        }
+        document.body.classList.remove('has-floating-ad');
+        if (this.options.bodyClass) {
+            document.body.classList.remove(this.options.bodyClass);
         }
     }
 
@@ -122,6 +137,7 @@ class FloatingAdManager {
      * 显示广告
      */
     show() {
+        return;
         if (this.isShown) return;
 
         const adElement = this.createAdElement();

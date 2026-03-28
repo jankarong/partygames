@@ -59,10 +59,6 @@
     let injected = false;
 
     function injectAdSenseScript() {
-        // ⚠️ GOOGLE ADS TEMPORARILY DISABLED
-        // To re-enable: Remove the return statement below
-        // This is a temporary disable - just delete the line: return;
-        return; // Google ads temporarily disabled
         if (injected) return;
         if (document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) { injected = true; return; }
         const s = document.createElement('script');
@@ -110,4 +106,3 @@
         });
     }
 })();
-
