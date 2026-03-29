@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ボトル並べパズル | 日本語ロジックゲーム</title>
+    <meta name="description" content="色の並びを推理して当てる日本語版ロジックパズル。5ステージ構成で少ない手数でのクリアを目指します。">
+    <meta name="keywords" content="ボトルパズル, ロジックゲーム, 色合わせ, 推理ゲーム, 日本語ゲーム">
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/BottleMatchGame/BottleMatchGame">
+    <meta property="og:title" content="ボトル並べパズル | 日本語ロジックゲーム">
+    <meta property="og:description" content="色の並びを推理して当てる5ステージ制の日本語ロジックパズル。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://partygames.com/games/BottleMatchGame/BottleMatchGame">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzQyOTllMSIvPgo8cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIGZpbGw9IiMyZDM3NDgiLz4KPHN2Zz4K">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "ボトル並べパズル",
+      "description": "5ステージで色の並びを推理して当てる日本語ロジックゲーム",
+      "inLanguage": "ja",
+      "gameType": "Logic Puzzle",
+      "numberOfPlayers": "1",
+      "url": "https://www.bestpartygames.net/ja/games/BottleMatchGame/BottleMatchGame"
+    }
+    </script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+<div class="game-container">
+        <img src="bottlematch.png" alt="ボトル並べパズルのロゴ" class="game-logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+        <h1>ボトル並べパズル</h1>
+
+        <div class="level-info">
+            <div class="level-title">ステージ <span id="current-level">1</span> / 5</div>
+            <div class="level-details">
+                長さ: <span id="sequence-length">3</span> |
+                色数: <span id="color-count">4</span> |
+                挑戦回数: <span id="attempts">0</span>
+            </div>
+        </div>
+
+        <div class="secret-display" id="secret-display" style="display: none;">
+            正解の並び: <span id="secret-sequence"></span>
+        </div>
+
+        <div class="game-area" id="game-area">
+            <h3>予想の並びを作ってください:</h3>
+            <div class="bottles-container" id="current-guess"></div>
+
+            <div class="controls">
+                <button class="submit-btn" id="submit-guess" onclick="submitGuess()">予想を送信</button>
+                <button onclick="clearGuess()">クリア</button>
+                <button onclick="showSecret()">答えを見る</button>
+            </div>
+
+            <div class="guess-section">
+                <h4>これまでの予想:</h4>
+                <div id="guess-history"></div>
+            </div>
+        </div>
+
+        <div class="completion-screen" id="completion-screen">
+            <h2>🎉 全ステージクリア！</h2>
+            <div class="final-stats">
+                <h3>結果</h3>
+                <p>合計タイム: <span id="total-time">0</span> 秒</p>
+                <p>総挑戦回数: <span id="total-attempts">0</span></p>
+                <p>1ステージ平均: <span id="avg-attempts">0</span></p>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">もう一度遊ぶ</button>
+        </div>
+    </div>
+
+    <section class="game-info">
+        <h2>遊び方</h2>
+        <p>ボトル並べパズルは、正しい色の順番を推理して当てるロジックゲームです。ステージが進むほど長さや色数が増えて少しずつ難しくなります。</p>
+
+        <h3>基本ルール</h3>
+        <ul>
+            <li><strong>目的:</strong> 正しい色の並びを見つけること</li>
+            <li><strong>5ステージ:</strong> 進むほど並びが長くなります</li>
+            <li><strong>フィードバック:</strong> 色と位置の一致状況が返ってきます</li>
+            <li><strong>重複なし:</strong> 同じ色は1回だけ使われます</li>
+        </ul>
+
+        <h3>進め方</h3>
+        <ol>
+            <li><strong>色を選ぶ:</strong> 各マスに色を入れます</li>
+            <li><strong>送信する:</strong> すべて埋まったら送信します</li>
+            <li><strong>結果を見る:</strong> 色と位置のヒントが出ます</li>
+            <li><strong>次に活かす:</strong> ヒントを使って絞り込みます</li>
+            <li><strong>クリア:</strong> 全部合えば次のステージへ進みます</li>
+        </ol>
+
+        <h3>特徴</h3>
+        <ul>
+            <li>✅ ダウンロード不要</li>
+            <li>✅ 5ステージ構成</li>
+            <li>✅ クリック操作で進められる</li>
+            <li>✅ 予想ごとに結果が返る</li>
+            <li>✅ 回数とタイムを記録</li>
+            <li>✅ スマホでも遊びやすい</li>
+        </ul>
+
+        <h3>コツ</h3>
+        <p><strong>最初は広く試す:</strong> まずは色を広めに使って情報を集めましょう。</p>
+        <p><strong>消去法を使う:</strong> 合わなかった色や位置を整理すると楽になります。</p>
+        <p><strong>ヒント重視:</strong> 位置も色も合っている情報を軸に組み直すのが近道です。</p>
+    </section>
+
+    <!-- Sound Effects -->
+    <audio id="place-sound" src="place_item_sound.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="hooray_sound.mp3" preload="auto"></audio>
+    <audio id="fail-sound" src="fail_sound.mp3" preload="auto"></audio>
+
+    <script src="script-ja.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-ja.js"></script>
+</body>
+</html>

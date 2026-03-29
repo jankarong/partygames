@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="キングスカップ（Kings Cup）オンライン！トランプを使った定番の飲み会ゲーム。ルールやカードごとのアクションを日本語で解説。パーティーや合コンに。">
+    <meta name="keywords"
+        content="キングスカップ, Kings Cup, 飲み会ゲーム, パーティーゲーム, トランプゲーム, 飲みゲーム">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="キングスカップ - 定番のオンラインパーティーゲーム">
+    <meta property="og:description"
+        content="キングスカップをオンラインで遊ぼう！トランプを使った楽しい飲み会ゲーム。ルール解説付き。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/KingsCup/KingsCup">
+    <title>キングスカップ - 定番のオンラインパーティーゲーム</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="KingsCup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./kingscuplogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "キングスカップ",
+        "description": "トランプを使った定番のパーティー用飲み会ゲーム。オンラインでどこでも遊べます。",
+        "url": "https://www.bestpartygames.net/ja/games/KingsCup/KingsCup",
+        "image": "https://www.bestpartygames.net/games/KingsCup/kingscuplogo.png",
+        "genre": "飲み会ゲーム",
+        "numberOfPlayers": "3+",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "inLanguage": "ja",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Party Games"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Best Party Games",
+            "url": "https://www.bestpartygames.net"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "200"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+<div class="container">
+        <div class="game-container">
+            <div class="logo-container text-center mb-4">
+                <img src="kingscuplogo.png" alt="キングスカップのロゴ" title="キングスカップ"
+                    class="game-logo">
+            </div>
+            <h1 class="text-center mb-4">キングスカップ</h1>
+
+            <div class="game-section text-center">
+                <!-- Game Status -->
+                <div id="gameStatus" class="game-status mb-3">
+                    <div class="cards-left">残りカード: <span id="cardsLeft">52</span></div>
+                    <div class="kings-drawn">引かれたキング: <span id="kingsDrawn">0</span>/4</div>
+                </div>
+
+                <!-- Single Card Display -->
+                <div class="single-card-area mb-4">
+                    <div class="playing-card" id="playingCard" onclick="drawCard()">
+                        <div class="card-front" id="cardFront">
+                            <div class="card-header">
+                                <div class="card-value" id="cardValue">?</div>
+                                <div class="card-suit" id="cardSuit">🃏</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="rule-name" id="ruleName">カードを引く</div>
+                                <div class="rule-text" id="ruleText">クリックして最初のカードを引いてください！</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-value-small" id="cardValueSmall">?</div>
+                                <div class="card-suit-small" id="cardSuitSmall">🃏</div>
+                            </div>
+                        </div>
+                        <div class="card-back" id="cardBack" style="display: none;">
+                            <div class="deck-pattern">
+                                <span class="deck-icon">👑</span>
+                                <span class="deck-text">キングスカップ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Controls -->
+                <div class="controls mb-4">
+                    <button class="btn btn-success" onclick="nextCard()" id="nextButton" style="display: none;">
+                        次へ
+                    </button>
+                    <button class="btn btn-warning" onclick="resetGame()" id="resetButton" style="display: none;">
+                        新しいゲーム
+                    </button>
+                </div>
+
+                <!-- Kings Cup Display -->
+                <div class="kings-cup" id="kingsCup">
+                    <div class="cup-container">
+                        <div class="cup-icon">🏆</div>
+                        <div class="cup-text">キングスカップ</div>
+                        <div class="cup-contents" id="cupContents">空</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Rules Section -->
+            <div class="rules-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">👑 カードごとのアクション一覧</h3>
+                        <div class="rules-grid">
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">A<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card">A<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">ウォーターフォール</div>
+                                    <div class="rule-desc">全員飲み始めます。前の人が止まらない限り飲み続けます。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">A<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small">A<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">2<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">2<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">あなた</div>
+                                    <div class="rule-desc">誰か一人を指名して飲ませます。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">2<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">2<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <!-- More rules here... but the JS will handle the rest of the UI if we want to keep it simple -->
+                             <!-- Actually the rules grid in the original HTML is hardcoded. I should translate it all. -->
+                             <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">3<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">3<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">自分</div>
+                                    <div class="rule-desc">引いた本人が飲みます。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">3<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">3<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">4<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">4<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">床</div>
+                                    <div class="rule-desc">全員すぐ床にタッチ！ 最後の人が飲みます。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">4<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">4<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">5<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">5<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">男子</div>
+                                    <div class="rule-desc">男子全員が飲みます。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">5<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">5<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">6<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card">6<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">女子</div>
+                                    <div class="rule-desc">女子全員が飲みます。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">6<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small">6<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">7<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">7<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">空</div>
+                                    <div class="rule-desc">全員すぐ上を指差す！ 最後の人が飲みます。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">7<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">7<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">8<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">8<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">相棒</div>
+                                    <div class="rule-desc">相棒を一人選ぶ。あなたが飲む時、相棒も飲みます。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">8<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">8<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">9<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">9<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">韻踏み/しりとり</div>
+                                    <div class="rule-desc">お題に沿って解答。詰まった人が飲みます。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">9<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">9<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">カテゴリー</div>
+                                    <div class="rule-desc">決めたカテゴリーに合うものを答えます。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                    <div class="rule-card-small rule-card-ten">10<span style="color: var(--black);">♠</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">J<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card">J<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">新ルール</div>
+                                    <div class="rule-desc">全員が従う新しいルールを作ります。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">J<span style="color: var(--primary-red);">♦</span></div>
+                                    <div class="rule-card-small">J<span style="color: var(--primary-red);">♦</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">Q<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card">Q<span style="color: var(--black);">♣</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">質問攻め</div>
+                                    <div class="rule-desc">質問だけで会話します。普通に答えたら負け。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">Q<span style="color: var(--black);">♣</span></div>
+                                    <div class="rule-card-small">Q<span style="color: var(--black);">♣</span></div>
+                                </div>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-card-header">
+                                    <div class="rule-card">K<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card">K<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                                <div class="rule-content">
+                                    <div class="rule-name">キングスカップ</div>
+                                    <div class="rule-desc">中央に酒を注ぐ。4枚目のKを引いた人が飲み干します。</div>
+                                </div>
+                                <div class="rule-card-footer">
+                                    <div class="rule-card-small">K<span style="color: var(--primary-red);">♥</span></div>
+                                    <div class="rule-card-small">K<span style="color: var(--primary-red);">♥</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Play Section -->
+            <div class="game-intro mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">🎮 キングスカップの遊び方</h3>
+                        <p>キングスカップは、場を盛り上げるトランプを使った定番の飲み会ゲームです！1枚1枚のカードに特別な「アクション」が決まっていて、引いた人がそれに従います。最後のキングを引いた人が「キングスカップ」を飲み干す恐怖のゲーム！</p>
+
+                        <h4 class="mt-4">✨ 準備するもの</h4>
+                        <ul>
+                            <li>🃏 トランプ1デッキ（52枚）</li>
+                            <li>👥 3人以上の参加者</li>
+                            <li>🏆 中央に置く「キングスカップ」</li>
+                            <li>🥤 各自の飲み物</li>
+                        </ul>
+
+                        <h4 class="mt-4">🎯 進め方</h4>
+                        <ol>
+                            <li>👤 順番に「カードを引く」をクリックします。</li>
+                            <li>🃏 カードに書かれた日本語のアクションに従います。</li>
+                            <li>👑 キング（K）を引いたら、中央のカップに飲み物を少し注ぎます。</li>
+                            <li>🍻 4枚目のキングを引いた人は、中央のカップの中身をすべて飲み干します！</li>
+                            <li>🎉 4枚目のキングが引かれたらゲーム終了です。</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-3">❓ よくある質問</h3>
+                        <div class="faq-item">
+                            <h5>🍻 キングスカップって何？</h5>
+                            <p>飲み会やパーティーで大人気の、運とハプニングを楽しむトランプゲームです。</p>
+                        </div>
+                        <div class="faq-item mt-3">
+                            <h5>👥 何人で遊ぶのがいい？</h5>
+                            <p>3〜8人くらいがおすすめですが、大人数でも盛り上がります。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-ja.js"></script>
+    <script src="KingsCup-ja.js"></script>
+</body>
+
+</html>

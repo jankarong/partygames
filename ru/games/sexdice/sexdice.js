@@ -239,9 +239,9 @@ function renderAllOptions() {
 
 function loadSettings() {
     try {
-        const savedActions = localStorage.getItem('diceActions');
-        const savedWheres = localStorage.getItem('diceWheres');
-        const savedTimes = localStorage.getItem('diceTimes');
+        const savedActions = localStorage.getItem('diceActions_ru');
+        const savedWheres = localStorage.getItem('diceWheres_ru');
+        const savedTimes = localStorage.getItem('diceTimes_ru');
 
         actions = savedActions ? JSON.parse(savedActions) : defaultActions;
         wheres = savedWheres ? JSON.parse(savedWheres) : defaultWheres;
@@ -257,9 +257,9 @@ function loadSettings() {
 
 function saveSettings() {
     try {
-        localStorage.setItem('diceActions', JSON.stringify(actions));
-        localStorage.setItem('diceWheres', JSON.stringify(wheres));
-        localStorage.setItem('diceTimes', JSON.stringify(times));
+        localStorage.setItem('diceActions_ru', JSON.stringify(actions));
+        localStorage.setItem('diceWheres_ru', JSON.stringify(wheres));
+        localStorage.setItem('diceTimes_ru', JSON.stringify(times));
     } catch (error) {
         console.error('Error saving settings:', error);
     }

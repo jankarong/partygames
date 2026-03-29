@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Componente de Navegação de Jogos (Versão Portuguesa)
  * Fornece navegação aprimorada entre jogos com menu flutuante e barra de acesso rápido
  */
@@ -6,21 +6,20 @@
 class GameNavigation {
     constructor() {
         this.games = [
-            { name: 'Bola Mágica', url: '/pt/games/magic8ball/magic8ball', category: 'solo' },
-            { name: 'Verdade ou Desafio', url: '/pt/games/TruthorDare/TruthOrDare', category: 'party' },
-            { name: 'Verdade ou Desafio para Casais', url: '/pt/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples', category: 'adult' },
-            { name: 'Nunca Fiz Isso', url: '/pt/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
-            { name: 'Quem Tem Mais Chance', url: '/pt/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
-            { name: 'Prefiro Ou Prefiro', url: '/pt/games/WouldYouRather/WouldYouRather', category: 'party' },
-            
-            { name: 'Perguntas de Paranoia Picantes', url: '/pt/games/paranoiaquestionsdirty/paranoiaquestionsdirty', category: 'adult' },
-            { name: 'Máfia', url: '/pt/games/mafia/mafia', category: 'strategy' },
-            { name: 'Infiltrado', url: '/pt/games/undercover/undercover', category: 'strategy' },
-            { name: 'Mímica', url: '/pt/games/charades/charades', category: 'party' },
-            { name: 'Headbands', url: '/pt/games/hedbanzgame/hedbanzgame', category: 'party' },
-            { name: 'Dados de Sexo Online', url: '/pt/games/sexdice/sexdice', category: 'adult' },
-            { name: 'Adivinha o Número', url: '/pt/games/beernumber/beernumber', category: 'drinking' },
-            { name: 'Cálice do Rei', url: '/pt/games/KingsCup/KingsCup', category: 'drinking' }
+            { name: 'Bola Mágica', url: '/pt/games/magic8ball/magic8ball.html', category: 'solo' },
+            { name: 'Verdade ou Desafio', url: '/pt/games/TruthorDare/TruthOrDare.html', category: 'party' },
+            { name: 'Verdade ou Desafio para Casais', url: '/pt/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.html', category: 'adult' },
+            { name: 'Nunca Fiz Isso', url: '/pt/games/NeverHaveIEver/NeverHaveIEver.html', category: 'party' },
+            { name: 'Quem Tem Mais Chance', url: '/pt/games/WhoIsMostLikely/WhoIsMostLikely.html', category: 'party' },
+            { name: 'Prefiro Ou Prefiro', url: '/pt/games/WouldYouRather/WouldYouRather.html', category: 'party' },
+            { name: 'Perguntas de Paranoia Picantes', url: '/pt/games/paranoiaquestionsdirty/paranoiaquestionsdirty.html', category: 'adult' },
+            { name: 'Máfia', url: '/pt/games/mafia/mafia.html', category: 'strategy' },
+            { name: 'Infiltrado', url: '/pt/games/undercover/undercover.html', category: 'strategy' },
+            { name: 'Mímica', url: '/pt/games/charades/charades.html', category: 'party' },
+            { name: 'Headbands', url: '/pt/games/hedbanzgame/hedbanzgame.html', category: 'party' },
+            { name: 'Dados de Sexo Online', url: '/pt/games/sexdice/sexdice.html', category: 'adult' },
+            { name: 'Adivinha o Número', url: '/pt/games/beernumber/beernumber.html', category: 'drinking' },
+            { name: 'Cálice do Rei', url: '/pt/games/KingsCup/KingsCup.html', category: 'drinking' }
         ];
 
         this.currentGame = this.getCurrentGame();
@@ -95,14 +94,15 @@ class GameNavigation {
                             <i class="fas fa-globe"></i> 🇧🇷 Português
                         </button>
                                                 <div class="language-menu">
-                            <a href="#" class="language-link" data-lang="en">English</a>
-                            <a href="#" class="language-link" data-lang="ru">Russian</a>
-                            <a href="#" class="language-link" data-lang="pt">Portuguese</a>
-                            <a href="#" class="language-link" data-lang="zh">Chinese</a>
-                            <a href="#" class="language-link" data-lang="de">German</a>
-                            <a href="#" class="language-link" data-lang="fr">French</a>
-                            <a href="#" class="language-link" data-lang="id">Indonesian</a>
-                            <a href="#" class="language-link" data-lang="tr">Turkish</a>
+                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
+                            <a href="#" class="language-link" data-lang="ja">🇯🇵 日本語</a>
+                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
+                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
+                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
+                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
+                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                            <a href="#" class="language-link" data-lang="ru">🇷🇺 Русский</a>
+                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
                         </div>
                     </div>
                 </div>
@@ -251,13 +251,14 @@ class GameNavigation {
             .replace('/de/', '/')
             .replace('/fr/', '/')
             .replace('/id/', '/')
-            .replace('/tr/', '/');
+            .replace('/tr/', '/')
+            .replace('/ja/', '/');
 
         if (lang === 'en') {
-            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/')) {
+            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/') && !currentPath.startsWith('/ja/')) {
                 return;
             }
-            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '');
+            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '').replace('/ja', '');
         } else {
             const langPrefix = `/${lang}`;
             if (currentPath.startsWith(`${langPrefix}/`)) {

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background square with rounded corners -->
+    <rect x="10" y="10" width="180" height="180" rx="20" ry="20" 
+          fill="white" stroke="#333" stroke-width="6"/>
+    
+    <!-- Decorative circles -->
+    <circle cx="40" cy="40" r="20" fill="#FF4B4B"/>
+    <circle cx="160" cy="40" r="20" fill="#4BA3FF"/>
+    <circle cx="40" cy="160" r="20" fill="#4BA3FF"/>
+    <circle cx="160" cy="160" r="20" fill="#FF4B4B"/>
+    
+    <!-- Smiley face -->
+    <circle cx="100" cy="90" r="40" fill="#FFD700" stroke="#333" stroke-width="4"/>
+    <circle cx="85" cy="80" r="6" fill="#333"/>
+    <circle cx="115" cy="80" r="6" fill="#333"/>
+    <path d="M75 95 Q100 120 125 95" fill="none" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Text -->
+    <text x="100" y="170" font-family="Comic Sans MS, cursive" font-size="24" text-anchor="middle" fill="#333" font-weight="bold">
+        Truth or Dare
+    </text>
+</svg>

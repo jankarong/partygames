@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Jogos para Festas - Navegue por Todos os Jogos | Coleção de Jogos para Festas</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../style/main.css" rel="stylesheet">
+    <link href="../css/auth.css" rel="stylesheet">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/TheList">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../image/favicon.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Lista de Jogos para Festas - Navegue por Todos os Jogos",
+        "url": "https://www.bestpartygames.net/ja/TheList",
+        "description": "Navegue por nossa coleção completa de jogos para festas. Encontre o jogo perfeito para seu próximo evento, festa ou reunião em família.",
+        "inLanguage": "ja",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Coleção Completa de Jogos para Festas",
+            "description": "Lista completa de todos os jogos para festas disponíveis organizados por categoria",
+            "numberOfItems": 10,
+            "itemListOrder": "Unordered"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Início",
+                    "item": "https://www.bestpartygames.net/ja/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Lista de Jogos",
+                    "item": "https://www.bestpartygames.net/ja/TheList"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/ja/">
+                <img src="../image/partyGameLogo.png" alt="Logo de Jogos para Festas">
+                <span class="brand-text">Best Party Games</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./feedback.html">Comentários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./TheList.html">A Lista</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./premium.html">Premium</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            🇯🇵 日本語
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/TheList.html">🇺🇸 English</a></li>
+                            <li><a class="dropdown-item" href="/ja/TheList.html">🇯🇵 日本語</a></li>
+                            <li><a class="dropdown-item" href="/zh/TheList.html">🇨🇳 中文</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- 认证相关按钮 -->
+                    <li class="nav-item" id="auth-buttons">
+                        <div class="auth-buttons">
+                            <a href="./login.html" class="btn btn-auth-nav btn-login">Entrar</a>
+                            <a href="./register.html" class="btn btn-auth-nav btn-register">Registrar</a>
+                        </div>
+                    </li>
+
+                    <!-- 用户信息 -->
+                    <li class="nav-item" id="user-info" style="display: none;">
+                        <div class="user-info">
+                            <div class="user-avatar" id="user-avatar">U</div>
+                            <div class="user-details">
+                                <div class="user-email" id="user-email">user@example.com</div>
+                                <span class="premium-status" id="premium-status">Usuário Gratuito</span>
+                            </div>
+                            <button class="btn btn-signout" onclick="handleSignOut()">Sair</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Categorias de Jogos</h1>
+            <p class="lead mb-0">Navegue por nossa coleção de jogos para festas por categoria</p>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Drinking Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                🍺
+                            </div>
+                            <h3 class="card-title">
+                                <span>Jogos com Bebidas</span>
+                            </h3>
+                            <p class="card-text">Jogos perfeitos para festas com bebidas</p>
+                            <a href="./categories/drinking-games/" class="btn btn-primary">Ver Jogos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Party Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                🎉
+                            </div>
+                            <h3 class="card-title">
+                                <span>Jogos para Festas</span>
+                            </h3>
+                            <p class="card-text">Jogos clássicos para todas as ocasiões</p>
+                            <a href="./categories/party-games/" class="btn btn-primary">Ver Jogos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Couple Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                💕
+                            </div>
+                            <h3 class="card-title">
+                                <span>Jogos para Casais</span>
+                            </h3>
+                            <p class="card-text">Jogos íntimos para casais</p>
+                            <a href="./categories/couple-games/" class="btn btn-primary">Ver Jogos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                👥
+                            </div>
+                            <h3 class="card-title">
+                                <span>Jogos em Equipe</span>
+                            </h3>
+                            <p class="card-text">Jogos competitivos baseados em equipes</p>
+                            <a href="./categories/team-games/" class="btn btn-primary">Ver Jogos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card category-card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="category-icon mb-3">
+                                👨‍👩‍👧‍👦
+                            </div>
+                            <h3 class="card-title">
+                                <span>Jogos Familiares</span>
+                            </h3>
+                            <p class="card-text">Jogos divertidos para toda a família</p>
+                            <a href="./categories/family-games/" class="btn btn-primary">Ver Jogos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">Sobre Nós</h2>
+                    <p>PartyGameLab é seu destino online preferido para os melhores jogos para festas disponíveis gratuitamente! Oferecemos uma coleção diversificada de jogos interativos envolventes para festas, incluindo Verdade ou Desafio, Nunca Fiz Isso, Máfia e muito mais - perfeito para reuniões virtuais, festas e eventos de integração de equipe. Junte-se a milhares de jogadores em todo o mundo desfrutando da melhor experiência em jogos para festas!</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">Links Rápidos</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Jogos</a></li>
+                        <li><a href="./feedback.html" class="text-light text-decoration-none">Comentários</a></li>
+                        <li><a href="./TheList.html" class="text-light text-decoration-none">A Lista</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">&copy; 2025 PartyGameLab. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+</body>
+
+</html>

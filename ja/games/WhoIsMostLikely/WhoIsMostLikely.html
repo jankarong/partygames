@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="『誰がいちばんありそう？』をオンラインで遊べる日本語版。友だちや家族で盛り上がる定番パーティー質問ゲーム。">
+    <meta name="keywords" content="誰が一番ありそう, パーティーゲーム, 質問ゲーム, みんなで遊べるゲーム, 飲み会ゲーム">
+    <meta name="author" content="PartyGameLab">
+    <meta property="og:title" content="誰がいちばんありそう？ | みんなで遊べる質問ゲーム">
+    <meta property="og:description" content="みんなで同時に指さして盛り上がる『誰がいちばんありそう？』。友だち同士や家族の集まりにぴったり。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="MostLikelyToLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/ja/games/WhoIsMostLikely/WhoIsMostLikely">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="誰がいちばんありそう？ | パーティー質問ゲーム">
+    <meta name="twitter:description" content="大人数で笑いやすい日本語の『誰がいちばんありそう？』質問集。">
+    <meta name="twitter:image" content="MostLikelyToLogo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Japanese">
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/WhoIsMostLikely/WhoIsMostLikely">
+    <link rel="icon" type="image/png" href="./MostLikelyToLogo.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "誰がいちばんありそう？",
+        "description": "友だちや家族と一緒に楽しめる日本語版の質問パーティーゲーム。",
+        "genre": "パーティーゲーム",
+        "numberOfPlayers": "3+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "180"
+        }
+    }
+    </script>
+
+    <title>誰がいちばんありそう？ | 日本語パーティーゲーム</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="WhoIsMostLikely.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="./MostLikelyToLogo.png">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+<div class="container">
+        <div class="game-container">
+            <div class="text-center mb-4">
+                <img src="MostLikelyToLogo.png" alt="誰がいちばんありそう？のロゴ" class="img-fluid game-logo"
+                    style="max-width: 200px;">
+            </div>
+            <h1 class="text-center mb-4">誰がいちばんありそう？</h1>
+
+            <div class="game-section mb-4">
+                <div class="question-card mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p id="questionText" class="question-text mb-4">下のボタンを押してゲームを始めましょう。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary w-100" id="nextQuestionBtn">ゲームを始める</button>
+            </div>
+
+            <div class="rules-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-3">遊び方とコツ</h2>
+                        <div class="rules-content">
+                            <div class="rule-item mb-4">
+                                <h3>おすすめ人数</h3>
+                                <p>4人以上が特におすすめ。飲み会、家族の集まり、ホームパーティーで盛り上がります。</p>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>基本ルール</h3>
+                                <p>1. ひとりが質問を声に出して読みます。</p>
+                                <p>2. せーので「その可能性がいちばん高そうな人」を指さします。</p>
+                                <p>3. 一番多く指された人がコメントするか、ローカルルールでひと口飲みます。</p>
+                                <p>4. そのまま次の質問へ進み、テンポよく回していきます。</p>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>おすすめの遊び方</h3>
+                                <ul>
+                                    <li><strong>定番ルール:</strong> 指された人がひと言リアクションして次へ。</li>
+                                    <li><strong>飲み会ルール:</strong> 一番多く指された人が軽く飲む。</li>
+                                    <li><strong>説明ルール:</strong> 指した理由をひとりずつ短く話す。</li>
+                                    <li><strong>ポイント制:</strong> 多く指された回数を記録して最後に発表する。</li>
+                                </ul>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>このゲームが盛り上がる理由</h3>
+                                <ul>
+                                    <li>初対面でも会話が生まれやすいです。</li>
+                                    <li>内輪ネタや普段のイメージが自然に出て笑いやすいです。</li>
+                                    <li>道具いらずで、スマホひとつあれば始められます。</li>
+                                    <li>ルール説明が短く、すぐに本編へ入れます。</li>
+                                </ul>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>おすすめのシーン</h3>
+                                <ul>
+                                    <li>宅飲みやホームパーティー</li>
+                                    <li>誕生日会や打ち上げ</li>
+                                    <li>旅行先の夜や合宿</li>
+                                    <li>サークルや友だち同士の集まり</li>
+                                </ul>
+                            </div>
+                            <div class="rule-item mb-4">
+                                <h3>盛り上げるコツ</h3>
+                                <ul>
+                                    <li>指した理由は長くしすぎず、テンポを優先すると遊びやすいです。</li>
+                                    <li>いじりすぎにならないよう、全員が笑える空気を大事にしてください。</li>
+                                    <li>メンバーに合わせて軽めの質問から入ると自然です。</li>
+                                </ul>
+                            </div>
+                            <div class="safety-note mt-4">
+                                <p class="text-muted"><small>相手が嫌がるいじり方は避けて、みんなが気持ちよく笑える範囲で楽しんでください。</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="WhoIsMostLikely-ja.js"></script>
+    <script src="/js/game-navigation-ja.js"></script>
+</body>
+
+</html>

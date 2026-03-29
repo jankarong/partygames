@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="究極の二択で盛り上がる『どっちを選ぶ？』。友だち同士でもカップルでも使いやすい質問ゲームです。">
+    <meta name="keywords" content="どっちを選ぶ, would you rather, 二択ゲーム, パーティーゲーム, 質問ゲーム">
+    <meta name="author" content="PartyGameLab">
+    <meta property="og:title" content="どっちを選ぶ？ | 二択パーティーゲーム">
+    <meta property="og:description" content="価値観が見えて会話が盛り上がる、定番の二択ゲーム。">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/WouldYouRather/WouldYouRather">
+    <link rel="icon" type="image/png" href="./WouldYouRatherLogo.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "どっちを選ぶ？",
+        "description": "二択を通して価値観や本音が見える、会話向けのパーティーゲーム。",
+        "genre": "Party Game",
+        "numberOfPlayers": "2+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <title>どっちを選ぶ？ | 二択パーティーゲーム</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="../games.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="text-center mb-4">
+                <img src="WouldYouRatherLogo.png" alt="どっちを選ぶ？" class="img-fluid" style="max-width: 200px;">
+            </div>
+            <h1 class="text-center mb-5 display-4">どっちを選ぶ？</h1>
+            <div class="row justify-content-center align-items-center g-2 mt-4">
+                <div class="col-md-5 d-flex justify-content-center">
+                    <div class="card option w-100" id="optionA">
+                        <div class="card-body d-flex flex-column justify-content-center text-center p-4">
+                            <p class="card-text mb-0" id="optionAText"></p>
+                            <div class="percentage mt-2" id="percentageA">0%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                    <div class="text-center vs">VS</div>
+                </div>
+                <div class="col-md-5 d-flex justify-content-center">
+                    <div class="card option w-100" id="optionB">
+                        <div class="card-body d-flex flex-column justify-content-center text-center p-4">
+                            <p class="card-text mb-0" id="optionBText"></p>
+                            <div class="percentage mt-2" id="percentageB">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <button id="nextQuestion" class="btn btn-lg px-4">次の質問</button>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="game-info container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <article class="mb-5">
+                <h2 class="h3 mb-4">どんなゲーム？</h2>
+                <p>「どっちを選ぶ？」は、二つの選択肢から必ず一つを選ぶだけのシンプルな会話ゲームです。答えそのものよりも、その理由を話すと盛り上がります。</p>
+            </article>
+            <article class="mb-5">
+                <h2 class="h3 mb-4">遊び方</h2>
+                <div class="game-rules">
+                    <ol>
+                        <li>参加者で順番に質問を読みます。</li>
+                        <li>二つの選択肢のうち、必ずどちらか一つを選びます。</li>
+                        <li>なぜその答えを選んだのかを一言添えると楽しくなります。</li>
+                        <li>「次の質問」でどんどん進めていきます。</li>
+                    </ol>
+                </div>
+            </article>
+            <article class="mb-5">
+                <h2 class="h3 mb-4">盛り上がるポイント</h2>
+                <div class="benefits">
+                    <ul>
+                        <li>初対面でも話しやすい</li>
+                        <li>価値観の違いが見えて会話が広がる</li>
+                        <li>道具なしで今すぐ遊べる</li>
+                        <li>2人でもグループでも使いやすい</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/ads-controller.js"></script>
+<script src="script-ja.js"></script>
+<script src="/js/game-navigation-ja.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私はやったことがない | 大人向けパーティーゲーム</title>
+    <meta name="description" content="友だち同士の集まりで盛り上がる『私はやったことがない』。ぶっちゃけ話が出やすい定番パーティーゲームです。">
+    <meta name="keywords" content="私はやったことがない, never have i ever, パーティーゲーム, 飲み会ゲーム, 大人向けゲーム">
+    <meta property="og:title" content="私はやったことがない | 大人向けパーティーゲーム">
+    <meta property="og:description" content="暴露話や笑える思い出が出やすい定番質問ゲーム。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="NeverHaveIEverLogo.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/NeverHaveIEver/NeverHaveIEver">
+    <link rel="icon" type="image/png" href="./NeverHaveIEverLogo.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "私はやったことがない",
+        "description": "友だち同士や飲み会で遊びやすい、定番の暴露系パーティーゲーム。",
+        "genre": "Party Game",
+        "numberOfPlayers": "3+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="NeverHaveIEver.css">
+</head>
+<body>
+    <div class="container">
+        <img src="NeverHaveIEverLogo.png" alt="私はやったことがない" class="game-logo">
+        <h1>私はやったことがない</h1>
+
+        <div class="game-card">
+            <p id="statement" class="statement">スタートを押して最初の質問を表示してください。</p>
+        </div>
+        <div class="controls">
+            <button id="nextBtn" class="button" aria-label="スタート">開始</button>
+        </div>
+
+        <div class="rules">
+            <h2>遊び方</h2>
+            <p>定番の「私はやったことがない」ゲームです。飲み会や友だち同士の集まりで、笑える暴露話が出やすいのが魅力です。</p>
+            <p data-emoji="🎮">1. 順番に「次へ」を押して質問を表示します。</p>
+            <p data-emoji="🙋">2. その経験がある人は、飲む・指を折るなど、事前に決めたルールに従います。</p>
+            <p data-emoji="🤔">3. やったことがない人はそのままでOKです。</p>
+            <p data-emoji="🏆">4. みんなで答えやエピソードを話しながら楽しみましょう。</p>
+            <p data-emoji="✨">5. 無理に答えさせない、笑いものにしない、を守ると遊びやすくなります。</p>
+        </div>
+
+        <div class="game-info">
+            <h2>このゲームのいいところ</h2>
+            <p>ルールが簡単なので初対面でも始めやすく、ちょっとした秘密や笑える体験談が自然に出てきます。短時間でも盛り上がりやすいので、二次会や家飲みにも向いています。</p>
+
+            <h3 data-emoji="🎉">こんな場面におすすめ</h3>
+            <ul>
+                <li data-emoji="🎂">誕生日会や宅飲み</li>
+                <li data-emoji="🎓">友だち同士の集まり</li>
+                <li data-emoji="🏠">家での少人数パーティー</li>
+                <li data-emoji="🤗">久しぶりの再会</li>
+            </ul>
+
+            <h3 data-emoji="✨">楽しく遊ぶコツ</h3>
+            <ul>
+                <li data-emoji="🔥">軽い質問から始める</li>
+                <li data-emoji="📖">パスありルールを先に決める</li>
+                <li data-emoji="🌈">答えに対して否定やジャッジをしない</li>
+                <li data-emoji="🎲">質問のあとに一言エピソードを足すと盛り上がる</li>
+            </ul>
+        </div>
+    </div>
+    <script src="NeverHaveIEver-ja.js"></script>
+    <script src="/js/game-navigation-ja.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+</body>
+</html>

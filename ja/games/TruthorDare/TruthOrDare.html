@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="真実か挑戦かをブラウザですぐ遊べる無料ゲーム。ソフトモードとスパイシーモードを切り替えて楽しめます。">
+    <meta name="keywords" content="真実か挑戦か, truth or dare, パーティーゲーム, 大人向けゲーム, 質問ゲーム">
+    <meta name="author" content="PartyGameLab">
+    <meta property="og:title" content="真実か挑戦か | 無料オンラインゲーム">
+    <meta property="og:description" content="ソフトモードとスパイシーモードで遊べる定番パーティーゲーム。">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/TruthorDare/TruthOrDare">
+    <title>真実か挑戦か | 無料オンラインゲーム</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="TruthOrDare.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="./TruthorDareLogo.png">
+</head>
+<body>
+<div class="container">
+    <div class="game-container">
+        <div class="logo-container text-center mb-4">
+            <img src="TruthorDareLogo.png" alt="真実か挑戦か" title="真実か挑戦か" class="game-logo">
+        </div>
+        <h1 class="text-center mb-4">真実か挑戦か</h1>
+
+        <div class="game-section text-center">
+            <div id="selectedType" class="selected-type mb-3" style="display: none;"></div>
+            <div id="selectedDifficulty" class="selected-difficulty mb-3" style="display: none;"></div>
+            <div class="question-card mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="questionText" class="question-text mb-0">👇 モードを選んでください 👇</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="difficulty-buttons" id="difficultyButtons">
+                <button class="btn btn-success btn-lg choice-btn soft-btn" onclick="selectDifficulty('soft')">
+                    <span class="choice-icon">😊</span>
+                    <span class="choice-text">ソフト</span>
+                </button>
+                <button class="btn btn-warning btn-lg choice-btn spicy-btn" onclick="selectDifficulty('spicy')">
+                    <span class="choice-icon">🌶️</span>
+                    <span class="choice-text">スパイシー</span>
+                </button>
+            </div>
+
+            <div class="choice-buttons" id="choiceButtons" style="display: none;">
+                <button class="btn btn-info btn-lg choice-btn truth-btn" onclick="selectChoice('truth')">
+                    <span class="choice-icon">🤔</span>
+                    <span class="choice-text">真実</span>
+                </button>
+                <button class="btn btn-danger btn-lg choice-btn dare-btn" onclick="selectChoice('dare')">
+                    <span class="choice-icon">🎯</span>
+                    <span class="choice-text">挑戦</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="controls mt-4 text-center">
+            <button class="btn btn-success" onclick="nextQuestion()" id="nextButton" style="display: none;">次の質問</button>
+            <button class="btn btn-secondary mt-3" onclick="resetGame()" id="resetButton" style="display: none;">選び直す</button>
+            <button class="btn btn-outline-secondary mt-3" onclick="backToDifficulty()" id="backButton" style="display: none;">モード選択に戻る</button>
+        </div>
+
+        <div class="rules-section mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-3">遊び方</h2>
+                    <ol class="text-start">
+                        <li>まずソフトかスパイシーかを選びます。</li>
+                        <li>次に「真実」か「挑戦」を選びます。</li>
+                        <li>「真実」は質問に正直に答えます。</li>
+                        <li>「挑戦」は表示されたチャレンジを実行します。</li>
+                        <li>無理な内容はパスありにしておくと遊びやすくなります。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-intro mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-3">このゲームについて</h2>
+                    <p>真実か挑戦かは、定番中の定番パーティーゲームです。軽い雑談だけでは広がりにくい場でも、質問とチャレンジがあることで自然に会話が動きます。</p>
+                    <p class="mb-0">友だち同士、ホームパーティー、オンライン通話中の遊びにも向いています。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/ads-controller.js"></script>
+<script src="/js/game-navigation-ja.js"></script>
+<script src="TruthOrDare-ja.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Компонент навигации по играм (версия на русском)
  * Обеспечивает улучшенную навигацию между играми с плавающим меню и быстрым доступом
  */
@@ -6,25 +6,24 @@
 class GameNavigation {
     constructor() {
         this.games = [
-            { name: 'Магический шар 8', url: '/ru/games/magic8ball/magic8ball', category: 'solo' },
-            { name: 'Правда или вызов', url: '/ru/games/TruthorDare/TruthOrDare', category: 'party' },
-            { name: 'Pravda ili Deistvie dlya Par', url: '/ru/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples', category: 'adult' },
-            { name: 'Никогда я не...', url: '/ru/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
-            { name: 'Кто скорее всего...', url: '/ru/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
-            { name: 'Что бы ты выбрал?', url: '/ru/games/WouldYouRather/WouldYouRather', category: 'party' },
-            
-            { name: 'Острые вопросы паранойи', url: '/ru/games/paranoiaquestionsdirty/paranoiaquestionsdirty', category: 'adult' },
-            { name: 'Мафия', url: '/ru/games/mafia/mafia', category: 'strategy' },
-            { name: 'Подпольщик', url: '/ru/games/undercover/undercover', category: 'strategy' },
-            { name: 'Генератор шарад', url: '/ru/games/charades/charades', category: 'party' },
-            { name: 'Headbands', url: '/ru/games/hedbanzgame/hedbanzgame', category: 'party' },
-            { name: 'Любовные кубики', url: '/ru/games/sexdice/sexdice', category: 'adult' },
-            { name: 'Угадайте число', url: '/ru/games/beernumber/beernumber', category: 'drinking' },
-            { name: 'Король чаши', url: '/ru/games/KingsCup/KingsCup', category: 'drinking' },
-            { name: 'Совпадение бутылок', url: '/ru/games/BottleMatchGame/BottleMatchGame', category: 'party' },
-            { name: 'Карты лжецов', url: '/ru/games/liarsdice/liarsdice', category: 'drinking' },
-            { name: 'Последний выстрел', url: '/ru/games/lastshot/lastshot', category: 'drinking' },
-            { name: 'Ведьмин яд', url: '/ru/games/witchspoison/witchspoison', category: 'party' }
+            { name: 'Магический шар 8', url: '/ru/games/magic8ball/magic8ball.html', category: 'solo' },
+            { name: 'Правда или вызов', url: '/ru/games/TruthorDare/TruthOrDare.html', category: 'party' },
+            { name: 'Pravda ili Deistvie dlya Par', url: '/ru/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.html', category: 'adult' },
+            { name: 'Никогда я не...', url: '/ru/games/NeverHaveIEver/NeverHaveIEver.html', category: 'party' },
+            { name: 'Кто скорее всего...', url: '/ru/games/WhoIsMostLikely/WhoIsMostLikely.html', category: 'party' },
+            { name: 'Что бы ты выбрал?', url: '/ru/games/WouldYouRather/WouldYouRather.html', category: 'party' },
+            { name: 'Острые вопросы паранойи', url: '/ru/games/paranoiaquestionsdirty/paranoiaquestionsdirty.html', category: 'adult' },
+            { name: 'Мафия', url: '/ru/games/mafia/mafia.html', category: 'strategy' },
+            { name: 'Подпольщик', url: '/ru/games/undercover/undercover.html', category: 'strategy' },
+            { name: 'Генератор шарад', url: '/ru/games/charades/charades.html', category: 'party' },
+            { name: 'Headbands', url: '/ru/games/hedbanzgame/hedbanzgame.html', category: 'party' },
+            { name: 'Любовные кубики', url: '/ru/games/sexdice/sexdice.html', category: 'adult' },
+            { name: 'Угадайте число', url: '/ru/games/beernumber/beernumber.html', category: 'drinking' },
+            { name: 'Король чаши', url: '/ru/games/KingsCup/KingsCup.html', category: 'drinking' },
+            { name: 'Совпадение бутылок', url: '/ru/games/BottleMatchGame/BottleMatchGame.html', category: 'party' },
+            { name: 'Карты лжецов', url: '/ru/games/liarsdice/liarsdice.html', category: 'drinking' },
+            { name: 'Последний выстрел', url: '/ru/games/lastshot/lastshot.html', category: 'drinking' },
+            { name: 'Ведьмин яд', url: '/ru/games/witchspoison/witchspoison.html', category: 'party' }
         ];
 
         this.currentGame = this.getCurrentGame();
@@ -100,6 +99,7 @@ class GameNavigation {
                         </button>
                         <div class="language-menu">
                             <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
+                            <a href="#" class="language-link" data-lang="ja">🇯🇵 日本語</a>
                             <a href="#" class="language-link" data-lang="ru">🇷🇺 Русский</a>
                             <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
                             <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
@@ -262,7 +262,8 @@ class GameNavigation {
             } else {
                 // Удалите /pt/, /zh/, /de/, /fr/, затем добавьте /ru/
                 newPath = '/ru' + currentPath.replace('/pt/', '/').replace('/zh/', '/').replace('/de/', '/').replace('/fr/', '/').replace('/id/', '/').replace('/tr/', '/')
-            .replace('/tr/', '/');
+            .replace('/tr/', '/')
+            .replace('/ja/', '/');
             }
         } else if (lang === 'pt') {
             // Переключиться на португальскую версию
@@ -325,11 +326,11 @@ class GameNavigation {
             }
         } else {
             // Переключиться на английскую версию
-            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/')) {
+            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/') && !currentPath.startsWith('/ja/')) {
                 // Уже в английской версии
                 return;
             }
-            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '');
+            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '').replace('/ja', '');
         }
 
         window.location.href = newPath;

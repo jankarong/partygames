@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="カップル向けの真実か挑戦か。ライト、ロマンチック、スパイシーの3モードで、二人の空気に合わせて遊べます。">
+    <meta name="keywords" content="カップル 真実か挑戦か, カップルゲーム, 恋人向け 質問ゲーム, デートゲーム">
+    <meta name="author" content="PartyGameLab">
+    <meta property="og:title" content="カップル向け真実か挑戦か | 無料ゲーム">
+    <meta property="og:description" content="ライト、ロマンチック、スパイシーの3モードで遊べる、二人向けの真実か挑戦か。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/ja/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples">
+    <meta property="og:image" content="https://www.bestpartygames.net/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouplesLogo.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples">
+    <title>カップル向け真実か挑戦か | 無料ゲーム</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouplesLogo.png">
+</head>
+<body>
+<div class="container">
+    <div class="game-container">
+        <div class="logo-container text-center mb-4">
+            <img src="/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouplesLogo.png" alt="カップル向け真実か挑戦か" title="カップル向け真実か挑戦か" class="game-logo">
+        </div>
+        <h1 class="text-center mb-4">カップル向け真実か挑戦か</h1>
+
+        <div class="game-section text-center">
+            <div id="selectedType" class="selected-type mb-3" style="display:none;"></div>
+            <div id="selectedDifficulty" class="selected-difficulty mb-3" style="display:none;"></div>
+            <div class="question-card mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="questionText" class="question-text mb-0">👇 二人のモードを選んでください 👇</p>
+                    </div>
+                </div>
+            </div>
+            <div class="difficulty-buttons" id="difficultyButtons">
+                <button class="btn btn-success btn-lg choice-btn soft-btn" onclick="selectDifficulty('soft')"><span class="choice-icon">❤️</span><span class="choice-text">ライト</span></button>
+                <button class="btn btn-primary btn-lg choice-btn romantic-btn" onclick="selectDifficulty('romantic')"><span class="choice-icon">💞</span><span class="choice-text">ロマンチック</span></button>
+                <button class="btn btn-warning btn-lg choice-btn spicy-btn" onclick="selectDifficulty('spicy')"><span class="choice-icon">🔥</span><span class="choice-text">スパイシー</span></button>
+            </div>
+            <div class="choice-buttons" id="choiceButtons" style="display:none;">
+                <button class="btn btn-info btn-lg choice-btn truth-btn" onclick="selectChoice('truth')"><span class="choice-icon">💬</span><span class="choice-text">真実</span></button>
+                <button class="btn btn-danger btn-lg choice-btn dare-btn" onclick="selectChoice('dare')"><span class="choice-icon">🎯</span><span class="choice-text">挑戦</span></button>
+            </div>
+        </div>
+
+        <div class="controls mt-4 text-center">
+            <button class="btn btn-success" onclick="nextQuestion()" id="nextButton" style="display:none;">次の質問</button>
+            <button class="btn btn-secondary mt-3" onclick="resetGame()" id="resetButton" style="display:none;">選び直す</button>
+            <button class="btn btn-outline-secondary mt-3" onclick="backToDifficulty()" id="backButton" style="display:none;">モードに戻る</button>
+        </div>
+
+        <div class="rules-section mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-3">遊び方</h2>
+                    <ol class="text-start">
+                        <li>ライト、ロマンチック、スパイシーの中から今の気分に合うモードを選びます。</li>
+                        <li>各ラウンドで「真実」か「挑戦」を選びます。</li>
+                        <li>真実は正直に答え、挑戦は二人で無理のない範囲で実行します。</li>
+                        <li>答えたくない内容はパスしてOKです。</li>
+                        <li>空気を変えたいときは「次の質問」で進めます。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-intro mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-3">カップル向けに作った理由</h2>
+                    <p>このバージョンは、デートの夜、記念日、家でのんびり過ごす時間、遠距離の通話中など、二人の時間を少しだけ特別にしたいときに使いやすいように作っています。</p>
+                    <p class="mb-0">会話を深めたいとき、甘い雰囲気を作りたいとき、少しだけ大胆に遊びたいときに、モードを切り替えながら使えます。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-3">よくある質問</h2>
+                    <h3 class="mt-4">2人だけで遊べますか？</h3>
+                    <p>はい。このゲームは基本的に二人で遊ぶ前提で作っています。</p>
+                    <h3 class="mt-4">スパイシーモードはきつすぎますか？</h3>
+                    <p>少し大胆ですが、合意と無理のない範囲を前提にしています。</p>
+                    <h3 class="mt-4">遠距離でも使えますか？</h3>
+                    <p>はい。画面共有しながらでも十分遊べます。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/ads-controller.js"></script>
+<script src="/js/game-navigation-ja.js"></script>
+<script src="TruthOrDareQuestionsForCouples-ja.js"></script>
+</body>
+</html>

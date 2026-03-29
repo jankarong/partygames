@@ -1,0 +1,53 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="revolver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#666;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#444;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffc107;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffb300;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#bg)" stroke="url(#gold)" stroke-width="4"/>
+
+  <!-- Revolver cylinder -->
+  <circle cx="100" cy="90" r="35" fill="url(#revolver)" stroke="url(#gold)" stroke-width="2"/>
+
+  <!-- Revolver barrel -->
+  <rect x="135" y="82" width="40" height="16" fill="url(#revolver)" stroke="url(#gold)" stroke-width="2" rx="8"/>
+
+  <!-- Revolver handle -->
+  <rect x="80" y="110" width="15" height="30" fill="#8b4513" stroke="#654321" stroke-width="1" rx="3"/>
+
+  <!-- Cylinder chambers -->
+  <circle cx="100" cy="65" r="4" fill="#222" stroke="#888" stroke-width="1"/>
+  <circle cx="118" cy="75" r="4" fill="#222" stroke="#888" stroke-width="1"/>
+  <circle cx="118" cy="105" r="4" fill="#222" stroke="#888" stroke-width="1"/>
+  <circle cx="100" cy="115" r="4" fill="#222" stroke="#888" stroke-width="1"/>
+  <circle cx="82" cy="105" r="4" fill="#dc3545" stroke="#fff" stroke-width="1"/>
+  <circle cx="82" cy="75" r="4" fill="#222" stroke="#888" stroke-width="1"/>
+
+  <!-- Shot glasses -->
+  <g transform="translate(60, 150)">
+    <rect x="0" y="0" width="12" height="20" fill="none" stroke="url(#gold)" stroke-width="2" rx="1"/>
+    <rect x="1" y="15" width="10" height="4" fill="url(#gold)" opacity="0.7"/>
+  </g>
+
+  <g transform="translate(128, 150)">
+    <rect x="0" y="0" width="12" height="20" fill="none" stroke="url(#gold)" stroke-width="2" rx="1"/>
+    <rect x="1" y="15" width="10" height="4" fill="url(#gold)" opacity="0.7"/>
+  </g>
+
+  <!-- Title text -->
+  <text x="100" y="40" text-anchor="middle" fill="url(#gold)" font-family="Arial, sans-serif" font-size="18" font-weight="bold">LAST SHOT</text>
+
+  <!-- Danger symbol -->
+  <text x="175" y="30" text-anchor="middle" fill="#dc3545" font-family="Arial, sans-serif" font-size="24">⚠️</text>
+</svg>

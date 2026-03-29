@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="6人以上で遊べる日本語版マフィアゲーム。役職を配って、昼は議論、夜は行動。定番の正体隠匿ゲームをオンラインで。">
+    <meta name="keywords" content="マフィアゲーム, 正体隠匿, 人狼系, パーティーゲーム, 推理ゲーム">
+    <meta name="author" content="PartyGameLab">
+    <meta property="og:title" content="マフィア | 日本語正体隠匿ゲーム">
+    <meta property="og:description" content="マフィア、村人、医者、探偵で遊べる日本語版マフィアゲーム。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="mafialogo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="マフィア | 日本語正体隠匿ゲーム">
+    <meta name="twitter:description" content="昼は議論、夜は行動。みんなで遊べる日本語版マフィア。">
+    <meta name="twitter:image" content="mafialogo.png">
+    <title>マフィア | 日本語正体隠匿ゲーム</title>
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/mafia/mafia">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./mafialogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "マフィア",
+        "description": "議論と推理でマフィアを見つける日本語版の正体隠匿ゲーム。",
+        "inLanguage": "ja",
+        "genre": "正体隠匿ゲーム",
+        "numberOfPlayers": "6-15",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "320"
+        }
+    }
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Cinzel:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="mafia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="icon" type="image/png" href="./mafialogo.png">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+<div class="container py-4">
+        <img src="mafialogo.png" alt="マフィアゲームのロゴ" class="game-logo">
+        <h1 class="text-center mb-4">マフィア</h1>
+
+        <div class="game-setup">
+            <div class="setup-section card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title">ゲーム設定</h2>
+                    <div class="total-players mb-4">
+                        <label for="playerCount" class="form-label">合計人数:</label>
+                        <input type="number" id="playerCount" class="form-control" min="6" max="15" value="8">
+                    </div>
+
+                    <div class="role-selection">
+                        <h3 class="h5 mb-3">役職の配分</h3>
+                        <div class="role-inputs row g-3">
+                            <div class="role-input col-md-4">
+                                <label for="mafiaCount" class="form-label">マフィア:</label>
+                                <input type="number" id="mafiaCount" class="form-control" min="1" value="2">
+                            </div>
+                            <div class="role-input col-md-4">
+                                <label for="doctorCount" class="form-label">医者:</label>
+                                <input type="number" id="doctorCount" class="form-control" min="0" max="1" value="1">
+                            </div>
+                            <div class="role-input col-md-4">
+                                <label for="detectiveCount" class="form-label">探偵:</label>
+                                <input type="number" id="detectiveCount" class="form-control" min="0" max="1" value="1">
+                            </div>
+                            <div class="role-input col-md-4">
+                                <label for="villagerCount" class="form-label">村人:</label>
+                                <input type="number" id="villagerCount" class="form-control" min="1" value="4">
+                            </div>
+                        </div>
+
+                        <!-- Custom roles area -->
+                        <div id="customRoleInputs" class="row g-3 mt-2"></div>
+                        <div class="role-summary mt-3">
+                            <p class="role-warning text-danger" id="roleWarning"></p>
+                        </div>
+                    </div>
+
+                    <button id="setupGame" class="btn btn-primary w-100 mt-3">ゲームを準備する</button>
+                    <button id="manageRoles" class="btn btn-secondary w-100 mt-3">カスタム役職を管理</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="role-management mt-4" style="display: none;">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">カスタム役職の管理</h2>
+
+                    <div class="create-role-section mb-5">
+                        <h4 class="mb-3">新しい役職を作成</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="roleName" class="form-label">役職名</label>
+                                <input type="text" id="roleName" class="form-control" placeholder="例: キューピッド">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="roleTeam" class="form-label">所属陣営</label>
+                                <select id="roleTeam" class="form-select">
+                                    <option value="villager">村人陣営</option>
+                                    <option value="mafia">マフィア陣営</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleDescription" class="form-label">役職説明</label>
+                                <textarea id="roleDescription" class="form-control" rows="3"
+                                    placeholder="この役職の役割や特徴を入力してください"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleAbility" class="form-label">夜の能力</label>
+                                <textarea id="roleAbility" class="form-control" rows="2"
+                                    placeholder="夜にできる行動があれば入力してください（任意）"></textarea>
+                            </div>
+                        </div>
+                        <button id="createRole" class="btn btn-primary mt-3">役職を作成</button>
+                    </div>
+
+                    <div class="existing-roles-section mb-4">
+                        <h4 class="mb-3">登録済みの役職</h4>
+                        <div id="rolesList" class="row g-3"></div>
+                    </div>
+
+                    <div class="text-center">
+                        <button id="backToSetup" class="btn btn-secondary">設定へ戻る</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area mt-4 position-relative" style="display: none;">
+            <button id="returnToSetup" class="btn btn-secondary"
+                style="position: absolute; left: 20px; top: 20px; z-index: 1000;">
+                <i class="fas fa-arrow-left"></i>
+                <span class="btn-text">設定へ戻る</span>
+            </button>
+            <button id="startNewGame" class="btn btn-success"
+                style="position: absolute; right: 20px; top: 20px; z-index: 1000;">
+                <i class="fas fa-redo"></i>
+                <span class="btn-text">新しいゲーム</span>
+            </button>
+            <div class="role-cards card shadow-sm mt-5">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">プレイヤーカード</h2>
+                    <div id="cardGrid"></div>
+                </div>
+            </div>
+
+            <div class="game-controls mt-4" style="display: none;">
+                <button id="startGame" class="btn btn-success btn-lg w-100">
+                    <i class="fas fa-play-circle me-2"></i>
+                    夜フェーズを始める
+                </button>
+            </div>
+
+            <div class="role-instructions card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">役職ごとの説明</h2>
+                    <div id="mafiaInstructions" class="role-instruction">
+                        <h3 class="h5">マフィア</h3>
+                        <ul>
+                            <li>正体を隠したまま村人を減らしていきます。</li>
+                            <li>夜に仲間と相談して対象を選びます。</li>
+                            <li>昼は村人のふりをして議論を誘導します。</li>
+                        </ul>
+                    </div>
+                    <div id="villagerInstructions" class="role-instruction">
+                        <h3 class="h5">村人</h3>
+                        <ul>
+                            <li>会話と投票でマフィアを見つけます。</li>
+                            <li>発言や行動の違和感を観察しましょう。</li>
+                            <li>昼フェーズで怪しい相手に投票します。</li>
+                        </ul>
+                    </div>
+                    <div id="doctorInstructions" class="role-instruction">
+                        <h3 class="h5">医者</h3>
+                        <ul>
+                            <li>夜にひとりを守れます。</li>
+                            <li>自分を守ることもできます。</li>
+                            <li>正体はできるだけ隠しておきましょう。</li>
+                        </ul>
+                    </div>
+                    <div id="detectiveInstructions" class="role-instruction">
+                        <h3 class="h5">探偵</h3>
+                        <ul>
+                            <li>夜にひとりの正体を調べられます。</li>
+                            <li>得た情報をどう使うかが勝負です。</li>
+                            <li>バレると狙われやすいので注意してください。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="night-actions card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">夜フェーズ</h2>
+                    <div id="narrator-text" class="mb-4"></div>
+
+                    <div id="action-area">
+                        <div id="mafia-action" class="role-action" style="display: none;">
+                            <h3>マフィアの行動</h3>
+                            <p>脱落させる相手を選んでください。</p>
+                            <div id="mafia-targets" class="player-selection"></div>
+                            <button id="confirm-mafia" class="btn btn-danger mt-3">選択を確定</button>
+                        </div>
+
+                        <div id="doctor-action" class="role-action" style="display: none;">
+                            <h3>医者の行動</h3>
+                            <p id="doctor-prompt"></p>
+                            <div id="doctor-choice" class="d-flex flex-column gap-2">
+                                <button id="save-player" class="btn btn-primary mt-3">守る</button>
+                                <button id="poison-player" class="btn btn-danger mt-3">毒を使う</button>
+                                <button id="skip-action" class="btn btn-secondary mt-3">今回はスキップ</button>
+                            </div>
+                            <div id="doctor-targets" class="player-selection" style="display: none;"></div>
+                            <button id="confirm-doctor" class="btn btn-primary mt-3" style="display: none;">選択を確定</button>
+                        </div>
+
+                        <div id="detective-action" class="role-action" style="display: none;">
+                            <h3>探偵の行動</h3>
+                            <p>調べる相手を選んでください。</p>
+                            <div id="detective-targets" class="player-selection"></div>
+                            <div id="investigation-result" class="mt-3" style="display: none;">
+                                <p id="investigation-text" class="result-text"></p>
+                                <button id="confirm-detective" class="btn btn-primary mt-3">続ける</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="discussion-phase" class="discussion-phase" style="display: none;">
+                <h3>議論タイム</h3>
+                <div class="night-summary mb-4">
+                    <p id="night-result" class="mb-3"></p>
+                    <div id="player-statuses" class="player-status-grid"></div>
+                </div>
+                <p class="discussion-prompt">誰がマフィアかを話し合ってください。</p>
+                <button id="end-discussion" class="btn btn-primary mt-4">議論を終える</button>
+            </div>
+
+            <div class="voting-phase card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">投票フェーズ</h2>
+                    <p class="voting-prompt">マフィアだと思う相手に投票してください。</p>
+                    <div id="voting-grid" class="voting-grid mt-3"></div>
+                    <button id="confirm-vote" class="btn btn-primary mt-4">投票を確定</button>
+                </div>
+            </div>
+
+            <div class="player-status card shadow-sm mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="card-title">プレイヤー状況</h2>
+                    <div id="playerStatus" class="list-group mt-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-alert" style="display: none;">
+            <div class="alert-content card">
+                <div class="card-body text-center">
+                    <div class="alert-message mb-3"></div>
+                    <div class="d-flex flex-column align-items-center">
+                        <button class="btn btn-primary alert-confirm">OK</button>
+                        <button id="playAgainBtn" class="btn btn-success mt-2" style="display: none;">もう一度遊ぶ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rules-section card shadow-sm mt-4">
+            <div class="card-body text-white">
+                <h2 class="card-title text-white">遊び方</h2>
+
+                <h3>概要</h3>
+                <p>マフィアは、正体を隠した少数派のマフィア陣営と、それを見つけたい村人陣営に分かれて戦う定番の正体隠匿ゲームです。夜の行動と昼の議論をくり返しながら勝敗を決めます。</p>
+
+                <h3>基本ルール</h3>
+                <ul>
+                    <li><strong>人数:</strong> 6〜15人推奨</li>
+                    <li><strong>マフィア:</strong> 仲間を把握しながら村人を減らす役職</li>
+                    <li><strong>村人:</strong> 議論と投票でマフィアを見つける役職</li>
+                    <li><strong>医者:</strong> 夜にひとりを守れる特別役職</li>
+                    <li><strong>探偵:</strong> 夜にひとりの正体を調べられる特別役職</li>
+                </ul>
+
+                <h3>進行</h3>
+                <ol>
+                    <li><strong>準備フェーズ:</strong>
+                        <ul>
+                            <li>各プレイヤーに役職カードを配ります。</li>
+                            <li>脱落するまで基本的に役職は秘密です。</li>
+                        </ul>
+                    </li>
+                    <li><strong>夜フェーズ:</strong>
+                        <ul>
+                            <li>マフィアが対象を選びます。</li>
+                            <li>医者は守るかどうかを決めます。</li>
+                            <li>探偵はひとりを調査します。</li>
+                        </ul>
+                    </li>
+                    <li><strong>昼フェーズ:</strong>
+                        <ul>
+                            <li>夜の結果が公開されます。</li>
+                            <li>全員で誰が怪しいか議論します。</li>
+                            <li>最後に投票して追放者を決めます。</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>役職のポイント</h3>
+                <ul>
+                    <li><strong>医者:</strong>
+                        <ul>
+                            <li>守る対象の選び方が重要です。</li>
+                            <li>自分を守れるかどうかはローカルルールで調整してもOKです。</li>
+                            <li>カスタム役職と合わせるとバランスが変わります。</li>
+                        </ul>
+                    </li>
+                    <li><strong>探偵:</strong>
+                        <ul>
+                            <li>誰を調べるかで昼の議論が大きく変わります。</li>
+                            <li>情報をいつ出すかも重要な駆け引きです。</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>勝利条件</h3>
+                <ul>
+                    <li><strong>村人陣営:</strong> マフィアを全員追放できれば勝ち</li>
+                    <li><strong>マフィア陣営:</strong> 村人と同数以上になれば勝ち</li>
+                </ul>
+
+                <h3>盛り上げるコツ</h3>
+                <ul>
+                    <li>最初の数戦は役職を少なめにすると進行しやすいです。</li>
+                    <li>司会進行役がテンポよく回すとダレにくいです。</li>
+                    <li>議論が長すぎると疲れるので時間を決めるのがおすすめです。</li>
+                    <li>初心者が多い場では、強い詰め方より楽しく話せる空気を優先すると遊びやすいです。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-ja.js"></script>
+    <script src="mafia-ja.js"></script>
+</body>
+
+</html>

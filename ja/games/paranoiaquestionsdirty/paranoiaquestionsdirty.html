@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大人向けパラノイア質問 25選 | 無料オンラインゲーム</title>
+<meta name="description" content="大人向けのパラノイア質問ゲーム。友だち同士やカップルで使いやすい25問を、スマホで手軽に遊べます。">
+<meta name="keywords" content="パラノイア 質問, 大人向け パーティーゲーム, 誰がいちばんありそう, 飲み会 ゲーム">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:title" content="大人向けパラノイア質問 25選 | 無料オンラインゲーム">
+<meta property="og:description" content="誰がいちばんありそう？で盛り上がる、大人向けのパラノイア質問ゲーム。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bestpartygames.net/ja/games/paranoiaquestionsdirty/paranoiaquestionsdirty">
+<meta property="og:image" content="https://www.bestpartygames.net/games/paranoiaquestionsdirty/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="大人向けパラノイア質問 25選 | 無料オンラインゲーム">
+<meta name="twitter:description" content="大人同士で気軽に遊べるパラノイア質問ゲーム。">
+<meta name="twitter:image" content="https://www.bestpartygames.net/games/paranoiaquestionsdirty/logo.png">
+<link rel="canonical" href="https://www.bestpartygames.net/ja/games/paranoiaquestionsdirty/paranoiaquestionsdirty">
+<link rel="alternate" hreflang="ja" href="https://www.bestpartygames.net/ja/games/paranoiaquestionsdirty/paranoiaquestionsdirty">
+<link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/paranoiaquestionsdirty/paranoiaquestionsdirty">
+<link rel="icon" type="image/png" href="/games/paranoiaquestionsdirty/logo.png">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "inLanguage":"ja",
+  "mainEntity":[
+    {"@type":"Question","name":"無料で遊べますか？","acceptedAnswer":{"@type":"Answer","text":"はい。ブラウザでそのまま無料で遊べます。"}},
+    {"@type":"Question","name":"何人から遊べますか？","acceptedAnswer":{"@type":"Answer","text":"3人以上だとテンポよく盛り上がります。"}},
+    {"@type":"Question","name":"カップルだけのゲームですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。友だち同士の集まりでも使いやすいです。"}},
+    {"@type":"Question","name":"スマホでも遊べますか？","acceptedAnswer":{"@type":"Answer","text":"はい。スマホやタブレットでも見やすいレイアウトです。"}},
+    {"@type":"Question","name":"答えにくい質問はどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"始める前にパスありのルールを決めておくと安心です。"}}
+  ]
+}
+</script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="/css/gameheader.css">
+<link rel="stylesheet" href="/games/games.css">
+<link rel="stylesheet" href="/games/paranoiaquestionsdirty/paranoiaquestionsdirty.css">
+</head>
+<body class="bg-light">
+<main class="container py-4 py-md-5">
+  <div class="paranoia-shell">
+    <section class="paranoia-hero text-center mb-4">
+      <span class="paranoia-kicker">18歳以上向け</span>
+      <img src="/games/paranoiaquestionsdirty/logo.png" class="paranoia-hero-logo" alt="大人向けパラノイア質問" loading="lazy">
+      <h1 class="display-5 fw-bold mt-3 mb-2">大人向けパラノイア質問</h1>
+      <p class="paranoia-subline mb-0">「この中でいちばんありそうなのは誰？」で盛り上がる、大人向けの質問ゲームです。</p>
+      <div class="paranoia-stat-row">
+        <span class="paranoia-stat">25問</span>
+        <span class="paranoia-stat">3人以上</span>
+        <span class="paranoia-stat">ダウンロード不要</span>
+      </div>
+    </section>
+
+    <section class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="card question-card">
+          <div class="card-body p-4 p-md-5 text-center">
+            <div class="question-number" id="questionNumber">質問 1 / 25</div>
+            <p id="questionText" class="question-text mb-0"></p>
+            <span id="questionMode" class="question-mode"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row justify-content-center mt-4">
+      <div class="col-lg-9">
+        <div class="d-grid d-md-flex gap-2 justify-content-center game-controls">
+          <button id="prevBtn" class="btn btn-outline-dark">前へ</button>
+          <button id="randomBtn" class="btn btn-outline-secondary">ランダム</button>
+          <button id="nextBtn" class="btn btn-primary">次へ</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="row justify-content-center mt-5">
+      <div class="col-lg-9">
+        <article class="card border-0 shadow-sm content-card">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">遊び方</h2>
+            <ol class="mb-0">
+              <li>表示された質問を一人が読み上げます。</li>
+              <li>みんなで同時に、当てはまりそうな人を指さします。</li>
+              <li>指された人は答えてもいいし、事前に決めたルールでパスしてもOKです。</li>
+              <li>雰囲気を変えたいときは「ランダム」で次の質問へ進みます。</li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="row justify-content-center mt-4">
+      <div class="col-lg-9">
+        <article class="card border-0 shadow-sm content-card">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">このゲームが盛り上がる理由</h2>
+            <p>ルールが短く、すぐに会話が始まるのがパラノイア質問の強みです。飲み会、ホームパーティー、仲のいい友だちとの集まりで使いやすく、場が止まりにくいのが特徴です。</p>
+            <p class="mb-0">少し刺激のある質問でも、最初にパスあり・無理強いなしのルールを決めておけば、楽しい空気のまま遊べます。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="row justify-content-center mt-4">
+      <div class="col-lg-9">
+        <article class="card border-0 shadow-sm content-card">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">おすすめの使い方</h2>
+            <p class="mb-2"><strong>カップル:</strong> 軽めの質問から始めて、少しずつ温度感を上げると自然です。</p>
+            <p class="mb-2"><strong>友だち同士:</strong> 4〜8人くらいだとテンポよく回せます。</p>
+            <p class="mb-0"><strong>大人の集まり:</strong> NGテーマを先に共有しておくと安心して遊べます。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="row justify-content-center mt-4">
+      <div class="col-lg-9">
+        <article class="card border-0 shadow-sm content-card">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">よくある質問</h2>
+            <div class="faq-item"><h3 class="h6 mb-1">無料ですか？</h3><p class="mb-0">はい。完全無料で遊べます。</p></div>
+            <div class="faq-item"><h3 class="h6 mb-1">何人から遊べますか？</h3><p class="mb-0">3人以上がおすすめです。</p></div>
+            <div class="faq-item"><h3 class="h6 mb-1">スマホでも使えますか？</h3><p class="mb-0">はい。スマホ表示にも対応しています。</p></div>
+            <div class="faq-item"><h3 class="h6 mb-1">次に遊ぶなら？</h3><p class="mb-0"><a href="/ja/games/WouldYouRather/WouldYouRather">どっちを選ぶ？</a>、<a href="/ja/games/NeverHaveIEver/NeverHaveIEver">私はやったことがない</a>、<a href="/ja/games/undercover/undercover">アンダーカバー</a> もおすすめです。</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/ads-controller.js"></script>
+<script src="/js/game-navigation-ja.js"></script>
+<script src="script-ja.js"></script>
+</body>
+</html>

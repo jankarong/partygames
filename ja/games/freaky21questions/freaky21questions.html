@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スパイシー21質問 | 大人向け質問ゲーム</title>
+<meta name="description" content="カップルや大人同士の集まりで使いやすい、スパイシーな21質問ゲーム。短いラウンドで気軽に遊べます。">
+<meta name="keywords" content="21質問, 大人向け 質問ゲーム, カップル ゲーム, パーティーゲーム">
+<meta property="og:title" content="スパイシー21質問 | 大人向け質問ゲーム">
+<meta property="og:description" content="少し大胆な質問で会話が盛り上がる、21問の大人向け質問ゲーム。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bestpartygames.net/ja/games/freaky21questions/freaky21questions">
+<meta property="og:image" content="https://www.bestpartygames.net/image/partyGameLogo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="スパイシー21質問 | 大人向け質問ゲーム">
+<meta name="twitter:description" content="カップルや大人の集まり向けの、会話が盛り上がる21質問ゲーム。">
+<meta name="twitter:image" content="https://www.bestpartygames.net/image/partyGameLogo.png">
+<link rel="canonical" href="https://www.bestpartygames.net/ja/games/freaky21questions/freaky21questions">
+<link rel="icon" type="image/png" href="/image/favicon.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="/css/gameheader.css">
+<link rel="stylesheet" href="/games/games.css">
+<link rel="stylesheet" href="/games/freaky21questions/freaky21questions.css">
+</head>
+<body class="bg-light">
+<main class="container py-4 py-md-5">
+  <div class="freaky-shell">
+    <section class="freaky-hero text-center mb-4">
+      <span class="freaky-kicker">18歳以上向け</span>
+      <img src="/games/freaky21questions/logo.svg" class="freaky-hero-logo" alt="スパイシー21質問" loading="lazy">
+      <h1 class="display-5 fw-bold mt-3 mb-2">スパイシー21質問</h1>
+      <p class="freaky-subline mb-0">カップルや大人同士の集まりで、少し大胆な会話を楽しめる質問ゲームです。</p>
+      <div class="freaky-stat-row">
+        <span class="freaky-stat">21問</span>
+        <span class="freaky-stat">2人以上</span>
+        <span class="freaky-stat">ダウンロード不要</span>
+      </div>
+    </section>
+
+    <section class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="card question-card">
+          <div class="card-body p-4 p-md-5 text-center">
+            <div id="questionNumber" class="question-number"></div>
+            <p id="questionText" class="question-text mb-0"></p>
+            <span id="questionMode" class="question-mode"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row justify-content-center mt-4">
+      <div class="col-lg-9">
+        <div class="d-grid d-md-flex gap-2 justify-content-center game-controls">
+          <button id="prevBtn" class="btn btn-outline-dark">前へ</button>
+          <button id="randomBtn" class="btn btn-outline-secondary">ランダム</button>
+          <button id="nextBtn" class="btn btn-primary">次へ</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="row justify-content-center mt-4">
+      <div class="col-lg-9">
+        <article class="card border-0 shadow-sm content-card">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">このゲームについて</h2>
+            <p><strong>スパイシー21質問</strong> は、短いラウンドでテンポよく会話を広げたいときに向いている大人向けゲームです。質問数が決まっているので、だらだら長引かずに遊べます。</p>
+            <p class="mb-0">場をあたためたいときは軽めの質問から始めて、空気を見ながら少しずつ踏み込んでいくのがおすすめです。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="row justify-content-center mt-4">
+      <div class="col-lg-9">
+        <article class="card border-0 shadow-sm content-card">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">カップルでもグループでも使いやすい</h2>
+            <p><strong>カップル:</strong> 軽い質問から入り、二人のペースで深めていくと自然です。</p>
+            <p><strong>グループ:</strong> 一人一回までパス可能にしておくと、空気が重くなりにくくなります。</p>
+            <p class="mb-0"><strong>長く遊ぶ流れ:</strong> 次は <a href="/ja/games/WouldYouRather/WouldYouRather">どっちを選ぶ？</a> や <a href="/ja/games/NeverHaveIEver/NeverHaveIEver">私はやったことがない</a> に移ると自然につながります。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="row justify-content-center mt-4">
+      <div class="col-lg-9">
+        <article class="card border-0 shadow-sm content-card">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">気持ちよく遊ぶためのルール</h2>
+            <p>大人向けの質問ゲームは、合意と安心感があるほど楽しくなります。答えたくない質問はパスOK、無理強いしない、からかわない。この3つを最初に共有しておくと遊びやすくなります。</p>
+            <p class="mb-0">その前提があると、少し大胆な質問でも会話として楽しみやすくなります。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/ads-controller.js"></script>
+<script src="/js/game-navigation-ja.js"></script>
+<script src="script-ja.js"></script>
+</body>
+</html>

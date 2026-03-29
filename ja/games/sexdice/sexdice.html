@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ラブダイス | カップル向け日本語ダイスゲーム</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Lora:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="sexdice.css">
+    <meta name="description"
+        content="カップルで気軽に遊べる日本語版ラブダイス。行動、場所、時間を振ってふたりの雰囲気づくりを楽しめます。">
+    <meta name="keywords" content="ラブダイス, カップルゲーム, 日本語, 大人向けゲーム, ふたりで遊ぶ">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/sexdice/sexdice">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./sexdicelogo.png">
+
+    <meta property="og:title" content="ラブダイス | カップル向け日本語ダイスゲーム">
+    <meta property="og:description"
+        content="行動・場所・時間を振って、ふたりで気軽に楽しめる日本語版ラブダイス。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/ja/games/sexdice/sexdice">
+    <meta property="og:image" content="https://www.bestpartygames.net/games/sexdice/sexdicelogo.png">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "ラブダイス",
+        "description": "カップルで気軽に遊べる日本語版ラブダイス。",
+        "url": "https://www.bestpartygames.net/ja/games/sexdice/sexdice",
+        "image": "https://www.bestpartygames.net/games/sexdice/sexdicelogo.png",
+        "genre": "Adult Game",
+        "numberOfPlayers": "2",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "Adults",
+            "suggestedMinAge": 18
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Best Party Games"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Best Party Games",
+            "url": "https://www.bestpartygames.net"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.3",
+            "ratingCount": "89"
+        },
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "Action Dice",
+                "description": "Customizable actions for intimate moments"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Body Part Dice",
+                "description": "Different body parts to focus on"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Duration Dice",
+                "description": "Time variations for activities"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+<div id="saveNotification" class="save-notification">
+        保存しました
+    </div>
+
+    <main class="container">
+        <header class="logo-container">
+            <img src="./sexdicelogo.png" alt="ラブダイスのロゴ"
+                title="ラブダイス" class="game-logo">
+        </header>
+        <h1>ラブダイス</h1>
+        <section class="dice-container" aria-label="ラブダイス">
+            <div id="actionDice" class="dice action">
+                <span class="dice-text">行動</span>
+            </div>
+            <div id="whereDice" class="dice where">
+                <span class="dice-text">場所</span>
+            </div>
+            <div id="timeDice" class="dice time">
+                <span class="dice-text">時間</span>
+            </div>
+        </section>
+        <section class="button-container">
+            <button type="button" id="rollButton" class="button primary">ダイスを振る</button>
+            <button type="button" id="settingsButton" class="button settings">⚙️ カスタマイズ</button>
+        </section>
+        <section id="result" class="result"></section>
+
+        <!-- SEO Optimized Content -->
+        <section class="game-info">
+            <h2>ふたりのムードづくりに使える日本語ダイス</h2>
+            <p>ラブダイスは、行動・場所・時間の3つをランダムに決めて、ふたりの時間にちょっとした変化を加えるための軽いきっかけゲームです。無理のない範囲で、会話のネタや雰囲気づくりとして使うのがおすすめです。</p>
+
+            <h3>遊び方</h3>
+            <ol class="instructions">
+                <li>「ダイスを振る」を押します</li>
+                <li>3つのダイスが行動・場所・時間を表示します</li>
+                <li>表示内容を見て、ふたりでやるかどうかを決めます</li>
+                <li>しっくりこなければ何度でも振り直せます</li>
+                <li>「カスタマイズ」から候補の調整もできます</li>
+            </ol>
+
+            <h3>よくある質問</h3>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4>無料で遊べますか？</h4>
+                    <p>はい。そのまますぐに使えます。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>候補は変えられますか？</h4>
+                    <p>変えられます。カスタマイズ画面から行動・場所・時間の候補を追加や編集できます。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>設定は保存されますか？</h4>
+                    <p>同じブラウザならローカル保存されるので、次回も残ります。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>スマホでも使えますか？</h4>
+                    <p>はい。スマホ、タブレット、PCでそのまま使えます。</p>
+                </div>
+            </div>
+
+            <h3>使いやすいポイント</h3>
+            <ul class="benefits-list">
+                <li><strong>会話のきっかけ:</strong> 気軽にテーマを決められます</li>
+                <li><strong>マンネリ防止:</strong> 毎回少し違う流れを作れます</li>
+                <li><strong>調整しやすい:</strong> ふたりの距離感に合わせて変えられます</li>
+                <li><strong>端末内保存:</strong> 設定をローカルに残せます</li>
+            </ul>
+
+            <div class="romantic-ideas">
+                <h3>ダイス以外のおすすめ</h3>
+                <p>ゲーム以外でも、こんな小さな工夫と相性がいいです。</p>
+                <ul class="ideas-list">
+                    <li>いつもと違うデート案を1つ決める</li>
+                    <li>照明や音楽を少し整える</li>
+                    <li>うれしいことを言葉にする</li>
+                    <li>短いごほうびルールを作る</li>
+                    <li>ふたりだけの定番ネタを増やす</li>
+                </ul>
+            </div>
+        </section>
+        <!-- End SEO Optimized Content -->
+    </main>
+
+    <!-- Premium Modal -->
+    <div id="premium-modal" class="modal-overlay hidden">
+        <div class="card shadow-lg rounded-4" style="max-width: 500px; margin: 10% auto; position: relative; background-color: #2d1b3d; border: 2px solid #d81b60;">
+            <div class="card-body p-4 text-center">
+                <div class="mb-4">
+                    <i class="fas fa-crown text-warning" style="font-size: 4rem;"></i>
+                </div>
+                <h3 class="h4 mb-3" style="color: #fff;">カスタマイズ機能を開放</h3>
+                <p class="mb-4" style="color: #fff;">プレミアムで追加のカスタム機能が使えます。</p>
+                <ul class="text-start mb-4" style="max-width: 300px; margin: 0 auto; color: #fff;">
+                    <li>候補の細かい編集</li>
+                    <li>オリジナル項目の追加</li>
+                    <li>保存オプションの拡張</li>
+                    <li>より快適な利用体験</li>
+                </ul>
+                <div class="d-flex gap-2 justify-content-center mt-4">
+                    <button class="btn btn-lg px-4 rounded-pill" style="background-color: #d81b60; color: white; border: none;" onclick="window.location.href='/ja/premium.html'">
+                        <i class="fas fa-crown me-2"></i>プレミアムを見る
+                    </button>
+                    <button class="btn btn-lg px-4 rounded-pill" style="background-color: transparent; color: white; border: 2px solid #d81b60;" onclick="closePremiumModal()">
+                        閉じる
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="settingsPanel" class="settings-panel">
+        <div class="settings-header">
+            <button type="button" class="close-button" onclick="closeSettings()">×</button>
+            <h2>カスタマイズ</h2>
+        </div>
+        <div class="settings-content">
+            <div class="dice-options">
+                <h3>行動</h3>
+                <div id="actionOptions"></div>
+                <button type="button" class="add-option" onclick="addOption('action')">+ 行動を追加</button>
+            </div>
+            <div class="dice-options">
+                <h3>場所</h3>
+                <div id="whereOptions"></div>
+                <button type="button" class="add-option" onclick="addOption('where')">+ 場所を追加</button>
+            </div>
+            <div class="dice-options">
+                <h3>時間</h3>
+                <div id="timeOptions"></div>
+                <button type="button" class="add-option" onclick="addOption('time')">+ 時間を追加</button>
+            </div>
+            <div class="settings-buttons">
+                <button type="button" class="button" onclick="resetToDefault()">初期設定に戻す</button>
+                <button type="button" class="button" onclick="saveChanges()">保存</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-ja.js"></script>
+    <script src="sexdice-ja.js"></script>
+</body>
+
+</html>

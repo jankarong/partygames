@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Purple outer circle (the ball) -->
+  <circle cx="50" cy="50" r="45" fill="#8A7DC4"/>
+  
+  <!-- Light purple border/glow -->
+  <circle cx="50" cy="50" r="48" fill="#A99FD9" opacity="0.5"/>
+  
+  <!-- Add some shine/highlight to make it look 3D -->
+  <ellipse cx="35" cy="35" rx="15" ry="15" fill="#FFFFFF" opacity="0.3"/>
+  
+  <!-- White center circle -->
+  <circle cx="50" cy="50" r="20" fill="#FFFFFF"/>
+  
+  <!-- Number 8 in the center -->
+  <text x="50" y="55" font-size="16" text-anchor="middle" fill="#8A7DC4" font-weight="bold">8</text>
+</svg>

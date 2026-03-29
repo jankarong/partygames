@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="おでこに当てた言葉を当てる日本語版ヘッドバンズ風ゲーム。みんなのヒントを聞きながら制限時間内に答えよう。">
+    <meta name="keywords" content="ヘッドバンズ, おでこゲーム, 推理ゲーム, パーティーゲーム, 日本語">
+    <meta name="author" content="PartyGameLab">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/hedbanzgame/hedbanzgame">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./hedbanz.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ヘッドバンズ風ゲーム | 日本語パーティーゲーム">
+    <meta property="og:description" content="おでこの言葉をみんなのヒントで当てる日本語版ゲーム。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="hedbanz.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/ja/games/hedbanzgame/hedbanzgame">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ヘッドバンズ風ゲーム | 日本語パーティーゲーム">
+    <meta name="twitter:description" content="おでこの言葉を当てる日本語版の定番パーティーゲーム。">
+    <meta name="twitter:image" content="hedbanz.png">
+
+    <title>ヘッドバンズ風ゲーム | 日本語パーティーゲーム</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="/style/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="hedbanzgame.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "ヘッドバンズ風ゲーム",
+        "description": "おでこに当てた言葉をヒントで当てる日本語版パーティーゲーム。",
+        "url": "https://www.bestpartygames.net/ja/games/hedbanzgame/hedbanzgame",
+        "image": "https://www.bestpartygames.net/ja/games/hedbanzgame/hedbanz.png",
+        "genre": "パーティーゲーム",
+        "gameType": "推理ゲーム",
+        "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": "2", "maxValue": "10"},
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"},
+        "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "250"},
+        "author": {"@type": "Organization", "name": "PartyGameLab"}
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+<div class="game-container">
+        <div class="setup-screen" id="setupScreen">
+            <img src="hedbanz.png" alt="ヘッドバンズ風ゲーム" class="logo game-logo">
+            <h1>ヘッドバンズ風ゲーム</h1>
+            <p class="subtitle">スマホをおでこに当てて言葉を当てよう</p>
+
+            <div class="setup-form">
+                <label>プレイヤー人数:</label>
+                <select id="playerCount" class="setup-form select">
+                    <option value="2">2人</option>
+                    <option value="3">3人</option>
+                    <option value="4">4人</option>
+                    <option value="5">5人</option>
+                    <option value="6">6人</option>
+                    <option value="7">7人</option>
+                    <option value="8">8人</option>
+                    <option value="9">9人</option>
+                    <option value="10">10人</option>
+                </select>
+
+                <label>制限時間（1人あたり）:</label>
+                <select id="gameDuration" class="setup-form select">
+                    <option value="30">30秒</option>
+                    <option value="60" selected>60秒</option>
+                </select>
+
+                <button id="startBtn" class="btn-primary">スタート</button>
+            </div>
+        </div>
+
+        <div class="ready-screen" id="readyScreen" style="display: none;">
+            <h2>準備OK？</h2>
+            <div class="next-player-display">
+                <p class="ready-label">次のプレイヤー</p>
+                <div class="ready-number" id="nextPlayerNum">1</div>
+                <p class="ready-instruction">まわりの人にだけ言葉が見えるように持って、下のボタンで始めてください。
+</p>
+            </div>
+            <button id="readyBtn" class="btn-primary">自分の番を始める</button>
+        </div>
+
+        <div class="game-screen" id="gameScreen" style="display: none;">
+            <div class="player-info">
+                <div class="current-player">プレイヤー <span id="currentPlayer">1</span></div>
+                <div class="player-score">ポイント: <span id="playerScore">0</span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-display" id="wordDisplay">準備</div>
+                <p class="instruction" id="instruction">他の人にはこの言葉が見えています。はい/いいえで答えられる質問をして当てましょう。</p>
+            </div>
+
+            <div class="timer-section">
+                <div class="timer" id="timer">60</div>
+                <p class="timer-label">秒</p>
+            </div>
+
+            <div class="button-group">
+                <button id="correctBtn" class="btn-correct">正解！</button>
+                <button id="skipBtn" class="btn-skip">パス</button>
+            </div>
+        </div>
+
+        <div class="results-screen" id="resultsScreen" style="display: none;">
+            <h2>ゲーム終了！</h2>
+            <div class="final-scores" id="finalScores"></div>
+            <button id="playAgainBtn" class="btn-primary">もう一度遊ぶ</button>
+        </div>
+
+        <!-- SEO Content Section -->
+        <div class="content-section">
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">どんなゲーム？</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>ヘッドバンズ風ゲーム</strong> は、おでこに当てた言葉を周りのヒントで当てる定番の推理ゲームです。パーティーやオンライン通話でも手軽に遊べます。</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">遊び方</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <ol>
+                    <li>2〜10人を選ぶ</li>
+                    <li>1人あたり30秒か60秒を設定する</li>
+                    <li>スマホをおでこに当てる</li>
+                    <li>はい/いいえで答えられる質問をして当てる</li>
+                    <li>わかったら「正解！」を押す</li>
+                    <li>正解ごとに1ポイント</li>
+                    <li>全員が順番にプレイする</li>
+                    <li>一番ポイントが多い人の勝ち</li>
+                </ol>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">このゲームの良さ</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <ul>
+                    <li>ダウンロード不要ですぐ遊べる</li>
+                    <li>2〜10人で遊びやすい</li>
+                    <li>対面でもオンラインでも使える</li>
+                    <li>いろいろな単語で何度でも遊べる</li>
+                    <li>ルールが簡単</li>
+                    <li>無料で使える</li>
+                    <li>反応が見えて盛り上がりやすい</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">コツ</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <p><strong>当てる側:</strong></p>
+                <ul>
+                    <li>まずは大きいカテゴリから聞く</li>
+                    <li>候補を少しずつ絞る</li>
+                    <li>特徴を聞くと当てやすい</li>
+                    <li>テンポよく進める</li>
+                </ul>
+                <p><strong>ヒントを出す側:</strong></p>
+                <ul>
+                    <li>はい/いいえで素早く答える</li>
+                    <li>言いすぎない</li>
+                    <li>リアクションも込みで楽しむ</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">単語カテゴリー</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <ul>
+                    <li>🦁 <strong>動物:</strong> ライオン、トラ、犬、猫など</li>
+                    <li>👤 <strong>有名人:</strong> 俳優、アスリート、歴史上の人物</li>
+                    <li>🪑 <strong>もの:</strong> 椅子、電話、パソコンなど</li>
+                    <li>💼 <strong>職業:</strong> 医者、先生、シェフ、パイロット</li>
+                    <li>🏃 <strong>アクティビティ:</strong> スポーツ、ゲーム、趣味</li>
+                    <li>🍕 <strong>食べ物:</strong> ピザ、寿司、コーヒー、アイスクリーム</li>
+                    <li>🌍 <strong>国名:</strong> 日本、ブラジル、フランス、オーストラリア</li>
+                    <li>😊 <strong>感情:</strong> 嬉しい、悲しい、ワクワク、困惑</li>
+                    <li>👕 <strong>ファッション:</strong> Tシャツ、靴、帽子など</li>
+                    <li>🎬 <strong>映画・アニメ:</strong> 人気の映画やアニメ作品</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">こんな場面にぴったり</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <ul>
+                    <li>🎉 誕生日パーティー</li>
+                    <li>👥 オンライン飲み会</li>
+                    <li>🏢 会社のレクリエーション</li>
+                    <li>👨‍👩‍👧‍👦 家族の集まり</li>
+                    <li>🎓 学校のイベント</li>
+                    <li>🏠 友人宅でのパーティー</li>
+                    <li>💑 デートの合間に</li>
+                    <li>🥳 あらゆるカジュアルな集まり</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">よくある質問</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <div class="faq-item">
+                    <h3>本当に無料ですか？</h3>
+                    <p>はい！完全無料です。登録や広告、隠れた費用はありません。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>ダウンロードは必要ですか？</h3>
+                    <p>いいえ。ブラウザでリンクを開くだけですぐに遊べます。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>何人まで遊べますか？</h3>
+                    <p>2〜10人です。人数が多いほど盛り上がります！</p>
+                </div>
+                <div class="faq-item">
+                    <h3>離れた友達とも遊べますか？</h3>
+                    <p>はい。リンクを共有して、ビデオ通話などで画面を見せ合えば遊べます。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>単語はなくなりますか？</h3>
+                    <p>いいえ。豊富な単語リストからランダムに出題されるので、何度でも遊べます。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>子供も遊べますか？</h3>
+                    <p>はい。すべての年齢層に適切な単語が含まれています。</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">オンライン版 vs パッケージ版</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <table class="comparison-table">
+                    <tr><th>特徴</th><th>オンライン版</th><th>パッケージ版</th></tr>
+                    <tr><td>費用</td><td>無料</td><td>2,000〜3,000円</td></tr>
+                    <tr><td>準備</td><td>すぐ開始</td><td>10分以上</td></tr>
+                    <tr><td>オンライン対応</td><td>✓ はい</td><td>✗ いいえ</td></tr>
+                    <tr><td>単語数</td><td>1000以上</td><td>カード枚数分</td></tr>
+                    <tr><td>DL不要</td><td>✓ はい</td><td>N/A</td></tr>
+                    <tr><td>タイマー調整</td><td>✓ はい</td><td>固定</td></tr>
+                    <tr><td>やりこみ度</td><td>無限</td><td>制限あり</td></tr>
+                </table>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">準備はできましたか？</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                <p>今すぐ <strong>ヘッドバンズ風ゲーム</strong> を始めましょう！友達や家族、同僚と一緒に、最高に楽しい時間を過ごしてください。1000以上の単語とカスタマイズ可能な設定で、どんなパーティーも盛り上がること間違いなしです！</p>
+                <p><strong>登録不要、ダウンロード不要。純粋に楽しむだけ！</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="hedbanzgame-ja.js"></script>
+    <script src="/js/game-navigation-ja.js"></script>
+</body>
+
+</html>

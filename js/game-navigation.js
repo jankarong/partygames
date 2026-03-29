@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Game Navigation Component
  * Provides enhanced navigation between games with floating menu and quick access bar
  */
@@ -6,22 +6,22 @@
 class GameNavigation {
     constructor() {
         this.gamesData = [
-            { nameKey: 'Magic 8 Ball', url: '/games/magic8ball/magic8ball', logo: '/games/magic8ball/magic8ball.svg', category: 'solo' },
-            { nameKey: 'Truth or Dare', url: '/games/TruthorDare/TruthOrDare', logo: '/games/TruthorDare/TruthorDareLogo.png', category: 'party' },
-            { nameKey: 'Truth or Dare Couples', url: '/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples', logo: '/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouplesLogo.png', category: 'adult' },
-            { nameKey: 'Never Have I Ever', url: '/games/NeverHaveIEver/NeverHaveIEver', logo: '/games/NeverHaveIEver/NeverHaveIEverLogo.png', category: 'party' },
-            { nameKey: 'Who Is Most Likely', url: '/games/WhoIsMostLikely/WhoIsMostLikely', logo: '/games/WhoIsMostLikely/MostLikelyToLogo.png', category: 'party' },
-            { nameKey: 'Would You Rather', url: '/games/WouldYouRather/WouldYouRather', logo: '/games/WouldYouRather/WouldYouRatherLogo.png', category: 'party' },
-            { nameKey: 'Mafia', url: '/games/mafia/mafia', logo: '/games/mafia/mafialogo.png', category: 'strategy' },
-            { nameKey: 'Undercover', url: '/games/undercover/undercover', logo: '/games/undercover/undercover.png', category: 'strategy' },
-            { nameKey: 'Charades', url: '/games/charades/charades', logo: '/games/charades/CharadesLogo.png', category: 'party' },
-            { nameKey: 'Hedbanz', url: '/games/hedbanzgame/hedbanzgame', logo: '/games/hedbanzgame/hedbanz.png', category: 'party' },
-            { nameKey: '21 Questions Game Freaky', url: '/games/freaky21questions/freaky21questions', logo: '/image/favicon.png', category: 'adult' },
-            { nameKey: 'Paranoia Questions Dirty', url: '/games/paranoiaquestionsdirty/paranoiaquestionsdirty', logo: '/games/paranoiaquestionsdirty/logo.png', category: 'adult' },
-            { nameKey: 'Bottle Match Game', url: '/games/BottleMatchGame/BottleMatchGame', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
-            { nameKey: 'Sex Dice', url: '/games/sexdice/sexdice', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
-            { nameKey: 'Beer Number', url: '/games/beernumber/beernumber', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
-            { nameKey: 'Kings Cup', url: '/games/KingsCup/KingsCup', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' }
+            { nameKey: 'Magic 8 Ball', url: '/games/magic8ball/magic8ball.html', logo: '/games/magic8ball/magic8ball.svg', category: 'solo' },
+            { nameKey: 'Truth or Dare', url: '/games/TruthorDare/TruthOrDare.html', logo: '/games/TruthorDare/TruthorDareLogo.png', category: 'party' },
+            { nameKey: 'Truth or Dare Couples', url: '/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.html', logo: '/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouplesLogo.png', category: 'adult' },
+            { nameKey: 'Never Have I Ever', url: '/games/NeverHaveIEver/NeverHaveIEver.html', logo: '/games/NeverHaveIEver/NeverHaveIEverLogo.png', category: 'party' },
+            { nameKey: 'Who Is Most Likely', url: '/games/WhoIsMostLikely/WhoIsMostLikely.html', logo: '/games/WhoIsMostLikely/MostLikelyToLogo.png', category: 'party' },
+            { nameKey: 'Would You Rather', url: '/games/WouldYouRather/WouldYouRather.html', logo: '/games/WouldYouRather/WouldYouRatherLogo.png', category: 'party' },
+            { nameKey: 'Mafia', url: '/games/mafia/mafia.html', logo: '/games/mafia/mafialogo.png', category: 'strategy' },
+            { nameKey: 'Undercover', url: '/games/undercover/undercover.html', logo: '/games/undercover/undercover.png', category: 'strategy' },
+            { nameKey: 'Charades', url: '/games/charades/charades.html', logo: '/games/charades/CharadesLogo.png', category: 'party' },
+            { nameKey: 'Hedbanz', url: '/games/hedbanzgame/hedbanzgame.html', logo: '/games/hedbanzgame/hedbanz.png', category: 'party' },
+            { nameKey: '21 Questions Game Freaky', url: '/games/freaky21questions/freaky21questions.html', logo: '/image/favicon.png', category: 'adult' },
+            { nameKey: 'Paranoia Questions Dirty', url: '/games/paranoiaquestionsdirty/paranoiaquestionsdirty.html', logo: '/games/paranoiaquestionsdirty/logo.png', category: 'adult' },
+            { nameKey: 'Bottle Match Game', url: '/games/BottleMatchGame/BottleMatchGame.html', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
+            { nameKey: 'Sex Dice', url: '/games/sexdice/sexdice.html', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
+            { nameKey: 'Beer Number', url: '/games/beernumber/beernumber.html', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
+            { nameKey: 'Kings Cup', url: '/games/KingsCup/KingsCup.html', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' }
         ];
 
         // Initialize games with localized names
@@ -53,6 +53,12 @@ class GameNavigation {
         } else if (currentPath.startsWith('/tr/')) {
             currentLang = 'tr';
             langPrefix = '/tr';
+        } else if (currentPath.startsWith('/ja/')) {
+            currentLang = 'ja';
+            langPrefix = '/ja';
+        } else if (currentPath.startsWith('/ru/')) {
+            currentLang = 'ru';
+            langPrefix = '/ru';
         }
 
         const gameNames = this.getGameNames(currentLang);
@@ -627,13 +633,14 @@ class GameNavigation {
             .replace('/de/', '/')
             .replace('/fr/', '/')
             .replace('/id/', '/')
-            .replace('/tr/', '/');
+            .replace('/tr/', '/')
+            .replace('/ja/', '/');
 
         if (lang === 'en') {
-            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/')) {
+            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/') && !currentPath.startsWith('/ja/')) {
                 return;
             }
-            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '');
+            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '').replace('/ja', '');
         } else {
             const langPrefix = `/${lang}`;
             if (currentPath.startsWith(`${langPrefix}/`)) {

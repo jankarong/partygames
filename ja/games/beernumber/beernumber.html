@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="1から100の数字を当てる日本語版ナンバー当てゲーム。ヒントを見ながら少ない回数で正解を目指そう。">
+    <meta name="keywords" content="数字当てゲーム, 1から100, 推理ゲーム, パーティーゲーム, オンラインゲーム">
+    <meta name="author" content="PartyGameLab">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="数字を当てよう | 日本語ナンバー推理ゲーム">
+    <meta property="og:description" content="1から100の中から正しい数字を当てるシンプルで楽しい日本語版ゲーム。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/games/beernumber/numberguessLogo.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="数字を当てよう | 日本語推理ゲーム">
+    <meta name="twitter:description" content="ヒントを頼りに1から100の数字を当てる無料ゲーム。">
+    <meta name="twitter:image" content="/games/beernumber/numberguessLogo.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/beernumber/beernumber">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./numberguessLogo.png">
+
+    <title>数字を当てよう | 日本語ナンバーゲーム</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="beernumber.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./numberguessLogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "数字を当てよう",
+        "description": "1から100の数字を推理して当てる日本語版ナンバーゲーム。",
+        "genre": "数字ゲーム",
+        "numberOfPlayers": "1+",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "120"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+<div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="game-header text-center mb-4">
+                    <div class="logo-container">
+                        <img src="./numberguessLogo.png" alt="数字を当てようのロゴ"
+                            class="game-logo">
+                    </div>
+                    <h1 class="display-5 fw-bold">数字を当てよう</h1>
+                    <p class="lead">ヒントを頼りに正解へ近づく定番ナンバーゲーム</p>
+                    <div class="cute-bubbles">
+                        <div class="bubble bubble-1"></div>
+                        <div class="bubble bubble-2"></div>
+                        <div class="bubble bubble-3"></div>
+                        <div class="bubble bubble-4"></div>
+                    </div>
+                </div>
+
+                <div class="game-container card shadow">
+                    <div class="card-body">
+                        <div class="beer-container mb-4">
+                            <div class="beer-mug">
+                                <div class="beer-handle"></div>
+                                <div class="beer-glass">
+                                    <div class="beer-foam"></div>
+                                    <div class="beer-liquid">
+                                        <div class="beer-fill" id="beer-fill"></div>
+                                    </div>
+                                </div>
+                                <div class="beer-face">
+                                    <div class="beer-eyes">
+                                        <div class="beer-eye beer-eye-left"></div>
+                                        <div class="beer-eye beer-eye-right"></div>
+                                    </div>
+                                    <div class="beer-mouth"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="game-controls mb-4">
+                            <div class="input-group mb-3">
+                                <input type="number" id="guessInput" class="form-control"
+                                    placeholder="1〜100の数字を入力" min="1" max="100">
+                                <button id="submitGuess" class="btn">
+                                    <i class="fas fa-beer me-2"></i>予想する
+                                </button>
+                            </div>
+                            <div id="message" class="alert d-none"></div>
+                        </div>
+
+                        <div id="history" class="guess-history mb-4"></div>
+                    </div>
+                </div>
+
+                <!-- Game Rules -->
+                <div class="card shadow mt-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">📋 遊び方</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="rules-list">
+                            <li>🎯 ゲームが1〜100のどこかの数字をひとつ決めます。</li>
+                            <li>🎮 あなたは数字を入力して当たりを目指します。</li>
+                            <li>🔄 入力後に「高すぎる」「低すぎる」のヒントが出ます。</li>
+                            <li>🏆 できるだけ少ない回数で当てられると気持ちいいです。</li>
+                            <li>🎉 ひとりでも、順番に回して複数人でも遊べます。</li>
+                        </ul>
+                    </div>
+                </div>
+<div class="my-4">
+                
+            </div>
+
+            <!-- FAQ Section -->
+                <div class="card shadow mt-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">❓ よくある質問</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="faq-section">
+                            <div class="faq-item">
+                                <h3>🎮 どんなゲームですか？</h3>
+                                <p>1〜100の数字を当てるシンプルな推理ゲームです。入力するたびにヒントが出るので、範囲を絞りながら正解を目指します。</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>🔄 複数人でも遊べますか？</h3>
+                                <p>遊べます。順番に予想して、誰が少ない回数で当てられるか競うと盛り上がります。</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>📝 コツはありますか？</h3>
+                                <p>まず50あたりから始めて、高いか低いかで範囲を半分ずつ絞ると効率よく当てられます。</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>🔄 正解するとどうなりますか？</h3>
+                                <p>そのラウンドはクリアです。もう一度遊んで、前回より少ない回数で当てられるか挑戦できます。</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>🎯 向いているシーンは？</h3>
+                                <p>ちょっとした空き時間、頭の体操、友だちとのミニ対決にちょうどいいです。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content Section -->
+                <div class="card shadow mt-4 mb-5">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">🎯 このゲームについて</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>「数字を当てよう」は、ルールがシンプルなのに意外と熱くなる定番の数字推理ゲームです。高いか低いかのヒントを頼りに、正解までの距離を少しずつ詰めていきます。</p>
+                        <p>ひとりで論理的に解いても、何人かで順番に予想して勝負しても楽しめます。短時間で終わるので、会話の合間やちょっとした休憩時間にも向いています。</p>
+                        <p>コツは、やみくもに打つよりも、範囲を半分ずつ絞る感覚で考えることです。シンプルですが、思ったより頭を使うのでミニゲームとしてちょうどいい難しさです。</p>
+                        <p>軽く遊べて、しかも少しだけ達成感がある。そんな日本語版の数字当てゲームとして使いやすいページにしています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="beernumber-ja.js"></script>
+    <script src="/js/game-navigation-ja.js"></script>
+</body>
+
+</html>

@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Load custom answers from localStorage
-    let customAnswers = JSON.parse(localStorage.getItem('customAnswers')) || [];
+    let customAnswers = JSON.parse(localStorage.getItem('customAnswers_ru')) || [];
 
     // Add custom version to answers object
     answers.custom = customAnswers;
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Update answers object and localStorage
         answers.custom = customAnswers;
-        localStorage.setItem('customAnswers', JSON.stringify(customAnswers));
+        localStorage.setItem('customAnswers_ru', JSON.stringify(customAnswers));
 
         // Add event listeners for action buttons
         document.querySelectorAll('.delete-answer').forEach(button => {

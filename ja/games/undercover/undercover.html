@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="4〜20人で遊べる日本語版アンダーカバー。似た単語を手がかりに、紛れこんだ少数派を見つける正体隠匿ゲーム。">
+    <meta name="keywords"
+        content="アンダーカバー, 正体隠匿, 単語ゲーム, パーティーゲーム, 日本語ゲーム">
+    <meta property="og:title" content="アンダーカバー | 日本語正体隠匿ゲーム">
+    <meta property="og:description"
+        content="似た単語から少数派を見つける日本語版アンダーカバー。">
+    <meta property="og:image" content="./undercover.png">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="PartyGameLab">
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/games/undercover/undercover">
+    <title>アンダーカバー | 日本語正体隠匿ゲーム</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./undercovebg.jpg" as="image">
+    <link rel="preload" href="./undercover.png" as="image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./undercover.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./undercover.png">
+    <link rel="apple-touch-icon" href="./undercover.png">
+    <link rel="shortcut icon" href="./undercover.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="../../style/main.css" rel="stylesheet">
+
+    <link href="undercover.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.hidden {
+            display: none;
+        }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "アンダーカバー",
+      "description": "似た単語を手がかりに少数派を見抜く日本語版の正体隠匿ゲーム。",
+      "alternativeHeadline": "日本語で遊べるアンダーカバー",
+      "keywords": "アンダーカバー, 正体隠匿, 単語ゲーム, パーティーゲーム, 日本語",
+      "numberOfPlayers": {
+        "@type": "QuantitativeValue",
+        "minValue": 4,
+        "maxValue": 20
+      },
+      "gameItem": "Online Party Game",
+      "audience": {
+        "@type": "Audience",
+        "suggestedMinAge": "12"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY",
+        "availability": "http://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <!-- Adsense is loaded conditionally by /js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+<main class="container" style="padding-top: 2rem; padding-bottom: 3rem;">
+        <div class="text-center mb-5">
+            <div class="game-logo-container mb-4">
+                <img src="./undercover.png" alt="アンダーカバーのロゴ" class="game-logo"
+                    width="200" height="200" loading="lazy">
+            </div>
+            <h1 class="cute-title">アンダーカバー</h1>
+            <p class="text-light mb-0">少数派を会話から見抜こう</p>
+        </div>
+
+        <!-- Game Setup Section -->
+        <section id="setup-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4"
+            aria-labelledby="setup-title">
+            <div class="card-body p-4">
+                <h2 id="setup-title" class="card-title h4 mb-4 text-light">ゲーム設定</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="playerCount" class="text-light mb-2">プレイヤー人数 (4〜20)</label>
+                            <input type="number" class="form-control" id="playerCount" min="4" max="20" value="4"
+                                aria-describedby="playerCountHelp">
+                            <small id="playerCountHelp" class="form-text text-light">4〜20人で選んでください</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="undercoverCount" class="text-light mb-2">アンダーカバー人数 (1〜3)</label>
+                            <input type="number" class="form-control" id="undercoverCount" min="1" max="3" value="1"
+                                aria-describedby="spyCountHelp">
+                            <small id="spyCountHelp" class="form-text text-light">少数派の人数を選んでください</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="whiteCount" class="text-light mb-2">ミスターホワイト人数</label>
+                            <input type="number" class="form-control" id="whiteCount" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <div class="mb-4">
+                        <label class="text-light mb-2 d-block" for="categorySelect">単語カテゴリーを選ぶ:</label>
+                        <select class="form-select" id="categorySelect" aria-label="Selecione a categoria de palavras">
+                            <option value="all">すべてのカテゴリー</option>
+                            <optgroup label="カテゴリー">
+                                <option value="Food & Drink" selected>食べ物と飲み物</option>
+                                <option value="Animals">動物</option>
+                                <option value="Objects">もの</option>
+                                <option value="Jobs & Roles">仕事・役割</option>
+                                <option value="Entertainment">エンタメ</option>
+                                <option value="Nature & Weather">自然・天気</option>
+                                <option value="Funny">おもしろ</option>
+                                <option value="Sports & Fitness">スポーツ・運動</option>
+                                <option value="Technology & Digital">テクノロジー</option>
+                                <option value="Travel & Places">旅行・場所</option>
+                                <option value="Relationships">人間関係</option>
+                                <option value="Brands & Companies">ブランド・企業</option>
+                                <option value="Historical Figures">歴史人物</option>
+                            </optgroup>
+                        </select>
+                        <small class="text-light d-block mt-2">みんなで遊びやすい定番ジャンルを入れています。</small>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="useCustomWords">
+                        <label class="form-check-label" for="useCustomWords">カスタム単語を使う</label>
+                    </div>
+                    <div id="customWordsSection" class="mt-3" style="display: none;">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="customCivilianWord" class="text-light mb-2">市民側の単語</label>
+                                    <input type="text" class="form-control" id="customCivilianWord">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="customUndercoverWord" class="text-light mb-2">アンダーカバー側の単語</label>
+                                    <input type="text" class="form-control" id="customUndercoverWord">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-pink btn-lg px-5 rounded-pill" onclick="startGame()">
+                        <i class="fas fa-play me-2"></i>ゲーム開始
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Upgrade Modal -->
+        <div id="premium-modal" class="modal-overlay hidden">
+            <div class="card bg-darker shadow-lg border-pink rounded-4" style="max-width: 500px; margin: 10% auto; position: relative;">
+                <div class="card-body p-4 text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-crown text-warning" style="font-size: 4rem;"></i>
+                    </div>
+                    <h3 class="h4 mb-3 text-light">プレミアムカテゴリを開放</h3>
+                    <p class="text-light mb-4">追加カテゴリを使うにはプレミアムが必要です。</p>
+                    <ul class="text-light text-start mb-4" style="max-width: 300px; margin: 0 auto;">
+                        <li>スポーツ・運動</li>
+                        <li>テクノロジー</li>
+                        <li>旅行・場所</li>
+                        <li>人間関係</li>
+                        <li>ブランド・企業</li>
+                        <li>歴史人物</li>
+                    </ul>
+                    <div class="d-flex gap-2 justify-content-center mt-4">
+                        <button class="btn btn-pink btn-lg px-4 rounded-pill" onclick="window.location.href='/premium.html'">
+                            <i class="fas fa-crown me-2"></i>プレミアムを見る
+                        </button>
+                        <button class="btn btn-outline-pink btn-lg px-4 rounded-pill" onclick="closePremiumModal()">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Word Display Section -->
+        <div id="word-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
+            <div class="card-body p-4 text-center">
+                <h3 class="h5 mb-4 text-light">プレイヤー <span id="currentPlayer" class="text-pink">1</span> の番</h3>
+                <div class="flip-card mx-auto">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front d-flex align-items-center justify-content-center">
+                            <div class="cute-text">タップして自分の単語を見る</div>
+                        </div>
+                        <div class="flip-card-back d-flex align-items-center justify-content-center">
+                            <div id="wordDisplay" class="cute-text"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-pink btn-lg px-5 rounded-pill mt-4" onclick="nextPlayer()">
+                    <i class="fas fa-arrow-right me-2"></i>次のプレイヤー
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Play Section -->
+        <div id="game-section" class="card bg-darker shadow-lg mb-4 border-pink rounded-4 hidden">
+            <div class="card-body p-4" id="game-content">
+                <h3 class="h5 mb-4 text-light">投票</h3>
+                <form id="voteForm">
+                    <div class="player-list rounded-4 p-3 mb-4" id="playerList">
+                        <!-- Players will be added here dynamically -->
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-pink btn-lg px-5 rounded-pill mb-3"
+                            onclick="eliminatePlayer()">
+                            <i class="fas fa-user-minus me-2"></i>プレイヤーを脱落させる
+                        </button>
+                        <button type="button" class="btn btn-outline-pink btn-lg px-5 rounded-pill"
+                            onclick="resetGame()">
+                            <i class="fas fa-redo me-2"></i>もう一度遊ぶ
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+<div class="my-4">
+                
+            </div>
+
+            <!-- Game Rules Section -->
+        <section class="card bg-darker shadow-lg mb-4 border-pink rounded-4">
+            <div class="card-body p-4">
+                <h2 class="card-title h4 mb-4 text-light">遊び方</h2>
+                <div class="text-light">
+                    <h3 class="h6 text-pink mb-3">このゲームの特徴</h3>
+                    <ul class="mb-4">
+                        <li><strong>4〜20人対応:</strong> 少人数でも大人数でも回しやすいです</li>
+                        <li><strong>カテゴリー選択:</strong> 食べ物、動物、仕事などから選べます</li>
+                        <li><strong>カスタム単語:</strong> 自分たち用のワードペアでも遊べます</li>
+                        <li><strong>スマホ向け:</strong> 1台回しでも操作しやすい構成です</li>
+                        <li><strong>すぐ開始:</strong> 登録なしでそのまま始められます</li>
+                    </ul>
+
+                    <h3 class="h6 text-pink mb-3">基本ルール</h3>
+                    <ol class="mb-4">
+                        <li>ほとんどの人には同じ単語、市民と少しだけ違う単語が少数派に配られます。</li>
+                        <li>順番に自分の単語を直接言わずにヒントを出します。</li>
+                        <li>会話の違和感から少数派を探します。</li>
+                        <li>投票で最も票が集まった人が脱落します。</li>
+                        <li>少数派を全員見つければ市民側の勝ちです。</li>
+                    </ol>
+
+                    <h3 class="h6 text-pink mb-3">コツ</h3>
+                    <ul class="mb-4">
+                        <li><strong>言いすぎない:</strong> 具体的すぎる説明は危険です</li>
+                        <li><strong>聞き逃さない:</strong> 似ているけれど少しズレた表現に注目すると見抜きやすいです</li>
+                        <li><strong>カテゴリー調整:</strong> メンバーに合わせて難度を変えると遊びやすいです</li>
+                        <li><strong>テンポ重視:</strong> 長考しすぎないほうが盛り上がります</li>
+                    </ul>
+
+                    <p class="mb-0"><strong>おすすめの場面:</strong> 飲み会、旅行、合宿、オンライン通話、チームイベントなど。短時間で会話が生まれるので導入ゲームにも向いています。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">当サイトについて</h2>
+                    <p>PartyGameLab は、みんなで気軽に遊べるブラウザゲームを集めたサイトです。飲み会、集まり、オンライン通話でも使やすいゲームを日本語で遊べるようにしています。</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">クイックリンク</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="../../index.html" class="text-light text-decoration-none">ゲーム一覧</a></li>
+                        <li><a href="../../feedback.html" class="text-light text-decoration-none">フィードバック</a></li>
+                        <li><a href="../../TheList.html" class="text-light text-decoration-none">リスト</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">&copy; 2025 PartyGameLab. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-ja.js"></script>
+    <script src="undercover-ja.js"></script>
+</body>
+
+</html>

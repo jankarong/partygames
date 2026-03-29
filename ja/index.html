@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人気パーティーゲーム集 | 無料オンラインゲーム</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="無料で遊べる人気パーティーゲームをまとめて楽しめます。マフィア、真実か挑戦か、私はやったことがない、アンダーカバーなどをすぐにプレイできます。">
+    <meta name="keywords"
+        content="jogos de festa, jogos de grupo, jogos de sociedade, jogos grátis, team building, jogos para adultos">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="人気パーティーゲーム集 | 無料オンラインゲーム">
+    <meta property="og:description"
+        content="無料で遊べる人気パーティーゲームをまとめて楽しめます。友だち同士、家族、オンライン飲み会にもぴったりです。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/ja/">
+    <meta property="og:image" content="https://www.bestpartygames.net/image/partyGameLogo.png">
+
+    <!-- Language alternatives -->
+    <link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/">
+    <link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/">
+    <link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/">
+    <link rel="alternate" hreflang="fr" href="https://www.bestpartygames.net/fr/">
+    <link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/ja/">
+    <link rel="alternate" hreflang="id" href="https://www.bestpartygames.net/id/">
+    <link rel="alternate" hreflang="tr" href="https://www.bestpartygames.net/tr/">
+    <link rel="alternate" hreflang="ru" href="https://www.bestpartygames.net/ru/">
+    <link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../style/main.css" rel="stylesheet">
+    <link href="../css/auth.css" rel="stylesheet">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bestpartygames.net/ja/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../image/favicon.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "人気パーティーゲーム集",
+        "url": "https://www.bestpartygames.net/ja/",
+        "description": "無料で遊べる人気パーティーゲームをまとめて楽しめます。マフィア、真実か挑戦か、私はやったことがない、アンダーカバーなどをすぐにプレイできます。",
+        "inLanguage": "ja",
+        "publisher": {
+            "@type": "Organization",
+            "name": "PartyGameLab",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.bestpartygames.net/image/partyGameLogo.png"
+            }
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Coleção de Jogos de Festa",
+            "description": "Jogos online grátis para amigos e família",
+            "numberOfItems": 16
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.bestpartygames.net/ja/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Adsense is loaded conditionally by js/ads-controller.js -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/ja/">
+                <img src="../image/partyGameLogo.png" alt="Logo de Jogos de Festa">
+                <span class="brand-text">PartyGameLab</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./TheList.html">カテゴリ一覧</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./premium.html">Premium</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://zagames.com/" target="_blank" rel="noopener noreferrer">Minigames</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            🇯🇵 日本語
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/">🇺🇸 English</a></li>
+                            <li><a class="dropdown-item" href="/ja/">🇯🇵 日本語</a></li>
+                            <li><a class="dropdown-item" href="/zh/">🇨🇳 中文</a></li>
+                            <li><a class="dropdown-item" href="/de/">🇩🇪 Deutsch</a></li>
+                            <li><a class="dropdown-item" href="/fr/">🇫🇷 Français</a></li>
+                            <li><a class="dropdown-item" href="/pt/">🇧🇷 Português</a></li>
+                            <li><a class="dropdown-item" href="/id/">🇮🇩 Bahasa Indonesia</a></li>
+                            <li><a class="dropdown-item" href="/ru/">🇷🇺 Русский</a></li>
+                            <li><a class="dropdown-item" href="/tr/">🇹🇷 Türkçe</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Botões de Autenticação -->
+                    <li class="nav-item" id="auth-buttons">
+                        <div class="auth-buttons">
+                            <a href="./login.html" class="btn btn-auth-nav btn-login">ログイン</a>
+                            <a href="./register.html" class="btn btn-auth-nav btn-register">新規登録</a>
+                        </div>
+                    </li>
+
+                    <!-- Informações do Usuário -->
+                    <li class="nav-item" id="user-info" style="display: none;">
+                        <div class="user-info">
+                            <div class="user-avatar" id="user-avatar">U</div>
+                            <div class="user-details">
+                                <div class="user-email" id="user-email">user@example.com</div>
+                                <span class="premium-status" id="premium-status">無料プラン</span>
+                            </div>
+                            <button class="btn btn-signout" onclick="handleSignOut()">ログアウト</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">みんなで遊べる人気パーティーゲーム</h1>
+            <p class="lead mb-0">無料で遊べるオンラインパーティーゲームをまとめて楽しめます。友だち同士の集まり、家族の時間、オンライン飲み会にもぴったり。ダウンロード不要で、すぐに始められます。</p>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games-section">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- 21 Perguntas Picantes -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/freaky21questions/logo.svg" class="card-img-top"
+                                alt="21 Perguntas Picantes" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">スパイシー21質問</h5>
+                            <p class="card-text">カップルや大人同士の集まりで盛り上がる、少し大胆な質問ゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2人以上</small>
+                                <a href="/ja/games/freaky21questions/freaky21questions.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perguntas de Paranoia Picantes -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/paranoiaquestionsdirty/logo.png" class="card-img-top"
+                                alt="Perguntas de Paranoia Picantes" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">大人向けパラノイア質問</h5>
+                            <p class="card-text">「いちばんありそうなのは誰？」で盛り上がる、大人向けの50問です。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">3人以上</small>
+                                <a href="/ja/games/paranoiaquestionsdirty/paranoiaquestionsdirty.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kings Cup -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/KingsCup/kingscuplogo.png" class="card-img-top"
+                                alt="キングスカップ" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">キングスカップ</h5>
+                            <p class="card-text">定番の飲み会ゲームをオンラインで手軽に楽しめます。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">3人以上</small>
+                                <a href="/ja/games/KingsCup/KingsCup.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Last Shot -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/lastshot/lastshot.png" class="card-img-top" alt="ラストショット"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">ラストショット</h5>
+                            <p class="card-text">引き金を引いてセーフを祈る、スリル系のパーティーゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">3人以上</small>
+                                <a href="/ja/games/lastshot/lastshot.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Witch's Poison -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper"
+                            style="display: flex; justify-content: center; align-items: center; height: 200px; font-size: 5rem;">
+                            <span>🧙‍♀️</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">魔女の毒</h5>
+                            <p class="card-text">ミステリアスな雰囲気で選択を迫られる、軽く遊べる判断ゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">1人以上</small>
+                                <a href="/ja/games/witchspoison/witchspoison.html"
+                                    class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Magic 8 ball-->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/magic8ball/magic8ball.svg" class="card-img-top" alt="マジック8ボール"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">マジック8ボール</h5>
+                            <p class="card-text">質問を投げかけて、気まぐれな答えをもらう定番おみくじゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">1人以上</small>
+                                <a href="/ja/games/magic8ball/magic8ball.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Truth or Dare -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/TruthorDare/TruthorDareLogo.png" class="card-img-top" alt="真実か挑戦か"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">真実か挑戦か</h5>
+                            <p class="card-text">定番のパーティーゲーム。ぶっちゃけ質問とチャレンジで盛り上がれます。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2人以上</small>
+                                <a href="/ja/games/TruthorDare/TruthOrDare.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- Verdade ou Desafio para Casais -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouplesLogo.png" class="card-img-top" alt="カップル向け真実か挑戦か" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">カップル向け真実か挑戦か</h5>
+                            <p class="card-text">ライト、ロマンチック、スパイシーの3モードで遊べるカップル向け版です。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2人以上</small>
+                                <a href="/ja/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- Never Have I Ever -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/NeverHaveIEver/NeverHaveIEverLogo.png" class="card-img-top"
+                                alt="私はやったことがない" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">私はやったことがない</h5>
+                            <p class="card-text">本音や黒歴史が出やすい、鉄板の暴露系パーティーゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">3人以上</small>
+                                <a href="/ja/games/NeverHaveIEver/NeverHaveIEver.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Who Is Most Likely -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/WhoIsMostLikely/MostLikelyToLogo.png" class="card-img-top"
+                                alt="いちばんありそうなのは誰？" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">いちばんありそうなのは誰？</h5>
+                            <p class="card-text">友だち同士で指差して盛り上がる、笑える質問ゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">3人以上</small>
+                                <a href="/ja/games/WhoIsMostLikely/WhoIsMostLikely.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Would You Rather -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/WouldYouRather/WouldYouRatherLogo.png" class="card-img-top"
+                                alt="どっちを選ぶ？" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">どっちを選ぶ？</h5>
+                            <p class="card-text">究極の二択で価値観が見える、会話が弾む質問ゲームです。
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2人以上</small>
+                                <a href="/ja/games/WouldYouRather/WouldYouRather.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mafia -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/mafia/mafialogo.png" class="card-img-top" alt="マフィア" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">マフィア</h5>
+                            <p class="card-text">会話と推理で正体を見抜く、定番の人狼系ソーシャルゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">6〜12人</small>
+                                <a href="/ja/games/mafia/mafia.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Undercover -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/undercover/undercover.png" class="card-img-top" alt="アンダーカバー"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">アンダーカバー</h5>
+                            <p class="card-text">似た言葉を手がかりに潜伏役を見抜く、騙し合い系の人気ゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">4〜12人</small>
+                                <a href="/ja/games/undercover/undercover.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charades -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/charades/CharadesLogo.png" class="card-img-top" alt="ジェスチャーゲーム"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">ジェスチャーゲーム</h5>
+                            <p class="card-text">お題を引いて身振りだけで伝える、王道のファミリー向けゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">4人以上</small>
+                                <a href="/ja/games/charades/charades.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Headbands -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/hedbanzgame/hedbanz.png" class="card-img-top" alt="ヘッドバンズ"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">ヘッドバンズ</h5>
+                            <p class="card-text">頭の上のお題をヒントだけで当てる、テンポのいい推理ゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2人以上</small>
+                                <a href="/ja/games/hedbanzgame/hedbanzgame.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sex Dice -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/sexdice/sexdicelogo.png" class="card-img-top" alt="セクシーダイス"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">セクシーダイス</h5>
+                            <p class="card-text">二人の雰囲気を高めたいときに使える、カップル向けダイスゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2人以上</small>
+                                <a href="/ja/games/sexdice/sexdice.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beer Number -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/beernumber/numberguessLogo.png" class="card-img-top"
+                                alt="数字当てゲーム" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">数字当てゲーム</h5>
+                            <p class="card-text">1から100までの数字を当てる、シンプルで遊びやすい推理ゲームです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">1人以上</small>
+                                <a href="/ja/games/beernumber/beernumber.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottle Match Game -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card game-card shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="../games/BottleMatchGame/bottlematch.png" class="card-img-top"
+                                alt="ボトル並べ替えゲーム" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">ボトル並べ替えゲーム</h5>
+                            <p class="card-text">色の並びを当てていく、Mastermind風のロジックパズルです。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">1人</small>
+                                <a href="/ja/games/BottleMatchGame/BottleMatchGame.html" class="btn btn-primary">今すぐ遊ぶ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">なぜ PartyGameLab が選ばれているのか</h2>
+
+                    <div class="mb-5">
+                        <h3 class="h4 mb-3">🎮 すぐ盛り上がれるゲームを厳選</h3>
+                        <p>このページでは、初対面でも仲のいい友だち同士でも遊びやすい人気パーティーゲームを集めています。短時間で始められて、説明もシンプルなものを中心にそろえています。</p>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="h4 mb-3">🎯 シーンに合わせて選べます</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="h5">推理・駆け引き系</h4>
+                                <p><strong>マフィア</strong> や <strong>アンダーカバー</strong> は、会話と読み合いが好きなグループにぴったりです。</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="h5">質問・会話系</h4>
+                                <p><strong>真実か挑戦か</strong>、<strong>私はやったことがない</strong>、<strong>どっちを選ぶ？</strong> は、自然に会話が広がる定番です。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="h4 mb-3">📱 ダウンロード不要ですぐ遊べる</h3>
+                        <p>すべてブラウザでそのまま遊べます。アプリのインストールは不要なので、急な集まりやオンライン通話中でもすぐ始められます。</p>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="h4 mb-3">👥 人数別おすすめ</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><strong>2〜4人:</strong> マジック8ボール、真実か挑戦か、どっちを選ぶ？</li>
+                            <li class="mb-2"><strong>5〜8人:</strong> 私はやったことがない、いちばんありそうなのは誰？</li>
+                            <li class="mb-2"><strong>9人以上:</strong> マフィア、アンダーカバー</li>
+                            <li class="mb-2"><strong>家族向け:</strong> ジェスチャーゲーム、ヘッドバンズ</li>
+                            <li class="mb-2"><strong>大人向け:</strong> スパイシー21質問、セクシーダイス、大人向けパラノイア質問</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center">
+                        <h3 class="h4 mb-3">🌟 気になるゲームからすぐ始めましょう</h3>
+                        <p>軽く1ゲームだけ遊びたいときも、長く盛り上がりたいときも、上の一覧から気になるタイトルを選べばすぐに始められます。</p>
+                        <p class="mb-0"><em>お気に入りの一本を見つけて、今すぐ遊んでみてください。</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2 class="h4 mb-4">About</h2>
+                    <p>PartyGameLab は、無料で遊べるオンラインパーティーゲームをまとめたコレクションサイトです。真実か挑戦か、私はやったことがない、マフィアなど、友だち同士でもオンラインでも盛り上がるゲームをすぐに遊べます。</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h2 class="h4 mb-4">クイックリンク</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">ゲーム</a></li>
+                        <li><a href="./TheList.html" class="text-light text-decoration-none">カテゴリ一覧</a></li>
+                        <li><a href="https://zagames.com/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none">Minigames</a></li>
+                        <li><a href="https://lovemoneygame.live/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none">Love Money Game</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <p class="text-light mb-0">&copy; 2025 PartyGameLab. All rights reserved.</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <a href="https://turbo0.com/item/partygamelab" target="_blank" rel="noopener noreferrer">
+                                <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0"
+                                    style="height: 54px; width: auto;" />
+                            </a>
+                            <a href="https://twelve.tools" target="_blank">
+                                <img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools"
+                                    width="200" height="54">
+                            </a>
+                            <a href="https://launchigniter.com/product/partygamelab?ref=badge-partygamelab"
+                                target="_blank">
+                                <img src="https://launchigniter.com/api/badge/partygamelab?theme=neutral"
+                                    alt="Featured on LaunchIgniter" width="212" height="55" />
+                            </a>
+                            <a href="https://fazier.com/launches/www.bestpartygames.net" target="_blank">
+                                <img src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=light"
+                                    width="120" alt="Fazier badge" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Auth JS -->
+    <script src="../js/auth.js"></script>
+    <!-- Conditional Ad Loader -->
+    <script src="../js/ads-controller.js"></script>
+
+    <script>
+        // Additional processing after page load
+        document.addEventListener('DOMContentLoaded', function () {
+        // Detect auth state changes
+            if (window.authManager) {
+                window.authManager.onAuthStateChange((event, session) => {
+                    console.log('Auth state changed:', event);
+
+        // Additional state handling can be added here
+                });
+            }
+
+        // Set initial user avatar letter
+            const userAvatar = document.getElementById('user-avatar');
+            const userEmail = document.getElementById('user-email');
+
+        // Update avatar when user info changes
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                        const email = userEmail.textContent;
+                        if (email && email !== 'user@example.com' && userAvatar) {
+                            userAvatar.textContent = email.charAt(0).toUpperCase();
+                        }
+                    }
+                });
+            });
+
+            if (userEmail) {
+                observer.observe(userEmail, {
+                    childList: true,
+                    characterData: true,
+                    subtree: true
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

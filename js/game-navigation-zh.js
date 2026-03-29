@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 游戏导航组件（中文版本）
  * 提供带有浮动菜单和快速访问栏的游戏之间的增强导航
  */
@@ -6,21 +6,20 @@
 class GameNavigation {
     constructor() {
         this.games = [
-            { name: '魔法8球', url: '/zh/games/magic8ball/magic8ball', category: 'solo' },
-            { name: '真心话大冒险', url: '/zh/games/TruthorDare/TruthOrDare', category: 'party' },
-            { name: '情侣真心话大冒险', url: '/zh/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples', category: 'adult' },
-            { name: '从不曾我从不', url: '/zh/games/NeverHaveIEver/NeverHaveIEver', category: 'party' },
-            { name: '谁最有可能', url: '/zh/games/WhoIsMostLikely/WhoIsMostLikely', category: 'party' },
-            { name: '你会选择谁', url: '/zh/games/WouldYouRather/WouldYouRather', category: 'party' },
-            
-            { name: '辛辣偏执问题', url: '/zh/games/paranoiaquestionsdirty/paranoiaquestionsdirty', category: 'adult' },
-            { name: '黑手党', url: '/zh/games/mafia/mafia', category: 'strategy' },
-            { name: '卧底', url: '/zh/games/undercover/undercover', category: 'strategy' },
-            { name: '词语接龙', url: '/zh/games/charades/charades', category: 'party' },
-            { name: '头脑画吧', url: '/zh/games/hedbanzgame/hedbanzgame', category: 'party' },
-            { name: '骰子游戏', url: '/zh/games/sexdice/sexdice', category: 'adult' },
-            { name: '猜数字', url: '/zh/games/beernumber/beernumber', category: 'drinking' },
-            { name: '国王杯', url: '/zh/games/KingsCup/KingsCup', category: 'drinking' }
+            { name: '魔法8球', url: '/zh/games/magic8ball/magic8ball.html', category: 'solo' },
+            { name: '真心话大冒险', url: '/zh/games/TruthorDare/TruthOrDare.html', category: 'party' },
+            { name: '情侣真心话大冒险', url: '/zh/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.html', category: 'adult' },
+            { name: '从不曾我从不', url: '/zh/games/NeverHaveIEver/NeverHaveIEver.html', category: 'party' },
+            { name: '谁最有可能', url: '/zh/games/WhoIsMostLikely/WhoIsMostLikely.html', category: 'party' },
+            { name: '你会选择谁', url: '/zh/games/WouldYouRather/WouldYouRather.html', category: 'party' },
+            { name: '辛辣偏执问题', url: '/zh/games/paranoiaquestionsdirty/paranoiaquestionsdirty.html', category: 'adult' },
+            { name: '黑手党', url: '/zh/games/mafia/mafia.html', category: 'strategy' },
+            { name: '卧底', url: '/zh/games/undercover/undercover.html', category: 'strategy' },
+            { name: '词语接龙', url: '/zh/games/charades/charades.html', category: 'party' },
+            { name: '头脑画吧', url: '/zh/games/hedbanzgame/hedbanzgame.html', category: 'party' },
+            { name: '骰子游戏', url: '/zh/games/sexdice/sexdice.html', category: 'adult' },
+            { name: '猜数字', url: '/zh/games/beernumber/beernumber.html', category: 'drinking' },
+            { name: '国王杯', url: '/zh/games/KingsCup/KingsCup.html', category: 'drinking' }
         ];
 
         this.currentGame = this.getCurrentGame();
@@ -94,15 +93,16 @@ class GameNavigation {
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i> 🇨🇳 中文
                         </button>
-                                                <div class="language-menu">
-                            <a href="#" class="language-link" data-lang="en">English</a>
-                            <a href="#" class="language-link" data-lang="ru">Russian</a>
-                            <a href="#" class="language-link" data-lang="pt">Portuguese</a>
-                            <a href="#" class="language-link" data-lang="zh">Chinese</a>
-                            <a href="#" class="language-link" data-lang="de">German</a>
-                            <a href="#" class="language-link" data-lang="fr">French</a>
-                            <a href="#" class="language-link" data-lang="id">Indonesian</a>
-                            <a href="#" class="language-link" data-lang="tr">Turkish</a>
+                        <div class="language-menu">
+                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
+                            <a href="#" class="language-link" data-lang="ja">🇯🇵 日本語</a>
+                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
+                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
+                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
+                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
+                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                            <a href="#" class="language-link" data-lang="ru">🇷🇺 Русский</a>
+                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
                         </div>
                     </div>
                 </div>
@@ -251,13 +251,14 @@ class GameNavigation {
             .replace('/de/', '/')
             .replace('/fr/', '/')
             .replace('/id/', '/')
-            .replace('/tr/', '/');
+            .replace('/tr/', '/')
+            .replace('/ja/', '/');
 
         if (lang === 'en') {
-            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/')) {
+            if (!currentPath.startsWith('/ru/') && !currentPath.startsWith('/pt/') && !currentPath.startsWith('/zh/') && !currentPath.startsWith('/de/') && !currentPath.startsWith('/fr/') && !currentPath.startsWith('/id/') && !currentPath.startsWith('/tr/') && !currentPath.startsWith('/ja/')) {
                 return;
             }
-            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '');
+            newPath = currentPath.replace('/ru', '').replace('/pt', '').replace('/zh', '').replace('/de', '').replace('/fr', '').replace('/id', '').replace('/tr', '').replace('/ja', '');
         } else {
             const langPrefix = `/${lang}`;
             if (currentPath.startsWith(`${langPrefix}/`)) {
