@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>몸으로 말해요 (제스처 게임) | 온라인 파티 게임</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="친구들과 함께 즐기는 최고의 제스처 게임 '몸으로 말해요'. 영화, 동물, 직업 등 다양한 카테고리의 제시어를 무료로 제공합니다.">
+    <meta name="keywords" content="몸으로 말해요, 제스처 게임, charades, 파티 게임, 술게임, 레크리에이션, 한국어 게임, 제시어 생성기">
+    <meta name="author" content="PartyGames">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ko/games/charades/charades.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./CharadesLogo.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="몸으로 말해요 (제스처 게임) | 온라인 파티 게임">
+    <meta property="og:description" content="친구들과 함께 즐기는 최고의 제스처 게임! 다양한 카테고리의 제시어를 무료로 제공합니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="CharadesLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/ko/games/charades/charades.html">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="./charades.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'DM Sans', 'Noto Sans KR', sans-serif; }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body class="bg-light">
+<main class="container-fluid py-4 py-md-5">
+        <div class="row justify-content-center">
+            <!-- Left Ad Space -->
+            <div class="col-md-2 d-none d-lg-block">
+                <div class="ad-space"></div>
+            </div>
+
+            <!-- Game Content -->
+            <div class="col-12 col-lg-8">
+                <!-- Game Header -->
+                <div class="text-center mb-5" id="game-header">
+                    <div class="mb-4">
+                        <img src="./CharadesLogo.png" alt="몸으로 말해요 로고" class="game-logo" style="max-width: 150px;">
+                    </div>
+                    <h1 class="display-4 fw-bold mb-3">몸으로 말해요</h1>
+                    <p class="lead text-muted">친구들과 함께 즐기는 최고의 제스처 게임! 🎮</p>
+                </div>
+
+                <!-- Setup Screen -->
+                <div id="setup-screen" class="row justify-content-center">
+                    <div class="col-md-8 col-lg-7">
+                        <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                            <div class="card-body p-4 p-md-5">
+                                <h2 class="h4 fw-bold text-center mb-4">게임 설정</h2>
+                                <div class="mb-4">
+                                    <label for="round-time" class="form-label fw-bold">
+                                        <i class="fas fa-stopwatch text-primary me-2"></i>라운드 시간 (초)
+                                    </label>
+                                    <input type="number" id="round-time" class="form-control rounded-pill px-3" value="60" min="30" max="180">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="word-category" class="form-label fw-bold">
+                                        <i class="fas fa-tags text-primary me-2"></i>제시어 카테고리
+                                    </label>
+                                    <select id="word-category" class="form-select rounded-pill px-3">
+                                        <option value="all">모든 카테고리</option>
+                                        <option value="animals">동물 🐘</option>
+                                        <option value="actions">행동/액션 🏃‍♂️</option>
+                                        <option value="objects">사물 📱</option>
+                                        <option value="movies">영화/드라마 🎬</option>
+                                        <option value="funny">웃긴 주제 😂</option>
+                                        <option value="sports">스포츠 ⚽</option>
+                                        <option value="professions">직업 💼</option>
+                                        <option value="historical">역사적 인물 📜</option>
+                                    </select>
+                                </div>
+                                <button id="start-game" class="btn btn-primary w-100 btn-lg rounded-pill fw-bold py-3">
+                                    <i class="fas fa-play me-2"></i>게임 시작
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Screen -->
+                <div id="game-screen" class="hidden">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="card border-0 shadow-lg rounded-4 text-center">
+                                <div class="card-body p-4 p-md-5">
+                                    <div class="timer mb-4 display-3 fw-bold text-primary" id="timer">60</div>
+                                    <div class="word-display mb-5 display-4 fw-bold text-dark" id="current-word">제시어</div>
+                                    <div class="d-flex justify-content-center gap-3 gap-md-4">
+                                        <button id="correct" class="btn btn-success btn-lg px-4 px-md-5 rounded-pill fw-bold py-3 shadow">
+                                            정답 ✅
+                                        </button>
+                                        <button id="skip" class="btn btn-warning btn-lg px-4 px-md-5 rounded-pill fw-bold py-3 shadow">
+                                            패스 ⏭️
+                                        </button>
+                                    </div>
+                                    <div class="mt-5">
+                                        <h3 id="score" class="h4 fw-bold text-muted">현재 점수: 0</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Screen -->
+                <div id="result-screen" class="hidden">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="card border-0 shadow-lg rounded-4 text-center">
+                                <div class="card-body p-4 p-md-5">
+                                    <h2 class="display-6 fw-bold mb-4">🎉 게임 종료!</h2>
+                                    <div id="final-score" class="h3 fw-bold text-primary mb-4">최종 점수: 0</div>
+                                    <div id="word-summary" class="mb-5 text-start p-3 bg-light rounded-3 small text-muted overflow-auto" style="max-height: 200px;"></div>
+                                    <button id="play-again" class="btn btn-primary btn-lg rounded-pill fw-bold px-5 py-3 shadow">
+                                        다시 하기 🔄
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rules and FAQ -->
+                <div class="row justify-content-center mt-5" id="info-section">
+                    <div class="col-md-10 col-lg-8">
+                        <div class="card border-0 shadow-sm rounded-4 mb-4">
+                            <div class="card-header bg-white border-bottom-0 pt-4 px-4">
+                                <h2 class="h5 fw-bold mb-0 text-primary">📋 몸으로 말해요 규칙</h2>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="mb-4">
+                                    <h3 class="h6 fw-bold mb-2">🎯 게임 방법</h3>
+                                    <ol class="text-muted small">
+                                        <li class="mb-1">원하는 시간과 카테고리를 설정하고 시작합니다.</li>
+                                        <li class="mb-1">제시어를 확인한 사람은 목소리를 내지 않고 오직 몸짓(제스처)으로만 표현합니다.</li>
+                                        <li class="mb-1">팀원들이 제시어를 맞추면 '정답' 버튼을 누릅니다.</li>
+                                        <li class="mb-1">표현하기 어렵다면 '패스' 버튼을 눌러 다음 제시어로 넘어갈 수 있습니다.</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <h3 class="h6 fw-bold mb-2 text-danger">⚠️ 금지 사항</h3>
+                                    <ul class="text-muted small">
+                                        <li class="mb-1">말소리를 내거나 입 모양으로 힌트 주기 금지 🤫</li>
+                                        <li class="mb-1">공중에 글자를 쓰는 시늉 금지 ✍️</li>
+                                        <li class="mb-1">실제 물건을 직접 가리키기 금지 👆</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-header bg-white border-bottom-0 pt-4 px-4">
+                                <h2 class="h5 fw-bold mb-0 text-primary">❓ 자주 묻는 질문</h2>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="mb-3">
+                                    <h3 class="h6 fw-bold small mb-1">몇 명에서 하기 좋나요?</h3>
+                                    <p class="text-muted small mb-0">최소 2명부터 가능하지만, 4~8명 정도가 두 팀으로 나누어 대결할 때 가장 즐겁습니다.</p>
+                                </div>
+                                <div class="mb-3">
+                                    <h3 class="h6 fw-bold small mb-1">제시어는 얼마나 있나요?</h3>
+                                    <p class="text-muted small mb-0">동물, 직업, 영화 등 8가지 이상의 카테고리에 수백 개의 재미있는 제시어가 준비되어 있습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Ad Space -->
+            <div class="col-md-2 d-none d-lg-block">
+                <div class="ad-space"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <!-- Game Logic -->
+    <script src="./charades-ko.js"></script>
+    <script src="/js/game-navigation-ko.js"></script>
+</body>
+
+</html>

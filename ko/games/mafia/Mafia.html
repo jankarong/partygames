@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="6인 이상이 즐기는 한국어판 마피아 게임. 역할을 배분하고 낮에는 토론, 밤에는 행동하는 정체 은닉 심리 추리 게임을 온라인으로 즐겨보세요.">
+    <meta name="keywords" content="마피아 게임, 정체 은닉, 인랑, 파티 게임, 추리 게임, 술게임, 레크리에이션, 한국어 게임">
+    <meta name="author" content="PartyGameLab">
+    <meta property="og:title" content="마피아 | 온라인 심리 추리 게임">
+    <meta property="og:description" content="마피아, 시민, 의사, 경찰이 펼치는 숨 막히는 심리전. 한국어판 마피아 게임.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="mafialogo.png">
+    <title>마피아 | 온라인 심리 추리 게임</title>
+    <link rel="canonical" href="https://www.bestpartygames.net/ko/games/Mafia/Mafia.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./mafialogo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Cinzel:wght@500;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="mafia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <style>
+        body { font-family: 'Noto Sans KR', 'Crimson Pro', serif; }
+        .game-logo { max-width: 150px; display: block; margin: 0 auto 20px; }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body>
+<div class="container py-5">
+        <div class="text-center mb-5">
+            <img src="mafialogo.png" alt="마피아 로고" class="game-logo shadow-lg rounded-circle">
+            <h1 class="display-4 fw-bold">마피아</h1>
+            <p class="text-muted">밤이면 누군가 사라진다. 범인은 누구인가?</p>
+        </div>
+
+        <div class="game-setup">
+            <div class="setup-section card border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-body p-4 p-md-5">
+                    <h2 class="h4 fw-bold mb-4"><i class="fas fa-cog me-2 text-primary"></i>게임 설정</h2>
+                    <div class="total-players mb-4">
+                        <label for="playerCount" class="form-label fw-bold">전체 인원:</label>
+                        <input type="number" id="playerCount" class="form-control rounded-pill px-3" min="6" max="15" value="8">
+                    </div>
+
+                    <div class="role-selection">
+                        <h3 class="h6 fw-bold mb-3">역할 배분</h3>
+                        <div class="role-inputs row g-3">
+                            <div class="role-input col-sm-6 col-md-3">
+                                <label for="mafiaCount" class="form-label small">마피아:</label>
+                                <input type="number" id="mafiaCount" class="form-control rounded-pill" min="1" value="2">
+                            </div>
+                            <div class="role-input col-sm-6 col-md-3">
+                                <label for="doctorCount" class="form-label small">의사:</label>
+                                <input type="number" id="doctorCount" class="form-control rounded-pill" min="0" max="1" value="1">
+                            </div>
+                            <div class="role-input col-sm-6 col-md-3">
+                                <label for="detectiveCount" class="form-label small">경찰(탐정):</label>
+                                <input type="number" id="detectiveCount" class="form-control rounded-pill" min="0" max="1" value="1">
+                            </div>
+                            <div class="role-input col-sm-6 col-md-3">
+                                <label for="villagerCount" class="form-label small">시민:</label>
+                                <input type="number" id="villagerCount" class="form-control rounded-pill" min="1" value="4">
+                            </div>
+                        </div>
+
+                        <div id="customRoleInputs" class="row g-3 mt-2"></div>
+                        <div class="role-summary mt-3 text-center">
+                            <p class="role-warning text-danger small fw-bold" id="roleWarning"></p>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-3 mt-4">
+                        <button id="setupGame" class="btn btn-primary btn-lg rounded-pill fw-bold py-3 shadow">게임 준비하기</button>
+                        <button id="manageRoles" class="btn btn-outline-secondary rounded-pill fw-bold">커스텀 역할 관리</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Role Management Area (Hidden by default) -->
+        <div class="role-management mt-4" style="display: none;">
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-body p-4 p-md-5">
+                    <h2 class="h4 fw-bold text-center mb-4">커스텀 역할 관리</h2>
+                    <div class="create-role-section mb-5 bg-light p-4 rounded-3 text-dark">
+                        <h4 class="h6 fw-bold mb-3">새로운 역할 추가</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="roleName" class="form-label small">역할 이름</label>
+                                <input type="text" id="roleName" class="form-control rounded-pill" placeholder="예: 큐피트">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="roleTeam" class="form-label small">소속 진영</label>
+                                <select id="roleTeam" class="form-select rounded-pill">
+                                    <option value="villager">시민 진영</option>
+                                    <option value="mafia">마피아 진영</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="roleDescription" class="form-label small">역할 설명</label>
+                                <textarea id="roleDescription" class="form-control rounded-3" rows="2" placeholder="이 역할의 특징을 입력하세요"></textarea>
+                            </div>
+                        </div>
+                        <button id="createRole" class="btn btn-primary mt-3 rounded-pill px-4 fw-bold">추가하기</button>
+                    </div>
+                    <div class="existing-roles-section mb-4">
+                        <h4 class="h6 fw-bold mb-3">등록된 역할</h4>
+                        <div id="rolesList" class="row g-2"></div>
+                    </div>
+                    <div class="text-center">
+                        <button id="backToSetup" class="btn btn-link text-decoration-none">설정으로 돌아가기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Area (Visible after setup) -->
+        <div class="game-area mt-4 position-relative" style="display: none;">
+            <div class="d-flex justify-content-between mb-4">
+                <button id="returnToSetup" class="btn btn-secondary rounded-pill px-3 shadow-sm">
+                    <i class="fas fa-arrow-left me-1"></i> 설정으로
+                </button>
+                <button id="startNewGame" class="btn btn-success rounded-pill px-3 shadow-sm">
+                    <i class="fas fa-redo me-1"></i> 새 게임
+                </button>
+            </div>
+            
+            <div class="role-cards card border-0 shadow-lg rounded-4 mt-5">
+                <div class="card-body p-4 p-md-5">
+                    <h2 class="h4 fw-bold text-center mb-4 text-dark">플레이어 카드</h2>
+                    <p class="text-center small text-muted mb-4">카드를 클릭하여 역할을 확인하세요. 본인의 역할은 비밀입니다!</p>
+                    <div id="cardGrid"></div>
+                </div>
+            </div>
+
+            <div class="game-controls mt-4" style="display: none;">
+                <button id="startGame" class="btn btn-danger btn-lg w-100 rounded-pill fw-bold py-3 shadow">
+                    <i class="fas fa-moon me-2"></i> 밤 페이즈 시작하기
+                </button>
+            </div>
+
+            <div class="role-instructions card border-0 shadow mt-4" style="display: none;">
+                <div class="card-body p-4">
+                    <h2 class="h5 fw-bold mb-3">역할별 가이드</h2>
+                    <div id="mafiaInstructions" class="role-instruction bg-danger bg-opacity-10 p-3 rounded-3 mb-2">
+                        <h3 class="h6 fw-bold text-danger">마피아</h3>
+                        <p class="small mb-0">밤마다 시민 한 명을 탈락시킵니다. 정체를 숨기고 시민들을 속이세요.</p>
+                    </div>
+                    <div id="villagerInstructions" class="role-instruction bg-primary bg-opacity-10 p-3 rounded-3 mb-2">
+                        <h3 class="h6 fw-bold text-primary">시민</h3>
+                        <p class="small mb-0">낮의 토론과 투표를 통해 마피아를 찾아내세요.</p>
+                    </div>
+                    <div id="doctorInstructions" class="role-instruction bg-success bg-opacity-10 p-3 rounded-3 mb-2">
+                        <h3 class="h6 fw-bold text-success">의사</h3>
+                        <p class="small mb-0">밤마다 한 명을 마피아의 공격으로부터 보호할 수 있습니다.</p>
+                    </div>
+                    <div id="detectiveInstructions" class="role-instruction bg-warning bg-opacity-10 p-3 rounded-3 mb-2 text-dark">
+                        <h3 class="h6 fw-bold text-warning-emphasis">경찰(탐정)</h3>
+                        <p class="small mb-0">밤마다 한 명을 지정해 마피아인지 확인할 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="night-actions card border-0 shadow-lg rounded-4 mt-4" style="display: none;">
+                <div class="card-body p-4 p-md-5">
+                    <h2 class="h4 fw-bold mb-4 text-dark"><i class="fas fa-moon me-2 text-primary"></i>밤 페이즈</h2>
+                    <div id="narrator-text" class="alert alert-dark rounded-3 mb-4"></div>
+                    <div id="action-area"></div>
+                </div>
+            </div>
+
+            <div id="discussion-phase" class="discussion-phase card border-0 shadow-lg rounded-4 mt-4 p-4 p-md-5" style="display: none;">
+                <h3 class="h4 fw-bold text-center mb-4 text-dark">낮 페이즈 (토론 타임)</h3>
+                <div class="night-summary mb-4 bg-light p-4 rounded-4 border">
+                    <p id="night-result" class="fs-5 fw-bold text-danger text-center mb-3"></p>
+                    <div id="player-statuses" class="player-status-grid"></div>
+                </div>
+                <p class="text-center text-muted">누가 마피아일까요? 충분히 대화하고 의심스러운 사람을 지목하세요.</p>
+                <div class="text-center">
+                    <button id="end-discussion" class="btn btn-primary btn-lg rounded-pill fw-bold px-5 py-3 shadow">토론 마칠게요!</button>
+                </div>
+            </div>
+
+            <div class="voting-phase card border-0 shadow-lg rounded-4 mt-4" style="display: none;">
+                <div class="card-body p-4 p-md-5">
+                    <h2 class="h4 fw-bold text-center mb-4 text-dark">투표 페이즈</h2>
+                    <p class="text-center text-muted mb-4">가장 의심스러운 사람에게 투표하세요.</p>
+                    <div id="voting-grid" class="voting-grid mt-3"></div>
+                    <button id="confirm-vote" class="btn btn-primary btn-lg w-100 rounded-pill fw-bold py-3 mt-4 shadow">투표 완료</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-alert" style="display: none;">
+            <div class="alert-content card border-0 shadow-lg rounded-4">
+                <div class="card-body text-center p-5">
+                    <div class="alert-message mb-4 fs-5 fw-bold"></div>
+                    <button class="btn btn-primary alert-confirm btn-lg rounded-pill px-5">확인</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="rules-section card border-0 shadow-sm mt-5 bg-dark text-white rounded-4 overflow-hidden">
+            <div class="card-body p-4 p-md-5">
+                <h2 class="h4 fw-bold mb-4 text-primary"><i class="fas fa-book-open me-2 text-white"></i>게임 규칙</h2>
+                
+                <h3 class="h6 fw-bold border-bottom pb-2 mb-3 mt-4">개요</h3>
+                <p class="small text-white-50">마피아 게임은 소수의 마피아와 다수의 시민이 벌이는 정체 은닉 심리전입니다. 서로의 정체를 모르는 상태에서 대화를 통해 마피아를 찾아내야 합니다.</p>
+
+                <h3 class="h6 fw-bold border-bottom pb-2 mb-3 mt-4">진행 방법</h3>
+                <ol class="small text-white-50 ps-3">
+                    <li class="mb-2"><strong>밤 단계:</strong> 마피아가 한 명을 제거 타겟으로 정합니다. 경찰은 수색을, 의사는 보호를 수행합니다.</li>
+                    <li class="mb-2"><strong>낮 단계:</strong> 밤 사이의 결과를 확인하고 범인을 잡기 위해 토론합니다.</li>
+                    <li class="mb-2"><strong>투표 단계:</strong> 가장 의심스러운 사람을 투표로 처형하거나 무죄로 방면합니다.</li>
+                </ol>
+
+                <h3 class="h6 fw-bold border-bottom pb-2 mb-3 mt-4">승리 조건</h3>
+                <ul class="small text-white-50 ps-3">
+                    <li class="mb-1 text-primary">시민 승리: 모든 마피아를 투표로 제거했을 때</li>
+                    <li class="mb-1 text-danger">마피아 승리: 마피아 수가 시민 수와 같거나 많아졌을 때</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-ko.js"></script>
+    <script src="mafia-ko.js"></script>
+</body>
+
+</html>

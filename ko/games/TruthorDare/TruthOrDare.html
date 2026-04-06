@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="진실 혹은 도전을 브라우저에서 바로 즐길 수 있는 무료 게임. 소프트 모드와 스파이시 모드를 선택하여 파티를 즐겁게 만드세요.">
+    <meta name="keywords" content="진실 혹은 도전, truth or dare, 파티 게임, 술게임, 야한 게임, 질문 게임, 레크리에이션">
+    <meta name="author" content="PartyGameLab">
+    <meta property="og:title" content="진실 혹은 도전 | 무료 온라인 파티 게임">
+    <meta property="og:description" content="소프트 모드와 스파이시 모드로 즐기는 클래식 파티 게임.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ko/games/TruthorDare/TruthOrDare.html">
+    <title>진실 혹은 도전 | 무료 온라인 파티 게임</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="TruthOrDare.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="./TruthorDareLogo.png">
+    <style>
+        body { font-family: 'DM Sans', 'Noto Sans KR', sans-serif; }
+    </style>
+</head>
+<body>
+<div class="container py-5">
+    <div class="game-container">
+        <div class="logo-container text-center mb-4">
+            <img src="TruthorDareLogo.png" alt="진실 혹은 도전 로고" title="진실 혹은 도전" class="game-logo">
+        </div>
+        <h1 class="text-center mb-4">진실 혹은 도전</h1>
+
+        <div class="game-section text-center">
+            <div id="selectedType" class="selected-type mb-3" style="display: none;"></div>
+            <div id="selectedDifficulty" class="selected-difficulty mb-3" style="display: none;"></div>
+            <div class="question-card mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="questionText" class="question-text mb-0">👇 모드를 선택해 주세요 👇</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="difficulty-buttons" id="difficultyButtons">
+                <button class="btn btn-success btn-lg choice-btn soft-btn" onclick="selectDifficulty('soft')">
+                    <span class="choice-icon">😊</span>
+                    <span class="choice-text">소프트</span>
+                </button>
+                <button class="btn btn-warning btn-lg choice-btn spicy-btn" onclick="selectDifficulty('spicy')">
+                    <span class="choice-icon">🌶️</span>
+                    <span class="choice-text">스파이시</span>
+                </button>
+            </div>
+
+            <div class="choice-buttons" id="choiceButtons" style="display: none;">
+                <button class="btn btn-info btn-lg choice-btn truth-btn" onclick="selectChoice('truth')">
+                    <span class="choice-icon">🤔</span>
+                    <span class="choice-text">진실</span>
+                </button>
+                <button class="btn btn-danger btn-lg choice-btn dare-btn" onclick="selectChoice('dare')">
+                    <span class="choice-icon">🎯</span>
+                    <span class="choice-text">도전</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="controls mt-4 text-center">
+            <button class="btn btn-success btn-lg px-5 rounded-pill" onclick="nextQuestion()" id="nextButton" style="display: none;">다음 질문</button>
+            <br>
+            <button class="btn btn-secondary mt-3" onclick="resetGame()" id="resetButton" style="display: none;">다시 선택하기</button>
+            <button class="btn btn-outline-secondary mt-3" onclick="backToDifficulty()" id="backButton" style="display: none;">모드 선택으로 돌아가기</button>
+        </div>
+
+        <div class="rules-section mt-5">
+            <div class="card bg-light border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">게임 방법</h2>
+                    <ol class="text-start">
+                        <li class="mb-2">먼저 소프트(일반) 또는 스파이시(자극적인) 모드를 선택합니다.</li>
+                        <li class="mb-2">그다음 '진실' 또는 '도전' 카테고리를 선택합니다.</li>
+                        <li class="mb-2">'진실'을 선택하면 나오는 질문에 정직하게 대답해야 합니다.</li>
+                        <li class="mb-2">'도전'을 선택하면 표시된 미션을 수행해야 합니다.</li>
+                        <li class="mb-2">수행하기 어려운 내용은 미리 패스 규칙을 정해두고 놀면 더 즐겁습니다.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-intro mt-4">
+            <div class="card bg-light border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-3">이 게임에 대하여</h2>
+                    <p>진실 혹은 도전은 세계적으로 사랑받는 클래식 파티 게임입니다. 평소에는 하기 힘든 질문과 재미있는 미션을 통해 친구들과 더 가까워질 수 있습니다. 홈 파티, 술자리, 온라인 모임 등 어디서든 즐겨보세요.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/ads-controller.js"></script>
+<script src="/js/game-navigation-ko.js"></script>
+<script src="TruthOrDare-ko.js"></script>
+</body>
+</html>

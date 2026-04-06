@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나는 절대로... (Never Have I Ever) | 파티 술게임</title>
+    <meta name="description" content="친구들과의 모임이나 술자리에서 즐기는 '나는 절대로...'. 서로의 비밀과 재미있는 에피소드를 공유할 수 있는 최고의 파티 게임입니다.">
+    <meta name="keywords" content="나는 절대로, never have i ever, 파티 게임, 술게임, 진실 게임, 레크리에이션, 한국어 게임">
+    <meta property="og:title" content="나는 절대로... (Never Have I Ever) | 파티 술게임">
+    <meta property="og:description" content="서로의 비밀을 공유하며 즐기는 클래식 질문 게임.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="NeverHaveIEverLogo.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ko/games/NeverHaveIEver/NeverHaveIEver.html">
+    <link rel="icon" type="image/png" href="./NeverHaveIEverLogo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="NeverHaveIEver.css">
+    <style>
+        body { font-family: 'DM Sans', 'Noto Sans KR', sans-serif; }
+    </style>
+</head>
+<body>
+    <div class="container container-main py-5">
+        <div class="text-center mb-4">
+            <img src="NeverHaveIEverLogo.png" alt="나는 절대로 로고" class="game-logo mb-3" style="max-width: 150px;">
+            <h1 class="display-4 fw-bold">나는 절대로...</h1>
+        </div>
+
+        <div class="game-card shadow-lg p-5 mb-5 text-center bg-white rounded-4 border-0">
+            <p id="statement" class="statement fs-3 mb-0 text-dark">시작 버튼을 눌러 질문을 확인하세요.</p>
+        </div>
+        
+        <div class="controls text-center mb-5">
+            <button id="nextBtn" class="button btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold" aria-label="시작">시작</button>
+        </div>
+
+        <div class="rules p-4 bg-light rounded-4 shadow-sm mb-5">
+            <h2 class="h4 fw-bold mb-4 text-center">게임 방법</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <p class="mb-2"><span class="badge bg-primary me-2">1</span> 순서대로 '다음' 버튼을 눌러 질문을 확인합니다.</p>
+                    <p class="mb-2"><span class="badge bg-primary me-2">2</span> 해당 질문의 경험이 있는 사람은 미리 정한 규칙(술 마시기, 손가락 접기 등)에 따릅니다.</p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <p class="mb-2"><span class="badge bg-primary me-2">3</span> 경험이 없는 사람은 아무것도 하지 않고 넘어갑니다.</p>
+                    <p class="mb-2"><span class="badge bg-primary me-2">4</span> 경험이 있는 사람이 그에 얽힌 에피소드를 짧게 이야기하면 더욱 즐겁습니다.</p>
+                </div>
+            </div>
+            <p class="mt-3 text-center text-muted small"><i class="fas fa-info-circle me-1"></i> 팁: 너무 무리한 질문이나 강요는 피하고 즐겁게 놀아요!</p>
+        </div>
+
+        <div class="game-info p-4 bg-white rounded-4 shadow-sm border">
+            <h2 class="h4 fw-bold mb-4">이 게임의 매력</h2>
+            <p class="lead text-muted">규칙이 간단하여 초면인 사람들과도 금방 친해질 수 있으며, 서로의 의외의 면모를 발견할 수 있습니다. 술자리 2차나 친구들과의 홈 파티에 특히 추천합니다.</p>
+
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <h3 class="h5 fw-bold mb-3 d-flex align-items-center"><i class="fas fa-glass-cheers text-primary me-2"></i> 추천 상황</h3>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>친구들과의 홈 파티</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>새로운 사람들과의 모임</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>MT나 대학생 동아리 행사</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>야밤의 진솔한 토크 타임</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h5 fw-bold mb-3 d-flex align-items-center"><i class="fas fa-lightbulb text-warning me-2"></i> 즐겁게 노는 팁</h3>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>가벼운 질문부터 시작해서 점점 수위를 높여보세요.</li>
+                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>'패스' 규칙을 미리 정해두면 좋습니다.</li>
+                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>질문 뒤에 한마디씩 덧붙이면 대화의 꽃이 피어납니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="NeverHaveIEver-ko.js"></script>
+    <script src="/js/game-navigation-ko.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+</body>
+</html>

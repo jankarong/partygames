@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매직 8볼 | 온라인 질문 답변 운세 게임</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./magic8ball.css">
+    <link rel="icon" href="magic8ball.svg" type="image/svg+xml">
+    <meta name="description" content="질문을 입력하고 흔들어 보세요. 클래식, 유머, 연애, 술자리 모드까지 선택 가능한 한국어판 매직 8볼입니다.">
+    <meta name="keywords" content="매직 8볼, 운세 게임, 질문 답변, 파티 게임, 연애 운세, 술게임, 한국어 매직 8볼">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bestpartygames.net/ko/games/magic8ball/magic8ball.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <style>
+        body { font-family: 'DM Sans', 'Noto Sans KR', sans-serif; }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body class="bg-light py-5">
+<div class="container py-4">
+        <div class="p-4 bg-white rounded-4 shadow-sm">
+            <h1 class="text-center mb-4 fw-bold">매직 8볼</h1>
+
+            <div class="version-selector mb-4 text-center">
+                <label for="version" class="form-label me-2 fw-bold">모드 선택:</label>
+                <select id="version" class="form-select form-select-sm d-inline-block w-auto rounded-pill px-3">
+                    <option value="classic">클래식</option>
+                    <option value="silly">유머</option>
+                    <option value="sarcastic">독설/피닉</option>
+                    <option value="romance">연애</option>
+                    <option value="drinking">술자리</option>
+                    <option value="custom">커스텀</option>
+                </select>
+            </div>
+
+            <div class="magic-ball-container text-center mb-5">
+                <div class="magic-ball mx-auto shadow-lg">
+                    <div class="answer-container">
+                        <div class="answer" id="answer">8</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container mb-5">
+                <div class="input-group">
+                    <input type="text" id="question" class="form-control rounded-start-pill ps-4" placeholder="질문을 입력해 주세요 (예: 오늘 행운이 따를까요?)">
+                    <button id="shake-button" class="btn btn-dark rounded-end-pill px-4">흔들기</button>
+                </div>
+            </div>
+
+            <div class="history-container mb-5">
+                <h3 class="h5 mb-3 fw-bold"><i class="fas fa-history me-2"></i>질문 기록</h3>
+                <ul id="history-list" class="list-group list-group-flush border rounded-4 overflow-hidden"></ul>
+            </div>
+
+            <section class="info-section mt-5 pt-4 border-top">
+                <h2 class="h4 fw-bold mb-4">가볍게 즐기는 한국어판 매직 8볼</h2>
+                <p class="text-muted">무언가 결정을 내리기 힘들 때, 혹은 친구들과 술자리에서 재미 삼아 운세를 점치고 싶을 때 매직 8볼을 흔들어 보세요. 질문을 입력하고 공을 흔들기만 하면 신비로운(?) 답변이 돌아옵니다. 답변은 어디까지나 재미로만 즐겨주세요!</p>
+
+                <div class="row g-4 mt-4">
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 bg-light rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 fw-bold mb-3"><i class="fas fa-cog me-2 text-primary"></i>모드별 특징</h3>
+                                <ul class="text-muted small ps-3">
+                                    <li class="mb-2"><strong>클래식:</strong> 긍정, 부정, 보류의 표준 답변</li>
+                                    <li class="mb-2"><strong>유머:</strong> 엉뚱하고 웃긴 답변</li>
+                                    <li class="mb-2"><strong>독설:</strong> 뼈 때리는 차가운 답변</li>
+                                    <li class="mb-2"><strong>연애:</strong> 핑크빛 미래(혹은 현실) 답변</li>
+                                    <li class="mb-2"><strong>술자리:</strong> 벌칙이나 다음 행동 지시</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 bg-light rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 fw-bold mb-3"><i class="fas fa-magic me-2 text-warning"></i>커스텀 모드</h3>
+                                <p class="text-muted small">우리들만의 답변을 직접 입력해서 세상을 단 하나뿐인 매직 8볼을 만들어 보세요. 친구들의 이름이나 우리만 아는 유머를 넣으면 더 재미있습니다.</p>
+                                <ol class="text-muted small ps-3">
+                                    <li>설정에서 커스텀 답변을 추가합니다.</li>
+                                    <li>모드를 '커스텀'으로 변경합니다.</li>
+                                    <li>질문을 넣으면 입력한 답변 중 하나가 나옵니다.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 text-center text-muted small">
+                    <p class="mb-0">너무 진지하게 받아들이지 마시고, 즐거운 모임의 촉매제로 활용해 보세요!</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="./magic8ball-ko.js"></script>
+    <script src="/js/game-navigation-ko.js"></script>
+</body>
+
+</html>

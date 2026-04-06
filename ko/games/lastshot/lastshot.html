@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="방아쇠를 당겨 세이프면 적립, 당첨되면 원샷! 온라인으로 즐기는 스릴 만점 러시안 룰렛 술게임 라스트 샷(Last Shot).">
+    <meta name="keywords" content="라스트 샷, Last Shot, 술게임, 러시안 룰렛, 파티 게임, 벌칙 게임, 한국어 게임, 온라인 술게임">
+    <meta name="author" content="PartyGames">
+    <meta property="og:title" content="라스트 샷 (Last Shot) | 온라인 러시안 룰렛 술게임">
+    <meta property="og:description" content="세이프인가 당첨인가? 긴장감 넘치는 적립식 러시안 룰렛 술게임. 친구들과 함께 즐기세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/ko/games/lastshot/lastshot.html">
+    <meta property="og:image" content="lastshot.png">
+    
+    <link rel="canonical" href="https://www.bestpartygames.net/ko/games/lastshot/lastshot.html">
+    <title>라스트 샷 (Last Shot) | 온라인 러시안 룰렛 술게임</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="lastshot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./lastshot.png">
+
+    <style>
+        body { font-family: 'Outfit', 'Noto Sans KR', sans-serif; }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body class="bg-light">
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="container py-4 py-md-5">
+        <div class="game-container max-width-800 mx-auto">
+            <div class="logo-container text-center mb-4">
+                <img src="lastshot.png" alt="라스트 샷 로고" class="game-logo shadow rounded-4" style="max-width: 120px;">
+            </div>
+            <h1 class="text-center fw-bold mb-4">라스트 샷</h1>
+
+            <!-- Top Toolbar -->
+            <div class="top-toolbar d-flex justify-content-between align-items-center mb-4 bg-white p-3 rounded-4 shadow-sm" id="topToolbar">
+                <div class="toolbar-left d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill px-3" id="muteButton" onclick="toggleMute()">
+                        <i class="fas fa-volume-up me-2"></i>소리 켜기
+                    </button>
+                    <div class="volume-wrap d-none d-md-flex align-items-center gap-2">
+                        <input type="range" id="volumeSlider" min="0" max="100" value="75" class="form-range" style="width: 80px;">
+                        <span class="small text-muted">음량</span>
+                    </div>
+                </div>
+                <div class="toolbar-right">
+                    <button class="btn btn-warning btn-sm rounded-pill px-3 fw-bold" onclick="resetGame()">
+                        새 게임
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game Setup -->
+            <div class="game-setup text-center mb-5" id="gameSetup">
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="h4 fw-bold mb-4 text-primary"><i class="fas fa-cog me-2"></i>게임 설정</h3>
+                        <div class="row g-3 mb-4 justify-content-center">
+                            <div class="col-md-5">
+                                <label for="blankChambers" class="form-label small fw-bold text-muted">빈 칸 (안정성)</label>
+                                <input type="number" class="form-control rounded-pill text-center border-2" id="blankChambers" value="5" min="1" max="99">
+                            </div>
+                            <div class="col-md-5">
+                                <label for="bulletChambers" class="form-label small fw-bold text-muted">탄환 (위험성)</label>
+                                <input type="number" class="form-control rounded-pill text-center border-2 bg-light" id="bulletChambers" value="1" readonly>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow" onclick="startNewRound()">
+                            라운드 시작 <i class="fas fa-play ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Section -->
+            <div class="game-section text-center" id="gameSection" style="display: none;">
+                <!-- Status -->
+                <div class="game-status mb-5">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="status-card pool bg-white p-3 rounded-4 shadow-sm border-bottom border-primary border-4">
+                                <div class="status-value display-5 fw-bold text-primary" id="shotsInPool">0</div>
+                                <div class="status-label small text-muted">적립된 잔 수</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="status-card chambers bg-white p-3 rounded-4 shadow-sm border-bottom border-danger border-4">
+                                <div class="status-value display-5 fw-bold text-danger" id="chambersLeft">6</div>
+                                <div class="status-label small text-muted">남은 칸 수</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revolver Graphics placeholder -->
+                <div class="revolver-section mb-5 py-4">
+                     <div class="revolver-cylinder-visual mx-auto bg-dark rounded-circle position-relative shadow" style="width: 150px; height: 150px; border: 8px solid #444;" id="revolverCylinder">
+                         <!-- Dynamically populated chambers in JS -->
+                     </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="action-area mb-5">
+                    <button class="btn btn-danger btn-lg rounded-pill px-5 py-3 fw-bold shadow-lg pulse mb-3" id="triggerButton" onclick="pullTrigger()">
+                        🔫 방아쇠 당기기
+                    </button>
+                    <button class="btn btn-success btn-lg rounded-pill px-5 py-3 fw-bold shadow" id="newRoundButton" onclick="startNewRoundFromGame()" style="display: none;">
+                        🎯 다음 라운드
+                    </button>
+                </div>
+
+                <!-- Result -->
+                <div class="result-display mb-4 bg-light p-4 rounded-4 border" id="resultDisplay">
+                    <div class="result-text h5 mb-0" id="resultText">행운을 빕니다! 방아쇠를 당기세요.</div>
+                </div>
+
+                <!-- In-game Controls -->
+                <div class="controls mb-4 d-flex justify-content-center gap-3">
+                    <button class="btn btn-outline-primary rounded-pill px-4 fw-bold" id="addShotButton" onclick="addShot()" style="display: none;">
+                        🥃 잔 적립 +1
+                    </button>
+                </div>
+
+                <div class="kb-hint text-muted small opacity-50 mb-3">Space: 발사 | N: 새 라운드 | R: 리셋</div>
+            </div>
+
+            <!-- Rules -->
+            <div class="rules-section mt-5 card border-0 shadow-sm rounded-4">
+                <div class="card-body p-4 p-md-5">
+                    <h2 class="h4 fw-bold mb-4 text-center"><i class="fas fa-book-open me-2"></i>게임 방법</h2>
+                    <div class="rules-content text-muted small">
+                        <p class="mb-4">라스트 샷은 세이프일 때 벌칙주를 적립하고, 당첨됐을 때 적립된 술을 모두 마시는 적립형 러시안 룰렛 게임입니다. 3인 이상 함께할 때 가장 스릴이 넘칩니다.</p>
+                        
+                        <h4 class="h6 fw-bold text-dark mb-3">🔧 준비 단계</h4>
+                        <ul class="ps-3 mb-4">
+                            <li class="mb-2">빈 칸의 개수를 설정하여 난이도를 조절하세요.</li>
+                            <li class="mb-2">각 플레이어의 순서를 정합니다.</li>
+                            <li class="mb-2">한 번에 적립할 수 있는 잔 수의 상한을 미리 정해두면 좋습니다.</li>
+                        </ul>
+
+                        <h4 class="h6 fw-bold text-dark mb-3">🎮 게임 진행</h4>
+                        <ol class="ps-3 mb-4">
+                            <li class="mb-2">순서대로 '방아쇠 당기기' 버튼을 클릭합니다.</li>
+                            <li class="mb-2"><strong>세이프(빈 칸):</strong> 운이 좋네요! 현재 잔에 벌칙주를 적립할 수 있습니다.</li>
+                            <li class="mb-2"><strong>당첨(탄환):</strong> 꽝! 지금까지 적립된 모든 술을 마셔야 합니다.</li>
+                            <li class="mb-2">탄환이 발사되면 해당 라운드가 종료되고 다음 라운드로 넘어갑니다.</li>
+                        </ol>
+
+                        <div class="alert alert-warning border-0 rounded-4 small mb-0">
+                            <strong>⚠️ 주의:</strong> 즐겁게 마시되 과도한 음주는 금물입니다. 반드시 상한선을 정해두고 서로의 주량에 맞춰 안전하게 게임을 즐겨주세요.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ -->
+            <div class="faq-section mt-4 card border-0 shadow-sm rounded-4 mb-5">
+                <div class="card-body p-4 px-md-5">
+                    <h3 class="h5 fw-bold mb-4 text-center">❓ 자주 묻는 질문</h3>
+                    <div class="faq-item mb-3">
+                        <h5 class="h6 fw-bold mb-1">어떤 게임인가요?</h5>
+                        <p class="text-muted small">술자리 분위기를 띄우기 위한 비대면 러시안 룰렛 게임입니다.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5 class="h6 fw-bold mb-1">몇 명에서 하는 게 좋을까요?</h5>
+                        <p class="text-muted small">3명 이상을 추천하며, 한 바퀴를 돌 때마다 긴장감이 배가되는 재미가 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-ko.js"></script>
+    <script src="lastshot-ko.js"></script>
+</body>
+
+</html>

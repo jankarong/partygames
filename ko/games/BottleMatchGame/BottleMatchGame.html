@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색깔 병 맞추기 퍼즐 | 온라인 로직 추리 게임</title>
+    <meta name="description" content="올바른 색상의 순서를 추리하여 맞추는 한국어판 로직 퍼즐 게임. 5단계 스테이지를 최소 횟수로 클리어해보세요.">
+    <meta name="keywords" content="색깔 병 맞추기, 로직 퍼즐, 색상 맞추기, 추리 게임, 한국어 게임, 두뇌 게임, 퍼즐 게임">
+    <link rel="canonical" href="https://www.bestpartygames.net/ko/games/BottleMatchGame/BottleMatchGame.html">
+    <meta property="og:title" content="색깔 병 맞추기 퍼즐 | 온라인 로직 추리 게임">
+    <meta property="og:description" content="색상의 순서를 추리하여 맞추는 5단계 스테이지의 한국어 로직 퍼즐.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bestpartygames.net/ko/games/BottleMatchGame/BottleMatchGame.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzQyOTllMSIvPgo8cmVjdCB4PSIxMCIgeT0iMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjI0IiBmaWxsPSIjMmQzNzlhIi8+PC9zdmc+">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/gameheader.css">
+    
+    <style>
+        body { font-family: 'Outfit', 'Noto Sans KR', sans-serif; }
+        .game-logo { max-width: 150px; display: block; margin: 0 auto 20px; transition: transform 0.3s ease; }
+        .game-logo:hover { transform: scale(1.1); }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "색깔 병 맞추기 퍼즐",
+      "description": "5단계의 색상 순서를 추리하여 맞추는 한국어 로직 게임",
+      "inLanguage": "ko",
+      "gameType": "Logic Puzzle",
+      "numberOfPlayers": "1",
+      "url": "https://www.bestpartygames.net/ko/games/BottleMatchGame/BottleMatchGame.html"
+    }
+    </script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body class="bg-light">
+    <!-- Enhanced Navigation will be inserted by JavaScript -->
+    <div class="game-container py-5">
+        <div class="text-center">
+            <img src="bottlematch.png" alt="색깔 병 맞추기 로고" class="game-logo shadow rounded-4">
+            <h1 class="fw-bold mb-4">색깔 병 맞추기 퍼즐</h1>
+        </div>
+
+        <div class="level-info card border-0 shadow-sm rounded-4 p-3 mb-4 text-center bg-white">
+            <div class="level-title h4 fw-bold text-primary mb-2">스테이지 <span id="current-level">1</span> / 5</div>
+            <div class="level-details text-muted small">
+                길이: <span id="sequence-length" class="fw-bold">3</span> |
+                색상 수: <span id="color-count" class="fw-bold">4</span> |
+                도전 횟수: <span id="attempts" class="fw-bold">0</span>
+            </div>
+        </div>
+
+        <div class="secret-display alert alert-warning border-0 rounded-4 text-center mb-4" id="secret-display" style="display: none;">
+            <i class="fas fa-key me-2"></i>정답 확인: <span id="secret-sequence" class="fw-bold"></span>
+        </div>
+
+        <div class="game-area card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white mb-5" id="game-area">
+            <h3 class="h5 fw-bold mb-4 text-center">색상 순서를 예상해서 채워보세요:</h3>
+            <div class="bottles-container d-flex justify-content-center gap-2 mb-5" id="current-guess"></div>
+
+            <div class="controls d-flex flex-wrap justify-content-center gap-3 mb-4">
+                <button class="submit-btn btn btn-primary px-4 py-2 rounded-pill fw-bold shadow-sm" id="submit-guess" onclick="submitGuess()">예상 제출</button>
+                <button class="btn btn-outline-secondary px-4 py-2 rounded-pill fw-bold" onclick="clearGuess()">지우기</button>
+                <button class="btn btn-link text-muted text-decoration-none small" onclick="showSecret()">정답 보기</button>
+            </div>
+
+            <div class="guess-section border-top pt-4">
+                <h4 class="h6 fw-bold mb-3 text-muted"><i class="fas fa-history me-2"></i>이전 기록:</h4>
+                <div id="guess-history" class="small overflow-auto" style="max-height: 200px;"></div>
+            </div>
+        </div>
+
+        <div class="completion-screen card border-0 shadow-lg rounded-4 p-5 text-center bg-white" id="completion-screen" style="display: none;">
+            <div class="display-1 mb-4">🎉</div>
+            <h2 class="fw-bold mb-4">모든 스테이지 클리어!</h2>
+            <div class="final-stats bg-light p-4 rounded-4 mb-4">
+                <div class="row g-3">
+                    <div class="col-6 text-end text-muted">총 소요 시간:</div>
+                    <div class="col-6 text-start fw-bold"><span id="total-time">0</span> 초</div>
+                    <div class="col-6 text-end text-muted">총 도전 횟수:</div>
+                    <div class="col-6 text-start fw-bold"><span id="total-attempts">0</span> 회</div>
+                    <div class="col-6 text-end text-muted">스테이지당 평균:</div>
+                    <div class="col-6 text-start fw-bold"><span id="avg-attempts">0</span> 회</div>
+                </div>
+            </div>
+            <button class="restart-btn btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold shadow" onclick="restartGame()">다시 하기</button>
+        </div>
+    </div>
+
+    <section class="container game-info py-5">
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+            <h2 class="fw-bold mb-4"><i class="fas fa-info-circle me-2 text-primary"></i>게임 방법</h2>
+            <p class="text-muted mb-4">색깔 병 맞추기 퍼즐은 올바른 색상의 순서를 추리하여 맞추는 로직 게임입니다. 스테이지가 진행될수록 병의 개수와 색상의 종류가 늘어나며 난이도가 높아집니다.</p>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="h6 fw-bold mb-3">기본 규칙</h3>
+                    <ul class="text-muted small ps-3">
+                        <li class="mb-2"><strong>목표:</strong> 숨겨진 색상의 순서를 정확히 맞히는 것입니다.</li>
+                        <li class="mb-2"><strong>5단계:</strong> 스테이지를 통과할수록 제시어의 길이가 길어집니다.</li>
+                        <li class="mb-2"><strong>힌트:</strong> 제출할 때마다 위치와 색상이 맞는지 알려줍니다.</li>
+                        <li class="mb-2"><strong>중복 없음:</strong> 각 색상은 한 스테이지에서 한 번씩만 사용됩니다.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h6 fw-bold mb-3">진행 방법</h3>
+                    <ol class="text-muted small ps-3">
+                        <li class="mb-2"><strong>색상 선택:</strong> 각 빈 병을 클릭하여 색상을 채웁니다.</li>
+                        <li class="mb-2"><strong>제출:</strong> 모든 병을 채운 후 '예상 제출' 버튼을 누릅니다.</li>
+                        <li class="mb-2"><strong>결과 확인:</strong> 위치와 색상이 모두 맞는지(Black), 색상만 맞는지(White) 확인합니다.</li>
+                        <li class="mb-2"><strong>추리:</strong> 힌트를 바탕으로 다음 색상 배치를 고민합니다.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sound Effects -->
+    <audio id="place-sound" src="place_item_sound.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="hooray_sound.mp3" preload="auto"></audio>
+    <audio id="fail-sound" src="fail_sound.mp3" preload="auto"></audio>
+
+    <script src="BottleMatchGame-ko.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/ads-controller.js"></script>
+    <script src="/js/game-navigation-ko.js"></script>
+</body>
+
+</html>

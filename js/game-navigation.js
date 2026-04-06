@@ -251,6 +251,21 @@ class GameNavigation {
             </button>
             <div class="nav-menu" id="navMenu">
                 <div class="nav-actions">
+                    <div class="language-dropdown">
+                        <button class="language-toggle">
+                            <i class="fas fa-globe"></i><span>${texts.currentLanguageFlag}</span>
+                        </button>
+                                                <div class="language-menu">
+                            <a href="#" class="language-link" data-lang="en">English</a>
+                            <a href="#" class="language-link" data-lang="ru">Russian</a>
+                            <a href="#" class="language-link" data-lang="pt">Portuguese</a>
+                            <a href="#" class="language-link" data-lang="zh">Chinese</a>
+                            <a href="#" class="language-link" data-lang="de">German</a>
+                            <a href="#" class="language-link" data-lang="fr">French</a>
+                            <a href="#" class="language-link" data-lang="id">Indonesian</a>
+                            <a href="#" class="language-link" data-lang="tr">Turkish</a>
+                        </div>
+                    </div>
                     <a href="${langPrefix}/index.html">
                         <i class="fas fa-home"></i><span>${texts.allGames}</span>
                     </a>
@@ -283,21 +298,6 @@ class GameNavigation {
                             <button class="signout-btn" onclick="handleSignOut()">
                                 <i class="fas fa-sign-out-alt"></i><span>${texts.logout}</span>
                             </button>
-                        </div>
-                    </div>
-                    <div class="language-dropdown">
-                        <button class="language-toggle">
-                            <i class="fas fa-globe"></i><span>${texts.currentLanguageFlag}</span>
-                        </button>
-                                                <div class="language-menu">
-                            <a href="#" class="language-link" data-lang="en">English</a>
-                            <a href="#" class="language-link" data-lang="ru">Russian</a>
-                            <a href="#" class="language-link" data-lang="pt">Portuguese</a>
-                            <a href="#" class="language-link" data-lang="zh">Chinese</a>
-                            <a href="#" class="language-link" data-lang="de">German</a>
-                            <a href="#" class="language-link" data-lang="fr">French</a>
-                            <a href="#" class="language-link" data-lang="id">Indonesian</a>
-                            <a href="#" class="language-link" data-lang="tr">Turkish</a>
                         </div>
                     </div>
                 </div>

@@ -63,6 +63,21 @@ class GameNavigation {
                     `).join('')}
                 </div>
                 <div class="nav-actions">
+                    <div class="language-dropdown">
+                        <button class="language-toggle">
+                            <i class="fas fa-globe"></i> 🇹🇷 Türkçe
+                        </button>
+                        <div class="language-menu">
+                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
+                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
+                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
+                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
+                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
+                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
+                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
+                        </div>
+                    </div>
                     <a href="/tr/index.html">
                         <i class="fas fa-home"></i> Tum Oyunlar
                     </a>
@@ -92,21 +107,6 @@ class GameNavigation {
                             <button class="signout-btn" onclick="handleSignOut()">
                                 <i class="fas fa-sign-out-alt"></i><span>Cikis</span>
                             </button>
-                        </div>
-                    </div>
-                    <div class="language-dropdown">
-                        <button class="language-toggle">
-                            <i class="fas fa-globe"></i> 🇹🇷 Türkçe
-                        </button>
-                        <div class="language-menu">
-                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
-                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
-                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
-                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
-                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
-                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
-                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
-                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
                         </div>
                     </div>
                 </div>

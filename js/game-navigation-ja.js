@@ -57,6 +57,20 @@ class GameNavigation {
                     `).join('')}
                 </div>
                 <div class="nav-actions">
+                    <div class="language-dropdown">
+                        <button class="language-toggle"><i class="fas fa-globe"></i> 🇯🇵 日本語</button>
+                        <div class="language-menu">
+                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
+                            <a href="#" class="language-link" data-lang="ja">🇯🇵 日本語</a>
+                            <a href="#" class="language-link" data-lang="ru">🇷🇺 Русский</a>
+                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
+                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
+                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
+                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
+                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
+                        </div>
+                    </div>
                     <a href="/ja/index.html"><i class="fas fa-home"></i> すべてのゲーム</a>
                     <a href="/ja/TheList.html"><i class="fas fa-list"></i> ゲーム一覧</a>
                     <a href="/ja/premium.html" class="premium-highlight"><i class="fas fa-crown"></i> Premium</a>
@@ -74,20 +88,6 @@ class GameNavigation {
                                 </div>
                             </div>
                             <button class="signout-btn" onclick="handleSignOut()"><i class="fas fa-sign-out-alt"></i><span>ログアウト</span></button>
-                        </div>
-                    </div>
-                    <div class="language-dropdown">
-                        <button class="language-toggle"><i class="fas fa-globe"></i> 🇯🇵 日本語</button>
-                        <div class="language-menu">
-                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
-                            <a href="#" class="language-link" data-lang="ja">🇯🇵 日本語</a>
-                            <a href="#" class="language-link" data-lang="ru">🇷🇺 Русский</a>
-                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
-                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
-                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
-                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
-                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
-                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
                         </div>
                     </div>
                 </div>
