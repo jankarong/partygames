@@ -25,63 +25,68 @@ const optionA = document.getElementById('optionA');
 const optionB = document.getElementById('optionB');
 const optionAText = document.getElementById('optionAText');
 const optionBText = document.getElementById('optionBText');
-const nextButton = document.getElementById('nextQuestion');
 const percentageA = document.getElementById('percentageA');
 const percentageB = document.getElementById('percentageB');
+const nextButton = document.getElementById('nextQuestion');
+const resetButton = document.getElementById('resetButton');
 
 function showNextQuestion() {
+    // Reset selections
     optionA.classList.remove('selected');
     optionB.classList.remove('selected');
-    percentageA.style.display = 'none';
-    percentageB.style.display = 'none';
+    percentageA.style.opacity = '0';
+    percentageB.style.opacity = '0';
     selectedOption = null;
 
-    currentQuestion = Math.floor(Math.random() * questions.length);
+    // Get next random question (different from current)
+    let nextIdx;
+    do {
+        nextIdx = Math.floor(Math.random() * questions.length);
+    } while (nextIdx === currentQuestion && questions.length > 1);
+    
+    currentQuestion = nextIdx;
     const question = questions[currentQuestion];
+
+    // Update text
     optionAText.textContent = question.optionA;
     optionBText.textContent = question.optionB;
 }
 
 function selectOption(option) {
     if (selectedOption !== null) return;
+
     selectedOption = option;
-    
-    // Simulate community voting results (random but realistic)
-    const pA = Math.floor(Math.random() * 61) + 20; // 20% to 80%
-    const pB = 100 - pA;
-    
+    const otherOption = option === 'A' ? 'B' : 'A';
+
+    // Show selection
+    document.getElementById(`option${option}`).classList.add('selected');
+
+    // Generate random percentages
+    const percentage = Math.floor(Math.random() * 31) + 35; // 35-65%
+    const otherPercentage = 100 - percentage;
+
+    // Show percentages
+    const pA = option === 'A' ? percentage : otherPercentage;
+    const pB = option === 'B' ? percentage : otherPercentage;
+
     percentageA.textContent = `${pA}%`;
     percentageB.textContent = `${pB}%`;
     
-    percentageA.style.display = 'block';
-    percentageB.style.display = 'block';
-    
-    if (option === 'A') {
-        optionA.style.boxShadow = '0 0 20px rgba(30, 144, 255, 0.5)';
-    } else {
-        optionB.style.boxShadow = '0 0 20px rgba(255, 71, 87, 0.5)';
-    }
+    percentageA.style.opacity = '1';
+    percentageB.style.opacity = '1';
 }
 
-optionA.addEventListener('click', () => {
-    selectOption('A');
-    optionA.style.opacity = '1';
-    optionB.style.opacity = '0.7';
-});
-
-optionB.addEventListener('click', () => {
-    selectOption('B');
-    optionB.style.opacity = '1';
-    optionA.style.opacity = '0.7';
-});
-
-nextButton.addEventListener('click', () => {
-    optionA.style.opacity = '1';
-    optionB.style.opacity = '1';
-    optionA.style.boxShadow = 'none';
-    optionB.style.boxShadow = 'none';
+function resetGame() {
+    currentQuestion = -1;
     showNextQuestion();
-});
+}
 
-// Initialize first question
+optionA.addEventListener('click', () => selectOption('A'));
+optionB.addEventListener('click', () => selectOption('B'));
+nextButton.addEventListener('click', showNextQuestion);
+if (resetButton) {
+    resetButton.addEventListener('click', resetGame);
+}
+
+// Show first question
 document.addEventListener('DOMContentLoaded', showNextQuestion);

@@ -71,3 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Accordion Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const accordionContent = this.nextElementSibling;
+            this.classList.toggle('active');
+            accordionContent.classList.toggle('active');
+            const icon = this.querySelector('.accordion-icon');
+            if (icon) {
+                icon.textContent = this.classList.contains('active') ? '-' : '+';
+            }
+        });
+    });
+});

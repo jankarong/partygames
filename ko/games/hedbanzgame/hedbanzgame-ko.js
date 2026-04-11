@@ -60,6 +60,7 @@ class HedbanzGame {
         this.timerInterval = null;
 
         this.setupEventListeners();
+        this.setupAccordions();
     }
 
     setupEventListeners() {
@@ -67,6 +68,25 @@ class HedbanzGame {
         document.getElementById('correct').addEventListener('click', () => this.handleCorrect());
         document.getElementById('skip').addEventListener('click', () => this.handleSkip());
         document.getElementById('play-again').addEventListener('click', () => this.resetGame());
+    }
+
+    setupAccordions() {
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const accordionContent = this.nextElementSibling;
+                
+                // Toggle current accordion
+                this.classList.toggle('active');
+                accordionContent.classList.toggle('active');
+                
+                // Update icon
+                const icon = this.querySelector('.accordion-icon');
+                if (icon) {
+                    icon.textContent = this.classList.contains('active') ? '-' : '+';
+                }
+            });
+        });
     }
 
     resetGame() {

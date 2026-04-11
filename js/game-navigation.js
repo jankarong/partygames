@@ -255,15 +255,17 @@ class GameNavigation {
                         <button class="language-toggle">
                             <i class="fas fa-globe"></i><span>${texts.currentLanguageFlag}</span>
                         </button>
-                                                <div class="language-menu">
-                            <a href="#" class="language-link" data-lang="en">English</a>
-                            <a href="#" class="language-link" data-lang="ru">Russian</a>
-                            <a href="#" class="language-link" data-lang="pt">Portuguese</a>
-                            <a href="#" class="language-link" data-lang="zh">Chinese</a>
-                            <a href="#" class="language-link" data-lang="de">German</a>
-                            <a href="#" class="language-link" data-lang="fr">French</a>
-                            <a href="#" class="language-link" data-lang="id">Indonesian</a>
-                            <a href="#" class="language-link" data-lang="tr">Turkish</a>
+                        <div class="language-menu">
+                            <a href="#" class="language-link" data-lang="en">🇺🇸 English</a>
+                            <a href="#" class="language-link" data-lang="ko">🇰🇷 한국어</a>
+                            <a href="#" class="language-link" data-lang="ja">🇯🇵 日本語</a>
+                            <a href="#" class="language-link" data-lang="zh">🇨🇳 中文</a>
+                            <a href="#" class="language-link" data-lang="ru">🇷🇺 Русский</a>
+                            <a href="#" class="language-link" data-lang="pt">🇧🇷 Português</a>
+                            <a href="#" class="language-link" data-lang="de">🇩🇪 Deutsch</a>
+                            <a href="#" class="language-link" data-lang="fr">🇫🇷 Français</a>
+                            <a href="#" class="language-link" data-lang="id">🇮🇩 Bahasa Indonesia</a>
+                            <a href="#" class="language-link" data-lang="tr">🇹🇷 Türkçe</a>
                         </div>
                     </div>
                     <a href="${langPrefix}/index.html">

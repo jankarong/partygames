@@ -1,0 +1,149 @@
+body {
+    background-color: #ffd700;
+    font-family: 'Comic Neue', cursive;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.question-card {
+    background: linear-gradient(135deg, #40e0d0, #ff69b4);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+
+.question-card:hover {
+    transform: rotate(1deg) scale(1.02);
+}
+
+.card {
+    border: none;
+    background: transparent;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.question-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    background: #40e0d0;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #ff69b4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.rules-section .card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+
+.rules-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.rule-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.rule-item h4 {
+    color: #ff69b4;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.rule-item p {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.home-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #ff69b4;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.home-icon:hover {
+    transform: scale(1.2);
+    color: #40e0d0;
+}
+
+h1 {
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.game-logo {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    .game-container {
+        margin: 1rem auto;
+        padding: 0.5rem;
+    }
+
+    .question-text {
+        font-size: 1.4rem;
+    }
+
+    .rule-item h4 {
+        font-size: 1.1rem;
+    }
+
+    .game-logo {
+        max-width: 150px;
+    }
+}
+
+/* 手机端导航栏位置自定义 - 移到右下角避免与support me按钮冲突 */
+@media (max-width: 768px) {
+    .quick-games-bar {
+        bottom: 15px !important;
+        left: auto !important;
+        right: 15px !important;
+        transform: none !important;
+    }
+    
+    /* 确保在打开状态下也保持右侧位置 */
+    .quick-games-bar.open {
+        right: 15px !important;
+        left: auto !important;
+    }
+}

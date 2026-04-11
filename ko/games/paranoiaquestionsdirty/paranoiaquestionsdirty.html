@@ -28,6 +28,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="/style/main.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/gameheader.css">
     <link rel="stylesheet" href="/games/games.css">
     <link rel="stylesheet" href="/games/paranoiaquestionsdirty/paranoiaquestionsdirty.css">
@@ -61,27 +62,29 @@
         <div class="paranoia-shell max-width-800 mx-auto">
             <!-- Hero Section -->
             <section class="paranoia-hero text-center mb-5">
-                <span class="badge bg-danger rounded-pill mb-3 px-3">18세 이상 권장</span>
+                <span class="paranoia-kicker mb-3">18세 이상 권장</span>
                 <div class="logo-container mb-3">
-                    <img src="/games/paranoiaquestionsdirty/logo.png" class="paranoia-hero-logo" alt="성인용 파라노이아 질문 로고" style="max-width: 120px;">
+                    <img src="logo.png" class="paranoia-hero-logo" alt="성인용 파라노이아 질문 로고">
                 </div>
                 <h1 class="display-5 fw-bold mb-3">성인용 파라노이아 질문</h1>
-                <p class="lead text-muted px-3">"이 중에서 가장 ~할 것 같은 사람은 누구?" 분위기를 화끈하게 달궈주는 성인용 질문 게임입니다.</p>
-                <div class="paranoia-stat-row d-flex justify-content-center gap-3 mt-4 small text-muted">
-                    <span><i class="fas fa-list-ul me-1 text-danger"></i> 25문항</span>
-                    <span><i class="fas fa-users me-1 text-danger"></i> 3인 이상</span>
-                    <span><i class="fas fa-bolt me-1 text-danger"></i> 무설치 플레이</span>
+                <p class="paranoia-subline px-3">"이 중에서 가장 ~할 것 같은 사람은 누구?"<br>분위기를 화끈하게 달궈주는 성인용 질문 게임입니다.</p>
+                <div class="paranoia-stat-row d-flex justify-content-center gap-3 mt-4">
+                    <span class="paranoia-stat"><i class="fas fa-list-ul me-1"></i> 25문항</span>
+                    <span class="paranoia-stat"><i class="fas fa-users me-1"></i> 3인 이상</span>
+                    <span class="paranoia-stat"><i class="fas fa-bolt me-1"></i> 무설치 플레이</span>
                 </div>
             </section>
 
             <!-- Question Card -->
             <section class="row justify-content-center mb-5">
                 <div class="col-lg-10">
-                    <div class="card question-card border-0 shadow-lg rounded-4 overflow-hidden">
-                        <div class="card-body p-4 p-md-5 text-center min-vh-25 d-flex flex-column justify-content-center">
-                            <div class="question-number text-danger fw-bold mb-3 small opacity-75" id="questionNumber">질문 1 / 25</div>
-                            <p id="questionText" class="display-6 fw-bold mb-4">질문을 불러오는 중...</p>
-                            <span id="questionMode" class="badge bg-light text-muted fw-normal rounded-pill px-3 py-2">대기 중</span>
+                    <div class="card question-card border-0 shadow-lg overflow-hidden">
+                        <div class="card-body p-4 p-md-5 text-center d-flex flex-column justify-content-center" style="min-height: 300px;">
+                            <div class="question-number" id="questionNumber">질문 1 / 25</div>
+                            <p id="questionText" class="question-text mb-4">질문을 불러오는 중...</p>
+                            <div>
+                                <span id="questionMode" class="question-mode">웜업</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,14 +93,14 @@
             <!-- Controls -->
             <section class="row justify-content-center mt-4">
                 <div class="col-lg-10">
-                    <div class="d-grid d-md-flex gap-3 justify-content-center">
-                        <button id="prevBtn" class="btn btn-outline-dark btn-lg rounded-pill px-4 shadow-sm">
+                    <div class="game-controls d-grid d-md-flex gap-3 justify-content-center">
+                        <button id="prevBtn" class="btn btn-outline-dark btn-lg px-4 shadow-sm">
                             <i class="fas fa-chevron-left me-2"></i>이전
                         </button>
-                        <button id="randomBtn" class="btn btn-outline-secondary btn-lg rounded-pill px-4 shadow-sm">
+                        <button id="randomBtn" class="btn btn-outline-secondary btn-lg px-4 shadow-sm">
                             <i class="fas fa-random me-2"></i>랜덤
                         </button>
-                        <button id="nextBtn" class="btn btn-danger btn-lg rounded-pill px-4 shadow-sm fw-bold">
+                        <button id="nextBtn" class="btn btn-danger btn-lg px-4 shadow-sm text-white">
                             다음 질문<i class="fas fa-chevron-right ms-2"></i>
                         </button>
                     </div>

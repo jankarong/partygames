@@ -269,26 +269,21 @@
 }
 
 .language-menu {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    border: 1px solid #eee;
+    max-height: 0;
+    overflow: hidden;
+    position: static;
+    background: #f8f9fa;
+    border: none;
     border-radius: 6px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(5px);
-    transition: all 0.2s ease;
-    z-index: 1000;
-    margin-bottom: 2px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    transition: max-height 0.3s ease, margin 0.3s ease;
+    margin-top: 0;
 }
 
 .language-menu.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    max-height: 400px;
+    margin-top: 5px;
+    overflow-y: auto;
 }
 
 .language-link {

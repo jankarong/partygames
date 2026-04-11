@@ -4,30 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>헤드반즈 (머리 위 퀴즈) | 온라인 파티 게임</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="내 머리 위에 누가 있을까? '네/아니오' 질문으로 정답을 맞히는 클래식 파티 게임 헤드반즈. 수백 개의 한국어 제시어를 제공합니다.">
-    <meta name="keywords" content="헤드반즈, hedbanz, heads up, 파티 게임, 술게임, 추리 게임, 레크리에이션, 한국어 게임, 퀴즈 게임">
-    <meta name="author" content="PartyGames">
+    <meta name="description"
+        content="헤드반즈 온라인(Headbands Online)을 무료로 즐기세요! 친구들이 힌트를 주는 동안 내 이마 위의 단어를 맞히는 최고의 파티 추리 게임입니다.">
+    <meta name="keywords"
+        content="헤드반즈, hedbanz, 헤즈업, 파티 게임, 온라인 추리 게임, 그룹 게임, 가상 파티 게임, 레크리에이션">
+    <meta name="author" content="Party Games">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.bestpartygames.net/ko/games/hedbanzgame/hedbanzgame.html">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./hedbanz.png">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="헤드반즈 온라인 - 무료 파티 추리 게임 | 지금 플레이">
+    <meta property="og:description"
+        content="헤드반즈 온라인을 무료로 즐기세요! 이마 위의 단어를 친구들의 힌트로 맞히는 최고의 온라인 파티 게임입니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="hedbanz.png">
+
+    <title>헤드반즈 온라인 - 무료 파티 추리 게임 | 지금 플레이</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="/style/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="hedbanzgame.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="./hedbanzgame.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/gameheader.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body { font-family: 'DM Sans', 'Noto Sans KR', sans-serif; }
     </style>
@@ -51,145 +54,174 @@
     </script>
 </head>
 
-<body class="bg-light">
-<main class="container py-4 py-md-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-9">
-                <!-- Game Header -->
-                <div class="text-center mb-5" id="game-header">
-                    <div class="mb-4">
-                        <img src="./hedbanz.png" alt="헤드반즈 로고" class="game-logo shadow rounded-4" style="max-width: 150px;">
-                    </div>
-                    <h1 class="display-4 fw-bold mb-3">헤드반즈</h1>
-                    <p class="lead text-muted">내 머리 위에 누가 있는지 맞춰보세요! 🧠</p>
-                </div>
+<body>
+    <div class="game-container">
+        <!-- Setup Screen -->
+        <div class="setup-screen" id="setup-screen">
+            <img src="hedbanz.png" alt="헤드반즈 온라인" class="logo game-logo">
+            <h1 id="game-header-title">헤드반즈 온라인</h1>
+            <p class="subtitle">스마트폰을 이마에 대고 제시어를 맞춰보세요! 🧠</p>
 
-                <!-- Setup Screen -->
-                <div id="setup-screen" class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
-                            <div class="card-body p-4 p-md-5">
-                                <h2 class="h4 fw-bold text-center mb-4">게임 설정</h2>
-                                <div class="mb-4">
-                                    <label for="round-time" class="form-label fw-bold">
-                                        <i class="fas fa-hourglass-half text-primary me-2"></i>제한 시간 (초)
-                                    </label>
-                                    <input type="number" id="round-time" class="form-control rounded-pill px-3" value="90" min="30" max="300">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="word-category" class="form-label fw-bold">
-                                        <i class="fas fa-list text-primary me-2"></i>카테고리 선택
-                                    </label>
-                                    <select id="word-category" class="form-select rounded-pill px-3">
-                                        <option value="all">모든 카테고리</option>
-                                        <option value="celebs">유명인/연예인 🌟</option>
-                                        <option value="characters">캐릭터/애니 🦸</option>
-                                        <option value="movies">영화/드라마 🎬</option>
-                                        <option value="animals">동물 🐘</option>
-                                        <option value="objects">사물 📱</option>
-                                        <option value="food">음식 🍕</option>
-                                    </select>
-                                </div>
-                                <button id="start-game" class="btn btn-primary w-100 btn-lg rounded-pill fw-bold py-3">
-                                    <i class="fas fa-play me-2"></i>게임 시작
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="setup-form">
+                <label for="round-time">제한 시간 (초):</label>
+                <select id="round-time">
+                    <option value="60">60초</option>
+                    <option value="90" selected>90초</option>
+                    <option value="120">120초</option>
+                </select>
 
-                <!-- Game Screen -->
-                <div id="game-screen" class="hidden">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <div class="card border-0 shadow-lg rounded-4 text-center">
-                                <div class="card-body p-4 p-md-5">
-                                    <div class="timer mb-4 display-3 fw-bold text-primary" id="timer">90</div>
-                                    <div class="word-card-container mb-5 p-5 bg-primary text-white rounded-4 shadow-sm">
-                                        <div class="word-display display-4 fw-bold" id="current-word">제시어</div>
-                                    </div>
-                                    <div class="d-flex justify-content-center gap-3 gap-md-4">
-                                        <button id="correct" class="btn btn-success btn-lg px-4 px-md-5 rounded-pill fw-bold py-3 shadow">
-                                            정답 ✅
-                                        </button>
-                                        <button id="skip" class="btn btn-warning btn-lg px-4 px-md-5 rounded-pill fw-bold py-3 shadow">
-                                            패스 ⏭️
-                                        </button>
-                                    </div>
-                                    <div class="mt-5">
-                                        <h3 id="score" class="h4 fw-bold text-muted">현재 점수: 0</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <label for="word-category">카테고리 선택:</label>
+                <select id="word-category">
+                    <option value="all">모든 카테고리</option>
+                    <option value="celebs">유명인/연예인 🌟</option>
+                    <option value="characters">캐릭터/애니 🦸</option>
+                    <option value="movies">영화/드라마 🎬</option>
+                    <option value="animals">동물 🐘</option>
+                    <option value="objects">사물 📱</option>
+                    <option value="food">음식 🍕</option>
+                </select>
 
-                <!-- Result Screen -->
-                <div id="result-screen" class="hidden">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <div class="card border-0 shadow-lg rounded-4 text-center">
-                                <div class="card-body p-4 p-md-5">
-                                    <h2 class="display-6 fw-bold mb-4">🎉 게임 종료!</h2>
-                                    <div id="final-score" class="h3 fw-bold text-primary mb-4">최종 점수: 0</div>
-                                    <div id="word-summary" class="mb-5 text-start p-3 bg-light rounded-3 small text-muted overflow-auto" style="max-height: 250px;"></div>
-                                    <button id="play-again" class="btn btn-primary btn-lg rounded-pill fw-bold px-5 py-3 shadow">
-                                        다시 하기 🔄
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button id="start-game" class="btn-primary">게임 시작</button>
+            </div>
+        </div>
 
-                <!-- Instructions Section -->
-                <div class="row justify-content-center mt-5" id="info-section">
-                    <div class="col-md-10">
-                        <div class="card border-0 shadow-sm rounded-4 mb-4">
-                            <div class="card-header bg-white border-bottom-0 pt-4 px-4">
-                                <h2 class="h5 fw-bold mb-0 text-primary">📋 헤드반즈 게임 규칙</h2>
-                            </div>
-                            <div class="card-body p-4">
-                                <div class="mb-4">
-                                    <h3 class="h6 fw-bold mb-2">🎯 게임 방법</h3>
-                                    <ol class="text-muted small ps-3">
-                                        <li class="mb-2"><strong>인원:</strong> 2명 이상 (여러 명이 함께하면 더 재미있습니다).</li>
-                                        <li class="mb-2"><strong>역할:</strong> '술래'는 스마트폰을 이마에 대어 제시어를 보지 못하게 합니다 (또는 옆 친구가 알려줍니다).</li>
-                                        <li class="mb-2"><strong>질문:</strong> 술래는 친구들에게 '네/아니오'로만 대답할 수 있는 질문을 던집니다. (예: "나는 살아있는 것인가요?", "나는 사람인가요?")</li>
-                                        <li class="mb-2"><strong>정답:</strong> 제한 시간 내에 가능한 많은 제시어를 맞히는 것이 목표입니다.</li>
-                                    </ol>
-                                </div>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <h3 class="h6 fw-bold mb-2 text-success"><i class="fas fa-lightbulb me-2"></i>즐거운 질문 팁</h3>
-                                        <ul class="text-muted small ps-3">
-                                            <li>"나는 동물인가요?" (범위 좁히기)</li>
-                                            <li>"나는 실존 인물인가요?" (구분하기)</li>
-                                            <li>"나는 먹을 수 있나요?" (속성 파악하기)</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h3 class="h6 fw-bold mb-2 text-danger"><i class="fas fa-exclamation-triangle me-2"></i>주의 사항</h3>
-                                        <p class="text-muted small mb-0">친구들은 절대 정답을 직접적으로 말해서는 안 되며, 오직 '네/아니오' 또는 '글쎄요'로만 답변해야 합니다.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <!-- Game Screen -->
+        <div class="game-screen" id="game-screen" style="display: none;">
+            <div class="word-card">
+                <div class="word-display" id="current-word">?</div>
+                <p class="instruction">스마트폰을 이마에 대세요 - 친구들만 단어를 봅니다!</p>
+            </div>
+
+            <div class="timer-section">
+                <div class="timer" id="timer">90</div>
+                <p class="timer-label">초 남음</p>
+            </div>
+
+            <div class="button-group">
+                <button id="correct" class="btn-correct">✓ 정답!</button>
+                <button id="skip" class="btn-skip">✗ 패스</button>
+            </div>
+
+            <div class="player-info text-center">
+                <div class="player-score" id="score">현재 점수: 0</div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="results-screen" id="result-screen" style="display: none;">
+            <h2>게임 종료!</h2>
+            <div class="final-score-display mb-4">
+                <h3 id="final-score" class="display-4 fw-bold text-primary">최종 점수: 0</h3>
+            </div>
+            <div id="word-summary" class="word-summary-list mb-4"></div>
+            <button id="play-again" class="btn-primary">다시 하기</button>
+        </div>
+
+        <!-- SEO Content Section -->
+        <div class="content-section">
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">헤드반즈 온라인(Headbands Online)이란?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>헤드반즈 온라인</strong>은 고전적인 파티 추리 게임인 '헤드반즈'의 무료 웹 버전입니다. 플레이어는 자신의 이마에 보이지 않는 단어를 달고 친구들에게 예/아니오 질문을 던져 그 단어가 무엇인지 맞춰야 합니다. 이 매력적인 온라인 파티 게임은 친구, 가족, 동료들과 함께 오프라인이나 온라인에서 즐기기에 완벽합니다.</p>
+                    <p>실제 카드 게임과 달리 헤드반즈 온라인은 수백 개의 제시어 데이터베이스를 갖추고 있어 매 판마다 새로운 재미를 느낄 수 있습니다. 별도의 카드가 필요 없이 스마트폰, 태블릿 또는 컴퓨터만 있다면 즉시 게임을 시작할 수 있습니다.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">헤드반즈 게임 방법 - 완벽 가이드</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>헤드반즈 게임 방법은 매우 간단하고 재미있습니다. 다음 단계에 따라 게임을 시작해 보세요:</p>
+                    <ol>
+                        <li><strong>게임 설정:</strong> 플레이 한 판당 제한 시간(60초, 90초 등)과 원하는 카테고리를 선택합니다.</li>
+                        <li><strong>스마트폰을 이마에 대기:</strong> '게임 시작'을 누르면 단어가 화면에 표시됩니다. 이때 술래인 당신은 단어를 보지 못하게 스마트폰 뒷면이 나를 향하도록 이마에 댑니다.</li>
+                        <li><strong>예/아니오 질문하기:</strong> 내가 어떤 단어를 달고 있는지 추리하기 위해 친구들에게 예 또는 아니오로만 답할 수 있는 질문을 전략적으로 던집니다.</li>
+                        <li><strong>정답 맞히기:</strong> 단어를 알 것 같으면 정답을 말하고 '정답' 버튼을 누릅니다.</li>
+                        <li><strong>점수 획득:</strong> 제한 시간 내에 가능한 많은 단어를 맞혀 점수를 쌓으세요.</li>
+                        <li><strong>패스하기:</strong> 도저히 모르겠는 단어는 '패스' 버튼을 눌러 다음 단어로 넘어갈 수 있습니다.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">최고의 온라인 파티 게임 - 헤드반즈의 매력</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>헤드반즈 온라인은 다음과 같은 이유로 많은 사랑을 받고 있습니다:</p>
+                    <ul>
+                        <li>✓ <strong>다운로드 불필요</strong> - 웹 브라우저에서 즉시 실행</li>
+                        <li>✓ <strong>완전 무료</strong> - 숨겨진 비용이나 결제 없는 무료 게임</li>
+                        <li>✓ <strong>모든 기기 지원</strong> - 데스크탑, 태블릿, 스마트폰 완벽 호환</li>
+                        <li>✓ <strong>언제 어디서나</strong> - 오프라인 모임은 물론 화상 채팅을 통한 온라인 모임에서도 가능</li>
+                        <li>✓ <strong>쉬운 규칙</strong> - 남녀노소 누구나 몇 초 만에 배우고 즐길 수 있는 재미</li>
+                        <li>✓ <strong>다양한 제시어</strong> - 연예인, 캐릭터, 동물, 사물 등 풍부한 카테고리</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">헤드반즈 게임 팁과 필승 전략</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>더 많은 점수를 얻기 위한 팁:</strong></p>
+                    <p><em>술래를 위한 팁:</em></p>
+                    <ul>
+                        <li>처음에는 넓은 범위의 질문부터 하세요: "사람인가요?" "동물인가요?" "사물인가요?"</li>
+                        <li>정답의 범위를 좁혀나가세요: "먹을 수 있나요?" "실존하는 인물인가요?"</li>
+                        <li>친구들의 반응을 살피세요: 미묘한 표정 변화가 힌트가 될 수 있습니다.</li>
+                        <li>시간이 생명입니다! 너무 고민하지 말고 빠르게 질문을 이어가세요.</li>
+                    </ul>
+                    <p><em>힌트를 주는 친구들을 위한 팁:</em></p>
+                    <ul>
+                        <li>정직하게 '예' 또는 '아니오'로만 답해야 합니다.</li>
+                        <li>절대로 정답을 직접 말하거나 몸짓으로 힌트를 주지 마세요.</li>
+                        <li>술래가 지치지 않게 빠른 대답으로 게임의 속도감을 유지해 주세요.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">자주 묻는 질문 (FAQ)</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="faq-item">
+                        <h3>헤드반즈 온라인은 정말 무료인가요?</h3>
+                        <p>네! 헤드반즈 온라인은 별도의 요금 결제나 가입 없이 누구나 100% 무료로 이용할 수 있습니다.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>앱을 따로 설치해야 하나요?</h3>
+                        <p>아닙니다. 웹 브라우저가 있는 모든 기기에서 주소만 입력하면 즉시 플레이가 가능합니다.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>온라인 화상 회의(줌, 구글 미트 등)에서도 할 수 있나요?</h3>
+                        <p>네, 화면 공유를 하거나 카메를 통해 스마트폰 화면을 보여주는 방식으로 전 세계 친구들과 원격으로 즐길 수 있습니다.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>제시어는 얼마나 자주 업데이트되나요?</h3>
+                        <p>저희 데이터베이스는 주기적으로 업데이트되며, 최신 유행하는 연예인이나 캐릭터 등 다양한 단어들이 추가됩니다.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/auth.js"></script>
     <script src="/js/ads-controller.js"></script>
-    <!-- Game Logic -->
-    <script src="./hedbanzgame-ko.js"></script>
     <script src="/js/game-navigation-ko.js"></script>
+    <script src="./hedbanzgame-ko.js"></script>
 </body>
 
 </html>

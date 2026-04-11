@@ -1,0 +1,610 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Content section - remove any background image */
+.content-section {
+    background: transparent !important;
+}
+
+/* SETUP SCREEN */
+.setup-screen {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.setup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.setup-form label {
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.setup-form select {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.setup-form select:hover {
+    border-color: #667eea;
+}
+
+.setup-form select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* GAME SCREEN */
+.game-screen {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.word-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+}
+
+.word-display {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-wrap: break-word;
+    line-height: 1.2;
+}
+
+.instruction {
+    font-size: 0.95em;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* TIMER */
+.timer-section {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.timer {
+    font-size: 4.5em;
+    font-weight: bold;
+    color: #667eea;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.timer-label {
+    font-size: 0.9em;
+    color: #999;
+    margin: 0;
+}
+
+/* BUTTONS */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.btn-primary,
+.btn-correct,
+.btn-skip {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-correct {
+    background: #10b981;
+    color: white;
+}
+
+.btn-correct:hover {
+    background: #059669;
+    transform: translateY(-2px);
+}
+
+.btn-skip {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-skip:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* PLAYER INFO */
+.player-info {
+    background: #f3f4f6;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #333;
+}
+
+.current-player {
+    font-size: 1.05em;
+}
+
+.player-score {
+    font-size: 1.3em;
+    color: #667eea;
+}
+
+/* READY SCREEN */
+.ready-screen {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.ready-screen h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.next-player-display {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 50px 40px;
+    margin-bottom: 35px;
+    color: white;
+}
+
+.ready-label {
+    font-size: 1.1em;
+    margin: 0 0 15px 0;
+    opacity: 0.95;
+}
+
+.ready-number {
+    font-size: 5em;
+    font-weight: bold;
+    margin: 10px 0;
+    line-height: 1;
+}
+
+.ready-instruction {
+    font-size: 1em;
+    margin: 20px 0 0 0;
+    opacity: 0.9;
+}
+
+/* RESULTS SCREEN */
+.results-screen {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.results-screen h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.final-scores {
+    margin-bottom: 35px;
+}
+
+.score-row {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-size: 1.15em;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.score-row strong {
+    color: #667eea;
+    font-size: 1.5em;
+}
+
+/* CONTENT SECTION */
+.content-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    color: #333;
+}
+
+.content-section section {
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+.content-section h2 {
+    font-size: 1.8em;
+    color: #667eea;
+    margin-bottom: 15px;
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.content-section h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.content-section p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #333;
+    font-weight: normal;
+}
+
+.content-section ul,
+.content-section ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.content-section li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #333;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.faq-item {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.faq-item h3 {
+    color: #667eea;
+    margin-top: 0;
+    font-size: 1.15em;
+    font-weight: 600;
+}
+
+.faq-item p {
+    margin-bottom: 0;
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+    font-weight: normal;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1em;
+    color: #333;
+    font-weight: normal;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.comparison-table tr:hover {
+    background: #f0f0f8;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .setup-screen,
+    .game-screen,
+    .results-screen {
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .word-display {
+        font-size: 2.5em;
+        padding: 20px;
+    }
+
+    .timer {
+        font-size: 3em;
+    }
+
+    .btn-primary,
+    .btn-correct,
+    .btn-skip {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+
+    .player-info {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .score-row {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .ready-number {
+        font-size: 3.5em;
+    }
+
+    .next-player-display {
+        padding: 35px 25px;
+    }
+
+    .content-section {
+        padding: 20px 10px;
+    }
+
+    .content-section h2 {
+        font-size: 1.5em;
+    }
+
+    .content-section h3 {
+        font-size: 1.1em;
+    }
+
+    .content-section section {
+        padding: 20px;
+    }
+
+    .content-section h2 {
+        font-size: 1.5em;
+    }
+
+    .content-section h3 {
+        font-size: 1em;
+    }
+
+    .content-section p {
+        font-size: 0.95em;
+    }
+
+    .content-section li {
+        font-size: 0.95em;
+    }
+
+    .comparison-table {
+        font-size: 0.95em;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+
+    .accordion-button {
+        padding: 15px;
+        font-size: 1em;
+    }
+
+    .accordion-content.active {
+        padding: 15px;
+    }
+}
+
+/* SEO Content Section */
+.content-section {
+    position: relative;
+    z-index: 100;
+}
+
+/* ACCORDION STYLES */
+.accordion-item {
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 100;
+}
+
+.accordion-button {
+    width: 100%;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.accordion-button:hover {
+    border-color: #667eea;
+    background: #f9f9ff;
+    transform: translateX(5px);
+}
+
+.accordion-button.active {
+    border-color: #667eea;
+    background: #f3f4f6;
+}
+
+.accordion-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 1.5em;
+    color: #667eea;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.accordion-button.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    padding: 0 20px;
+    margin-top: -2px;
+    background: transparent;
+}
+
+.accordion-content.active {
+    max-height: 10000px;
+    background: white;
+    border: 2px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 25px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fix for floating navigation menu z-index */
+.floating-nav {
+    z-index: 1000 !important;
+}
+
+.nav-toggle {
+    z-index: 1001 !important;
+}
+
+body {
+    min-height: 100vh;
+}

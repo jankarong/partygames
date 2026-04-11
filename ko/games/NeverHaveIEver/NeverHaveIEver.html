@@ -1,89 +1,154 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나는 절대로... (Never Have I Ever) | 파티 술게임</title>
-    <meta name="description" content="친구들과의 모임이나 술자리에서 즐기는 '나는 절대로...'. 서로의 비밀과 재미있는 에피소드를 공유할 수 있는 최고의 파티 게임입니다.">
-    <meta name="keywords" content="나는 절대로, never have i ever, 파티 게임, 술게임, 진실 게임, 레크리에이션, 한국어 게임">
-    <meta property="og:title" content="나는 절대로... (Never Have I Ever) | 파티 술게임">
-    <meta property="og:description" content="서로의 비밀을 공유하며 즐기는 클래식 질문 게임.">
+    <title>나는 절대로... (Never Have I Ever) - 재미있는 파티 술게임 | 나는 절대로 질문</title>
+    <meta name="description"
+        content="최고의 파티 술게임 '나는 절대로...'를 온라인으로 즐기세요! 친구들과의 모임, 술자리에서 분위기를 띄워줄 재미있고 자극적인 질문들이 가득합니다.">
+    <meta name="keywords"
+        content="나는 절대로, Never Have I Ever, 술게임, 파티 게임, 온라인 술게임, 질문 게임, 엠티 게임, 레크리에이션">
+    <meta name="author" content="Party Games">
+    <meta property="og:title" content="나는 절대로... (Never Have I Ever) - 온라인 파티 술게임">
+    <meta property="og:description"
+        content="최고의 파티 술게임 '나는 절대로...'를 온라인으로 즐기세요! 재미있고 자극적인 질문들로 파티 분위기를 업그레이드하세요.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="NeverHaveIEverLogo.png">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.bestpartygames.net/ko/games/NeverHaveIEver/NeverHaveIEver.html">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="./NeverHaveIEverLogo.png">
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="/style/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    <link rel="stylesheet" href="NeverHaveIEver.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/gameheader.css">
-    <link rel="stylesheet" href="NeverHaveIEver.css">
+
     <style>
         body { font-family: 'DM Sans', 'Noto Sans KR', sans-serif; }
     </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "q4t8s17fvw");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
 </head>
+
 <body>
-    <div class="container container-main py-5">
-        <div class="text-center mb-4">
-            <img src="NeverHaveIEverLogo.png" alt="나는 절대로 로고" class="game-logo mb-3" style="max-width: 150px;">
-            <h1 class="display-4 fw-bold">나는 절대로...</h1>
+    <div class="game-container">
+        <div class="logo-container text-center mb-4">
+            <img src="NeverHaveIEverLogo.png" alt="나는 절대로 게임 로고" class="game-logo">
         </div>
+        <h1 class="text-center mb-4">나는 절대로... (Never Have I Ever)</h1>
 
-        <div class="game-card shadow-lg p-5 mb-5 text-center bg-white rounded-4 border-0">
-            <p id="statement" class="statement fs-3 mb-0 text-dark">시작 버튼을 눌러 질문을 확인하세요.</p>
-        </div>
-        
-        <div class="controls text-center mb-5">
-            <button id="nextBtn" class="button btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold" aria-label="시작">시작</button>
-        </div>
-
-        <div class="rules p-4 bg-light rounded-4 shadow-sm mb-5">
-            <h2 class="h4 fw-bold mb-4 text-center">게임 방법</h2>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <p class="mb-2"><span class="badge bg-primary me-2">1</span> 순서대로 '다음' 버튼을 눌러 질문을 확인합니다.</p>
-                    <p class="mb-2"><span class="badge bg-primary me-2">2</span> 해당 질문의 경험이 있는 사람은 미리 정한 규칙(술 마시기, 손가락 접기 등)에 따릅니다.</p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <p class="mb-2"><span class="badge bg-primary me-2">3</span> 경험이 없는 사람은 아무것도 하지 않고 넘어갑니다.</p>
-                    <p class="mb-2"><span class="badge bg-primary me-2">4</span> 경험이 있는 사람이 그에 얽힌 에피소드를 짧게 이야기하면 더욱 즐겁습니다.</p>
+        <div class="game-card-display mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <p id="statement" class="statement mb-0">시작 버튼을 눌러 질문을 확인하세요.</p>
                 </div>
             </div>
-            <p class="mt-3 text-center text-muted small"><i class="fas fa-info-circle me-1"></i> 팁: 너무 무리한 질문이나 강요는 피하고 즐겁게 놀아요!</p>
         </div>
 
-        <div class="game-info p-4 bg-white rounded-4 shadow-sm border">
-            <h2 class="h4 fw-bold mb-4">이 게임의 매력</h2>
-            <p class="lead text-muted">규칙이 간단하여 초면인 사람들과도 금방 친해질 수 있으며, 서로의 의외의 면모를 발견할 수 있습니다. 술자리 2차나 친구들과의 홈 파티에 특히 추천합니다.</p>
+        <div class="controls text-center mb-5">
+            <button id="nextBtn" class="btn-primary" aria-label="질문 시작">시작</button>
+        </div>
 
-            <div class="row mt-5">
-                <div class="col-md-6">
-                    <h3 class="h5 fw-bold mb-3 d-flex align-items-center"><i class="fas fa-glass-cheers text-primary me-2"></i> 추천 상황</h3>
-                    <ul class="list-unstyled text-muted">
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>친구들과의 홈 파티</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>새로운 사람들과의 모임</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>MT나 대학생 동아리 행사</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>야밤의 진솔한 토크 타임</li>
+        <!-- SEO Content Section with Accordions -->
+        <div class="content-section mt-5">
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">🎮 '나는 절대로...' 게임 방법</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>'나는 절대로...' (Never Have I Ever)</strong>는 친구들의 비밀을 알아낼 수 있는 최고의 파티 게임입니다. 술자리나 모임에서 분위기를 띄우기에 아주 좋습니다. 방법은 다음과 같습니다:</p>
+                    <ol>
+                        <li>참여자들은 열 손가락을 펴거나 각자의 잔에 술을 채웁니다.</li>
+                        <li>돌아가며 화면의 '다음' 버튼을 눌러 나오는 문장을 읽습니다.</li>
+                        <li><strong>해당 문장의 경험이 있는 사람</strong>은 손가락을 하나 접거나 술을 한 모금 마십니다.</li>
+                        <li>손가락을 가장 먼저 다 접거나 마지막까지 남은 사람이 승리(또는 벌칙)하는 방식으로 진행합니다.</li>
+                        <li>무엇보다 <strong>정직하게</strong> 참여하는 것이 게임의 가장 큰 재미입니다!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">✨ 이 게임을 사랑할 수밖에 없는 이유</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>온라인 '나는 절대로...' 게임은 단순한 시간 때우기를 넘어 특별한 즐거움을 선사합니다:</p>
+                    <ul>
+                        <li>🔥 <strong>다양한 질문</strong>: 일상적인 내용부터 조금은 대담한 내용까지 40개 이상의 질문이 준비되어 있습니다.</li>
+                        <li>📖 <strong>초간단 규칙</strong>: 누구나 1분 안에 배울 수 있어 어색한 분위기를 깨기에 완벽합니다.</li>
+                        <li>🌈 <strong>어디서나 플레이</strong>: 캠핑, 엠티, 홈파티 등 인터넷만 된다면 별도의 준비물 없이 즉시 시작할 수 있습니다.</li>
+                        <li>🎁 <strong>완전 무료</strong>: 모든 콘텐츠를 무제한으로 즐길 수 있습니다.</li>
                     </ul>
                 </div>
-                <div class="col-md-6">
-                    <h3 class="h5 fw-bold mb-3 d-flex align-items-center"><i class="fas fa-lightbulb text-warning me-2"></i> 즐겁게 노는 팁</h3>
-                    <ul class="list-unstyled text-muted">
-                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>가벼운 질문부터 시작해서 점점 수위를 높여보세요.</li>
-                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>'패스' 규칙을 미리 정해두면 좋습니다.</li>
-                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>질문 뒤에 한마디씩 덧붙이면 대화의 꽃이 피어납니다.</li>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">🎯 더 재미있게 즐기는 팁</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>게임의 재미를 실 배로 만드는 방법들입니다:</p>
+                    <ul>
+                        <li><strong>에피소드 공유</strong>: 경험이 있는 사람이 술을 마실 때, 당시의 재미있는 비하인드 스토리를 짧게 공유해보세요.</li>
+                        <li><strong>벌칙 설정</strong>: 손가락을 가장 먼저 다 접은 사람을 위해 귀여운 벌칙을 미리 정해두면 긴장감이 높아집니다.</li>
+                        <li><strong>테마 정하기</strong>: 질문의 분위기에 맞춰 술자리 분위기를 바꿔보세요.</li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-title">❓ 자주 묻는 질문 (FAQ)</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="faq-item">
+                        <h5>온라인으로도 여러 명이 같이 할 수 있나요?</h5>
+                        <p>네! 한 명의 스마트폰 화면을 같이 보거나, 화상 통화 중이라면 화면 공유 기능을 통해 전 세계 친구들과 원격으로 즐길 수 있습니다.</p>
+                    </div>
+                    <div class="faq-item mt-3">
+                        <h5>질문이 계속 반복되나요?</h5>
+                        <p>아닙니다. 한 세션 동안은 질문이 중복되지 않도록 설계되어 있어 계속해서 새로운 질문을 만날 수 있습니다.</p>
+                    </div>
+                    <div class="faq-item mt-3">
+                        <h5>어떤 상황에서 하면 가장 좋나요?</h5>
+                        <p>MT, 대학교 동아리 모임, 친구들과의 호캉스, 홈파티 등 어색함을 풀고 싶거나 더 친해지고 싶은 모든 순간에 추천합니다.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <script src="NeverHaveIEver-ko.js"></script>
+
+    <script src="script-ko.js"></script>
     <script src="/js/game-navigation-ko.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/auth.js"></script>
     <script src="/js/ads-controller.js"></script>
 </body>
+
 </html>

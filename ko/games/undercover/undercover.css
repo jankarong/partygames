@@ -1,0 +1,390 @@
+:root {
+    --pink-color: #ffa5a5;
+    --light-text: #ffffff;
+    --gray-text: #e0e0e0;
+    --dark-bg: #1a1a1a;
+    --darker-bg: #141414;
+}
+
+/* Override navbar background for this page only */
+.navbar {
+    background: #212529 !important;
+}
+
+.navbar-collapse {
+    background: #212529 !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #495057 !important;
+}
+
+.navbar-toggler {
+    background: #495057 !important;
+}
+
+.navbar-toggler:hover {
+    background: #6c757d !important;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    background-image: url('./undercovebg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: scroll !important;
+    background-repeat: no-repeat !important;
+    color: var(--light-text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.bg-darker {
+    background-color: var(--darker-bg) !important;
+}
+
+.border-pink {
+    border-color: var(--pink-color) !important;
+}
+
+.text-pink {
+    color: var(--pink-color) !important;
+}
+
+.btn-pink {
+    background-color: var(--pink-color);
+    border-color: var(--pink-color);
+    color: var(--darker-bg);
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-shadow: none;
+}
+
+.btn-pink:hover {
+    background-color: #ff8a8a;
+    border-color: #ff8a8a;
+    color: var(--darker-bg);
+    transform: translateY(-2px);
+}
+
+.btn-outline-pink {
+    color: var(--pink-color);
+    border-color: var(--pink-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: none;
+}
+
+.btn-outline-pink:hover {
+    background-color: var(--pink-color);
+    color: var(--darker-bg);
+    transform: translateY(-2px);
+}
+
+.cute-title {
+    color: var(--pink-color);
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cute-text {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.game-logo-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.game-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(255, 165, 165, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.game-logo:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 165, 165, 0.2) !important;
+}
+
+.form-control {
+    border-width: 2px !important;
+    transition: all 0.3s ease;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
+.form-control::placeholder {
+    color: var(--gray-text);
+}
+
+.form-floating>.form-control {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--pink-color) !important;
+}
+
+.form-floating>.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.form-floating>label {
+    color: var(--gray-text);
+}
+
+.form-check-label {
+    color: var(--light-text);
+}
+
+.form-check-input:checked {
+    background-color: var(--pink-color) !important;
+    border-color: var(--pink-color) !important;
+}
+
+.player-list {
+    background-color: var(--darker-bg);
+    max-height: 500px;
+    overflow-y: auto;
+    color: var(--light-text);
+}
+
+.flip-card {
+    width: 280px;
+    height: 180px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--darker-bg);
+    border: 3px solid var(--pink-color);
+    box-shadow: 0 5px 15px rgba(255, 165, 165, 0.2);
+}
+
+.flip-card-front {
+    color: var(--light-text);
+    font-weight: 600;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background-color: var(--pink-color);
+    color: var(--darker-bg);
+    font-weight: 700;
+}
+
+/* Custom Scrollbar */
+.player-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.player-list::-webkit-scrollbar-track {
+    background: var(--darker-bg);
+    border-radius: 4px;
+}
+
+.player-list::-webkit-scrollbar-thumb {
+    background: var(--pink-color);
+    border-radius: 4px;
+}
+
+/* Floating Labels */
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    color: var(--pink-color);
+    opacity: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.form-floating>.form-control:focus,
+.form-floating>.form-control:not(:placeholder-shown) {
+    background-color: var(--darker-bg) !important;
+}
+
+/* 玩家列表项的样式 */
+.player-list .list-group-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    border: 1px solid rgba(255, 165, 165, 0.2);
+    margin-bottom: 4px;
+    border-radius: 8px;
+}
+
+.player-list .list-group-item.eliminated {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff8a8a;
+    text-decoration: line-through;
+}
+
+/* 玩家选择区域样式 */
+.player-list .player {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    border: 2px solid rgba(255, 165, 165, 0.3);
+    margin-bottom: 12px;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+}
+
+.player-list .player:hover {
+    background-color: rgba(255, 165, 165, 0.2);
+    border-color: var(--pink-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 165, 165, 0.3);
+}
+
+.player-list .player.eliminated {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff8a8a;
+    text-decoration: line-through;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.player-list .player.eliminated:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* 增大radio button */
+.player-list .player input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+    accent-color: var(--pink-color);
+}
+
+.player-list .player label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    margin: 0;
+}
+
+/* Category dropdown styling */
+.form-select {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid var(--pink-color) !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.form-select:focus {
+    border-color: var(--pink-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 165, 165, 0.25) !important;
+}
+
+.form-select option {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Responsive layout controls */
+@media (min-width: 992px) {
+    .container {
+        max-width: 800px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .game-logo {
+        max-width: 150px;
+    }
+
+    .word-display {
+        font-size: 2rem;
+    }
+
+    /* 移动端玩家选择优化 */
+    .player-list .player {
+        padding: 25px;
+        font-size: 1.6rem;
+        min-height: 80px;
+        margin-bottom: 15px;
+    }
+
+    .player-list .player input[type="radio"] {
+        width: 24px;
+        height: 24px;
+        margin-right: 18px;
+    }
+
+    .player-list .player label {
+        font-size: 1.6rem;
+    }
+}
+
+/* 手机端导航栏位置自定义 - 移到右下角避免与support me按钮冲突 */
+@media (max-width: 768px) {
+    .quick-games-bar {
+        bottom: 15px !important;
+        left: auto !important;
+        right: 15px !important;
+        transform: none !important;
+    }
+    
+    /* 确保在打开状态下也保持右侧位置 */
+    .quick-games-bar.open {
+        right: 15px !important;
+        left: auto !important;
+    }
+}
