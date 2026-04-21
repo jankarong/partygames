@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Play the Friendship Quiz - The ultimate bestie challenge! Discover how well you and your friends really know each other. Create your own quiz and share it with your best friends. Perfect for parties, hangouts, and social fun. Free online test, start now!">
+    <meta name="keywords" content="friendship quiz, bestie challenge, how well do you know me, party games, compatibility test, 2026 social games">
+    <meta name="author" content="Party Game Lab">
+    <meta property="og:title" content="Bestie Quiz - How much do you know about each other?">
+    <meta property="og:description" content="Discover the depth of your friendship! A fun and interactive friendship challenge. Create your link and challenge your friends!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="FriendshipQuizLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/games/FriendshipQuiz/FriendshipQuiz">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Ultimate Friendship Challenge">
+    <meta name="twitter:description" content="Fun friendship questions for your perfect hangout! Create your quiz link and send it to your bestie today.">
+    <meta name="twitter:image" content="FriendshipQuizLogo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <link rel="canonical" href="https://www.bestpartygames.net/games/FriendshipQuiz/FriendshipQuiz.html">
+    <title>Friendship Quiz - Best Friend Test & How Well Do You Know Me</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="FriendshipQuizLogo.png">
+
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/gameheader.css">
+    <link rel="stylesheet" href="../../zh/games/FriendshipQuiz/FriendshipQuiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --heading-font: 'Fredoka One', cursive;
+            --body-font: 'Quicksand', sans-serif;
+        }
+    </style>
+
+    <!-- Global scripts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body style="font-family: 'Quicksand', sans-serif;">
+    <div id="nav-placeholder"></div>
+
+    <main class="container py-5">
+        <div class="quiz-wrapper mx-auto">
+            <!-- Start Screen -->
+            <section id="start-screen" class="game-card text-center active">
+                <div class="logo-wrapper pulse">
+                    <img src="FriendshipQuizLogo.png" alt="Friendship Quiz Logo" class="main-logo img-fluid">
+                </div>
+                <h1 class="display-4 fw-bold mb-4" style="font-family: 'Fredoka One', cursive;">Friendship Quiz</h1>
+                <p class="lead mb-5">Are you really "Besties"? Or just "Plastic" friends?<br>Take this 15-question challenge to see how much you truly know each other!</p>
+                <div class="setup-form mb-4">
+                    <input type="text" id="friend-name" class="form-control form-control-lg text-center shadow-sm mb-3" placeholder="Enter your name">
+                    <button class="btn btn-primary-custom btn-lg w-100" id="start-game-btn">
+                        <i class="fas fa-play me-2"></i> Start Challenge
+                    </button>
+                </div>
+                <div class="badge-container d-flex justify-content-center gap-3">
+                    <span class="badge rounded-pill bg-soft-pink"><i class="fas fa-heart me-1"></i> Fun</span>
+                    <span class="badge rounded-pill bg-soft-blue"><i class="fas fa-brain me-1"></i> Chemistry</span>
+                    <span class="badge rounded-pill bg-soft-yellow"><i class="fas fa-laugh me-1"></i> Laughs</span>
+                </div>
+            </section>
+
+            <!-- Quiz Screen -->
+            <section id="quiz-screen" class="game-card text-center d-none">
+                <div class="progress-container mb-4">
+                    <div class="progress" style="height: 10px;">
+                        <div id="quiz-progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text mt-2 d-block" id="question-counter">Question 1 / 15</span>
+                </div>
+                <div class="question-container py-4">
+                    <h2 id="question-text" class="mb-4">Loading question...</h2>
+                    <div id="options-container" class="options-grid">
+                        <!-- Options will be injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Result Screen -->
+            <section id="result-screen" class="game-card text-center d-none">
+                <div class="certificate-wrapper mb-4">
+                    <div class="certificate-border p-4">
+                        <h2 class="mb-3">Friendship Certificate</h2>
+                        <div class="result-score-circle mx-auto mb-3">
+                            <span id="result-percentage">85%</span>
+                        </div>
+                        <h3 id="result-title" class="mb-2">Soulmates</h3>
+                        <p id="result-description" class="mb-4">You guys are practically sharing one brain! A divine level of understanding.</p>
+                        <hr>
+                        <p class="small text-muted mb-0">Tester: <span id="target-friend">Someone</span></p>
+                    </div>
+                </div>
+                <div class="actions d-flex gap-3">
+                    <button class="btn btn-outline-primary-custom flex-grow-1" id="share-btn">
+                        <i class="fas fa-share-alt me-2"></i> Share Quiz
+                    </button>
+                    <button class="btn btn-primary-custom flex-grow-1" id="restart-btn">
+                        <i class="fas fa-redo me-2"></i> Try Again
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Info Sections -->
+        <div class="info-sections mt-5">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="game-info-card h-100">
+                        <h3><i class="fas fa-gamepad text-primary-custom me-2"></i> How to Play</h3>
+                        <p>It's more than a test, it's a bond enhancer!</p>
+                        <ol>
+                            <li><strong>Create your quiz:</strong> Enter your name and answer 15 questions about yourself.</li>
+                            <li><strong>Share the link:</strong> Copy the unique link and send it to your besties.</li>
+                            <li><strong>Friend's Challenge:</strong> Your friend will open the link and try to guess your answers.</li>
+                            <li><strong>Check score:</strong> The system will compare and show your true friendship score!</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="game-info-card h-100">
+                        <h3><i class="fas fa-star text-warning me-2"></i> Why Play This?</h3>
+                        <p>In a world of fast content, deep connections matter.</p>
+                        <ul>
+                            <li><strong>Ice Breaker:</strong> Don't know what to talk about? This is the perfect tool.</li>
+                            <li><strong>Surprising Finds:</strong> You might discover a secret habit or quirk of theirs.</li>
+                            <li><strong>Strengthen Bonds:</strong> Every bit of knowledge brings you closer.</li>
+                            <li><strong>Make Memories:</strong> Regardless of the score, the laughs are what count.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-container mt-5">
+                <h3 class="text-center mb-4">❓ Friendship Quiz FAQs</h3>
+                <div class="accordion shadow-sm" id="quizFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                How is the Friendship Quiz score calculated?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#quizFAQ">
+                            <div class="accordion-body">
+                                The <strong>Friendship Quiz</strong> system compares your answers directly. The quiz creator sets the base truth, and the friend guesses. The more matches you have in the <strong>Friendship Quiz</strong>, the higher the score.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                Is this Friendship Quiz totally free?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#quizFAQ">
+                            <div class="accordion-body">
+                                Yes! This <strong>Friendship Quiz</strong> is a free tool provided by our lab. Your <strong>Friendship Quiz</strong> data is encoded in the URL and not stored on our servers for maximum privacy.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed SEO Content Section for Friendship Quiz -->
+        <article class="mt-5 pt-5 border-top">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="display-6 fw-bold mb-4">Mastering the Friendship Quiz: Why It’s the Ultimate Social Tool</h2>
+                    <p class="mb-4">In today's digital era, a <strong>friendship quiz</strong> has evolved into much more than just a simple game. It is a powerful way for individuals to celebrate their bonds, verify their mutual understanding, and create lasting memories. By using the latest 2026 version of our online <strong>friendship quiz</strong>, you can easily generate a personalized link to challenge your inner circle and find out who really knows you best.</p>
+
+                    <h3 class="h4 mb-3">🌟 The Perfect Settings for a Friendship Quiz</h3>
+                    <p>Playing a <strong>friendship quiz</strong> is ideal for various social gatherings. Whether you are hosting a birthday party or just hanging out at a local cafe, starting a <strong>friendship quiz</strong> can instantly elevate the mood and spark deep conversations that wouldn't happen otherwise.</p>
+                    
+                    <div class="row g-4 mb-5 mt-2">
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-primary border-4">
+                                <h4 class="h5">🎂 Birthday Friendship Quiz</h4>
+                                <p class="small text-muted">A birthday <strong>friendship quiz</strong> is the ultimate way to honor the guest of interest. Let your guests compete to see who has been paying the most attention over the years!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-pink border-4">
+                                <h4 class="h5">👭 Bonding Friendship Quiz</h4>
+                                <p class="small text-muted">Bored at a sleepover? A deep <strong>friendship quiz</strong> will help you rediscover shared memories and secret jokes that define your unique bond.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-info border-4">
+                                <h4 class="h5">🏢 Corporate Friendship Quiz</h4>
+                                <p class="small text-muted">Even in a professional setting, a team-building <strong>friendship quiz</strong> can bridge the gap between colleagues and foster a more inclusive work culture.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="h4 mb-3">🛠️ How to Get a 100% Score on a Friendship Quiz?</h3>
+                    <p>Winning a <strong>friendship quiz</strong> isn't just about luck; it's about paying attention to the little things. True besties usually excel at the <strong>friendship quiz</strong> because they remember things like favorite karaoke songs, most hated foods, and even common excuses for being late. Our <strong>friendship quiz</strong> design ensures that only the most observant friends reach the top of the leaderboard.</p>
+                    
+                    <h3 class="h4 mb-3">💡 The Psychology Behind the Friendship Quiz Trend</h3>
+                    <p>Why do we love the <strong>friendship quiz</strong> so much? Psychologically, a <strong>friendship quiz</strong> provides validation. When a friend scores high on your <strong>friendship quiz</strong>, it sends a strong signal that you are seen, heard, and understood. This positive reinforcement is why the <strong>friendship quiz</strong> remains a staple of social interaction across all age groups.</p>
+
+                    <p class="mt-4">Our platform is dedicated to providing the most interactive <strong>friendship quiz</strong> experience online. We constantly update our <strong>friendship quiz</strong> questions to keep them fresh, funny, and culturally relevant for users worldwide.</p>
+
+                    <div class="alert alert-info py-4 mt-5 border-0 rounded-4">
+                        <h4 class="h5 fw-bold mb-3 text-center">🏆 Trending Friendship Quiz Topics 2026:</h4>
+                        <div class="text-center">
+                            <span class="badge bg-primary text-white p-2 m-1">#FriendshipQuiz2026</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#BestieCompatibility</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#WhoKnowsMeBetter</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#UltimateFriendshipChallenge</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#SoulmateTest</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/game-navigation.js"></script>
+    <script src="FriendshipQuiz.js"></script>
+</body>
+
+</html>

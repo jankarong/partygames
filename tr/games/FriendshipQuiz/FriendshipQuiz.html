@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="En popüler Arkadaşlık Testi (Friendship Quiz) ile arkadaşlarının seni ne kadar tanıdığını öğren! 15 soruluk testi çöz, benzersiz bağlantını paylaş ve gerçek dostlarını bul.">
+    <meta name="keywords" content="Arkadaşlık Testi, Beni ne kadar tanıyorsun, Dostluk Testi, Eğlenceli Quiz, Parti Oyunları, 2026 oyunları, BFF testi">
+    <meta property="og:title" content="Arkadaşlık Testi - Beni Ne Kadar Tanıyorsun?">
+    <meta property="og:description" content="Arkadaşların seni gerçekten tanıyor mu? Hemen Arkadaşlık Testi oluştur ve kimin en iyi dostun olduğunu öğren!">
+    <meta property="og:image" content="FriendshipQuizLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/tr/games/FriendshipQuiz/FriendshipQuiz.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.bestpartygames.net/tr/games/FriendshipQuiz/FriendshipQuiz.html">
+    <title>Arkadaşlık Testi - Beni Ne Kadar Tanıyorsun? Quiz</title>
+    <link rel="icon" type="image/png" href="FriendshipQuizLogo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../../zh/games/FriendshipQuiz/FriendshipQuiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --heading-font: 'Fredoka One', cursive;
+            --body-font: 'Quicksand', sans-serif;
+        }
+    </style>
+</head>
+
+<body style="font-family: var(--body-font);">
+    <div id="nav-placeholder"></div>
+    <main class="container py-5">
+        <div class="quiz-wrapper mx-auto">
+            <section id="start-screen" class="game-card text-center active">
+                <div class="logo-wrapper pulse"><img src="FriendshipQuizLogo.png" class="main-logo img-fluid" alt="Arkadaşlık Testi Logo"></div>
+                <h1 class="display-4 fw-bold mb-4">Arkadaşlık Testi</h1>
+                <p class="lead mb-5">Gerçekten "Kanka" mısınız? Yoksa sadece tanıdık mı?<br>Birbirinizi ne kadar tanıdığınızı görmek için bu 15 soruyu yanıtlayın!</p>
+                <div class="setup-form mb-4">
+                    <input type="text" id="friend-name" class="form-control form-control-lg text-center mb-3" placeholder="Adınızı girin">
+                    <button class="btn btn-primary-custom btn-lg w-100" id="start-game-btn"><i class="fas fa-play me-2"></i> Testi Başlat</button>
+                </div>
+            </section>
+            <section id="quiz-screen" class="game-card text-center d-none">
+                <div class="progress-container mb-4">
+                    <div class="progress" style="height: 10px;"><div id="quiz-progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div></div>
+                    <span class="progress-text mt-2 d-block" id="question-counter">Soru 1 / 15</span>
+                </div>
+                <div class="question-container py-4"><h2 id="question-text" class="mb-4">Yükleniyor...</h2><div id="options-container" class="options-grid"></div></div>
+            </section>
+            <section id="result-screen" class="game-card text-center d-none">
+                <div class="certificate-wrapper mb-4">
+                    <div class="certificate-border p-4">
+                        <h2 class="mb-3">Dostluk Sertifikası</h2>
+                        <div class="result-score-circle mx-auto mb-3"><span id="result-percentage">85%</span></div>
+                        <h3 id="result-title" class="mb-2">Ruh Öküzü/Eşi</h3>
+                        <p id="result-description" class="mb-4">Neredeyse aynı beyni paylaşıyorsunuz! Muazzam bir anlayış düzeyi.</p>
+                        <hr><p class="small text-muted mb-0">Test Edilen: <span id="target-friend">Biri</span></p>
+                    </div>
+                </div>
+                <div class="actions d-flex gap-3">
+                    <button class="btn btn-outline-primary-custom flex-grow-1" id="share-btn"><i class="fas fa-share-alt me-2"></i> Bağlantıyı Kopyala</button>
+                    <button class="btn btn-primary-custom flex-grow-1" id="restart-btn"><i class="fas fa-redo me-2"></i> Yeniden Dene</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- SEO and FAQ Section -->
+        <div class="game-info mt-5">
+            <div class="info-card mb-4">
+                <h2>Arkadaşlık Testi Hakkında</h2>
+                <p>Arkadaşlık Testi (Friendship Quiz), arkadaşlarınızla aranızdaki bağı test etmenin en eğlenceli yoludur. "Beni ne kadar tanıyorsun?" diye merak ediyorsanız, bu quiz tam size göre! Soruları yanıtlayın, bağlantıyı paylaşın ve kimin gerçek bir dost olduğunu öğrenin.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h3>Arkadaşlık Testi Nasıl Oynanır?</h3>
+                        <ol>
+                            <li>Adınızı girin ve testi başlatın.</li>
+                            <li>Kendinizle ilgili 15 soruyu dürüstçe yanıtlayın.</li>
+                            <li>Oluşturulan özel Arkadaşlık Testi bağlantısını kopyalayın.</li>
+                            <li>Bağlantıyı WhatsApp, Instagram veya LINE üzerinden arkadaşlarınıza gönderin.</li>
+                            <li>Arkadaşlarınızın cevaplarını ve puanlarını kontrol edin!</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h3>Neden Arkadaşlık Testi Yapmalısınız?</h3>
+                        <p>Arkadaşlıklar zamanla güçlenir, ancak birbirimizi ne kadar tanıdığımızı bilmek her zaman eğlencelidir. Arkadaşlık Testi sayesinde:</p>
+                        <ul>
+                            <li>Eğlenceli ve buz kırıcı bir aktivite yaparsınız.</li>
+                            <li>Arkadaşlarınızın sizin hakkınızdaki bilgisini ölçersiniz.</li>
+                            <li>Yeni sohbet konuları oluşturursunuz.</li>
+                            <li>Sosyal medyada paylaşım yapmak için harika bir içerik elde edersiniz.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card mt-4">
+                <h3>Sıkça Sorulan Sorular (SSS)</h3>
+                <div class="faq-item mb-3">
+                    <p><strong>Arkadaşlık Testi ücretsiz mi?</strong><br>Evet, web sitemizdeki tüm Arkadaşlık Testi içerikleri tamamen ücretsizdir.</p>
+                </div>
+                <div class="faq-item mb-3">
+                    <p><strong>Cevaplarım kaydediliyor mu?</strong><br>Gizliliğinize önem veriyoruz. Cevaplarınız sadece paylaştığınız bağlantı kodunda şifrelenir, sunucularımızda saklanmaz.</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Arkadaşlık Testi ne kadar güvenilir?</strong><br>Bu bir eğlence aracıdır! En yakın arkadaşınız bile bazen küçük detayları unutabilir, bu yüzden puanları çok ciddiye almayın ama eğlencenin tadını çıkarın.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Detailed SEO Content Section for Arkadaşlık Testi -->
+        <article class="mt-5 pt-5 border-top">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="display-6 fw-bold mb-4">Arkadaşlık Testinde Ustalaşın: Neden En İyi Sosyal Araçtır?</h2>
+                    <p class="mb-4">Günümüzün dijital çağında, bir <strong>Arkadaşlık Testi</strong> basit bir oyundan çok daha fazlasına dönüştü. Bağlarınızı kutlamanın, karşılıklı anlayışınızı doğrulamanın ve kalıcı anılar oluşturmanın güçlü bir yoludur. Online <strong>Arkadaşlık Testimizin</strong> 2026 versiyonunu kullanarak, en yakın çevrenize meydan okumak için kolayca kişiselleştirilmiş bir bağlantı oluşturabilirsiniz.</p>
+
+                    <h3 class="h4 mb-3">🌟 Arkadaşlık Testi İçin Mükemmel Senaryolar</h3>
+                    <p>Bir <strong>Arkadaşlık Testi</strong> oynamak çeşitli sosyal toplantılar için idealdir. İster bir doğum günü partisi veriyor olun, ister bir kafede takılıyor olun, <strong>Arkadaşlık Testi</strong> başlatmak ruh halini anında yükseltebilir.</p>
+                    
+                    <div class="row g-4 mb-5 mt-2">
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-primary border-4">
+                                <h4 class="h5">🎂 Doğum Günü Arkadaşlık Testi</h4>
+                                <p class="small text-muted">Bir doğum günü <strong>Arkadaşlık Testi</strong> onur konuğunu onurlandırmanın en iyi yoludur. Misafirlerinizin yıllar boyunca kimin en çok dikkat ettiğini görmek için yarışmasına izin verin!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-pink border-4">
+                                <h4 class="h5">👭 Bağ Kurma Arkadaşlık Testi</h4>
+                                <p class="small text-muted">Pijama partisinde sıkıldınız mı? Derin bir <strong>Arkadaşlık Testi</strong> ortak anıları ve gizli şakaları yeniden keşfetmenize yardımcı olacaktır.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-info border-4">
+                                <h4 class="h5">🏢 Kurumsal Arkadaşlık Testi</h4>
+                                <p class="small text-muted">Profesyonel bir ortamda bile, ekip oluşturma <strong>Arkadaşlık Testi</strong> meslektaşlar arasındaki boşluğu doldurabilir ve daha kapsayıcı bir çalışma kültürü oluşturabilir.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="h4 mb-3">🛠️ Arkadaşlık Testinde %100 Puan Nasıl Alınır?</h3>
+                    <p>Bir <strong>Arkadaşlık Testi</strong> kazanmak sadece şans değildir; küçük şeylere dikkat etmekle ilgilidir. En iyi arkadaşlar genellikle favori karaoke şarkılarını, en nefret edilen yiyecekleri ve hatta geç kalma bahanelerini hatırladıkları için başarılı olurlar.</p>
+                    
+                    <h3 class="h4 mb-3">💡 Arkadaşlık Testi Trendinin Arkasındaki Psikoloji</h3>
+                    <p>Neden <strong>Arkadaşlık Testini</strong> bu kadar çok seviyoruz? Psikolojik olarak, bir <strong>Arkadaşlık Testi</strong> onay sağlar. Bir arkadaş yüksek puan aldığında, görüldüğünüz, duyulduğunuz ve anlaşıldığınız mesajını verir.</p>
+
+                    <div class="alert alert-info py-4 mt-5 border-0 rounded-4">
+                        <h4 class="h5 fw-bold mb-3 text-center">🏆 2026 Trend Konuları:</h4>
+                        <div class="text-center">
+                            <span class="badge bg-primary text-white p-2 m-1">#ArkadaslikTesti</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#KankaTesti</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#BeniKimDahaIyiTaniyor</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#BFFMeydanOkuma</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#RuhOkuzuTesti</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../js/game-navigation-tr.js"></script>
+    <script src="FriendshipQuiz.js"></script>
+</body>
+</html>

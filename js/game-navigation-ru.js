@@ -20,6 +20,7 @@ class GameNavigation {
             { name: 'Любовные кубики', url: '/ru/games/sexdice/sexdice.html', category: 'adult' },
             { name: 'Угадайте число', url: '/ru/games/beernumber/beernumber.html', category: 'drinking' },
             { name: 'Король чаши', url: '/ru/games/KingsCup/KingsCup.html', category: 'drinking' },
+            { name: 'Викторина о дружбе', url: '/ru/games/FriendshipQuiz/FriendshipQuiz.html', category: 'party' },
             { name: 'Совпадение бутылок', url: '/ru/games/BottleMatchGame/BottleMatchGame.html', category: 'party' },
             { name: 'Карты лжецов', url: '/ru/games/liarsdice/liarsdice.html', category: 'drinking' },
             { name: 'Последний выстрел', url: '/ru/games/lastshot/lastshot.html', category: 'drinking' },

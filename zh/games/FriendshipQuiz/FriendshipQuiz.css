@@ -1,0 +1,200 @@
+:root {
+    --primary-custom: #ff6b6b;
+    --primary-hover: #fa5252;
+    --secondary-custom: #4dabf7;
+    --soft-pink: #fff0f6;
+    --soft-blue: #e7f5ff;
+    --soft-yellow: #fff9db;
+    --text-dark: #2c3e50;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --shadow-premium: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    background-attachment: fixed;
+    font-family: var(--body-font, 'Noto Sans SC', sans-serif);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font, 'Fredoka One', 'ZCOOL KuaiLe', cursive);
+}
+
+.quiz-wrapper {
+    max-width: 700px;
+}
+
+.game-card {
+    background: var(--card-bg);
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow-premium);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateY(20px);
+    display: none;
+}
+
+.game-card.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+.logo-wrapper {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+}
+
+.main-logo {
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+}
+
+.btn-primary-custom {
+    background: linear-gradient(45deg, #ff6b6b, #ff8787);
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+    color: white;
+}
+
+.btn-outline-primary-custom {
+    border: 2px solid var(--primary-custom);
+    color: var(--primary-custom);
+    background: transparent;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary-custom:hover {
+    background: var(--primary-custom);
+    color: white;
+}
+
+.bg-soft-pink { background-color: var(--soft-pink); color: #c2255c; }
+.bg-soft-blue { background-color: var(--soft-blue); color: #1971c2; }
+.bg-soft-yellow { background-color: var(--soft-yellow); color: #f08c00; }
+
+.badge {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Options Grid */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 576px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.option-btn {
+    background: white;
+    border: 2px solid #edf2f7;
+    border-radius: 1.2rem;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.option-btn:hover {
+    border-color: var(--primary-custom);
+    background: var(--soft-pink);
+    transform: scale(1.03);
+}
+
+.option-btn.selected {
+    background: var(--primary-custom);
+    color: white;
+    border-color: var(--primary-custom);
+}
+
+/* Certificate Styles */
+.certificate-border {
+    border: 8px double var(--primary-custom);
+    border-radius: 1.5rem;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-border::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(255,107,107,0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.result-score-circle {
+    width: 120px;
+    height: 120px;
+    background: var(--primary-custom);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Info Cards */
+.game-info-card {
+    background: var(--glass-bg);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.text-primary-custom { color: var(--primary-custom); }
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 3s infinite ease-in-out;
+}
+
+/* Progress Bar */
+.progress-bar {
+    background-color: var(--primary-custom);
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    font-weight: bold;
+}

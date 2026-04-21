@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mache das ultimative Freundschafts-Quiz (Friendship Quiz) und finde heraus, wie gut dich deine Freunde kennen! Erstelle 15 Fragen, teile den Link und finde deine wahren BFFs.">
+    <meta name="keywords" content="Freundschafts-Quiz, Wie gut kennst du mich, Bestie Test, BFF Quiz, Partyspiele, 2026 Spiele, Freundschaftstest online">
+    <meta name="author" content="Party Game Lab">
+    <meta property="og:title" content="Freundschafts-Quiz - Wie gut kennst du mich?">
+    <meta property="og:description" content="Kennen deine Freunde dich wirklich? Erstelle jetzt dein eigenes Freundschafts-Quiz und fordere sie heraus!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="FriendshipQuizLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/de/games/FriendshipQuiz/FriendshipQuiz">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Die ultimative Freundschafts-Challenge">
+    <meta name="twitter:description" content="Unterhaltsame Freundschaftsfragen für das perfekte Beisammensein! Erstelle deinen Quiz-Link und sende ihn noch heute an deine besten Freunde.">
+    <meta name="twitter:image" content="FriendshipQuizLogo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="German">
+    <title>Freundschafts-Quiz - Der ultimative Bestie-Test & Wie gut kennst du mich?</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="FriendshipQuizLogo.png">
+
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../../zh/games/FriendshipQuiz/FriendshipQuiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --heading-font: 'Fredoka One', cursive;
+            --body-font: 'Quicksand', sans-serif;
+        }
+    </style>
+</head>
+
+<body style="font-family: var(--body-font);">
+    <div id="nav-placeholder"></div>
+
+    <main class="container py-5">
+        <div class="quiz-wrapper mx-auto">
+            <!-- Start Screen -->
+            <section id="start-screen" class="game-card text-center active">
+                <div class="logo-wrapper pulse">
+                    <img src="FriendshipQuizLogo.png" alt="Freundschafts-Quiz Logo" class="main-logo img-fluid">
+                </div>
+                <h1 class="display-4 fw-bold mb-4">Freundschafts-Quiz</h1>
+                <p class="lead mb-5">Seid ihr wirklich "Besties"? Oder nur flüchtige Bekannte?<br>Mach diese 15 Fragen, um zu sehen, wie gut ihr euch wirklich kennt!</p>
+                <div class="setup-form mb-4">
+                    <input type="text" id="friend-name" class="form-control form-control-lg text-center shadow-sm mb-3" placeholder="Dein Name eingeben">
+                    <button class="btn btn-primary-custom btn-lg w-100" id="start-game-btn">
+                        <i class="fas fa-play me-2"></i> Challenge starten
+                    </button>
+                </div>
+                <div class="badge-container d-flex justify-content-center gap-3">
+                    <span class="badge rounded-pill bg-soft-pink"><i class="fas fa-heart me-1"></i> Spaß</span>
+                    <span class="badge rounded-pill bg-soft-blue"><i class="fas fa-brain me-1"></i> Verbindung</span>
+                    <span class="badge rounded-pill bg-soft-yellow"><i class="fas fa-laugh me-1"></i> Lachen</span>
+                </div>
+            </section>
+
+            <!-- Quiz Screen -->
+            <section id="quiz-screen" class="game-card text-center d-none">
+                <div class="progress-container mb-4">
+                    <div class="progress" style="height: 10px;">
+                        <div id="quiz-progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text mt-2 d-block" id="question-counter">Frage 1 / 15</span>
+                </div>
+                <div class="question-container py-4">
+                    <h2 id="question-text" class="mb-4">Frage wird geladen...</h2>
+                    <div id="options-container" class="options-grid">
+                        <!-- Options will be injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Result Screen -->
+            <section id="result-screen" class="game-card text-center d-none">
+                <div class="certificate-wrapper mb-4">
+                    <div class="certificate-border p-4">
+                        <h2 class="mb-3">Freundschafts-Zertifikat</h2>
+                        <div class="result-score-circle mx-auto mb-3">
+                            <span id="result-percentage">85%</span>
+                        </div>
+                        <h3 id="result-title" class="mb-2">Seelenverwandte</h3>
+                        <p id="result-description" class="mb-4">Ihr teilt euch praktisch ein Gehirn! Eine göttliche Ebene des Verständnisses.</p>
+                        <hr>
+                        <p class="small text-muted mb-0">Getestet: <span id="target-friend">Jemand</span></p>
+                    </div>
+                </div>
+                <div class="actions d-flex gap-3">
+                    <button class="btn btn-outline-primary-custom flex-grow-1" id="share-btn">
+                        <i class="fas fa-share-alt me-2"></i> Link kopieren
+                    </button>
+                    <button class="btn btn-primary-custom flex-grow-1" id="restart-btn">
+                        <i class="fas fa-redo me-2"></i> Noch einmal
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- SEO and FAQ Section -->
+        <div class="game-info mt-5">
+            <div class="info-card mb-4">
+                <h2>Über das Freundschafts-Quiz</h2>
+                <p>Das Freundschafts-Quiz (Friendship Quiz) ist der ultimative Weg, um die Bindung zwischen dir und deinen Freunden zu testen. Fragst du dich oft: „Wie gut kennst du mich eigentlich?“ Dann ist dieses Quiz genau das Richtige für dich! Erstelle deine eigenen Fragen, teile den Link und finde heraus, wer dein wahrer Bestie ist.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h3>Wie spielt man das Freundschafts-Quiz?</h3>
+                        <ol>
+                            <li>Gib deinen Namen ein und starte das Spiel.</li>
+                            <li>Beantworte 15 Fragen über dich selbst ehrlich.</li>
+                            <li>Kopiere deinen persönlichen Freundschafts-Quiz-Link.</li>
+                            <li>Sende den Link per WhatsApp, Instagram oder Snapchat an deine Freunde.</li>
+                            <li>Checke die Ergebnisse und sieh, wer am besten abgeschnitten hat!</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h3>Warum ein Freundschafts-Quiz machen?</h3>
+                        <p>Freundschaften wachsen mit der Zeit, aber es macht immer Spaß zu sehen, wie viel wir wirklich voneinander wissen. Mit dem Freundschafts-Quiz kannst du:</p>
+                        <ul>
+                            <li>Eine lustige Aktivität für Partys oder Treffen starten.</li>
+                            <li>Das Wissen deiner Freunde über dich spielerisch testen.</li>
+                            <li>Neue Gesprächsthemen und Insider-Witze entdecken.</li>
+                            <li>Tolle Inhalte für deine sozialen Medien erstellen.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card mt-4">
+                <h3>Häufig gestellte Fragen (FAQ)</h3>
+                <div class="faq-item mb-3">
+                    <p><strong>Ist das Freundschafts-Quiz kostenlos?</strong><br>Ja, alle Inhalte auf unserer Website zum Thema Freundschafts-Quiz sind 100% kostenlos.</p>
+                </div>
+                <div class="faq-item mb-3">
+                    <p><strong>Werden meine Antworten gespeichert?</strong><br>Deine Privatsphäre ist uns wichtig. Deine Antworten werden nur im Link verschlüsselt und nicht auf unseren Servern gespeichert.</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Wie genau ist das Freundschafts-Quiz?</strong><br>Es dient der Unterhaltung! Selbst beste Freunde können mal ein Detail vergessen, also nimm die Punktzahl nicht zu ernst und hab einfach Spaß.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Detailed SEO Content Section for Freundschafts-Quiz -->
+        <article class="mt-5 pt-5 border-top">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="display-6 fw-bold mb-4">Das Freundschafts-Quiz meistern: Warum es das ultimative soziale Tool ist</h2>
+                    <p class="mb-4">In der heutigen digitalen Ära hat sich ein <strong>Freundschafts-Quiz</strong> zu weit mehr als nur einem einfachen Spiel entwickelt. Es ist eine kraftvolle Art, Bindungen zu feiern, gegenseitiges Verständnis zu prüfen und bleibende Erinnerungen zu schaffen. Mit der neuesten 2026-Version unseres Online-<strong>Freundschafts-Quiz</strong> kannst du ganz einfach einen personalisierten Link erstellen, um deinen inneren Kreis herauszufordern und herauszufinden, wer dich wirklich am besten kennt.</p>
+
+                    <h3 class="h4 mb-3">🌟 Die perfekten Gelegenheiten für ein Freundschafts-Quiz</h3>
+                    <p>Ein <strong>Freundschafts-Quiz</strong> zu spielen ist ideal für verschiedene soziale Zusammenkünfte. Egal, ob du eine Geburtstagsparty feierst oder nur in einem Café abhängst, der Start eines <strong>Freundschafts-Quiz</strong> kann sofort die Stimmung heben und tiefe Gespräche anregen.</p>
+                    
+                    <div class="row g-4 mb-5 mt-2">
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-primary border-4">
+                                <h4 class="h5">🎂 Geburtstags-Freundschafts-Quiz</h4>
+                                <p class="small text-muted">Ein Geburtstags-<strong>Freundschafts-Quiz</strong> ist der ultimative Weg, um den Ehrengast zu feiern. Lass deine Gäste wetteifern, wer über die Jahre am meisten aufgepasst hat!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-pink border-4">
+                                <h4 class="h5">👭 Bonding-Freundschafts-Quiz</h4>
+                                <p class="small text-muted">Langeweile bei einer Übernachtungsparty? Ein tiefgründiges <strong>Freundschafts-Quiz</strong> hilft euch, gemeinsame Erinnerungen und geheime Witze wiederzuentdecken.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-info border-4">
+                                <h4 class="h5">🏢 Firmen-Freundschafts-Quiz</h4>
+                                <p class="small text-muted">Selbst im professionellen Rahmen kann ein Team-Building <strong>Freundschafts-Quiz</strong> die Lücke zwischen Kollegen schließen und eine inklusivere Arbeitskultur fördern.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="h4 mb-3">🛠️ Wie man eine 100% Punktzahl im Freundschafts-Quiz erreicht?</h3>
+                    <p>Ein <strong>Freundschafts-Quiz</strong> zu gewinnen hat nicht nur mit Glück zu tun; es geht darum, auf die kleinen Dinge zu achten. Beste Freunde sind meistens exzellent darin, weil sie sich an Dinge wie Lieblingslieder, gehasstes Essen und Ausreden fürs Zuspätkommen erinnern.</p>
+                    
+                    <h3 class="h4 mb-3">💡 Die Psychologie hinter dem Freundschafts-Quiz-Trend</h3>
+                    <p>Warum lieben wir das <strong>Freundschafts-Quiz</strong> so sehr? Psychologisch gesehen bietet ein <strong>Freundschafts-Quiz</strong> Validierung. Wenn ein Freund in deinem <strong>Freundschafts-Quiz</strong> hoch punktet, ist das ein starkes Signal, dass du gesehen, gehört und verstanden wirst.</p>
+
+                    <div class="alert alert-info py-4 mt-5 border-0 rounded-4">
+                        <h4 class="h5 fw-bold mb-3 text-center">🏆 Trendige Themen 2026:</h4>
+                        <div class="text-center">
+                            <span class="badge bg-primary text-white p-2 m-1">#FreundschaftsQuiz</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#BestieCheck</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#WerKenntMichBesser</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#BFFHerausforderung</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#Seelenverwandtschaft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../js/game-navigation-de.js"></script>
+    <script src="FriendshipQuiz.js"></script>
+</body>
+
+</html>

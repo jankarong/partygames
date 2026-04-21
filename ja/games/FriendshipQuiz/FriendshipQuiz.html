@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="友情クイズ（Friendship Quiz）で友達との絆を試そう！15の質問に答え、専用リンクをシェアして、誰があなたを一番理解しているかチェック。完全無料の親友診断ツールです。">
+    <meta name="keywords" content="友情クイズ, 親友テスト, 私のことどれくらい知ってる, パーティーゲーム, 2026 暇つぶし, BFF診断, 心理テスト">
+    <meta name="author" content="Party Game Lab">
+    <meta property="og:title" content="友情クイズ - 私のことをどれくらい知ってる？">
+    <meta property="og:description" content="友達はあなたのことを本当に理解していますか？友情クイズを作成して、真の親友を見つけ出しましょう！">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="FriendshipQuizLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/ja/games/FriendshipQuiz/FriendshipQuiz">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="究極の親友クイズ">
+    <meta name="twitter:description" content="友達との集まりにぴったりの友情クイズ！自分専用のクイズリンクを作成して、今すぐ親友に送ろう。">
+    <meta name="twitter:image" content="FriendshipQuizLogo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Japanese">
+    <title>友情クイズ - 友達のことをどれだけ知ってる？ 友情テスト</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="FriendshipQuizLogo.png">
+
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../../zh/games/FriendshipQuiz/FriendshipQuiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --heading-font: 'M PLUS Rounded 1c', 'Kosugi Maru', sans-serif;
+            --body-font: 'M PLUS Rounded 1c', sans-serif;
+        }
+    </style>
+
+    <!-- Global scripts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body style="font-family: var(--body-font);">
+    <div id="nav-placeholder"></div>
+
+    <main class="container py-5">
+        <div class="quiz-wrapper mx-auto">
+            <!-- Start Screen -->
+            <section id="start-screen" class="game-card text-center active">
+                <div class="logo-wrapper pulse">
+                    <img src="FriendshipQuizLogo.png" alt="友情クイズ ロゴ" class="main-logo img-fluid">
+                </div>
+                <h1 class="display-4 fw-bold mb-4">友情クイズ</h1>
+                <p class="lead mb-5">二人は本当の「親友」ですか？それともただの「知り合い」？<br>15問のクイズで、二人の絆を確かめてみましょう！</p>
+                <div class="setup-form mb-4">
+                    <input type="text" id="friend-name" class="form-control form-control-lg text-center shadow-sm mb-3" placeholder="あなたのお名前を入力">
+                    <button class="btn btn-primary-custom btn-lg w-100" id="start-game-btn">
+                        <i class="fas fa-play me-2"></i> クイズを作成
+                    </button>
+                </div>
+                <div class="badge-container d-flex justify-content-center gap-3">
+                    <span class="badge rounded-pill bg-soft-pink"><i class="fas fa-heart me-1"></i> 楽しい</span>
+                    <span class="badge rounded-pill bg-soft-blue"><i class="fas fa-brain me-1"></i> 絆</span>
+                    <span class="badge rounded-pill bg-soft-yellow"><i class="fas fa-laugh me-1"></i> 笑顔</span>
+                </div>
+            </section>
+
+            <!-- Quiz Screen -->
+            <section id="quiz-screen" class="game-card text-center d-none">
+                <div class="progress-container mb-4">
+                    <div class="progress" style="height: 10px;">
+                        <div id="quiz-progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text mt-2 d-block" id="question-counter">第 1 問 / 15</span>
+                </div>
+                <div class="question-container py-4">
+                    <h2 id="question-text" class="mb-4">問題を読み込み中...</h2>
+                    <div id="options-container" class="options-grid">
+                        <!-- Options will be injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Result Screen -->
+            <section id="result-screen" class="game-card text-center d-none">
+                <div class="certificate-wrapper mb-4">
+                    <div class="certificate-border p-4">
+                        <h2 class="mb-3">親友証明書</h2>
+                        <div class="result-score-circle mx-auto mb-3">
+                            <span id="result-percentage">85%</span>
+                        </div>
+                        <h3 id="result-title" class="mb-2">ソウルメイト</h3>
+                        <p id="result-description" class="mb-4">二人はまるで一心同体！お互いの考えていることが手に取るようにわかりますね。</p>
+                        <hr>
+                        <p class="small text-muted mb-0">挑戦者: <span id="target-friend">某さん</span></p>
+                    </div>
+                </div>
+                <div class="actions d-flex gap-3">
+                    <button class="btn btn-outline-primary-custom flex-grow-1" id="share-btn">
+                        <i class="fas fa-share-alt me-2"></i> リンクをコピー
+                    </button>
+                    <button class="btn btn-primary-custom flex-grow-1" id="restart-btn">
+                        <i class="fas fa-redo me-2"></i> もう一度
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Info Sections -->
+        <div class="info-sections mt-5">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="game-info-card h-100">
+                        <h3><i class="fas fa-gamepad text-primary-custom me-2"></i> 遊び方</h3>
+                        <p>ただのテストではなく、絆を深めるきっかけに！</p>
+                        <ol>
+                            <li><strong>クイズを作成：</strong>名前を入力し、自分に関する15問の質問に答えます。</li>
+                            <li><strong>リンクをシェア：</strong>作成されたリンクをコピーして、親友に送ります。</li>
+                            <li><strong>友達が挑戦：</strong>友達がリンクを開き、あなたの答えを予想します。</li>
+                            <li><strong>結果を確認：</strong>正解数に基づいて友情スコアが表示されます！</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="game-info-card h-100">
+                        <h3><i class="fas fa-star text-warning me-2"></i> なぜこのゲームを？</h3>
+                        <p>デジタルの時代だからこそ、深い繋がりを大切に。</p>
+                        <ul>
+                            <li><strong>話題作りに：</strong>集まりで話すことがない？そんな時の最高のアイスブレイクです。</li>
+                            <li><strong>意外な発見：</strong>友達の意外な一面やこだわりを知ることができるかも。</li>
+                            <li><strong>絆を強く：</strong>お互いを知ることで、二人の距離がもっと近づきます。</li>
+                            <li><strong>思い出作り：</strong>スコアに関わらず、笑い合える時間が一番の宝物です。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO and FAQ Section -->
+        <div class="game-info mt-5">
+            <div class="info-card mb-4">
+                <h2>友情クイズ（Friendship Quiz）について</h2>
+                <p>友情クイズ（Friendship Quiz）は、友達や恋人、家族との絆を確かめるための究極のエンターテインメントツールです。「私のことをどれだけ知ってる？」という疑問を、楽しく解決しましょう。自分に関するクイズを作って共有し、誰があなたの一番の理解者かを見つけ出してください。</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h3>友情クイズの遊び方</h3>
+                        <ol>
+                            <li>名前を入力してゲームをスタートします。</li>
+                            <li>自分自身に関する15の質問に正直に答えます。</li>
+                            <li>生成された専用の友情クイズリンクをコピーします。</li>
+                            <li>LINE、Instagram、X（旧Twitter）などで友達にリンクを送ります。</li>
+                            <li>友達がクイズに答えると、スコアがあなたに通知されます！</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h3>友情クイズをおすすめする理由</h3>
+                        <p>仲の良い友達でも、意外と知らない一面があるものです。友情クイズを使うことで：</p>
+                        <ul>
+                            <li>パーティーや飲み会での楽しい話題になります。</li>
+                            <li>SNSでの交流を深めるきっかけになります。</li>
+                            <li>お互いの好みを再確認し、より仲を深められます。</li>
+                            <li>完全無料で、誰でも簡単に始められます。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card mt-4">
+                <h3>よくある質問（FAQ）</h3>
+                <div class="faq-item mb-3">
+                    <p><strong>友情クイズは無料で遊べますか？</strong><br>はい、当サイトの友情クイズはすべての機能を無料でご利用いただけます。</p>
+                </div>
+                <div class="faq-item mb-3">
+                    <p><strong>回答データは保存されますか？</strong><br>プライバシーを重視しています。回答内容はURLパラメータに暗号化され、サーバーには保存されません。安心してお遊びください。</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>友情クイズの結果はどれくらい正確ですか？</strong><br>これはあくまでエンターテインメントです！親友でも忘れてしまうような些細なこともあるので、結果を楽しんで会話のネタにしてください。</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Detailed SEO Content Section for 友情クイズ -->
+        <article class="mt-5 pt-5 border-top">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="display-6 fw-bold mb-4">友情クイズを極める：なぜこれが究極のソーシャルツールなのか</h2>
+                    <p class="mb-4">今日のデジタル時代において、<strong>友情クイズ</strong>は単なるゲーム以上のものへと進化しました。それは絆を祝い、お互いの理解を確認し、永続的な思い出を作るための強力な方法です。最新の2026年版オンライン<strong>友情クイズ</strong>を使用すると、パーソナライズされたリンクを簡単に生成して、親しい友人たちに挑戦し、誰が本当にあなたを一番よく知っているかを見つけることができます。</p>
+
+                    <h3 class="h4 mb-3">🌟 友情クイズに最適なシチュエーション</h3>
+                    <p><strong>友情クイズ</strong>をプレイすることは、さまざまな社交の集まりに理想的です。誕生日パーティーを開催している場合でも、カフェでくつろいでいる場合でも、<strong>友情クイズ</strong>を開始すると、即座に雰囲気が盛り上がり、他の方法では起こらない深い会話が生まれます。</p>
+                    
+                    <div class="row g-4 mb-5 mt-2">
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-primary border-4">
+                                <h4 class="h5">🎂 誕生日友情クイズ</h4>
+                                <p class="small text-muted">誕生日の<strong>友情クイズ</strong>は、主役を祝うための究極の方法です。ゲスト同士で、長年にわたって誰が一番注意を払ってきたかを競い合いましょう！</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-pink border-4">
+                                <h4 class="h5">👭 親睦友情クイズ</h4>
+                                <p class="small text-muted">お泊まり会で退屈していませんか？深い<strong>友情クイズ</strong>は、共有された思い出や内輪ネタを再発見するのに役立ちます。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-info border-4">
+                                <h4 class="h5">🏢 企業向け友情クイズ</h4>
+                                <p class="small text-muted">専門的な場であっても、チームビルディングの<strong>友情クイズ</strong>は同僚間のギャップを埋め、より包括的な職場文化を育むことができます。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="h4 mb-3">🛠️ 友情クイズで100点を取る方法は？</h3>
+                    <p><strong>友情クイズ</strong>で勝つことは単なる運ではありません。細かいことに注意を払うことが重要です。本当の親友は、お気に入りのカラオケ曲や嫌いな食べ物、遅刻の理由などを覚えているため、大抵このクイズで優れた成績を収めます。</p>
+                    
+                    <h3 class="h4 mb-3">💡 友情クイズのトレンドの背後にある心理学</h3>
+                    <p>なぜ私たちは<strong>友情クイズ</strong>をこれほどまでに愛するのでしょうか？心理学的に、これは肯定感を提供します。友人があなたの<strong>友情クイズ</strong>で高得点を取ると、あなたが「見られ、聞かれ、理解されている」という強いシグナルになります。</p>
+
+                    <div class="alert alert-info py-4 mt-5 border-0 rounded-4">
+                        <h4 class="h5 fw-bold mb-3 text-center">🏆 2026年トレンドトピック：</h4>
+                        <div class="text-center">
+                            <span class="badge bg-primary text-white p-2 m-1">#友情クイズ</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#親友テスト</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#どっちが私を知ってる</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#BFFチャレンジ</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#ソウルメイト診断</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../js/game-navigation-ja.js"></script>
+    <script src="FriendshipQuiz.js"></script>
+</body>
+
+</html>

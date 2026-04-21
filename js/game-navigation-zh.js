@@ -19,7 +19,8 @@ class GameNavigation {
             { name: '头脑画吧', url: '/zh/games/hedbanzgame/hedbanzgame.html', category: 'party' },
             { name: '骰子游戏', url: '/zh/games/sexdice/sexdice.html', category: 'adult' },
             { name: '猜数字', url: '/zh/games/beernumber/beernumber.html', category: 'drinking' },
-            { name: '国王杯', url: '/zh/games/KingsCup/KingsCup.html', category: 'drinking' }
+            { name: '国王杯', url: '/zh/games/KingsCup/KingsCup.html', category: 'drinking' },
+            { name: '友谊大考验', url: '/zh/games/FriendshipQuiz/FriendshipQuiz.html', category: 'party' }
         ];
 
         this.currentGame = this.getCurrentGame();

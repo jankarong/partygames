@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Пройдите лучшую Викторину о дружбе (Friendship Quiz)! Узнайте, насколько хорошо ваши друзья вас знают. Создайте 15 вопросов, поделитесь ссылкой и найдите своих настоящих лучших друзей.">
+    <meta name="keywords" content="Викторина о дружбе, Насколько хорошо ты меня знаешь, Тест на лучшего друга, БФФ Квиз, Игры для вечеринок, 2026 игры, Тест на совместимость">
+    <meta property="og:title" content="Викторина о дружбе - Насколько хорошо ты меня знаешь?">
+    <meta property="og:description" content="Действительно ли друзья тебя знают? Создай свою Викторину о дружбе прямо сейчас и брось им вызов!">
+    <meta property="og:image" content="FriendshipQuizLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/ru/games/FriendshipQuiz/FriendshipQuiz.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.bestpartygames.net/ru/games/FriendshipQuiz/FriendshipQuiz.html">
+    <title>Викторина о дружбе - Насколько хорошо ты меня знаешь? BFF Тест</title>
+    <link rel="icon" type="image/png" href="FriendshipQuizLogo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../../zh/games/FriendshipQuiz/FriendshipQuiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --heading-font: 'Fredoka One', cursive;
+            --body-font: 'Quicksand', sans-serif;
+        }
+    </style>
+</head>
+
+<body style="font-family: var(--body-font);">
+    <div id="nav-placeholder"></div>
+    <main class="container py-5">
+        <div class="quiz-wrapper mx-auto">
+            <section id="start-screen" class="game-card text-center active">
+                <div class="logo-wrapper pulse"><img src="FriendshipQuizLogo.png" class="main-logo img-fluid" alt="Викторина о дружбе Logo"></div>
+                <h1 class="display-4 fw-bold mb-4">Викторина о дружбе</h1>
+                <p class="lead mb-5">Вы действительно лучшие друзья? Или просто знакомые?<br>Пройдите этот тест из 15 вопросов, чтобы узнать правду!</p>
+                <div class="setup-form mb-4">
+                    <input type="text" id="friend-name" class="form-control form-control-lg text-center mb-3" placeholder="Введите ваше имя">
+                    <button class="btn btn-primary-custom btn-lg w-100" id="start-game-btn"><i class="fas fa-play me-2"></i> Начать тест</button>
+                </div>
+            </section>
+            <section id="quiz-screen" class="game-card text-center d-none">
+                <div class="progress-container mb-4">
+                    <div class="progress" style="height: 10px;"><div id="quiz-progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div></div>
+                    <span class="progress-text mt-2 d-block" id="question-counter">Вопрос 1 / 15</span>
+                </div>
+                <div class="question-container py-4"><h2 id="question-text" class="mb-4">Загрузка...</h2><div id="options-container" class="options-grid"></div></div>
+            </section>
+            <section id="result-screen" class="game-card text-center d-none">
+                <div class="certificate-wrapper mb-4">
+                    <div class="certificate-border p-4">
+                        <h2 class="mb-3">Сертификат дружбы</h2>
+                        <div class="result-score-circle mx-auto mb-3"><span id="result-percentage">85%</span></div>
+                        <h3 id="result-title" class="mb-2">Родственные души</h3>
+                        <p id="result-description" class="mb-4">Вы практически мыслите одинаково! Потрясающий уровень взаимопонимания.</p>
+                        <hr><p class="small text-muted mb-0">Тестируемый: <span id="target-friend">Кто-то</span></p>
+                    </div>
+                </div>
+                <div class="actions d-flex gap-3">
+                    <button class="btn btn-outline-primary-custom flex-grow-1" id="share-btn"><i class="fas fa-share-alt me-2"></i> Копировать ссылку</button>
+                    <button class="btn btn-primary-custom flex-grow-1" id="restart-btn"><i class="fas fa-redo me-2"></i> Повторить</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- SEO and FAQ Section -->
+        <div class="game-info mt-5">
+            <div class="info-card mb-4">
+                <h2>О Викторине о дружбе</h2>
+                <p>Викторина о дружбе (Friendship Quiz) — это лучший способ проверить связь между вами и вашими друзьями. Вы часто спрашиваете себя: «Насколько хорошо ты меня знаешь на самом деле?» Тогда эта викторина именно для вас! Создавайте свои вопросы, делитесь ссылкой и узнайте, кто ваш настоящий лучший друг.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h3>Как играть в Викторину о дружбе?</h3>
+                        <ol>
+                            <li>Введите свое имя и начните игру.</li>
+                            <li>Честно ответьте на 15 вопросов о себе.</li>
+                            <li>Скопируйте вашу персональную ссылку на Викторину о дружбе.</li>
+                            <li>Отправьте ссылку друзьям через WhatsApp, Instagram или Telegram.</li>
+                            <li>Проверьте результаты и посмотрите, кто набрал больше всех баллов!</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h3>Зачем проходить Викторину о дружбе?</h3>
+                        <p>Дружба крепнет со временем, но всегда интересно узнать, сколько мы на самом деле знаем друг о друге. С помощью Викторины о дружбе вы сможете:</p>
+                        <ul>
+                            <li>Запустить веселое занятие для вечеринки или встречи.</li>
+                            <li>В игровой форме проверить знания ваших друзей о вас.</li>
+                            <li>Найти новые темы для разговоров и внутренние шутки.</li>
+                            <li>Создать отличный контент для ваших социальных сетей.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card mt-4">
+                <h3>Часто задаваемые вопросы (FAQ)</h3>
+                <div class="faq-item mb-3">
+                    <p><strong>Является ли Викторина о дружбе бесплатной?</strong><br>Да, весь контент Викторины о дружбе на нашем сайте на 100% бесплатен.</p>
+                </div>
+                <div class="faq-item mb-3">
+                    <p><strong>Сохраняются ли мои ответы?</strong><br>Ваша конфиденциальность важна для нас. Ваши ответы шифруются только в ссылке и не хранятся на наших серверах.</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Насколько точна Викторина о дружбе?</strong><br>Это развлекательный инструмент! Даже лучшие друзья могут забыть какую-то деталь, так что не принимайте баллы слишком серьезно и просто получайте удовольствие.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Detailed SEO Content Section for Викторина о дружбе -->
+        <article class="mt-5 pt-5 border-top">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="display-6 fw-bold mb-4">Как пройти Викторину о дружбе: почему это лучший социальный инструмент</h2>
+                    <p class="mb-4">В сегодняшнюю цифровую эпоху <strong>Викторина о дружбе</strong> превратилась в нечто гораздо большее, чем просто игра. Это мощный способ отпраздновать ваши узы, проверить взаимопонимание и создать прочные воспоминания. Используя версию нашей онлайн-<strong>Викторины о дружбе</strong> 2026 года, вы можете легко создать персонализированную ссылку, чтобы бросить вызов своему ближнему кругу.</p>
+
+                    <h3 class="h4 mb-3">🌟 Идеальные условия для Викторины о дружбе</h3>
+                    <p>Игра в <strong>Викторину о дружбе</strong> идеальна для различных социальных встреч. Будь то вечеринка в честь дня рождения или просто посиделки в кафе, запуск <strong>Викторины о дружбе</strong> может мгновенно поднять настроение.</p>
+                    
+                    <div class="row g-4 mb-5 mt-2">
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-primary border-4">
+                                <h4 class="h5">🎂 Праздничная Викторина о дружбе</h4>
+                                <p class="small text-muted"><strong>Викторина о дружбе</strong> на день рождения — лучший способ почтить именинника. Пусть ваши гости посоревнуются, кто был самым внимательным на протяжении многих лет!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-pink border-4">
+                                <h4 class="h5">👭 Викторина о дружбе для лучших друзей</h4>
+                                <p class="small text-muted">Скучно на ночевке? Глубокая <strong>Викторина о дружбе</strong> поможет вам заново открыть общие воспоминания и секретные шутки.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-info border-4">
+                                <h4 class="h5">🏢 Корпоративная Викторина о дружбе</h4>
+                                <p class="small text-muted">Даже в профессиональной среде <strong>Викторина о дружбе</strong> для тимбилдинга может сократить дистанцию между коллегами и способствовать созданию более инклюзивной культуры.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="h4 mb-3">🛠️ Как набрать 100 баллов в Викторине о дружбе?</h3>
+                    <p>Победа в <strong>Викторине о дружбе</strong> — это не только удача; это внимание к мелочам. Лучшие друзья обычно преуспевают, потому что помнят любимые песни в караоке, самую ненавистную еду и даже отговорки.</p>
+                    
+                    <h3 class="h4 mb-3">💡 Психология тренда Викторины о дружбе</h3>
+                    <p>Почему мы так любим <strong>Викторину о дружбе</strong>? С психологической точки зрения она дает подтверждение. Когда друг набирает много баллов, это сигнал о том, что вас видят, слышат и понимают.</p>
+
+                    <div class="alert alert-info py-4 mt-5 border-0 rounded-4">
+                        <h4 class="h5 fw-bold mb-3 text-center">🏆 Популярные темы 2026 года:</h4>
+                        <div class="text-center">
+                            <span class="badge bg-primary text-white p-2 m-1">#ВикторинаОДружбе</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#ТестЛучшийДруг</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#КтоМеняЗнаетЛучше</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#BFFВызов</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#ТестНаСовместимость</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../js/game-navigation-ru.js"></script>
+    <script src="FriendshipQuiz.js"></script>
+</body>
+</html>

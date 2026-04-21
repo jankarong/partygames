@@ -19,7 +19,8 @@ class GameNavigation {
             { name: 'Headbands', url: '/de/games/hedbanzgame/hedbanzgame.html', category: 'party' },
             { name: 'Sex Würfel', url: '/de/games/sexdice/sexdice.html', category: 'adult' },
             { name: 'Biernummer', url: '/de/games/beernumber/beernumber.html', category: 'drinking' },
-            { name: 'Königsbecher', url: '/de/games/KingsCup/KingsCup.html', category: 'drinking' }
+            { name: 'Königsbecher', url: '/de/games/KingsCup/KingsCup.html', category: 'drinking' },
+            { name: 'Freundschafts-Quiz', url: '/de/games/FriendshipQuiz/FriendshipQuiz.html', category: 'party' }
         ];
 
         this.currentGame = this.getCurrentGame();

@@ -21,7 +21,8 @@ class GameNavigation {
             { nameKey: 'Bottle Match Game', url: '/games/BottleMatchGame/BottleMatchGame.html', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
             { nameKey: 'Sex Dice', url: '/games/sexdice/sexdice.html', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
             { nameKey: 'Beer Number', url: '/games/beernumber/beernumber.html', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
-            { nameKey: 'Kings Cup', url: '/games/KingsCup/KingsCup.html', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' }
+            { nameKey: 'Kings Cup', url: '/games/KingsCup/KingsCup.html', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' },
+            { nameKey: 'Friendship Quiz', url: '/games/FriendshipQuiz/FriendshipQuiz.html', logo: '/games/FriendshipQuiz/FriendshipQuizLogo.png', category: 'party' }
         ];
 
         // Initialize games with localized names
@@ -87,7 +88,8 @@ class GameNavigation {
                 'Bottle Match Game': 'Bottle Match Game',
                 'Sex Dice': 'Sex Dice',
                 'Beer Number': 'Beer Number',
-                'Kings Cup': 'Kings Cup'
+                'Kings Cup': 'Kings Cup',
+                'Friendship Quiz': 'Friendship Quiz'
             },
             pt: {
                 'Magic 8 Ball': 'Bola Mágica',
@@ -105,7 +107,8 @@ class GameNavigation {
                 'Bottle Match Game': 'Jogo de Combinar Garrafas',
                 'Sex Dice': 'Dados de Sexo Online',
                 'Beer Number': 'Adivinha o Número',
-                'Kings Cup': 'Cálice do Rei'
+                'Kings Cup': 'Cálice do Rei',
+                'Friendship Quiz': 'Quiz de Amizade'
             },
             zh: {
                 'Magic 8 Ball': '魔法8球',
@@ -123,7 +126,8 @@ class GameNavigation {
                 'Bottle Match Game': '瓶子匹配游戏',
                 'Sex Dice': '骰子游戏',
                 'Beer Number': '猜数字',
-                'Kings Cup': '国王杯'
+                'Kings Cup': '国王杯',
+                'Friendship Quiz': '友谊问答'
             },
             de: {
                 'Magic 8 Ball': 'Magischer 8er-Ball',
@@ -141,7 +145,8 @@ class GameNavigation {
                 'Bottle Match Game': 'Flaschenspiel',
                 'Sex Dice': 'Sex Würfel',
                 'Beer Number': 'Biernummer',
-                'Kings Cup': 'Königsbecher'
+                'Kings Cup': 'Königsbecher',
+                'Friendship Quiz': 'Freundschafts-Quiz'
             },
             fr: {
                 'Magic 8 Ball': 'Boule 8 Magique',
@@ -159,7 +164,8 @@ class GameNavigation {
                 'Bottle Match Game': 'Jeu d\'Appariement de Bouteilles',
                 'Sex Dice': 'Dés Sexuels',
                 'Beer Number': 'Numéro de Bière',
-                'Kings Cup': 'Coupe du Roi'
+                'Kings Cup': 'Coupe du Roi',
+                'Friendship Quiz': 'Quiz d\'amitié'
             },
             id: {
                 'Magic 8 Ball': 'Bola Ajaib 8',
@@ -177,7 +183,8 @@ class GameNavigation {
                 'Bottle Match Game': 'Permainan Cocokkan Botol',
                 'Sex Dice': 'Dadu Seks',
                 'Beer Number': 'Tebak Angka',
-                'Kings Cup': 'Gelas Raja'
+                'Kings Cup': 'Gelas Raja',
+                'Friendship Quiz': 'Kuis Pertemanan'
             },
             tr: {
                 'Magic 8 Ball': 'Sihirli 8 Topu',
@@ -195,7 +202,65 @@ class GameNavigation {
                 'Bottle Match Game': 'Sise Eslestirme Oyunu',
                 'Sex Dice': 'Seks Zari',
                 'Beer Number': 'Sayi Tahmin',
-                'Kings Cup': 'Kings Cup'
+                'Kings Cup': 'Kings Cup',
+                'Friendship Quiz': 'Arkadaşlık Testi'
+            },
+            ja: {
+                'Magic 8 Ball': '魔法の8ボール',
+                'Truth or Dare': '真実か挑戦か',
+                'Truth or Dare Couples': 'カップル向け真実か挑戦か',
+                'Never Have I Ever': '私は一度も',
+                'Who Is Most Likely': '一番やりそうな人',
+                'Would You Rather': 'どっちを選ぶ？',
+                'Mafia': '人狼ゲーム',
+                'Undercover': 'ワードウルフ',
+                'Charades': 'ジェスチャーゲーム',
+                'Hedbanz': 'ヘッドバンズ',
+                '21 Questions Game Freaky': 'セクシーな21の質問',
+                'Paranoia Questions Dirty': '妄想質問ゲーム',
+                'Bottle Match Game': 'ボトルマッチ',
+                'Sex Dice': 'セクシャルダイス',
+                'Beer Number': 'ナンバー推測',
+                'Kings Cup': 'キングスカップ',
+                'Friendship Quiz': '友情クイズ'
+            },
+            ko: {
+                'Magic 8 Ball': '매직 8볼',
+                'Truth or Dare': '진실 혹은 도전',
+                'Truth or Dare Couples': '커플 진실 혹은 도전',
+                'Never Have I Ever': '나는 한 번도',
+                'Who Is Most Likely': '가장 그럴 것 같은 사람',
+                'Would You Rather': '밸런스 게임',
+                'Mafia': '마피아 게임',
+                'Undercover': '언더커버',
+                'Charades': '몸으로 말해요',
+                'Hedbanz': '헤드밴즈',
+                '21 Questions Game Freaky': '섹시한 21가지 질문',
+                'Paranoia Questions Dirty': '파라노이아 질문',
+                'Bottle Match Game': '보틀 매치',
+                'Sex Dice': '섹스 주사위',
+                'Beer Number': '숫자 맞추기',
+                'Kings Cup': '킹스 컵',
+                'Friendship Quiz': '우정 퀴즈'
+            },
+            ru: {
+                'Magic 8 Ball': 'Магический шар 8',
+                'Truth or Dare': 'Правда или действие',
+                'Truth or Dare Couples': 'Правда или действие для пар',
+                'Never Have I Ever': 'Я никогда не',
+                'Who Is Most Likely': 'Кто скорее всего',
+                'Would You Rather': 'Что бы ты выбрал',
+                'Mafia': 'Мафия',
+                'Undercover': 'Инсайдер',
+                'Charades': 'Шарады',
+                'Hedbanz': 'Пойми меня',
+                '21 Questions Game Freaky': '21 пикантный вопрос',
+                'Paranoia Questions Dirty': 'Грязные вопросы Паранойя',
+                'Bottle Match Game': 'Совпадение бутылочек',
+                'Sex Dice': 'Секс кубики',
+                'Beer Number': 'Угадай число',
+                'Kings Cup': 'Кубок короля',
+                'Friendship Quiz': 'Викторина о дружбе'
             }
         };
 

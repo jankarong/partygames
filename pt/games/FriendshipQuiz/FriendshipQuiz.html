@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Faça o Quiz de Amizade (Friendship Quiz) definitivo! Descubra se seus amigos realmente conhecem você. Crie 15 perguntas, compartilhe seu link e encontre seus verdadeiros BFFs.">
+    <meta name="keywords" content="Quiz de Amizade, Quanto você me conhece, Teste de melhor amigo, BFF Quiz, Jogos de festa, 2026 jogos, Desafio de amizade">
+    <meta property="og:title" content="Quiz de Amizade - Quanto você me conhece?">
+    <meta property="og:description" content="Será que seus amigos te conhecem de verdade? Crie seu próprio Quiz de Amizade agora e desafie-os!">
+    <meta property="og:image" content="FriendshipQuizLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/pt/games/FriendshipQuiz/FriendshipQuiz.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.bestpartygames.net/pt/games/FriendshipQuiz/FriendshipQuiz.html">
+    <title>Quiz de Amizade - Quanto você me conhece? BFF Test</title>
+    <link rel="icon" type="image/png" href="FriendshipQuizLogo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="../../../zh/games/FriendshipQuiz/FriendshipQuiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --heading-font: 'Fredoka One', cursive;
+            --body-font: 'Quicksand', sans-serif;
+        }
+    </style>
+</head>
+
+<body style="font-family: var(--body-font);">
+    <div id="nav-placeholder"></div>
+    <main class="container py-5">
+        <div class="quiz-wrapper mx-auto">
+            <section id="start-screen" class="game-card text-center active">
+                <div class="logo-wrapper pulse"><img src="FriendshipQuizLogo.png" class="main-logo img-fluid" alt="Quiz de Amizade Logo"></div>
+                <h1 class="display-4 fw-bold mb-4">Quiz de Amizade</h1>
+                <p class="lead mb-5">Vocês são "BFFs" de verdade? Ou apenas conhecidos?<br>Responda a estas 15 perguntas para ver o quanto vocês realmente se conhecem!</p>
+                <div class="setup-form mb-4">
+                    <input type="text" id="friend-name" class="form-control form-control-lg text-center mb-3" placeholder="Digite seu nome">
+                    <button class="btn btn-primary-custom btn-lg w-100" id="start-game-btn"><i class="fas fa-play me-2"></i> Iniciar Desafio</button>
+                </div>
+            </section>
+            <section id="quiz-screen" class="game-card text-center d-none">
+                <div class="progress-container mb-4">
+                    <div class="progress" style="height: 10px;"><div id="quiz-progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div></div>
+                    <span class="progress-text mt-2 d-block" id="question-counter">Pergunta 1 / 15</span>
+                </div>
+                <div class="question-container py-4"><h2 id="question-text" class="mb-4">Carregando...</h2><div id="options-container" class="options-grid"></div></div>
+            </section>
+            <section id="result-screen" class="game-card text-center d-none">
+                <div class="certificate-wrapper mb-4">
+                    <div class="certificate-border p-4">
+                        <h2 class="mb-3">Certificado de Amizade</h2>
+                        <div class="result-score-circle mx-auto mb-3"><span id="result-percentage">85%</span></div>
+                        <h3 id="result-title" class="mb-2">Almas Gêmeas</h3>
+                        <p id="result-description" class="mb-4">Vocês praticamente compartilham o mesmo cérebro! Um nível divino de compreensão.</p>
+                        <hr><p class="small text-muted mb-0">Testado: <span id="target-friend">Alguém</span></p>
+                    </div>
+                </div>
+                <div class="actions d-flex gap-3">
+                    <button class="btn btn-outline-primary-custom flex-grow-1" id="share-btn"><i class="fas fa-share-alt me-2"></i> Copiar Link</button>
+                    <button class="btn btn-primary-custom flex-grow-1" id="restart-btn"><i class="fas fa-redo me-2"></i> Tentar Novamente</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- SEO and FAQ Section -->
+        <div class="game-info mt-5">
+            <div class="info-card mb-4">
+                <h2>Sobre o Quiz de Amizade</h2>
+                <p>O Quiz de Amizade (Friendship Quiz) é a maneira definitiva de testar o vínculo entre você e seus amigos. Você costuma se perguntar: "O quanto você me conhece de verdade?" Então este quiz é perfeito para você! Crie suas próprias perguntas, compartilhe o link e descubra quem é seu verdadeiro melhor amigo (BFF).</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h3>Como jogar o Quiz de Amizade?</h3>
+                        <ol>
+                            <li>Digite seu nome e comece o jogo.</li>
+                            <li>Responda honestamente a 15 perguntas sobre você.</li>
+                            <li>Copie seu link personalizado do Quiz de Amizade.</li>
+                            <li>Envie o link para seus amigos via WhatsApp, Instagram ou Facebook.</li>
+                            <li>Confira os resultados e veja quem obteve a melhor pontuação!</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h3>Por que fazer um Quiz de Amizade?</h3>
+                        <p>As amizades se fortalecem com o tempo, mas é sempre divertido ver o que realmente sabemos uns dos outros. Com o Quiz de Amizade, você pode:</p>
+                        <ul>
+                            <li>Iniciar uma atividade divertida em festas ou reuniões.</li>
+                            <li>Testar o conhecimento dos seus amigos de forma lúdica.</li>
+                            <li>Descobrir novos tópicos de conversa e piadas internas.</li>
+                            <li>Criar conteúdo incrível para suas redes sociais.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card mt-4">
+                <h3>Perguntas Frequentes (FAQ)</h3>
+                <div class="faq-item mb-3">
+                    <p><strong>O Quiz de Amizade é gratuito?</strong><br>Sim, todo o conteúdo do Quiz de Amizade em nosso site é 100% gratuito.</p>
+                </div>
+                <div class="faq-item mb-3">
+                    <p><strong>Minhas respostas são salvas?</strong><br>Sua privacidade é importante. Suas respostas são criptografadas apenas no link e não são armazenadas em nossos servidores.</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>O Quiz de Amizade é preciso?</strong><br>É uma ferramenta de entretenimento! Mesmo os melhores amigos podem esquecer um detalhe, então não leve as pontuações muito a sério e divirta-se.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Detailed SEO Content Section for Quiz de Amizade -->
+        <article class="mt-5 pt-5 border-top">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="display-6 fw-bold mb-4">Dominando o Quiz de Amizade: Por que é a ferramenta social definitiva</h2>
+                    <p class="mb-4">Na era digital de hoje, um <strong>Quiz de Amizade</strong> evoluiu para muito mais do que apenas um simples jogo. É uma maneira poderosa de celebrar vínculos, verificar a compreensão mútua e criar memórias duradouras. Usando a versão de 2026 do nosso <strong>Quiz de Amizade</strong> online, você pode gerar facilmente um link personalizado para desafiar seu círculo interno.</p>
+
+                    <h3 class="h4 mb-3">🌟 Os cenários perfeitos para um Quiz de Amizade</h3>
+                    <p>Jogar um <strong>Quiz de Amizade</strong> é ideal para vários encontros sociais. Esteja você organizando uma festa de aniversário ou apenas relaxando em um café, começar um <strong>Quiz de Amizade</strong> pode elevar instantaneamente o humor.</p>
+                    
+                    <div class="row g-4 mb-5 mt-2">
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-primary border-4">
+                                <h4 class="h5">🎂 Quiz de Amizade de Aniversário</h4>
+                                <p class="small text-muted">Um <strong>Quiz de Amizade</strong> de aniversário é a maneira definitiva de homenagear o aniversariante. Deixe seus convidados competirem para ver quem prestou mais atenção ao longo dos anos!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-pink border-4">
+                                <h4 class="h5">👭 Quiz de Amizade de Conexão</h4>
+                                <p class="small text-muted">Entediado em uma festa do pijama? Um <strong>Quiz de Amizade</strong> profundo ajudará você a redescobrir memórias compartilhadas e piadas internas.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-info border-4">
+                                <h4 class="h5">🏢 Quiz de Amizade Corporativo</h4>
+                                <p class="small text-muted">Mesmo em um ambiente profissional, um <strong>Quiz de Amizade</strong> de team-building pode preencher a lacuna entre colegas e promover uma cultura de trabalho mais inclusiva.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="h4 mb-3">🛠️ Como obter uma pontuação de 100% no Quiz de Amizade?</h3>
+                    <p>Ganhar um <strong>Quiz de Amizade</strong> não é apenas sorte; é sobre prestar atenção aos detalhes. Melhores amigos geralmente se destacam porque lembram de músicas favoritas, comidas odiadas e desculpas comuns.</p>
+                    
+                    <h3 class="h4 mb-3">💡 A psicologia por trás da tendência do Quiz de Amizade</h3>
+                    <p>Por que amamos tanto o <strong>Quiz de Amizade</strong>? Psicologicamente, ele fornece validação. Quando um amigo pontua alto, envia um sinal forte de que você é visto, ouvido e compreendido.</p>
+
+                    <div class="alert alert-info py-4 mt-5 border-0 rounded-4">
+                        <h4 class="h5 fw-bold mb-3 text-center">🏆 Tópicos em alta para 2026:</h4>
+                        <div class="text-center">
+                            <span class="badge bg-primary text-white p-2 m-1">#QuizDeAmizade</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#TesteBFF</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#QuemMeConheceMelhor</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#DesafioAmizade</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#AlmaGemea</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../js/game-navigation-pt.js"></script>
+    <script src="FriendshipQuiz.js"></script>
+</body>
+</html>
