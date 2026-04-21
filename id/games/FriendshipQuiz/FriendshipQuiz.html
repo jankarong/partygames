@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mainkan Kuis Pertemanan - Tantangan sahabat terbaik! Temukan seberapa baik Anda dan teman-teman saling mengenal. Buat kuis sendiri dan bagikan kepada sahabat Anda.">
+    <meta name="keywords" content="kuis pertemanan, tantangan sahabat, seberapa kenal kamu denganku, permainan pesta, kuis kecocokan">
+    <meta name="author" content="Party Game Lab">
+    <meta property="og:title" content="Kuis Sahabat - Seberapa kenal kalian satu sama lain?">
+    <meta property="og:description" content="Temukan kedalaman pertemananmu! Tantangan pertemanan yang seru dan interaktif. Buat link Anda dan tantang teman-teman Anda!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="FriendshipQuizLogo.png">
+    <meta property="og:url" content="https://www.bestpartygames.net/id/games/FriendshipQuiz/FriendshipQuiz">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tantangan Pertemanan Utama">
+    <meta name="twitter:description" content="Pertanyaan pertemanan seru untuk kumpul-kumpul! Buat link kuis Anda dan kirimkan ke sahabat Anda hari ini.">
+    <meta name="twitter:image" content="FriendshipQuizLogo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Indonesian">
+    <link rel="canonical" href="https://www.bestpartygames.net/id/games/FriendshipQuiz/FriendshipQuiz.html">
+    <title>Kuis Pertemanan - Tes Sahabat & Seberapa Kenal Kamu Denganku</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="FriendshipQuizLogo.png">
+
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    <link rel="stylesheet" href="FriendshipQuiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --heading-font: 'Fredoka One', cursive;
+            --body-font: 'Quicksand', sans-serif;
+        }
+    </style>
+
+    <!-- Global scripts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFLML78Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BYYFLML78Z');
+    </script>
+</head>
+
+<body style="font-family: 'Quicksand', sans-serif;">
+    <div id="nav-placeholder"></div>
+
+    <main class="container py-5">
+        <div class="quiz-wrapper mx-auto">
+            <!-- Start Screen -->
+            <section id="start-screen" class="game-card text-center active">
+                <div class="logo-wrapper pulse">
+                    <img src="FriendshipQuizLogo.png" alt="Logo Kuis Pertemanan" class="main-logo img-fluid">
+                </div>
+                <h1 class="display-4 fw-bold mb-4" style="font-family: 'Fredoka One', cursive;">Kuis Pertemanan</h1>
+                <p class="lead mb-5">Apakah kalian benar-benar "Sahabat"? Atau hanya teman "Plastik"?<br>Ikuti tantangan 15 pertanyaan ini untuk melihat seberapa kenal kalian satu sama lain!</p>
+                <div class="setup-form mb-4">
+                    <input type="text" id="friend-name" class="form-control form-control-lg text-center shadow-sm mb-3" placeholder="Masukkan nama Anda">
+                    <button class="btn btn-primary-custom btn-lg w-100" id="start-game-btn">
+                        <i class="fas fa-play me-2"></i> Mulai Tantangan
+                    </button>
+                </div>
+                <div class="badge-container d-flex justify-content-center gap-3">
+                    <span class="badge rounded-pill bg-soft-pink"><i class="fas fa-heart me-1"></i> Seru</span>
+                    <span class="badge rounded-pill bg-soft-blue"><i class="fas fa-brain me-1"></i> Chemistry</span>
+                    <span class="badge rounded-pill bg-soft-yellow"><i class="fas fa-laugh me-1"></i> Tawa</span>
+                </div>
+            </section>
+
+            <!-- Quiz Screen -->
+            <section id="quiz-screen" class="game-card text-center d-none">
+                <div class="progress-container mb-4">
+                    <div class="progress" style="height: 10px;">
+                        <div id="quiz-progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text mt-2 d-block" id="question-counter">Pertanyaan 1 / 15</span>
+                </div>
+                <div class="question-container py-4">
+                    <h2 id="question-text" class="mb-4">Memuat pertanyaan...</h2>
+                    <div id="options-container" class="options-grid">
+                        <!-- Options will be injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Result Screen -->
+            <section id="result-screen" class="game-card text-center d-none">
+                <div class="certificate-wrapper mb-4">
+                    <div class="certificate-border p-4">
+                        <h2 class="mb-3">Sertifikat Pertemanan</h2>
+                        <div class="result-score-circle mx-auto mb-3">
+                            <span id="score-display">0%</span>
+                        </div>
+                        <h3 id="result-message" class="mb-3">Menganalisis...</h3>
+                        <p id="result-desc" class="text-muted"></p>
+                    </div>
+                </div>
+                <div class="share-container">
+                    <p class="mb-3">Tantang teman Anda dengan kuis Anda sendiri!</p>
+                    <button class="btn btn-outline-primary w-100 mb-3" id="copy-link-btn">
+                        <i class="fas fa-copy me-2"></i> Salin Link Kuis Anda
+                    </button>
+                    <a href="FriendshipQuiz.html" class="btn btn-primary-custom w-100">
+                        <i class="fas fa-redo me-2"></i> Buat Kuis Baru
+                    </a>
+                </div>
+            </section>
+
+            <div class="faq-container mt-5">
+                <h3 class="text-center mb-4">❓ FAQ Kuis Pertemanan</h3>
+                <div class="accordion shadow-sm" id="quizFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                Bagaimana skor Kuis Pertemanan dihitung?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#quizFAQ">
+                            <div class="accordion-body">
+                                Sistem <strong>Kuis Pertemanan</strong> membandingkan jawaban Anda secara langsung. Pembuat kuis menetapkan kebenaran dasar, dan teman menebak. Semakin banyak kecocokan yang Anda miliki di <strong>Kuis Pertemanan</strong>, semakin tinggi skornya.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                Apakah Kuis Pertemanan ini benar-benar gratis?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#quizFAQ">
+                            <div class="accordion-body">
+                                Ya! <strong>Kuis Pertemanan</strong> ini adalah alat gratis yang disediakan oleh lab kami. Data <strong>Kuis Pertemanan</strong> Anda dikodekan dalam URL dan tidak disimpan di server kami untuk privasi maksimal.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed SEO Content Section for Friendship Quiz -->
+        <article class="mt-5 pt-5 border-top">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="display-6 fw-bold mb-4">Menguasai Kuis Pertemanan: Mengapa Ini Alat Sosial Utama</h2>
+                    <p class="mb-4">Di era digital saat ini, <strong>kuis pertemanan</strong> telah berkembang menjadi lebih dari sekadar permainan sederhana. Ini adalah cara ampuh bagi individu untuk merayakan ikatan mereka, memverifikasi saling pengertian, dan menciptakan kenangan abadi. Dengan menggunakan versi terbaru 2026 dari online <strong>kuis pertemanan</strong> kami, Anda dapat dengan mudah membuat link yang dipersonalisasi untuk menantang lingkaran dalam Anda dan mencari tahu siapa yang benar-benar mengenal Anda paling baik.</p>
+
+                    <h3 class="h4 mb-3">🌟 Penggunaan Sempurna untuk Kuis Pertemanan</h3>
+                    <p>Memainkan <strong>kuis pertemanan</strong> sangat ideal untuk berbagai pertemuan sosial. Baik Anda sedang mengadakan pesta ulang tahun atau sekadar nongkrong di kafe, memulai <strong>kuis pertemanan</strong> dapat secara instan meningkatkan suasana hati dan memicu percakapan mendalam yang tidak akan terjadi sebaliknya.</p>
+                    
+                    <div class="row g-4 mb-5 mt-2">
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-primary border-4">
+                                <h4 class="h5">🎂 Kuis Pertemanan Ulang Tahun</h4>
+                                <p class="small text-muted">Sebuah <strong>kuis pertemanan</strong> ulang tahun adalah cara terbaik untuk menghormati tamu yang berulang tahun. Biarkan tamu Anda berkompetisi untuk melihat siapa yang paling perhatian selama bertahun-tahun!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-pink border-4">
+                                <h4 class="h5">👭 Kuis Pertemanan Bonding</h4>
+                                <p class="small text-muted">Bosan saat menginap bersama? Sebuah <strong>kuis pertemanan</strong> yang mendalam akan membantu Anda menemukan kembali kenangan bersama dan rahasia yang mendefinisikan ikatan unik Anda.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 border-top border-info border-4">
+                                <h4 class="h5">🏢 Kuis Pertemanan Korporat</h4>
+                                <p class="small text-muted">Bahkan dalam lingkungan profesional, sebuah <strong>kuis pertemanan</strong> team-building dapat menjembatani kesenjangan antara kolega dan menumbuhkan budaya kerja yang lebih inklusif.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="h4 mb-3">🛠️ Bagaimana Cara Mendapatkan Skor 100% di Kuis Pertemanan?</h3>
+                    <p>Memenangkan <strong>kuis pertemanan</strong> bukan sekadar keberuntungan; ini tentang memperhatikan hal-hal kecil. Sahabat sejati biasanya unggul dalam <strong>kuis pertemanan</strong> karena mereka mengingat hal-hal seperti lagu karaoke favorit, makanan yang paling dibenci, dan bahkan alasan umum untuk terlambat. Desain <strong>kuis pertemanan</strong> kami memastikan bahwa hanya teman yang paling jeli yang mencapai puncak papan peringkat.</p>
+                    
+                    <h3 class="h4 mb-3">💡 Psikologi di Balik Tren Kuis Pertemanan</h3>
+                    <p>Mengapa kita sangat menyukai <strong>kuis pertemanan</strong>? Secara psikologis, sebuah <strong>kuis pertemanan</strong> memberikan validasi. Ketika seorang teman mendapat skor tinggi pada <strong>kuis pertemanan</strong> Anda, itu mengirimkan sinyal kuat bahwa Anda dilihat, didengar, dan dimengerti. Penguatan positif ini adalah alasan mengapa <strong>kuis pertemanan</strong> tetap menjadi pokok interaksi sosial di semua kelompok umur.</p>
+
+                    <p class="mt-4">Platform kami didedikasikan untuk memberikan pengalaman <strong>kuis pertemanan</strong> paling interaktif secara online. Kami terus memperbarui pertanyaan <strong>kuis pertemanan</strong> kami agar tetap segar, lucu, dan relevan secara budaya bagi pengguna di seluruh dunia.</p>
+
+                    <div class="alert alert-info py-4 mt-5 border-0 rounded-4">
+                        <h4 class="h5 fw-bold mb-3 text-center">🏆 Topik Kuis Pertemanan Populer 2026:</h4>
+                        <div class="text-center">
+                            <span class="badge bg-primary text-white p-2 m-1">#KuisPertemanan2026</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#KecocokanSahabat</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#SiapaMengenalkuLebihBaik</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#TantanganPertemananUtama</span>
+                            <span class="badge bg-primary text-white p-2 m-1">#TesBelahanJiwa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/ads-controller.js"></script>
+    <script src="../../../js/game-navigation.js"></script>
+    <script src="FriendshipQuiz.js"></script>
+</body>
+
+</html>
