@@ -17,7 +17,7 @@ class GameNavigation {
             { name: 'Infiltré', url: '/fr/games/undercover/undercover.html', category: 'strategy' },
             { name: 'Charades', url: '/fr/games/charades/charades.html', category: 'party' },
             { name: 'Headbands', url: '/fr/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: 'Dés Sexuels', url: '/fr/games/sexdice/sexdice.html', category: 'adult' },
+            
             { name: 'Numéro de Bière', url: '/fr/games/beernumber/beernumber.html', category: 'drinking' },
             { name: 'Coupe du Roi', url: '/fr/games/KingsCup/KingsCup.html', category: 'drinking' },
             { name: 'Quiz d\'amitié', url: '/fr/games/FriendshipQuiz/FriendshipQuiz.html', category: 'party' }

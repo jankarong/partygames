@@ -17,7 +17,7 @@ class GameNavigation {
             { name: 'Undercover', url: '/id/games/undercover/undercover.html', category: 'strategy' },
             { name: 'Charades', url: '/id/games/charades/charades.html', category: 'party' },
             { name: 'Headbands', url: '/id/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: 'Dadu Seks', url: '/id/games/sexdice/sexdice.html', category: 'adult' },
+            
             { name: 'Tebak Angka', url: '/id/games/beernumber/beernumber.html', category: 'drinking' },
             { name: 'Gelas Raja', url: '/id/games/KingsCup/KingsCup.html', category: 'drinking' }
         ];

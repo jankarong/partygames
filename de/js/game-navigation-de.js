@@ -15,7 +15,7 @@ class GameNavigation {
             { name: 'Undercover', url: '/de/games/undercover/undercover', category: 'strategy' },
             { name: 'Scharade', url: '/de/games/charades/charades', category: 'party' },
             { name: 'Hedbanz', url: '/de/games/hedbanzgame/hedbanzgame', category: 'party' },
-            { name: 'Paar-Würfel', url: '/de/games/sexdice/sexdice', category: 'adult' },
+            
             { name: 'Zahlen raten', url: '/de/games/beernumber/beernumber', category: 'drinking' },
             { name: 'Kings Cup', url: '/de/games/KingsCup/KingsCup', category: 'drinking' }
         ];

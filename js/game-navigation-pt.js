@@ -17,7 +17,7 @@ class GameNavigation {
             { name: 'Infiltrado', url: '/pt/games/undercover/undercover.html', category: 'strategy' },
             { name: 'Mímica', url: '/pt/games/charades/charades.html', category: 'party' },
             { name: 'Headbands', url: '/pt/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: 'Dados de Sexo Online', url: '/pt/games/sexdice/sexdice.html', category: 'adult' },
+            
             { name: 'Adivinha o Número', url: '/pt/games/beernumber/beernumber.html', category: 'drinking' },
             { name: 'Cálice do Rei', url: '/pt/games/KingsCup/KingsCup.html', category: 'drinking' },
             { name: 'Quiz de Amizade', url: '/pt/games/FriendshipQuiz/FriendshipQuiz.html', category: 'party' }

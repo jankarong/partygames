@@ -15,7 +15,7 @@ class GameNavigation {
             { name: 'Penyamaran', url: '/tr/games/undercover/undercover', category: 'strategy' },
             { name: 'Tebak Gerakan', url: '/tr/games/charades/charades', category: 'party' },
             { name: 'Tebak Kata', url: '/tr/games/hedbanzgame/hedbanzgame', category: 'party' },
-            { name: 'Dadu Intim', url: '/tr/games/sexdice/sexdice', category: 'adult' },
+            
             { name: 'Nomor Bir', url: '/tr/games/beernumber/beernumber', category: 'drinking' },
             { name: 'Piala Raja', url: '/tr/games/KingsCup/KingsCup', category: 'drinking' }
         ];

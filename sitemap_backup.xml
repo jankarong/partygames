@@ -681,73 +681,13 @@
     </url>
 
     <!-- Sex Dice -->
-    <url>
-        <loc>https://www.bestpartygames.net/games/sexdice/sexdice.html</loc>
-        <lastmod>2025-08-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <image:image>
-            <image:loc>https://www.bestpartygames.net/games/sexdice/sexdicelogo.png</image:loc>
-            <image:title>Sex Dice</image:title>
-            <image:caption>Roll the dice for a fun and spicy adventure!</image:caption>
-        </image:image>
-    </url>
+    
 
-    <url>
-        <loc>https://www.bestpartygames.net/zh/games/sexdice/sexdice.html</loc>
-        <lastmod>2025-08-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <image:image>
-            <image:loc>https://www.bestpartygames.net/games/sexdice/sexdicelogo.png</image:loc>
-            <image:title>情侣骰子</image:title>
-            <image:caption>掷骰子享受有趣刺激的冒险!</image:caption>
-        </image:image>
-    </url>
+    
 
-    <url>
-        <loc>https://www.bestpartygames.net/de/games/sexdice/sexdice.html</loc>
-        <lastmod>2025-09-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <image:image>
-            <image:loc>https://www.bestpartygames.net/games/sexdice/sexdicelogo.png</image:loc>
-            <image:title>Sex Würfel</image:title>
-            <image:caption>Werfen Sie die Würfel für ein spaßiges und würziges Abenteuer!</image:caption>
-        </image:image>
-    </url>
+    
 
-    <url>
-        <loc>https://www.bestpartygames.net/pt/games/sexdice/sexdice.html</loc>
-        <lastmod>2025-11-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://www.bestpartygames.net/zh/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://www.bestpartygames.net/de/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="pt" href="https://www.bestpartygames.net/pt/games/sexdice/sexdice.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestpartygames.net/games/sexdice/sexdice.html" />
-        <image:image>
-            <image:loc>https://www.bestpartygames.net/games/sexdice/sexdicelogo.png</image:loc>
-            <image:title>Dados de Sexo</image:title>
-            <image:caption>Role os dados para uma aventura divertida e apimentada!</image:caption>
-        </image:image>
-    </url>
+    
 
     <!-- Beer Number -->
     <url>

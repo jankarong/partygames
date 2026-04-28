@@ -17,7 +17,7 @@ class GameNavigation {
             { name: '卧底', url: '/zh/games/undercover/undercover', category: 'strategy' },
             { name: '比划猜词', url: '/zh/games/charades/charades', category: 'party' },
             { name: '头脑风暴', url: '/zh/games/hedbanzgame/hedbanzgame', category: 'party' },
-            { name: '情趣骰子', url: '/zh/games/sexdice/sexdice', category: 'adult' },
+            
             { name: '啤酒数字', url: '/zh/games/beernumber/beernumber', category: 'drinking' },
             { name: '国王杯', url: '/zh/games/KingsCup/KingsCup', category: 'drinking' }
         ];

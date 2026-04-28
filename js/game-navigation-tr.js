@@ -17,7 +17,7 @@ class GameNavigation {
             { name: 'Gizli Ajan', url: '/tr/games/undercover/undercover.html', category: 'strategy' },
             { name: 'Sessiz Sinema', url: '/tr/games/charades/charades.html', category: 'party' },
             { name: 'Headbands', url: '/tr/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: 'Seks Zarı', url: '/tr/games/sexdice/sexdice.html', category: 'adult' },
+            
             { name: 'Sayı Tahmin', url: '/tr/games/beernumber/beernumber.html', category: 'drinking' },
             { name: 'Kings Cup', url: '/tr/games/KingsCup/KingsCup.html', category: 'drinking' },
             { name: 'Arkadaşlık Testi', url: '/tr/games/FriendshipQuiz/FriendshipQuiz.html', category: 'party' }

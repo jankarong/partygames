@@ -16,7 +16,7 @@ class GameNavigation {
             { name: '언더커버', url: '/ko/games/undercover/undercover.html', category: 'strategy' },
             { name: '몸으로 말해요', url: '/ko/games/charades/charades.html', category: 'party' },
             { name: '헤드반즈', url: '/ko/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: '커플 주사위', url: '/ko/games/sexdice/sexdice.html', category: 'adult' },
+            
             { name: '숫자 맞추기 업다운', url: '/ko/games/beernumber/beernumber.html', category: 'drinking' },
             { name: '더 킹즈 컵', url: '/ko/games/KingsCup/KingsCup.html', category: 'drinking' },
             { name: '우정 퀴즈', url: '/ko/games/FriendshipQuiz/FriendshipQuiz.html', category: 'party' }

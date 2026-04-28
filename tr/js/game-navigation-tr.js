@@ -18,7 +18,7 @@ class GameNavigation {
             { name: 'Gizli Ajan', url: '/tr/games/undercover/undercover', category: 'strategy' },
             { name: 'Sessiz Sinema', url: '/tr/games/charades/charades', category: 'party' },
             { name: 'Hedbanz', url: '/tr/games/hedbanzgame/hedbanzgame', category: 'party' },
-            { name: 'Seks Zari', url: '/tr/games/sexdice/sexdice', category: 'adult' },
+            
             { name: 'Sayi Tahmin', url: '/tr/games/beernumber/beernumber', category: 'drinking' },
             { name: 'Kings Cup', url: '/tr/games/KingsCup/KingsCup', category: 'drinking' },
             { name: 'Sise Eslestirme Oyunu', url: '/tr/games/BottleMatchGame/BottleMatchGame', category: 'party' },

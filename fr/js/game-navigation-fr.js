@@ -16,7 +16,7 @@ class GameNavigation {
             { name: 'Charades', url: '/fr/games/charades/charades', logo: '/games/charades/CharadesLogo.png', category: 'party' },
             { name: 'Hedbanz', url: '/fr/games/hedbanzgame/hedbanzgame', logo: '/games/hedbanzgame/hedbanz.png', category: 'party' },
             { name: 'Jeu d\'Appariement de Bouteilles', url: '/fr/games/BottleMatchGame/BottleMatchGame', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
-            { name: 'Dés d\'Aventure', url: '/fr/games/sexdice/sexdice', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
+            
             { name: 'Devinez le Nombre', url: '/fr/games/beernumber/beernumber', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
             { name: 'Kings Cup', url: '/fr/games/KingsCup/KingsCup', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' }
         ];

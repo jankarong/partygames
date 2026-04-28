@@ -19,7 +19,7 @@ class GameNavigation {
             { nameKey: '21 Questions Game Freaky', url: '/games/freaky21questions/freaky21questions.html', logo: '/image/favicon.png', category: 'adult' },
             { nameKey: 'Paranoia Questions Dirty', url: '/games/paranoiaquestionsdirty/paranoiaquestionsdirty.html', logo: '/games/paranoiaquestionsdirty/logo.png', category: 'adult' },
             { nameKey: 'Bottle Match Game', url: '/games/BottleMatchGame/BottleMatchGame.html', logo: '/games/BottleMatchGame/bottlematch.png', category: 'solo' },
-            { nameKey: 'Sex Dice', url: '/games/sexdice/sexdice.html', logo: '/games/sexdice/sexdicelogo.png', category: 'adult' },
+            
             { nameKey: 'Beer Number', url: '/games/beernumber/beernumber.html', logo: '/games/beernumber/numberguessLogo.png', category: 'drinking' },
             { nameKey: 'Kings Cup', url: '/games/KingsCup/KingsCup.html', logo: '/games/KingsCup/kingscuplogo.png', category: 'drinking' },
             { nameKey: 'Friendship Quiz', url: '/games/FriendshipQuiz/FriendshipQuiz.html', logo: '/games/FriendshipQuiz/FriendshipQuizLogo.png', category: 'party' }

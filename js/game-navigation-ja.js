@@ -16,7 +16,7 @@ class GameNavigation {
             { name: 'アンダーカバー', url: '/ja/games/undercover/undercover.html', category: 'strategy' },
             { name: 'ジェスチャーゲーム', url: '/ja/games/charades/charades.html', category: 'party' },
             { name: 'ヘッドバンズ', url: '/ja/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: 'セクシーダイス', url: '/ja/games/sexdice/sexdice.html', category: 'adult' },
+            
             { name: 'ビール数字当て', url: '/ja/games/beernumber/beernumber.html', category: 'drinking' },
             { name: 'キングスカップ', url: '/ja/games/KingsCup/KingsCup.html', category: 'drinking' },
             { name: '友情クイズ', url: '/ja/games/FriendshipQuiz/FriendshipQuiz.html', category: 'party' }

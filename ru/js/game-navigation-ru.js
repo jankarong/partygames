@@ -18,7 +18,7 @@ class GameNavigation {
             { name: 'Подпольщик', url: '/ru/games/undercover/undercover.html', category: 'strategy' },
             { name: 'Генератор шарад', url: '/ru/games/charades/charades.html', category: 'party' },
             { name: 'Headbands', url: '/ru/games/hedbanzgame/hedbanzgame.html', category: 'party' },
-            { name: 'Любовные кубики', url: '/ru/games/sexdice/sexdice.html', category: 'adult' },
+            
             { name: 'Угадайте число', url: '/ru/games/beernumber/beernumber.html', category: 'drinking' },
             { name: 'Король чаши', url: '/ru/games/KingsCup/KingsCup.html', category: 'drinking' },
             { name: 'Совпадение бутылок', url: '/ru/games/BottleMatchGame/BottleMatchGame.html', category: 'party' },
