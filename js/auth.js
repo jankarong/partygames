@@ -211,8 +211,7 @@ class AuthManager {
             // 检查付费状态
             this.checkUserPremiumStatus().then(isPremium => {
                 if (premiumStatus) {
-                    premiumStatus.textContent = isPremium ? 'Premium' : 'Free User';
-                    premiumStatus.className = isPremium ? 'badge bg-success' : 'badge bg-secondary';
+                    premiumStatus.style.display = 'none';
                 }
 
                 // 根据付费状态显示/隐藏广告

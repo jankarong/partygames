@@ -106,8 +106,8 @@
 
     if (button) {
         button.addEventListener('click', () => {
-            setStatus('Redirecting to Stripe Checkout...');
-            getSessionUrl();
+            setStatus('Premium checkout is currently unavailable.');
+            // getSessionUrl();
         });
     }
 
