@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dice Online - Free Customizable Digital Dice Generator</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Create and roll your own custom dice online for free. Add numbers, text, or emojis to your virtual dice. Perfect for board games, decision making, and classroom activities. Fully customizable and mobile-friendly.">
+    <meta name="keywords" content="custom dice online, virtual dice, customizable dice, digital dice roller, text dice online, random decision maker, free online dice">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="customdice.css">
+    <link rel="stylesheet" href="/css/gameheader.css">
+    
+    <!-- Scripts -->
+    <script src="customdice.js" defer></script>
+    <script src="/js/game-navigation.js"></script>
+    <script src="/js/auth.js" defer></script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Custom Dice Online - Free Customizable Digital Dice Generator">
+    <meta property="og:description" content="Create and roll your own custom dice online for free. Add numbers, text, or emojis to your virtual dice.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./logo.png">
+</head>
+
+<body>
+    <main class="game-container">
+        <header class="logo-container">
+            <img src="./logo.png" alt="Custom Dice Online Logo" class="game-logo">
+        </header>
+
+        <h1>Custom Dice Online</h1>
+        
+        <p class="lead">The ultimate free digital dice roller where YOU define the rules!</p>
+
+        <section class="dice-area" id="diceArea">
+            <!-- Dice will be rendered here -->
+        </section>
+
+        <section class="controls">
+            <button id="rollButton" class="btn-custom btn-roll">Roll Dice!</button>
+            <button id="configButton" class="btn-custom btn-config">
+                <i class="fas fa-cog"></i> Customize Dice
+            </button>
+        </section>
+
+        <section id="settingsPanel" class="settings-panel" style="display: none;">
+            <h3>Configure Your Dice</h3>
+            <div id="diceConfigContainer">
+                <!-- Config items will be rendered here -->
+            </div>
+            <button id="addDiceButton" class="btn btn-outline-primary mt-3">
+                <i class="fas fa-plus"></i> Add New Dice
+            </button>
+            <button id="resetDiceButton" class="btn btn-outline-secondary mt-3 ms-2">
+                <i class="fas fa-undo"></i> Reset to Dots
+            </button>
+        </section>
+
+        <!-- SEO Content Section -->
+        <section class="game-info mt-5">
+            <h2>Why Use Our Custom Dice Online?</h2>
+            <p>Our <strong>custom dice online</strong> generator is designed to be the most flexible tool for gamers, teachers, and decision-makers. Whether you need a standard 6-sided dice, a dice with names for a giveaway, or a "What to eat" decision dice, our tool handles it all with ease.</p>
+            
+            <h3>Key Features of Custom Dice Online</h3>
+            <ul>
+                <li><strong>Completely Free:</strong> No registration or payment required to use our virtual dice.</li>
+                <li><strong>Unlimited Options:</strong> Add as many sides as you want to your dice.</li>
+                <li><strong>Text & Numbers:</strong> Your dice can contain numbers, words, or even emojis.</li>
+                <li><strong>Multi-Dice Support:</strong> Add multiple dice to roll them all at once.</li>
+                <li><strong>Instant Results:</strong> Smooth animations provide a realistic rolling experience.</li>
+            </ul>
+
+            <h3>How to Create Your Own Custom Dice</h3>
+            <ol>
+                <li>Click the <strong>"Customize Dice"</strong> button to open the settings.</li>
+                <li>Edit existing dice or click <strong>"Add New Dice"</strong> to add more.</li>
+                <li>Add your custom text or numbers in the input box and press Enter.</li>
+                <li>Click the "X" next to any option to remove it.</li>
+                <li>Hit the <strong>"Roll Dice!"</strong> button to see your random result!</li>
+            </ol>
+
+            <h3>Perfect For Every Occasion</h3>
+            <p>The <strong>custom dice online</strong> tool is perfect for various scenarios:</p>
+            <ul>
+                <li><strong>Board Games:</strong> Replace lost dice or create special dice for custom rules.</li>
+                <li><strong>Education:</strong> Teachers can use it for random student selection or math games.</li>
+                <li><strong>Decision Making:</strong> Can't decide what to watch or eat? Let the custom dice decide!</li>
+                <li><strong>Roleplaying:</strong> Create specialized dice for your D&D or tabletop sessions.</li>
+            </ul>
+
+            <div class="faq mt-4">
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-item">
+                    <h5>Is my custom dice data saved?</h5>
+                    <p>Yes! Your <strong>custom dice online</strong> settings are saved automatically in your browser's local storage, so they'll be ready for you the next time you visit.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Can I use emojis on the dice?</h5>
+                    <p>Absolutely! You can paste emojis into the option fields to create fun, visual dice.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
