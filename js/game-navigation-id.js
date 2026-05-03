@@ -6,6 +6,7 @@
 class GameNavigation {
     constructor() {
         this.games = [
+            { name: 'Dadu Kustom', url: '/id/games/custom-dice-online/customdice.html', category: 'solo' },
             { name: 'Bola Ajaib 8', url: '/id/games/magic8ball/magic8ball.html', category: 'solo' },
             { name: 'Kebenaran atau Tantangan', url: '/id/games/TruthorDare/TruthOrDare.html', category: 'party' },
             { name: 'Truth or Dare untuk Pasangan', url: '/id/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.html', category: 'adult' },

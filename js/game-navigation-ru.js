@@ -6,6 +6,7 @@
 class GameNavigation {
     constructor() {
         this.games = [
+            { name: 'Свои Кубики', url: '/ru/games/custom-dice-online/customdice.html', category: 'solo' },
             { name: 'Магический шар 8', url: '/ru/games/magic8ball/magic8ball.html', category: 'solo' },
             { name: 'Правда или вызов', url: '/ru/games/TruthorDare/TruthOrDare.html', category: 'party' },
             { name: 'Pravda ili Deistvie dlya Par', url: '/ru/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.html', category: 'adult' },

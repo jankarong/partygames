@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настраиваемые кубики онлайн - Бесплатный настраиваемый генератор цифровых кубиков</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Создавайте и бросайте свои собственные настраиваемые кубики онлайн бесплатно. Добавляйте числа, текст или эмодзи.">
+    <meta name="keywords" content="настраиваемые кубики онлайн, виртуальные кубики, цифровые кубики, бесплатные кубики">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../../../games/custom-dice-online/customdice.css">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    
+    <!-- Scripts -->
+    <script src="customdice.js" defer></script>
+    <script src="../../../js/game-navigation-ru.js"></script>
+    <script src="../../../js/auth.js" defer></script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Настраиваемые кубики онлайн - Бесплатный настраиваемый генератор цифровых кубиков">
+    <meta property="og:description" content="Создавайте и бросайте свои собственные настраиваемые кубики онлайн бесплатно. Добавляйте числа, текст или эмодзи.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../../../games/custom-dice-online/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../games/custom-dice-online/logo.png">
+</head>
+
+<body>
+    <main class="game-container">
+        <header class="logo-container">
+            <img src="../../../games/custom-dice-online/logo.png" alt="Logo" class="game-logo">
+        </header>
+
+        <h1>Настраиваемые кубики онлайн</h1>
+        
+        <p class="lead">Лучший бесплатный цифровой кубик, где ВЫ определяете правила!</p>
+
+        <section class="dice-area" id="diceArea">
+            <!-- Dice will be rendered here -->
+        </section>
+
+        <section class="controls">
+            <button id="rollButton" class="btn-custom btn-roll">Бросить кубики!</button>
+            <button id="configButton" class="btn-custom btn-config">
+                <i class="fas fa-cog"></i> Настроить кубики
+            </button>
+        </section>
+
+        <section id="settingsPanel" class="settings-panel" style="display: none;">
+            <h3>Настройте свои кубики</h3>
+            <div id="diceConfigContainer">
+                <!-- Config items will be rendered here -->
+            </div>
+            <button id="addDiceButton" class="btn btn-outline-primary mt-3">
+                <i class="fas fa-plus"></i> Добавить новый кубик
+            </button>
+            <button id="resetDiceButton" class="btn btn-outline-secondary mt-3 ms-2">
+                <i class="fas fa-undo"></i> Сбросить к точкам
+            </button>
+        </section>
+
+        <!-- SEO Content Section -->
+        <section class="game-info mt-5">
+            <h2>Почему стоит использовать наши кубики?</h2>
+            <p>Наш генератор <strong>настраиваемых кубиков онлайн</strong> — самый гибкий инструмент.</p>
+            
+            <h3>Основные характеристики</h3>
+            <ul>
+                <li><strong>Полностью бесплатно:</strong> Регистрация не требуется.</li>
+                <li><strong>Безграничные возможности:</strong> Любое количество граней.</li>
+                <li><strong>Текст и числа:</strong> Числа, слова или эмодзи.</li>
+                <li><strong>Поддержка нескольких кубиков:</strong> Бросайте всё сразу.</li>
+                <li><strong>Мгновенный результат:</strong> Плавная анимация.</li>
+            </ul>
+
+            <h3>Как создать свои кубики</h3>
+            <ol>
+                <li>Нажмите кнопку <strong>"Настроить кубики"</strong>.</li>
+                <li>Редактируйте старые или добавьте новые.</li>
+                <li>Введите текст и нажмите Enter.</li>
+                <li>Нажмите "X" для удаления.</li>
+                <li>Нажмите <strong>"Бросить кубики!"</strong>.</li>
+            </ol>
+
+            <h3>Идеально для любого случая</h3>
+            <p>Инструмент <strong>настраиваемые кубики онлайн</strong> идеален для:</p>
+            <ul>
+                <li><strong>Настольные игры:</strong> Замена потерянных кубиков.</li>
+                <li><strong>Образование:</strong> Случайный выбор ученика.</li>
+                <li><strong>Принятие решений:</strong> Что поесть или посмотреть?</li>
+                <li><strong>Ролевые игры:</strong> Специальные кубики для D&D.</li>
+            </ul>
+
+            <div class="faq mt-4">
+                <h3>Часто задаваемые вопросы</h3>
+                <div class="faq-item">
+                    <h5>Сохраняются ли данные?</h5>
+                    <p>Да! Ваши настройки сохраняются локально в браузере.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Можно ли использовать эмодзи?</h5>
+                    <p>Конечно! Просто вставьте эмодзи в поле.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

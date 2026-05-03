@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eigene Würfel Online - Kostenloser anpassbarer digitaler Würfelgenerator</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Erstellen und rollen Sie Ihre eigenen benutzerdefinierten Würfel kostenlos online. Fügen Sie Zahlen, Text oder Emojis zu Ihren virtuellen Würfeln hinzu. Perfekt für Brettspiele, Entscheidungsfindungen und Unterrichtsaktivitäten.">
+    <meta name="keywords" content="eigene würfel online, virtuelle würfel, anpassbare würfel, digitaler würfelroller, textwürfel online, kostenloser würfel">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../../../games/custom-dice-online/customdice.css">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    
+    <!-- Scripts -->
+    <script src="customdice.js" defer></script>
+    <script src="../../../js/game-navigation-de.js"></script>
+    <script src="../../../js/auth.js" defer></script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Eigene Würfel Online - Kostenloser anpassbarer digitaler Würfelgenerator">
+    <meta property="og:description" content="Erstellen und rollen Sie Ihre eigenen benutzerdefinierten Würfel kostenlos online. Fügen Sie Zahlen, Text oder Emojis zu Ihren virtuellen Würfeln hinzu. Perfekt für Brettspiele, Entscheidungsfindungen und Unterrichtsaktivitäten.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../../../games/custom-dice-online/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../games/custom-dice-online/logo.png">
+</head>
+
+<body>
+    <main class="game-container">
+        <header class="logo-container">
+            <img src="../../../games/custom-dice-online/logo.png" alt="Logo" class="game-logo">
+        </header>
+
+        <h1>Eigene Würfel Online</h1>
+        
+        <p class="lead">Der ultimative kostenlose digitale Würfelroller, bei dem SIE die Regeln bestimmen!</p>
+
+        <section class="dice-area" id="diceArea">
+            <!-- Dice will be rendered here -->
+        </section>
+
+        <section class="controls">
+            <button id="rollButton" class="btn-custom btn-roll">Würfeln!</button>
+            <button id="configButton" class="btn-custom btn-config">
+                <i class="fas fa-cog"></i> Würfel anpassen
+            </button>
+        </section>
+
+        <section id="settingsPanel" class="settings-panel" style="display: none;">
+            <h3>Konfigurieren Sie Ihre Würfel</h3>
+            <div id="diceConfigContainer">
+                <!-- Config items will be rendered here -->
+            </div>
+            <button id="addDiceButton" class="btn btn-outline-primary mt-3">
+                <i class="fas fa-plus"></i> Neuen Würfel hinzufügen
+            </button>
+            <button id="resetDiceButton" class="btn btn-outline-secondary mt-3 ms-2">
+                <i class="fas fa-undo"></i> Auf Punkte zurücksetzen
+            </button>
+        </section>
+
+        <!-- SEO Content Section -->
+        <section class="game-info mt-5">
+            <h2>Warum unsere Online-Würfel nutzen?</h2>
+            <p>Unser Generator für <strong>eigene Würfel online</strong> ist das flexibelste Werkzeug für Spieler, Lehrer und Entscheider.</p>
+            
+            <h3>Hauptmerkmale von Eigene Würfel Online</h3>
+            <ul>
+                <li><strong>Völlig kostenlos:</strong> Keine Registrierung erforderlich.</li>
+                <li><strong>Unbegrenzte Optionen:</strong> Fügen Sie so viele Seiten hinzu, wie Sie möchten.</li>
+                <li><strong>Text & Zahlen:</strong> Ihre Würfel können Zahlen, Wörter oder Emojis enthalten.</li>
+                <li><strong>Multi-Würfel-Unterstützung:</strong> Mehrere Würfel gleichzeitig rollen.</li>
+                <li><strong>Sofortige Ergebnisse:</strong> Realistische Animationen.</li>
+            </ul>
+
+            <h3>So erstellen Sie Ihre eigenen Würfel</h3>
+            <ol>
+                <li>Klicken Sie auf <strong>"Würfel anpassen"</strong>.</li>
+                <li>Bearbeiten Sie vorhandene Würfel oder fügen Sie neue hinzu.</li>
+                <li>Geben Sie Text ein und drücken Sie Enter.</li>
+                <li>Klicken Sie auf "X" zum Entfernen.</li>
+                <li>Klicken Sie auf <strong>"Würfeln!"</strong>.</li>
+            </ol>
+
+            <h3>Perfekt für jede Gelegenheit</h3>
+            <p>Das Tool <strong>Eigene Würfel Online</strong> ist ideal für:</p>
+            <ul>
+                <li><strong>Brettspiele:</strong> Verlorene Würfel ersetzen.</li>
+                <li><strong>Bildung:</strong> Zufällige Schülerauswahl.</li>
+                <li><strong>Entscheidungen:</strong> Was essen oder schauen?</li>
+                <li><strong>Rollenspiele:</strong> Spezialwürfel für D&D.</li>
+            </ul>
+
+            <div class="faq mt-4">
+                <h3>Häufig gestellte Fragen</h3>
+                <div class="faq-item">
+                    <h5>Werden meine Daten gespeichert?</h5>
+                    <p>Ja! Ihre Einstellungen werden lokal im Browser gespeichert.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Kann ich Emojis verwenden?</h5>
+                    <p>Absolut! Kopieren Sie einfach Emojis in die Felder.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

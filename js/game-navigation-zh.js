@@ -6,6 +6,7 @@
 class GameNavigation {
     constructor() {
         this.games = [
+            { name: '自定义在线骰子', url: '/zh/games/custom-dice-online/customdice.html', category: 'solo' },
             { name: '魔法8球', url: '/zh/games/magic8ball/magic8ball.html', category: 'solo' },
             { name: '真心话大冒险', url: '/zh/games/TruthorDare/TruthOrDare.html', category: 'party' },
             { name: '情侣真心话大冒险', url: '/zh/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.html', category: 'adult' },

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カスタムダイスオンライン - 無料のカスタマイズ可能なデジタルダイスジェネレーター</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="無料で自分専用のカスタムダイスをオンラインで作成して振ることができます。数字、テキスト、絵文字を追加可能。ボードゲームや意思決定に最適。">
+    <meta name="keywords" content="カスタムダイスオンライン, 仮想ダイス, カスタマイズ可能なダイス, デジタルダイス">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../../../games/custom-dice-online/customdice.css">
+    <link rel="stylesheet" href="../../../css/gameheader.css">
+    
+    <!-- Scripts -->
+    <script src="customdice.js" defer></script>
+    <script src="../../../js/game-navigation-ja.js"></script>
+    <script src="../../../js/auth.js" defer></script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="カスタムダイスオンライン - 無料のカスタマイズ可能なデジタルダイスジェネレーター">
+    <meta property="og:description" content="無料で自分専用のカスタムダイスをオンラインで作成して振ることができます。数字、テキスト、絵文字を追加可能。ボードゲームや意思決定に最適。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../../../games/custom-dice-online/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../games/custom-dice-online/logo.png">
+</head>
+
+<body>
+    <main class="game-container">
+        <header class="logo-container">
+            <img src="../../../games/custom-dice-online/logo.png" alt="Logo" class="game-logo">
+        </header>
+
+        <h1>カスタムダイスオンライン</h1>
+        
+        <p class="lead">あなたがルールを決める、究極の無料デジタルダイスローラー！</p>
+
+        <section class="dice-area" id="diceArea">
+            <!-- Dice will be rendered here -->
+        </section>
+
+        <section class="controls">
+            <button id="rollButton" class="btn-custom btn-roll">ダイスを振る！</button>
+            <button id="configButton" class="btn-custom btn-config">
+                <i class="fas fa-cog"></i> ダイスをカスタマイズ
+            </button>
+        </section>
+
+        <section id="settingsPanel" class="settings-panel" style="display: none;">
+            <h3>ダイスの設定</h3>
+            <div id="diceConfigContainer">
+                <!-- Config items will be rendered here -->
+            </div>
+            <button id="addDiceButton" class="btn btn-outline-primary mt-3">
+                <i class="fas fa-plus"></i> 新しいダイスを追加
+            </button>
+            <button id="resetDiceButton" class="btn btn-outline-secondary mt-3 ms-2">
+                <i class="fas fa-undo"></i> ドットに戻す
+            </button>
+        </section>
+
+        <!-- SEO Content Section -->
+        <section class="game-info mt-5">
+            <h2>なぜ当サイトのカスタムダイスを使うのか？</h2>
+            <p>当サイトの<strong>カスタムダイスオンライン</strong>ジェネレーターは、ゲーマーや教師にとって最も柔軟なツールです。</p>
+            
+            <h3>主な特徴</h3>
+            <ul>
+                <li><strong>完全に無料：</strong> 登録や支払いは不要です。</li>
+                <li><strong>無制限のオプション：</strong> 好きなだけ面を追加できます。</li>
+                <li><strong>テキストと数字：</strong> 数字、単語、絵文字も使えます。</li>
+                <li><strong>マルチダイス対応：</strong> 複数のダイスを一度に振れます。</li>
+                <li><strong>即時の結果：</strong> スムーズなアニメーション。</li>
+            </ul>
+
+            <h3>カスタムダイスの作り方</h3>
+            <ol>
+                <li><strong>「ダイスをカスタマイズ」</strong>ボタンをクリック。</li>
+                <li>既存のダイスを編集するか、新しいダイスを追加。</li>
+                <li>入力ボックスにテキストを入力してEnterキー。</li>
+                <li>「X」をクリックして削除。</li>
+                <li><strong>「ダイスを振る！」</strong>ボタンをクリック！</li>
+            </ol>
+
+            <h3>あらゆるシーンに最適</h3>
+            <p><strong>カスタムダイスオンライン</strong>は以下のような場面で役立ちます：</p>
+            <ul>
+                <li><strong>ボードゲーム：</strong> なくしたダイスの代わりに。</li>
+                <li><strong>教育：</strong> 生徒のランダム指名に。</li>
+                <li><strong>意思決定：</strong> 晩ご飯に迷ったときに。</li>
+                <li><strong>ロールプレイング：</strong> D&Dの特殊なダイスとして。</li>
+            </ul>
+
+            <div class="faq mt-4">
+                <h3>よくある質問</h3>
+                <div class="faq-item">
+                    <h5>ダイスのデータは保存されますか？</h5>
+                    <p>はい！ブラウザのローカルストレージに自動的に保存されます。</p>
+                </div>
+                <div class="faq-item">
+                    <h5>絵文字は使えますか？</h5>
+                    <p>もちろんです！絵文字をコピーして貼り付けることができます。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

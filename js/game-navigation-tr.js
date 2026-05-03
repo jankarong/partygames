@@ -6,6 +6,7 @@
 class GameNavigation {
     constructor() {
         this.games = [
+            { name: 'Özel Zar', url: '/tr/games/custom-dice-online/customdice.html', category: 'solo' },
             { name: 'Sihirli 8 Topu', url: '/tr/games/magic8ball/magic8ball.html', category: 'solo' },
             { name: 'Doğruluk mu Cesaret mi', url: '/tr/games/TruthorDare/TruthOrDare.html', category: 'party' },
             { name: 'Çiftler için Doğruluk mu Cesaret mi', url: '/tr/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.html', category: 'adult' },

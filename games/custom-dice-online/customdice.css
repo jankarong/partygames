@@ -297,3 +297,16 @@ h1 {
         font-size: 1rem;
     }
 }
+
+/* Fix for floating navigation menu z-index */
+.floating-nav {
+    z-index: 1000 !important;
+}
+
+.nav-toggle {
+    z-index: 1001 !important;
+}
+
+body {
+    min-height: 100vh;
+}
