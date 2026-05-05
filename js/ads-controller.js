@@ -70,6 +70,12 @@
     }
 
     async function decideAndApply() {
+        // Skip ads for Love Dice (sexdice) pages
+        if (window.location.pathname.includes('sexdice')) {
+            console.log('Ads disabled for Love Dice page');
+            return;
+        }
+
         try {
             const sb = window.supabaseClient || window.supabase;
             let session;

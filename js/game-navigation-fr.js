@@ -6,6 +6,7 @@
 class GameNavigation {
     constructor() {
         this.games = [
+            { name: 'Witch's Poison', url: '/fr/games/witchspoison/witchspoison.html', category: 'solo' },
             { name: 'Dés Personnalisés', url: '/fr/games/custom-dice-online/customdice.html', category: 'solo' },
             { name: 'Boule 8 Magique', url: '/fr/games/magic8ball/magic8ball.html', category: 'solo' },
             { name: 'Vérité ou Défi', url: '/fr/games/TruthorDare/TruthOrDare.html', category: 'party' },

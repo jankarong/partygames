@@ -5,6 +5,7 @@
 class GameNavigation {
     constructor() {
         this.games = [
+            { name: '마녀의 독약', url: '/ko/games/witchspoison/witchspoison.html', category: 'solo' },
             { name: '커스텀 주사위', url: '/ko/games/custom-dice-online/customdice.html', category: 'solo' },
             { name: '매직 8볼', url: '/ko/games/magic8ball/magic8ball.html', category: 'solo' },
             { name: '진실 혹은 도전', url: '/ko/games/TruthorDare/TruthOrDare.html', category: 'party' },
