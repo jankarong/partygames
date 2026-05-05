@@ -4,6 +4,7 @@ const path = require('path');
 const url = require('url');
 
 const PORT = 5502;
+const HOST = '127.0.0.1';
 const ROOT_DIR = __dirname;
 
 const mimeTypes = {
@@ -68,15 +69,22 @@ const server = http.createServer(async (req, res) => {
       }
     } catch (err2) {
       // 都不存在
-      res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
-      res.end('404 - 文件未找到: ' + pathname);
+      const notFoundPath = path.join(ROOT_DIR, '404.html');
+      try {
+        const content = await fs.readFile(notFoundPath);
+        res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end(content);
+      } catch (err3) {
+        res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end('404 - 文件未找到: ' + pathname);
+      }
       return;
     }
   }
 });
 
-server.listen(PORT, () => {
-  console.log(`✓ 本地服务器运行于: http://127.0.0.1:${PORT}`);
+server.listen(PORT, HOST, () => {
+  console.log(`✓ 本地服务器运行于: http://${HOST}:${PORT}`);
   console.log(`✓ 支持无 .html 扩展名的 URL`);
   console.log(`✓ 按 Ctrl+C 停止服务器`);
 });
