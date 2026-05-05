@@ -6,6 +6,7 @@
 class GameNavigation {
     constructor() {
         this.gamesData = [
+            { nameKey: 'Custom Dice Online', url: '/games/custom-dice-online/customdice.html', logo: '/games/custom-dice-online/logo.png', category: 'solo' },
             { nameKey: 'Magic 8 Ball', url: '/games/magic8ball/magic8ball.html', logo: '/games/magic8ball/magic8ball.svg', category: 'solo' },
             { nameKey: 'Truth or Dare', url: '/games/TruthorDare/TruthOrDare.html', logo: '/games/TruthorDare/TruthorDareLogo.png', category: 'party' },
             { nameKey: 'Truth or Dare Couples', url: '/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouples.html', logo: '/games/truthordarequestionsforcouples/TruthOrDareQuestionsForCouplesLogo.png', category: 'adult' },
@@ -73,6 +74,7 @@ class GameNavigation {
     getGameNames(lang) {
         const names = {
             en: {
+                'Custom Dice Online': 'Custom Dice Online',
                 'Magic 8 Ball': 'Magic 8 Ball',
                 'Truth or Dare': 'Truth or Dare',
                 'Truth or Dare Couples': 'Truth or Dare for Couples',
